@@ -1,0 +1,19 @@
+name: chuccamau-${ENV}
+services:
+  app:
+    image: chuccamau-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    environment:
+      - ENV=${ENV}
+    networks:
+      - chuccamau-network
+
+networks:
+  chuccamau-network:
+    driver: bridge
