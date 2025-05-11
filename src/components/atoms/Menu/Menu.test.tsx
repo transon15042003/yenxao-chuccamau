@@ -28,7 +28,7 @@ describe('Menu', () => {
     // Xác nhận icon có trong document
     expect(menuIcon).toBeInTheDocument();
 
-    // Kiểm tra kích thước mặc định (42x42) được gán cho thuộc tính width và height của thẻ <img>
+    // Kiểm tra kích thước mặc định (32x32) được gán cho thuộc tính width và height của thẻ <img>
     expect(menuIcon).toHaveAttribute('width', '32');
     expect(menuIcon).toHaveAttribute('height', '32');
   });
