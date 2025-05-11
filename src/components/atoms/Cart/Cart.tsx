@@ -17,7 +17,7 @@ export const Cart = (props: CartProps) => {
       <div className="relative inline-flex">
         <Image
           priority
-          src="/icon_Shop.svg"
+          src="/icon_shop.svg"
           height={iconSize}
           width={iconSize}
           alt="Shopping cart icon" // Alt text mô tả hơn
