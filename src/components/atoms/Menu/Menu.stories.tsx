@@ -7,8 +7,8 @@ const meta: Meta<typeof Menu> = {
   component: Menu,
   tags: ['autodocs'],
   args: {
-    children: 'Example',
-    variant: 'default'
+    className: '',
+    size: 42
   }
 };
 

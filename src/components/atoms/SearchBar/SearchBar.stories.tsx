@@ -7,8 +7,9 @@ const meta: Meta<typeof SearchBar> = {
   component: SearchBar,
   tags: ['autodocs'],
   args: {
-    children: 'Example',
-    variant: 'default'
+    placeholder: 'Searching',
+    className: '',
+    iconSize: 22
   }
 };
 

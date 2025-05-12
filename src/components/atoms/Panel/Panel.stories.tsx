@@ -7,8 +7,10 @@ const meta: Meta<typeof Panel> = {
   component: Panel,
   tags: ['autodocs'],
   args: {
-    children: 'Example',
-    variant: 'default'
+    width: 1440,
+    height: 583,
+    imageSrc: 'string',
+    className: 'string'
   }
 };
 
