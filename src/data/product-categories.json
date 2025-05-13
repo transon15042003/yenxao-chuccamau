@@ -1,0 +1,37 @@
+[
+  {
+    "id": "c-1",
+    "name": "Yến Chưng Tươi",
+    "slug": "yen-chung-tuoi"
+  },
+  {
+    "id": "c-2",
+    "name": "Set Quà Yến Chưng Tươi",
+    "slug": "set-qua-yen-chung-tuoi"
+  },
+  {
+    "id": "c-3",
+    "name": "Cháo & Súp (Yến)",
+    "slug": "chao-sup-yen"
+  },
+  {
+    "id": "c-4",
+    "name": "Yến Sào Tinh Chế",
+    "slug": "yen-sao-tinh-che"
+  },
+  {
+    "id": "c-5",
+    "name": "Tổ Yến Sào Thô",
+    "slug": "yen-sao-thu"
+  },
+  {
+    "id": "c-6",
+    "name": "Topping",
+    "slug": "topping"
+  },
+  {
+    "id": "c-7",
+    "name": "Món nền thử",
+    "slug": "mon-nen-thu"
+  }
+]
