@@ -54,6 +54,7 @@ module.exports = {
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/lib(.*)$': '<rootDir>/src/lib$1',
     '^@/hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@/data(.*)$': '<rootDir>/src/data$1',
     '^@/mocks(.*)$': '<rootDir>/__mocks__$1',
     '^@/tests(.*)$': '<rootDir>/.jest$1'
   }
