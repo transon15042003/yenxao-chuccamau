@@ -8,6 +8,19 @@ export type Category = {
 
 export type ProductSort = 'price-asc' | 'price-desc' | 'new';
 
+export type ProductVariant = {
+  sku: string;
+  specs: Record<string, string>;
+  price: number;
+  stock: number;
+  isActive: boolean;
+};
+
+export type ProductSpecifications = {
+  key: string;
+  value: string[];
+};
+
 type ProductId = string;
 export type Product = {
   id: ProductId;
@@ -18,6 +31,9 @@ export type Product = {
   images: string[];
   description: string;
   categories: CategoryId[];
+  ingredients: string[];
+  specs: ProductSpecifications[];
+  variants: ProductVariant[];
   isNew: boolean;
   discountPercent?: number;
   discountAmount?: number;
