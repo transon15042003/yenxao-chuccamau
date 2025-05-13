@@ -1,5 +1,6 @@
 import { Panel } from '@/components/atoms/Panel';
 import { Certificates } from '@/components/molecules/Certificates';
+import { QuoteSection } from '@/components/molecules/QuoteSection';
 import Intro from '@/components/organisms/Home/Intro/Intro';
 import { ProductSection } from '@/components/organisms/ProductSection';
 
@@ -9,6 +10,7 @@ const HomePage = () => (
     <Intro />
     <Certificates />
     <ProductSection />
+    <QuoteSection />
   </div>
 );
 

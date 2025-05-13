@@ -1,11 +1,12 @@
+import { StyledHeading } from '@/components/atoms/StyledHeading';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 
 export const ProductSection = () => {
   return (
     <div
-      className={`w-full py-[50px] bg-[url('/newfeed.png')] bg-cover bg-no -repeat flex flex-col items-center justify-center`}
+      className={`w-full py-[50px] bg-[url('/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
     >
-      <p className="capitalize font-bold text-5xl text-[#D62C35]">Sản phẩm nổi bật</p>
+      <StyledHeading title="Sản phẩm nổi bật" />
       <ChoiceGroup />
       <h1>ProductSection</h1>
       <button
