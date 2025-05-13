@@ -7,8 +7,7 @@ const meta: Meta<typeof ChoiceGroup> = {
   component: ChoiceGroup,
   tags: ['autodocs'],
   argTypes: {
-    className: { control: 'text' },
-    maxWidth: { control: 'number' }
+    className: { control: 'text' }
   }
 };
 
