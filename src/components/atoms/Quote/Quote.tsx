@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 type QuoteProps = {
+  className?: string;
   content: string;
   avatarSrc: string;
   username: string;
@@ -28,7 +29,7 @@ export const Quote = (props: QuoteProps) => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className={`flex flex-col items-center ${props.className}`}>
       <p className="text-center mb-5">{props.content}</p>
       <div className="flex flex-row items-center justify-start">
         <img

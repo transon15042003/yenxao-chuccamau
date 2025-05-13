@@ -18,21 +18,22 @@ export const New = (props: NewProps) => {
   const metadataColor = 'text-[#5E6971]'; // Màu cho ngày và thời gian đọc, mô tả
   const titleColor = 'text-[#121314]'; // Màu cho tiêu đề
 
-  // Định nghĩa kích thước cố định cho component dựa trên spec
-  const cardWidth = 'w-[279.75px]'; // Chiều rộng thẻ cố định
+  // Bỏ biến cardWidth cố định
 
   return (
     // Container chính của thẻ tin tức
+    // *** Điều chỉnh lớp chiều rộng và căn giữa trên mobile ***
+    // w-4/5: Chiếm 80% chiều ngang container cha trên mobile
+    // md:w-[279.75px]: Chiều rộng cố định trên desktop
+    // mx-auto: Căn giữa thẻ New trong container cha trên mobile
     <div
-      className={`border border-gray-200 rounded-lg overflow-hidden shadow-md ${cardWidth} ${props.className || ''}`}
+      className={`border border-gray-200 rounded-lg overflow-hidden shadow-md my-1
+                 w-4/5 md:w-[279.75px] mx-auto
+                 ${props.className || ''}`}
     >
       {/* Phần ảnh bài viết */}
-      {/* Kích thước ảnh theo spec: width: 379.75, height: 262.
-          Tuy nhiên, component có width 279.75, nên ảnh sẽ fit theo width component
-          và giữ chiều cao 262px, dùng object-cover để tránh méo ảnh. */}
+      {/* w-full h-[262px] relative: Ảnh chiếm hết chiều ngang của thẻ New và có chiều cao cố định 262px */}
       <div className="w-full h-[262px] relative">
-        {' '}
-        {/* Relative là cần thiết khi dùng layout="fill" */}
         <Image
           src={props.imageUrl}
           alt={props.title} // Sử dụng tiêu đề làm alt text cho ảnh
@@ -44,8 +45,6 @@ export const New = (props: NewProps) => {
 
       {/* Phần nội dung bên dưới ảnh */}
       <div className="p-4 flex flex-col">
-        {' '}
-        {/* Padding và sắp xếp các phần tử con theo cột */}
         {/* Metadata: Ngày và Thời gian đọc */}
         <div className={`flex items-center text-base font-normal mb-2 ${metadataColor}`}>
           <span>{props.date}</span>
@@ -68,13 +67,12 @@ export const New = (props: NewProps) => {
         </p>
         {/* Liên kết "Xem Thêm" */}
         {/* Sử dụng Link từ next/link cho định tuyến */}
+        {/* w-1/2 ở đây là w-1/2 của phần nội dung bên dưới ảnh */}
         <Link
           className="w-1/2 flex flex-row justify-between items-center"
           href={props.linkUrl}
           passHref
         >
-          {' '}
-          {/* passHref cần thiết khi child không phải là <a> */}
           {/* Sử dụng span hoặc div làm phần tử con của Link, flex để căn giữa chữ và icon */}
           <p className={`text-lg font-bold leading-6 text-primary`}>Xem Thêm</p>
           <Image src="/icon_arrow_right.svg" width={24} height={24} alt="" />

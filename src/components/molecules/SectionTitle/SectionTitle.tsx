@@ -5,7 +5,7 @@ import { SectionSubHeading } from '@/components/atoms/SubHeading';
 
 type SectionTitleProps = {
   heading: string;
-  subHeading: string;
+  subHeading?: string;
 };
 
 const SectionTitle = ({ heading, subHeading }: SectionTitleProps) => {

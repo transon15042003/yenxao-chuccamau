@@ -34,7 +34,9 @@ describe('KnowledgeSection', () => {
     render(<KnowledgeSection />);
 
     // Tìm kiếm phần tử h1 chứa văn bản "KnowledgeSection"
-    const sectionHeadingElement = screen.getByText('KnowledgeSection');
+    const sectionHeadingElement = screen.getByText(
+      'Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày.'
+    );
 
     // Khẳng định rằng phần tử này có trong tài liệu
     expect(sectionHeadingElement).toBeInTheDocument();

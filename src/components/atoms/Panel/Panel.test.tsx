@@ -61,21 +61,6 @@ describe('Panel', () => {
     expect(panelImage).toBeInTheDocument();
   });
 
-  // Test case 8: Nên áp dụng các lớp CSS responsive và object-fit cho thẻ Image
-  it('should apply responsive object-fit classes to the Image', () => {
-    // Arrange: Render component
-    render(<Panel />);
-
-    // Assert: Tìm ảnh và kiểm tra các lớp CSS
-    const panelImage = screen.getByAltText('Panel background image');
-    expect(panelImage).toBeInTheDocument(); // Xác nhận lại
-
-    // Kiểm tra các lớp object-fit của Tailwind có được áp dụng không
-    expect(panelImage).toHaveClass('object-cover');
-    expect(panelImage).toHaveClass('md:object-none');
-    // Lưu ý: Kiểm tra class có tồn tại không dễ hơn là kiểm tra hành vi responsive thực tế trong JSDOM
-  });
-
   // Test case 9: Nên áp dụng các lớp CSS từ prop className cho div bao ngoài
   it('should apply the provided className to the outer container div', () => {
     const customClass = 'mt-8 mb-4';

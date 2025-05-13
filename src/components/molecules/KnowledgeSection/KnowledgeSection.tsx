@@ -5,7 +5,7 @@ export const KnowledgeSection = () => {
   return (
     // Container chính - cần có position 'relative' để phần tử nền 'absolute' hoạt động đúng
     // Thêm 'overflow-hidden' để cắt phần ảnh nền bị xoay nếu nó vượt ra ngoài
-    <div className="w-full h-[917px] flex flex-col items-center justify-between py-10 relative overflow-hidden">
+    <div className="w-full h-auto md:h-[917px] flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
       {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
       <div
         className="absolute w-full h-full
@@ -25,11 +25,7 @@ export const KnowledgeSection = () => {
         title="Tin Tức & Hướng Dẫn"
         subTitle="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
       />
-      <h1 className="relative z-10">KnowledgeSection</h1> {/* Thêm class z-index */}
-      <div className="w-1/2 flex flex-row justify-between items-center relative z-10">
-        {' '}
-        {/* Thêm class z-index */}
-        {/* Các component New và button cũng cần nằm phía trên */}
+      <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-between items-center relative z-10 my-9">
         <New
           imageUrl="/news.png"
           date="May 13, 2025"

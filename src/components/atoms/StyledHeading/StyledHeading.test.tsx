@@ -61,7 +61,7 @@ describe('StyledHeading', () => {
     expect(titleElement).toHaveClass('capitalize');
     expect(titleElement).toHaveClass('font-bold');
     expect(titleElement).toHaveClass('text-5xl');
-    expect(titleElement).toHaveClass('text-[#D62C35]'); // Kiểm tra class màu sắc dựa trên mã
+    expect(titleElement).toHaveClass('text-primary'); // Kiểm tra class màu sắc dựa trên mã
     expect(titleElement).toHaveClass('mb-1');
   });
 
@@ -76,7 +76,7 @@ describe('StyledHeading', () => {
     expect(subTitleElement).toBeInTheDocument(); // Đảm bảo tìm thấy phần tử trước
     expect(subTitleElement).toHaveClass('font-normal');
     expect(subTitleElement).toHaveClass('text-xl');
-    expect(subTitleElement).toHaveClass('text-[#424B5A]'); // Kiểm tra class màu sắc dựa trên mã
+    expect(subTitleElement).toHaveClass('text-typo-1'); // Kiểm tra class màu sắc dựa trên mã
     // Prop subTitle không có class mb-1 trong mã component, nên không kiểm tra nó ở đây
   });
 });
