@@ -23,7 +23,10 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={cn(nunitoSans.variable, 'font-primary')} suppressHydrationWarning>
+      <body
+        className={cn(nunitoSans.variable, 'font-primary customscrollbar')}
+        suppressHydrationWarning
+      >
         <MainProvider>
           <MainLayout>
             <main>{children}</main>
