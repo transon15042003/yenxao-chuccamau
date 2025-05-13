@@ -1,0 +1,512 @@
+[
+  {
+    "id": "yen-chung-tuoi-1",
+    "name": "Yến Vụn Chưng Tươi ",
+    "slug": "yen-vun-chung-tuoi",
+    "price": 80000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
+    "description": "Yến vụn chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": false,
+    "total": 312,
+    "totalSold": 201,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-2",
+    "name": "Yến Sợi Non Chưng Tươi ",
+    "slug": "yen-soi-non-chung-tuoi",
+    "price": 95000,
+    "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
+    "description": "Yến sợi non chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
+      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 267,
+    "totalSold": 44,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-3",
+    "name": "Yến Sợi Dài Chưng Tươi ",
+    "slug": "yen-soi-dai-chung-tuoi",
+    "price": 195000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 489,
+    "totalSold": 388,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-1-a",
+    "name": "Yến Vụn Chưng Tươi ",
+    "slug": "yen-vun-chung-tuoi",
+    "price": 80000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
+    "description": "Yến vụn chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 421,
+    "totalSold": 320,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-2-a",
+    "name": "Yến Sợi Non Chưng Tươi ",
+    "slug": "yen-soi-non-chung-tuoi",
+    "price": 95000,
+    "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
+    "description": "Yến sợi non chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
+      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 75,
+    "totalSold": 13,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-3-a",
+    "name": "Yến Sợi Dài Chưng Tươi ",
+    "slug": "yen-soi-dai-chung-tuoi",
+    "price": 195000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 399,
+    "totalSold": 212,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-1-b",
+    "name": "Yến Vụn Chưng Tươi ",
+    "slug": "yen-vun-chung-tuoi",
+    "price": 80000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
+    "description": "Yến vụn chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 492,
+    "totalSold": 491,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-2-b",
+    "name": "Yến Sợi Non Chưng Tươi ",
+    "slug": "yen-soi-non-chung-tuoi",
+    "price": 95000,
+    "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
+    "description": "Yến sợi non chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
+      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 180,
+    "totalSold": 77,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-3-b",
+    "name": "Yến Sợi Dài Chưng Tươi ",
+    "slug": "yen-soi-dai-chung-tuoi",
+    "price": 195000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 352,
+    "totalSold": 151,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-1-c",
+    "name": "Yến Vụn Chưng Tươi ",
+    "slug": "yen-vun-chung-tuoi",
+    "price": 80000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
+    "description": "Yến vụn chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 271,
+    "totalSold": 41,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-2-c",
+    "name": "Yến Sợi Non Chưng Tươi ",
+    "slug": "yen-soi-non-chung-tuoi",
+    "price": 95000,
+    "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg",
+    "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
+    "description": "Yến sợi non chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
+      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 498,
+    "totalSold": 497,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "yen-chung-tuoi-3-c",
+    "name": "Yến Sợi Dài Chưng Tươi ",
+    "slug": "yen-soi-dai-chung-tuoi",
+    "price": 195000,
+    "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg",
+    "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      {
+        "key": "ingredient",
+        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
+      },
+      {
+        "key": "ingredient",
+        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 59,
+    "totalSold": 2,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "set-qua-yen-chung-tuoi-1",
+    "name": "Set quà 4 chai",
+    "slug": "set-qua-4-chai",
+    "price": 1195000,
+    "thumbnail": "/images/products/set-qua/set-4.jpg",
+    "images": ["/images/products/set-qua/set-4.jpg"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["set-qua-yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Thành phần: Yến tươi nguyên chất + đường phèn." },
+      { "key": "ingredient", "value": "Dung tích mỗi chai: 330ml." },
+      {
+        "key": "ingredient",
+        "value": "Quy cách đóng gói: 4 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 401,
+    "totalSold": 400,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  },
+  {
+    "id": "set-qua-yen-chung-tuoi-2",
+    "name": "Set quà 8 chai",
+    "slug": "set-qua-8-chai",
+    "price": 2195000,
+    "thumbnail": "/images/products/set-qua/set-8.jpg",
+    "images": ["/images/products/"],
+    "description": "Yến sợi dài chưng tươi",
+    "categories": ["set-qua-yen-chung-tuoi"],
+    "specs": [
+      { "key": "size", "value": "100 gram" },
+      { "key": "size", "value": "200 gram" },
+      { "key": "size", "value": "300 gram" },
+      { "key": "ingredient", "value": "Thành phần: Yến tươi nguyên chất + đường phèn." },
+      { "key": "ingredient", "value": "Dung tích mỗi chai: 330ml." },
+      {
+        "key": "ingredient",
+        "value": "Quy cách đóng gói: 8 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
+      },
+      {
+        "key": "ingredient",
+        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+      },
+      { "key": "variant", "value": "đường phèn" },
+      { "key": "variant", "value": "hạt chia" },
+      { "key": "variant", "value": "hạt sen" },
+      { "key": "variant", "value": "lá dứa" }
+    ],
+    "isNew": true,
+    "total": 222,
+    "totalSold": 111,
+    "createdAt": "2024-05-11T00:00:00.000Z"
+  }
+]
