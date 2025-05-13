@@ -8,35 +8,112 @@
     "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
     "description": "Yến vụn chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
+      "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
       {
-        "key": "ingredient",
-        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
       },
       {
-        "key": "ingredient",
-        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+        "key": "savour",
+        "value": [" đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": false,
     "total": 312,
     "totalSold": 201,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-2",
@@ -47,29 +124,112 @@
     "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
     "description": "Yến sợi non chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh.",
+      "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
-      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
       {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
       },
       {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 267,
     "totalSold": 44,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-3",
@@ -80,35 +240,112 @@
     "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp.",
+      "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
       {
-        "key": "ingredient",
-        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
       },
       {
-        "key": "ingredient",
-        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 489,
     "totalSold": 388,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-1-a",
@@ -119,35 +356,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
     "description": "Yến vụn chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
+      "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 421,
     "totalSold": 320,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-2-a",
@@ -158,29 +466,106 @@
     "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
     "description": "Yến sợi non chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh.",
+      "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
-      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 75,
     "totalSold": 13,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-3-a",
@@ -191,35 +576,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp.",
+      "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 399,
     "totalSold": 212,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-1-b",
@@ -230,35 +686,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
     "description": "Yến vụn chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
+      "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 492,
     "totalSold": 491,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-2-b",
@@ -269,29 +796,106 @@
     "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
     "description": "Yến sợi non chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh.",
+      "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
-      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 180,
     "totalSold": 77,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-3-b",
@@ -302,35 +906,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp.",
+      "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 352,
     "totalSold": 151,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-1-c",
@@ -341,35 +1016,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"],
     "description": "Yến vụn chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
+      "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 271,
     "totalSold": 41,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-2-c",
@@ -380,29 +1126,106 @@
     "images": ["/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"],
     "description": "Yến sợi non chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh.",
+      "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Yến sợi non: 100% yến sợi non nguyên chất, có sợi mảnh." },
-      { "key": "ingredient", "value": "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa." },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 498,
     "totalSold": 497,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "yen-chung-tuoi-3-c",
@@ -413,35 +1236,106 @@
     "images": ["/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["yen-chung-tuoi"],
+    "ingredient": [
+      "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp.",
+      "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      {
-        "key": "ingredient",
-        "value": "Yến sợi dài: 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp."
-      },
-      {
-        "key": "ingredient",
-        "value": "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 59,
     "totalSold": 2,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "set-qua-yen-chung-tuoi-1",
@@ -452,29 +1346,106 @@
     "images": ["/images/products/set-qua/set-4.jpg"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["set-qua-yen-chung-tuoi"],
+    "ingredient": [
+      "Thành phần: Yến tươi nguyên chất + đường phèn.",
+      "Dung tích mỗi chai: 330ml.",
+      "Quy cách đóng gói: 4 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Thành phần: Yến tươi nguyên chất + đường phèn." },
-      { "key": "ingredient", "value": "Dung tích mỗi chai: 330ml." },
-      {
-        "key": "ingredient",
-        "value": "Quy cách đóng gói: 4 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 401,
     "totalSold": 400,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   },
   {
     "id": "set-qua-yen-chung-tuoi-2",
@@ -485,28 +1456,105 @@
     "images": ["/images/products/"],
     "description": "Yến sợi dài chưng tươi",
     "categories": ["set-qua-yen-chung-tuoi"],
+    "ingredient": [
+      "Thành phần: Yến tươi nguyên chất + đường phèn.",
+      "Dung tích mỗi chai: 330ml.",
+      "Quy cách đóng gói: 8 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm.",
+      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
+    ],
     "specs": [
-      { "key": "size", "value": "100 gram" },
-      { "key": "size", "value": "200 gram" },
-      { "key": "size", "value": "300 gram" },
-      { "key": "ingredient", "value": "Thành phần: Yến tươi nguyên chất + đường phèn." },
-      { "key": "ingredient", "value": "Dung tích mỗi chai: 330ml." },
-      {
-        "key": "ingredient",
-        "value": "Quy cách đóng gói: 8 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
-      },
-      {
-        "key": "ingredient",
-        "value": "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-      },
-      { "key": "variant", "value": "đường phèn" },
-      { "key": "variant", "value": "hạt chia" },
-      { "key": "variant", "value": "hạt sen" },
-      { "key": "variant", "value": "lá dứa" }
+      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
+      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
     ],
     "isNew": true,
     "total": 222,
     "totalSold": 111,
-    "createdAt": "2024-05-11T00:00:00.000Z"
+    "createdAt": "2024-05-11T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "X8G7H2J1",
+        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "price": 87200,
+        "stock": 112,
+        "isActive": true
+      },
+      {
+        "sku": "K2L9M3N4",
+        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 45,
+        "isActive": true
+      },
+      {
+        "sku": "P5Q6R7S8",
+        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "price": 88000,
+        "stock": 67,
+        "isActive": true
+      },
+      {
+        "sku": "T1U2V3W4",
+        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 99,
+        "isActive": true
+      },
+      {
+        "sku": "A9B8C7D6",
+        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "price": 88000,
+        "stock": 120,
+        "isActive": true
+      },
+      {
+        "sku": "E3F4G5H6",
+        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "price": 87000,
+        "stock": 33,
+        "isActive": true
+      },
+      {
+        "sku": "I7J8K9L0",
+        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "price": 80000,
+        "stock": 101,
+        "isActive": true
+      },
+      {
+        "sku": "M1N2O3P4",
+        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "price": 85000,
+        "stock": 77,
+        "isActive": true
+      },
+      {
+        "sku": "Q5R6S7T8",
+        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "price": 80000,
+        "stock": 55,
+        "isActive": true
+      },
+      {
+        "sku": "U1V2W3X4",
+        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "price": 90000,
+        "stock": 88,
+        "isActive": true
+      },
+      {
+        "sku": "Y5Z6A7B8",
+        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "price": 87000,
+        "stock": 60,
+        "isActive": true
+      },
+      {
+        "sku": "C1D2E3F4",
+        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "price": 81000,
+        "stock": 73,
+        "isActive": true
+      }
+    ]
   }
 ]
