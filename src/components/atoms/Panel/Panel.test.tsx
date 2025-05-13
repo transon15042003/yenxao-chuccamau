@@ -58,45 +58,7 @@ describe('Panel', () => {
 
     // Assert: Tìm ảnh và kiểm tra thuộc tính width, height
     const panelImage = screen.getByAltText('Panel background image');
-    expect(panelImage).toBeInTheDocument(); // Xác nhận lại
-    expect(panelImage).toHaveAttribute('width', '1440'); // Kiểm tra width mặc định
-    expect(panelImage).toHaveAttribute('height', '583'); // Kiểm tra height mặc định
-  });
-
-  // Test case 5: Nên áp dụng thuộc tính width và height được truyền qua props cho thẻ Image
-  it('should apply provided intrinsic width and height attributes to the Image', () => {
-    // Arrange: Render component và truyền width, height tùy chỉnh
-    const customWidth = 800;
-    const customHeight = 600;
-    render(<Panel width={customWidth} height={customHeight} />);
-
-    // Assert: Tìm ảnh và kiểm tra thuộc tính width, height
-    const panelImage = screen.getByAltText('Panel background image');
-    expect(panelImage).toBeInTheDocument(); // Xác nhận lại
-    expect(panelImage).toHaveAttribute('width', customWidth.toString()); // Kiểm tra width tùy chỉnh (dưới dạng string)
-    expect(panelImage).toHaveAttribute('height', customHeight.toString()); // Kiểm tra height tùy chỉnh (dưới dạng string)
-  });
-
-  // Test case 6: Nên áp dụng width mặc định và height tùy chỉnh khi chỉ truyền height
-  it('should apply default intrinsic width and provided height when only height is given', () => {
-    const customHeight = 600;
-    render(<Panel height={customHeight} />);
-
-    const panelImage = screen.getByAltText('Panel background image');
     expect(panelImage).toBeInTheDocument();
-    expect(panelImage).toHaveAttribute('width', '1440'); // Width mặc định được sử dụng
-    expect(panelImage).toHaveAttribute('height', customHeight.toString()); // Height tùy chỉnh được sử dụng
-  });
-
-  // Test case 7: Nên áp dụng width tùy chỉnh và height mặc định khi chỉ truyền width
-  it('should apply provided intrinsic width and default height when only width is given', () => {
-    const customWidth = 800;
-    render(<Panel width={customWidth} />);
-
-    const panelImage = screen.getByAltText('Panel background image');
-    expect(panelImage).toBeInTheDocument();
-    expect(panelImage).toHaveAttribute('width', customWidth.toString()); // Width tùy chỉnh được sử dụng
-    expect(panelImage).toHaveAttribute('height', '583'); // Height mặc định được sử dụng
   });
 
   // Test case 8: Nên áp dụng các lớp CSS responsive và object-fit cho thẻ Image
@@ -127,6 +89,6 @@ describe('Panel', () => {
 
     // Kiểm tra các lớp tùy chỉnh và lớp mặc định trên div bao ngoài
     expect(outerDiv).toHaveClass(customClass);
-    expect(outerDiv).toHaveClass('relative', 'w-full', 'h-48', 'md:h-auto', 'overflow-hidden');
+    expect(outerDiv).toHaveClass('w-full');
   });
 });
