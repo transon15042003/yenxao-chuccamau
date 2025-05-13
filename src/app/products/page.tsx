@@ -1,0 +1,71 @@
+import type { CategorySlug, Product, ProductSort } from '@/types/product';
+import { getCategories, getProducts } from 'src/services/product.service';
+
+import { Breadcrumb } from '@/components/molecules/Breadcrumb';
+import { ProductCategorySelect } from '@/components/molecules/ProductCategorySelect';
+import { ProductCategorySidebar } from '@/components/organisms/ProductCategorySidebar';
+
+import ProductArea from './_components/ProductArea';
+
+type PageNumber = number;
+
+export type ProductPageParams = {
+  p: PageNumber;
+  c: CategorySlug;
+  s: ProductSort;
+};
+
+const getSortByOptionValue = (
+  value: string
+): { sortField?: keyof Product; sortOrder?: 'asc' | 'desc' } => {
+  if (value === 'price-asc') {
+    return { sortField: 'price', sortOrder: 'asc' };
+  }
+  if (value === 'price-desc') {
+    return { sortField: 'price', sortOrder: 'desc' };
+  }
+
+  return { sortField: 'createdAt', sortOrder: 'desc' };
+};
+
+export default async function ProductsPage({
+  searchParams
+}: {
+  searchParams: Promise<ProductPageParams>;
+}) {
+  const { c, s, p } = await searchParams;
+
+  const categories = await getCategories();
+  const products = await getProducts({
+    page: p || 1,
+    take: 9,
+    categorySlug: c,
+    ...(s ? getSortByOptionValue(s) : {})
+  });
+
+  const metadata = products.metadata;
+
+  const categoryOptions = categories.map((cat) => ({
+    value: cat.slug,
+    label: cat.name
+  }));
+
+  return (
+    <div className="pb-16">
+      <Breadcrumb items={[{ label: 'Sản phẩm', href: '/products' }]} />
+      <div className="mt-8 mx-4 lg:max-w-[83%] lg:mx-auto 2xl:max-w-[1440px]">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="xl:w-[20%]">
+            <div className="hidden lg:block">
+              <ProductCategorySidebar categories={categories} />
+            </div>
+            <div className="block lg:hidden">
+              <ProductCategorySelect options={categoryOptions} value={c} />
+            </div>
+          </div>
+          <ProductArea products={products.data} metadata={metadata} />
+        </div>
+      </div>
+    </div>
+  );
+}
