@@ -4,9 +4,9 @@ import { Button } from '.';
 
 describe('Button', () => {
   it('should render the heading', () => {
-    render(<Button />);
+    render(<Button>Button</Button>);
 
     // Assert
-    screen.getByRole('heading', { name: /Button/i });
+    screen.getByRole('button', { name: /Button/i });
   });
 });
