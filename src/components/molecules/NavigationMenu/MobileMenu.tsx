@@ -15,18 +15,18 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-full left-0 w-full bg-[#a80d13] text-white z-50">
+    <div className="absolute top-full left-0 w-full bg-primary text-white z-50">
       <div className="flex flex-col p-4 gap-4">
         <Link
           href="/"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
           onClick={onClose}
         >
           TRANG CHỦ
         </Link>
         <Link
           href="/about"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
           onClick={onClose}
         >
           GIỚI THIỆU
@@ -34,12 +34,12 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         <div className="relative">
           <button
             type="button"
-            className="flex items-center gap-1 focus:outline-none text-lg text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059] group"
+            className="flex items-center gap-1 focus:outline-none text-lg text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90 group"
             onClick={() => setIsProductOpen(!isProductOpen)}
           >
             SẢN PHẨM
             <ChevronDownIcon
-              className={`w-4 h-4 ml-1 stroke-white group-hover:stroke-[#E6B522] ${isProductOpen ? 'rotate-180 stroke-[#E6B522]' : ''}`}
+              className={`w-4 h-4 ml-1 stroke-white group-hover:stroke-secondary ${isProductOpen ? 'rotate-180 stroke-secondary' : ''}`}
               strokeWidth={2}
             />
           </button>
@@ -47,14 +47,14 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         </div>
         <Link
           href="/blog"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
           onClick={onClose}
         >
           BLOG
         </Link>
         <Link
           href="/contact"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
           onClick={onClose}
         >
           LIÊN HỆ

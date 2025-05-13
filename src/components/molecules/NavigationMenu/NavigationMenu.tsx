@@ -36,13 +36,13 @@ const NavigationMenu = () => {
     <div className="flex items-center gap-[70px]">
       <Link
         href="/"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
       >
         TRANG CHỦ
       </Link>
       <Link
         href="/about"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
       >
         GIỚI THIỆU
       </Link>
@@ -51,15 +51,15 @@ const NavigationMenu = () => {
           type="button"
           className={`flex items-center gap-1 focus:outline-none group ${
             isMounted && open
-              ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#E6B522] via-[#FFF788] to-[#FFE059]'
-              : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]'
+              ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
+              : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
           }`}
           onClick={() => setOpen((v) => !v)}
         >
           SẢN PHẨM
           <ChevronDownIcon
             className={`w-4 h-4 ml-1 ${
-              isMounted && open ? 'stroke-[#E6B522]' : 'stroke-white group-hover:stroke-[#E6B522]'
+              isMounted && open ? 'stroke-secondary' : 'stroke-white group-hover:stroke-secondary'
             }`}
             strokeWidth={2}
           />
@@ -70,13 +70,13 @@ const NavigationMenu = () => {
       </div>
       <Link
         href="/blog"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
       >
         BLOG
       </Link>
       <Link
         href="/contact"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#E6B522] hover:via-[#FFF788] hover:to-[#FFE059]"
+        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
       >
         LIÊN HỆ
       </Link>

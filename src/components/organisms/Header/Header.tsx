@@ -42,9 +42,9 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <XMarkIcon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#E6B522] group-hover:via-[#FFF788] group-hover:to-[#FFE059]" />
+              <XMarkIcon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-secondary-gradient-90" />
             ) : (
-              <Bars3Icon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#E6B522] group-hover:via-[#FFF788] group-hover:to-[#FFE059]" />
+              <Bars3Icon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-secondary-gradient-90" />
             )}
           </button>
         </div>
