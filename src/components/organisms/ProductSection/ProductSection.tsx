@@ -6,201 +6,20 @@ import { StyledHeading } from '@/components/atoms/StyledHeading';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 import { ProductCard } from '@/components/molecules/ProductCard';
 
-export const ProductSection = () => {
-  // *** Bắt đầu Định nghĩa dữ liệu mẫu trực tiếp tại đây ***
-  interface ProductCardProps {
-    className?: string;
-    product: Product;
-    badge?: string;
-    progress?: {
-      total: number;
-      sold: number;
-      label?: string;
-    };
-    button: {
-      label: string;
-      onClick?: (product: Product) => void;
-      disabled?: boolean;
-    };
-    onAddToCart?: (product: Product) => void;
-    onViewDetail?: (product: Product) => void;
-  }
-  // Hàm helper để tạo nhanh một object Product mẫu (cần kiểu Product từ product.ts)
-  const createMockProduct = (
-    id: string,
-    name: string,
-    price: number,
-    thumbnail: string,
-    isNew: boolean = false,
-    discountPercent?: number,
-    totalSold?: number,
-    total?: number // Tổng số lượng cho progress bar
-  ): Product => ({
-    id,
-    name,
-    slug: name.toLowerCase().replace(/\s+/g, '-'),
-    price,
-    thumbnail,
-    images: [thumbnail, thumbnail.replace('.jpg', '-detail-1.jpg')],
-    description: `Mô tả chi tiết cho sản phẩm ${name}...`,
-    categories: ['cat-' + Math.floor(Math.random() * 5)],
-    ingredients: ['Thành phần mẫu 1', 'Thành phần mẫu 2'],
-    specs: [],
-    variants: [
-      { sku: `${id}-sku-std`, specs: { size: 'standard' }, price, stock: 50, isActive: true }
-    ],
-    isNew,
-    discountPercent,
-    discountAmount: discountPercent ? price * (discountPercent / 100) : undefined,
-    total,
-    totalSold,
-    createdAt: new Date().toISOString()
-  });
-
-  // Mảng chứa dữ liệu đầy đủ cho từng ProductCard (cần kiểu ProductCardProps từ ProductCard.tsx)
-  const mockProductCardData: ProductCardProps[] = [
-    {
-      product: createMockProduct(
-        'prod-ru-long-1a',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000, // Giá gốc mẫu
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Ảnh thumbnail mẫu (thay bằng đường dẫn ảnh thật)
-        false, // Không phải mới
-        20, // Giảm giá 20%
-        150, // Đã bán 150
-        200 // Tổng số cho progress bar
-      ),
-      badge: '-20%', // Hiển thị badge "-20%"
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' }, // Thông tin progress bar
-      button: { label: 'Mua ngay' }, // Thông tin nút
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name), // Hàm xử lý khi click thêm giỏ hàng
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug) // Hàm xử lý khi click xem chi tiết
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1b',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1c',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1d',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1e',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1f',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1g',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    },
-    {
-      product: createMockProduct(
-        'prod-ru-long-1h',
-        'Chân Yến Rút Lông - Loại 1',
-        12000000,
-        '/mock-images/ru-long-1h-thumb.jpg', // Replace with actual mock paths
-        false,
-        20,
-        150,
-        200
-      ),
-      badge: '-20%',
-      progress: { total: 200, sold: 150, label: 'Đã bán 150' },
-      button: { label: 'Mua ngay' },
-      onAddToCart: (product) => console.warn('Đã thêm vào giỏ hàng:', product.name),
-      onViewDetail: (product) => console.warn('Xem chi tiết:', product.slug)
-    }
-    // ... Thêm các object dữ liệu mẫu khác tại đây
-  ];
-
-  // *** Kết thúc Định nghĩa dữ liệu mẫu ***
-
+export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
   const router = useRouter();
+
+  const handleAddToCart = (product: Product) => {
+    alert(`Sản phẩm đã được thêm vào giỏ hàng: ${product.name}`);
+  };
+
+  const handleViewDetail = (product: Product) => {
+    router.push(`/products/${product.slug}`);
+  };
+
+  const handleButtonClick = (product: Product) => {
+    router.push(`/payment/${product.slug}`);
+  };
 
   return (
     <div
@@ -210,13 +29,38 @@ export const ProductSection = () => {
       <ChoiceGroup />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
-        {/* Lặp qua mảng dữ liệu mẫu và render ProductCard cho mỗi object */}
-        {mockProductCardData.map((cardData, index) => (
-          <ProductCard
-            key={cardData.product.id || index} // Sử dụng key duy nhất
-            {...cardData} // Truyền tất cả các thuộc tính từ cardData làm props
-          />
-        ))}
+        {initialBestSelling && initialBestSelling.length > 0 ? (
+          initialBestSelling.map((product) => (
+            <ProductCard
+              key={product.id} // Sử dụng product.id làm key (giả định id là duy nhất)
+              // *** Truyền props cho ProductCard từ dữ liệu thật của object Product ***
+              product={product} // Truyền toàn bộ object Product
+              // Tạo prop badge từ discountPercent (nếu có)
+              badge={product.discountPercent ? `-${product.discountPercent}%` : undefined}
+              // Tạo prop progress từ totalSold và total
+              progress={
+                product.totalSold !== undefined && product.total !== undefined
+                  ? {
+                      total: product.total,
+                      sold: product.totalSold,
+                      label: `Đã bán ${product.totalSold}` // Label hiển thị
+                    }
+                  : undefined // Nếu không có đủ dữ liệu total/totalSold, không hiển thị progress
+              }
+              // Tạo prop button
+              button={{
+                label: 'Mua ngay', // Label nút
+                onClick: handleButtonClick // Gắn hàm xử lý khi click nút
+              }}
+              // Gắn hàm xử lý khi click thêm giỏ hàng icon
+              onAddToCart={handleAddToCart}
+              // Gắn hàm xử lý khi click ảnh/tên để xem chi tiết
+              onViewDetail={handleViewDetail}
+            />
+          ))
+        ) : (
+          <p>Không có sản phẩm nổi bật nào.</p>
+        )}
       </div>
 
       <button

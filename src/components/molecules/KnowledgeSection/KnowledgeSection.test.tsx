@@ -3,6 +3,26 @@ import { render, screen } from '@/tests/test-utils'; // Giả định đường 
 
 import { KnowledgeSection } from './KnowledgeSection'; // Import component cần test
 
+// Sử dụng jest.mock để giả lập module 'next/navigation'
+// Cần đảm bảo đường dẫn 'next/navigation' là đúng với cách bạn import useRouter trong KnowledgeSection.tsx
+jest.mock('next/navigation', () => ({
+  // __esModule: true, // Có thể cần hoặc không tùy cấu hình Jest
+  useRouter: jest.fn(() => ({
+    // Giả lập các phương thức của router mà component KnowledgeSection sử dụng
+    push: jest.fn(), // Mock phương thức push
+    replace: jest.fn() // Mock các phương thức khác nếu cần
+    // pathname: '/mocked-path', // Giả lập các thuộc tính khác nếu cần
+    // query: {},
+    // asPath: '/mocked-path',
+    // events: { on: jest.fn(), off: jest.fn(), emit: jest.fn() },
+  }))
+  // Nếu component KnowledgeSection cũng import các thứ khác từ 'next/navigation'
+  // (như usePathname, useSearchParams), bạn cũng cần mock chúng ở đây.
+  // Ví dụ: usePathname: jest.fn(() => '/mocked-path'),
+  // useSearchParams: jest.fn(() => new URLSearchParams()),
+}));
+// *** Kết thúc Mock hook useRouter ***
+
 describe('KnowledgeSection', () => {
   // Test case 1: Kiểm tra xem tiêu đề chính "Tin Tức & Hướng Dẫn" có được hiển thị không
   test('renders the main title "Tin Tức & Hướng Dẫn"', () => {

@@ -1,7 +1,12 @@
+'use client';
+import { useRouter } from 'next/navigation';
+
 import { New } from '@/components/atoms/New';
 import { StyledHeading } from '@/components/atoms/StyledHeading';
 
 export const KnowledgeSection = () => {
+  const router = useRouter();
+
   return (
     // Container chính - cần có position 'relative' để phần tử nền 'absolute' hoạt động đúng
     // Thêm 'overflow-hidden' để cắt phần ảnh nền bị xoay nếu nó vượt ra ngoài
@@ -54,6 +59,7 @@ export const KnowledgeSection = () => {
       <button
         type="button"
         className="border-2 border-black px-4 py-2 rounded-lg text-[#2A2A40] font-semibold text-lg hover:bg-black hover:text-white relative z-10" // Thêm class z-index
+        onClick={() => router.push('/products')}
       >
         Xem tất cả sản phẩm
       </button>
