@@ -1,0 +1,13 @@
+{
+  "categories": [
+    {
+      "name": "Bánh tổ yến",
+      "comingSoon": true,
+      "link": "/products/banh-to-yen"
+    },
+    {
+      "name": "Yến Chưng Tươi",
+      "link": "/products/yen-chung-tuoi"
+    }
+  ]
+}
