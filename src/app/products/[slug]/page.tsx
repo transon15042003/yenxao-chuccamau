@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProductBySlug } from 'src/services/product.service';
+import { getProductBySlug, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
@@ -12,7 +12,12 @@ type ProductDetailPageProps = {
 const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
-  // const products = await getProducts();
+  const products = await getProducts({
+    page: 1,
+    take: 9,
+    categorySlug: '',
+    ...{}
+  });
 
   if (!product)
     return (
@@ -31,7 +36,7 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
           { label: product.name, href: product.slug }
         ]}
       />
-      <DetailProduct product={product} />
+      <DetailProduct product={product} products={products.data} />
     </div>
   );
 };

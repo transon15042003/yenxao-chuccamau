@@ -18,8 +18,8 @@ interface ProductSummaryProps {
 }
 
 const ProductSummary = ({ className, product }: ProductSummaryProps) => {
-  const listSize = product.specs.filter((el) => el.key === 'size');
-  const listFlavor = product.specs.filter((el) => el.key === 'variant');
+  const listSize = product.specs.find((el) => el.key === 'size');
+  const listFlavor = product.specs.find((el) => el.key === 'savour');
   const [size, setSize] = useState(0);
   const [flavor, setFlavor] = useState(0);
   const [amount, setAmount] = useState(1);
@@ -79,7 +79,7 @@ const ProductSummary = ({ className, product }: ProductSummaryProps) => {
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b>Size:</b>
-        {listSize.map((el, idx) => (
+        {listSize?.value.map((el, idx) => (
           <Button
             key={idx}
             variant="secondary"
@@ -90,13 +90,13 @@ const ProductSummary = ({ className, product }: ProductSummaryProps) => {
               size === idx && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
-            {el.value}
+            {el}
           </Button>
         ))}
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b>Hương vị:</b>
-        {listFlavor.map((el, idx) => (
+        {listFlavor?.value.map((el, idx) => (
           <Button
             key={idx}
             variant="secondary"
@@ -107,7 +107,7 @@ const ProductSummary = ({ className, product }: ProductSummaryProps) => {
               flavor === idx && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
-            {el.value}
+            {el}
           </Button>
         ))}
       </div>
