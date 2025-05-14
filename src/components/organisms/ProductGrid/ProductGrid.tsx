@@ -6,9 +6,8 @@ import { useRouter } from 'next/navigation';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
-import { convertProductToCartItem } from '@/lib/utils/product';
-
 import { cn } from '@/lib/utils';
+import { convertProductToCartItem } from '@/lib/utils/product';
 
 type ProductGridProps = {
   products: Product[];
