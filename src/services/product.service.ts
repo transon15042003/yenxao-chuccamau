@@ -84,6 +84,10 @@ export const getProductById = async (id: string): Promise<Product | null> => {
   return products.find((product: Product) => product.id === id) as Product | null;
 };
 
+export const getProductBySlug = async (slug: string): Promise<Product | null> => {
+  return products.find((product: Product) => product.slug === slug) as Product | null;
+};
+
 export const getProductsByCategory = async (categoryId: string): Promise<Product[]> => {
   return products.filter((product: Product) =>
     product.categories.some((cId) => cId === categoryId)
