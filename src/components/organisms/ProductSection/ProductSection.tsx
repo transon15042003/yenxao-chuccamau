@@ -206,7 +206,7 @@ export const ProductSection = () => {
       <StyledHeading title="Sản phẩm nổi bật" />
       <ChoiceGroup />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
         {/* Lặp qua mảng dữ liệu mẫu và render ProductCard cho mỗi object */}
         {mockProductCardData.map((cardData, index) => (
           <ProductCard
