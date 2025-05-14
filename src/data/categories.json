@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "name": "Bánh tổ yến",
+      "comingSoon": true,
+      "link": "/products/banh-to-yen"
+    },
+    {
+      "name": "Yến Chưng Tươi",
+      "link": "/products/yen-chung-tuoi"
+    },
+    {
+      "name": "Set Quà Yến Chưng Tươi",
+      "comingSoon": true,
+      "link": "/products/set-qua-yen-chung-tuoi"
+    },
+    {
+      "name": "Yến Chưng Sẵn Tiệt Trùng",
+      "link": "/products/yen-chung-san-tiet-trung"
+    },
+    {
+      "name": "Cháo & Súp (Yến)",
+      "link": "/products/chao-sup-yen"
+    },
+    {
+      "name": "Yến Sào Tinh Chế",
+      "link": "/products/yen-sao-tinh-che"
+    },
+    {
+      "name": "Tổ Yến Sào Thô",
+      "link": "/products/to-yen-sao-tho"
+    },
+    {
+      "name": "Topping",
+      "link": "/products/topping"
+    },
+    {
+      "name": "Món nên thử",
+      "link": "/products/mon-nen-thu"
+    },
+    {
+      "name": "Khác",
+      "link": "/products/khac"
+    }
+  ]
+}
