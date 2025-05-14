@@ -4,6 +4,9 @@ import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 
 import { ProductCard } from '@/components/molecules/ProductCard';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+
+import { convertProductToCartItem } from '@/lib/utils/product';
 
 type ProductGridProps = {
   products: Product[];
@@ -11,9 +14,10 @@ type ProductGridProps = {
 
 export const ProductGrid = ({ products }: ProductGridProps) => {
   const router = useRouter();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    console.warn(product);
+    addToCart(convertProductToCartItem(product));
   };
 
   const handleBuyNow = (product: Product) => {
