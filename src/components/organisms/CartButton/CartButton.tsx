@@ -1,7 +1,12 @@
 import React from 'react';
 
-const CartButton = () => (
-  <div className="relative">
+interface CartButtonProps {
+  itemCount: number;
+  onClick?: () => void;
+}
+
+const CartButton = ({ itemCount, onClick }: CartButtonProps) => (
+  <div className="relative" onClick={onClick} role="button">
     <svg
       className="w-6 h-6 md:w-7 md:h-7 text-white"
       fill="none"
@@ -14,7 +19,7 @@ const CartButton = () => (
       <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
     </svg>
     <span className="absolute -top-2 -right-2 bg-secondary text-primary text-xs font-bold rounded-full px-1.5 py-0.5">
-      0
+      {itemCount}
     </span>
   </div>
 );
