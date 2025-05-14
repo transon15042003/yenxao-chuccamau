@@ -10,6 +10,7 @@ export type ProductSort = 'price-asc' | 'price-desc' | 'new';
 
 export type ProductVariant = {
   sku: string;
+  name?: string;
   thumbnail: string;
   specs: Record<string, string>;
   price: number;

@@ -30,6 +30,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -38,6 +39,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -46,6 +48,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -54,6 +57,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -62,6 +66,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -70,6 +75,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -78,6 +84,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -86,6 +93,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -94,6 +102,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -102,6 +111,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -110,6 +120,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -118,6 +129,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -157,6 +169,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -165,6 +178,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -173,6 +187,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -181,6 +196,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -189,6 +205,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -197,6 +214,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -205,6 +223,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -213,6 +232,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -221,6 +241,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -229,6 +250,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -237,6 +259,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -245,6 +268,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -284,6 +308,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -292,6 +317,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -300,6 +326,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -308,6 +335,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -316,6 +344,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -324,6 +353,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -332,6 +362,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -340,6 +371,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -348,6 +380,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -356,6 +389,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -364,6 +398,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -372,6 +407,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -405,6 +441,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -413,6 +450,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -421,6 +459,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -429,6 +468,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -437,6 +477,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -445,6 +486,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -453,6 +495,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -461,6 +504,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -469,6 +513,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -477,6 +522,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -485,6 +531,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -493,6 +540,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -526,6 +574,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -534,6 +583,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -542,6 +592,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -550,6 +601,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -558,6 +610,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -566,6 +619,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -574,6 +628,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -582,6 +637,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -590,6 +646,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -598,6 +655,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -606,6 +664,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -614,6 +673,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -647,6 +707,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -655,6 +716,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -663,6 +725,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -671,6 +734,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -679,6 +743,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -687,6 +752,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -695,6 +761,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -703,6 +770,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -711,6 +779,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -719,6 +788,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -727,6 +797,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -735,6 +806,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -768,6 +840,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -776,6 +849,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -784,6 +858,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -792,6 +867,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -800,6 +876,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -808,6 +885,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -816,6 +894,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -824,6 +903,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -832,6 +912,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -840,6 +921,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -848,6 +930,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -856,6 +939,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -889,6 +973,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -897,6 +982,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -905,6 +991,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -913,6 +1000,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -921,6 +1009,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -929,6 +1018,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -937,6 +1027,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -945,6 +1036,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -953,6 +1045,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -961,6 +1054,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -969,6 +1063,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -977,6 +1072,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1010,6 +1106,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1018,6 +1115,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1026,6 +1124,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1034,6 +1133,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1042,6 +1142,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1050,6 +1151,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1058,6 +1160,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1066,6 +1169,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1074,6 +1178,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1082,6 +1187,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1090,6 +1196,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1098,6 +1205,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1131,6 +1239,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1139,6 +1248,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1147,6 +1257,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1155,6 +1266,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1163,6 +1275,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1171,6 +1284,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1179,6 +1293,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1187,6 +1302,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1195,6 +1311,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1203,6 +1320,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1211,6 +1329,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1219,6 +1338,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1252,6 +1372,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1260,6 +1381,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1268,6 +1390,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1276,6 +1399,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1284,6 +1408,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1292,6 +1417,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1300,6 +1426,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1308,6 +1435,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1316,6 +1444,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1324,6 +1453,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1332,6 +1462,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1340,6 +1471,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1373,6 +1505,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1381,6 +1514,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1389,6 +1523,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1397,6 +1532,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1405,6 +1541,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1413,6 +1550,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1421,6 +1559,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1429,6 +1568,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1437,6 +1577,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1445,6 +1586,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1453,6 +1595,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1461,6 +1604,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1494,6 +1638,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1502,6 +1647,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1510,6 +1656,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1518,6 +1665,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1526,6 +1674,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1534,6 +1683,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1542,6 +1692,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1550,6 +1701,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1558,6 +1710,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1566,6 +1719,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1574,6 +1728,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1582,6 +1737,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
@@ -1615,6 +1771,7 @@
     "variants": [
       {
         "sku": "X8G7H2J1",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
         "specs": { "size": "100 gram", "savour": " đường phèn" },
         "price": 87200,
         "stock": 112,
@@ -1623,6 +1780,7 @@
       },
       {
         "sku": "K2L9M3N4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
         "specs": { "size": "100 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 45,
@@ -1631,6 +1789,7 @@
       },
       {
         "sku": "P5Q6R7S8",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
         "specs": { "size": "100 gram", "savour": "hạt sen" },
         "price": 88000,
         "stock": 67,
@@ -1639,6 +1798,7 @@
       },
       {
         "sku": "T1U2V3W4",
+        "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
         "specs": { "size": "100 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 99,
@@ -1647,6 +1807,7 @@
       },
       {
         "sku": "A9B8C7D6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
         "specs": { "size": "200 gram", "savour": " đường phèn" },
         "price": 88000,
         "stock": 120,
@@ -1655,6 +1816,7 @@
       },
       {
         "sku": "E3F4G5H6",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
         "specs": { "size": "200 gram", "savour": "hạt chia" },
         "price": 87000,
         "stock": 33,
@@ -1663,6 +1825,7 @@
       },
       {
         "sku": "I7J8K9L0",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
         "specs": { "size": "200 gram", "savour": "hạt sen" },
         "price": 80000,
         "stock": 101,
@@ -1671,6 +1834,7 @@
       },
       {
         "sku": "M1N2O3P4",
+        "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
         "specs": { "size": "200 gram", "savour": "lá dứa" },
         "price": 85000,
         "stock": 77,
@@ -1679,6 +1843,7 @@
       },
       {
         "sku": "Q5R6S7T8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
         "specs": { "size": "300 gram", "savour": " đường phèn" },
         "price": 80000,
         "stock": 55,
@@ -1687,6 +1852,7 @@
       },
       {
         "sku": "U1V2W3X4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
         "specs": { "size": "300 gram", "savour": "hạt chia" },
         "price": 90000,
         "stock": 88,
@@ -1695,6 +1861,7 @@
       },
       {
         "sku": "Y5Z6A7B8",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
         "specs": { "size": "300 gram", "savour": "hạt sen" },
         "price": 87000,
         "stock": 60,
@@ -1703,6 +1870,7 @@
       },
       {
         "sku": "C1D2E3F4",
+        "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
         "specs": { "size": "300 gram", "savour": "lá dứa" },
         "price": 81000,
         "stock": 73,
