@@ -112,15 +112,15 @@ const ShippingPolicyPage = () => {
             </ul>
           </div>
         </div>
+        <Image
+          src="/images/chinhsach/chinhsach-2.png"
+          alt="Decorative corner"
+          width={300}
+          height={120}
+          className="absolute right-0 bottom-0 pointer-events-none select-none"
+          style={{ zIndex: 2 }}
+        />
       </div>
-      <Image
-        src="/images/chinhsach/chinhsach-2.png"
-        alt="Decorative corner"
-        width={300}
-        height={120}
-        className="absolute right-0 bottom-0 pointer-events-none select-none"
-        style={{ zIndex: 2 }}
-      />
     </div>
   );
 };
