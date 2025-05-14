@@ -29,108 +29,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-0-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-0-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-0-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-0-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-0-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-0-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-0-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-0-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-0-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-0-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-0-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-0-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -168,108 +204,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-1-0",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-1-1",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-1-2",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-1-3",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-1-4",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-1-5",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-1-6",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-1-7",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-1-8",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-1-9",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-1-10",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-1-11",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -307,108 +379,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-2-0",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-2-1",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-2-2",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-2-3",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-2-4",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-2-5",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-2-6",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-2-7",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-2-8",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-2-9",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-2-10",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-2-11",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -431,8 +539,14 @@
       "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 421,
@@ -440,108 +554,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-3-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-3-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-3-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-3-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-3-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-3-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-3-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-3-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-3-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-3-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-3-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-3-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -564,8 +714,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 75,
@@ -573,108 +729,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-4-0",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-4-1",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-4-2",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-4-3",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-4-4",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-4-5",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-4-6",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-4-7",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-4-8",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-4-9",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-4-10",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-4-11",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -697,8 +889,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 399,
@@ -706,108 +904,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-5-0",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-5-1",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-5-2",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-5-3",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-5-4",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-5-5",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-5-6",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-5-7",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-5-8",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-5-9",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-5-10",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-5-11",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -830,8 +1064,14 @@
       "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 492,
@@ -839,108 +1079,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-6-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-6-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-6-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-6-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-6-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-6-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-6-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-6-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-6-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-6-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-6-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-6-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -963,8 +1239,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 180,
@@ -972,108 +1254,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-7-0",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-7-1",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-7-2",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-7-3",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-7-4",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-7-5",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-7-6",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-7-7",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-7-8",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-7-9",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-7-10",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-7-11",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1096,8 +1414,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 352,
@@ -1105,108 +1429,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-8-0",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-8-1",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-8-2",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-8-3",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-8-4",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-8-5",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-8-6",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-8-7",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-8-8",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-8-9",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-8-10",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-8-11",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1229,8 +1589,14 @@
       "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 271,
@@ -1238,108 +1604,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-9-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-9-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-9-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-9-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-9-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-9-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-9-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-9-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-9-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-9-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-9-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-9-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1362,8 +1764,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 498,
@@ -1371,108 +1779,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-10-0",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-10-1",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-10-2",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-10-3",
         "name": "Yến Sợi Non Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-10-4",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-10-5",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-10-6",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-10-7",
         "name": "Yến Sợi Non Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-10-8",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-10-9",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-10-10",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-10-11",
         "name": "Yến Sợi Non Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1495,8 +1939,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 59,
@@ -1504,108 +1954,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-11-0",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-11-1",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-11-2",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-11-3",
         "name": "Yến Sợi Dài Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-11-4",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-11-5",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-11-6",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-11-7",
         "name": "Yến Sợi Dài Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-11-8",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-11-9",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-11-10",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-dai-hat-chia.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-11-11",
         "name": "Yến Sợi Dài Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1628,8 +2114,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 401,
@@ -1637,108 +2129,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-12-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-12-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-12-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-12-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-12-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-12-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-12-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-12-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-12-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-12-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-12-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-12-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
@@ -1761,8 +2289,14 @@
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất. Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
     ],
     "specs": [
-      { "key": "size", "value": ["100 gram", "200 gram", "300 gram"] },
-      { "key": "savour", "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"] }
+      {
+        "key": "size",
+        "value": ["100 gram", "200 gram", "300 gram"]
+      },
+      {
+        "key": "savour",
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+      }
     ],
     "isNew": true,
     "total": 222,
@@ -1770,108 +2304,144 @@
     "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "X8G7H2J1",
+        "sku": "SKU-13-0",
         "name": "Yến Vụn Chưng Tươi  - 100 gram -  đường phèn",
-        "specs": { "size": "100 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "100 gram",
+          "savour": " đường phèn"
+        },
         "price": 87200,
         "stock": 112,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "K2L9M3N4",
+        "sku": "SKU-13-1",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt chia",
-        "specs": { "size": "100 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 45,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "P5Q6R7S8",
+        "sku": "SKU-13-2",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - hạt sen",
-        "specs": { "size": "100 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "hạt sen"
+        },
         "price": 88000,
         "stock": 67,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "T1U2V3W4",
+        "sku": "SKU-13-3",
         "name": "Yến Vụn Chưng Tươi  - 100 gram - lá dứa",
-        "specs": { "size": "100 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "100 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 99,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "A9B8C7D6",
+        "sku": "SKU-13-4",
         "name": "Yến Vụn Chưng Tươi  - 200 gram -  đường phèn",
-        "specs": { "size": "200 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "200 gram",
+          "savour": " đường phèn"
+        },
         "price": 88000,
         "stock": 120,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "E3F4G5H6",
+        "sku": "SKU-13-5",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt chia",
-        "specs": { "size": "200 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt chia"
+        },
         "price": 87000,
         "stock": 33,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "I7J8K9L0",
+        "sku": "SKU-13-6",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - hạt sen",
-        "specs": { "size": "200 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "hạt sen"
+        },
         "price": 80000,
         "stock": 101,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "M1N2O3P4",
+        "sku": "SKU-13-7",
         "name": "Yến Vụn Chưng Tươi  - 200 gram - lá dứa",
-        "specs": { "size": "200 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "200 gram",
+          "savour": "lá dứa"
+        },
         "price": 85000,
         "stock": 77,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Q5R6S7T8",
+        "sku": "SKU-13-8",
         "name": "Yến Vụn Chưng Tươi  - 300 gram -  đường phèn",
-        "specs": { "size": "300 gram", "savour": " đường phèn" },
+        "specs": {
+          "size": "300 gram",
+          "savour": " đường phèn"
+        },
         "price": 80000,
         "stock": 55,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "U1V2W3X4",
+        "sku": "SKU-13-9",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt chia",
-        "specs": { "size": "300 gram", "savour": "hạt chia" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt chia"
+        },
         "price": 90000,
         "stock": 88,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "Y5Z6A7B8",
+        "sku": "SKU-13-10",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - hạt sen",
-        "specs": { "size": "300 gram", "savour": "hạt sen" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "hạt sen"
+        },
         "price": 87000,
         "stock": 60,
         "isActive": true,
         "thumbnail": "/images/products/yen-chung-tuoi/yen-vun-duong-phen.jpg"
       },
       {
-        "sku": "C1D2E3F4",
+        "sku": "SKU-13-11",
         "name": "Yến Vụn Chưng Tươi  - 300 gram - lá dứa",
-        "specs": { "size": "300 gram", "savour": "lá dứa" },
+        "specs": {
+          "size": "300 gram",
+          "savour": "lá dứa"
+        },
         "price": 81000,
         "stock": 73,
         "isActive": true,
