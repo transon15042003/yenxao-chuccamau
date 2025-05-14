@@ -1,14 +1,12 @@
-import Breadcrumb from '@/components/templates/Breadcrumb/Breadcrumb';
+﻿import type { Metadata } from 'next';
 
-interface SubLayoutProps {
-  children: React.ReactNode;
-}
+export const metadata: Metadata = {
+  title: 'Sản phẩm',
+  description: 'Sản phẩm'
+};
 
-const SubLayout = ({ children }: SubLayoutProps) => (
-  <div>
-    <Breadcrumb />
-    <div>{children}</div>
-  </div>
-);
+const ProductsLayout = ({ children }: { children: React.ReactNode }) => {
+  return <div className="bg-white">{children}</div>;
+};
 
-export default SubLayout;
+export default ProductsLayout;

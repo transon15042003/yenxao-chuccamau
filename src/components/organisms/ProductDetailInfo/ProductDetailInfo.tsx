@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button/Button';
+import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
 
 import { cn } from '@/lib/utils';

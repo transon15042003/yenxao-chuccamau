@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button/Button';
+import { Button } from '@/components/atoms/Button';
 import Img from '@/components/atoms/Image/Image';
 
 import { cn } from '@/lib/utils';
@@ -15,14 +15,16 @@ const ImgSlider = ({ className }: ImgSliderProps) => (
     )}
   >
     <Button
-      variant="fill"
-      className="absolute block top-1/2 -translate-y-1/2 left-0 rounded-full w-[24px] h-[24px] opacity-80 lg:hidden"
+      variant="primary"
+      fill="fill"
+      className="absolute block top-1/2 -translate-y-1/2 left-0 rounded-full p-0 w-[24px] h-[24px] opacity-80 lg:hidden"
     >
       &lt;
     </Button>
     <Button
-      variant="fill"
-      className="absolute hidden rounded-full w-[24px] h-[24px] opacity-80 lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:block"
+      variant="primary"
+      fill="fill"
+      className="absolute hidden rounded-full w-[24px] h-[24px] p-0 opacity-80 lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:block"
     >
       ^
     </Button>
@@ -52,14 +54,16 @@ const ImgSlider = ({ className }: ImgSliderProps) => (
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3 hidden lg:block"
     />
     <Button
-      variant="fill"
-      className="absolute block bottom-1/2 translate-y-1/2 right-0 rounded-full w-[24px] h-[24px] opacity-80 lg:hidden"
+      variant="primary"
+      fill="fill"
+      className="absolute block bottom-1/2 translate-y-1/2 right-0 rounded-full p-0 w-[24px] h-[24px] opacity-80 lg:hidden"
     >
       &gt;
     </Button>
     <Button
-      variant="fill"
-      className="absolute hidden rounded-full w-[24px] h-[24px] opacity-80 lg:right-1/2 lg:bottom-0 lg:translate-x-1/2 lg:block"
+      variant="primary"
+      fill="fill"
+      className="absolute hidden rounded-full w-[24px] h-[24px] p-0 opacity-80 lg:right-1/2 lg:bottom-2 lg:translate-x-1/2 lg:block"
     >
       v
     </Button>

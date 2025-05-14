@@ -20,13 +20,18 @@ module.exports = {
       },
       colors: {
         primary: {
-          DEFAULT: '#D62C35'
+          DEFAULT: '#D62C35',
+          light: '#FF4148'
         },
         secondary: {
           DEFAULT: '#FFEB70'
         },
         typo: {
-          1: '#424B5A'
+          1: '#424B5A',
+          2: '#2A2A40'
+        },
+        ground: {
+          1: '#F5F5F5'
         }
       },
       backgroundImage: {

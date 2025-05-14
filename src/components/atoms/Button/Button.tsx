@@ -1,19 +1,28 @@
+import { HTMLAttributes } from 'react';
+
 import { cn } from '@/lib/utils';
 
-interface ButtonProps {
-  variant: 'fill' | 'outline' | 'text';
+export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary';
   children: React.ReactNode;
-  className?: string;
-}
-
-const btnStyle = {
-  fill: 'rounded-[5px] bg-[#D62C35] text-white cursor-pointer',
-  outline: 'border border-[2A2A40] rounded-[5px] bg-transparent text-[2A2A40] cursor-pointer',
-  text: 'cursor-pointer'
+  fill?: 'fill' | 'outline';
 };
-
-const Button = ({ variant, children, className }: ButtonProps) => (
-  <button className={cn('text-center', btnStyle[variant], className)}>{children}</button>
+export const Button = ({
+  className,
+  variant = 'primary',
+  children,
+  fill = 'fill',
+  ...props
+}: ButtonProps) => (
+  <button
+    {...props}
+    className={cn(
+      'rounded-[5px] w-[250px] py-1.5 font-medium px-4',
+      variant === 'primary' ? 'bg-primary text-white' : 'bg-secondary text-typo-1',
+      fill === 'outline' ? 'bg-transparent border border-primary' : '',
+      className
+    )}
+  >
+    {children}
+  </button>
 );
-
-export default Button;
