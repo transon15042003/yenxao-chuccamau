@@ -1,5 +1,6 @@
 'use client';
 import { Product } from '@/types/product';
+import { useRouter } from 'next/navigation';
 
 import { StyledHeading } from '@/components/atoms/StyledHeading';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
@@ -199,6 +200,8 @@ export const ProductSection = () => {
 
   // *** Kết thúc Định nghĩa dữ liệu mẫu ***
 
+  const router = useRouter();
+
   return (
     <div
       className={`w-full py-[50px] bg-[url('/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
@@ -219,6 +222,7 @@ export const ProductSection = () => {
       <button
         type="button"
         className="border-2 border-black px-4 py-2 rounded-lg text-[#2A2A40] font-semibold text-lg hover:bg-black hover:text-white"
+        onClick={() => router.push('/products')}
       >
         Xem tất cả sản phẩm
       </button>

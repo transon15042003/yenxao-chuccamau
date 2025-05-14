@@ -4,7 +4,7 @@ import { QuoteSection } from '.';
 
 describe('QuoteSection', () => {
   it('should render the heading', () => {
-    render(<QuoteSection />);
+    render(<QuoteSection initialQuotes={[]} />);
 
     // Assert
     screen.getByText('Khách Hàng Nói Gì Về Chúng Tôi');
