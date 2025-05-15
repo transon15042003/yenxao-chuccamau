@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { DirectionControl } from '@/components/atoms/DirectionControl';
 import { Quote } from '@/components/atoms/Quote';
 
-import SectionTitle from '../SectionTitle/SectionTitle';
+import SectionTitle from '../../molecules/SectionTitle/SectionTitle';
 
 export const QuoteSection = ({
   initialQuotes,

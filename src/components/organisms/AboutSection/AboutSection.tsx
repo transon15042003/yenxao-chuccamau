@@ -1,6 +1,6 @@
 import Intro from '@/components/organisms/Home/Intro/Intro';
 
-import { Certificates } from '../Certificates';
+import { Certificates } from '../../molecules/Certificates';
 
 export const AboutSection = () => (
   <div className="w-full h-auto md:h-[917px] flex flex-col items-center justify-around py-[70px] relative overflow-hidden">

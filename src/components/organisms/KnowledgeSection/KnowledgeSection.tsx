@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 
 import { New } from '@/components/atoms/New';
 
-import SectionTitle from '../SectionTitle/SectionTitle';
+import SectionTitle from '../../molecules/SectionTitle/SectionTitle';
 
 export const KnowledgeSection = () => {
   const router = useRouter();

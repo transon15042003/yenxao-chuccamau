@@ -4,10 +4,10 @@ import { getProducts } from 'src/services/product.service';
 import { getQuotes } from 'src/services/quote.service';
 
 import { Panel } from '@/components/atoms/Panel';
-import { AboutSection } from '@/components/molecules/AboutSection';
-import { KnowledgeSection } from '@/components/molecules/KnowledgeSection';
-import { QuoteSection } from '@/components/molecules/QuoteSection';
+import { AboutSection } from '@/components/organisms/AboutSection';
+import { KnowledgeSection } from '@/components/organisms/KnowledgeSection';
 import { ProductSection } from '@/components/organisms/ProductSection';
+import { QuoteSection } from '@/components/organisms/QuoteSection';
 
 const HomePage = async () => {
   try {
