@@ -27,38 +27,33 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
 
   return (
     <div
-      className={`w-full py-[50px] bg-[url('/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
+      className={`w-full py-[50px] bg-[url('/images/backgrounds/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
     >
       <SectionTitle heading="Sản phẩm nổi bật" />
       <ChoiceGroup />
 
+      {/* This div creates a responsive grid layout for products. Using Tailwind columns (1 col on small, 2 on medium, 4 on large). Loop and map data from initialBestSelling - forwarded by props */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
         {initialBestSelling && initialBestSelling.length > 0 ? (
           initialBestSelling.map((product) => (
             <ProductCard
-              key={product.id} // Sử dụng product.id làm key (giả định id là duy nhất)
-              // *** Truyền props cho ProductCard từ dữ liệu thật của object Product ***
-              product={product} // Truyền toàn bộ object Product
-              // Tạo prop badge từ discountPercent (nếu có)
+              key={product.id}
+              product={product}
               badge={product.discountPercent ? `-${product.discountPercent}%` : undefined}
-              // Tạo prop progress từ totalSold và total
               progress={
                 product.totalSold !== undefined && product.total !== undefined
                   ? {
                       total: product.total,
                       sold: product.totalSold,
-                      label: `Đã bán ${product.totalSold}` // Label hiển thị
+                      label: `Đã bán ${product.totalSold}`
                     }
-                  : undefined // Nếu không có đủ dữ liệu total/totalSold, không hiển thị progress
+                  : undefined
               }
-              // Tạo prop button
               button={{
-                label: 'Mua ngay', // Label nút
-                onClick: handleButtonClick // Gắn hàm xử lý khi click nút
+                label: 'Mua ngay',
+                onClick: handleButtonClick
               }}
-              // Gắn hàm xử lý khi click thêm giỏ hàng icon
               onAddToCart={handleAddToCart}
-              // Gắn hàm xử lý khi click ảnh/tên để xem chi tiết
               onViewDetail={handleViewDetail}
             />
           ))

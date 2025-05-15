@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { Star } from '@/svg/StarSVG/StarSVG';
 
 type QuoteProps = {
   className?: string;
@@ -9,20 +9,10 @@ type QuoteProps = {
 };
 
 export const Quote = (props: QuoteProps) => {
-  // Hàm tạo các icon sao dựa trên prop rate
   const renderRatingStars = () => {
     const stars = [];
     for (let i = 0; i < props.rate; i++) {
-      stars.push(
-        <Image
-          key={i}
-          src="/icon_star.svg"
-          width={24}
-          height={24}
-          alt={`star-${i + 1}`}
-          className="inline-block"
-        />
-      );
+      stars.push(<Star key={i} className="inline-block" />);
     }
 
     return stars;
@@ -34,7 +24,7 @@ export const Quote = (props: QuoteProps) => {
       <div className="flex flex-row items-center justify-start">
         <img
           className={`inline-block h-8 w-8 rounded-full ring-2 ring-white mr-2`}
-          src={props.avatarSrc}
+          src={`/images/${props.avatarSrc}`}
           alt="avatar"
         />
         <p className="pb-0 mr-2 font-medium">{props.username}</p>

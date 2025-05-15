@@ -3,11 +3,14 @@ import Intro from '@/components/organisms/Home/Intro/Intro';
 import { Certificates } from '../../molecules/Certificates';
 
 export const AboutSection = () => (
-  <div className="w-full h-auto md:h-[917px] flex flex-col items-center justify-around py-[70px] relative overflow-hidden">
+  <div
+    data-testid="aboutsection-box"
+    className="w-full h-auto md:h-[917px] flex flex-col items-center justify-around py-[70px] relative overflow-hidden"
+  >
     {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
     <div
       className="absolute w-full h-full
-                   bg-[url('/scrath.png')] bg-contain bg-bottom bg-no-repeat opacity-[.07] z-0"
+                   bg-[url('/images/backgrounds/scrath.png')] bg-contain bg-bottom bg-no-repeat opacity-[.07] z-0"
       style={{
         transform: 'rotate(65.33deg) scale(1.5)',
         top: '-120px',

@@ -1,3 +1,7 @@
+import { HygieneSVG } from '@/svg/CertificateSVG/HygieneSVG';
+import { NaturalSVG } from '@/svg/CertificateSVG/NaturalSVG';
+import { QualitySVG } from '@/svg/CertificateSVG/QualitySVG';
+
 import { Certificate } from '@/components/atoms/Certificate';
 
 export const Certificates = () => (
@@ -6,17 +10,17 @@ export const Certificates = () => (
     className="flex md:flex-row flex-col justify-center items-center"
   >
     <Certificate
-      certificateSrc="certificates/Group 8245.svg"
+      SvgIconComponent={<QualitySVG className="w-32 h-32" />}
       title="Chất Lượng"
       subTitle="Sản phẩm được kiểm định chất lượng nghiêm ngặt, đảm bảo an toàn"
     />
     <Certificate
-      certificateSrc="certificates/Group 8246.svg"
+      SvgIconComponent={<HygieneSVG className="w-32 h-32" />}
       title="Vệ Sinh"
       subTitle="Quy trình sản xuất đạt tiêu chuẩn vệ sinh an toàn thực phẩm"
     />
     <Certificate
-      certificateSrc="certificates/Group.svg"
+      SvgIconComponent={<NaturalSVG className="w-32 h-32" />}
       title="Tự Nhiên"
       subTitle="Nguyên liệu tự nhiên, không chất bảo quản, phụ gia độc hại"
     />

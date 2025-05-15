@@ -35,7 +35,7 @@ describe('Panel', () => {
     // Assert: Tìm ảnh bằng alt text và kiểm tra thuộc tính src
     const panelImage = screen.getByAltText('Panel background image');
     expect(panelImage).toBeInTheDocument(); // Xác nhận lại
-    expect(panelImage).toHaveAttribute('src', '/img_panel.svg'); // Kiểm tra đường dẫn src mặc định
+    expect(panelImage).toHaveAttribute('src', '/images/backgrounds/img_panel.svg'); // Kiểm tra đường dẫn src mặc định
     // Alt text 'Panel background image' đã được kiểm tra bởi getByAltText
   });
 

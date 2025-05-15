@@ -13,6 +13,7 @@ const categories = categoryData as unknown as Category[];
 type QueryProduct = QueryResource<Product> & {
   categorySlug?: string;
 };
+
 export const getProducts = async (
   query?: QueryProduct
 ): Promise<QueryResourceResponse<Product>> => {
@@ -78,6 +79,15 @@ export const getProducts = async (
       totalPages
     }
   };
+};
+
+export const getBestSellingProduct = async () => {
+  return await getProducts({
+    page: 1,
+    take: 8,
+    sortField: 'totalSold',
+    sortOrder: 'desc'
+  });
 };
 
 export const getProductById = async (id: string): Promise<Product | null> => {

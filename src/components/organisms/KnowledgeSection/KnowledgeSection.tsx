@@ -13,7 +13,7 @@ export const KnowledgeSection = () => {
       {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
       <div
         className="absolute w-full h-full
-                   bg-[url('/scrath.png')] bg-contain bg-bottom bg-no-repeat opacity-[.07] z-0"
+                   bg-[url('/images/backgrounds/scrath.png')] bg-contain bg-bottom bg-no-repeat opacity-[.07] z-0"
         style={{
           transform: 'rotate(65.33deg) scale(1.5)',
           top: '-120px',

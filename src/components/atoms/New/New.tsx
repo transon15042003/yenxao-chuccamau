@@ -1,3 +1,4 @@
+import { ArrowRightSVG } from '@/svg/ArrowRightSVG/ArrowRightSVG';
 import Image from 'next/image';
 import Link from 'next/link'; // Import Link từ next/link cho việc định tuyến
 import React from 'react';
@@ -75,7 +76,8 @@ export const New = (props: NewProps) => {
         >
           {/* Sử dụng span hoặc div làm phần tử con của Link, flex để căn giữa chữ và icon */}
           <p className={`text-lg font-bold leading-6 text-primary`}>Xem Thêm</p>
-          <Image src="/icon_arrow_right.svg" width={24} height={24} alt="" />
+          {/* <Image src="/icon_arrow_right.svg" width={24} height={24} alt="" /> */}
+          <ArrowRightSVG />
         </Link>
       </div>
     </div>

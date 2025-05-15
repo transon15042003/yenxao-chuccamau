@@ -1,6 +1,6 @@
 import { QueryResourceResponse } from '@/types/common';
 import { Quote as QuoteType } from '@/types/quote';
-import { getProducts } from 'src/services/product.service';
+import { getBestSellingProduct } from 'src/services/product.service';
 import { getQuotes } from 'src/services/quote.service';
 
 import { Panel } from '@/components/atoms/Panel';
@@ -12,22 +12,14 @@ import { QuoteSection } from '@/components/organisms/QuoteSection';
 const HomePage = async () => {
   try {
     const quotesResponse: QueryResourceResponse<QuoteType> = await getQuotes({ limit: 5 });
-    const bestSellingProducts = await getProducts({
-      page: 1,
-      take: 8,
-      sortField: 'totalSold',
-      sortOrder: 'desc'
-    });
-
-    // Lấy mảng dữ liệu quotes từ response
-    const initialQuotesData = quotesResponse.data;
+    const bestSellingProducts = await getBestSellingProduct();
 
     return (
       <div className="min-h-[1000px]">
         <Panel />
         <AboutSection />
         <ProductSection initialBestSelling={bestSellingProducts.data} />
-        <QuoteSection initialQuotes={initialQuotesData} />
+        <QuoteSection initialQuotes={quotesResponse.data} />
         <KnowledgeSection />
       </div>
     );
