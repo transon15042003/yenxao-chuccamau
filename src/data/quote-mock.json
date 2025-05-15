@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "content": "Mình đã thử nhiều loại yến trước đây, nhưng yến ở đây thực sự khác biệt. Sợi yến dày, thơm tự nhiên, ăn vào cảm nhận rõ độ ngọt thanh. Gia đình mình ai cũng khen ngon và hỏi mua thêm!",
+    "avatarSrc": "/avatars/female.png",
+    "username": "Chị Minh Anh",
+    "rate": 5,
+    "createdAt": "2025-05-10T10:33:00"
+  },
+  {
+    "id": 2,
+    "content": "Tôi thường xuyên dùng yến để bồi bổ sức khỏe và đã mua của nhiều nơi. Nhưng phải nói thật, yến ở đây làm mình cực kỳ yên tâm: sạch, nguyên chất, giao hàng nhanh. Rất đáng để gắn bó lâu dài.",
+    "avatarSrc": "/avatars/male.jpg",
+    "username": "Anh Quốc Bảo",
+    "rate": 5,
+    "createdAt": "2025-04-14T10:33:00"
+  },
+  {
+    "id": 3,
+    "content": "Spa của mình hay đặt yến để tặng khách VIP, vì vừa sang trọng vừa tốt cho sức khỏe. Yến ở đây rất dễ chưng. Khách nhận đều rất hài lòng!",
+    "avatarSrc": "/avatars/female.png",
+    "username": "Chị Phương Linh",
+    "rate": 5,
+    "createdAt": "2025-05-14T10:33:00"
+  },
+  {
+    "id": 4,
+    "content": "Bận rộn nên mình chọn yến làm thực phẩm bồi bổ cho cả nhà. Yến giao tới rất sạch, chỉ cần sơ chế nhẹ là có thể dùng ngay. Từ ngày cả nhà dùng yến thường xuyên, ai cũng khỏe mạnh hơn rõ rệt.",
+    "avatarSrc": "/avatars/male.jpg",
+    "username": "Anh Tuấn Kiệt",
+    "rate": 4,
+    "createdAt": "2021-05-14T10:33:00"
+  }
+]
