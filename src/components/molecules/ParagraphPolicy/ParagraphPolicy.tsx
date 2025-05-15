@@ -8,7 +8,7 @@ import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
 import { UnOrderedList } from '@/components/atoms/UnOrderedList/UnOderedList';
 
 const ParagraphPolicy = () => (
-  <div className="relative px-2 pt-[32px] pb-[48px] bg-white bg-opacity-50 rounded-[10px] lg:col-span-10 lg:col-start-2">
+  <div className="relative px-4 pt-[32px] pb-[48px] bg-white bg-opacity-50 rounded-[10px] lg:col-span-10 lg:col-start-2 lg:px-[82px]">
     <SectionHeading className="text-[40px] text-center mb-4 leading-[45px]">
       {returnPage.heading}
     </SectionHeading>
