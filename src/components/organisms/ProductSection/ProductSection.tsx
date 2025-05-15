@@ -2,9 +2,9 @@
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 
-import { StyledHeading } from '@/components/atoms/StyledHeading';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 import { ProductCard } from '@/components/molecules/ProductCard';
+import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 
 export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
   const router = useRouter();
@@ -25,7 +25,7 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
     <div
       className={`w-full py-[50px] bg-[url('/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
     >
-      <StyledHeading title="Sản phẩm nổi bật" />
+      <SectionTitle heading="Sản phẩm nổi bật" />
       <ChoiceGroup />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">

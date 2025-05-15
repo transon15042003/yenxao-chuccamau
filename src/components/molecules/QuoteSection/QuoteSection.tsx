@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 import { DirectionControl } from '@/components/atoms/DirectionControl';
 import { Quote } from '@/components/atoms/Quote';
-import { StyledHeading } from '@/components/atoms/StyledHeading';
+
+import SectionTitle from '../SectionTitle/SectionTitle';
 
 export const QuoteSection = ({
   initialQuotes,
@@ -50,14 +51,13 @@ export const QuoteSection = ({
 
       <div className="w-full md:w-1/2 h-auto flex flex-col items-center justify-between px-4 md:px-0">
         {/* StyledHeading, hr, Quote, DirectionControl giữ nguyên cấu trúc bên trong */}
-        <StyledHeading
-          title="Khách Hàng Nói Gì Về Chúng Tôi"
-          subTitle="Trải nghiệm thực tế từ khách hàng đã sử dụng sản phẩm"
+        <SectionTitle
+          heading="Khách Hàng Nói Gì Về Chúng Tôi"
+          subHeading="Trải nghiệm thực tế từ khách hàng đã sử dụng sản phẩm"
         />
         <hr className="w-full h-0.5 bg-typo-1 my-4" />
         <div className="w-full md:hidden inline-flex flex-row justify-start mb-7">
           <img src="/quotes/Vector.png" width={72} alt="Decorative quote icon" />{' '}
-          {/* Thêm alt text mô tả hơn */}
         </div>
         {/* *** Hiển thị Trích dẫn hoặc thông báo rỗng/lỗi từ props *** */}
         {errorMessage && <p className="text-red-500">{errorMessage}</p>}{' '}
@@ -91,7 +91,6 @@ export const QuoteSection = ({
       {/* *** Điều chỉnh div chứa Vector phải *** */}
       <div className="hidden md:inline-flex h-96 flex-col justify-end">
         <img src="/quotes/Vector-1.png" width={114} alt="Decorative quote icon" />{' '}
-        {/* Thêm alt text mô tả hơn */}
       </div>
     </div>
   );
