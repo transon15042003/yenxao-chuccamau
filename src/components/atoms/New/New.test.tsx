@@ -28,7 +28,7 @@ import { New } from './New';
 
 describe('New', () => {
   const mockProps = {
-    imageUrl: '/test-article-image.png',
+    imageUrl: 'test-article-image.png',
     date: 'Nov 20, 2023',
     readTime: '10 min',
     title: 'Cách sử dụng Yến sào hiệu quả nhất',
@@ -41,7 +41,7 @@ describe('New', () => {
 
     const imageElement = screen.getByAltText(mockProps.title);
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', mockProps.imageUrl);
+    expect(imageElement).toHaveAttribute('src', '/images/backgrounds/' + mockProps.imageUrl);
 
     expect(screen.getByText(mockProps.date)).toBeInTheDocument();
     expect(screen.getByText(mockProps.readTime)).toBeInTheDocument();

@@ -29,7 +29,7 @@ export const KnowledgeSection = () => {
       />
       <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-between items-center relative z-10 my-9">
         <New
-          imageUrl="/news.png"
+          imageUrl="news.png"
           date="May 13, 2025"
           readTime="5 min"
           title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
@@ -37,7 +37,7 @@ export const KnowledgeSection = () => {
           linkUrl=""
         />
         <New
-          imageUrl="/news.png"
+          imageUrl="news.png"
           date="May 13, 2025"
           readTime="5 min"
           title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
@@ -45,7 +45,7 @@ export const KnowledgeSection = () => {
           linkUrl=""
         />
         <New
-          imageUrl="/news.png"
+          imageUrl="news.png"
           date="May 13, 2025"
           readTime="5 min"
           title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
