@@ -5,12 +5,16 @@ import { useRouter } from 'next/navigation';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+
+import { convertProductToCartItem } from '@/lib/utils/product';
 
 export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
   const router = useRouter();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    alert(`Sản phẩm đã được thêm vào giỏ hàng: ${product.name}`);
+    addToCart(convertProductToCartItem(product));
   };
 
   const handleViewDetail = (product: Product) => {
