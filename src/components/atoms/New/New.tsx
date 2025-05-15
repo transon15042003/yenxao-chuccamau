@@ -36,7 +36,7 @@ export const New = (props: NewProps) => {
       {/* w-full h-[262px] relative: Ảnh chiếm hết chiều ngang của thẻ New và có chiều cao cố định 262px */}
       <div className="w-full h-[262px] relative">
         <Image
-          src={props.imageUrl}
+          src={`/images/backgrounds/${props.imageUrl}`}
           alt={props.title} // Sử dụng tiêu đề làm alt text cho ảnh
           layout="fill" // Ảnh sẽ lấp đầy kích thước của div cha (w-full h-[262px])
           objectFit="cover" // Giữ tỷ lệ khung hình và cắt ảnh nếu cần để lấp đầy
