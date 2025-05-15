@@ -31,9 +31,16 @@ const ParagraphPolicy = () => (
           return <OrderedList items={el.value} key={idx} />;
       }
     })}
-    {AppConfig.contact.map((el, idx) => (
-      <Paragraph key={idx}>{el}</Paragraph>
-    ))}
+    {Object.entries(AppConfig).map(([key, val]) => {
+      switch (key) {
+        case 'email':
+          return <Paragraph key={key}>{`Email: ${val}`}</Paragraph>;
+        case 'phone':
+          return <Paragraph key={key}>{`Hotline: ${val}`}</Paragraph>;
+        case 'address':
+          return <Paragraph key={key}>{`Địa chỉ: ${val}`}</Paragraph>;
+      }
+    })}
     <Img
       src="/images/policy/decorate.png"
       className="absolute bottom-4 right-4 min-w-[300px] max-w-[40vw] opacity-15"
