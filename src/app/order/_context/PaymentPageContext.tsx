@@ -21,6 +21,7 @@ import {
   shippingInfomationFormSchema,
   ShippingInfomationForm
 } from '@/components/organisms/ShippingInformationForm';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
 type ContextType = {
   paymentMethod: PaymentGateway | 'COD';
@@ -68,6 +69,7 @@ const initOrder: Order = {
 
 const PaymentPageProvider = ({ children }: PropsWithChildren) => {
   const router = useRouter();
+  const { clearCart } = useCart();
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentGateway | 'COD'>('COD');
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('STANDARD');
@@ -137,6 +139,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       }
 
       localStorage.setItem('order', JSON.stringify(order));
+      clearCart();
       router.push('/order/result');
     } catch (error) {
       console.error(error);
