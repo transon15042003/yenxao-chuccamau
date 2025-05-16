@@ -1578,7 +1578,6 @@ packages:
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
-
   '@heroicons/react@2.2.0':
     resolution:
       {
@@ -1604,7 +1603,6 @@ packages:
       {
         integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==
       }
-
 
   '@humanfs/core@0.19.1':
     resolution:
@@ -10935,7 +10933,6 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
-
   '@heroicons/react@2.2.0(react@19.0.0-rc-65a56d0e-20241020)':
     dependencies:
       react: 19.0.0-rc-65a56d0e-20241020
@@ -10950,7 +10947,6 @@ snapshots:
       '@floating-ui/utils': 0.2.9
 
   '@floating-ui/utils@0.2.9': {}
-
 
   '@humanfs/core@0.19.1': {}
 
