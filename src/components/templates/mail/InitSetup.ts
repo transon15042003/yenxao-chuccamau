@@ -95,7 +95,7 @@ export const numberStyle = {
   lineHeight: '25px'
 };
 
-export const HOST = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+export const HOST = process.env.NEXT_PUBLIC_APP_DOMAIN || 'http://localhost:3000';
 export const imageUrl = `${HOST}/images`;
 export const LOGO_IMAGE_URL = `${imageUrl}/logo-light.webp`;
 export const EMAIL_DIVIDER = `${imageUrl}/mail/ic_email_line.png`;
