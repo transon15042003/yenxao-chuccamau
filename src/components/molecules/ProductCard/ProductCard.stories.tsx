@@ -14,11 +14,32 @@ const meta: Meta<typeof ProductCard> = {
       thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
       name: 'Bánh tổ yến',
       price: 10000000,
-      images: [],
       description: 'Bánh tổ yến',
       categories: [],
       isNew: true,
-      createdAt: '2021-01-01'
+      createdAt: '2021-01-01',
+      ingredients: ['Yến mạch', 'Bột mì', 'Trứng', 'Sữa tươi', 'Đường', 'Bơ', 'Bột nở'],
+      specs: [{ key: 'size', value: ['100g', '200g', '300g'] }],
+      variants: [
+        {
+          sku: 'v1',
+          name: 'Bánh tổ yến',
+          price: 10000000,
+          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
+          specs: { size: '100g' },
+          stock: 100,
+          isActive: true
+        },
+        {
+          sku: 'v2',
+          name: 'Bánh tổ yến',
+          price: 10000000,
+          specs: { size: '200g' },
+          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
+          stock: 100,
+          isActive: true
+        }
+      ]
     },
     badge: 'New',
     button: {

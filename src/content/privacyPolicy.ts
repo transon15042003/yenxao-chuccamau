@@ -83,9 +83,9 @@ export const privacyPolicyContent = [
       {
         type: 'ul',
         values: [
-          `Email: ${AppConfig.contact.email}`,
-          `Điện thoại: ${AppConfig.contact.phone}`,
-          `Địa chỉ: ${AppConfig.contact.address}`
+          ...(AppConfig.shippingEmail ? [`Email: ${AppConfig.shippingEmail}`] : []),
+          `Điện thoại: ${AppConfig.phone}`,
+          `Địa chỉ: ${AppConfig.address}`
         ]
       }
     ]

@@ -112,14 +112,15 @@ export const shippingPolicyContent = [
     contents: [
       {
         type: 'paragraph',
-        value: 'Nếu bạn có bất kỳ câu hỏi nào về vận chuyển, vui lòng liên hệ:'
+        value: 'Nếu bạn còn bất kỳ câu hỏi nào về vận chuyển, vui lòng liên hệ:'
       },
       {
         type: 'ul',
         values: [
-          `Email: ${AppConfig.contact.shippingEmail}`,
-          `Hotline: ${AppConfig.contact.phone}`,
-          `Thời gian làm việc: ${AppConfig.contact.workingHours}`
+          ...(AppConfig.shippingEmail ? [`Email: ${AppConfig.shippingEmail}`] : []),
+          `Hotline: ${AppConfig.phone}`,
+          `Địa chỉ: ${AppConfig.address}`,
+          `Thời gian làm việc: ${AppConfig.workingHours}`
         ]
       }
     ]
