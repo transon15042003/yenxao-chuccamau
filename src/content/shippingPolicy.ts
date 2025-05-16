@@ -1,3 +1,5 @@
+import { AppConfig } from '../AppConfig';
+
 export const shippingPolicyContent = [
   {
     heading: '1. Phạm vi và thời gian giao hàng',
@@ -69,9 +71,9 @@ export const shippingPolicyContent = [
       {
         type: 'ul',
         values: [
-          'Email:',
-          'Số điện thoại:',
-          'Địa chỉ:',
+          `Email: ${AppConfig.email}`,
+          `Số điện thoại: ${AppConfig.phone}`,
+          `Địa chỉ: ${AppConfig.address}`,
           'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website'
         ]
       }

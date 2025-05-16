@@ -1,3 +1,5 @@
+import { AppConfig } from '../AppConfig';
+
 export const privacyPolicyContent = [
   {
     heading: '1. Thông Tin Chúng Tôi Thu Thập',
@@ -89,9 +91,9 @@ export const privacyPolicyContent = [
       {
         type: 'ul',
         values: [
-          'Email:',
-          'Số điện thoại:',
-          'Địa chỉ:',
+          `Email: ${AppConfig.email}`,
+          `Số điện thoại: ${AppConfig.phone}`,
+          `Địa chỉ: ${AppConfig.address}`,
           'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website'
         ]
       }
