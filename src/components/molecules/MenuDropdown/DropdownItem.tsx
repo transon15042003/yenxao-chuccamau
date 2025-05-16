@@ -4,12 +4,12 @@ import React from 'react';
 interface DropdownItemProps {
   title: string;
   link: string;
-  isComing?: boolean;
+  // isComing?: boolean;
   onClick?: () => void;
   isMobile?: boolean;
 }
 
-const DropdownItem = ({ title, link, isComing, onClick, isMobile }: DropdownItemProps) => {
+const DropdownItem = ({ title, link, onClick, isMobile }: DropdownItemProps) => {
   return (
     <div className={`relative flex flex-col items-start ${isMobile ? 'text-lg' : 'text-base'}`}>
       <div className="relative will-change-contents">
@@ -19,11 +19,11 @@ const DropdownItem = ({ title, link, isComing, onClick, isMobile }: DropdownItem
           onClick={onClick}
         >
           {title}
-          {isComing && (
+          {/* {isComing && (
             <span className="absolute -top-5 -right-12 bg-secondary text-primary text-xs font-semibold rounded px-2 py-0.5 whitespace-nowrap z-10">
               Sắp ra mắt
             </span>
-          )}
+          )} */}
         </Link>
       </div>
     </div>

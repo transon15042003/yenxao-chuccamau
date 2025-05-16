@@ -14,11 +14,11 @@ interface ProductMenuItem {
 }
 
 const productMenuList: ProductMenuItem[] = [
-  {
-    title: 'Bánh Tổ Yến',
-    link: '/products?c=banh-to-yen',
-    isComing: true
-  },
+  // {
+  //   title: 'Bánh Tổ Yến',
+  //   link: '/products?c=banh-to-yen',
+  //   isComing: true
+  // },
   {
     title: 'Yến Sào Tinh Chế',
     link: '/products?c=yen-sao-tinh-che'
@@ -40,10 +40,10 @@ const productMenuList: ProductMenuItem[] = [
     title: 'Topping',
     link: '/products?c=topping'
   },
-  {
-    title: 'Yến Chưng Sấn Tiết Trùng',
-    link: '/products?c=yen-chung-san-tiet-trung'
-  },
+  // {
+  //   title: 'Yến Chưng Sấn Tiết Trùng',
+  //   link: '/products?c=yen-chung-san-tiet-trung'
+  // },
   {
     title: 'Món nên thử',
     link: '/products?c=mon-nen-thu'
