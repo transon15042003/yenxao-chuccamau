@@ -36,7 +36,7 @@ const Header = () => {
         {/* Logo bên trái */}
         <Logo />
         {/* NavigationMenu ở giữa trên desktop, ẩn trên mobile */}
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="hidden md:flex flex-1 justify-center items-center h-full">
           <NavigationMenu />
         </div>
         {/* Tìm kiếm, giỏ hàng và hamburger cho mobile */}

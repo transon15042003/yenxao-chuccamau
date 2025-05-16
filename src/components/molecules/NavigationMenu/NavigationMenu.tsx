@@ -1,9 +1,10 @@
 'use client';
 
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { usePathname } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 
-import ProductDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
+import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
 
 import NavItem from './NavItem';
 
@@ -54,6 +55,7 @@ const NavigationMenu = () => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
@@ -81,13 +83,17 @@ const NavigationMenu = () => {
   };
 
   return (
-    <div className="flex items-center gap-[70px]">
-      <NavItem href="/">TRANG CHỦ</NavItem>
-      <NavItem href="/about">GIỚI THIỆU</NavItem>
-      <div className="relative flex items-center" ref={dropdownRef}>
+    <div className="flex items-center gap-[60px] h-full">
+      <NavItem href="/" active={pathname === '/'}>
+        TRANG CHỦ
+      </NavItem>
+      <NavItem href="/about" active={pathname === '/about'}>
+        GIỚI THIỆU
+      </NavItem>
+      <div className="relative flex items-center h-full" ref={dropdownRef}>
         <button
           type="button"
-          className={`flex items-center gap-1 focus:outline-none group ${
+          className={`flex items-center gap-1 h-full focus:outline-none group ${
             isMounted && open
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
@@ -102,12 +108,14 @@ const NavigationMenu = () => {
             strokeWidth={2}
           />
         </button>
-        <div className="absolute left-0 top-[calc(100%+2px)]">
-          <ProductDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
-        </div>
+        <MenuDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
       </div>
-      <NavItem href="/blog">BLOG</NavItem>
-      <NavItem href="/contact">LIÊN HỆ</NavItem>
+      <NavItem href="/blog" active={pathname === '/blog'}>
+        BLOG
+      </NavItem>
+      <NavItem href="/contact" active={pathname === '/contact'}>
+        LIÊN HỆ
+      </NavItem>
     </div>
   );
 };
