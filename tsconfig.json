@@ -12,7 +12,8 @@
       "@/tests/*": ["./.jest/*"],
       "@/types/*": ["./src/types/*"],
       "@/data/*": ["./src/data/*"],
-      "@/svg/*": ["./src/svg/*"]
+      "@/svg/*": ["./src/svg/*"],
+      "@/content/*": ["./src/content/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

@@ -53,7 +53,8 @@ module.exports = {
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@/lib(.*)$': '<rootDir>/src/lib$1',
-    '^@/hooks(.*)$': '<rootDir>/hooks$1',
+    '^@/hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@/content(.*)$': '<rootDir>/src/content$1',
     '^@/mocks(.*)$': '<rootDir>/__mocks__$1',
     '^@/tests(.*)$': '<rootDir>/.jest$1'
   }
