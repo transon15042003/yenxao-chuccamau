@@ -55,7 +55,7 @@ export const Stepper: React.FC<StepperProps> = ({
       </div>
 
       {/* Mobile labels */}
-      <div className="flex justify-between text-typo-2 sm:hidden">
+      <div className="mt-6 flex justify-between text-typo-2 sm:hidden">
         {steps.map((s) => (
           <span key={s.label}>{s.label}</span>
         ))}
