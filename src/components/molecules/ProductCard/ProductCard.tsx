@@ -68,7 +68,7 @@ export const ProductCard = ({
           onClick={handleViewDetail}
         >
           <Image
-            className="max-h-full object-contain"
+            className={cn('max-h-full object-contain', className)}
             src={thumbnail}
             alt={name}
             // width={254}
