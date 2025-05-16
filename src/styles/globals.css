@@ -6,6 +6,7 @@
   --header-height: 99px;
 
   --top-layer-z-index: 999999;
+  --cart-layer-z-index: 9999999;
 }
 
 /* Custom scrollbar start */
@@ -33,7 +34,6 @@
 
 .transparent-scroll::-webkit-scrollbar {
   width: 1px;
-  width: 3.5px;
   background-color: #ffffff;
 }
 

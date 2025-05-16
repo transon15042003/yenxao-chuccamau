@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
 
+import { CartProvider } from '@/components/providers/CartProvider/CartProvider';
 import { MainProvider } from '@/components/providers/MainProvider';
 import { MainLayout } from '@/components/templates/MainLayout';
 
@@ -28,9 +29,11 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         suppressHydrationWarning
       >
         <MainProvider>
-          <MainLayout>
-            <main>{children}</main>
-          </MainLayout>
+          <CartProvider>
+            <MainLayout>
+              <main>{children}</main>
+            </MainLayout>
+          </CartProvider>
         </MainProvider>
       </body>
     </html>

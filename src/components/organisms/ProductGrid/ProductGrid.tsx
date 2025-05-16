@@ -4,16 +4,22 @@ import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 
 import { ProductCard } from '@/components/molecules/ProductCard';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+
+import { cn } from '@/lib/utils';
+import { convertProductToCartItem } from '@/lib/utils/product';
 
 type ProductGridProps = {
   products: Product[];
+  className?: string;
 };
 
-export const ProductGrid = ({ products }: ProductGridProps) => {
+export const ProductGrid = ({ products, className }: ProductGridProps) => {
   const router = useRouter();
+  const { addToCart } = useCart();
 
   const handleAddToCart = (product: Product) => {
-    console.warn(product);
+    addToCart(convertProductToCartItem(product));
   };
 
   const handleBuyNow = (product: Product) => {
@@ -26,7 +32,9 @@ export const ProductGrid = ({ products }: ProductGridProps) => {
   };
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 lg:gap-8">
+    <div
+      className={cn('grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-2 lg:gap-8', className)}
+    >
       {products.map((product) => (
         <ProductCard
           key={product.id}

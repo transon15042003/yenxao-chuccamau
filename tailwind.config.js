@@ -13,7 +13,8 @@ module.exports = {
         'header-height': 'var(--header-height)'
       },
       zIndex: {
-        top: 'var(--top-layer-z-index)'
+        top: 'var(--top-layer-z-index)',
+        cart: 'var(--cart-layer-z-index)'
       },
       fontFamily: {
         primary: ['var(--font-primary)']
@@ -21,7 +22,8 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#D62C35',
-          light: '#FF4148'
+          light: '#FF4148',
+          dark: '#B4071A'
         },
         secondary: {
           DEFAULT: '#FFEB70'
