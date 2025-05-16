@@ -243,7 +243,7 @@ const PaymentPage = () => {
           {/* Right: Cart Summary & Place Order */}
           <div className="flex flex-col gap-3">
             {cart.items.length > 0 ? (
-              <div className="flex flex-col gap-4 bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
                 {cart.items?.map((item, idx) => (
                   <CartItem
                     key={idx}
