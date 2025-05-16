@@ -1,126 +1,78 @@
-import { AppConfig } from '../AppConfig';
-
 export const shippingPolicyContent = [
   {
-    heading: '1. Khu vực giao hàng',
+    heading: '1. Phạm vi và thời gian giao hàng',
     contents: [
       {
-        type: 'ul',
-        values: [
-          'Giao hàng toàn quốc.',
-          'Có thể kéo dài thời gian giao hàng đối với khu vực hải đảo và vùng xa.'
-        ]
-      }
-    ]
-  },
-  {
-    heading: '2. Phương thức vận chuyển',
-    contents: [
-      {
-        type: 'ul',
-        values: [
-          'Giao hàng tiêu chuẩn: Áp dụng cho tất cả các đơn hàng thông thường.',
-          'Giao hàng nhanh: Áp dụng cho các đơn hàng cần giao gấp (có phụ phí).',
-          'Giao hàng hẹn giờ: Áp dụng cho một số khu vực nội thành (có phụ phí).'
-        ]
-      }
-    ]
-  },
-  {
-    heading: '3. Thời gian giao hàng',
-    contents: [
-      {
-        type: 'ul',
-        values: [
-          'Nội thành Hà Nội và TP.HCM: 1-2 ngày làm việc.',
-          'Các tỉnh thành khác: 2-5 ngày làm việc.',
-          'Vùng sâu vùng xa, hải đảo: 5-7 ngày làm việc.',
-          'Giao hàng nhanh: 24 giờ đối với nội thành, 48 giờ đối với các tỉnh lân cận.'
-        ]
+        type: 'paragraph',
+        value:
+          'Nội thành TP.HCM: Giao hàng trong ngày nếu đặt trong khung giờ làm việc. Khách có thể yêu cầu thời gian giao phù hợp.'
       },
       {
         type: 'paragraph',
         value:
-          'Lưu ý: Thời gian giao hàng có thể bị ảnh hưởng bởi điều kiện thời tiết, giao thông hoặc các sự kiện bất khả kháng khác.'
+          'Ngoại tỉnh: Thời gian giao từ 2–5 ngày tùy theo đơn vị vận chuyển (GHN, GHTK, Viettel Post, xe khách…).'
       }
     ]
   },
   {
-    heading: '4. Phí vận chuyển',
+    heading: '2. Phí vận chuyển',
     contents: [
       {
         type: 'paragraph',
-        value: 'Phí vận chuyển được tính dựa trên các yếu tố sau:'
-      },
-      {
-        type: 'ul',
-        values: [
-          'Khoảng cách từ kho hàng đến địa chỉ giao hàng.',
-          'Trọng lượng và kích thước của sản phẩm.',
-          'Phương thức vận chuyển bạn lựa chọn.'
-        ]
+        value:
+          'Phí vận chuyển sẽ được tính dựa theo địa chỉ nhận hàng, khối lượng của đơn hàng theo cước phí vận chuyển của các đơn vị đối tác.'
       },
       {
         type: 'paragraph',
-        value: 'Bảng phí vận chuyển dự kiến:'
-      },
-      {
-        type: 'ul',
-        values: [
-          `Nội thành Hà Nội và TP.HCM: ${AppConfig.shipping.fees.innerCity.min.toLocaleString()}đ - ${AppConfig.shipping.fees.innerCity.max.toLocaleString()}đ.`,
-          `Các tỉnh thành khác: ${AppConfig.shipping.fees.otherProvinces.min.toLocaleString()}đ - ${AppConfig.shipping.fees.otherProvinces.max.toLocaleString()}đ.`,
-          `Vùng sâu vùng xa, hải đảo: ${AppConfig.shipping.fees.remoteAreas.min.toLocaleString()}đ - ${AppConfig.shipping.fees.remoteAreas.max.toLocaleString()}đ.`,
-          `Phụ phí giao hàng nhanh: +${AppConfig.shipping.fees.expressDelivery.toLocaleString()}đ.`,
-          `Phụ phí giao hàng hẹn giờ: +${AppConfig.shipping.fees.scheduledDelivery.toLocaleString()}đ.`
-        ]
-      },
-      {
-        type: 'paragraph',
-        value: `Miễn phí vận chuyển cho đơn hàng từ ${AppConfig.shipping.freeShippingThreshold.toLocaleString()}đ trở lên (áp dụng cho giao hàng tiêu chuẩn).`
+        value: 'Phí vận chuyển được thông báo cụ thể sau khi xác nhận đơn hàng.'
       }
     ]
   },
   {
-    heading: '5. Kiểm tra và nhận hàng',
-    contents: [
-      {
-        type: 'ul',
-        values: [
-          'Kiểm tra tình trạng bên ngoài của kiện hàng trước khi ký nhận.',
-          'Mở kiện hàng và kiểm tra sản phẩm ngay khi nhận được (tốt nhất là có sự chứng kiến của nhân viên giao hàng).',
-          'Nếu phát hiện sản phẩm bị hư hỏng hoặc không đúng với đơn đặt hàng, vui lòng từ chối nhận hàng hoặc ghi chú vào biên bản giao nhận.',
-          'Liên hệ ngay với bộ phận Chăm sóc Khách hàng để được hỗ trợ.'
-        ]
-      }
-    ]
-  },
-  {
-    heading: '6. Theo dõi đơn hàng',
-    contents: [
-      {
-        type: 'ul',
-        values: [
-          'Đăng nhập vào tài khoản trên website và kiểm tra mục "Đơn hàng của tôi".',
-          'Sử dụng mã vận đơn được cung cấp trong email xác nhận để tra cứu trên website của đơn vị vận chuyển.',
-          'Liên hệ trực tiếp với bộ phận Chăm sóc Khách hàng.'
-        ]
-      }
-    ]
-  },
-  {
-    heading: '7. Liên hệ hỗ trợ',
+    heading: '3. Trách nhiệm vận chuyển',
     contents: [
       {
         type: 'paragraph',
-        value: 'Nếu bạn còn bất kỳ câu hỏi nào về vận chuyển, vui lòng liên hệ:'
+        value:
+          'Đối tác vận chuyển chịu trách nhiệm nếu hàng hóa bị móp méo, hư hỏng, chậm trễ hoặc thất lạc.'
+      },
+      {
+        type: 'paragraph',
+        value:
+          'Chúng tôi sẽ hỗ trợ làm việc với đối tác vận chuyển để xử lý kịp thời các sự cố phát sinh.'
+      }
+    ]
+  },
+  {
+    heading: '4. Quyền lợi khách hàng',
+    contents: [
+      {
+        type: 'paragraph',
+        value:
+          'Trong trường hợp đơn hàng bị trễ, chúng tôi sẽ kịp thời thông báo đến quý khách hàng để cùng đưa ra các biện pháp xử lý phù hợp.'
+      },
+      {
+        type: 'paragraph',
+        value:
+          'Nếu quý khách không còn nhu cầu nhận hàng, có thể yêu cầu hủy đơn hàng. Trong trường hợp này, toàn bộ số tiền đã thanh toán sẽ được hoàn lại trong vòng 3 - 5 ngày làm việc.'
+      }
+    ]
+  },
+  {
+    heading: '5. Liên hệ hỗ trợ',
+    contents: [
+      {
+        type: 'paragraph',
+        value:
+          'Nếu quý khách có bất kỳ thắc mắc, yêu cầu hoặc khiếu nại nào liên quan đến chính sách vận chuyển, vui lòng liên hệ:'
       },
       {
         type: 'ul',
         values: [
-          ...(AppConfig.shippingEmail ? [`Email: ${AppConfig.shippingEmail}`] : []),
-          `Hotline: ${AppConfig.phone}`,
-          `Địa chỉ: ${AppConfig.address}`,
-          `Thời gian làm việc: ${AppConfig.workingHours}`
+          'Email:',
+          'Số điện thoại:',
+          'Địa chỉ:',
+          'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website'
         ]
       }
     ]
