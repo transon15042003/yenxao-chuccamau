@@ -88,10 +88,10 @@ export const CartDrawer = () => {
             </div>
 
             {/* Cart Footer */}
-            <div className="h-[250px] w-4/5 ml-auto mr-5">
+            <div className="h-[150px] w-4/5 ml-auto mr-5 mb-5 flex flex-col justify-between">
               <div className="border border-black my-6"></div>
 
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 f">
                 <div className="hidden items-center justify-between">
                   <span>Giảm giá</span>
                   <span>{convertToVND(discount)}</span>
