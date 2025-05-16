@@ -24,14 +24,15 @@ export const CartDrawer = () => {
   };
 
   const handleCheckout = () => {
-    router.push('/payment');
+    closeCart();
+    router.push('/order');
   };
 
   useOnClickOutside(cartContainerRef as RefObject<HTMLElement>, closeCart);
 
   const discount = 0;
   const shipping = 0;
-  const total = 0;
+  const total = cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div
@@ -87,21 +88,21 @@ export const CartDrawer = () => {
             </div>
 
             {/* Cart Footer */}
-            <div className="h-[150px] w-4/5 ml-auto mr-5">
+            <div className="h-[150px] w-4/5 ml-auto mr-5 mb-5 flex flex-col justify-between">
               <div className="border border-black my-6"></div>
 
-              <div className="hidden flex-col gap-4">
-                <div className="flex items-center justify-between">
+              <div className="flex flex-col gap-4 f">
+                <div className="hidden items-center justify-between">
                   <span>Giảm giá</span>
                   <span>{convertToVND(discount)}</span>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="hidden items-center justify-between">
                   <span>Vận chuyển</span>
                   <span>{convertToVND(shipping)}</span>
                 </div>
 
-                <div className="hidden items-center justify-between">
+                <div className="flex items-center justify-between">
                   <span className="font-bold">Tổng tiền</span>
                   <span className="font-bold">{convertToVND(total)}</span>
                 </div>

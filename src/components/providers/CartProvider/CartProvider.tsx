@@ -36,9 +36,13 @@ const CartContext = createContext<CartContextType>({
 const INITIAL_CART_ITEMS: CartItem[] = [];
 
 export const CartProvider = ({ children }: PropsWithChildren) => {
-  const [cart, setCart] = useLocalStorage<Cart>('cart', {
-    items: INITIAL_CART_ITEMS
-  });
+  const [cart, setCart] = useLocalStorage<Cart>(
+    'cart',
+    {
+      items: INITIAL_CART_ITEMS
+    },
+    { initializeWithValue: false }
+  );
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = (item: CartItem) => {
