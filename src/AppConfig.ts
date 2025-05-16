@@ -1,11 +1,9 @@
 export const AppConfig = {
-  contact: {
-    email: 'privacy@company.com',
-    phone: '0123 456 789',
-    address: '123 Đường ABC, Quận XYZ, Thành phố HCM',
-    shippingEmail: 'shipping@company.com',
-    workingHours: '8:00 - 20:00, từ Thứ Hai đến Chủ Nhật'
-  },
+  email: '',
+  phone: '0948 802 2499',
+  address: '1095 Lê Văn Lương, Phước Kiển Nhà Bè, TPHCM',
+  shippingEmail: 'shipping@company.com',
+  workingHours: '8:00 - 20:00, từ Thứ Hai đến Chủ Nhật',
   shipping: {
     freeShippingThreshold: 500000,
     fees: {
@@ -24,5 +22,5 @@ export const AppConfig = {
       expressDelivery: 30000,
       scheduledDelivery: 50000
     }
-  }
+  },
 };
