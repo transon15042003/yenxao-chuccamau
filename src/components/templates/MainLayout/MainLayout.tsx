@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { CartDrawer } from '@/components/organisms/CartDrawer/CartDrawer';
 import Footer from '@/components/organisms/Footer/Footer';
 import Header from '@/components/organisms/Header/Header';
 
@@ -20,6 +21,9 @@ export const MainLayout = ({ children, className }: MainLayoutProps) => {
       <Header />
       <main className="flex-1 mt-header-height">{children}</main>
       <Footer />
+
+      {/* CartDrawer */}
+      <CartDrawer />
     </div>
   );
 };
