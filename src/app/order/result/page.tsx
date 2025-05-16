@@ -3,11 +3,15 @@ import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
 import { Order } from '@/types/order';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { renderEmail } from 'react-html-email';
+import { sendMail } from 'src/services/mail.service';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { Stepper } from '@/components/atoms/Step';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
+import { CustomerOrderNotification } from '@/components/templates/mail/CustomerOrderNotification';
+import { OwnerOrderNotification } from '@/components/templates/mail/OwnerOrderNotification';
 
 const steps = [
   { label: '1. Giỏ hàng', icon: <CartSVG className="w-6 h-6" /> },
@@ -16,9 +20,42 @@ const steps = [
 ];
 
 const OrderResultPage = () => {
+  const [rendered, setRendered] = useState(false);
   const [order] = useLocalStorage<Order | null>('order', null, {
     initializeWithValue: false
   });
+
+  const sendNotificationEmails = async (order: Order) => {
+    try {
+      // send mail to owner
+      await sendMail({
+        subject: `Đơn hàng mới - ${order.code}`,
+        html: renderEmail(OwnerOrderNotification(order)),
+        fromName: 'Chuc Ca Mau - Yen Sao'
+      });
+
+      if (order.customer.email) {
+        await sendMail({
+          subject: `Đặt hàng thành công - ${order.code}`,
+          html: renderEmail(CustomerOrderNotification(order.customer)),
+          fromName: 'Chuc Ca Mau - Yen Sao',
+          emailTo: order.customer.email
+        });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    setRendered(true);
+  }, []);
+
+  useEffect(() => {
+    if (rendered && order) {
+      sendNotificationEmails(order);
+    }
+  }, [rendered, order]);
 
   if (!order) {
     return (
