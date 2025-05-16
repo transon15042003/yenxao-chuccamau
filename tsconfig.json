@@ -12,7 +12,9 @@
       "@/mocks/*": ["./__mocks__/*"],
       "@/tests/*": ["./.jest/*"],
       "@/types/*": ["./src/types/*"],
+      "@/data/*": ["./src/data/*"],
       "@/svg/*": ["./src/svg/*"],
+      "@/content/*": ["./src/content/*"],
       "@/markdown/*": ["./src/markdown/*"]
     },
     "target": "es5",
