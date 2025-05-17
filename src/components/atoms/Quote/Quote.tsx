@@ -27,6 +27,8 @@ export const Quote = (props: QuoteProps) => {
           className={`inline-block h-8 w-8 rounded-full ring-2 ring-white mr-2`}
           src={`/images/${props.avatarSrc}`}
           alt="avatar"
+          width={32}
+          height={32}
         />
         <p className="pb-0 mr-2 font-medium">{props.username}</p>
         <div className="flex items-center justify-center mr-2">
