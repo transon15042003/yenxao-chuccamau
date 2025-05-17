@@ -2,6 +2,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
 
 import { Button } from '@/components/atoms/Button';
@@ -30,7 +31,9 @@ type InboxProps = HTMLAttributes<HTMLElement> & {
 export const Inbox = ({ className, ...props }: InboxProps) => {
   const {
     control,
-    formState: { errors }
+    handleSubmit,
+    formState: { errors },
+    reset
   } = useForm<InboxFormValues>({
     resolver: zodResolver(inboxFormSchema),
     defaultValues: {
@@ -43,8 +46,36 @@ export const Inbox = ({ className, ...props }: InboxProps) => {
     }
   });
 
+  const onSubmit = async (data: InboxFormValues) => {
+    if (data.message) {
+      try {
+        const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
+        const emailBodyHtml = `
+            <p><strong>Họ và tên:</strong> ${data.name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Số điện thoại:</strong> ${data.phone}</p>
+            ${data.subject ? `<p><strong>Tiêu đề:</strong> ${data.subject}</p>` : ''}
+            <p><strong>Nội dung:</strong><br/>${data.message ? data.message.replace(/\n/g, '<br/>') : 'Không có nội dung'}</p>
+          `;
+
+        await sendMail({
+          subject: emailSubject,
+          html: emailBodyHtml,
+          fromName: data.name || 'Khách liên hệ',
+          emailTo: 'khuongvo2105@gmail.com'
+        });
+
+        alert('Tin nhắn của bạn đã được gửi thành công!');
+        reset();
+      } catch (error) {
+        console.error('Lỗi khi gửi tin nhắn:', error);
+        alert('Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.');
+      }
+    }
+  };
+
   return (
-    <form action="/" method="post" className={className} {...props}>
+    <form className={className} {...props} onSubmit={handleSubmit(onSubmit)}>
       <p id="inbox" className="w-full font-semibold text-3xl text-[#2A3140] mb-4">
         Gửi tin nhắn cho tôi
       </p>
@@ -150,7 +181,8 @@ export const Inbox = ({ className, ...props }: InboxProps) => {
 
       <Button
         className="w-full uppercase text-xl font-bold py-[13px]"
-        // onClick={handleCheckout}
+        // type="submit"
+        // onClick={onSubmit}
       >
         Gửi tin nhắn
       </Button>
