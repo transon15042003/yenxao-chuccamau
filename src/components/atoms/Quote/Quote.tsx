@@ -1,4 +1,5 @@
 import { Star } from '@/svg/StarSVG/StarSVG';
+import Image from 'next/image';
 
 type QuoteProps = {
   className?: string;
@@ -22,7 +23,7 @@ export const Quote = (props: QuoteProps) => {
     <div className={`flex flex-col items-center ${props.className}`}>
       <p className="text-center mb-5">{props.content}</p>
       <div className="flex flex-row items-center justify-start">
-        <img
+        <Image
           className={`inline-block h-8 w-8 rounded-full ring-2 ring-white mr-2`}
           src={`/images/${props.avatarSrc}`}
           alt="avatar"
