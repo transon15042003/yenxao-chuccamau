@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FormTextArea } from './AreaInputGroup';
+import { AreaInputGroup } from './AreaInputGroup';
 
-const meta: Meta<typeof FormTextArea> = {
-  title: 'Atoms/FormTextArea',
-  component: FormTextArea,
+const meta: Meta<typeof AreaInputGroup> = {
+  title: 'Atoms/AreaInputGroup',
+  component: AreaInputGroup,
   tags: ['autodocs'],
   args: {}
 };
 
 export default meta;
 
-type Story = StoryObj<typeof FormTextArea>;
+type Story = StoryObj<typeof AreaInputGroup>;
 
 export const Default: Story = {
   args: {

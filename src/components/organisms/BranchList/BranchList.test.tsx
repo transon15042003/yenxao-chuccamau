@@ -6,7 +6,7 @@ describe('BranchList', () => {
   it('should render the heading', () => {
     const testData = [
       {
-        'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+        branchName: 'Chi nhánh TP. Hồ Chí Minh',
         data: [
           {
             icon: 'location',

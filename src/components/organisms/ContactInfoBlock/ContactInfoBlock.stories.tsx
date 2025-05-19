@@ -9,7 +9,7 @@ const meta: Meta<typeof ContactInfoBlock> = {
   args: {
     contactData: [
       {
-        'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+        branchName: 'Chi nhánh TP. Hồ Chí Minh',
         data: [
           {
             icon: 'location',
@@ -34,7 +34,7 @@ const meta: Meta<typeof ContactInfoBlock> = {
         ]
       },
       {
-        'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+        branchName: 'Chi nhánh TP. Hồ Chí Minh',
         data: [
           {
             icon: 'location',

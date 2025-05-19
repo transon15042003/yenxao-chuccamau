@@ -5,7 +5,7 @@ import { ContactInfoBlock } from '.';
 describe('ContactInfoBlock', () => {
   const testData = [
     {
-      'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+      branchName: 'Chi nhánh TP. Hồ Chí Minh',
       data: [
         {
           icon: 'location',
@@ -30,7 +30,7 @@ describe('ContactInfoBlock', () => {
       ]
     },
     {
-      'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+      branchName: 'Chi nhánh TP. Hồ Chí Minh',
       data: [
         {
           icon: 'location',
