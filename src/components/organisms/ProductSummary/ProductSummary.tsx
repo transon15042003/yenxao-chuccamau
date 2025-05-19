@@ -59,7 +59,7 @@ const ProductSummary = ({ className, product }: ProductSummaryProps) => {
         <p className="pl-4">(124 reviews) | Đã bán {product.totalSold}</p>
       </div>
       <div className="flex items-center border-b border-dashed border-[#DADADA] py-2 text-[25px]">
-        <SectionHeading>{product.price}đ</SectionHeading>
+        <SectionHeading className="text-[25px]">{product.price}đ</SectionHeading>
         {/* <SectionHeading className="pl-4 font-light text-[20px] leading-[32px] line-through text-[#2A2A40]">
           12.000.000đ
         </SectionHeading> */}
@@ -155,22 +155,22 @@ const ProductSummary = ({ className, product }: ProductSummaryProps) => {
         <div className="flex flex-row content-start items-start ">
           <BoxSVG />
           <div className="ml-4">
-            <b className="leading-4">Giao hàng</b>
-            <p className="leading-4">Miễn phí giao hàng cho đơn từ 100.000đ</p>
+            <b className="leading-[18px]">Giao hàng</b>
+            <p className="leading-[18px]">Miễn phí giao hàng cho đơn từ 100.000đ</p>
           </div>
         </div>
         <div className="flex flex-row content-start items-start mt-2">
           <ReloadSVG />
           <div className="ml-4">
-            <b className="leading-4">Đổi trả</b>
-            <p className="leading-4">Đổi trả miễn phí trong vòng 7 ngày</p>
+            <b className="leading-[18px]">Đổi trả</b>
+            <p className="leading-[18px]">Đổi trả miễn phí trong vòng 7 ngày</p>
           </div>
         </div>
         <div className="flex flex-row content-start items-start mt-2">
           <NoticeSVG />
           <div className="ml-4">
-            <b className="leading-4">Bảo quản</b>
-            <p className="leading-4">Bảo quản lạnh, uống trong vòng 12h</p>
+            <b className="leading-[18px]">Bảo quản</b>
+            <p className="leading-[18px]">Bảo quản lạnh, uống trong vòng 12h</p>
           </div>
         </div>
       </div>

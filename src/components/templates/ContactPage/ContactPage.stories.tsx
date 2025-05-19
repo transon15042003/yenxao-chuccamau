@@ -9,7 +9,7 @@ const meta: Meta<typeof ContactPage> = {
   args: {
     contactData: [
       {
-        'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+        branchName: 'Chi nhánh TP. Hồ Chí Minh',
         data: [
           {
             icon: 'location',
@@ -34,7 +34,7 @@ const meta: Meta<typeof ContactPage> = {
         ]
       },
       {
-        'branch-name': 'Chi nhánh TP. Hồ Chí Minh',
+        branchName: 'Chi nhánh TP. Hồ Chí Minh',
         data: [
           {
             icon: 'location',
