@@ -1,6 +1,6 @@
 [
   {
-    "branch-name": "Chi nhánh TP. Hồ Chí Minh",
+    "branchName": "Chi nhánh TP. Hồ Chí Minh",
     "data": [
       {
         "icon": "location",
@@ -25,7 +25,7 @@
     ]
   },
   {
-    "branch-name": "Chi nhánh TP. Hồ Chí Minh",
+    "branchName": "Chi nhánh TP. Hồ Chí Minh",
     "data": [
       {
         "icon": "location",

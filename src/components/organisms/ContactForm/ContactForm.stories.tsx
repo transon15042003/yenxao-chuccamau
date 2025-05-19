@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Inbox } from './Inbox';
+import { Inbox } from './ContactForm';
 
 const meta: Meta<typeof Inbox> = {
   title: 'Organisms/Inbox',

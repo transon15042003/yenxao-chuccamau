@@ -28,8 +28,6 @@ const getIconComponent = (iconName: string): React.ReactElement | null => {
     return <IconComponent className="mr-3.5" />;
   }
 
-  console.warn(`Icon component not found for name: ${iconName}. Please add it to iconMap.`);
-
   return null;
 };
 
@@ -46,8 +44,8 @@ export const BranchList = (props: BranchListProps) => {
     <div className={`${props.className} overflow-y-auto flex flex-col items-center`}>
       {props.contactData.map((branch, branchIndex) => (
         <div key={branchIndex} className="w-5/6">
-          {branch['branch-name'] && (
-            <h3 className="text-xl font-bold text-primary mb-4">{branch['branch-name']}</h3>
+          {branch['branchName'] && (
+            <h3 className="text-xl font-bold text-primary mb-4">{branch['branchName']}</h3>
           )}
 
           {Array.isArray(branch.data) &&
@@ -55,10 +53,6 @@ export const BranchList = (props: BranchListProps) => {
               const IconJsxElement = getIconComponent(item.icon);
 
               if (!IconJsxElement) {
-                console.warn(
-                  `Skipping ContactItem for label: "${item.label}" in branch "${branch['branch-name']}" due to missing icon component.`
-                );
-
                 return null;
               }
 

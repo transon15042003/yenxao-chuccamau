@@ -27,8 +27,6 @@ const getIconComponent = (iconName: string): React.ReactElement | null => {
     return <IconComponent className="mr-3.5" />;
   }
 
-  console.warn(`Icon component not found for name: ${iconName}. Please add it to iconMap.`);
-
   return null;
 };
 

@@ -1,5 +1,5 @@
 export type ContactType = {
-  'branch-name': string;
+  branchName: string;
   data: {
     icon: string;
     label: string;

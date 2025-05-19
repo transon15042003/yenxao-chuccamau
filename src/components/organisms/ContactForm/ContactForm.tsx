@@ -5,8 +5,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
 
+import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
-import { FormTextArea } from '@/components/atoms/FormTextArea';
 import { InputGroup } from '@/components/molecules/InputGroup';
 
 import { shippingInfomationFormSchema } from '../ShippingInformationForm';
@@ -29,7 +29,7 @@ type InboxProps = HTMLAttributes<HTMLElement> & {
   setIsLoading: (isLoading: boolean) => void;
 };
 
-export const Inbox = ({ className, setIsLoading, ...props }: InboxProps) => {
+export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) => {
   const {
     control,
     handleSubmit,
@@ -63,8 +63,7 @@ export const Inbox = ({ className, setIsLoading, ...props }: InboxProps) => {
         await sendMail({
           subject: emailSubject,
           html: emailBodyHtml,
-          fromName: data.name || 'Khách liên hệ',
-          emailTo: 'khuongvo2105@gmail.com'
+          fromName: data.name || 'Khách liên hệ'
         });
 
         alert('Tin nhắn của bạn đã được gửi thành công!');
@@ -170,7 +169,7 @@ export const Inbox = ({ className, setIsLoading, ...props }: InboxProps) => {
             control={control}
             name="message"
             render={({ field }) => (
-              <FormTextArea
+              <AreaInputGroup
                 id="subject"
                 label="Nội dung"
                 placeholder="Nhập nội dung tin nhắn chi tiết..."

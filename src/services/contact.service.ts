@@ -7,7 +7,7 @@ type ContactType = {
 };
 
 type BranchType = {
-  'branch-name': string;
+  branchName: string;
   data: ContactType[];
 };
 

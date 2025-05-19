@@ -13,7 +13,7 @@ type FormTextAreaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   line?: number | undefined; // Prop để xác định số dòng, sẽ map sang 'rows'
 };
 
-export const FormTextArea = forwardRef<HTMLTextAreaElement, FormTextAreaProps>( // forwardRef tới HTMLTextAreaElement
+export const AreaInputGroup = forwardRef<HTMLTextAreaElement, FormTextAreaProps>( // forwardRef tới HTMLTextAreaElement
   function FormTextArea(
     {
       label,

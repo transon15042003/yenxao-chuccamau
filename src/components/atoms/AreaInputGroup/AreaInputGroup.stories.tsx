@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { FormTextArea } from './FormTextArea';
+import { FormTextArea } from './AreaInputGroup';
 
 const meta: Meta<typeof FormTextArea> = {
   title: 'Atoms/FormTextArea',
