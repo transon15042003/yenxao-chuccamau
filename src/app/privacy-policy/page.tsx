@@ -46,12 +46,11 @@ const PrivacyPolicyPage = () => {
                   );
                 }
                 if (content.type === 'ul' || content.type === 'ol') {
+                  const listContent = content as { type: 'ul' | 'ol'; values: string[] };
+
+                  // Ensure the listContent is defined and has values
                   return (
-                    <List
-                      key={contentIndex}
-                      type={content.type}
-                      values={content.type === 'ul' || content.type === 'ol' ? content.values : []}
-                    />
+                    <List key={contentIndex} type={listContent.type} values={listContent.values} />
                   );
                 }
 
