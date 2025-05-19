@@ -23,20 +23,34 @@ const ShippingPolicyPage = () => {
         <Heading
           as="h1"
           value="Chính sách vận chuyển"
-          className="text-center text-3xl md:text-4xl font-bold text-primary mb-8"
+          className="text-center text-[40px] leading-[33px] font-bold text-primary mb-6"
         />
-        <Paragraph value="Chính sách vận chuyển này cung cấp thông tin về phương thức vận chuyển, thời gian giao hàng và phí vận chuyển khi bạn mua sắm tại website của chúng tôi." />
-        <div className="text-base md:text-lg text-typo-1 space-y-6">
+        <div className="text-base md:text-lg text-typo-2">
           {shippingPolicyContent.map((section, index) => (
             <div key={index}>
-              <Heading as="h2" value={section.heading} className="block mt-6 font-bold" />
+              {section.heading && (
+                <Heading
+                  as="h2"
+                  value={section.heading}
+                  className="block mt-6 font-bold text-[20px] leading-[35px]"
+                />
+              )}
               {section.contents.map((content, contentIndex) => {
                 if (content.type === 'paragraph') {
-                  return <Paragraph key={contentIndex} value={content.value || ''} />;
+                  return (
+                    <Paragraph
+                      key={contentIndex}
+                      value={content.value || ''}
+                      className="text-lg leading-[35px]"
+                    />
+                  );
                 }
                 if (content.type === 'ul' || content.type === 'ol') {
+                  const listContent = content as { type: 'ul' | 'ol'; values: string[] };
+
+                  // Ensure the listContent is defined and has values
                   return (
-                    <List key={contentIndex} type={content.type} values={content.values || []} />
+                    <List key={contentIndex} type={listContent.type} values={listContent.values} />
                   );
                 }
 
