@@ -1,26 +1,10 @@
 export const AppConfig = {
-  email: '',
-  phone: '',
-  address: '',
-  shippingEmail: '',
-  workingHours: '8:00 - 20:00, từ Thứ Hai đến Chủ Nhật',
-  shipping: {
-    freeShippingThreshold: 500000,
-    fees: {
-      innerCity: {
-        min: 20000,
-        max: 40000
-      },
-      otherProvinces: {
-        min: 30000,
-        max: 70000
-      },
-      remoteAreas: {
-        min: 70000,
-        max: 120000
-      },
-      expressDelivery: 30000,
-      scheduledDelivery: 50000
-    }
-  }
+  warrantyEmail: 'warranty@company.com',
+  legalEmail: 'legal@company.com',
+  shippingEmail: 'shipping@company.com',
+  ordersEmail: 'orders@company.com',
+  returnsEmail: 'returns@company.com',
+  privacyEmail: 'privacy@company.com',
+  phone: '0123456789',
+  address: '123 Đường ABC, Quận XYZ, Thành phố HCM'
 };

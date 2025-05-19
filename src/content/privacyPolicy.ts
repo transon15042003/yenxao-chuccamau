@@ -2,8 +2,22 @@ import { AppConfig } from '../AppConfig';
 
 export const privacyPolicyContent = [
   {
+    contents: [
+      {
+        type: 'paragraph',
+        value:
+          '<strong>Yến Sào Chúc Cà Mau</strong> cam kết bảo mật thông tin cá nhân của khách hàng và minh bạch về việc thu thập, sử dụng, lưu trữ, chia sẻ cũng như quyền lợi liên quan.'
+      }
+    ]
+  },
+  {
     heading: '1. Thông Tin Chúng Tôi Thu Thập',
     contents: [
+      {
+        type: 'paragraph',
+        value:
+          'Chúng tôi có thể thu thập thông tin cá nhân của khách hàng khi thực hiện đặt hàng, liên hệ tư vấn, hỗ trợ bao gồm:'
+      },
       {
         type: 'ul',
         values: [
@@ -20,6 +34,10 @@ export const privacyPolicyContent = [
     heading: '2. Mục Đích Sử Dụng Thông Tin',
     contents: [
       {
+        type: 'paragraph',
+        value: 'Thông tin cá nhân của quý khách sẽ được chúng tôi sử dụng cho các mục đích sau:'
+      },
+      {
         type: 'ul',
         values: [
           'Xử lý đơn hàng: Xác nhận đơn hàng, giao hàng và hỗ trợ hậu mãi.',
@@ -34,11 +52,16 @@ export const privacyPolicyContent = [
     heading: '3. Bảo Mật Thông Tin',
     contents: [
       {
+        type: 'paragraph',
+        value:
+          'Chúng tôi áp dụng nhiều biện pháp bảo mật nghiêm ngặt nhằm bảo vệ thông tin cá nhân khỏi các hành vi truy cập trái phép, sử dụng sai mục đích hoặc tiết lộ không mong muốn:'
+      },
+      {
         type: 'ul',
         values: [
           'Dữ liệu của quý khách được lưu trữ trên hệ thống máy chủ có bảo mật và phân quyền rõ ràng.',
           'Nhân viên chỉ được phép truy cập thông tin khi cần thiết để phục vụ khách hàng.',
-          'Chúng tôi không bán, trao đổi hay chia sẻ thông tin của quý khách với bên thứ ba vì mục đích thương mại khi chưa có sự cho phép.',
+          'Chúng tôi <strong>không bán, trao đổi hay chia sẻ thông tin của quý khách với bên thứ ba</strong> vì mục đích thương mại khi chưa có sự cho phép.',
           'Mọi thông tin cá nhân sẽ được xóa bỏ hoặc ẩn danh sau khi hết thời gian lưu trữ cần thiết hoặc theo yêu cầu từ khách hàng.'
         ]
       }
@@ -47,6 +70,10 @@ export const privacyPolicyContent = [
   {
     heading: '4. Chia Sẻ Thông Tin',
     contents: [
+      {
+        type: 'paragraph',
+        value: 'Thông tin cá nhân của quý khách chỉ được chia sẻ trong các trường hợp sau:'
+      },
       {
         type: 'ul',
         values: [
@@ -61,6 +88,10 @@ export const privacyPolicyContent = [
   {
     heading: '5. Quyền Của Bạn',
     contents: [
+      {
+        type: 'paragraph',
+        value: 'Quý khách có toàn quyền đối với thông tin cá nhân của mình, bao gồm:'
+      },
       {
         type: 'ul',
         values: [
@@ -91,11 +122,14 @@ export const privacyPolicyContent = [
       {
         type: 'ul',
         values: [
-          `Email: ${AppConfig.email}`,
-          `Số điện thoại: ${AppConfig.phone}`,
-          `Địa chỉ: ${AppConfig.address}`,
-          'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website'
+          `<strong>Email:</strong> <a href="mailto:${AppConfig.privacyEmail}" class="hover:underline">${AppConfig.privacyEmail}</a>`,
+          `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
+          `<strong>Địa chỉ:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(AppConfig.address)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
+      },
+      {
+        type: 'paragraph',
+        value: 'Xin chân thành cảm ơn quý khách đã tin tưởng lựa chọn Yến Sào Chúc Cà Mau!'
       }
     ]
   }

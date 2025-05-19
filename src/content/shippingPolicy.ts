@@ -2,17 +2,23 @@ import { AppConfig } from '../AppConfig';
 
 export const shippingPolicyContent = [
   {
-    heading: '1. Phạm vi và thời gian giao hàng',
     contents: [
       {
         type: 'paragraph',
         value:
-          'Nội thành TP.HCM: Giao hàng trong ngày nếu đặt trong khung giờ làm việc. Khách có thể yêu cầu thời gian giao phù hợp.'
-      },
+          'Nhằm mang đến trải nghiệm mua sắm thuận tiện và nhanh chóng, Yến Sào Góc Của Hằng xin thông báo chính sách vận chuyển được áp dụng tại website như sau:'
+      }
+    ]
+  },
+  {
+    heading: '1. Phạm vi và thời gian giao hàng',
+    contents: [
       {
-        type: 'paragraph',
-        value:
-          'Ngoại tỉnh: Thời gian giao từ 2–5 ngày tùy theo đơn vị vận chuyển (GHN, GHTK, Viettel Post, xe khách…).'
+        type: 'ul',
+        values: [
+          '<strong>Nội thành TP.HCM</strong>: Giao hàng trong ngày nếu đặt trong khung giờ làm việc. Khách có thể yêu cầu thời gian giao phù hợp.',
+          '<strong>Ngoại tỉnh</strong>: Thời gian giao từ 2–5 ngày tùy theo đơn vị vận chuyển (GHN, GHTK, Viettel Post, xe khách…).'
+        ]
       }
     ]
   },
@@ -20,13 +26,11 @@ export const shippingPolicyContent = [
     heading: '2. Phí vận chuyển',
     contents: [
       {
-        type: 'paragraph',
-        value:
-          'Phí vận chuyển sẽ được tính dựa theo địa chỉ nhận hàng, khối lượng của đơn hàng theo cước phí vận chuyển của các đơn vị đối tác.'
-      },
-      {
-        type: 'paragraph',
-        value: 'Phí vận chuyển được thông báo cụ thể sau khi xác nhận đơn hàng.'
+        type: 'ul',
+        values: [
+          'Phí vận chuyển sẽ được tính dựa theo địa chỉ nhận hàng, khối lượng của đơn hàng theo cước phí vận chuyển của các đơn vị đối tác.',
+          'Phí vận chuyển được thông báo cụ thể sau khi xác nhận đơn hàng.'
+        ]
       }
     ]
   },
@@ -34,14 +38,11 @@ export const shippingPolicyContent = [
     heading: '3. Trách nhiệm vận chuyển',
     contents: [
       {
-        type: 'paragraph',
-        value:
-          'Đối tác vận chuyển chịu trách nhiệm nếu hàng hóa bị móp méo, hư hỏng, chậm trễ hoặc thất lạc.'
-      },
-      {
-        type: 'paragraph',
-        value:
+        type: 'ul',
+        values: [
+          'Đối tác vận chuyển chịu trách nhiệm nếu hàng hóa bị móp méo, hư hỏng, chậm trễ hoặc thất lạc.',
           'Chúng tôi sẽ hỗ trợ làm việc với đối tác vận chuyển để xử lý kịp thời các sự cố phát sinh.'
+        ]
       }
     ]
   },
@@ -49,14 +50,11 @@ export const shippingPolicyContent = [
     heading: '4. Quyền lợi khách hàng',
     contents: [
       {
-        type: 'paragraph',
-        value:
-          'Trong trường hợp đơn hàng bị trễ, chúng tôi sẽ kịp thời thông báo đến quý khách hàng để cùng đưa ra các biện pháp xử lý phù hợp.'
-      },
-      {
-        type: 'paragraph',
-        value:
+        type: 'ul',
+        values: [
+          'Trong trường hợp đơn hàng bị trễ, chúng tôi sẽ kịp thời thông báo đến quý khách hàng để cùng đưa ra các biện pháp xử lý phù hợp.',
           'Nếu quý khách không còn nhu cầu nhận hàng, có thể yêu cầu hủy đơn hàng. Trong trường hợp này, toàn bộ số tiền đã thanh toán sẽ được hoàn lại trong vòng 3 - 5 ngày làm việc.'
+        ]
       }
     ]
   },
@@ -71,11 +69,14 @@ export const shippingPolicyContent = [
       {
         type: 'ul',
         values: [
-          `Email: ${AppConfig.email}`,
-          `Số điện thoại: ${AppConfig.phone}`,
-          `Địa chỉ: ${AppConfig.address}`,
-          'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website'
+          `<strong>Email:</strong> <a href="mailto:${AppConfig.shippingEmail}" class="hover:underline">${AppConfig.shippingEmail}</a>`,
+          `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
+          `<strong>Địa chỉ:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(AppConfig.address)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
+      },
+      {
+        type: 'paragraph',
+        value: 'Xin chân thành cảm ơn quý khách đã tin tưởng lựa chọn Yến Sào Góc Của Hằng!'
       }
     ]
   }
