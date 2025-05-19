@@ -1,5 +1,10 @@
 import categoryData from '@/data/product-categories.json';
-import productData from '@/data/products.json';
+import productData from '@/data/products/chao-soup-yen-products.json';
+import productData2 from '@/data/products/set-qua-yen-chung-tuoi-products.json';
+import productData3 from '@/data/products/topping-products.json';
+import productData4 from '@/data/products/yen-chung-tuoi-products.json';
+import productData5 from '@/data/products/yen-sao-tho-products.json';
+import productData6 from '@/data/products/yen-tinh-che-products.json';
 import type { QueryResource, QueryResourceResponse } from '@/types/common';
 import type { Product, Category } from '@/types/product';
 
@@ -7,7 +12,14 @@ import { isValidDateString, isValidNumberString } from '@/lib/utils';
 import { sortByDateField, sortByStringField } from '@/lib/utils/collection';
 import { sortByNumberField } from '@/lib/utils/collection';
 
-const products = productData as unknown as Product[];
+const products = [
+  ...productData,
+  ...productData2,
+  ...productData3,
+  ...productData4,
+  ...productData5,
+  ...productData6
+] as unknown as Product[];
 const categories = categoryData as unknown as Category[];
 
 type QueryProduct = QueryResource<Product> & {
