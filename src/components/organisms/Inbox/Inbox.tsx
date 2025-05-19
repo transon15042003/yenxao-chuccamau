@@ -26,9 +26,10 @@ type InboxFormValues = z.infer<typeof inboxFormSchema>;
 
 type InboxProps = HTMLAttributes<HTMLElement> & {
   className?: string;
+  setIsLoading: (isLoading: boolean) => void;
 };
 
-export const Inbox = ({ className, ...props }: InboxProps) => {
+export const Inbox = ({ className, setIsLoading, ...props }: InboxProps) => {
   const {
     control,
     handleSubmit,
@@ -37,7 +38,6 @@ export const Inbox = ({ className, ...props }: InboxProps) => {
   } = useForm<InboxFormValues>({
     resolver: zodResolver(inboxFormSchema),
     defaultValues: {
-      // Đảm bảo khớp với InboxFormValues
       name: '',
       email: '',
       phone: '',
@@ -47,6 +47,8 @@ export const Inbox = ({ className, ...props }: InboxProps) => {
   });
 
   const onSubmit = async (data: InboxFormValues) => {
+    setIsLoading(true);
+
     if (data.message) {
       try {
         const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
@@ -70,7 +72,11 @@ export const Inbox = ({ className, ...props }: InboxProps) => {
       } catch (error) {
         console.error('Lỗi khi gửi tin nhắn:', error);
         alert('Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.');
+      } finally {
+        setIsLoading(false);
       }
+    } else {
+      setIsLoading(false);
     }
   };
 
