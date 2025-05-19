@@ -22,16 +22,11 @@
   {
     "id": "c-5",
     "name": "Tổ Yến Sào Thô",
-    "slug": "yen-sao-thu"
+    "slug": "yen-sao-tho"
   },
   {
     "id": "c-6",
     "name": "Topping",
     "slug": "topping"
-  },
-  {
-    "id": "c-7",
-    "name": "Món nền thử",
-    "slug": "mon-nen-thu"
   }
 ]
