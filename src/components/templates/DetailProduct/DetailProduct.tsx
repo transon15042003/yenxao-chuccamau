@@ -1,8 +1,8 @@
-import { getProductMarkdown } from '@/markdown/products';
 import { Product } from '@/types/product';
 
 import ImgSlider from '@/components/molecules/ImgSlider/ImgSlider';
 import OthersProduct from '@/components/organisms/OthersProduct/OthersProduct';
+import ProductDetailInfo from '@/components/organisms/ProductDetailInfo/ProductDetailInfo';
 import ProductInfoPanel from '@/components/organisms/ProductInfoPanel/ProductInfoPanel';
 import ProductSummary from '@/components/organisms/ProductSummary/ProductSummary';
 
@@ -18,10 +18,7 @@ const DetailProduct = ({ product, products }: DetailProductProps) => (
       <ImgSlider />
     </div>
     <ProductSummary product={product} className="lg:col-span-4" />
-    <div className="lg:col-span-10 lg:col-start-2">
-      {getProductMarkdown('yen-vun-chung-tuoi')({})}
-    </div>
-
+    <ProductDetailInfo product={product} className="lg:col-span-10 lg:col-start-2 col-span-1" />
     <div className="px-2 pt-3 lg:px-0 lg:col-span-10 lg:col-start-2 bg-white">
       <OthersProduct heading="Sản phẩm liên quan" products={products} />
       <OthersProduct heading="Sản phẩm đã xem" products={products} className="mt-8" />
