@@ -1,4 +1,3 @@
-import { AppConfig } from 'src/AppConfig';
 import { returnPage } from 'src/contents/returnPage';
 
 import { SectionHeading } from '@/components/atoms/Heading';
@@ -15,7 +14,7 @@ const ParagraphPolicy = () => (
     {returnPage.contents.map((el, idx) => {
       switch (el.type) {
         case 'paragraph':
-          return <Paragraph key={idx}>{el.value}</Paragraph>;
+          return <Paragraph key={idx} content={el.value} />;
         case 'title':
           return (
             <SectionHeading
@@ -26,19 +25,11 @@ const ParagraphPolicy = () => (
             </SectionHeading>
           );
         case 'ul':
-          return <UnOrderedList items={el.value} key={idx} />;
+          return (
+            <UnOrderedList items={el.value} key={idx} className="text-[#2A2A40] text-[18px]" />
+          );
         case 'ol':
-          return <OrderedList items={el.value} key={idx} />;
-      }
-    })}
-    {Object.entries(AppConfig).map(([key, val]) => {
-      switch (key) {
-        case 'email':
-          return <Paragraph key={key}>{`Email: ${val}`}</Paragraph>;
-        case 'phone':
-          return <Paragraph key={key}>{`Hotline: ${val}`}</Paragraph>;
-        case 'address':
-          return <Paragraph key={key}>{`Địa chỉ: ${val}`}</Paragraph>;
+          return <OrderedList items={el.value} key={idx} className="text-[#2A2A40] text-[18px]" />;
       }
     })}
     <Img
