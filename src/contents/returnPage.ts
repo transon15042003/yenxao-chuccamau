@@ -1,124 +1,87 @@
 import { PolicyContentType } from '@/types/content';
+import { AppConfig } from 'src/AppConfig';
 
 export const returnPage: PolicyContentType = {
-  heading: 'Chính sách đổi trả hàng',
+  heading: 'Chính Sách Kiểm Tra & Đổi Trả Hàng Hóa',
   contents: [
     {
-      type: 'paragraph',
-      value:
-        'Chúng tôi cam kết đảm bảo sự hài lòng của khách hàng với mọi sản phẩm. Chính sách đổi trả này được thiết kế để giúp bạn hiểu rõ quy trình khi cần đổi hoặc trả sản phẩm.'
-    },
-    {
       type: 'title',
-      value: '1. Điều kiện đổi trả'
-    },
-    {
-      type: 'paragraph',
-      value: 'Bạn có thể đổi trả sản phẩm trong các trường hợp sau:'
-    },
-    {
-      type: 'ul',
-      value: [
-        'Sản phẩm bị lỗi sản xuất hoặc hư hỏng khi nhận hàng.',
-        'Sản phẩm không đúng với mô tả hoặc hình ảnh trên website.',
-        'Sản phẩm không vừa kích cỡ hoặc không phù hợp với nhu cầu.',
-        'Nhận được sản phẩm không đúng với đơn đặt hàng.'
-      ]
-    },
-    {
-      type: 'title',
-      value: '2. Thời hạn đổi trả'
-    },
-    {
-      type: 'paragraph',
-      value: 'Thời hạn đổi trả sản phẩm như sau:'
-    },
-    {
-      type: 'ul',
-      value: [
-        'Đối với sản phẩm lỗi: 30 ngày kể từ ngày nhận hàng.',
-        'Đối với sản phẩm không vừa ý: 14 ngày kể từ ngày nhận hàng.',
-        'Đối với sản phẩm khuyến mãi: Vui lòng kiểm tra điều kiện cụ thể của chương trình khuyến mãi.'
-      ]
-    },
-    {
-      type: 'title',
-      value: '3. Quy trình đổi trả'
-    },
-    {
-      type: 'paragraph',
-      value: 'Để đổi trả sản phẩm, vui lòng thực hiện các bước sau:'
-    },
-    {
-      type: 'ol',
-      value: [
-        'Liên hệ với bộ phận Chăm sóc Khách hàng qua email hoặc hotline.',
-        'Cung cấp thông tin đơn hàng, lý do đổi trả và hình ảnh sản phẩm (nếu cần).',
-        'Nhận mã đổi trả và hướng dẫn đóng gói sản phẩm.',
-        'Gửi sản phẩm về địa chỉ được cung cấp, kèm theo hóa đơn và phiếu bảo hành (nếu có).',
-        'Chờ xác nhận và xử lý từ bộ phận Chăm sóc Khách hàng.'
-      ]
-    },
-    {
-      type: 'title',
-      value: '4. Hình thức hoàn tiền'
-    },
-    {
-      type: 'paragraph',
-      value: 'Tùy thuộc vào trường hợp, chúng tôi sẽ hoàn tiền theo một trong các hình thức sau:'
-    },
-    {
-      type: 'ul',
-      value: [
-        'Hoàn tiền vào phương thức thanh toán ban đầu (thẻ tín dụng, tài khoản ngân hàng).',
-        'Cung cấp mã giảm giá hoặc credit để sử dụng cho lần mua hàng tiếp theo.',
-        'Đổi sản phẩm mới có giá trị tương đương hoặc cao hơn (bạn sẽ thanh toán phần chênh lệch)'
-      ]
+      value: '1. Cam Kết Chất Lượng Sản Phẩm'
     },
     {
       type: 'paragraph',
       value:
-        'Thời gian hoàn tiền: 5-10 ngày làm việc kể từ khi chúng tôi nhận được sản phẩm trả lại'
-    },
-    {
-      type: 'title',
-      value: '5. Chi phí đổi trả'
+        'Yến Sào Chúc Mau cam kết mang đến cho quý khách hàng những sản phẩm chất lượng cao. Tuy nhiên, trong quá trình vận chuyển, hàng hóa có thể gặp phải một số lỗi về hình thức như trầy xước, móp méo, rách bao bì hoặc thay đổi màu sắc.'
     },
     {
       type: 'paragraph',
-      value: 'Chi phí đổi trả được quy định như sau:'
+      value:
+        'Vì vậy, chúng tôi khuyến khích quý khách <strong>kiểm tra kỹ sản phẩm ngay khi nhận hàng</strong> để đảm bảo quyền lợi của mình.'
+    },
+    {
+      type: 'title',
+      value: '2. Hướng Dẫn Kiểm Tra Khi Nhận Hàng'
+    },
+    {
+      type: 'title',
+      value: 'Bước 1: Nhận hàng'
+    },
+    {
+      type: 'paragraph',
+      value:
+        'Khi nhận được sản phẩm từ nhân viên giao hàng, quý khách vui lòng mở gói và kiểm tra ngay khi nhận hàng.'
+    },
+    {
+      type: 'title',
+      value: 'Bước 2: Kiểm tra sản phẩm'
+    },
+    {
+      type: 'paragraph',
+      value: ' Đối chiếu sản phẩm với đơn đặt hàng về:'
     },
     {
       type: 'ul',
       value: [
-        'Đối với sản phẩm lỗi hoặc không đúng mô tả: Chúng tôi sẽ chịu chi phí vận chuyển.',
-        'Đối với sản phẩm không vừa ý hoặc không phù hợp: Khách hàng chịu chi phí vận chuyển.'
+        'Chủng loại, mẫu mã, số lượng.',
+        'Tình trạng bên ngoài: trầy xước, móp méo, bể vỡ, rách bao bì,…'
       ]
     },
     {
       type: 'title',
-      value: '6. Sản phẩm không được đổi trả'
-    },
-    {
-      type: 'paragraph',
-      value: 'Một số sản phẩm không được áp dụng chính sách đổi trả:'
+      value: 'Bước 3: Xử lý nếu có vấn đề'
     },
     {
       type: 'ul',
       value: [
-        'Sản phẩm đã qua sử dụng, bị hư hỏng do lỗi người dùng.',
-        'Sản phẩm không còn nguyên vẹn, mất tem nhãn, bao bì.',
-        'Sản phẩm được đánh dấu rõ là "Không được đổi trả" trên trang sản phẩm',
-        'Sản phẩm thuộc danh mục hàng tiêu dùng cá nhân (vì lý do vệ sinh).'
+        'Trường hợp sản phẩm không đúng hoặc bị lỗi hình thức, quý khách không muốn nhận hàng có thể <strong>trả lại ngay cho nhân viên giao hàng</strong>.',
+        'Chúng tôi sẽ <strong>gửi lại sản phẩm mới</strong> đúng với đơn đặt hàng trong thời gian sớm nhất.'
       ]
     },
     {
       type: 'title',
-      value: '7. Liên hệ hỗ trợ'
+      value: '3. Liên hệ'
     },
     {
       type: 'paragraph',
-      value: 'Nếu bạn có bất kỳ câu hỏi nào về chính sách đổi trả, vui lòng liên hệ:'
+      value:
+        'Nếu quý khách có bất kỳ thắc mắc, yêu cầu hoặc khiếu nại nào liên quan đến chính sách kiểm tra & đổi trả hàng hóa, vui lòng liên hệ:'
+    },
+    {
+      type: 'ul',
+      value: [
+        `<strong>Email:</strong> <a href="mailto:${AppConfig.email}" className="hover:underline">${AppConfig.email}</a>`,
+        `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" className="hover:underline">${AppConfig.phone}</a>`,
+        `<strong>Địa chỉ:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(AppConfig.address)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
+      ]
+    },
+    {
+      type: 'paragraph',
+      value: 'Hoặc gửi yêu cầu qua biểu mẫu liên hệ trên website '
+    },
+    {
+      type: 'paragraph',
+      value:
+        'Chúng tôi rất mong Quý khách phối hợp và kiểm tra kỹ sản phẩm khi nhận để đảm bảo quyền lợi. Xin chân thành cảm ơn Quý khách đã tin tưởng lựa chọn Yến Sào Chúc Cà Mau!'
     }
   ]
 };

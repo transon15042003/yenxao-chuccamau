@@ -1,10 +1,13 @@
 import { cn } from '@/lib/utils';
 
 interface ParagraphProps {
-  children: string;
+  content: string;
   className?: string;
 }
 
-export const Paragraph = ({ children, className }: ParagraphProps) => (
-  <p className={cn('text-[18xp] text-[#2A2A40] leading-[35px]', className)}>{children}</p>
+export const Paragraph = ({ content, className }: ParagraphProps) => (
+  <p
+    className={cn('text-[18px] text-[#2A2A40] leading-[35px]', className)}
+    dangerouslySetInnerHTML={{ __html: content }}
+  />
 );

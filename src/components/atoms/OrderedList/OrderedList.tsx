@@ -9,9 +9,7 @@ export const OrderedList = ({ items, className }: OrderedListProps) => {
   return (
     <ol className={cn('list-decimal pl-5', className)}>
       {items.map((el, idx) => (
-        <li key={idx} className=" leading-[35px]">
-          {el}
-        </li>
+        <li key={idx} className=" leading-[35px]" dangerouslySetInnerHTML={{ __html: el }} />
       ))}
     </ol>
   );
