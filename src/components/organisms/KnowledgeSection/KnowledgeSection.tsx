@@ -76,7 +76,6 @@ export const KnowledgeSection = () => {
             </div>
           </div>
         ) : latestBlogs.length > 0 ? (
-          // Nếu có bài viết, map và hiển thị
           latestBlogs.map((blog) => (
             <New
               key={blog.id}
@@ -89,7 +88,6 @@ export const KnowledgeSection = () => {
             />
           ))
         ) : (
-          // Nếu không tìm thấy bài viết nào
           <p>Không tìm thấy bài viết mới nào.</p>
         )}
       </div>

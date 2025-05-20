@@ -3,23 +3,26 @@ import { CalendarSVG } from '@/svg/CalendarSVG/CalendarSVG';
 import { StackSVG } from '@/svg/StackSVG/StackSVG';
 import { UserSVG } from '@/svg/UserSVG/UserSVG';
 import { notFound } from 'next/navigation';
-import { generateStaticParams, getBlogs, getBlogBySlug } from 'src/services/blog.service';
+import {
+  generateStaticParams as getStaticParamsFromService,
+  getBlogs,
+  getBlogBySlug
+} from 'src/services/blog.service';
 
 import { New } from '@/components/atoms/New';
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 
-// pre-render
-export { generateStaticParams };
-
-interface BlogDetailPageProps {
-  params: {
-    slug: string;
-  };
+export async function generateStaticParams() {
+  return await getStaticParamsFromService();
 }
 
-export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
-  const { slug } = params;
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params;
 
   const blog = await getBlogBySlug(slug);
   if (!blog) notFound();

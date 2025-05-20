@@ -71,7 +71,7 @@ export const getBlogBySlug = async (slug: string): Promise<BlogPost | undefined>
   return blog;
 };
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   const blogs = allBlog;
 
   return blogs.map((blog) => ({
