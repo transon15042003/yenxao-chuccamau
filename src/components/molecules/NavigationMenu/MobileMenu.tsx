@@ -7,15 +7,14 @@ import NavItem from './NavItem';
 
 interface MobileMenuProps {
   isOpen: boolean;
-  onClose: () => void;
 }
 
 const productMenuList = [
-  {
-    title: 'Bánh Tổ Yến',
-    link: '/products?c=banh-to-yen',
-    isComing: true
-  },
+  // {
+  //   title: 'Bánh Tổ Yến',
+  //   link: '/products?c=banh-to-yen',
+  //   isComing: true
+  // },
   {
     title: 'Yến Sào Tinh Chế',
     link: '/products?c=yen-sao-tinh-che'
@@ -37,17 +36,17 @@ const productMenuList = [
     title: 'Topping',
     link: '/products?c=topping'
   },
-  {
-    title: 'Yến Chưng Sấn Tiết Trùng',
-    link: '/products?c=yen-chung-san-tiet-trung'
-  },
+  // {
+  //   title: 'Yến Chưng Sấn Tiết Trùng',
+  //   link: '/products?c=yen-chung-san-tiet-trung'
+  // },
   {
     title: 'Món nên thử',
     link: '/products?c=mon-nen-thu'
   }
 ];
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const [isProductOpen, setIsProductOpen] = useState(false);
 
   if (!isOpen) return null;
@@ -55,10 +54,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <div className="absolute top-[calc(100%+2px)] left-0 w-full bg-primary-gradient-90 text-white z-50">
       <div className="flex flex-col p-4 gap-4">
-        <NavItem href="/" onClick={onClose} className="text-lg">
+        <NavItem href="/" className="text-lg">
           TRANG CHỦ
         </NavItem>
-        <NavItem href="/about" onClick={onClose} className="text-lg">
+        <NavItem href="/about" className="text-lg">
           GIỚI THIỆU
         </NavItem>
         <div className="relative">
@@ -73,17 +72,12 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               strokeWidth={2}
             />
           </button>
-          <ProductDropdown
-            open={isProductOpen}
-            items={productMenuList}
-            onItemClick={onClose}
-            isMobile={true}
-          />
+          <ProductDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
         </div>
-        <NavItem href="/blog" onClick={onClose} className="text-lg">
+        <NavItem href="/blog" className="text-lg">
           BLOG
         </NavItem>
-        <NavItem href="/contact" onClick={onClose} className="text-lg">
+        <NavItem href="/contact" className="text-lg">
           LIÊN HỆ
         </NavItem>
       </div>
