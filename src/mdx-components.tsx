@@ -17,7 +17,8 @@ export function useMDXComponents(): MDXComponents {
     MyHeader,
     BlogHeading1,
     BlogHeading2,
-    BlogParagraph
+    BlogParagraph,
+    BlogImage
   };
 }
 
