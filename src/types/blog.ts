@@ -1,9 +1,12 @@
 export type BlogPost = {
-  id: number;
-  heading: string;
+  id: string;
+  slug: string;
+  title: string;
   postedDate: string; //YYYY-MM-DDThh:mm:ss
   minRead: number;
   viewer: number;
-  relation: number[];
-  content: string[];
+  relation: string[];
+  description?: string;
+  keywords?: string[];
+  thumbnailUrl?: string;
 };

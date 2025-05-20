@@ -14,6 +14,54 @@ export function useMDXComponents(): MDXComponents {
     ul: (props) => <ul className="list-disc ml-6" {...props} />,
     ol: (props) => <ol className="list-decimal ml-6" {...props} />,
     MyImage,
-    MyHeader
+    MyHeader,
+    BlogHeading1,
+    BlogHeading2,
+    BlogParagraph
   };
 }
+
+export const BlogHeading1 = ({ children, ...props }: React.ComponentPropsWithoutRef<'h1'>) => {
+  return (
+    <h1 className="font-semibold text-[40px] text-[#202020] mb-8" {...props}>
+      {children}
+    </h1>
+  );
+};
+
+// Component cho H2
+export const BlogHeading2 = ({ children, ...props }: React.ComponentPropsWithoutRef<'h2'>) => {
+  return (
+    <h2 className="font-semibold text-[24px] text-gray-900 mb-5" {...props}>
+      {children}
+    </h2>
+  );
+};
+
+// Component cho Paragraph (P)
+export const BlogParagraph = ({ children, ...props }: React.ComponentPropsWithoutRef<'p'>) => {
+  return (
+    <p className="font-normal text-lg text-[#202020] mb-4" {...props}>
+      {children}
+    </p>
+  );
+};
+
+export const BlogImage = (props: React.ComponentProps<typeof Image>) => {
+  const { src, alt, width, height, ...rest } = props;
+
+  if (!src) return null;
+
+  return (
+    <Image
+      src={src}
+      alt={alt || 'image'}
+      width={width || 1400}
+      height={height || 600}
+      layout="responsive"
+      objectFit="contain"
+      className="rounded-lg shadow-md"
+      {...rest}
+    />
+  );
+};

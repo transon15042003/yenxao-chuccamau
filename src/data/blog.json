@@ -1,167 +1,176 @@
 [
   {
-    "id": 1,
-    "heading": "Cách chưng Yến tươi thơm ngon, bổ dưỡng đúng chuẩn tại nhà",
+    "id": "blog-1",
+    "slug": "yen-sao-la-gi-hanh-trinh-ky-dieu-tu-thien-nhien-den-mon-qua-cho-suc-khoe",
+    "title": "Yến sào là gì? Hành trình kỳ diệu từ thiên nhiên đến món quà cho sức khỏe",
     "postedDate": "2024-01-15T10:20:10",
     "minRead": 5,
     "viewer": 95765,
-    "relation": [1, 2, 3],
-    "content": [
-      "<div class=\"container text-justify\">",
-      "  <h1 class=\"text-4xl font-semibold text-[#202020] mb-8\">",
-      "    Yến tươi, với sợi yến dai mềm và hương vị tinh khiết",
-      "  </h1>",
-      "  <p class=\"text-gray-700 leading-relaxed mb-6\">",
-      "    Yến tươi, với sợi yến dai mềm và hương vị tinh khiết, là lựa chọn tuyệt vời để bồi bổ sức khỏe. Nhưng bạn có chắc mình đã biết  đúng chuẩn để giữ trọn vẹn dinh dưỡng quý giá? Liệu phương pháp bạn đang áp dụng có vô tình làm yến mất chất hay giảm đi độ thơm ngon vốn có? Đừng lo lắng! Yến Sào Góc Của Hằng sẽ giải đáp mọi thắc mắc. Bài viết này là cẩm nang chi tiết hướng dẫn bạn cách chưng yến tươi đơn giản tại nhà, đảm bảo món ăn vừa bổ dưỡng, thơm ngon, vừa giữ trọn tinh túy của tổ yến tươi. Cùng khám phá ngay!",
-      "  </p>",
-      "  <div class=\"w-full max-w-xl mx-auto my-6\">",
-      "    <img src=\"/images/products/yen-chung-tuoi/soi-non-duong-phen.jpg\" alt=\"Hình ảnh một chén yến tươi hấp dẫn\" class=\"rounded-md\" style=\"max-width:100%; height:auto;\" />",
-      "  </div>",
-      "  <h3 class=\"text-2xl font-semibold text-gray-800 mb-3 mt-6\">",
-      "    Yến là gì và công dụng của yến sào?",
-      "  </h3>",
-      "  <p class=\"text-gray-700 leading-relaxed mb-6\">",
-      "    Yến sào được biết đến là một loại thực phẩm quý hiếm, giàu dinh dưỡng,",
-      "    giúp bồi bổ cơ thể, tăng cường sức đề kháng, làm đẹp da...",
-      "  </p>",
-      "  <h3 class=\"text-2xl font-semibold text-gray-800 mb-3 mt-6\">",
-      "    Phân loại yến sào phổ biến",
-      "  </h3>",
-      "  <p class=\"text-gray-700 leading-relaxed mb-6\">",
-      "    Có nhiều loại yến sào khác nhau như yến huyết, yến hồng, yến trắng, yến thô, yến tinh chế, và yến tươi...",
-      "  </p>",
-      "</div>"
-    ]
+    "relation": ["blog-2", "blog-3", "blog-4"],
+    "description": "Tìm hiểu yến sào là gì, nguồn gốc từ thiên nhiên hoang dã và hành trình trở thành món quà quý giá cho sức khỏe con người, với những công dụng bồi bổ và cải thiện sức đề kháng.",
+    "keywords": [
+      "yến sào là gì",
+      "tổ yến",
+      "công dụng yến sào",
+      "lợi ích yến sào",
+      "nguồn gốc yến sào",
+      "yến sào tự nhiên"
+    ],
+    "thumbnailUrl": "/images/blog/blog_1_1.png"
   },
   {
-    "id": 2,
-    "heading": "Lợi ích sức khỏe bất ngờ từ Yến sào",
+    "id": "blog-2",
+    "slug": "yen-trang-yen-hong-yen-huyet---khac-nhau-the-nao-nen-chon-loai-nao-phu-hop",
+    "title": "Yến trắng, yến hồng, yến huyết – Khác nhau thế nào? Nên chọn loại nào phù hợp?",
     "postedDate": "2024-01-20T09:00:00",
     "minRead": 7,
     "viewer": 78123,
-    "relation": [1, 3, 4],
-    "content": [
-      "<div>",
-      "  <h2>Công dụng tuyệt vời của Yến sào</h2>",
-      "  <p>Yến sào không chỉ là món ăn ngon mà còn mang lại nhiều lợi ích cho sức khỏe.</p>",
-      "  <p>Nó giúp tăng cường hệ miễn dịch và phục hồi sức khỏe sau bệnh.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-1", "blog-3", "blog-4"],
+    "description": "Khám phá sự khác biệt về màu sắc, giá trị dinh dưỡng và cách hình thành của yến trắng, yến hồng, yến huyết để lựa chọn loại yến sào phù hợp nhất với nhu cầu và ngân sách của bạn.",
+    "keywords": [
+      "yến trắng",
+      "yến hồng",
+      "yến huyết",
+      "phân biệt yến sào",
+      "chọn yến sào",
+      "các loại yến",
+      "giá trị yến sào"
+    ],
+    "thumbnailUrl": "/images/blog/blog_2_1.png"
   },
   {
-    "id": 3,
-    "heading": "Phân biệt Yến thô và Yến tinh chế",
+    "id": "blog-3",
+    "slug": "yen-sao-co-gi-ma-tot-cho-suc-khoe-dien-vay-kham-pha-thanh-phan-dinh-duong-vang-trong-to-yen",
+    "title": "Yến sào có gì mà tốt cho sức khỏe đến vậy? Khám phá thành phần dinh dưỡng \"vàng\" trong tổ yến",
     "postedDate": "2024-02-01T14:30:00",
     "minRead": 6,
     "viewer": 65432,
-    "relation": [1, 2, 5],
-    "content": [
-      "<div>",
-      "  <h3>Yến thô và Yến tinh chế khác nhau thế nào?</h3>",
-      "  <p>Yến thô là yến nguyên bản còn lông và tạp chất.</p>",
-      "  <p>Yến tinh chế đã được làm sạch và định hình lại.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-1", "blog-2", "blog-5"],
+    "description": "Hướng dẫn chi tiết cách phân biệt yến thô (tổ yến nguyên bản chưa qua xử lý) và yến tinh chế (đã làm sạch) để bạn có lựa chọn thông minh khi mua yến sào.",
+    "keywords": [
+      "yến thô",
+      "yến tinh chế",
+      "cách phân biệt yến",
+      "yến sào chưa làm sạch",
+      "yến sào đã làm sạch"
+    ],
+    "thumbnailUrl": "/images/blog/blog_3_1.png"
   },
   {
-    "id": 4,
-    "heading": "Cách bảo quản Yến sào đúng cách",
+    "id": "blog-4",
+    "slug": "ai-nen-dung-yen-sao-nhung-nhom-nguoi-dung-phu-hop-va-cach-su-dung-hieu-qua",
+    "title": "Ai nên dùng yến sào? Những nhóm người dùng phù hợp và cách sử dụng hiệu quả",
     "postedDate": "2024-02-10T16:00:00",
     "minRead": 4,
     "viewer": 58765,
-    "relation": [2, 6],
-    "content": [
-      "<div>",
-      "  <p>Bảo quản yến sào rất quan trọng để giữ được chất lượng.</p>",
-      "  <p>Nên để nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-2", "blog-6", "blog-1"],
+    "description": "Bí quyết bảo quản yến sào hiệu quả để giữ trọn vẹn giá trị dinh dưỡng và kéo dài thời gian sử dụng, tránh ẩm mốc và hư hỏng, đảm bảo yến luôn tươi ngon.",
+    "keywords": [
+      "bảo quản yến sào",
+      "cách giữ yến",
+      "yến sào bị mốc",
+      "bảo quản tổ yến",
+      "yến sào tươi"
+    ],
+    "thumbnailUrl": "/images/blog/blog_4_1.png"
   },
   {
-    "id": 5,
-    "heading": "Các món ngon chế biến từ Yến sào",
+    "id": "blog-5",
+    "slug": "thoi-diem-nao-an-yen-la-tot-nhat-huong-dan-cach-dung-yen-dje-co-the-hap-thu-toi-uu",
+    "title": "Thời điểm nào ăn yến là tốt nhất? Hướng dẫn cách dùng yến để cơ thể hấp thu tối ưu",
     "postedDate": "2024-02-25T11:45:00",
     "minRead": 8,
     "viewer": 71234,
-    "relation": [3, 7, 8],
-    "content": [
-      "<div>",
-      "  <h2>Thực đơn với Yến sào</h2>",
-      "  <p>Yến sào có thể chế biến thành nhiều món như chè yến, súp yến, yến tiềm gà...</p>",
-      "  <p>Mỗi món đều thơm ngon và bổ dưỡng.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-3", "blog-7", "blog-8"],
+    "description": "Khám phá các công thức chế biến yến sào thành những món ăn thơm ngon, bổ dưỡng như yến chưng đường phèn, cháo yến, súp yến, giúp bồi bổ sức khỏe cho cả gia đình.",
+    "keywords": [
+      "món ngon từ yến sào",
+      "công thức yến sào",
+      "yến chưng",
+      "cháo yến sào",
+      "yến nấu món gì"
+    ],
+    "thumbnailUrl": "/images/blog/blog_5_1.png"
   },
   {
-    "id": 6,
-    "heading": "Lưu ý khi sử dụng Yến sào cho trẻ em và người già",
+    "id": "blog-6",
+    "slug": "cach-chung-yen-dung-cach-meo-nho-de-giu-tron-duong-chat",
+    "title": "Cách chưng yến đúng cách: Mẹo nhỏ để giữ trọn dưỡng chất",
     "postedDate": "2024-03-05T10:00:00",
     "minRead": 5,
     "viewer": 45678,
-    "relation": [4, 9],
-    "content": [
-      "<div>",
-      "  <p>Đối tượng sử dụng yến sào cần có những lưu ý riêng.</p>",
-      "  <p>Nên tham khảo ý kiến chuyên gia dinh dưỡng.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-4", "blog-9", "blog-1"],
+    "description": "Những lưu ý quan trọng về liều lượng, cách dùng và độ tuổi phù hợp khi cho trẻ em và người già sử dụng yến sào để đảm bảo an toàn và đạt hiệu quả tốt nhất cho sức khỏe.",
+    "keywords": [
+      "yến sào cho trẻ em",
+      "yến sào người già",
+      "liều lượng yến sào",
+      "cách dùng yến sào",
+      "yến sào an toàn"
+    ],
+    "thumbnailUrl": "/images/blog/blog_6_1.png"
   },
   {
-    "id": 7,
-    "heading": "Nguồn gốc và quy trình khai thác Yến sào",
+    "id": "blog-7",
+    "slug": "yen-sao-chung-voi-gi-ngon-nhat-goi-y-5-cong-thuc-de-lam-tai-nha",
+    "title": "Yến sào chưng với gì ngon nhất? Gợi ý 5 công thức dễ làm tại nhà",
     "postedDate": "2024-03-15T15:00:00",
     "minRead": 9,
     "viewer": 60123,
-    "relation": [5],
-    "content": [
-      "<div>",
-      "  <h3>Từ tổ chim Yến đến chén Yến sào</h3>",
-      "  <p>Yến sào được hình thành từ nước bọt của chim yến.</p>",
-      "  <p>Quy trình khai thác đòi hỏi kỹ thuật và sự cẩn trọng.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-5", "blog-1", "blog-2"],
+    "description": "Tìm hiểu về nguồn gốc hình thành tổ yến trong tự nhiên và khám phá quy trình khai thác yến sào thủ công hoặc hiện đại, đảm bảo chất lượng và bền vững.",
+    "keywords": ["nguồn gốc yến sào", "khai thác yến", "quy trình yến sào", "tổ yến tự nhiên"],
+    "thumbnailUrl": "/images/blog/blog_7_1.png"
   },
   {
-    "id": 8,
-    "heading": "Yến sào có tác dụng gì cho bà bầu?",
+    "id": "blog-8",
+    "slug": "to-yen-khai-thac-nhu-the-nao-hanh-trinh-tu-vach-da-den-tay-nguoi-dung",
+    "title": "Tổ yến khai thác như thế nào? Hành trình từ vách đá đến tay người dùng",
     "postedDate": "2024-03-20T12:00:00",
     "minRead": 6,
     "viewer": 55555,
-    "relation": [5, 9],
-    "content": [
-      "<div>",
-      "  <p>Yến sào rất tốt cho sức khỏe của phụ nữ mang thai.</p>",
-      "  <p>Nó cung cấp nhiều dưỡng chất cần thiết cho mẹ và bé.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-5", "blog-9", "blog-3"],
+    "description": "Giải đáp các lợi ích tuyệt vời của yến sào đối với sức khỏe bà bầu và sự phát triển của thai nhi, cung cấp dưỡng chất thiết yếu trong suốt thai kỳ.",
+    "keywords": [
+      "yến sào bà bầu",
+      "công dụng yến cho phụ nữ mang thai",
+      "yến sào cho thai nhi",
+      "lợi ích yến sào khi mang bầu"
+    ],
+    "thumbnailUrl": "/images/blog/blog_8_1.png"
   },
   {
-    "id": 9,
-    "heading": "Cách chọn mua Yến sào chất lượng",
+    "id": "blog-9",
+    "slug": "lam-sao-phan-biet-yen-sao-that-va-gia-nhung-meo-don-gian-ma-ai-cung-nen-biet",
+    "title": "Làm sao phân biệt yến sào thật và giả? Những mẹo đơn giản mà ai cũng nên biết",
     "postedDate": "2024-04-01T08:00:00",
     "minRead": 7,
     "viewer": 70000,
-    "relation": [6, 8, 10],
-    "content": [
-      "<div>",
-      "  <h2>Bí quyết chọn Yến sào ngon</h2>",
-      "  <p>Chọn yến sào cần chú ý đến màu sắc, hình dáng và mùi thơm.</p>",
-      "  <p>Mua ở những địa chỉ uy tín để đảm bảo chất lượng.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-6", "blog-8", "blog-10"],
+    "description": "Hướng dẫn chi tiết cách nhận biết và chọn mua yến sào chất lượng cao, phân biệt yến thật giả, giúp bạn tránh mua phải hàng kém chất lượng.",
+    "keywords": [
+      "cách chọn yến sào",
+      "mua yến sào chất lượng",
+      "phân biệt yến sào thật giả",
+      "tiêu chí chọn yến"
+    ],
+    "thumbnailUrl": "/images/blog/blog_9_1.png"
   },
   {
-    "id": 10,
-    "heading": "Yến sào và các bài thuốc Đông y",
+    "id": "blog-10",
+    "slug": "yen-tho-de-duoc-bao-lau-huong-dan-cach-bao-quan-yen-tho-dung-cach-tai-nha",
+    "title": "Yến thô để được bao lâu? Hướng dẫn cách bảo quản yến thô đúng cách tại nhà",
     "postedDate": "2024-04-10T14:00:00",
     "minRead": 8,
     "viewer": 48000,
-    "relation": [9],
-    "content": [
-      "<div>",
-      "  <p>Yến sào được sử dụng trong nhiều bài thuốc Đông y.</p>",
-      "  <p>Nó có tác dụng bồi bổ khí huyết, tăng cường sinh lực.</p>",
-      "</div>"
-    ]
+    "relation": ["blog-9", "blog-1", "blog-3"],
+    "description": "Tìm hiểu về vai trò và ứng dụng của yến sào trong các bài thuốc Đông y cổ truyền, những công thức kết hợp giúp tăng cường sức khỏe và hỗ trợ điều trị bệnh.",
+    "keywords": [
+      "yến sào đông y",
+      "bài thuốc yến sào",
+      "yến sào trong y học cổ truyền",
+      "công dụng yến sào đông y"
+    ],
+    "thumbnailUrl": "/images/blog/blog_10_1.png"
   }
 ]

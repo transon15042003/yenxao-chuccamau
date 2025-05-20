@@ -9,13 +9,13 @@ interface GetBlogsOptions {
   /** Bỏ qua bao nhiêu bài viết từ đầu */
   offset?: number;
   /** Trường muốn sắp xếp ('postedDate', 'minRead', 'viewer', 'id', 'heading') */
-  sortBy?: 'postedDate' | 'minRead' | 'viewer' | 'id' | 'heading';
+  sortBy?: 'postedDate' | 'minRead' | 'viewer' | 'id' | 'title';
   /** Thứ tự sắp xếp ('asc' - tăng dần, 'desc' - giảm dần). Mặc định là 'asc'. */
   sortOrder?: 'asc' | 'desc';
   /** Lọc chỉ lấy các bài viết có ID nằm trong mảng này */
-  filterByIds?: number[];
+  filterByIds?: string[];
   /** Lọc chỉ lấy các bài viết mà trong mảng 'relation' của chúng có chứa ID này */
-  filterByRelation?: number;
+  filterByRelation?: string;
   // Bạn có thể thêm các tùy chọn lọc khác tại đây nếu cấu trúc BlogPost có thêm trường (ví dụ: category, tags)
 }
 
@@ -35,8 +35,8 @@ export const getBlogs = async (options?: GetBlogsOptions): Promise<BlogPost[]> =
     const direction = sortOrder === 'asc' ? 1 : -1;
 
     result.sort((a, b) => {
-      const aValue = a[sortBy];
-      const bValue = b[sortBy];
+      const aValue = a[sortBy as keyof BlogPost];
+      const bValue = b[sortBy as keyof BlogPost];
 
       if (typeof aValue === 'string' && typeof bValue === 'string') {
         return direction * aValue.localeCompare(bValue);
@@ -59,17 +59,32 @@ export const getBlogs = async (options?: GetBlogsOptions): Promise<BlogPost[]> =
   return result;
 };
 
-export const getBlogById = async (id: number): Promise<BlogPost | undefined> => {
+export const getBlogById = async (id: string): Promise<BlogPost | undefined> => {
   const blog = allBlog.find((b) => b.id === id);
 
   return blog;
 };
 
+export const getBlogBySlug = async (slug: string): Promise<BlogPost | undefined> => {
+  const blog = allBlog.find((b) => b.slug === slug);
+
+  return blog;
+};
+
 export async function generateStaticParams() {
-  // Lấy tất cả bài viết (hoặc chỉ các trường cần thiết như ID)
   const blogs = allBlog;
 
   return blogs.map((blog) => ({
-    slug: blog.id.toString()
+    slug: blog.slug
   }));
 }
+
+export const getLatestBlogs = async (): Promise<BlogPost[]> => {
+  const latestBlogs = await getBlogs({
+    sortBy: 'postedDate',
+    sortOrder: 'desc',
+    limit: 3
+  });
+
+  return latestBlogs;
+};
