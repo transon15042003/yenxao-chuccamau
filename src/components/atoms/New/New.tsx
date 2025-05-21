@@ -27,7 +27,7 @@ export const New = (props: NewProps) => {
     >
       <div className="w-full h-[262px] relative">
         <Image
-          src={`/images/backgrounds/${props.imageUrl}`}
+          src={`${props.imageUrl}`}
           alt={props.title}
           layout="fill"
           objectFit="cover"
