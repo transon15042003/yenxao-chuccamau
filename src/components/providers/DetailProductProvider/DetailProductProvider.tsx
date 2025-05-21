@@ -26,7 +26,7 @@ const defaultProduct: Product = {
   thumbnail: '',
   description: '',
   categories: [],
-  ingredients: [],
+  ingredient: [],
   specs: [],
   variants: [],
   isNew: false,
