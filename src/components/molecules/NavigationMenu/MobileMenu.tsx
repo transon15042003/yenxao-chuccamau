@@ -1,4 +1,4 @@
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 
 import ProductDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
@@ -52,32 +52,36 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-[calc(100%+2px)] left-0 w-full bg-primary-gradient-90 text-white z-50">
-      <div className="flex flex-col p-4 gap-4">
-        <NavItem href="/" className="text-lg">
+    <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
+      <div className="flex flex-col p-6 pt-10 gap-10">
+        <NavItem href="/" className="text-2xl">
           TRANG CHỦ
         </NavItem>
-        <NavItem href="/about" className="text-lg">
+        <NavItem href="/about" className="text-2xl">
           GIỚI THIỆU
         </NavItem>
         <div className="relative">
           <button
             type="button"
-            className="flex items-center gap-1 focus:outline-none text-lg text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90 group"
+            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold ${
+              isProductOpen
+                ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
+                : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
+            } group`}
             onClick={() => setIsProductOpen(!isProductOpen)}
           >
             SẢN PHẨM
-            <ChevronDownIcon
-              className={`w-4 h-4 ml-1 stroke-white group-hover:stroke-secondary ${isProductOpen ? 'rotate-180 stroke-secondary' : ''}`}
+            <ChevronRightIcon
+              className={`w-6 h-6 ml-auto transition-transform duration-200 ${isProductOpen ? 'rotate-90 stroke-secondary' : 'stroke-white group-hover:stroke-secondary'}`}
               strokeWidth={2}
             />
           </button>
           <ProductDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
         </div>
-        <NavItem href="/blog" className="text-lg">
+        <NavItem href="/blog" className="text-2xl">
           BLOG
         </NavItem>
-        <NavItem href="/contact" className="text-lg">
+        <NavItem href="/contact" className="text-2xl">
           LIÊN HỆ
         </NavItem>
       </div>

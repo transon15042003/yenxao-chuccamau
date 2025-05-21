@@ -7,9 +7,9 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
 const FooterContent = () => {
   return (
     <>
-      <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto px-4 py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
+      <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto py-2 md:py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
         {/* Logo + Địa chỉ */}
-        <div className="flex-1 w-full md:w-1/4 flex flex-col items-start pt-2 pb-8 md:py-0 md:px-6">
+        <div className="flex-1 w-full md:w-1/4 flex flex-col justify-around pt-2 pb-8 md:py-0 md:px-6">
           <Image
             src="/logo-light.webp"
             alt="Chúc Cà Mau"
@@ -19,11 +19,20 @@ const FooterContent = () => {
           />
           <div className="flex items-start gap-2 text-sm">
             <MapPinIcon className="w-5 h-5 flex-shrink-0" />
-            123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=123+Đường+Lê+Lợi,+Phường+Bến+Nghé,+Quận+1,+TP.+Hồ+Chí+Minh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+            </a>
           </div>
           <div className="flex items-start gap-2 text-sm text-left w-full">
             <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-            (028) 3822 1234
+            <a href="tel:02838221234" className="hover:underline">
+              (028) 3822 1234
+            </a>
           </div>
         </div>
 
@@ -37,27 +46,42 @@ const FooterContent = () => {
               </div>
               <ul className="space-y-4 text-sm">
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/"
+                  >
                     Trang chủ
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/about">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/about"
+                  >
                     Giới thiệu
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/products">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/products"
+                  >
                     Sản phẩm
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/blog">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/blog"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/contact">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/contact"
+                  >
                     Liên hệ
                   </Link>
                 </li>
@@ -71,22 +95,34 @@ const FooterContent = () => {
               </div>
               <ul className="space-y-4 text-sm">
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/privacy-policy">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/privacy-policy"
+                  >
                     Chính sách bảo mật
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/return-policy">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/return-policy"
+                  >
                     Chính sách đổi trả hàng
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/order-policy">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/order-policy"
+                  >
                     Chính sách đặt hàng
                   </Link>
                 </li>
                 <li>
-                  <Link className="font-[400] text-[16px]" href="/shipping-policy">
+                  <Link
+                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
+                    href="/shipping-policy"
+                  >
                     Chính sách vận chuyển
                   </Link>
                 </li>
@@ -114,7 +150,7 @@ const FooterContent = () => {
               alt="Các loại giấy chứng nhận"
             />
           </div>
-          <hr className="w-full border-secondary/30 my-4 md:hidden" />
+          <hr className="w-full border-secondary/30" />
           <div className="w-full flex flex-col items-start gap-2 items-center md:items-start">
             <p className="text-lg font-bold">Theo dõi chúng tôi</p>
             <div className="flex flex-row flex-wrap gap-2 items-center">

@@ -84,10 +84,10 @@ const NavigationMenu = () => {
 
   return (
     <div className="w-full flex items-center justify-evenly h-full">
-      <NavItem href="/" active={pathname === '/'}>
+      <NavItem className="text-lg" href="/" active={pathname === '/'}>
         TRANG CHỦ
       </NavItem>
-      <NavItem href="/about" active={pathname === '/about'}>
+      <NavItem className="text-lg" href="/about" active={pathname === '/about'}>
         GIỚI THIỆU
       </NavItem>
       <div className="relative flex items-center h-full" ref={dropdownRef}>
@@ -110,10 +110,10 @@ const NavigationMenu = () => {
         </button>
         <MenuDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
       </div>
-      <NavItem href="/blog" active={pathname === '/blog'}>
+      <NavItem className="text-lg" href="/blog" active={pathname === '/blog'}>
         BLOG
       </NavItem>
-      <NavItem href="/contact" active={pathname === '/contact'}>
+      <NavItem className="text-lg" href="/contact" active={pathname === '/contact'}>
         LIÊN HỆ
       </NavItem>
     </div>

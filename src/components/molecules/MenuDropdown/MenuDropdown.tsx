@@ -20,7 +20,7 @@ const MenuDropdown = ({ open, items, onItemClick, isMobile = false }: MenuDropdo
 
   if (isMobile) {
     return (
-      <div className="text-white px-4 py-2">
+      <div className="text-white py-4 pb-0 -ml-[3px]">
         <div className="flex flex-col gap-4">
           {items.map((item) => (
             <DropdownItem
