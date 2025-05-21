@@ -21,7 +21,7 @@ const ProductDetail = ({ className }: ProductDetailInfoProps) => {
   return (
     <div
       className={cn(
-        'relative px-3 py-6 overflow-hidden my-[10px]  bg-white',
+        'relative px-3 lg:px-0 py-6 overflow-hidden my-[10px]  bg-white',
         seeAll ? 'h-auto' : 'h-[700px]',
         className
       )}

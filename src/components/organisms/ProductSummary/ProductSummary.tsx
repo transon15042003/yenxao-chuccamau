@@ -4,10 +4,12 @@ import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
 import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
 import { Star } from '@/svg/StarSVG/StarSVG';
+import { CartItem } from '@/types/cart';
 import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
 import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 import { cn } from '@/lib/utils';
@@ -17,24 +19,26 @@ interface ProductSummaryProps {
 }
 
 const ProductSummary = ({ className }: ProductSummaryProps) => {
-  const { product } = useDetailProduct();
+  const { product, curSize, curFlavor, name, curThumbnail, price, handleSetSize, handleSetFlavor } =
+    useDetailProduct();
+  const { addToCart } = useCart();
+
   const listSize = product.specs.find((el) => el.key === 'size');
   const listFlavor = product.specs.find((el) => el.key === 'savour');
-  const [size, setSize] = useState(0);
-  const [flavor, setFlavor] = useState(0);
-  const [amount, setAmount] = useState(1);
-  // const [totalAmount, setTotalAmount] = useState((product?.total - product?.totalSold) | 1);
+  const [amount, setAmount] = useState<number>(1);
+  const [seeAll, setSeeAll] = useState<boolean>(false);
 
-  const handleSetSize = (idx: number) => {
-    setSize(idx);
+  const handleChangeSize = (e: React.MouseEvent<HTMLElement>) => {
+    handleSetSize(e.currentTarget.innerText);
   };
-  const handleSetFlavor = (idx: number) => {
-    setFlavor(idx);
+  const handleChangeFlavor = (e: React.MouseEvent<HTMLElement>) => {
+    handleSetFlavor(e.currentTarget.innerText);
   };
   const handleChangeAmount = (type: 'increase' | 'decrease') => {
+    if (amount === 0) return;
     switch (type) {
       case 'increase':
-        // setAmount((prev) => (prev < totalAmount ? prev + 1 : totalAmount));
+        setAmount((prev) => prev + 1);
         break;
       case 'decrease':
         setAmount((prev) => (prev === 1 ? 1 : prev - 1));
@@ -43,13 +47,26 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         console.warn(`Do not have ${type}`);
     }
   };
-  // const handleSetTotalAmout = (total: number) => {
-  //   setTotalAmount(total);
-  // };
+  const handleAddToCart = () => {
+    const cartItem: CartItem = {
+      productId: product.id,
+      sku: '',
+      name: name,
+      price: price || 0,
+      quantity: amount,
+      specs: { size: curSize, savour: curFlavor },
+      thumbnail: curThumbnail
+    };
+
+    addToCart(cartItem);
+  };
+  const handleToggleSeeAll = () => {
+    setSeeAll((prev) => !prev);
+  };
 
   return (
-    <div className={cn('px-3 pb-5 text-[#2A2A40] mt-2 lg:mt-0  bg-white', className)}>
-      <SectionHeading className="text-[#2A2A40] text-[25px]">{product.name}</SectionHeading>
+    <div className={cn('px-3 pb-5 pt-4 lg:pt-0 text-[#2A2A40] bg-white', className)}>
+      <SectionHeading className="text-[#2A2A40] text-[25px]">{name}</SectionHeading>
       <div className="flex items-center py-2 border-b border-dashed border-[#DADADA]">
         <Star className="w-[20px] h-[20px]" />
         <Star className="w-[20px] h-[20px]" />
@@ -59,23 +76,36 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         <p className="pl-4">(124 reviews) | Đã bán {product.totalSold}</p>
       </div>
       <div className="flex items-center border-b border-dashed border-[#DADADA] py-2 text-[25px]">
-        <SectionHeading className="text-[25px]">{product.price}đ</SectionHeading>
+        <SectionHeading className="text-[25px]">{price}đ</SectionHeading>
         {/* <SectionHeading className="pl-4 font-light text-[20px] leading-[32px] line-through text-[#2A2A40]">
           12.000.000đ
         </SectionHeading> */}
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b className="mr-1">Thành phần:</b>
-        <span className="mr-1">
-          12g yến vụ tươi nguyên nhân, đông trùng hạ thảo, nước tinh khiết.
-        </span>
-        <Button
-          variant="secondary"
-          fill="outline"
-          className="text-[#0085E2] font-bold border-none p-0 w-auto"
-        >
-          Xem thêm
-        </Button>
+
+        <div className="relative">
+          <span
+            className={cn(
+              'mr-1 block transition-all',
+              seeAll ? 'line-clamp-none max-h-none' : 'line-clamp-2 max-h-[48px] overflow-hidden'
+            )}
+          >
+            {product.ingredient?.join(' ')}
+          </span>
+
+          <Button
+            variant="secondary"
+            fill="outline"
+            onClick={handleToggleSeeAll}
+            className={cn(
+              'text-[#0085E2] font-bold border-none p-0 bg-white',
+              seeAll ? 'static w-auto' : 'absolute bottom-0 right-0 w-[100px] hover:opacity-100'
+            )}
+          >
+            {seeAll ? 'Thu gọn' : 'Xem thêm'}
+          </Button>
+        </div>
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b>Size:</b>
@@ -84,10 +114,10 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             key={idx}
             variant="secondary"
             fill="outline"
-            onClick={() => handleSetSize(idx)}
+            onClick={(e) => handleChangeSize(e)}
             className={cn(
               'py-1 ml-2 mt-2 px-0 text-center w-auto px-2 border-[#2A2A40]',
-              size === idx && 'border-[#D62C35] text-[#D62C35]'
+              el === curSize && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
             {el}
@@ -101,10 +131,10 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             key={idx}
             variant="secondary"
             fill="outline"
-            onClick={() => handleSetFlavor(idx)}
+            onClick={(e) => handleChangeFlavor(e)}
             className={cn(
               'py-1 ml-2 mt-2 px-0 text-center w-auto px-2 border-[#2A2A40]',
-              flavor === idx && 'border-[#D62C35] text-[#D62C35]'
+              el === curFlavor && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
             {el}
@@ -133,7 +163,6 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           >
             +
           </Button>
-          <b className="pl-4">Còn {1} sản phẩm</b>
         </div>
       </div>
       <div className="py-2 lg:grid lg:grid-cols-12 lg:gap-2">
@@ -146,6 +175,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         <Button
           variant="secondary"
           fill="outline"
+          onClick={handleAddToCart}
           className="w-full h-[46px] font-bold border-[#2A2A40] text-[#2A2A40] mt-3 lg:col-span-6 lg:mt-0"
         >
           Thêm giỏ hàng
