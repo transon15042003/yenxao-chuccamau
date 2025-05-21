@@ -18,7 +18,7 @@ const meta: Meta<typeof ProductCard> = {
       categories: [],
       isNew: true,
       createdAt: '2021-01-01',
-      ingredients: ['Yến mạch', 'Bột mì', 'Trứng', 'Sữa tươi', 'Đường', 'Bơ', 'Bột nở'],
+      ingredient: ['Yến mạch', 'Bột mì', 'Trứng', 'Sữa tươi', 'Đường', 'Bơ', 'Bột nở'],
       specs: [{ key: 'size', value: ['100g', '200g', '300g'] }],
       variants: [
         {
