@@ -83,7 +83,7 @@ const NavigationMenu = () => {
   };
 
   return (
-    <div className="flex items-center gap-[60px] h-full">
+    <div className="w-full flex items-center justify-evenly h-full">
       <NavItem href="/" active={pathname === '/'}>
         TRANG CHỦ
       </NavItem>
@@ -93,7 +93,7 @@ const NavigationMenu = () => {
       <div className="relative flex items-center h-full" ref={dropdownRef}>
         <button
           type="button"
-          className={`flex items-center gap-1 h-full focus:outline-none group ${
+          className={`flex items-center gap-1 h-full text-lg font-bold focus:outline-none group ${
             isMounted && open
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'

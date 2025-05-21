@@ -11,7 +11,7 @@ interface NavItemProps {
 const NavItem = ({ href, children, active = false, className = '' }: NavItemProps) => (
   <Link
     href={href}
-    className={`transition-colors duration-200
+    className={`transition-colors duration-200 text-lg font-bold
       ${
         active
           ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
