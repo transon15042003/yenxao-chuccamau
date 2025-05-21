@@ -9,7 +9,7 @@ const FooterContent = () => {
     <>
       <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto py-2 md:py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
         {/* Logo + Địa chỉ */}
-        <div className="flex-1 w-full md:w-1/4 flex flex-col justify-around pt-2 pb-8 md:py-0 md:px-6">
+        <div className="flex-1 w-full md:w-1/4 flex flex-col gap-2 md:gap-5 pt-2 pb-8 md:py-0 md:px-6">
           <Image
             src="/logo-light.webp"
             alt="Chúc Cà Mau"
@@ -40,7 +40,7 @@ const FooterContent = () => {
         <div className="py-10 md:py-0 w-full md:w-1/2">
           <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
             {/* Menu */}
-            <div className="flex-1 flex flex-col items-start px-8">
+            <div className="flex-1 flex flex-col items-start px-0 md:pl-6">
               <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
                 MENU
               </div>
@@ -89,7 +89,7 @@ const FooterContent = () => {
             </div>
 
             {/* Chính sách */}
-            <div className="flex-1 flex flex-col items-start pr-8">
+            <div className="flex-1 flex flex-col items-start px-0">
               <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
                 CHÍNH SÁCH
               </div>
@@ -138,14 +138,14 @@ const FooterContent = () => {
           </div>
           <div className="flex flex-row gap-2 items-center w-full pb-2 md:justify-start md:flex-col md:items-start md:gap-4">
             <Image
-              width={200}
-              height={200}
+              width={220}
+              height={220}
               src="/images/footer/dathongbao.png"
               alt="Đã thông báo Bộ Công Thương"
             />
             <Image
-              width={200}
-              height={200}
+              width={220}
+              height={220}
               src="/images/footer/certificate.png"
               alt="Các loại giấy chứng nhận"
             />

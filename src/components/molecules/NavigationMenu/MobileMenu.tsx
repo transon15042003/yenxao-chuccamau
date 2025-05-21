@@ -53,7 +53,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
 
   return (
     <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
-      <div className="flex flex-col p-6 pt-10 gap-10">
+      <div className="flex flex-col p-4 pt-6 gap-6">
         <NavItem href="/" className="text-2xl">
           TRANG CHỦ
         </NavItem>

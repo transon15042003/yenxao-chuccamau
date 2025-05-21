@@ -21,7 +21,7 @@ const TopHighlight = () => {
         <div className="absolute inset-0 w-full h-full rounded-2xl bg-[#920202]/80" />
       </div>
 
-      <div className="flex flex-col items-center flex-1 z-10 mb-8 md:mb-0">
+      <div className="flex flex-col items-center gap-2 flex-1 z-10 mb-8 md:mb-0">
         <Image
           src="/images/footer/chinhhang-background.png"
           alt="Chính hãng"
@@ -35,7 +35,7 @@ const TopHighlight = () => {
         <div className="text-lg font-[600] text-white/80">Không hàng giả</div>
       </div>
 
-      <div className="flex flex-col items-center flex-1 z-10 mb-8 md:mb-0">
+      <div className="flex flex-col items-center gap-2 flex-1 z-10 mb-8 md:mb-0">
         <div className="relative w-36 h-36 mb-2 flex items-center justify-center">
           <Image
             src="/images/footer/camket-background.png"
@@ -55,7 +55,7 @@ const TopHighlight = () => {
         <div className="text-lg font-[600] text-white/80">Phục vụ tận tâm</div>
       </div>
 
-      <div className="flex flex-col items-center flex-1 z-10">
+      <div className="flex flex-col items-center gap-2 flex-1 z-10">
         <div className="relative w-36 h-36 mb-2 flex items-center justify-center">
           <Image
             src="/images/footer/antam-background.png"
