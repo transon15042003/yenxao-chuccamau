@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { returnPage } from 'src/contents/returnPage';
 
 import { SectionHeading } from '@/components/atoms/Heading';
-import Img from '@/components/atoms/Image/Image';
 import { OrderedList } from '@/components/atoms/OrderedList/OrderedList';
 import { Paragraph } from '@/components/atoms/Paragraph/Paragraph';
 import { UnOrderedList } from '@/components/atoms/UnOrderedList/UnOderedList';
@@ -32,9 +32,12 @@ const ParagraphPolicy = () => (
           return <OrderedList items={el.value} key={idx} className="text-[#2A2A40] text-[18px]" />;
       }
     })}
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/images/policy/decorate.png"
-      className="absolute bottom-4 right-4 min-w-[300px] max-w-[40vw] opacity-15"
+      alt="decorator"
+      className="absolute bottom-4 right-4 min-w-[300px] max-w-[40vw] lg:w-full opacity-15"
     />
   </div>
 );

@@ -1,5 +1,6 @@
+import Image from 'next/image';
+
 import { Button } from '@/components/atoms/Button';
-import Img from '@/components/atoms/Image/Image';
 
 import { cn } from '@/lib/utils';
 
@@ -28,27 +29,37 @@ const ImgSlider = ({ className }: ImgSliderProps) => (
     >
       ^
     </Button>
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/product.png"
       alt="product"
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3"
     />
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/product.png"
       alt="product"
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3"
     />
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/product.png"
       alt="product"
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3"
     />
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/product.png"
       alt="product"
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3"
     />
-    <Img
+    <Image
+      width={100}
+      height={100}
       src="/product.png"
       alt="product"
       className="lg:h-[113px] lg:w-[91px] object-cover col-span-3 hidden lg:block"
