@@ -41,7 +41,7 @@ describe('New', () => {
 
     const imageElement = screen.getByAltText(mockProps.title);
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', '/images/backgrounds/' + mockProps.imageUrl);
+    expect(imageElement).toHaveAttribute('src', mockProps.imageUrl);
 
     expect(screen.getByText(mockProps.date)).toBeInTheDocument();
     expect(screen.getByText(mockProps.readTime)).toBeInTheDocument();

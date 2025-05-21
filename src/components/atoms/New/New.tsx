@@ -29,14 +29,14 @@ export const New = (props: NewProps) => {
     // mx-auto: Căn giữa thẻ New trong container cha trên mobile
     <div
       className={`border border-gray-200 rounded-lg overflow-hidden shadow-md my-1
-                 w-4/5 md:w-[279.75px] mx-auto
+                 w-96 md:w-[279.75px] mx-auto h-[492px]
                  ${props.className || ''}`}
     >
       {/* Phần ảnh bài viết */}
       {/* w-full h-[262px] relative: Ảnh chiếm hết chiều ngang của thẻ New và có chiều cao cố định 262px */}
       <div className="w-full h-[262px] relative">
         <Image
-          src={`/images/backgrounds/${props.imageUrl}`}
+          src={`${props.imageUrl}`}
           alt={props.title} // Sử dụng tiêu đề làm alt text cho ảnh
           layout="fill" // Ảnh sẽ lấp đầy kích thước của div cha (w-full h-[262px])
           objectFit="cover" // Giữ tỷ lệ khung hình và cắt ảnh nếu cần để lấp đầy
