@@ -43,7 +43,7 @@ export const QuoteSection = ({
 
   return (
     <div className="w-full min-h-[674px] bg-[url('/quotes/image.png')] bg-cover bg-bottom bg-no-repeat py-5 flex flex-col md:flex-row items-center justify-center">
-      <div className="hidden md:inline-flex h-96 flex-col justify-start">
+      <div className="hidden md:inline-flex md:scale-75 lg:scale-100 h-96 flex-col justify-start">
         <Image src="/quotes/Vector.png" width={150} height={126} alt="Decorative quote icon" />{' '}
       </div>
 
@@ -81,7 +81,7 @@ export const QuoteSection = ({
         )}
       </div>
 
-      <div className="hidden md:inline-flex h-96 flex-col justify-end">
+      <div className="hidden md:inline-flex md:scale-75 lg:scale-100 h-96 flex-col justify-end">
         <Image src="/quotes/Vector-1.png" width={114} height={95} alt="Decorative quote icon" />{' '}
       </div>
     </div>

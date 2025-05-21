@@ -7,7 +7,7 @@ import { Certificate } from '@/components/atoms/Certificate';
 export const Certificates = () => (
   <div
     data-testid="certificates-container"
-    className="flex md:flex-row flex-col justify-center items-center"
+    className="flex md:flex-row md:flex-wrap flex-col justify-center items-center"
   >
     <Certificate
       SvgIconComponent={<QualitySVG className="w-32 h-32 mb-12" />}

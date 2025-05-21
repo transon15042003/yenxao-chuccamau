@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 
+import { Button } from '@/components/atoms/Button';
 import { New } from '@/components/atoms/New';
 
 import SectionTitle from '../../molecules/SectionTitle/SectionTitle';
@@ -9,7 +10,7 @@ export const KnowledgeSection = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full h-auto md:h-[917px] flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
+    <div className="w-full h-auto flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
       {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
       <div
         className="absolute w-full h-full
@@ -27,7 +28,7 @@ export const KnowledgeSection = () => {
         heading="Tin Tức & Hướng Dẫn"
         subHeading="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
       />
-      <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-between items-center relative z-10 my-9">
+      <div className="w-full lg:w-5/6 flex flex-wrap flex-col md:flex-row justify-between items-center relative z-10 my-9">
         <New
           imageUrl="news.png"
           date="May 13, 2025"
@@ -53,13 +54,14 @@ export const KnowledgeSection = () => {
           linkUrl=""
         />
       </div>
-      <button
-        type="button"
-        className="border-2 border-black px-4 py-2 rounded-lg text-[#2A2A40] font-semibold text-lg hover:bg-black hover:text-white relative z-10" // Thêm class z-index
+
+      <Button
+        className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
+        fill="outline"
         onClick={() => router.push('/products')}
       >
         Xem tất cả sản phẩm
-      </button>
+      </Button>
     </div>
   );
 };

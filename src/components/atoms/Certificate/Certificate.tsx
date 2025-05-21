@@ -8,15 +8,13 @@ type CertificateProps = {
 };
 
 export const Certificate = (props: CertificateProps) => {
-  const width = 384,
-    height = 386,
-    borderWidth = 4;
+  const borderWidth = 4;
 
   return (
     <div
       data-testid="certificate-container"
       className={`
-        w-[${width}px] h-[${height}px] 
+        w-[384px] h-[386px] 
         rounded-lg m-2 // Áp dụng bo góc cho thẻ ngoài
       `}
       style={{
