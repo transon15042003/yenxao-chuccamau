@@ -172,7 +172,7 @@ const FooterContent = () => {
         </div>
       </div>
 
-      <div className="text-center py-4 text-sm font-[400] relative z-10">
+      <div className="text-center pb-6 text-sm font-[400] relative z-10">
         © Copyright 2025, All Rights Reserved by Techbee
       </div>
     </>
