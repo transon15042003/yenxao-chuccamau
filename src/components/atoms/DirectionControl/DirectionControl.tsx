@@ -45,7 +45,7 @@ export const DirectionControl = (props: DirectionControlProps) => {
   return (
     // Sử dụng phần tử button là phù hợp nhất về ngữ nghĩa cho một điều khiển có thể thao tác
     <button
-      className={`w-16 h-10 flex items-center justify-center p-2 border border-dark ${backgroundColorClass} ${props.className || ''}`}
+      className={`w-16 h-10 flex items-center justify-center p-2 border border-dark ${backgroundColorClass} ${props.className || ''} hover:opacity-80`}
       onClick={props.onClick} // Gắn hàm xử lý click
       aria-label={ariaLabel} // Thêm nhãn cho khả năng tiếp cận
     >

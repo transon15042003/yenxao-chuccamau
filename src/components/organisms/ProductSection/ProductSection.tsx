@@ -2,6 +2,7 @@
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 
+import { Button } from '@/components/atoms/Button';
 import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
@@ -27,9 +28,12 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
 
   return (
     <div
-      className={`w-full py-[50px] bg-[url('/images/backgrounds/newfeed.png')] bg-cover bg-no-repeat flex flex-col items-center justify-center`}
+      className={`w-full py-[50px] bg-[url('/images/backgrounds/newfeed.png')] bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center`}
+      style={{
+        filter: 'brightness(1.1)'
+      }}
     >
-      <SectionTitle heading="Sản phẩm nổi bật" />
+      <SectionTitle className="mb-2" heading="Sản phẩm nổi bật" />
       <ChoiceGroup />
 
       {/* This div creates a responsive grid layout for products. Using Tailwind columns (1 col on small, 2 on medium, 4 on large). Loop and map data from initialBestSelling - forwarded by props */}
@@ -62,13 +66,13 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
         )}
       </div>
 
-      <button
-        type="button"
-        className="border-2 border-black px-4 py-2 rounded-lg text-[#2A2A40] font-semibold text-lg hover:bg-black hover:text-white"
+      <Button
+        className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
+        fill="outline"
         onClick={() => router.push('/products')}
       >
         Xem tất cả sản phẩm
-      </button>
+      </Button>
     </div>
   );
 };

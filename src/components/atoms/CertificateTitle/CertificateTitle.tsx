@@ -16,6 +16,7 @@ export const CertificateTitle = (props: CertificateTitleProps) => {
       to-[#FFE059]
       bg-clip-text
       text-transparent
+      mb-2
       `}
     >
       {props.title}

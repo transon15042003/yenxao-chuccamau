@@ -5,7 +5,7 @@ import { Certificates } from '../../molecules/Certificates';
 export const AboutSection = () => (
   <div
     data-testid="aboutsection-box"
-    className="w-full h-auto md:h-[917px] flex flex-col items-center justify-around py-[70px] relative overflow-hidden"
+    className="w-full h-auto flex flex-col items-center justify-around py-[70px] relative overflow-hidden"
   >
     {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
     <div
