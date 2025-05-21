@@ -4,7 +4,7 @@ import { FaThumbsUp, FaCheck } from 'react-icons/fa';
 
 const TopHighlight = () => {
   return (
-    <div className="relative overflow-hidden z-10 w-5/6 mx-auto mt-6 mb-6 rounded-2xl border-2 border-secondary flex flex-col gap-8 px-2 py-10 md:flex-row md:justify-between md:items-center md:py-16 md:gap-8">
+    <div className="relative overflow-hidden z-10 w-5/6 mx-auto mt-16 mb-6 rounded-2xl border-2 border-secondary flex flex-col gap-8 px-2 py-10 md:flex-row md:justify-between md:items-center md:py-16 md:gap-8">
       {/* Top left arc */}
       <div className="absolute -top-12 -left-4 w-24 h-24 md:w-32 md:h-32 border-[3px] border-secondary border-t-0 border-l-0 rounded-br-full pointer-events-none z-20" />
       {/* Bottom right arc */}

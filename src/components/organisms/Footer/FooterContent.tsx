@@ -7,7 +7,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
 const FooterContent = () => {
   return (
     <>
-      <div className="text-[#DBDBDB] relative z-10 max-w-[1200px] mx-auto px-4 md:px-12 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
+      <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto px-4 py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
         {/* Logo + Địa chỉ */}
         <div className="flex-1 w-full md:w-1/4 flex flex-col items-start pt-2 pb-8 md:py-0 md:px-6">
           <Image
@@ -88,16 +88,6 @@ const FooterContent = () => {
                 <li>
                   <Link className="font-[400] text-[16px]" href="/shipping-policy">
                     Chính sách vận chuyển
-                  </Link>
-                </li>
-                <li>
-                  <Link className="font-[400] text-[16px]" href="/terms-of-use">
-                    Điều khoản sử dụng
-                  </Link>
-                </li>
-                <li>
-                  <Link className="font-[400] text-[16px]" href="/warranty-policy">
-                    Chính sách bảo hành
                   </Link>
                 </li>
               </ul>
