@@ -1,20 +1,20 @@
 'use client';
 
 import { getProductMarkdown } from '@/markdown/products';
-import { Product } from '@/types/product';
 import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 import { cn } from '@/lib/utils';
 
 interface ProductDetailInfoProps {
   className?: string;
-  product: Product;
 }
 
-const ProductDetail = ({ className, product }: ProductDetailInfoProps) => {
+const ProductDetail = ({ className }: ProductDetailInfoProps) => {
+  const { product } = useDetailProduct();
   const [seeAll, setSeeAll] = useState<boolean>(false);
   const handleSetSeeAll = () => setSeeAll((prev) => !prev);
 

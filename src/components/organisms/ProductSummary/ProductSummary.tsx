@@ -4,20 +4,20 @@ import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
 import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
 import { Star } from '@/svg/StarSVG/StarSVG';
-import { Product } from '@/types/product';
 import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 import { cn } from '@/lib/utils';
 
 interface ProductSummaryProps {
   className?: string;
-  product: Product;
 }
 
-const ProductSummary = ({ className, product }: ProductSummaryProps) => {
+const ProductSummary = ({ className }: ProductSummaryProps) => {
+  const { product } = useDetailProduct();
   const listSize = product.specs.find((el) => el.key === 'size');
   const listFlavor = product.specs.find((el) => el.key === 'savour');
   const [size, setSize] = useState(0);

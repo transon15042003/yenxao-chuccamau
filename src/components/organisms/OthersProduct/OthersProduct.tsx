@@ -8,14 +8,15 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
 import { ProductCard } from '@/components/molecules/ProductCard';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 interface OthersProductProps {
   className?: string;
   heading: string;
-  products: Product[];
 }
 
-const OthersProduct = ({ className, heading, products }: OthersProductProps) => {
+const OthersProduct = ({ className, heading }: OthersProductProps) => {
+  const { products } = useDetailProduct();
   const router = useRouter();
 
   const handleAddToCart = (product: Product) => {
