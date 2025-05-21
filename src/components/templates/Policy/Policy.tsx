@@ -1,11 +1,11 @@
-import { PolicyContent } from '@/types/policy';
+import { PolicyProps } from '@/types/policy';
 import Image from 'next/image';
 
 import Heading from '@/components/content/Heading';
 import List from '@/components/content/List';
 import Paragraph from '@/components/content/Paragraph';
 
-const Policy = ({ title, content }: PolicyContent) => {
+const Policy = ({ title, content }: PolicyProps) => {
   return (
     <div
       className="min-h-screen w-full flex justify-center items-start py-12 px-2 md:px-0 relative"
