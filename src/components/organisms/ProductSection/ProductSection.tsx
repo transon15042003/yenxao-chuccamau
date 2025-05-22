@@ -23,7 +23,8 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
   };
 
   const handleButtonClick = (product: Product) => {
-    router.push(`/payment/${product.slug}`);
+    handleAddToCart(product);
+    router.push('/order');
   };
 
   return (
