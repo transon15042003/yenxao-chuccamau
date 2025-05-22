@@ -1,6 +1,7 @@
-import { AppConfig } from '../AppConfig';
+import { PolicyContent } from '@/types/policy';
+import { AppConfig } from 'src/AppConfig';
 
-export const privacyPolicyContent = [
+export const privacyPolicyContent: PolicyContent[] = [
   {
     contents: [
       {
