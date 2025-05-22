@@ -9,7 +9,7 @@ type ContactItemProps = {
 
 export const ContactItem = (props: ContactItemProps) => (
   <div className="flex items-start mb-7">
-    {props.icon}
+    <div className="w-1/6">{props.icon}</div>
     <TextStack label={props.label} details={props.details} />
   </div>
 );
