@@ -1,7 +1,8 @@
 'use client';
 
 import useClickOutside from '@/hooks/useClickOutside';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import CloseMenuIcon from '@/svg/MenuHeaderSVG/CloseMenuIcon';
+import MenuIcon from '@/svg/MenuHeaderSVG/MenuIcon';
 import React, { useState, useRef, RefObject } from 'react';
 
 import Logo from '@/components/atoms/Logo/Logo';
@@ -29,12 +30,12 @@ const Header = () => {
   });
 
   return (
-    <header className="w-full h-[100px] bg-primary-gradient-90 text-white fixed top-0 z-[1000]">
+    <header className="w-full h-[100px] bg-primary-gradient-90 text-white fixed top-0 z-[1000] border-b-[3px] border-secondary">
       <div className="flex h-full items-center justify-between w-full px-4 sm:px-10 xl:mx-auto xl:w-[93%]">
         {/* Logo bên trái */}
         <Logo />
         {/* NavigationMenu ở giữa trên desktop, ẩn trên mobile */}
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="hidden md:flex flex-1 justify-center items-center h-full">
           <NavigationMenu />
         </div>
         {/* Tìm kiếm, giỏ hàng và hamburger cho mobile */}
@@ -49,17 +50,13 @@ const Header = () => {
             className="md:hidden text-white focus:outline-none transition-transform duration-300 group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? (
-              <XMarkIcon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-secondary-gradient-90" />
-            ) : (
-              <Bars3Icon className="w-6 h-6 stroke-white group-hover:stroke-transparent group-hover:bg-clip-text group-hover:bg-secondary-gradient-90" />
-            )}
+            {isMenuOpen ? <CloseMenuIcon /> : <MenuIcon />}
           </button>
         </div>
       </div>
       {/* MobileMenu cho mobile */}
       <div ref={menuRef}>
-        <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+        <MobileMenu isOpen={isMenuOpen} />
       </div>
     </header>
   );

@@ -1,12 +1,13 @@
-import { AppConfig } from '../AppConfig';
+import { PolicyContent } from '@/types/policy';
+import { AppConfig } from 'src/AppConfig';
 
-export const privacyPolicyContent = [
+export const privacyPolicyContent: PolicyContent[] = [
   {
     contents: [
       {
         type: 'paragraph',
         value:
-          '<strong>Yến Sào Chúc Cà Mau</strong> cam kết bảo mật thông tin cá nhân của khách hàng và minh bạch về việc thu thập, sử dụng, lưu trữ, chia sẻ cũng như quyền lợi liên quan.'
+          'Yến Sào Chúc Cà Mau cam kết bảo mật thông tin cá nhân của khách hàng và minh bạch về việc thu thập, sử dụng, lưu trữ, chia sẻ cũng như quyền lợi liên quan.'
       }
     ]
   },
@@ -122,9 +123,9 @@ export const privacyPolicyContent = [
       {
         type: 'ul',
         values: [
-          `<strong>Email:</strong> <a href="mailto:${AppConfig.privacyEmail}" class="hover:underline">${AppConfig.privacyEmail}</a>`,
+          // `<strong>Email:</strong> <a href="mailto:${AppConfig.privacyEmail}" class="hover:underline">${AppConfig.privacyEmail}</a>`,
           `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
-          `<strong>Địa chỉ:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(AppConfig.address)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
+          `<strong>Địa chỉ:</strong> <a href="${AppConfig.addressURL}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
       },
       {
