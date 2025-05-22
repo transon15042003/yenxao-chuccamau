@@ -3,6 +3,54 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+// import { AppConfig } from 'src/AppConfig';
+
+interface MenuItem {
+  href: string;
+  label: string;
+}
+
+interface MenuSectionProps {
+  title: string;
+  items: MenuItem[];
+}
+
+const MenuSection: React.FC<MenuSectionProps> = ({ title, items }) => {
+  return (
+    <div className="flex-1 flex flex-col items-start px-0 md:pl-6">
+      <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
+        {title}
+      </div>
+      <ul className="space-y-4 text-sm">
+        {items.map((item, index) => (
+          <li key={index}>
+            <Link
+              className="font-[400] text-[16px] hover:text-secondary transition-colors"
+              href={item.href}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const menuItems: MenuItem[] = [
+  { href: '/', label: 'Trang chủ' },
+  { href: '/about', label: 'Giới thiệu' },
+  { href: '/products', label: 'Sản phẩm' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Liên hệ' }
+];
+
+const policyItems: MenuItem[] = [
+  { href: '/privacy-policy', label: 'Chính sách bảo mật' },
+  { href: '/return-policy', label: 'Chính sách đổi trả hàng' },
+  { href: '/order-policy', label: 'Chính sách đặt hàng' },
+  { href: '/shipping-policy', label: 'Chính sách vận chuyển' }
+];
 
 const FooterContent = () => {
   return (
@@ -20,7 +68,7 @@ const FooterContent = () => {
           <div className="flex items-start gap-2 text-sm">
             <MapPinIcon className="w-5 h-5 flex-shrink-0" />
             <a
-              href="https://www.google.com/maps/search/?api=1&query=123+Đường+Lê+Lợi,+Phường+Bến+Nghé,+Quận+1,+TP.+Hồ+Chí+Minh"
+              href="https://maps.app.goo.gl/sDUyNeb4u12ArZcM9"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
@@ -39,95 +87,8 @@ const FooterContent = () => {
         {/* Menu + Chính sách container */}
         <div className="py-10 md:py-0 w-full md:w-1/2">
           <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
-            {/* Menu */}
-            <div className="flex-1 flex flex-col items-start px-0 md:pl-6">
-              <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
-                MENU
-              </div>
-              <ul className="space-y-4 text-sm">
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/"
-                  >
-                    Trang chủ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/about"
-                  >
-                    Giới thiệu
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/products"
-                  >
-                    Sản phẩm
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/blog"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/contact"
-                  >
-                    Liên hệ
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Chính sách */}
-            <div className="flex-1 flex flex-col items-start px-0">
-              <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
-                CHÍNH SÁCH
-              </div>
-              <ul className="space-y-4 text-sm">
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/privacy-policy"
-                  >
-                    Chính sách bảo mật
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/return-policy"
-                  >
-                    Chính sách đổi trả hàng
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/order-policy"
-                  >
-                    Chính sách đặt hàng
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="font-[400] text-[16px] hover:text-secondary transition-colors"
-                    href="/shipping-policy"
-                  >
-                    Chính sách vận chuyển
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <MenuSection title="MENU" items={menuItems} />
+            <MenuSection title="CHÍNH SÁCH" items={policyItems} />
           </div>
         </div>
 

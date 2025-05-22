@@ -1,6 +1,8 @@
 'use client';
 
 import useClickOutside from '@/hooks/useClickOutside';
+import CloseMenuIcon from '@/svg/MenuHeaderSVG/CloseMenuIcon';
+import MenuIcon from '@/svg/MenuHeaderSVG/MenuIcon';
 import React, { useState, useRef, RefObject } from 'react';
 
 import Logo from '@/components/atoms/Logo/Logo';
@@ -9,9 +11,6 @@ import NavigationMenu from '@/components/molecules/NavigationMenu/NavigationMenu
 import CartButton from '@/components/organisms/CartButton/CartButton';
 import SearchBar from '@/components/organisms/SearchBar/SearchBar';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
-
-import CloseMenuIcon from './CloseMenuIcon';
-import MenuIcon from './MenuIcon';
 
 const Header = () => {
   const { setIsCartOpen, cart } = useCart();

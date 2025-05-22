@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 
-import ProductDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
+import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
 
 import NavItem from './NavItem';
 
@@ -76,7 +76,7 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
               strokeWidth={2}
             />
           </button>
-          <ProductDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
+          <MenuDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
         </div>
         <NavItem href="/blog" className="text-2xl">
           BLOG
