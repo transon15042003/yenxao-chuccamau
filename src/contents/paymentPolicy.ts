@@ -21,7 +21,7 @@ export const paymentPolicyContent: PolicyContent[] = [
       },
       {
         type: 'paragraph',
-        value: `<strong>Địa chỉ cửa hàng:</strong> ${AppConfig.address}`
+        value: `<strong>Địa chỉ cửa hàng:</strong> <a href="${AppConfig.addressURL}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
       }
     ]
   },

@@ -72,7 +72,7 @@ export const shippingPolicyContent: PolicyContent[] = [
         values: [
           // `<strong>Email:</strong> <a href="mailto:${AppConfig.shippingEmail}" class="hover:underline">${AppConfig.shippingEmail}</a>`,
           `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
-          `<strong>Địa chỉ:</strong> <a href="${AppConfig.embedUrl}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
+          `<strong>Địa chỉ:</strong> <a href="${AppConfig.addressURL}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
       },
       {
