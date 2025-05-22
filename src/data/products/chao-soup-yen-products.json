@@ -1,0 +1,70 @@
+[
+  {
+    "id": "chao-ga-yen-tuoi",
+    "name": "Cháo gà yến tươi",
+    "slug": "chao-ga-yen-tuoi",
+    "price": 60000,
+    "thumbnail": "/images/products/chao-sup-yen/chao_ga_15gr_cleanup.jpg",
+    "description": "Cháo gà yến tươi",
+    "categories": ["chao-sup-yen"],
+    "ingredient": [
+      "Yến Tươi 100%: Mỗi chén chứa yến nguyên chất, giàu axit amin và khoáng chất thiết yếu.",
+      "Thịt Gà Sấy Thăng Hoa: thịt gà sạch, giữ trọn hương vị và dinh dưỡng nhờ công nghệ sấy hiện đại.",
+      "Gạo Thơm Tuyển Chọn: Cháo dẻo, mịn và thơm từ gạo chất lượng cao.",
+      "Rau Củ Tự Nhiên: Nấm và cà rốt sấy, bổ sung vitamin và chất xơ.",
+      "Gia Vị Tự Nhiên: Đậm đà, an toàn, theo công thức riêng biệt."
+    ],
+    "specs": [
+      {
+        "key": "size",
+        "value": ["không yến", "yến vụn 15gr", "yến vụn 30gr"]
+      },
+      {
+        "key": "savour",
+        "value": ["gà"]
+      }
+    ],
+    "isNew": false,
+    "total": 312,
+    "totalSold": 201,
+    "createdAt": "2025-04-15T00:00:00.000Z",
+    "variants": [
+      {
+        "sku": "chaoga-0yen",
+        "name": "Cháo gà yến tươi  - không yến",
+        "specs": {
+          "size": "không yến",
+          "savour": "gà"
+        },
+        "price": 60000,
+        "stock": 112,
+        "isActive": true,
+        "thumbnail": "/images/products/chao-sup-yen/chao_ga_15gr_cleanup.jpg"
+      },
+      {
+        "sku": "chaoga-15gr",
+        "name": "Cháo gà yến tươi  - 15 gram - yến vụn",
+        "specs": {
+          "size": "yến vụn 15 gr",
+          "savour": "gà"
+        },
+        "price": 115000,
+        "stock": 45,
+        "isActive": true,
+        "thumbnail": "/images/products/chao-sup-yen/chao_ga_35gr.jpeg"
+      },
+      {
+        "sku": "chaoga-30gr",
+        "name": "Cháo gà yến tươi  - 30 gram - yến vụn",
+        "specs": {
+          "size": "yến vụn 30 gr",
+          "savour": "gà"
+        },
+        "price": 160000,
+        "stock": 67,
+        "isActive": true,
+        "thumbnail": "/images/products/chao-sup-yen/chao_ga_35gr.jpeg"
+      }
+    ]
+  }
+]

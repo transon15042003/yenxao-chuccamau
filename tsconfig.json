@@ -8,8 +8,14 @@
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/styles/*": ["./src/styles/*"],
+      "@/data/*": ["./src/data/*"],
       "@/mocks/*": ["./__mocks__/*"],
-      "@/tests/*": ["./.jest/*"]
+      "@/tests/*": ["./.jest/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/data/*": ["./src/data/*"],
+      "@/svg/*": ["./src/svg/*"],
+      "@/content/*": ["./src/content/*"],
+      "@/markdown/*": ["./src/markdown/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

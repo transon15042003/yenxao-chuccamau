@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
 
+import { CartProvider } from '@/components/providers/CartProvider/CartProvider';
 import { MainProvider } from '@/components/providers/MainProvider';
 import { MainLayout } from '@/components/templates/MainLayout';
 
@@ -23,11 +24,16 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={cn(nunitoSans.variable, 'font-primary')} suppressHydrationWarning>
+      <body
+        className={cn(nunitoSans.variable, 'font-primary customscrollbar')}
+        suppressHydrationWarning
+      >
         <MainProvider>
-          <MainLayout>
-            <main>{children}</main>
-          </MainLayout>
+          <CartProvider>
+            <MainLayout>
+              <main>{children}</main>
+            </MainLayout>
+          </CartProvider>
         </MainProvider>
       </body>
     </html>
