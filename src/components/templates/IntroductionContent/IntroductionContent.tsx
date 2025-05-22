@@ -3,6 +3,9 @@ import Image from 'next/image';
 import GuidingCart from '@/components/organisms/GuidingCart/GuidingCart';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
+import Step from '@/components/organisms/Step/Step';
+
+import { cn } from '@/lib/utils';
 
 const descriptions = {
   developHistory: [
@@ -43,6 +46,38 @@ const descriptions = {
       title: 'Giá trị cốt lõi',
       description:
         'Chất lượng là ưu tiên hàng đầu <br/>Đổi mới và sáng tạo không ngừng <br/>Tôn trọng và hợp tác <br />Trách nhiệm với xã hội <br />Phát triển bền vững'
+    }
+  ],
+  productionProcess: [
+    {
+      img: '/images/introduction/step_1.png',
+      title: 'Nhập nguyên liệu',
+      description:
+        'Chúng tôi chỉ sử dụng nguyên liệu chất lượng cao từ các nhà cung cấp uy tín, đảm bảo nguồn gốc rõ ràng.'
+    },
+    {
+      img: '/images/introduction/step_2.png',
+      title: 'Sản xuất',
+      description:
+        'Quy trình sản xuất hiện đại, tự động hóa cao, được vận hành bởi đội ngũ kỹ thuật viên lành nghề.'
+    },
+    {
+      img: '/images/introduction/step_3.png',
+      title: 'Kiểm tra chất lượng',
+      description:
+        'Mỗi sản phẩm đều trải qua quy trình kiểm tra nghiêm ngặt, đảm bảo đáp ứng các tiêu chuẩn chất lượng cao nhất.'
+    },
+    {
+      img: '/images/introduction/step_4.png',
+      title: 'Đóng gói',
+      description:
+        'Sản phẩm được đóng gói cẩn thận, bảo vệ tối đa trong quá trình vận chuyển và bảo quản.'
+    },
+    {
+      img: '/images/introduction/step_5.png',
+      title: 'Bảo hành và hỗ trợ',
+      description:
+        'Chúng tôi cam kết cung cấp dịch vụ bảo hành và hỗ trợ kỹ thuật chuyên nghiệp sau bán hàng.'
     }
   ]
 };
@@ -97,6 +132,47 @@ const IntroductionContent = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </IntroductionSection>
+      <IntroductionSection
+        heading="Quy trình sản xuất"
+        subHeading="Quy trình sản xuất chuyên nghiệp, đảm bảo chất lượng sản phẩm"
+        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+      >
+        <div className="lg:grid lg:grid-cols-12">
+          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
+            <span className="block w-[3px] bg-[#D93434] absolute bottom-0 top-0 lg:right-1/2 right-[100%] lg:translate-x-1/2 min-h-[1000px]" />
+            {descriptions.productionProcess.map((el, idx) => (
+              <div key={idx}>
+                {idx % 2 === 1 && <div className="min-w-[50%] h-[208px] hidden lg:block" />}
+                <Step
+                  img={el.img}
+                  title={el.title}
+                  desc={el.description}
+                  position={idx % 2 === 0 ? 'left' : 'right'}
+                  display="inline"
+                  className={cn(
+                    'overflow-hidden max-h-0 lg:max-h-[208px]',
+                    idx % 2 === 0
+                      ? 'translate-x-[8px]'
+                      : 'float-right translate-x-[-8px] translate-y-[-208px]'
+                  )}
+                />
+              </div>
+            ))}
+
+            {descriptions.productionProcess.map((el, idx) => (
+              <Step
+                key={idx}
+                img={el.img}
+                title={el.title}
+                desc={el.description}
+                position={'right'}
+                display="topdown"
+                className="overflow-hidden max-h-none lg:max-h-0 translate-x-[-9px]"
+              />
+            ))}
           </div>
         </div>
       </IntroductionSection>
