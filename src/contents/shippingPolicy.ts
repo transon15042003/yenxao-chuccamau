@@ -7,7 +7,7 @@ export const shippingPolicyContent: PolicyContent[] = [
       {
         type: 'paragraph',
         value:
-          'Nhằm mang đến trải nghiệm mua sắm thuận tiện và nhanh chóng, Yến Sào Góc Của Hằng xin thông báo chính sách vận chuyển được áp dụng tại website như sau:'
+          'Nhằm mang đến trải nghiệm mua sắm thuận tiện và nhanh chóng, Yến Sào Chúc Cà Mau xin thông báo chính sách vận chuyển được áp dụng tại website như sau:'
       }
     ]
   },
@@ -70,14 +70,14 @@ export const shippingPolicyContent: PolicyContent[] = [
       {
         type: 'ul',
         values: [
-          `<strong>Email:</strong> <a href="mailto:${AppConfig.shippingEmail}" class="hover:underline">${AppConfig.shippingEmail}</a>`,
+          // `<strong>Email:</strong> <a href="mailto:${AppConfig.shippingEmail}" class="hover:underline">${AppConfig.shippingEmail}</a>`,
           `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
-          `<strong>Địa chỉ:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(AppConfig.address)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
+          `<strong>Địa chỉ:</strong> <a href="${AppConfig.embedUrl}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
       },
       {
         type: 'paragraph',
-        value: 'Xin chân thành cảm ơn quý khách đã tin tưởng lựa chọn Yến Sào Góc Của Hằng!'
+        value: 'Xin chân thành cảm ơn quý khách đã tin tưởng lựa chọn Yến Sào Chúc Cà Mau!'
       }
     ]
   }
