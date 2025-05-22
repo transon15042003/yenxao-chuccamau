@@ -6,12 +6,26 @@ interface DescriptionProps {
   className?: string;
   title: string;
   description: string;
+  titleClass?: string;
+  descClass?: string;
+  titleStyle?: Record<string, string>;
 }
 
-const Description = ({ title, description, className }: DescriptionProps) => (
+const Description = ({
+  title,
+  description,
+  className,
+  titleClass,
+  descClass,
+  titleStyle
+}: DescriptionProps) => (
   <div className={cn('text-left', className)}>
-    <Paragraph content={title} className="font-bold text-[25px] leading-full" />
-    <Paragraph content={description} className="text-[20px] leading-full" />
+    <Paragraph
+      style={titleStyle}
+      content={title}
+      className={cn('font-bold text-[25px] leading-full', titleClass)}
+    />
+    <Paragraph content={description} className={cn('text-[20px] leading-full', descClass)} />
   </div>
 );
 export default Description;
