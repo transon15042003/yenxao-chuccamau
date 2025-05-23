@@ -5,14 +5,12 @@ import productData3 from '@/data/products/topping-products.json';
 import productData4 from '@/data/products/yen-chung-tuoi-products.json';
 import productData5 from '@/data/products/yen-sao-tho-products.json';
 import productData6 from '@/data/products/yen-tinh-che-products.json';
-import { CartItem } from '@/types/cart';
 import type { QueryResource, QueryResourceResponse } from '@/types/common';
 import type { Product, Category } from '@/types/product';
 
 import { isValidDateString, isValidNumberString } from '@/lib/utils';
 import { sortByDateField, sortByStringField } from '@/lib/utils/collection';
 import { sortByNumberField } from '@/lib/utils/collection';
-import { convertProductToCartItem } from '@/lib/utils/product';
 
 const products = [
   ...productData,
@@ -124,16 +122,4 @@ export const getCategories = async (): Promise<Category[]> => {
 
 export const getCategoryById = async (id: string): Promise<Category | null> => {
   return categories.find((category: Category) => category.id === id) as Category | null;
-};
-
-export const buyNowAndRedirect = (
-  product: Product,
-  options: {
-    addToCart: (item: CartItem) => void;
-    push: (path: string) => void;
-  }
-) => {
-  const { addToCart, push } = options;
-  addToCart(convertProductToCartItem(product));
-  push('/order');
 };
