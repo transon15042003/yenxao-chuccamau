@@ -1,9 +1,9 @@
 'use client';
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/atoms/Button';
-import { ChoiceGroup } from '@/components/molecules/ChoiceGroup';
 import { ProductCard } from '@/components/molecules/ProductCard';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
@@ -13,6 +13,7 @@ import { convertProductToCartItem } from '@/lib/utils/product';
 export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
   const router = useRouter();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
 
   const handleAddToCart = (product: Product) => {
     addToCart(convertProductToCartItem(product));
@@ -23,7 +24,7 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
   };
 
   const handleButtonClick = (product: Product) => {
-    router.push(`/payment/${product.slug}`);
+    handleBuyNow(product);
   };
 
   return (
@@ -34,8 +35,7 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
       }}
     >
       <SectionTitle className="mb-2" heading="Sản phẩm nổi bật" />
-      <ChoiceGroup />
-
+      {/* <ChoiceGroup /> */} {/* please un-comment this line in release version */}
       {/* This div creates a responsive grid layout for products. Using Tailwind columns (1 col on small, 2 on medium, 4 on large). Loop and map data from initialBestSelling - forwarded by props */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
         {initialBestSelling && initialBestSelling.length > 0 ? (
@@ -65,7 +65,6 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
           <p>Không có sản phẩm nổi bật nào.</p>
         )}
       </div>
-
       <Button
         className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
         fill="outline"

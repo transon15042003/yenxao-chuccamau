@@ -1,5 +1,6 @@
 'use client';
 
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
 import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
@@ -22,6 +23,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
   const { product, curSize, curFlavor, name, curThumbnail, price, handleSetSize, handleSetFlavor } =
     useDetailProduct();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
 
   const listSize = product.specs.find((el) => el.key === 'size');
   const listFlavor = product.specs.find((el) => el.key === 'savour');
@@ -62,6 +64,16 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
   };
   const handleToggleSeeAll = () => {
     setSeeAll((prev) => !prev);
+  };
+
+  const handleBuyNowClick = () => {
+    const selectedVariant = product.variants.find(
+      (variant) => variant.specs.size === curSize && variant.specs.savour === curFlavor
+    );
+
+    if (selectedVariant) {
+      handleBuyNow(product, selectedVariant.sku, amount);
+    }
   };
 
   return (
@@ -169,6 +181,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         <Button
           variant="secondary"
           className="w-full h-[46px] font-bold bg-primary text-white lg:col-span-6"
+          onClick={handleBuyNowClick}
         >
           Mua ngay
         </Button>
