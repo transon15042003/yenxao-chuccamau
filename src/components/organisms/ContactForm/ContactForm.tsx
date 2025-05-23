@@ -18,8 +18,12 @@ const inboxFormSchema = shippingInfomationFormSchema
     phone: true
   })
   .extend({
+    name: z
+      .string({ required_error: 'Họ và tên không được để trống' })
+      .trim()
+      .nonempty({ message: 'Họ và tên không được để trống' }),
     subject: z.string().optional(),
-    message: z.string().optional()
+    message: z.string().trim().nonempty({ message: 'Vui lòng nhập nội dung tin nhắn' })
   });
 
 type InboxFormValues = z.infer<typeof inboxFormSchema>;
@@ -80,7 +84,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
   };
 
   return (
-    <form className={className} {...props} onSubmit={handleSubmit(onSubmit)}>
+    <form className={className} {...props} onSubmit={handleSubmit(onSubmit)} noValidate>
       <p id="inbox" className="w-full font-semibold text-3xl text-[#2A3140] mb-4">
         Gửi tin nhắn cho tôi
       </p>
@@ -99,7 +103,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 {...field}
                 errorMessage={errors.name?.message}
                 inputClassName="bg-transparent"
-                labelClassName="font-bold text-sm"
+                labelClassName="font-medium text-sm text-[#344054]"
               />
             )}
           />
@@ -119,7 +123,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 {...field}
                 errorMessage={errors.email?.message}
                 inputClassName="bg-transparent"
-                labelClassName="font-bold text-sm"
+                labelClassName="font-medium text-sm text-[#344054]"
               />
             )}
           />
@@ -139,7 +143,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 type="number"
                 errorMessage={errors.phone?.message}
                 inputClassName="bg-transparent"
-                labelClassName="font-bold text-sm"
+                labelClassName="font-medium text-sm text-[#344054]"
               />
             )}
           />
@@ -158,7 +162,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 type="text"
                 errorMessage={errors.subject?.message}
                 inputClassName="bg-transparent"
-                labelClassName="font-bold text-sm"
+                labelClassName="font-medium text-sm text-[#344054]"
               />
             )}
           />
@@ -170,25 +174,22 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
             name="message"
             render={({ field }) => (
               <AreaInputGroup
-                id="subject"
+                id="message"
                 label="Nội dung"
                 placeholder="Nhập nội dung tin nhắn chi tiết..."
+                required
                 {...field}
                 line={10}
-                errorMessage={errors.subject?.message}
+                errorMessage={errors.message?.message}
                 textareaClassName="bg-transparent"
-                labelClassName="font-bold text-sm"
+                labelClassName="font-medium text-sm text-[#344054]"
               />
             )}
           />
         </div>
       </div>
 
-      <Button
-        className="w-full uppercase text-xl font-bold py-[13px]"
-        // type="submit"
-        // onClick={onSubmit}
-      >
+      <Button className="w-full uppercase text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
     </form>
