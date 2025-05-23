@@ -19,7 +19,7 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
   };
 
   const handleViewDetail = (product: Product) => {
-    router.push(`/products?c=${product.slug}`);
+    router.push(`/products/${product.slug}`);
   };
 
   const handleButtonClick = (product: Product) => {

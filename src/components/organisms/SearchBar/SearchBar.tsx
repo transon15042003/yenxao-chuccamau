@@ -5,7 +5,7 @@ const SearchBar = () => (
     <input
       type="text"
       placeholder="Tìm kiếm"
-      className="w-full bg-transparent border-b border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base"
+      className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base"
     />
     <svg
       className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-white"

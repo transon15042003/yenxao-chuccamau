@@ -1,64 +1,89 @@
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 
-import ProductDropdown from '@/components/molecules/ProductDropdown/ProductDropdown';
+import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
+
+import NavItem from './NavItem';
 
 interface MobileMenuProps {
   isOpen: boolean;
-  onClose: () => void;
 }
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+const productMenuList = [
+  // {
+  //   title: 'Bánh Tổ Yến',
+  //   link: '/products?c=banh-to-yen',
+  //   isComing: true
+  // },
+  {
+    title: 'Yến Sào Tinh Chế',
+    link: '/products?c=yen-sao-tinh-che'
+  },
+  {
+    title: 'Yến Chưng Tươi',
+    link: '/products?c=yen-chung-tuoi'
+  },
+  {
+    title: 'Tổ Yến Sào Thô',
+    link: '/products?c=to-yen-sao-tho'
+  },
+  {
+    title: 'Set Quà Yến Chưng Tươi',
+    link: '/products?c=yen-chung-tao-do',
+    isComing: true
+  },
+  {
+    title: 'Topping',
+    link: '/products?c=topping'
+  },
+  // {
+  //   title: 'Yến Chưng Sấn Tiết Trùng',
+  //   link: '/products?c=yen-chung-san-tiet-trung'
+  // },
+  {
+    title: 'Món nên thử',
+    link: '/products?c=mon-nen-thu'
+  }
+];
+
+const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const [isProductOpen, setIsProductOpen] = useState(false);
 
   if (!isOpen) return null;
 
   return (
-    <div className="absolute top-full left-0 w-full bg-primary text-white z-50">
-      <div className="flex flex-col p-4 gap-4">
-        <Link
-          href="/"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-          onClick={onClose}
-        >
+    <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
+      <div className="flex flex-col p-4 pt-6 gap-6">
+        <NavItem href="/" className="text-2xl">
           TRANG CHỦ
-        </Link>
-        <Link
-          href="/about"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-          onClick={onClose}
-        >
+        </NavItem>
+        <NavItem href="/about" className="text-2xl">
           GIỚI THIỆU
-        </Link>
+        </NavItem>
         <div className="relative">
           <button
             type="button"
-            className="flex items-center gap-1 focus:outline-none text-lg text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90 group"
+            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold ${
+              isProductOpen
+                ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
+                : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
+            } group`}
             onClick={() => setIsProductOpen(!isProductOpen)}
           >
             SẢN PHẨM
-            <ChevronDownIcon
-              className={`w-4 h-4 ml-1 stroke-white group-hover:stroke-secondary ${isProductOpen ? 'rotate-180 stroke-secondary' : ''}`}
+            <ChevronRightIcon
+              className={`w-6 h-6 ml-auto transition-transform duration-200 ${isProductOpen ? 'rotate-90 stroke-secondary' : 'stroke-white group-hover:stroke-secondary'}`}
               strokeWidth={2}
             />
           </button>
-          <ProductDropdown open={isProductOpen} isMobile={true} onLinkClick={onClose} />
+          <MenuDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
         </div>
-        <Link
-          href="/blog"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-          onClick={onClose}
-        >
+        <NavItem href="/blog" className="text-2xl">
           BLOG
-        </Link>
-        <Link
-          href="/contact"
-          className="text-lg hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-          onClick={onClose}
-        >
+        </NavItem>
+        <NavItem href="/contact" className="text-2xl">
           LIÊN HỆ
-        </Link>
+        </NavItem>
       </div>
     </div>
   );
