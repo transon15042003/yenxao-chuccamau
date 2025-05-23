@@ -40,10 +40,10 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             <div className="lg:col-span-10 lg:col-start-2">
               <div className="lg:grid lg:grid-cols-2 gap-[40px] flex lg:items-center lg:flex-row items-start flex-col mt-[36px]">
                 <Image
-                  src="/images/introduction/product_1.png"
+                  src="/images/introduction/product_1.webp"
                   alt="product"
-                  width={100}
-                  height={100}
+                  width={520}
+                  height={610}
                   className="lg:col-span-1 w-full h-auto"
                 />
                 <div className="lg:col-span-1">
@@ -184,8 +184,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                   key={idx}
                   src={el}
                   alt="company"
-                  width={100}
-                  height={100}
+                  width={400}
+                  height={400}
                   className="w-full h-auto"
                 />
               ))}
