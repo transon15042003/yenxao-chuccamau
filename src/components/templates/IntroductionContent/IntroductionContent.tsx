@@ -1,5 +1,12 @@
-import Image from 'next/image';
+'use client';
 
+import { ContactType } from '@/types/contact';
+import Image from 'next/image';
+import { useState } from 'react';
+
+import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
+import { ContactForm } from '@/components/organisms/ContactForm';
+import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
 import GuidingCart from '@/components/organisms/GuidingCart/GuidingCart';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
@@ -116,7 +123,13 @@ const descriptions = {
   ]
 };
 
-const IntroductionContent = () => {
+interface IntroductionContentProps {
+  contactInfo: ContactType[];
+}
+
+const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <div className="flex justify-center flex-col">
       <div className="relative bg-[#F8F5F2] overflow-hidden">
@@ -284,6 +297,19 @@ const IntroductionContent = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </IntroductionSection>
+      <IntroductionSection
+        heading="Thông tin liên hệ"
+        subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
+        className="lg:py-[70px] py-[36px] bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+      >
+        <div className="lg:grid lg:grid-cols-12">
+          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
+            <ContactInfoBlock className="md:w-1/2 w-full" contactData={contactInfo} />
+            <ContactForm className="md:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
+            {isLoading && <LoadingOverlay />}
           </div>
         </div>
       </IntroductionSection>
