@@ -45,28 +45,13 @@ const Step = ({ className, img, title, desc, position, display }: StepProps) => 
           {display === 'topdown' && (
             <span className="block bg-[#D93434] max-w-[60px] min-w-[40px] border-dashed border-[3px]" />
           )}
-          <span
-            style={{
-              borderRadius: '5px',
-              padding: '4px',
-              background: 'linear-gradient(to right, #E6B522, #FFF788, #FFE059)',
-              display: 'inline-block'
-            }}
-          >
-            <Image
-              src={img}
-              alt="step"
-              width={200}
-              height={200}
-              style={{
-                background: 'white',
-                borderRadius: '8px',
-                height: '200px',
-                minWidth: '200px',
-                objectFit: 'cover'
-              }}
-            />
-          </span>
+          <Image
+            src={img}
+            alt="step"
+            width={200}
+            height={200}
+            className="h-[200px] min-w-[200px] object-cover"
+          />
         </span>
       </div>
       <span
