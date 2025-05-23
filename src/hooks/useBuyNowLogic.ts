@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
+import { convertProductToCartItem } from '@/lib/utils/product';
+
 interface UseBuyNowLogic {
   handleBuyNow: (product: Product, sku?: string, quantity?: number) => void;
 }
@@ -16,49 +18,15 @@ const useBuyNowLogic = (): UseBuyNowLogic => {
     let cartItem: CartItem;
 
     if (sku) {
-      const selectedVariant = product.variants.find((variant) => variant.sku === sku);
-
-      if (selectedVariant) {
-        cartItem = {
-          productId: product.id,
-          sku: selectedVariant.sku,
-          name: selectedVariant.name,
-          price: selectedVariant.price,
-          quantity: quantity,
-          specs: selectedVariant.specs,
-          thumbnail: selectedVariant.thumbnail
-        };
-      } else {
-        cartItem = {
-          productId: product.id,
-          sku: sku,
-          name: product.name,
-          price: product.price || 0,
-          quantity: 1,
-          specs: {},
-          thumbnail: product.thumbnail
-        };
-      }
+      cartItem = convertProductToCartItem(product, sku);
+      cartItem.quantity = quantity;
     } else {
-      const lowestPriceVariant = product.variants.reduce((minVariant, currentVariant) => {
-        return (currentVariant.price || 0) < (minVariant.price || 0) ? currentVariant : minVariant;
-      }, product.variants[0]);
+      const sortedVariants = [...product.variants].sort((a, b) => (a.price || 0) - (b.price || 0));
 
-      const itemPrice = lowestPriceVariant ? lowestPriceVariant.price : product.price;
-      const itemSku = lowestPriceVariant ? lowestPriceVariant.sku : '';
-      const itemName = lowestPriceVariant ? lowestPriceVariant.name : product.name;
-      const itemThumbnail = lowestPriceVariant ? lowestPriceVariant.thumbnail : product.thumbnail;
-      const itemSpecs = lowestPriceVariant ? lowestPriceVariant.specs : {};
+      const lowestPriceSku = sortedVariants.length > 0 ? sortedVariants[0].sku : undefined;
 
-      cartItem = {
-        productId: product.id,
-        sku: itemSku,
-        name: itemName,
-        price: itemPrice || 0,
-        quantity: quantity,
-        specs: itemSpecs,
-        thumbnail: itemThumbnail
-      };
+      cartItem = convertProductToCartItem(product, lowestPriceSku);
+      cartItem.quantity = quantity;
     }
     addToCart(cartItem);
     router.push('/order');
