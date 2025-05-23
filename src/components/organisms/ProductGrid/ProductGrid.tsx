@@ -2,6 +2,7 @@
 
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
+import { buyNowAndRedirect } from 'src/services/product.service';
 
 import { ProductCard } from '@/components/molecules/ProductCard';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
@@ -23,8 +24,10 @@ export const ProductGrid = ({ products, className }: ProductGridProps) => {
   };
 
   const handleBuyNow = (product: Product) => {
-    console.warn(product);
-    router.push(`/payment?productId=${product.id}`);
+    buyNowAndRedirect(product, {
+      addToCart: addToCart,
+      push: router.push
+    });
   };
 
   const gotoProductDetail = (product: Product) => {

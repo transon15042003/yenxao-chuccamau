@@ -1,6 +1,7 @@
 'use client';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
+import { buyNowAndRedirect } from 'src/services/product.service';
 
 import { Button } from '@/components/atoms/Button';
 import { ProductCard } from '@/components/molecules/ProductCard';
@@ -22,8 +23,10 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
   };
 
   const handleButtonClick = (product: Product) => {
-    handleAddToCart(product);
-    router.push('/order');
+    buyNowAndRedirect(product, {
+      addToCart: addToCart,
+      push: router.push
+    });
   };
 
   return (

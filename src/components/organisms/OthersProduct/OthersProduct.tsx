@@ -5,6 +5,7 @@ import { CartItem } from '@/types/cart';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
+import { buyNowAndRedirect } from 'src/services/product.service';
 import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -46,8 +47,10 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
   };
 
   const handleBuyNow = (product: Product) => {
-    console.warn(product);
-    router.push(`/payment?productId=${product.id}`);
+    buyNowAndRedirect(product, {
+      addToCart: addToCart,
+      push: router.push
+    });
   };
 
   const gotoProductDetail = (product: Product) => {

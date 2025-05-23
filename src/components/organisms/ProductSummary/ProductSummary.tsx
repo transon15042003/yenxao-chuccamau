@@ -5,6 +5,7 @@ import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
 import { Star } from '@/svg/StarSVG/StarSVG';
 import { CartItem } from '@/types/cart';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
@@ -22,6 +23,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
   const { product, curSize, curFlavor, name, curThumbnail, price, handleSetSize, handleSetFlavor } =
     useDetailProduct();
   const { addToCart } = useCart();
+  const router = useRouter();
 
   const listSize = product.specs.find((el) => el.key === 'size');
   const listFlavor = product.specs.find((el) => el.key === 'savour');
@@ -62,6 +64,11 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
   };
   const handleToggleSeeAll = () => {
     setSeeAll((prev) => !prev);
+  };
+
+  const handleBuyNow = () => {
+    handleAddToCart();
+    router.push('/order');
   };
 
   return (
@@ -169,6 +176,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         <Button
           variant="secondary"
           className="w-full h-[46px] font-bold bg-primary text-white lg:col-span-6"
+          onClick={handleBuyNow}
         >
           Mua ngay
         </Button>
