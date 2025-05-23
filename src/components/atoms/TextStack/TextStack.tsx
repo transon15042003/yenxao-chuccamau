@@ -38,7 +38,7 @@ export const TextStack = (props: TextSTackProps) => {
         return (
           <a
             key={index}
-            href={AppConfig.ggMapUrl}
+            href={AppConfig.addressURL}
             className={`font-normal text-base text-[#2A2A40] block hover:text-blue-600 ${props.detailClassName || ''}`}
             target="_blank"
             rel="noopener noreferrer"
