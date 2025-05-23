@@ -79,6 +79,32 @@ const descriptions = {
       description:
         'Chúng tôi cam kết cung cấp dịch vụ bảo hành và hỗ trợ kỹ thuật chuyên nghiệp sau bán hàng.'
     }
+  ],
+  achievement: [
+    {
+      icon: 'RankSVG',
+      title: 'Top 10 Doanh nghiệp tiêu biểu 2022',
+      description:
+        'Được vinh danh trong Top 10 Doanh nghiệp tiêu biểu ngành hàng năm 2022 do Hiệp hội Doanh nghiệp Việt Nam bình chọn.'
+    },
+    {
+      icon: 'MedalSVG',
+      title: 'Giải thưởng Chất lượng Quốc gia',
+      description:
+        'Đạt Giải thưởng Chất lượng Quốc gia năm 2021, ghi nhận những nỗ lực không ngừng trong việc nâng cao chất lượng sản phẩm.'
+    },
+    {
+      icon: 'CupSVG',
+      title: 'Thương hiệu mạnh Việt Nam',
+      description:
+        'Được vinh danh là Thương hiệu mạnh Việt Nam liên tục trong 5 năm liền (2018-2022).'
+    },
+    {
+      icon: 'LikeSVG',
+      title: 'Sản phẩm tin cậy, Dịch vụ hoàn hảo',
+      description:
+        'Được người tiêu dùng bình chọn là "Sản phẩm tin cậy, Dịch vụ hoàn hảo" năm 2023.'
+    }
   ]
 };
 
@@ -173,6 +199,34 @@ const IntroductionContent = () => {
                 className="overflow-hidden max-h-none lg:max-h-0 translate-x-[-9px]"
               />
             ))}
+          </div>
+        </div>
+      </IntroductionSection>
+      <IntroductionSection
+        heading="Chứng nhận & Thành tựu"
+        subHeading="Những minh chứng cho chất lượng và uy tín của chúng tôi"
+        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-no-repeat bg-cover"
+      >
+        <div className="lg:grid lg:grid-cols-12">
+          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
+            <div className="grid grid-cols-2 p-1 mb-[36px] text-center bg-primary rounded-[5px]">
+              <div className="col-span-1 text-white bg-primary">Chứng nhận</div>
+              <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
+            </div>
+
+            <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-4">
+              {descriptions.achievement.map((el, idx) => (
+                <SectionContentItem
+                  key={idx}
+                  title={el.title}
+                  description={el.description}
+                  icon={el.icon}
+                  titleClass="text-[20px]"
+                  descClass="text-[18px]"
+                  className="col-span-1 items-center bg-[#F6F1EC] rounded-[10px] py-[20px] px-[30px]"
+                />
+              ))}
+            </div>
           </div>
         </div>
       </IntroductionSection>

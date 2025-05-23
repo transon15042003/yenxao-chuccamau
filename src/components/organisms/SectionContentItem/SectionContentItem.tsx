@@ -8,13 +8,27 @@ interface SectionContentItemProps {
   description: string;
   icon: string;
   className?: string;
+  titleClass?: string;
+  descClass?: string;
 }
 
-const SectionContentItem = ({ title, description, icon, className }: SectionContentItemProps) => {
+const SectionContentItem = ({
+  title,
+  description,
+  icon,
+  className,
+  titleClass,
+  descClass
+}: SectionContentItemProps) => {
   return (
     <div className={cn('flex items-start gap-[20px]', className)}>
       <RoundedIconBox icon={icon} />
-      <Description title={title} description={description} />
+      <Description
+        title={title}
+        description={description}
+        titleClass={titleClass}
+        descClass={descClass}
+      />
     </div>
   );
 };
