@@ -33,7 +33,7 @@ const getIconComponent = (iconName: string): React.ReactElement | null => {
 type ContactInfoBlockProps = {
   className?: string;
   contactData: ContactType[];
-  onScrollToMap: () => void;
+  onScrollToMap?: () => void;
 };
 
 export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
