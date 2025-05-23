@@ -1,6 +1,5 @@
-import IconMap from '@/components/atoms/IconMap/IconMap';
-
 import { cn } from '@/lib/utils';
+import IconMap from '@/lib/utils/IconMap/IconMap';
 
 interface RoundedIconBoxProps {
   className?: string;

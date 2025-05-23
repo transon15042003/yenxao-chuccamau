@@ -9,8 +9,8 @@ import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
+import ProductionStep from '@/components/organisms/ProductionStep/ProductionStep';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
-import Step from '@/components/organisms/Step/Step';
 
 import { cn } from '@/lib/utils';
 
@@ -104,7 +104,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             {descriptions.productionProcess.map((el, idx) => (
               <div key={idx}>
                 {idx % 2 === 1 && <div className="min-w-[50%] h-[208px] hidden lg:block" />}
-                <Step
+                <ProductionStep
                   img={el.img}
                   title={el.title}
                   desc={el.description}
@@ -121,7 +121,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             ))}
 
             {descriptions.productionProcess.map((el, idx) => (
-              <Step
+              <ProductionStep
                 key={idx}
                 img={el.img}
                 title={el.title}

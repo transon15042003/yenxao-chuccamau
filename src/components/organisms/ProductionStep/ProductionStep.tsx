@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Description from '@/components/molecules/Description';
+import Description from '@/components/molecules/InfoBox';
 
 import { cn } from '@/lib/utils';
 
@@ -13,7 +13,7 @@ interface StepProps {
   display: 'inline' | 'topdown';
 }
 
-const Step = ({ className, img, title, desc, position, display }: StepProps) => {
+const ProductionStep = ({ className, img, title, desc, position, display }: StepProps) => {
   return (
     <div
       className={cn(
@@ -70,4 +70,4 @@ const Step = ({ className, img, title, desc, position, display }: StepProps) => 
   );
 };
 
-export default Step;
+export default ProductionStep;

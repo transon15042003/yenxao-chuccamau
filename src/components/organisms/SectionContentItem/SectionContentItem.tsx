@@ -1,5 +1,5 @@
-import Description from '@/components/molecules/Description';
-import RoundedIconBox from '@/components/molecules/RoundedIconBox/RoundedIconBox';
+import RoundedIconBox from '@/components/atoms/RoundedIconBox/RoundedIconBox';
+import InfoBox from '@/components/molecules/InfoBox';
 
 import { cn } from '@/lib/utils';
 
@@ -23,7 +23,7 @@ const SectionContentItem = ({
   return (
     <div className={cn('flex items-start gap-[20px]', className)}>
       <RoundedIconBox icon={icon} />
-      <Description
+      <InfoBox
         title={title}
         description={description}
         titleClass={titleClass}

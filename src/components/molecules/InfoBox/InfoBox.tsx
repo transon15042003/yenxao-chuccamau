@@ -11,7 +11,7 @@ interface DescriptionProps {
   titleStyle?: Record<string, string>;
 }
 
-const Description = ({
+const InfoBox = ({
   title,
   description,
   className,
@@ -28,4 +28,4 @@ const Description = ({
     <Paragraph content={description} className={cn('text-[20px] leading-full', descClass)} />
   </div>
 );
-export default Description;
+export default InfoBox;

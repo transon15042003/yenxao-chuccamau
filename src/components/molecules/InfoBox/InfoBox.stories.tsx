@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Description from './Description';
+import InfoBox from './InfoBox';
 
-const meta: Meta<typeof Description> = {
-  title: 'Molecules/Description',
-  component: Description,
+const meta: Meta<typeof InfoBox> = {
+  title: 'Molecules/InfoBox',
+  component: InfoBox,
   tags: ['autodocs'],
   args: {
     title: 'Test',
@@ -14,6 +14,6 @@ const meta: Meta<typeof Description> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Description>;
+type Story = StoryObj<typeof InfoBox>;
 
 export const Default: Story = {};
