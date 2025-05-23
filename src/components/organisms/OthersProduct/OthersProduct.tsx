@@ -1,11 +1,12 @@
 'use client';
+
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { LargeChevronLeftSVG } from '@/svg/LargeChevronLeftSVG/LargeChevronLeftSVG';
 import { LargeChevronRightSVG } from '@/svg/LargeChevronRightSVG/LargeChevronRightSVG';
 import { CartItem } from '@/types/cart';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
-import { buyNowAndRedirect } from 'src/services/product.service';
 import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -26,6 +27,7 @@ interface OthersProductProps {
 const OthersProduct = ({ className, heading }: OthersProductProps) => {
   const { products, curSize, curFlavor, curThumbnail, variants } = useDetailProduct();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
   const router = useRouter();
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -46,11 +48,8 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
     addToCart(cartItem);
   };
 
-  const handleBuyNow = (product: Product) => {
-    buyNowAndRedirect(product, {
-      addToCart: addToCart,
-      push: router.push
-    });
+  const handleBuyNowClick = (product: Product) => {
+    handleBuyNow(product);
   };
 
   const gotoProductDetail = (product: Product) => {
@@ -104,7 +103,7 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
                   // className="min-w-[50%] lg:min-w-0 lg:shrink-0 lg:w-[calc((100%-3*2rem)/4)]"
                   key={product.id}
                   product={product}
-                  button={{ label: 'Mua Ngay', onClick: handleBuyNow }}
+                  button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
                   badge={product.isNew ? 'New' : undefined}
                   progress={
                     product.total

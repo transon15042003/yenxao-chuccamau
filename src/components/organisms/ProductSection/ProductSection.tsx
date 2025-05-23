@@ -1,7 +1,7 @@
 'use client';
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
-import { buyNowAndRedirect } from 'src/services/product.service';
 
 import { Button } from '@/components/atoms/Button';
 import { ProductCard } from '@/components/molecules/ProductCard';
@@ -13,6 +13,7 @@ import { convertProductToCartItem } from '@/lib/utils/product';
 export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
   const router = useRouter();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
 
   const handleAddToCart = (product: Product) => {
     addToCart(convertProductToCartItem(product));
@@ -23,10 +24,7 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
   };
 
   const handleButtonClick = (product: Product) => {
-    buyNowAndRedirect(product, {
-      addToCart: addToCart,
-      push: router.push
-    });
+    handleBuyNow(product);
   };
 
   return (

@@ -1,8 +1,8 @@
 'use client';
 
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
-import { buyNowAndRedirect } from 'src/services/product.service';
 
 import { ProductCard } from '@/components/molecules/ProductCard';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
@@ -18,16 +18,14 @@ type ProductGridProps = {
 export const ProductGrid = ({ products, className }: ProductGridProps) => {
   const router = useRouter();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
 
   const handleAddToCart = (product: Product) => {
     addToCart(convertProductToCartItem(product));
   };
 
-  const handleBuyNow = (product: Product) => {
-    buyNowAndRedirect(product, {
-      addToCart: addToCart,
-      push: router.push
-    });
+  const handleBuyNowClick = (product: Product) => {
+    handleBuyNow(product);
   };
 
   const gotoProductDetail = (product: Product) => {
@@ -42,7 +40,7 @@ export const ProductGrid = ({ products, className }: ProductGridProps) => {
         <ProductCard
           key={product.id}
           product={product}
-          button={{ label: 'Mua Ngay', onClick: handleBuyNow }}
+          button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
           badge={product.isNew ? 'New' : undefined}
           progress={
             product.total ? { total: product.total, sold: product.totalSold || 0 } : undefined
