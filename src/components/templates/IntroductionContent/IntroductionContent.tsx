@@ -119,56 +119,74 @@ const descriptions = {
 const IntroductionContent = () => {
   return (
     <div className="flex justify-center flex-col">
-      <IntroductionSection
-        heading="Câu chuyện thương hiệu"
-        subHeading="Quá trình hình thành và phát triển của chúng tôi qua các năm"
-        className="lg:py-[70px] py-[36px] bg-[#F8F5F2] px-4 lg:px-0"
-      >
-        <div className="lg:grid lg:grid-cols-12">
-          <div className="lg:col-span-10 lg:col-start-2">
-            <div className="lg:grid lg:grid-cols-2 gap-[40px] flex lg:items-center lg:flex-row items-start flex-col mt-[36px]">
-              <Image
-                src="/images/introduction/product_1.png"
-                alt="product"
-                width={100}
-                height={100}
-                className="lg:col-span-1 w-full h-auto"
-              />
-              <div className="lg:col-span-1">
-                {descriptions.developHistory.map((el, idx) => (
-                  <SectionContentItem
+      <div className="relative bg-[#F8F5F2] overflow-hidden">
+        <Image
+          src="/images/backgrounds/scrath.png"
+          alt=""
+          width={600}
+          height={400}
+          className="absolute left-0 top-[-200px] rotate-[65deg] opacity-20"
+        />
+        <IntroductionSection
+          heading="Câu chuyện thương hiệu"
+          subHeading="Quá trình hình thành và phát triển của chúng tôi qua các năm"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-2"
+        >
+          <div className="lg:grid lg:grid-cols-12">
+            <div className="lg:col-span-10 lg:col-start-2">
+              <div className="lg:grid lg:grid-cols-2 gap-[40px] flex lg:items-center lg:flex-row items-start flex-col mt-[36px]">
+                <Image
+                  src="/images/introduction/product_1.png"
+                  alt="product"
+                  width={100}
+                  height={100}
+                  className="lg:col-span-1 w-full h-auto"
+                />
+                <div className="lg:col-span-1">
+                  {descriptions.developHistory.map((el, idx) => (
+                    <SectionContentItem
+                      key={idx}
+                      title={el.title}
+                      description={el.description}
+                      icon={el.icon}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </IntroductionSection>
+      </div>
+      <div className="relative bg-[#F8F5F2] overflow-hidden">
+        <Image
+          src="/images/backgrounds/scrath.png"
+          alt=""
+          width={600}
+          height={400}
+          className="absolute left-0 top-[-200px] rotate-[65deg] opacity-20"
+        />
+        <IntroductionSection
+          heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
+          subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-2"
+        >
+          <div className="lg:grid lg:grid-cols-12">
+            <div className="lg:col-span-10 lg:col-start-2">
+              <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
+                {descriptions.guidingPrinciple.map((el, idx) => (
+                  <GuidingCart
                     key={idx}
+                    icon={el.icon}
                     title={el.title}
                     description={el.description}
-                    icon={el.icon}
+                    className="lg:col-span-1"
                   />
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </IntroductionSection>
-      <IntroductionSection
-        heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
-        subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
-        className="lg:py-[70px] py-[36px] px-4 lg:px-0"
-      >
-        <div className="lg:grid lg:grid-cols-12">
-          <div className="lg:col-span-10 lg:col-start-2">
-            <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
-              {descriptions.guidingPrinciple.map((el, idx) => (
-                <GuidingCart
-                  key={idx}
-                  icon={el.icon}
-                  title={el.title}
-                  description={el.description}
-                  className="lg:col-span-1"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </IntroductionSection>
+        </IntroductionSection>
+      </div>
       <IntroductionSection
         heading="Quy trình sản xuất"
         subHeading="Quy trình sản xuất chuyên nghiệp, đảm bảo chất lượng sản phẩm"
@@ -210,34 +228,43 @@ const IntroductionContent = () => {
           </div>
         </div>
       </IntroductionSection>
-      <IntroductionSection
-        heading="Chứng nhận & Thành tựu"
-        subHeading="Những minh chứng cho chất lượng và uy tín của chúng tôi"
-        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-no-repeat bg-cover"
-      >
-        <div className="lg:grid lg:grid-cols-12">
-          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
-            <div className="grid grid-cols-2 p-1 mb-[36px] text-center bg-primary rounded-[5px]">
-              <div className="col-span-1 text-white bg-primary">Chứng nhận</div>
-              <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
-            </div>
+      <div className="relative bg-[#F8F5F2] overflow-hidden">
+        <Image
+          src="/images/backgrounds/scrath.png"
+          alt=""
+          width={600}
+          height={400}
+          className="absolute left-0 top-[-200px] rotate-[65deg] opacity-20"
+        />
+        <IntroductionSection
+          heading="Chứng nhận & Thành tựu"
+          subHeading="Những minh chứng cho chất lượng và uy tín của chúng tôi"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-no-repeat bg-cover z-2"
+        >
+          <div className="lg:grid lg:grid-cols-12">
+            <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
+              <div className="grid grid-cols-2 p-1 mb-[36px] text-center bg-primary rounded-[5px]">
+                <div className="col-span-1 text-white bg-primary">Chứng nhận</div>
+                <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
+              </div>
 
-            <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5">
-              {descriptions.achievement.map((el, idx) => (
-                <SectionContentItem
-                  key={idx}
-                  title={el.title}
-                  description={el.description}
-                  icon={el.icon}
-                  titleClass="text-[20px]"
-                  descClass="text-[18px]"
-                  className="col-span-1 items-center bg-[#F6F1EC] rounded-[10px] py-[20px] px-[30px]"
-                />
-              ))}
+              <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5">
+                {descriptions.achievement.map((el, idx) => (
+                  <SectionContentItem
+                    key={idx}
+                    title={el.title}
+                    description={el.description}
+                    icon={el.icon}
+                    titleClass="text-[20px]"
+                    descClass="text-[18px]"
+                    className="col-span-1 items-center bg-[#F6F1EC] rounded-[10px] py-[20px] px-[30px]"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </IntroductionSection>
+        </IntroductionSection>
+      </div>
       <IntroductionSection
         heading="Hình ảnh của công ty"
         subHeading="Khám phá không gian làm việc và cơ sở vật chất của chúng tôi"
