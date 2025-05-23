@@ -134,7 +134,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           </div>
         </div>
       </IntroductionSection>
-      <div className="relative bg-[#F8F5F2] overflow-hidden">
+      <div className="relative bg-white overflow-hidden">
         <Image
           src="/images/backgrounds/scrath.png"
           alt=""

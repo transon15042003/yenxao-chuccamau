@@ -19,8 +19,8 @@ const IntroductionSection = ({
     <SectionTitle
       heading={heading}
       subHeading={subHeading}
-      headingClass="normal-case text-[40px] leading-[50px]"
-      subHeadingClass="text-[#2A2A40]"
+      classNameHeading="normal-case text-[40px] leading-[50px]"
+      classNameSubHeading="text-[#2A2A40]"
       className="bg-transparent"
       // className="relative z-20"
     />
