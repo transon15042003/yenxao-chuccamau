@@ -105,6 +105,14 @@ const descriptions = {
       description:
         'Được người tiêu dùng bình chọn là "Sản phẩm tin cậy, Dịch vụ hoàn hảo" năm 2023.'
     }
+  ],
+  company: [
+    '/images/introduction/company_1.png',
+    '/images/introduction/company_2.png',
+    '/images/introduction/company_3.png',
+    '/images/introduction/company_4.png',
+    '/images/introduction/company_5.png',
+    '/images/introduction/company_6.png'
   ]
 };
 
@@ -214,7 +222,7 @@ const IntroductionContent = () => {
               <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
             </div>
 
-            <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-4">
+            <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5">
               {descriptions.achievement.map((el, idx) => (
                 <SectionContentItem
                   key={idx}
@@ -224,6 +232,28 @@ const IntroductionContent = () => {
                   titleClass="text-[20px]"
                   descClass="text-[18px]"
                   className="col-span-1 items-center bg-[#F6F1EC] rounded-[10px] py-[20px] px-[30px]"
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </IntroductionSection>
+      <IntroductionSection
+        heading="Hình ảnh của công ty"
+        subHeading="Khám phá không gian làm việc và cơ sở vật chất của chúng tôi"
+        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-no-repeat bg-cover"
+      >
+        <div className="lg:grid lg:grid-cols-12">
+          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
+            <div className="lg:grid lg:grid-cols-3 grid grid-cols-1 gap-5">
+              {descriptions.company.map((el, idx) => (
+                <Image
+                  key={idx}
+                  src={el}
+                  alt="company"
+                  width={100}
+                  height={100}
+                  className="w-full h-auto"
                 />
               ))}
             </div>
