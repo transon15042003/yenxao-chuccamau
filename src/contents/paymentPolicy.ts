@@ -82,7 +82,10 @@ export const paymentPolicyContent: PolicyContent[] = [
       },
       {
         type: 'ul',
-        values: [`Số điện thoại: ${AppConfig.phone}`, `Địa chỉ: ${AppConfig.address}`]
+        values: [
+          `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
+          `<strong>Địa chỉ:</strong> <a href="${AppConfig.addressURL}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
+        ]
       },
       {
         type: 'paragraph',
