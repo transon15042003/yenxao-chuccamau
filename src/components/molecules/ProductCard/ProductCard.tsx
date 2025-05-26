@@ -69,7 +69,7 @@ export const ProductCard = ({
           <div className="absolute top-0 left-0" />
         )}
         <Image
-          className={cn('max-h-full object-cover', className)}
+          className={cn('max-h-full object-cover border border-slate-300', className)}
           src={thumbnail}
           alt={name}
           // width={254}
