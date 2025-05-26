@@ -10,7 +10,7 @@ const DetailProduct = () => (
     <div className="lg:grid lg:grid-cols-12 pb-4 lg:mt-2 bg-[#F2F2F2] lg:bg-white">
       <div className="lg:flex lg:flex-row-reverse lg:col-span-6 lg:col-start-2">
         <ProductInfoPanel className="lg:flex-1" />
-        <div className="flex flex-row lg:flex-col justify-start items-center lg:max-h-[640px] lg:max-w-[100px] bg-white">
+        <div className="flex flex-row lg:flex-col lg:justify-start justify-center items-center lg:max-h-[640px] lg:max-w-[100px] bg-white">
           <ImgSlider />
         </div>
       </div>
