@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchBar = () => (
-  <div className="relative flex items-center w-full md:w-2/3 max-w-[200px] md:max-w-xs">
+  <div className="relative flex items-center w-[160px] md:w-[180px] lg:w-[240px]">
     <input
       type="text"
       placeholder="Tìm kiếm"

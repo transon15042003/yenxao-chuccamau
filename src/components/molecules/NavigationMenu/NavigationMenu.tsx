@@ -26,7 +26,7 @@ const productMenuList: ProductMenuItem[] = [
   },
   {
     title: 'Set Quà Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tao-do',
+    link: '/products?c=set-qua-yen-chung-tuoi',
     isComing: true
   },
   {
@@ -39,7 +39,7 @@ const productMenuList: ProductMenuItem[] = [
   },
   {
     title: 'Tổ Yến Sào Thô',
-    link: '/products?c=to-yen-sao-tho'
+    link: '/products?c=yen-sao-tho'
   },
   {
     title: 'Topping',
@@ -85,16 +85,16 @@ const NavigationMenu = () => {
 
   return (
     <div className="w-full flex items-center justify-evenly h-full">
-      <NavItem className="text-lg" href="/" active={pathname === '/'}>
+      <NavItem className="text-base lg:text-lg" href="/" active={pathname === '/'}>
         TRANG CHỦ
       </NavItem>
-      <NavItem className="text-lg" href="/about" active={pathname === '/about'}>
+      <NavItem className="text-base lg:text-lg" href="/about" active={pathname === '/about'}>
         GIỚI THIỆU
       </NavItem>
       <div className="relative flex items-center h-full" ref={dropdownRef}>
         <button
           type="button"
-          className={`flex items-center gap-1 h-full text-lg font-bold focus:outline-none group ${
+          className={`flex items-center gap-1 h-full text-base lg:text-lg font-bold focus:outline-none group ${
             isMounted && (open || isProductsPage)
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
@@ -113,10 +113,10 @@ const NavigationMenu = () => {
         </button>
         <MenuDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
       </div>
-      <NavItem className="text-lg" href="/blog" active={pathname === '/blog'}>
+      <NavItem className="text-base lg:text-lg" href="/blog" active={pathname === '/blog'}>
         BLOG
       </NavItem>
-      <NavItem className="text-lg" href="/contact" active={pathname === '/contact'}>
+      <NavItem className="text-base lg:text-lg" href="/contact" active={pathname === '/contact'}>
         LIÊN HỆ
       </NavItem>
     </div>
