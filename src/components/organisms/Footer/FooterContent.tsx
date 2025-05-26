@@ -133,8 +133,8 @@ const FooterContent = () => {
           <hr className="w-full border-secondary/30 my-4 md:hidden" />
         </div>
       </div>
-
-      <div className="text-center pb-6 text-sm font-[400] relative z-10">
+      <hr className="w-full border-secondary/30 my-4 hidden md:block" />
+      <div className="text-center pb-6 pt-2 text-sm font-[400] relative z-10">
         © Copyright 2025, All Rights Reserved by Techbee
       </div>
     </>
