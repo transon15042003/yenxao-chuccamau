@@ -34,7 +34,7 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
       <div>
         <Breadcrumb
           items={[
-            { label: 'Sản phẩm', href: 'products' },
+            { label: 'Sản phẩm', href: '/products' },
             { label: product.name, href: product.slug }
           ]}
         />
