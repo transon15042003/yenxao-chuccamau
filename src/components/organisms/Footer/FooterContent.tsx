@@ -13,11 +13,12 @@ interface MenuItem {
 interface MenuSectionProps {
   title: string;
   items: MenuItem[];
+  type: 'menu' | 'policy';
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ title, items }) => {
+const MenuSection: React.FC<MenuSectionProps> = ({ title, items, type }) => {
   return (
-    <div className="flex-1 flex flex-col items-start px-0 md:pl-6">
+    <div className={`flex flex-col items-start ${type === 'policy' ? 'col-span-2' : 'col-span-1'}`}>
       <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
         {title}
       </div>
@@ -48,16 +49,16 @@ const menuItems: MenuItem[] = [
 const policyItems: MenuItem[] = [
   { href: '/privacy-policy', label: 'Chính sách bảo mật' },
   { href: '/return-policy', label: 'Chính sách đổi trả hàng' },
-  { href: '/payment-policy', label: 'Chính sách thanh toán' },
+  { href: '/order-policy', label: 'Chính sách đặt hàng' },
   { href: '/shipping-policy', label: 'Chính sách vận chuyển' }
 ];
 
 const FooterContent = () => {
   return (
     <>
-      <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto py-2 md:py-10 flex flex-col lg:flex-row justify-between divide-y divide-secondary/30 lg:divide-y-0">
+      <div className="text-[#DBDBDB] relative z-10 w-11/12 lg:w-5/6 mx-auto py-2 md:py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
         {/* Logo + Địa chỉ */}
-        <div className="flex-1 w-full lg:w-1/4 flex flex-col gap-2 md:gap-5 pt-2 pb-8 lg:py-0 lg:px-6">
+        <div className="flex-1 w-full md:w-1/4 flex flex-col gap-2 md:gap-5 pt-2 pb-8 md:py-0 md:px-6">
           <Image
             src="/logo-light.webp"
             alt="Chúc Cà Mau"
@@ -85,55 +86,55 @@ const FooterContent = () => {
         </div>
 
         {/* Menu + Chính sách container */}
-        <div className="py-10 lg:py-0 w-full lg:w-1/2">
-          <div className="grid grid-cols-2 gap-4 lg:flex lg:flex-row">
-            <MenuSection title="MENU" items={menuItems} />
-            <MenuSection title="CHÍNH SÁCH" items={policyItems} />
+        <div className="py-10 md:py-0 w-full md:w-1/2">
+          <div className="grid grid-cols-3 justify-evenly md:flex md:flex-row">
+            <MenuSection title="MENU" items={menuItems} type="menu" />
+            <MenuSection title="CHÍNH SÁCH" items={policyItems} type="policy" />
           </div>
         </div>
 
         {/* Chứng nhận + Mạng xã hội */}
-        <div className="flex-1 min-w-[180px] flex flex-col items-start pt-8 lg:py-0 lg:px-6 gap-4">
+        <div className="flex-1 min-w-[180px] flex flex-col items-start pt-8 md:py-0 md:px-6 gap-4">
           <div className="font-[900] text-[16px] bg-secondary-gradient-90 bg-clip-text text-transparent">
             CHỨNG NHẬN
           </div>
-          <div className="flex flex-row gap-2 items-center w-full pb-2 lg:justify-start lg:flex-col lg:items-start lg:gap-4">
+          <div className="flex flex-row gap-2 items-center w-full pb-2 md:justify-start md:flex-col md:items-start md:gap-4">
             <Image
-              width={200}
-              height={200}
+              width={220}
+              height={220}
               src="/images/footer/dathongbao.png"
               alt="Đã thông báo Bộ Công Thương"
             />
             <Image
-              width={200}
-              height={200}
+              width={220}
+              height={220}
               src="/images/footer/certificate.png"
               alt="Các loại giấy chứng nhận"
             />
           </div>
           <hr className="w-full border-secondary/30" />
-          <div className="w-full flex flex-col items-start gap-2 items-center lg:items-start">
+          <div className="w-full flex flex-col items-start gap-2 items-center md:items-start">
             <p className="text-lg font-bold">Theo dõi chúng tôi</p>
-            <div className="flex flex-row flex-wrap gap-8 items-center">
+            <div className="flex flex-row flex-wrap gap-2 items-center">
               <Link href="#" aria-label="Facebook" className="hover:opacity-80">
-                <FaFacebook className="w-[27px] h-[27px]" />
+                <FaFacebook className="w-6 h-6" />
               </Link>
               <Link href="#" aria-label="Instagram" className="hover:opacity-80">
-                <FaInstagram className="w-[27px] h-[27px]" />
+                <FaInstagram className="w-6 h-6" />
               </Link>
               <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
-                <FaLinkedin className="w-[27px] h-[27px]" />
+                <FaLinkedin className="w-6 h-6" />
               </Link>
               <Link href="#" aria-label="TikTok" className="hover:opacity-80">
-                <FaTiktok className="w-[27px] h-[27px]" />
+                <FaTiktok className="w-6 h-6" />
               </Link>
             </div>
           </div>
-          <hr className="w-full border-secondary/30 my-4 lg:hidden" />
+          <hr className="w-full border-secondary/30 my-4 md:hidden" />
         </div>
       </div>
-      <hr className="w-full border-secondary/30 hidden lg:block" />
-      <div className="text-center pb-6 lg:py-6 text-sm font-[400] relative z-10">
+
+      <div className="text-center pb-6 text-sm font-[400] relative z-10">
         © Copyright 2025, All Rights Reserved by Techbee
       </div>
     </>
