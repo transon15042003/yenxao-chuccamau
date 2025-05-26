@@ -37,22 +37,22 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
       <SectionTitle className="mb-2" heading="Sản phẩm nổi bật" />
       {/* <ChoiceGroup /> */} {/* please un-comment this line in release version */}
       {/* This div creates a responsive grid layout for products. Using Tailwind columns (1 col on small, 2 on medium, 4 on large). Loop and map data from initialBestSelling - forwarded by props */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-3 lg:gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
         {initialBestSelling && initialBestSelling.length > 0 ? (
           initialBestSelling.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
               badge={product.discountPercent ? `-${product.discountPercent}%` : undefined}
-              progress={
-                product.totalSold !== undefined && product.total !== undefined
-                  ? {
-                      total: product.total,
-                      sold: product.totalSold,
-                      label: `Đã bán ${product.totalSold}`
-                    }
-                  : undefined
-              }
+              // progress={
+              //   product.totalSold !== undefined && product.total !== undefined
+              //     ? {
+              //         total: product.total,
+              //         sold: product.totalSold,
+              //         label: `Đã bán ${product.totalSold}`
+              //       }
+              //     : undefined
+              // }
               button={{
                 label: 'Mua ngay',
                 onClick: handleButtonClick
