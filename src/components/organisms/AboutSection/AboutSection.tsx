@@ -1,4 +1,4 @@
-import Intro from '@/components/organisms/Home/Intro/Intro';
+import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 
 import { Certificates } from '../../molecules/Certificates';
 
@@ -20,7 +20,11 @@ export const AboutSection = () => (
       {/* Div này chỉ dùng cho hiệu ứng nền */}
     </div>
 
-    <Intro />
+    <SectionTitle
+      className="mb-[35px]"
+      heading="Về Thương Hiệu Chúng Tôi"
+      subHeading="Cam kết chất lượng, vệ sinh an toàn thực phẩm và giá trị dinh dưỡng cao"
+    />
     <Certificates />
   </div>
 );

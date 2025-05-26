@@ -24,7 +24,7 @@ const SectionTitle = ({
     <div className={`flex flex-col items-center ${className}`}>
       <SectionHeading
         className={cn(
-          'capitalize font-bold text-center text-5xl text-primary md:mx-0 mx-4 mb-1',
+          'capitalize font-bold text-center text-[40px] text-primary md:mx-0 mx-4 mb-1',
           classNameHeading
         )}
       >
