@@ -1,7 +1,7 @@
 'use client';
 
 import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
-import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
+// import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
 import { Star } from '@/svg/StarSVG/StarSVG';
 import { CartItem } from '@/types/cart';
@@ -9,10 +9,11 @@ import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
+import { UnOrderedList } from '@/components/atoms/UnOrderedList/UnOderedList';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
-import { cn } from '@/lib/utils';
+import { cn, convertToVND } from '@/lib/utils';
 
 interface ProductSummaryProps {
   className?: string;
@@ -73,10 +74,10 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         <Star className="w-[20px] h-[20px]" />
         <Star className="w-[20px] h-[20px]" />
         <Star className="w-[20px] h-[20px]" />
-        <p className="pl-4">(124 reviews) | Đã bán {product.totalSold}</p>
+        {/* <p className="pl-4">(124 reviews) | Đã bán {product.totalSold}</p> */}
       </div>
       <div className="flex items-center border-b border-dashed border-[#DADADA] py-2 text-[25px]">
-        <SectionHeading className="text-[25px]">{price}đ</SectionHeading>
+        <SectionHeading className="text-[25px]">{convertToVND(price)}</SectionHeading>
         {/* <SectionHeading className="pl-4 font-light text-[20px] leading-[32px] line-through text-[#2A2A40]">
           12.000.000đ
         </SectionHeading> */}
@@ -84,14 +85,17 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b className="mr-1">Thành phần:</b>
 
-        <div className="relative">
+        {/* <div className="relative">
           <span
             className={cn(
               'mr-1 block transition-all',
               seeAll ? 'line-clamp-none max-h-none' : 'line-clamp-2 max-h-[48px] overflow-hidden'
             )}
           >
-            {product.ingredient?.join(' ')}
+            <UnOrderedList
+              items={product.ingredient}
+              className={cn(seeAll ? 'max-h-[35px] overflow-hidden' : 'max-h-auto')}
+            />
           </span>
 
           <Button
@@ -105,10 +109,24 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           >
             {seeAll ? 'Thu gọn' : 'Xem thêm'}
           </Button>
-        </div>
+        </div> */}
+
+        <UnOrderedList
+          items={product.ingredient}
+          className={cn(seeAll ? 'max-h-auto' : 'max-h-[70px] overflow-hidden')}
+        />
+
+        <Button
+          variant="secondary"
+          fill="outline"
+          onClick={handleToggleSeeAll}
+          className={cn('text-[#0085E2] font-bold border-none p-0 bg-white w-auto')}
+        >
+          {seeAll ? 'Thu gọn' : 'Xem thêm'}
+        </Button>
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
-        <b>Size:</b>
+        <b> Trọng lượng:</b>
         {listSize?.value.map((el, idx) => (
           <Button
             key={idx}
@@ -116,7 +134,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             fill="outline"
             onClick={(e) => handleChangeSize(e)}
             className={cn(
-              'py-1 ml-2 mt-2 px-0 text-center w-auto px-2 border-[#2A2A40]',
+              'py-1 ml-2 mt-2 text-center w-auto px-1 border-[#2A2A40]',
               el === curSize && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
@@ -125,7 +143,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         ))}
       </div>
       <div className="border-b border-dashed border-[#DADADA] py-2">
-        <b>Hương vị:</b>
+        <b>Phân loại:</b>
         {listFlavor?.value.map((el, idx) => (
           <Button
             key={idx}
@@ -133,7 +151,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             fill="outline"
             onClick={(e) => handleChangeFlavor(e)}
             className={cn(
-              'py-1 ml-2 mt-2 px-0 text-center w-auto px-2 border-[#2A2A40]',
+              'py-1 ml-2 mt-2 text-center w-auto px-1 border-[#2A2A40]',
               el === curFlavor && 'border-[#D62C35] text-[#D62C35]'
             )}
           >
@@ -142,15 +160,13 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         ))}
       </div>
       <div className="py-2">
-        <p>
+        <div>
           <b>Số lượng:</b>
-        </p>
-        <div className="mt-1">
           <Button
             variant="secondary"
             fill="outline"
             onClick={() => handleChangeAmount('decrease')}
-            className="p-0 w-10 h-[24px] text-center text-[#2A2A40] border-typo-1"
+            className="p-0 w-10 ml-2 h-6 text-center text-[#2A2A40] border-typo-1"
           >
             -
           </Button>
@@ -159,7 +175,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             variant="secondary"
             fill="outline"
             onClick={() => handleChangeAmount('increase')}
-            className="p-0 w-10 h-6 text-[#2A2A40] border-typo-1"
+            className="p-0 w-10 h-6 text-[#2A2A40] text-center border-typo-1"
           >
             +
           </Button>
@@ -181,28 +197,28 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           Thêm giỏ hàng
         </Button>
       </div>
-      <div className="border rounded-[5px] border-dashed border-[#DADADA] p-4 mt-3">
+      <div className="border rounded-[5px] border-dashed border-primary p-4 mt-3">
         <div className="flex flex-row content-start items-start ">
-          <BoxSVG />
+          <BoxSVG className="mt-1" />
           <div className="ml-4">
-            <b className="leading-[18px]">Giao hàng</b>
-            <p className="leading-[18px]">Miễn phí giao hàng cho đơn từ 100.000đ</p>
+            <b className="leading-[16px]">Giao hàng</b>
+            <p className="leading-[16px]">Miễn phí giao hàng cho đơn từ 100.000đ</p>
           </div>
         </div>
         <div className="flex flex-row content-start items-start mt-2">
-          <ReloadSVG />
+          <ReloadSVG className="mt-1" />
           <div className="ml-4">
-            <b className="leading-[18px]">Đổi trả</b>
-            <p className="leading-[18px]">Đổi trả miễn phí trong vòng 7 ngày</p>
+            <b className="leading-[16px]">Đổi trả</b>
+            <p className="leading-[16px]">Đổi trả miễn phí trong vòng 7 ngày</p>
           </div>
         </div>
-        <div className="flex flex-row content-start items-start mt-2">
+        {/* <div className="flex flex-row content-start items-start mt-2">
           <NoticeSVG />
           <div className="ml-4">
             <b className="leading-[18px]">Bảo quản</b>
             <p className="leading-[18px]">Bảo quản lạnh, uống trong vòng 12h</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
