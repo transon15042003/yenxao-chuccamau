@@ -115,26 +115,26 @@ const FooterContent = () => {
           <hr className="w-full border-secondary/30" />
           <div className="w-full flex flex-col items-start gap-2 items-center md:items-start">
             <p className="text-lg font-bold">Theo dõi chúng tôi</p>
-            <div className="flex flex-row flex-wrap gap-2 items-center">
+            <div className="flex flex-row flex-wrap gap-[30px] items-center">
               <Link href="#" aria-label="Facebook" className="hover:opacity-80">
-                <FaFacebook className="w-6 h-6" />
+                <FaFacebook className="w-[27px] h-[27px]" />
               </Link>
               <Link href="#" aria-label="Instagram" className="hover:opacity-80">
-                <FaInstagram className="w-6 h-6" />
+                <FaInstagram className="w-[27px] h-[27px]" />
               </Link>
               <Link href="#" aria-label="LinkedIn" className="hover:opacity-80">
-                <FaLinkedin className="w-6 h-6" />
+                <FaLinkedin className="w-[27px] h-[27px]" />
               </Link>
               <Link href="#" aria-label="TikTok" className="hover:opacity-80">
-                <FaTiktok className="w-6 h-6" />
+                <FaTiktok className="w-[27px] h-[27px]" />
               </Link>
             </div>
           </div>
           <hr className="w-full border-secondary/30 my-4 md:hidden" />
         </div>
       </div>
-
-      <div className="text-center pb-6 text-sm font-[400] relative z-10">
+      <hr className="w-full border-secondary/30 my-4 hidden md:block" />
+      <div className="text-center pb-6 pt-2 text-sm font-[400] relative z-10">
         © Copyright 2025, All Rights Reserved by Techbee
       </div>
     </>
