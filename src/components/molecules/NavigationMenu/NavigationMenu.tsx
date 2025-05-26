@@ -21,16 +21,8 @@ const productMenuList: ProductMenuItem[] = [
   //   isComing: true
   // },
   {
-    title: 'Yến Sào Tinh Chế',
-    link: '/products?c=yen-sao-tinh-che'
-  },
-  {
     title: 'Yến Chưng Tươi',
     link: '/products?c=yen-chung-tuoi'
-  },
-  {
-    title: 'Tổ Yến Sào Thô',
-    link: '/products?c=to-yen-sao-tho'
   },
   {
     title: 'Set Quà Yến Chưng Tươi',
@@ -38,17 +30,25 @@ const productMenuList: ProductMenuItem[] = [
     isComing: true
   },
   {
+    title: 'Cháo & Súp (Yến)',
+    link: '/products?c=chao-sup-yen'
+  },
+  {
+    title: 'Yến Sào Tinh Chế',
+    link: '/products?c=yen-sao-tinh-che'
+  },
+  {
+    title: 'Tổ Yến Sào Thô',
+    link: '/products?c=to-yen-sao-tho'
+  },
+  {
     title: 'Topping',
     link: '/products?c=topping'
-  },
+  }
   // {
   //   title: 'Yến Chưng Sấn Tiết Trùng',
   //   link: '/products?c=yen-chung-san-tiet-trung'
   // },
-  {
-    title: 'Món nên thử',
-    link: '/products?c=mon-nen-thu'
-  }
 ];
 
 const NavigationMenu = () => {
@@ -56,6 +56,7 @@ const NavigationMenu = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
+  const isProductsPage = pathname.includes('/products');
 
   useEffect(() => {
     setIsMounted(true);
@@ -94,7 +95,7 @@ const NavigationMenu = () => {
         <button
           type="button"
           className={`flex items-center gap-1 h-full text-lg font-bold focus:outline-none group ${
-            isMounted && open
+            isMounted && (open || isProductsPage)
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
           }`}
@@ -103,7 +104,9 @@ const NavigationMenu = () => {
           SẢN PHẨM
           <ChevronDownIcon
             className={`w-4 h-4 ml-1 ${
-              isMounted && open ? 'stroke-secondary' : 'stroke-white group-hover:stroke-secondary'
+              isMounted && (open || isProductsPage)
+                ? 'stroke-secondary'
+                : 'stroke-white group-hover:stroke-secondary'
             }`}
             strokeWidth={2}
           />

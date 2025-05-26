@@ -7,6 +7,7 @@ import NavItem from './NavItem';
 
 interface MobileMenuProps {
   isOpen: boolean;
+  onClose: () => void;
 }
 
 const productMenuList = [
@@ -46,7 +47,7 @@ const productMenuList = [
   }
 ];
 
-const MobileMenu = ({ isOpen }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const [isProductOpen, setIsProductOpen] = useState(false);
 
   if (!isOpen) return null;
@@ -54,10 +55,10 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   return (
     <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
       <div className="flex flex-col p-4 pt-6 gap-6">
-        <NavItem href="/" className="text-2xl">
+        <NavItem href="/" className="text-2xl" onClick={onClose}>
           TRANG CHỦ
         </NavItem>
-        <NavItem href="/about" className="text-2xl">
+        <NavItem href="/about" className="text-2xl" onClick={onClose}>
           GIỚI THIỆU
         </NavItem>
         <div className="relative">
@@ -76,12 +77,17 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
               strokeWidth={2}
             />
           </button>
-          <MenuDropdown open={isProductOpen} items={productMenuList} isMobile={true} />
+          <MenuDropdown
+            open={isProductOpen}
+            items={productMenuList}
+            isMobile={true}
+            onItemClick={onClose}
+          />
         </div>
-        <NavItem href="/blog" className="text-2xl">
+        <NavItem href="/blog" className="text-2xl" onClick={onClose}>
           BLOG
         </NavItem>
-        <NavItem href="/contact" className="text-2xl">
+        <NavItem href="/contact" className="text-2xl" onClick={onClose}>
           LIÊN HỆ
         </NavItem>
       </div>
