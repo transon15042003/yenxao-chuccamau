@@ -89,7 +89,7 @@ export const ProductCard = ({
 
       {/* Product Price */}
       <div className="flex flex-wrap items-center justify-between md:justify-start md:gap-2 text-sm lg:text-base font-bold">
-        <span className="line-through text-[#929292]">{convertToVND(Number(price))}</span>
+        {/* <span className="line-through text-[#929292]">{convertToVND(Number(price))}</span> */}
         <span className="text-primary-light">{convertToVND(Number(price))}</span>
       </div>
 
