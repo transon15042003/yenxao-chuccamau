@@ -97,32 +97,6 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
       <div className="border-b border-dashed border-[#DADADA] py-2">
         <b className="mr-1">Thành phần:</b>
 
-        {/* <div className="relative">
-          <span
-            className={cn(
-              'mr-1 block transition-all',
-              seeAll ? 'line-clamp-none max-h-none' : 'line-clamp-2 max-h-[48px] overflow-hidden'
-            )}
-          >
-            <UnOrderedList
-              items={product.ingredient}
-              className={cn(seeAll ? 'max-h-[35px] overflow-hidden' : 'max-h-auto')}
-            />
-          </span>
-
-          <Button
-            variant="secondary"
-            fill="outline"
-            onClick={handleToggleSeeAll}
-            className={cn(
-              'text-[#0085E2] font-bold border-none p-0 bg-white',
-              seeAll ? 'static w-auto' : 'absolute bottom-0 right-0 w-[100px] hover:opacity-100'
-            )}
-          >
-            {seeAll ? 'Thu gọn' : 'Xem thêm'}
-          </Button>
-        </div> */}
-
         <UnOrderedList
           items={product.ingredient}
           className={cn(seeAll ? 'max-h-auto' : 'max-h-[70px] overflow-hidden')}

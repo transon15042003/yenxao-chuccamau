@@ -97,7 +97,6 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
               <SwiperSlide key={product.id}>
                 <ProductCard
                   className="max-w-[calc((100% - 8px) / 2)]"
-                  // className="min-w-[50%] lg:min-w-0 lg:shrink-0 lg:w-[calc((100%-3*2rem)/4)]"
                   key={product.id}
                   product={product}
                   button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
