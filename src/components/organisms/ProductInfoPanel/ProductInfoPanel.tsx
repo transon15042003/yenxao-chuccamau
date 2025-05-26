@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 
-import { Badge } from '@/components/atoms/Badge';
+// import { Badge } from '@/components/atoms/Badge';
 import SliderControl from '@/components/molecules/SliderControl/SliderControl';
 import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
@@ -20,10 +20,10 @@ const ProductInfoPanel = ({ className }: ProductInfoPanelProps) => {
         src={curThumbnail || '/images/placeholder.webp'}
         alt="product"
         className="h-[640px] w-full object-cover"
-        width={100}
+        width={600}
         height={640}
       />
-      <Badge content="20%" className="absolute top-2 left-[32px]" />
+      {/* <Badge content="20%" className="absolute top-2 left-[32px]" /> */}
       <SliderControl className="absolute lg:bottom-[40px] lg:right-[40px] bottom-4 right-4 text-[#424B5A]" />
     </div>
   );
