@@ -70,7 +70,7 @@ export const returnPolicyContent: PolicyContent[] = [
       {
         type: 'ul',
         values: [
-          `<strong>Email:</strong> <a href="mailto:${AppConfig.returnEmail}" class="hover:underline">${AppConfig.returnEmail}</a>`,
+          // `<strong>Email:</strong> <a href="mailto:${AppConfig.returnEmail}" class="hover:underline">${AppConfig.returnEmail}</a>`,
           `<strong>Số điện thoại:</strong> <a href="tel:${AppConfig.phone}" class="hover:underline">${AppConfig.phone}</a>`,
           `<strong>Địa chỉ:</strong> <a href="${AppConfig.addressURL}" target="_blank" rel="noopener noreferrer" class="hover:underline">${AppConfig.address}</a>`
         ]
