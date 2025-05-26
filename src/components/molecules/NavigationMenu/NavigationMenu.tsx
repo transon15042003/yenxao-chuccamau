@@ -1,15 +1,62 @@
 'use client';
 
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
 
-import ProductDropdown from '@/components/molecules/ProductDropdown/ProductDropdown';
+import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
+
+import NavItem from './NavItem';
+
+interface ProductMenuItem {
+  title: string;
+  link: string;
+  isComing?: boolean;
+}
+
+const productMenuList: ProductMenuItem[] = [
+  // {
+  //   title: 'Bánh Tổ Yến',
+  //   link: '/products?c=banh-to-yen',
+  //   isComing: true
+  // },
+  {
+    title: 'Yến Chưng Tươi',
+    link: '/products?c=yen-chung-tuoi'
+  },
+  {
+    title: 'Set Quà Yến Chưng Tươi',
+    link: '/products?c=set-qua-yen-chung-tuoi',
+    isComing: true
+  },
+  {
+    title: 'Cháo & Súp (Yến)',
+    link: '/products?c=chao-sup-yen'
+  },
+  {
+    title: 'Yến Sào Tinh Chế',
+    link: '/products?c=yen-sao-tinh-che'
+  },
+  {
+    title: 'Tổ Yến Sào Thô',
+    link: '/products?c=yen-sao-tho'
+  },
+  {
+    title: 'Topping',
+    link: '/products?c=topping'
+  }
+  // {
+  //   title: 'Yến Chưng Sấn Tiết Trùng',
+  //   link: '/products?c=yen-chung-san-tiet-trung'
+  // },
+];
 
 const NavigationMenu = () => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
+  const isProductsPage = pathname.includes('/products');
 
   useEffect(() => {
     setIsMounted(true);
@@ -32,25 +79,23 @@ const NavigationMenu = () => {
     };
   }, [open]);
 
+  const handleItemClick = () => {
+    setOpen(false);
+  };
+
   return (
-    <div className="flex items-center gap-[70px]">
-      <Link
-        href="/"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-      >
+    <div className="w-full flex items-center justify-evenly h-full">
+      <NavItem className="text-base lg:text-lg" href="/" active={pathname === '/'}>
         TRANG CHỦ
-      </Link>
-      <Link
-        href="/about"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-      >
+      </NavItem>
+      <NavItem className="text-base lg:text-lg" href="/about" active={pathname === '/about'}>
         GIỚI THIỆU
-      </Link>
-      <div className="relative flex items-center" ref={dropdownRef}>
+      </NavItem>
+      <div className="relative flex items-center h-full" ref={dropdownRef}>
         <button
           type="button"
-          className={`flex items-center gap-1 focus:outline-none group ${
-            isMounted && open
+          className={`flex items-center gap-1 h-full text-base lg:text-lg font-bold focus:outline-none group ${
+            isMounted && (open || isProductsPage)
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
           }`}
@@ -59,27 +104,21 @@ const NavigationMenu = () => {
           SẢN PHẨM
           <ChevronDownIcon
             className={`w-4 h-4 ml-1 ${
-              isMounted && open ? 'stroke-secondary' : 'stroke-white group-hover:stroke-secondary'
+              isMounted && (open || isProductsPage)
+                ? 'stroke-secondary'
+                : 'stroke-white group-hover:stroke-secondary'
             }`}
             strokeWidth={2}
           />
         </button>
-        <div className="absolute left-0 top-[calc(100%+2px)]">
-          <ProductDropdown open={open} />
-        </div>
+        <MenuDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
       </div>
-      <Link
-        href="/blog"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-      >
+      <NavItem className="text-base lg:text-lg" href="/blog" active={pathname === '/blog'}>
         BLOG
-      </Link>
-      <Link
-        href="/contact"
-        className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90"
-      >
+      </NavItem>
+      <NavItem className="text-base lg:text-lg" href="/contact" active={pathname === '/contact'}>
         LIÊN HỆ
-      </Link>
+      </NavItem>
     </div>
   );
 };

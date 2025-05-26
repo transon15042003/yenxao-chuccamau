@@ -33,6 +33,7 @@ const getIconComponent = (iconName: string): React.ReactElement | null => {
 type ContactInfoBlockProps = {
   className?: string;
   contactData: ContactType[];
+  onScrollToMap?: () => void;
 };
 
 export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
@@ -46,24 +47,28 @@ export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
         }}
       ></div>
 
-      <div className="relative z-10 p-6 bg-white rounded-lg flex justify-center">
+      <div className="relative z-10 p-6 bg-white rounded-lg flex justify-center items-center h-[548px]">
+        {' '}
+        {/* When allowing to display email, working hours, remove ' items-center h-[548px]' */}
         <div className="w-3/4">
           {props.contactData[0].data.map((item, index) => {
-            return (
-              <ContactItem
-                key={index}
-                icon={getIconComponent(item.icon)}
-                label={item.label}
-                details={item.details}
-              />
-            );
+            if (index < 2)
+              // When allowing to display email, working hours, remove this condition
+              return (
+                <ContactItem
+                  key={index}
+                  icon={getIconComponent(item.icon)}
+                  label={item.label}
+                  details={item.details}
+                />
+              );
           })}
 
           <Button
-            className="w-full text-base font-bold py-[10px] mt-6"
+            className="w-full text-base font-bold py-[10px] mt-6 border-2 border-typo-1 "
             variant="secondary"
             fill="outline"
-            onClick={() => alert('Open map view')}
+            onClick={props.onScrollToMap}
           >
             Xem bản đồ
           </Button>

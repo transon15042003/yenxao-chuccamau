@@ -1,4 +1,6 @@
 'use client';
+
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { LargeChevronLeftSVG } from '@/svg/LargeChevronLeftSVG/LargeChevronLeftSVG';
 import { LargeChevronRightSVG } from '@/svg/LargeChevronRightSVG/LargeChevronRightSVG';
 import { CartItem } from '@/types/cart';
@@ -23,31 +25,28 @@ interface OthersProductProps {
 }
 
 const OthersProduct = ({ className, heading }: OthersProductProps) => {
-  const { products, curSize, curFlavor, curThumbnail, variants } = useDetailProduct();
+  const { products } = useDetailProduct();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
   const router = useRouter();
   const swiperRef = useRef<SwiperType | null>(null);
 
   const handleAddToCart = (product: Product) => {
-    const variant = variants.find(
-      (el) => el.specs.size === curSize && el.specs.savour === curFlavor
-    );
     const cartItem: CartItem = {
       productId: product.id,
-      sku: variant?.sku || '',
-      name: variant?.name,
-      price: variant?.price || 0,
+      sku: product.variants[0].sku,
+      name: product.variants[0].name,
+      price: product.variants[0].price,
       quantity: 1,
-      specs: { size: curSize, savour: curFlavor },
-      thumbnail: curThumbnail
+      specs: product.variants[0].specs,
+      thumbnail: product.variants[0].thumbnail
     };
 
     addToCart(cartItem);
   };
 
-  const handleBuyNow = (product: Product) => {
-    console.warn(product);
-    router.push(`/payment?productId=${product.id}`);
+  const handleBuyNowClick = (product: Product) => {
+    handleBuyNow(product);
   };
 
   const gotoProductDetail = (product: Product) => {
@@ -98,10 +97,9 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
               <SwiperSlide key={product.id}>
                 <ProductCard
                   className="max-w-[calc((100% - 8px) / 2)]"
-                  // className="min-w-[50%] lg:min-w-0 lg:shrink-0 lg:w-[calc((100%-3*2rem)/4)]"
                   key={product.id}
                   product={product}
-                  button={{ label: 'Mua Ngay', onClick: handleBuyNow }}
+                  button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
                   badge={product.isNew ? 'New' : undefined}
                   progress={
                     product.total

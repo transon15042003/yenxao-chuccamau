@@ -1,5 +1,5 @@
 import ChanThoMieng from './chan-tho-mieng_delete.mdx';
-import ChanThoRia from './chan-tho-ria.mdx';
+import ChanYenTho from './chan-tho-ria.mdx';
 import ChanYenRutLong from './chan-yen-rut-long.mdx';
 import ChaoGa from './chao-ga-yen-tuoi.mdx';
 import HatChia from './hat-chia.mdx';
@@ -14,6 +14,7 @@ import TaoBuiNhuocKhuong from './tao-bui-nhuoc-khuong_delete.mdx';
 import TaoDo from './tao-do.mdx';
 import ToYenSoiTinhCaoCap from './to-yen-soi-tinh-cao-cap.mdx';
 import ToYenThoLoai1 from './to-yen-tho-loai-1.mdx';
+import ToYenThoLoai2 from './to-yen-tho-loai-2.mdx';
 import ToYenTinhCheLoai1 from './to-yen-tinh-che-loai-1.mdx';
 import ToYenTinhCheLoai2 from './to-yen-tinh-che-loai-2.mdx';
 import ToYenTinhCheSoiNon from './to-yen-tinh-che-soi-non.mdx';
@@ -33,6 +34,7 @@ const productMarkdown = {
   'to-yen-tinh-che-loai-2': ToYenTinhCheLoai2,
   'to-yen-tinh-che-loai-1': ToYenTinhCheLoai1,
   'to-yen-tho-loai-1': ToYenThoLoai1,
+  'to-yen-tho-loai-2': ToYenThoLoai2,
   'to-yen-soi-tinh-cao-cap': ToYenSoiTinhCaoCap,
   'tao-do': TaoDo,
   'tao-bui-nhuoc-khuong': TaoBuiNhuocKhuong,
@@ -46,7 +48,7 @@ const productMarkdown = {
   'hat-chia': HatChia,
   'chao-ga-yen-tuoi': ChaoGa,
   'chan-yen-rut-long': ChanYenRutLong,
-  'chan-tho-ria': ChanThoRia,
+  'chan-yen-tho': ChanYenTho,
   'chan-tho-mieng': ChanThoMieng
 };
 

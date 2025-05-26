@@ -1,7 +1,7 @@
 name: chuccamau-${ENV}
 services:
   app:
-    image: chuccamau-app:latest
+    image: chuccamau-app-${ENV}:latest
     build:
       context: .
       dockerfile: Dockerfile

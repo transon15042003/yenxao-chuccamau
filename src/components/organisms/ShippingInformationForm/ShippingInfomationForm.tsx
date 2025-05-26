@@ -22,7 +22,10 @@ export const shippingInfomationFormSchema = z.object({
       invalid_type_error: 'Số điện thoại không hợp lệ'
     })
     .nonempty({ message: 'Số điện thoại không được để trống' })
-    .regex(/^\d{10}$/, { message: 'Số điện thoại không hợp lệ' }),
+    // .regex(/^\d{10}$/, { message: 'Số điện thoại không hợp lệ' }),
+    .regex(/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, {
+      message: 'Số điện thoại không hợp lệ'
+    }),
   address: z.string({ required_error: 'Địa chỉ không được để trống' }).nonempty({
     message: 'Địa chỉ không được để trống'
   }),

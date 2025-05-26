@@ -1,4 +1,5 @@
 import { QueryResourceResponse } from '@/types/common';
+import { Product } from '@/types/product';
 import { Quote as QuoteType } from '@/types/quote';
 import { getBestSellingProduct } from 'src/services/product.service';
 import { getQuotes } from 'src/services/quote.service';
@@ -13,6 +14,9 @@ const HomePage = async () => {
   try {
     const quotesResponse: QueryResourceResponse<QuoteType> = await getQuotes({ limit: 5 });
     const bestSellingProducts = await getBestSellingProduct();
+    bestSellingProducts.data = bestSellingProducts.data.sort((a: Product, b: Product) => {
+      return a.price - b.price;
+    });
 
     return (
       <div className="min-h-[1000px]">

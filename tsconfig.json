@@ -14,7 +14,7 @@
       "@/types/*": ["./src/types/*"],
       "@/data/*": ["./src/data/*"],
       "@/svg/*": ["./src/svg/*"],
-      "@/content/*": ["./src/content/*"],
+      "@/contents/*": ["./src/contents/*"],
       "@/markdown/*": ["./src/markdown/*"]
     },
     "target": "es5",
