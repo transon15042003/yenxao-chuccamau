@@ -53,6 +53,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         <div className="order-1 lg:order-2 min-w-[230px]">
           <div className="relative w-full">
             <select
+              title="Sắp xếp theo"
               className={cn(
                 'w-full appearance-none px-4 py-2.5 bg-white border border-gray-200',
                 'rounded-lg text-gray-900 text-base font-medium',
