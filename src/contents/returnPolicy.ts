@@ -3,6 +3,7 @@ import { AppConfig } from 'src/AppConfig';
 
 export const returnPolicyContent: PolicyContent[] = [
   {
+    heading: '1. Cam Kết Chất Lượng Sản Phẩm',
     contents: [
       {
         type: 'paragraph',
@@ -13,16 +14,6 @@ export const returnPolicyContent: PolicyContent[] = [
         type: 'paragraph',
         value:
           'Vì vậy, chúng tôi khuyến khích quý khách <strong>kiểm tra kỹ sản phẩm ngay khi nhận hàng</strong> để đảm bảo quyền lợi của mình.'
-      }
-    ]
-  },
-  {
-    heading: '1. Cam Kết Chất Lượng Sản Phẩm',
-    contents: [
-      {
-        type: 'paragraph',
-        value:
-          'Yến Sào Chúc Mau cam kết mang đến cho quý khách hàng những sản phẩm chất lượng cao. Tuy nhiên, trong quá trình vận chuyển, hàng hóa có thể gặp phải một số lỗi về hình thức như trầy xước, móp méo, rách bao bì hoặc thay đổi màu sắc.'
       }
     ]
   },
