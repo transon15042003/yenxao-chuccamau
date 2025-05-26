@@ -1,4 +1,6 @@
 'use client';
+
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { LargeChevronLeftSVG } from '@/svg/LargeChevronLeftSVG/LargeChevronLeftSVG';
 import { LargeChevronRightSVG } from '@/svg/LargeChevronRightSVG/LargeChevronRightSVG';
 import { CartItem } from '@/types/cart';
@@ -25,6 +27,7 @@ interface OthersProductProps {
 const OthersProduct = ({ className, heading }: OthersProductProps) => {
   const { products } = useDetailProduct();
   const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
   const router = useRouter();
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -42,9 +45,8 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
     addToCart(cartItem);
   };
 
-  const handleBuyNow = (product: Product) => {
-    console.warn(product);
-    router.push(`/payment?productId=${product.id}`);
+  const handleBuyNowClick = (product: Product) => {
+    handleBuyNow(product);
   };
 
   const gotoProductDetail = (product: Product) => {
@@ -98,7 +100,7 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
                   // className="min-w-[50%] lg:min-w-0 lg:shrink-0 lg:w-[calc((100%-3*2rem)/4)]"
                   key={product.id}
                   product={product}
-                  button={{ label: 'Mua Ngay', onClick: handleBuyNow }}
+                  button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
                   badge={product.isNew ? 'New' : undefined}
                   progress={
                     product.total
