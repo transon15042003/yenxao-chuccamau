@@ -13,11 +13,12 @@ interface MenuItem {
 interface MenuSectionProps {
   title: string;
   items: MenuItem[];
+  type: 'menu' | 'policy';
 }
 
-const MenuSection: React.FC<MenuSectionProps> = ({ title, items }) => {
+const MenuSection: React.FC<MenuSectionProps> = ({ title, items, type }) => {
   return (
-    <div className="flex-1 flex flex-col items-start px-0 md:pl-6">
+    <div className={`flex flex-col items-start ${type === 'policy' ? 'col-span-2' : 'col-span-1'}`}>
       <div className="font-[900] text-[16px] mb-5 bg-secondary-gradient-90 bg-clip-text text-transparent">
         {title}
       </div>
@@ -55,7 +56,7 @@ const policyItems: MenuItem[] = [
 const FooterContent = () => {
   return (
     <>
-      <div className="text-[#DBDBDB] relative z-10 w-5/6 mx-auto py-2 md:py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
+      <div className="text-[#DBDBDB] relative z-10 w-11/12 lg:w-5/6 mx-auto py-2 md:py-10 flex flex-col md:flex-row justify-between divide-y divide-secondary/30 md:divide-y-0">
         {/* Logo + Địa chỉ */}
         <div className="flex-1 w-full md:w-1/4 flex flex-col gap-2 md:gap-5 pt-2 pb-8 md:py-0 md:px-6">
           <Image
@@ -86,9 +87,9 @@ const FooterContent = () => {
 
         {/* Menu + Chính sách container */}
         <div className="py-10 md:py-0 w-full md:w-1/2">
-          <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
-            <MenuSection title="MENU" items={menuItems} />
-            <MenuSection title="CHÍNH SÁCH" items={policyItems} />
+          <div className="grid grid-cols-3 justify-evenly md:flex md:flex-row">
+            <MenuSection title="MENU" items={menuItems} type="menu" />
+            <MenuSection title="CHÍNH SÁCH" items={policyItems} type="policy" />
           </div>
         </div>
 
