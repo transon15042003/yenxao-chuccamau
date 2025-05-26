@@ -44,15 +44,15 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
               key={product.id}
               product={product}
               badge={product.discountPercent ? `-${product.discountPercent}%` : undefined}
-              progress={
-                product.totalSold !== undefined && product.total !== undefined
-                  ? {
-                      total: product.total,
-                      sold: product.totalSold,
-                      label: `Đã bán ${product.totalSold}`
-                    }
-                  : undefined
-              }
+              // progress={
+              //   product.totalSold !== undefined && product.total !== undefined
+              //     ? {
+              //         total: product.total,
+              //         sold: product.totalSold,
+              //         label: `Đã bán ${product.totalSold}`
+              //       }
+              //     : undefined
+              // }
               button={{
                 label: 'Mua ngay',
                 onClick: handleButtonClick
