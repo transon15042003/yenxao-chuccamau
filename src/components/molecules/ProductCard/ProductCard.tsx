@@ -5,7 +5,6 @@ import React from 'react';
 
 import { Badge } from '@/components/atoms/Badge/Badge';
 import { Button } from '@/components/atoms/Button/Button';
-import { Progress } from '@/components/atoms/Progress/Progress';
 
 import { cn, convertToVND } from '@/lib/utils';
 interface ProductCardProps {
@@ -30,7 +29,7 @@ export const ProductCard = ({
   className,
   badge,
   product,
-  progress,
+  // progress,
   button,
   onAddToCart,
   onViewDetail
@@ -94,7 +93,7 @@ export const ProductCard = ({
       </div>
 
       {/* Product sold */}
-      {progress && (
+      {/* {progress && (
         <div className="mt-3">
           <Progress
             value={progress.sold}
@@ -102,7 +101,7 @@ export const ProductCard = ({
             label={progress.label || `Đã bán ${progress.sold}`}
           />
         </div>
-      )}
+      )} */}
 
       {/* Add to Cart Button */}
       <div className="mt-6 flex justify-between">
