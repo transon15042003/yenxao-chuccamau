@@ -12,8 +12,7 @@ interface BlogPageProps {
 }
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
-  const page = await Promise.resolve(searchParams.page);
-  const currentPage = Math.max(1, Number(page) || 1);
+  const currentPage = Math.max(1, Number(searchParams.page) || 1);
   const offset = (currentPage - 1) * POSTS_PER_PAGE;
 
   const allPosts = await getBlogs();
