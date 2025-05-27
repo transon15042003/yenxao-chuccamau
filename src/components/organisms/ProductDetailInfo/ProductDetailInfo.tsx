@@ -29,7 +29,7 @@ const ProductDetail = ({ className }: ProductDetailInfoProps) => {
       <SectionHeading className="text-[#2A2A40] text-[30px]">Chi tiết sản phẩm</SectionHeading>
       <div className="h-[4px] bg-[#2A2A40] mb-8 mt-4" />
       <div className="lg:col-span-10 lg:col-start-2 text-[18px] [&>*]:leading-[36px]">
-        {getProductMarkdown(product.slug)({})}
+        {getProductMarkdown(product.slug) ? getProductMarkdown(product.slug)({}) : null}
       </div>
       {seeAll ? (
         <Button
