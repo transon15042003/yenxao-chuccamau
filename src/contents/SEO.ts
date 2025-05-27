@@ -249,7 +249,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
     ],
     canonicalUrl: 'https://test.chuccamau.com/products?c=yen-sao-tho'
   },
-  toppping: {
+  topping: {
     title: 'Topping Chúc Cà Mau – Bổ Sung Hương Vị & Dinh Dưỡng ',
     desc: 'Khám phá các loại topping kết hợp với yến như táo đỏ, hạt sen, nhãn nhục, saffron, kỷ tử... từ Chúc Cà Mau. Giúp món yến thêm ngon miệng, đa dạng và tăng cường giá trị dinh dưỡng.',
     keywords: [
