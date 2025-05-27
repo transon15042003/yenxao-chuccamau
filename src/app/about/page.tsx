@@ -1,7 +1,18 @@
+import { StaticSEOContent } from '@/contents/SEO';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import { getContactInfo } from 'src/services/contact.service';
 
 import IntroductionContent from '@/components/templates/IntroductionContent/IntroductionContent';
+
+export const metadata: Metadata = {
+  title: StaticSEOContent.introductionPage.title,
+  description: StaticSEOContent.introductionPage.desc,
+  keywords: StaticSEOContent.introductionPage.keywords,
+  alternates: {
+    canonical: StaticSEOContent.introductionPage.canonicalUrl
+  }
+};
 
 const IntroductionPage = async () => {
   const contactData = await getContactInfo();
