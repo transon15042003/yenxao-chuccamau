@@ -13,7 +13,14 @@ jest.mock('next/navigation', () => ({
     // add any other router methods your code uses
   }),
   usePathname: () => '/',
-  useSearchParams: () => ({})
+  useSearchParams: () => {
+    const params = new URLSearchParams();
+
+    return {
+      get: jest.fn((key: string) => params.get(key)),
+      entries: jest.fn(() => params.entries())
+    };
+  }
 }));
 
 describe('MainLayout', () => {
