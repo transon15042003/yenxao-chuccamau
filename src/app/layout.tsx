@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 
+import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
@@ -13,8 +14,12 @@ import { cn } from '@/lib/utils';
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-primary' });
 
 export const metadata: Metadata = {
-  title: 'Trang chủ | Chuc Ca Mau',
-  description: 'seo description'
+  title: StaticSEOContent.homePage.title,
+  description: StaticSEOContent.homePage.desc,
+  keywords: StaticSEOContent.homePage.keywords,
+  alternates: {
+    canonical: StaticSEOContent.homePage.canonicalUrl
+  }
 };
 
 interface RootLayoutProps {
