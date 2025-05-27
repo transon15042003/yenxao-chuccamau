@@ -13,6 +13,7 @@
       "@/tests/*": ["./.jest/*"],
       "@/types/*": ["./src/types/*"],
       "@/data/*": ["./src/data/*"],
+      "@/services/*": ["./src/services/*"],
       "@/svg/*": ["./src/svg/*"],
       "@/contents/*": ["./src/contents/*"],
       "@/markdown/*": ["./src/markdown/*"]

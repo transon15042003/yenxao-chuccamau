@@ -6,9 +6,10 @@ interface NavItemProps {
   children: React.ReactNode;
   active?: boolean;
   className?: string;
+  onClick?: () => void;
 }
 
-const NavItem = ({ href, children, active = false, className = '' }: NavItemProps) => (
+const NavItem = ({ href, children, active = false, className = '', onClick }: NavItemProps) => (
   <Link
     href={href}
     className={`transition-colors duration-200 font-bold
@@ -19,6 +20,7 @@ const NavItem = ({ href, children, active = false, className = '' }: NavItemProp
       }
       ${className}
     `}
+    onClick={onClick}
   >
     {children}
   </Link>

@@ -57,6 +57,7 @@ module.exports = {
     '^@/contents(.*)$': '<rootDir>/src/contents$1',
     '^@/data(.*)$': '<rootDir>/src/data$1',
     '^@/mocks(.*)$': '<rootDir>/__mocks__$1',
+    '^@/services(.*)$': '<rootDir>/src/services$1',
     '^@/tests(.*)$': '<rootDir>/.jest$1',
     '^@/svg(.*)$': '<rootDir>/src/svg$1'
   }
