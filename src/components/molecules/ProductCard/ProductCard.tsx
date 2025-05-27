@@ -58,7 +58,7 @@ export const ProductCard = ({
       )}
     >
       <div
-        className="relative w-full h-[254px] flex items-center justify-center hover:cursor-pointer"
+        className="relative w-full aspect-square flex items-center justify-center hover:cursor-pointer"
         onClick={handleViewDetail}
       >
         {/* Badge */}
