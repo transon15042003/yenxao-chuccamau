@@ -7,11 +7,10 @@ import { BlogPagination } from '@/components/organisms/BlogPagination/BlogPagina
 
 const POSTS_PER_PAGE = 6;
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-export default async function BlogPage({ searchParams }: Props) {
+export default async function BlogPage(props: { searchParams: SearchParams }) {
+  const searchParams = await props.searchParams;
   const currentPage = Math.max(1, Number(searchParams.page) || 1);
   const offset = (currentPage - 1) * POSTS_PER_PAGE;
 
