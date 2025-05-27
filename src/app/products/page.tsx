@@ -43,6 +43,7 @@ export type ProductPageParams = {
   p: PageNumber;
   c: CategorySlug;
   s: ProductSort;
+  search: string;
 };
 
 const getSortByOptionValue = (
@@ -63,13 +64,14 @@ export default async function ProductsPage({
 }: {
   searchParams: Promise<ProductPageParams>;
 }) {
-  const { c, s, p } = await searchParams;
+  const { c, s, p, search } = await searchParams;
 
   const categories = await getCategories();
   const products = await getProducts({
     page: p || 1,
     take: 9,
     categorySlug: c,
+    search: search,
     ...(s ? getSortByOptionValue(s) : {})
   });
 
