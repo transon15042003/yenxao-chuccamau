@@ -3,7 +3,7 @@
 import useClickOutside from '@/hooks/useClickOutside';
 import CloseMenuIcon from '@/svg/MenuHeaderSVG/CloseMenuIcon';
 import MenuIcon from '@/svg/MenuHeaderSVG/MenuIcon';
-import React, { useState, useRef, RefObject } from 'react';
+import React, { useState, useRef, RefObject, Suspense } from 'react';
 
 import Logo from '@/components/atoms/Logo/Logo';
 import MobileMenu from '@/components/molecules/NavigationMenu/MobileMenu';
@@ -40,7 +40,9 @@ const Header = () => {
         </div>
         {/* Tìm kiếm, giỏ hàng và hamburger cho mobile */}
         <div className="flex items-center gap-4">
-          <SearchBar />
+          <Suspense>
+            <SearchBar />
+          </Suspense>
 
           <CartButton itemCount={cart.items.length} onClick={handleCartClick} />
 
