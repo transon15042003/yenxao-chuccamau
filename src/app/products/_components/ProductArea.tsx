@@ -2,7 +2,7 @@
 import type { PaginationMetadata } from '@/types/common';
 import type { Product, ProductSort } from '@/types/product';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
 import { Pagination } from '@/components/molecules/Pagination';
@@ -23,6 +23,12 @@ const sortOptions: { label: string; value: ProductSort }[] = [
 const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [listProduct, setListProduct] = useState<Product[]>(products);
+  const [sortOption, setSortOption] = useState<string>('');
+
+  const handleChangeSortOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortOption(e.target.value);
+  };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
     const current = new URLSearchParams(searchParams);
@@ -30,7 +36,34 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
     router.push(`/products?${current.toString()}`);
   };
 
-  if (products.length === 0) {
+  const handleChange = () => {
+    const sorted: Product[] = [...products];
+    switch (sortOption) {
+      case 'price-asc':
+        sorted.sort((a: Product, b: Product) => a.price - b.price);
+        setListProduct(sorted);
+        break;
+      case 'price-desc':
+        sorted.sort((a: Product, b: Product) => b.price - a.price);
+        setListProduct(sorted);
+        break;
+      case 'new':
+        sorted.sort(
+          (a: Product, b: Product) =>
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+        setListProduct(sorted);
+        break;
+      default:
+        console.warn(`${sortOption} does not exists`);
+    }
+  };
+
+  useEffect(() => {
+    handleChange();
+  }, [products, sortOption]);
+
+  if (listProduct.length === 0) {
     return (
       <div className="flex-1 flex flex-col gap-y-7">
         <div className="max-w-[300px] mx-auto">
@@ -61,6 +94,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
                 'transition cursor-pointer pr-10 shadow-sm'
               )}
               defaultValue=""
+              onChange={handleChangeSortOption}
             >
               <option value="" disabled>
                 Sắp xếp theo
@@ -87,9 +121,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         </div>
       </div>
 
-      <ProductGrid products={products} />
+      <ProductGrid products={listProduct} />
 
-      {products.length ? (
+      {listProduct.length ? (
         <div className="flex self-center">
           <Pagination
             pageCount={metadata.totalPages}
