@@ -1,7 +1,9 @@
+import { dynamicBlogContent } from '@/contents/SEO';
 import { getBlogMarkDown } from '@/markdown/blogs';
 import { CalendarSVG } from '@/svg/CalendarSVG/CalendarSVG';
 import { StackSVG } from '@/svg/StackSVG/StackSVG';
 import { UserSVG } from '@/svg/UserSVG/UserSVG';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
   generateStaticParams as getStaticParamsFromService,
@@ -12,6 +14,23 @@ import {
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { NewFeed } from '@/components/molecules/NewFeed';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
+
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const blogContent = await dynamicBlogContent(params.slug);
+
+  return {
+    title: blogContent.title,
+    description: blogContent.desc,
+    keywords: blogContent.keywords,
+    alternates: {
+      canonical: blogContent.canonicalUrl
+    }
+  };
+}
 
 export async function generateStaticParams() {
   return await getStaticParamsFromService();

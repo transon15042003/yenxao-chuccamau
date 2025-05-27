@@ -1,9 +1,20 @@
+import { StaticSEOContent } from '@/contents/SEO';
 import { getBlogs } from '@/services/blog.service';
 import { BlogPost } from '@/types/blog';
+import { Metadata } from 'next';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb/Breadcrumb';
 import { BlogCard } from '@/components/organisms/BlogCard/BlogCard';
 import { BlogPagination } from '@/components/organisms/BlogPagination/BlogPagination';
+
+export const metadata: Metadata = {
+  title: StaticSEOContent.blogsPage.title,
+  description: StaticSEOContent.blogsPage.desc,
+  keywords: StaticSEOContent.blogsPage.keywords,
+  alternates: {
+    canonical: StaticSEOContent.blogsPage.canonicalUrl
+  }
+};
 
 const POSTS_PER_PAGE = 6;
 
