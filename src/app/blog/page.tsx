@@ -1,26 +1,28 @@
-'use client';
-
-import blogData from '@/data/blog.json';
-import React, { useState, useEffect } from 'react';
+import { getBlogs } from '@/services/blog.service';
+import { BlogPost } from '@/types/blog';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb/Breadcrumb';
-import { Pagination } from '@/components/molecules/Pagination/Pagination';
 import { BlogCard } from '@/components/organisms/BlogCard/BlogCard';
+import { BlogPagination } from '@/components/organisms/BlogPagination/BlogPagination';
 
 const POSTS_PER_PAGE = 6;
 
-export default function BlogPage() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const posts = blogData;
-  const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE);
-  const currentPosts = posts.slice(
-    currentPage * POSTS_PER_PAGE,
-    (currentPage + 1) * POSTS_PER_PAGE
-  );
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [currentPage]);
+export default async function BlogPage(props: { searchParams: SearchParams }) {
+  const searchParams = await props.searchParams;
+  const currentPage = Math.max(1, Number(searchParams.page) || 1);
+  const offset = (currentPage - 1) * POSTS_PER_PAGE;
+
+  const allPosts = await getBlogs();
+  const pageCount = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  const currentPosts = await getBlogs({
+    limit: POSTS_PER_PAGE,
+    offset: offset,
+    sortBy: 'postedDate',
+    sortOrder: 'desc'
+  });
 
   return (
     <div className="bg-white">
@@ -30,14 +32,14 @@ export default function BlogPage() {
       {/* Danh sách bài viết */}
       <div className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentPosts.map((post) => (
+          {currentPosts.map((post: BlogPost) => (
             <BlogCard
               key={post.id}
-              thumbnailUrl={post.thumbnailUrl}
-              title={post.title}
-              description={post.description}
-              postedDate={post.postedDate}
-              minRead={post.minRead}
+              thumbnailUrl={post.thumbnailUrl || ''}
+              title={post.title || ''}
+              description={post.description || ''}
+              postedDate={post.postedDate || ''}
+              minRead={post.minRead || 0}
               href={`/blog/${post.slug}`}
             />
           ))}
@@ -45,11 +47,7 @@ export default function BlogPage() {
 
         {/* Pagination */}
         <div className="flex justify-center mt-8">
-          <Pagination
-            pageCount={pageCount}
-            forcePage={currentPage}
-            onPageChange={({ selected }) => setCurrentPage(selected)}
-          />
+          <BlogPagination pageCount={pageCount} currentPage={currentPage} />
         </div>
       </div>
     </div>

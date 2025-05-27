@@ -3,12 +3,12 @@
     "id": "yen-vun-chung-tuoi",
     "name": "Yến Vụn Chưng Tươi",
     "slug": "yen-vun-chung-tuoi",
-    "price": 75000,
+    "price": 60000,
+    "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-DP.jpg",
     "description": "Yến vụn chưng tươi",
-    "thumbnail": "/images/products/yen-chung-tuoi/yen-chung-tuoi-duong-phen.jpg",
     "categories": ["yen-chung-tuoi"],
     "ingredient": [
-      "Yến vụn tươi (15g): Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
+      "Yến vụn tươi: Cung cấp protein, collagen tự nhiên và axit amin thiết yếu.",
       "Đường phèn: Tạo vị ngọt thanh, không gắt, dễ tiêu hóa và ít gây tăng cân.",
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
       "Không chứa chất bảo quản, hương liệu nhân tạo hay chất tạo màu."
@@ -16,17 +16,17 @@
     "specs": [
       {
         "key": "size",
-        "value": ["75ml"]
+        "value": ["75ml", "150ml"]
       },
       {
         "key": "savour",
-        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa"]
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa", "saffron", "đông trùng", "táo đỏ"]
       }
     ],
     "isNew": false,
     "total": 0,
     "totalSold": 0,
-    "createdAt": "2025-02-17T00:00:00.000Z",
+    "createdAt": "2024-05-15T00:00:00Z",
     "variants": [
       {
         "sku": "YVCT-75-DP",
@@ -35,10 +35,10 @@
           "size": "75ml",
           "savour": "đường phèn"
         },
-        "price": 75000,
+        "price": 60000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-chung-tuoi-duong-phen.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-DP.jpg"
       },
       {
         "sku": "YVCT-75-HC",
@@ -47,10 +47,10 @@
           "size": "75ml",
           "savour": "hạt chia"
         },
-        "price": 80000,
+        "price": 60000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-chung-tuoi-hat-chia.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-HC.jpg"
       },
       {
         "sku": "YVCT-75-HS",
@@ -59,10 +59,10 @@
           "size": "75ml",
           "savour": "hạt sen"
         },
-        "price": 80000,
+        "price": 60000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-chung-tuoi-hat-chia.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-HS.jpg"
       },
       {
         "sku": "YVCT-75-LD",
@@ -71,23 +71,143 @@
           "size": "75ml",
           "savour": "lá dứa"
         },
-        "price": 75000,
+        "price": 60000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-chung-tuoi-hat-chia.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-LD.jpg"
+      },
+      {
+        "sku": "YVCT-75-S",
+        "name": "Yến Vụn Chưng Tươi - 75ml - saffron",
+        "specs": {
+          "size": "75ml",
+          "savour": "saffron"
+        },
+        "price": 60000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-S.jpg"
+      },
+      {
+        "sku": "YVCT-75-DT",
+        "name": "Yến Vụn Chưng Tươi - 75ml - đông trùng",
+        "specs": {
+          "size": "75ml",
+          "savour": "đông trùng"
+        },
+        "price": 60000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-DT.jpg"
+      },
+      {
+        "sku": "YVCT-75-TD",
+        "name": "Yến Vụn Chưng Tươi - 75ml - táo đỏ",
+        "specs": {
+          "size": "75ml",
+          "savour": "táo đỏ"
+        },
+        "price": 60000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-75-TD.jpg"
+      },
+      {
+        "sku": "YVCT-150-DP",
+        "name": "Yến Vụn Chưng Tươi - 150ml - đường phèn",
+        "specs": {
+          "size": "150ml",
+          "savour": "đường phèn"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-DP.jpg"
+      },
+      {
+        "sku": "YVCT-150-HC",
+        "name": "Yến Vụn Chưng Tươi - 150ml - hạt chia",
+        "specs": {
+          "size": "150ml",
+          "savour": "hạt chia"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-HC.jpg"
+      },
+      {
+        "sku": "YVCT-150-HS",
+        "name": "Yến Vụn Chưng Tươi - 150ml - hạt sen",
+        "specs": {
+          "size": "150ml",
+          "savour": "hạt sen"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-HS.jpg"
+      },
+      {
+        "sku": "YVCT-150-LD",
+        "name": "Yến Vụn Chưng Tươi - 150ml - lá dứa",
+        "specs": {
+          "size": "150ml",
+          "savour": "lá dứa"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-LD.jpg"
+      },
+      {
+        "sku": "YVCT-150-S",
+        "name": "Yến Vụn Chưng Tươi - 150ml - saffron",
+        "specs": {
+          "size": "150ml",
+          "savour": "saffron"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-S.jpg"
+      },
+      {
+        "sku": "YVCT-150-DT",
+        "name": "Yến Vụn Chưng Tươi - 150ml - đông trùng",
+        "specs": {
+          "size": "150ml",
+          "savour": "đông trùng"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-DT.jpg"
+      },
+      {
+        "sku": "YVCT-150-TD",
+        "name": "Yến Vụn Chưng Tươi - 150ml - táo đỏ",
+        "specs": {
+          "size": "150ml",
+          "savour": "táo đỏ"
+        },
+        "price": 120000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YVCT-150-TD.jpg"
       }
     ]
   },
   {
-    "id": "yen-soi-non-chung-tuoi",
-    "name": "Yến Sợi Non Chưng Tươi",
-    "slug": "yen-soi-non-chung-tuoi",
-    "price": 95000,
-    "description": "Yến sợi non chưng tươi",
-    "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-non-duong-phen.jpg",
+    "id": "yen-soi-chung-tuoi",
+    "name": "Yến Sợi Chưng Tươi",
+    "slug": "yen-soi-chung-tuoi",
+    "price": 90000,
+    "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-DP.jpg",
+    "description": "Yến sợi chưng tươi",
     "categories": ["yen-chung-tuoi"],
     "ingredient": [
-      "Yến sợi non (15g): 100% yến sợi non nguyên chất, có sợi mảnh.",
+      "Yến sợi: 100% yến sợi non nguyên chất, có sợi mảnh.",
       "Đường phèn: Ngọt thanh tự nhiên, không gắt, dễ tiêu hóa.",
       "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
       "Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
@@ -99,116 +219,97 @@
       },
       {
         "key": "savour",
-        "value": ["đường phèn", "hạt sen", "lá dứa"]
+        "value": ["đường phèn", "hạt chia", "hạt sen", "lá dứa", "saffron", "đông trùng", "táo đỏ"]
       }
     ],
     "isNew": false,
     "total": 0,
     "totalSold": 0,
-    "createdAt": "2025-06-08T00:00:00.000Z",
+    "createdAt": "2024-05-15T00:00:00Z",
     "variants": [
       {
-        "sku": "YSNCT-75-DP",
-        "name": "Yến Sợi Non Chưng Tươi - 75ml - đường phèn",
+        "sku": "YSCT-75-DP",
+        "name": "Yến Sợi Chưng Tươi - 75ml - đường phèn",
         "specs": {
           "size": "75ml",
           "savour": "đường phèn"
         },
-        "price": 95000,
+        "price": 90000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-non-duong-phen.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-DP.jpg"
       },
       {
-        "sku": "YSNCT-75-LD",
-        "name": "Yến Sợi Non Chưng Tươi - 75ml - lá dứa",
+        "sku": "YSCT-75-LD",
+        "name": "Yến Sợi Chưng Tươi - 75ml - lá dứa",
         "specs": {
           "size": "75ml",
           "savour": "lá dứa"
         },
-        "price": 95000,
+        "price": 90000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-non-la-dua.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-LD.jpg"
       },
       {
-        "sku": "YSNCT-75-HS",
-        "name": "Yến Sợi Non Chưng Tươi - 75ml - hạt sen",
+        "sku": "YSCT-75-HS",
+        "name": "Yến Sợi Chưng Tươi - 75ml - hạt sen",
         "specs": {
           "size": "75ml",
           "savour": "hạt sen"
         },
-        "price": 100000,
+        "price": 90000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen-soi-non-hat-sen.jpg"
-      }
-    ]
-  },
-  {
-    "id": "yen-soi-dai-chung-tuoi",
-    "name": "Yến Sợi Dài Chưng Tươi",
-    "slug": "yen-soi-dai-chung-tuoi",
-    "price": 125000,
-    "description": "Yến sợi dài chưng tươi",
-    "thumbnail": "/images/products/yen-chung-tuoi/yen_soi_dai_duong_phen_cleanup.jpg",
-    "categories": ["yen-chung-tuoi"],
-    "ingredient": [
-      "Yến sợi dài (15g): 100% yến sợi dài nguyên chất, không độn vụn hay xơ mướp.",
-      "Đường phèn: Ngọt thanh tự nhiên, không quá gắt như đường tinh luyện.",
-      "Nước tinh khiết: Dùng trong quá trình chưng cách thủy để giữ nguyên dưỡng chất.",
-      "Không chứa chất bảo quản, phẩm màu hay hóa chất độc hại."
-    ],
-    "specs": [
-      {
-        "key": "size",
-        "value": ["75ml"]
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-HS.jpg"
       },
       {
-        "key": "savour",
-        "value": ["đường phèn", "hạt chia", "hạt sen"]
-      }
-    ],
-    "isNew": false,
-    "total": 0,
-    "totalSold": 0,
-    "createdAt": "2025-10-25T00:00:00.000Z",
-    "variants": [
-      {
-        "sku": "YSDCT-75-DP",
-        "name": "Yến Sợi Dài Chưng Tươi - 75ml - đường phèn",
-        "specs": {
-          "size": "75ml",
-          "savour": "đường phèn"
-        },
-        "price": 125000,
-        "stock": 100,
-        "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen_soi_dai_duong_phen_cleanup.jpg"
-      },
-      {
-        "sku": "YSDCT-75-HC",
-        "name": "Yến Sợi Dài Chưng Tươi - 75ml - hạt chia",
+        "sku": "YSCT-75-HC",
+        "name": "Yến Sợi Chưng Tươi - 75ml - hạt chia",
         "specs": {
           "size": "75ml",
           "savour": "hạt chia"
         },
-        "price": 130000,
+        "price": 90000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen_soi_dai_hat_chia_cleanup.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-HC.jpg"
       },
       {
-        "sku": "YSDCT-75-HS",
-        "name": "Yến Sợi Dài Chưng Tươi - 75ml - hạt sen",
+        "sku": "YSCT-75-S",
+        "name": "Yến Sợi Chưng Tươi - 75ml - saffron",
         "specs": {
           "size": "75ml",
-          "savour": "hạt sen"
+          "savour": "saffron"
         },
-        "price": 130000,
+        "price": 90000,
         "stock": 100,
         "isActive": true,
-        "thumbnail": "/images/products/yen-chung-tuoi/yen_soi_dai_hat_sen_cleanup.jpg"
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-S.jpg"
+      },
+      {
+        "sku": "YSCT-75-DT",
+        "name": "Yến Sợi Chưng Tươi - 75ml - đông trùng",
+        "specs": {
+          "size": "75ml",
+          "savour": "đông trùng"
+        },
+        "price": 90000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-DT.jpg"
+      },
+      {
+        "sku": "YSCT-75-TD",
+        "name": "Yến Sợi Chưng Tươi - 75ml - táo đỏ",
+        "specs": {
+          "size": "75ml",
+          "savour": "táo đỏ"
+        },
+        "price": 90000,
+        "stock": 100,
+        "isActive": true,
+        "thumbnail": "/images/products/yen-chung-tuoi/YSCT-75-TD.jpg"
       }
     ]
   }
