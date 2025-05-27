@@ -1,16 +1,16 @@
 [
   {
-    "id": "set-qua-4-chai",
-    "name": "Set quà 4 chai",
-    "slug": "set-qua-4-chai",
-    "price": 600000,
-    "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-4.jpg",
-    "description": "Set quà 4 chai",
+    "id": "set-qua-6-hu",
+    "name": "Set quà 6 hủ",
+    "slug": "set-qua-6-hu",
+    "price": 350000,
+    "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set6.jpg",
+    "description": "Set quà 6 hủ",
     "categories": ["set-qua-yen-chung-tuoi"],
     "ingredient": [
-      "Thành phần: Yến tươi nguyên chất + đường phèn.",
+      "Yến tươi nguyên chất + đường phèn.",
       "Dung tích mỗi chai: 75ml.",
-      "Quy cách đóng gói: 4 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
+      "Quy cách đóng gói: 6 hủ thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
     ],
     "specs": [
       {
@@ -25,46 +25,46 @@
     "isNew": false,
     "total": 312,
     "totalSold": 201,
-    "createdAt": "2025-03-14T00:00:00.000Z",
+    "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "set4-75-DP",
-        "name": "Set 4 chai  - 75 ml - 4 đường phèn",
+        "sku": "set6-75-DP",
+        "name": "Set 6 hủ - 75 ml - 6 đường phèn",
         "specs": {
           "size": "75ml",
-          "savour": "4 đường phèn"
+          "savour": "6 đường phèn"
         },
-        "price": 600000,
+        "price": 350000,
         "stock": 112,
         "isActive": true,
-        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-4.jpg"
+        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set6.jpg"
       },
       {
-        "sku": "set4-75-MIX",
-        "name": "Set 4 chai  - 75 ml - đủ vị",
+        "sku": "set6-75-MIX",
+        "name": "Set 6 hủ - 75 ml - đủ vị",
         "specs": {
           "size": "75ml",
           "savour": "mix đủ vị"
         },
-        "price": 700000,
+        "price": 350000,
         "stock": 45,
         "isActive": true,
-        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-4.jpg"
+        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set6.jpg"
       }
     ]
   },
   {
-    "id": "set-qua-8-chai",
-    "name": "Set quà 8 chai",
-    "slug": "set-qua-8-chai",
-    "price": 12000000,
-    "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-8.jpg",
-    "description": "Set qua 8 chai",
+    "id": "set-qua-10-hu",
+    "name": "Set quà 10 hu",
+    "slug": "set-qua-10-hu",
+    "price": 580000,
+    "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set10.jpg",
+    "description": "Set quà 10 hủ",
     "categories": ["set-qua-yen-chung-tuoi"],
     "ingredient": [
-      "Thành phần: Yến tươi nguyên chất + đường phèn.",
+      "Yến tươi nguyên chất + đường phèn.",
       "Dung tích mỗi chai: 75ml.",
-      "Quy cách đóng gói: 8 chai thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
+      "Quy cách đóng gói: 10 hủ thủy tinh, nắp kín, bảo vệ tối đa hương vị và chất lượng sản phẩm."
     ],
     "specs": [
       {
@@ -73,37 +73,37 @@
       },
       {
         "key": "savour",
-        "value": ["8 đường phèn", "mix đủ vị"]
+        "value": ["10 đường phèn", "mix đủ vị"]
       }
     ],
     "isNew": false,
     "total": 312,
     "totalSold": 201,
-    "createdAt": "2025-08-27T00:00:00.000Z",
+    "createdAt": "2024-05-11T00:00:00.000Z",
     "variants": [
       {
-        "sku": "set8-75-DP",
-        "name": "Set 8 chai  - 75 ml - 8 đường phèn",
+        "sku": "set10-75-DP",
+        "name": "Set 10 hủ - 75 ml - 10 đường phèn",
         "specs": {
           "size": "75ml",
-          "savour": "8 đường phèn"
+          "savour": "10 đường phèn"
         },
-        "price": 1200000,
+        "price": 580000,
         "stock": 112,
         "isActive": true,
-        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-8.jpg"
+        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set10.jpg"
       },
       {
-        "sku": "set8-75-MIX",
-        "name": "Set 8 chai  - 75 ml - đủ vị",
+        "sku": "set10-75-MIX",
+        "name": "Set 10 hủ - 75 ml - đủ vị",
         "specs": {
           "size": "75ml",
           "savour": "mix đủ vị"
         },
-        "price": 1400000,
+        "price": 580000,
         "stock": 45,
         "isActive": true,
-        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set-8.jpg"
+        "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set10.jpg"
       }
     ]
   }
