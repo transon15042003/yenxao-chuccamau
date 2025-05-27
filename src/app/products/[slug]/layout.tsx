@@ -5,9 +5,10 @@ import React from 'react';
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const seoContent = await dynamicProductContent(params.slug);
+  const slug = (await params).slug;
+  const seoContent = await dynamicProductContent(slug);
 
   return {
     title: seoContent.title,

@@ -18,9 +18,10 @@ import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 export async function generateMetadata({
   params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const blogContent = await dynamicBlogContent(params.slug);
+  const slug = (await params).slug;
+  const blogContent = await dynamicBlogContent(slug);
 
   return {
     title: blogContent.title,

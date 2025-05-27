@@ -12,9 +12,18 @@ import ProductArea from './_components/ProductArea';
 export async function generateMetadata({
   searchParams
 }: {
-  searchParams: Record<string, string | undefined>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }): Promise<Metadata> {
-  const cate = searchParams?.c;
+  const params = await searchParams;
+
+  let cate: string;
+  if (Array.isArray(params.c)) {
+    cate = params.c[0];
+  } else if (typeof params.c === 'string') {
+    cate = params.c;
+  } else {
+    cate = '';
+  }
 
   if (cate) {
     return {
