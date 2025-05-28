@@ -18,7 +18,7 @@ const CustomSelect = ({ className, options, placeholder, value, onChange }: Cust
     return options.find((option) => option.value === value) || null;
   }, [options, value]);
 
-  const customStyles: StylesConfig<Option, false> = {
+  const customStyles: StylesConfig = {
     control: (provided) => ({
       ...provided,
       borderColor: '#C2D1D9',
