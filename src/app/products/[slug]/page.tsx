@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProductBySlug, getProducts } from 'src/services/product.service';
+import { getCategoryBySlug, getProductBySlug, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
@@ -19,6 +19,7 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
     categorySlug: '',
     ...{}
   });
+  const category = await getCategoryBySlug(product?.categories[0] ?? '');
 
   if (!product)
     return (
@@ -35,6 +36,7 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
         <Breadcrumb
           items={[
             { label: 'Sản phẩm', href: '/products' },
+            ...(category ? [{ label: category.name, href: `/products?c=${category.slug}` }] : []),
             { label: product.name, href: product.slug }
           ]}
         />

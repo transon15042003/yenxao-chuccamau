@@ -123,3 +123,7 @@ export const getCategories = async (): Promise<Category[]> => {
 export const getCategoryById = async (id: string): Promise<Category | null> => {
   return categories.find((category: Category) => category.id === id) as Category | null;
 };
+
+export const getCategoryBySlug = async (slug: string): Promise<Category | null> => {
+  return categories.find((category: Category) => category.slug === slug) as Category | null;
+};
