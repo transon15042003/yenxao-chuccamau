@@ -1,14 +1,14 @@
 'use client';
-import type { PaginationMetadata } from '@/types/common';
+import type { Option, PaginationMetadata } from '@/types/common';
 import type { Product, ProductSort } from '@/types/product';
 import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
+import CustomSelect from '@/components/atoms/CustomSelect';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
 import { Pagination } from '@/components/molecules/Pagination';
 import { ProductGrid } from '@/components/organisms/ProductGrid';
 
-import { cn } from '@/lib/utils';
 type ProductAreaProps = {
   products: Product[];
   metadata: PaginationMetadata;
@@ -26,8 +26,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const [listProduct, setListProduct] = useState<Product[]>(products);
   const [sortOption, setSortOption] = useState<string>('');
 
-  const handleChangeSortOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortOption(e.target.value);
+  const handleChangeSortOption = (newVal: unknown) => {
+    const newSortOpt = (newVal as Option).value;
+    setSortOption(newSortOpt);
   };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
@@ -56,6 +57,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         break;
       default:
         console.warn(`${sortOption} does not exists`);
+        setListProduct(products);
     }
   };
 
@@ -84,40 +86,12 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
           của <span className="font-bold">{metadata.total}</span> sản phẩm
         </div>
         <div className="order-1 lg:order-2 min-w-[230px]">
-          <div className="relative w-full">
-            <select
-              title="Sắp xếp theo"
-              className={cn(
-                'w-full appearance-none px-4 py-2.5 bg-white border border-gray-200',
-                'rounded-lg text-gray-900 text-base font-medium',
-                'focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400',
-                'transition cursor-pointer pr-10 shadow-sm'
-              )}
-              defaultValue=""
-              onChange={handleChangeSortOption}
-            >
-              <option value="" disabled>
-                Sắp xếp theo
-              </option>
-              {sortOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            {/* Custom dropdown arrow */}
-            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
+          <CustomSelect
+            options={sortOptions}
+            placeholder="Sắp xếp theo"
+            value={sortOption}
+            onChange={handleChangeSortOption}
+          />
         </div>
       </div>
 
