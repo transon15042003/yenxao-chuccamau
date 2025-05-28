@@ -5,14 +5,16 @@ import { getContactInfo } from 'src/services/contact.service';
 
 import IntroductionContent from '@/components/templates/IntroductionContent/IntroductionContent';
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.introductionPage.title,
-  description: StaticSEOContent.introductionPage.desc,
-  keywords: StaticSEOContent.introductionPage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.introductionPage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.introductionPage.title,
+    description: StaticSEOContent.introductionPage.desc,
+    keywords: StaticSEOContent.introductionPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/about`
+    }
+  };
+}
 
 const IntroductionPage = async () => {
   const contactData = await getContactInfo();

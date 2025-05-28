@@ -4,14 +4,16 @@ import { Metadata } from 'next';
 
 import Policy from '@/components/templates/Policy/Policy';
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.privacyPolicyPage.title,
-  description: StaticSEOContent.privacyPolicyPage.desc,
-  keywords: StaticSEOContent.privacyPolicyPage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.privacyPolicyPage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.privacyPolicyPage.title,
+    description: StaticSEOContent.privacyPolicyPage.desc,
+    keywords: StaticSEOContent.privacyPolicyPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/privacy-policy`
+    }
+  };
+}
 
 const PrivacyPolicyPage = () => {
   return <Policy title="Chính Sách Bảo Mật" content={privacyPolicyContent} />;

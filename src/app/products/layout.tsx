@@ -1,14 +1,16 @@
 ﻿import { StaticSEOContent } from '@/contents/SEO';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.productsPage.title,
-  description: StaticSEOContent.productsPage.desc,
-  keywords: StaticSEOContent.productsPage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.productsPage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.productsPage.title,
+    description: StaticSEOContent.productsPage.desc,
+    keywords: StaticSEOContent.productsPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
+    }
+  };
+}
 
 const ProductsLayout = ({ children }: { children: React.ReactNode }) => {
   return <div className="bg-white">{children}</div>;

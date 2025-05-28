@@ -7,14 +7,16 @@ import { Breadcrumb } from '@/components/molecules/Breadcrumb/Breadcrumb';
 import { BlogCard } from '@/components/organisms/BlogCard/BlogCard';
 import { BlogPagination } from '@/components/organisms/BlogPagination/BlogPagination';
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.blogsPage.title,
-  description: StaticSEOContent.blogsPage.desc,
-  keywords: StaticSEOContent.blogsPage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.blogsPage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.blogsPage.title,
+    description: StaticSEOContent.blogsPage.desc,
+    keywords: StaticSEOContent.blogsPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog`
+    }
+  };
+}
 
 const POSTS_PER_PAGE = 6;
 

@@ -13,14 +13,16 @@ import { cn } from '@/lib/utils';
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-primary' });
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.homePage.title,
-  description: StaticSEOContent.homePage.desc,
-  keywords: StaticSEOContent.homePage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.homePage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.homePage.title,
+    description: StaticSEOContent.homePage.desc,
+    keywords: StaticSEOContent.homePage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}`
+    }
+  };
+}
 
 interface RootLayoutProps {
   children: ReactNode;

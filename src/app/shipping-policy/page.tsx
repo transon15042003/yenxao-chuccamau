@@ -4,14 +4,16 @@ import { Metadata } from 'next';
 
 import Policy from '@/components/templates/Policy/Policy';
 
-export const metadata: Metadata = {
-  title: StaticSEOContent.deliveryPolicyPage.title,
-  description: StaticSEOContent.deliveryPolicyPage.desc,
-  keywords: StaticSEOContent.deliveryPolicyPage.keywords,
-  alternates: {
-    canonical: StaticSEOContent.deliveryPolicyPage.canonicalUrl
-  }
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.deliveryPolicyPage.title,
+    description: StaticSEOContent.deliveryPolicyPage.desc,
+    keywords: StaticSEOContent.deliveryPolicyPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/shipping-policy`
+    }
+  };
+}
 
 const ShippingPolicyPage = () => {
   return <Policy title="Chính Sách Vận Chuyển" content={shippingPolicyContent} />;
