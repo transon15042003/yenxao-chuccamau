@@ -23,25 +23,14 @@ const sortOptions: { label: string; value: ProductSort }[] = [
 const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [listProduct, setListProduct] = useState<Product[]>(products);
-  const [sortOption, setSortOption] = useState<string>('');
+  const [sortOption, setSortOption] = useState<string>('new');
 
   const handleChangeSortOption = (newVal: unknown) => {
     const newSortOpt = (newVal as Option).value;
     setSortOption(newSortOpt);
-  };
-
-  const handlePageChange = ({ selected }: { selected: number }) => {
-    const current = new URLSearchParams(searchParams);
-    current.set('p', (selected + 1).toString());
-    router.push(`/products?${current.toString()}`);
-  };
-
-  useEffect(() => {
-    setListProduct(products);
 
     const params = new URLSearchParams(searchParams);
-    switch (sortOption) {
+    switch (newSortOpt) {
       case 'price-asc':
         params.set('s', 'price-asc');
         break;
@@ -55,10 +44,36 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         params.delete('s');
     }
 
-    router.push(`?${params.toString()}`);
-  }, [products, sortOption]);
+    router.push(`/products/?${params.toString()}`);
+  };
 
-  if (listProduct.length === 0) {
+  const handlePageChange = ({ selected }: { selected: number }) => {
+    const current = new URLSearchParams(searchParams);
+    current.set('p', (selected + 1).toString());
+    router.push(`/products?${current.toString()}`);
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    if (!params.get('s')) {
+      params.set('s', 'createAt');
+    } else {
+      switch (params.get('s')) {
+        case 'price-asc':
+          setSortOption('price-asc');
+          break;
+        case 'price-desc':
+          setSortOption('price-desc');
+          break;
+        case 'createAt':
+          setSortOption('new');
+          break;
+      }
+    }
+    router.push(`/products/?${params.toString()}`);
+  }, []);
+
+  if (products.length === 0) {
     return (
       <div className="flex-1 flex flex-col gap-y-7">
         <div className="max-w-[300px] mx-auto">
@@ -88,9 +103,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         </div>
       </div>
 
-      <ProductGrid products={listProduct} />
+      <ProductGrid products={products} />
 
-      {listProduct.length ? (
+      {products.length ? (
         <div className="flex self-center">
           <Pagination
             pageCount={metadata.totalPages}

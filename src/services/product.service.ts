@@ -40,7 +40,24 @@ export const getProducts = async (
     }
   };
 
-  const filteredProducts = products.filter((product) => {
+  const productList = [...products];
+
+  if (sortField) {
+    const field = productList[0][sortField];
+    if (field) {
+      if (typeof field === 'string' && isValidDateString(field)) {
+        sortByDateField(productList, sortField as keyof Product, sortOrder);
+      }
+      if (typeof field === 'number' || isValidNumberString(field.toString())) {
+        sortByNumberField(productList, sortField as keyof Product, sortOrder);
+      }
+      if (typeof field === 'string') {
+        sortByStringField(productList, sortField as keyof Product, sortOrder);
+      }
+    }
+  }
+
+  const filteredProducts = productList.filter((product) => {
     const matchConditions = [];
     if (categorySlug) {
       const matchCategory = categories.find((c) => c.slug === categorySlug);
@@ -62,21 +79,6 @@ export const getProducts = async (
 
   if (!filteredProducts.length) {
     return result;
-  }
-
-  if (sortField) {
-    const field = filteredProducts[0][sortField];
-    if (field) {
-      if (typeof field === 'string' && isValidDateString(field)) {
-        sortByDateField(filteredProducts, sortField as keyof Product, sortOrder);
-      }
-      if (typeof field === 'number' || isValidNumberString(field.toString())) {
-        sortByNumberField(filteredProducts, sortField as keyof Product, sortOrder);
-      }
-      if (typeof field === 'string') {
-        sortByStringField(filteredProducts, sortField as keyof Product, sortOrder);
-      }
-    }
   }
 
   const total = filteredProducts.length;
