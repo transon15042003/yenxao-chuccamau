@@ -2,16 +2,15 @@ import { ChevronRightSVG } from '@/svg/ChevronRightSVG/ChevronRightSVG';
 import Link from 'next/link';
 import React from 'react';
 
-import { cn } from '@/lib/utils';
-
 type BreadcrumbProps = {
   items: {
     label: string;
     href: string;
   }[];
+  disableLastChild?: boolean;
 };
 
-export const Breadcrumb = ({ items }: BreadcrumbProps) => (
+export const Breadcrumb = ({ items, disableLastChild }: BreadcrumbProps) => (
   <nav className=" bg-ground-1 py-3">
     <ul className="flex items-center gap-1 max-w-[83%] mx-auto text-sm text-[#3E4B5E]">
       <li>
@@ -23,12 +22,13 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => (
         items.map((item, idx) => (
           <React.Fragment key={item.href}>
             <ChevronRightSVG />
-            <Link
-              href={item.href}
-              className={cn('text-gray-500', idx !== items.length - 1 && 'hover:text-red-700')}
-            >
-              {item.label}
-            </Link>
+            {idx === items.length - 1 && disableLastChild ? (
+              <span className="text-gray-500">{item.label}</span>
+            ) : (
+              <Link href={item.href} className="text-gray-500 hover:text-red-700">
+                {item.label}
+              </Link>
+            )}
           </React.Fragment>
         ))}
     </ul>
