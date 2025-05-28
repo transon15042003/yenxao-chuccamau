@@ -43,15 +43,15 @@ export const ContactPage = (props: ContactPage) => {
         >
           <SectionTitle
             classNameHeading="text-[40px]"
-            classNameSubHeading="text-typo-2"
+            classNameSubHeading="text-typo-2 sm:w-full w-5/6"
             heading="Thông tin liên hệ"
             subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
           />
 
-          <div className="flex lg:flex-row flex-col flex-wrap items-start md:w-3/4 w-96 mt-12">
-            <div className="flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
+          <div className="w-flex lg:flex-row flex-col flex-wrap items-start md:w-3/4 w-96 mt-12">
+            <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
               <ContactInfoBlock
-                className="lg:w-1/2 w-full"
+                className="lg:pt-0 lg:w-1/2 w-full"
                 contactData={props.contactData}
                 onScrollToMap={scrollToMapView}
               />
@@ -62,6 +62,9 @@ export const ContactPage = (props: ContactPage) => {
               className="w-full h-[487px] my-8"
               embedUrl={AppConfig.embedUrl}
               ref={mapViewRef}
+              style={{
+                scrollMarginTop: '105px'
+              }}
             />
           </div>
         </div>

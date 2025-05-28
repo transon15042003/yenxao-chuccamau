@@ -86,7 +86,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
   return (
     <form className={className} {...props} onSubmit={handleSubmit(onSubmit)} noValidate>
       <p id="inbox" className="w-full font-semibold text-3xl text-[#2A3140] mb-4">
-        Gửi tin nhắn cho tôi
+        Gửi tin nhắn liên hệ
       </p>
 
       <div className="flex flex-wrap -mx-2 mb-8">
@@ -179,7 +179,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 placeholder="Nhập nội dung tin nhắn chi tiết..."
                 required
                 {...field}
-                line={10}
+                line={2}
                 errorMessage={errors.message?.message}
                 textareaClassName="bg-transparent"
                 labelClassName="font-medium text-sm text-[#344054]"
@@ -189,7 +189,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         </div>
       </div>
 
-      <Button className="w-full uppercase text-xl font-medium py-[13px]" type="submit">
+      <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
     </form>
