@@ -2,6 +2,8 @@ import { ChevronRightSVG } from '@/svg/ChevronRightSVG/ChevronRightSVG';
 import Link from 'next/link';
 import React from 'react';
 
+import { cn } from '@/lib/utils';
+
 type BreadcrumbProps = {
   items: {
     label: string;
@@ -18,10 +20,13 @@ export const Breadcrumb = ({ items }: BreadcrumbProps) => (
         </Link>
       </li>
       {items.length > 0 &&
-        items.map((item) => (
+        items.map((item, idx) => (
           <React.Fragment key={item.href}>
             <ChevronRightSVG />
-            <Link href={item.href} className="text-gray-500 hover:text-red-700">
+            <Link
+              href={item.href}
+              className={cn('text-gray-500', idx !== items.length - 1 && 'hover:text-red-700')}
+            >
               {item.label}
             </Link>
           </React.Fragment>
