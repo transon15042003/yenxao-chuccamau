@@ -29,6 +29,20 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const handleChangeSortOption = (newVal: unknown) => {
     const newSortOpt = (newVal as Option).value;
     setSortOption(newSortOpt);
+
+    const params = new URLSearchParams(searchParams);
+    switch (newSortOpt) {
+      case 'price-asc':
+        params.set('s', 'price-asc');
+        break;
+      case 'price-desc':
+        params.set('s', 'price-desc');
+        break;
+      default:
+        params.set('s', 'createAt');
+    }
+
+    router.push(`?${params.toString()}`);
   };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
@@ -37,32 +51,8 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
     router.push(`/products?${current.toString()}`);
   };
 
-  const handleChange = () => {
-    const sorted: Product[] = [...products];
-    switch (sortOption) {
-      case 'price-asc':
-        sorted.sort((a: Product, b: Product) => a.price - b.price);
-        setListProduct(sorted);
-        break;
-      case 'price-desc':
-        sorted.sort((a: Product, b: Product) => b.price - a.price);
-        setListProduct(sorted);
-        break;
-      case 'new':
-        sorted.sort(
-          (a: Product, b: Product) =>
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        );
-        setListProduct(sorted);
-        break;
-      default:
-        console.warn(`${sortOption} does not exists`);
-        setListProduct(products);
-    }
-  };
-
   useEffect(() => {
-    handleChange();
+    setListProduct(products);
   }, [products, sortOption]);
 
   if (listProduct.length === 0) {
