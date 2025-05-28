@@ -29,20 +29,6 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const handleChangeSortOption = (newVal: unknown) => {
     const newSortOpt = (newVal as Option).value;
     setSortOption(newSortOpt);
-
-    const params = new URLSearchParams(searchParams);
-    switch (newSortOpt) {
-      case 'price-asc':
-        params.set('s', 'price-asc');
-        break;
-      case 'price-desc':
-        params.set('s', 'price-desc');
-        break;
-      default:
-        params.set('s', 'createAt');
-    }
-
-    router.push(`?${params.toString()}`);
   };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
@@ -53,6 +39,23 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
 
   useEffect(() => {
     setListProduct(products);
+
+    const params = new URLSearchParams(searchParams);
+    switch (sortOption) {
+      case 'price-asc':
+        params.set('s', 'price-asc');
+        break;
+      case 'price-desc':
+        params.set('s', 'price-desc');
+        break;
+      case 'new':
+        params.set('s', 'createAt');
+        break;
+      default:
+        params.delete('s');
+    }
+
+    router.push(`?${params.toString()}`);
   }, [products, sortOption]);
 
   if (listProduct.length === 0) {
