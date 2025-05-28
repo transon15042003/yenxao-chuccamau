@@ -1,4 +1,10 @@
-export const LocationSVG = ({ className }: { className?: string }) => (
+export const LocationSVG = ({
+  className,
+  background
+}: {
+  className?: string;
+  background?: string;
+}) => (
   <svg
     width="32"
     height="32"
@@ -7,7 +13,7 @@ export const LocationSVG = ({ className }: { className?: string }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <circle cx="16" cy="16" r="16" fill="#E6B522" fillOpacity="0.2" />
+    <circle cx="16" cy="16" r="16" fill={background || '#E6B522'} fillOpacity="0.2" />
     <path
       d="M22 15C22 19.5 16 24 16 24C16 24 10 19.5 10 15C10 13.4087 10.6321 11.8826 11.7574 10.7574C12.8826 9.63214 14.4087 9 16 9C17.5913 9 19.1174 9.63214 20.2426 10.7574C21.3679 11.8826 22 13.4087 22 15Z"
       stroke="#D62C35"
