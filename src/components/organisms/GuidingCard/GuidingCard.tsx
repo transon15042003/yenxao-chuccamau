@@ -3,7 +3,7 @@ import InfoBox from '@/components/molecules/InfoBox';
 
 import { cn } from '@/lib/utils';
 
-interface GuidingCartProps {
+interface GuidingCardProps {
   icon: string;
   title: string;
   description: string;
@@ -11,7 +11,7 @@ interface GuidingCartProps {
   styles?: React.CSSProperties;
 }
 
-const GuidingCart = ({ icon, title, description, className, styles }: GuidingCartProps) => {
+const GuidingCard = ({ icon, title, description, className, styles }: GuidingCardProps) => {
   return (
     <div
       className={cn(
@@ -35,4 +35,4 @@ const GuidingCart = ({ icon, title, description, className, styles }: GuidingCar
   );
 };
 
-export default GuidingCart;
+export default GuidingCard;

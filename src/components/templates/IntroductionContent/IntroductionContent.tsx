@@ -9,7 +9,7 @@ import { AppConfig } from 'src/AppConfig';
 import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
-import GuidingCart from '@/components/organisms/GuidingCart/GuidingCart';
+import GuidingCard from '@/components/organisms/GuidingCard/GuidingCard';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
 import ProductionStep from '@/components/organisms/ProductionStep/ProductionStep';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
@@ -85,7 +85,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             <div className="lg:col-span-10 lg:col-start-2">
               <div className="flex flex-wrap justify-center gap-[24px]">
                 {descriptions.guidingPrinciple.map((el, idx) => (
-                  <GuidingCart
+                  <GuidingCard
                     key={idx}
                     icon={el.icon}
                     title={el.title}
