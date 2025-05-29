@@ -2,6 +2,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { toast, ToastContainer } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
 
@@ -75,11 +76,23 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
           fromName: data.name || 'Khách liên hệ'
         });
 
-        alert('Tin nhắn của bạn đã được gửi thành công!');
+        toast.success(
+          <div className="px-4 py-2">
+            <h4 className="font-bold ">Yêu cầu đã được gửi!</h4>
+            <p>
+              Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+            </p>
+          </div>
+        );
         reset();
       } catch (error) {
         console.error('Lỗi khi gửi tin nhắn:', error);
-        alert('Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.');
+        toast.error(
+          <div className="px-4 py-2">
+            <h4 className="font-bold">Lỗi khi gửi email!</h4>
+            <p>Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.</p>
+          </div>
+        );
       } finally {
         setIsLoading(false);
       }
@@ -197,6 +210,19 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
       <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </form>
   );
 };
