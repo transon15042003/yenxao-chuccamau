@@ -2,7 +2,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
 
@@ -210,19 +210,6 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
       <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </form>
   );
 };
