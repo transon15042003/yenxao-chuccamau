@@ -60,6 +60,9 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     } else {
       setCart((prev) => ({ ...prev, items: [...prev.items, item] }));
     }
+
+    // note: open the cart after adding to cart
+    setIsCartOpen(true);
   };
 
   const increaseQuantity = (sku: string, quantity: number) => {
