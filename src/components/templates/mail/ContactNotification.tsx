@@ -9,7 +9,7 @@ const HEADER_COLOR = '#B4071A';
 
 type ContactFormData = {
   name: string;
-  email: string;
+  email?: string;
   phone: string;
   subject?: string;
   message: string;
@@ -31,19 +31,21 @@ export const ContactNotification = (data: ContactFormData) => (
       ],
       values: [
         data.name,
-        <a
-          key="email"
-          href={`mailto:${data.email}`}
-          style={{ color: '#0085E2', textDecoration: 'none' }}
-        >
-          {data.email}
-        </a>,
+        data.email ? (
+          <a
+            key="email"
+            href={`mailto:${data.email}`}
+            style={{ color: '#0085E2', textDecoration: 'none' }}
+          >
+            {data.email}
+          </a>
+        ) : null,
         data.phone,
         ...(data.subject ? [data.subject] : []),
         <span key="message" style={{ whiteSpace: 'pre-line' }}>
           {data.message}
         </span>
-      ]
+      ].filter(Boolean)
     }}
     highlightText="Vui lòng phản hồi tin nhắn này trong thời gian sớm nhất."
   >
