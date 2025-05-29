@@ -3,6 +3,8 @@
 import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
 // import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
+import { MinusSVG } from '@/svg/MinusSVG/MinusSVG';
+import { PlusSVG } from '@/svg/PlusSVG/PlusSVG';
 import { ReloadSVG } from '@/svg/ReloadSVG/ReloadSVG';
 import { Star } from '@/svg/StarSVG/StarSVG';
 import { CartItem } from '@/types/cart';
@@ -146,24 +148,24 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         ))}
       </div>
       <div className="py-2">
-        <div>
+        <div className="flex flex-row items-center">
           <b>Số lượng:</b>
           <Button
             variant="secondary"
             fill="outline"
             onClick={() => handleChangeAmount('decrease')}
-            className="p-0 w-10 ml-2 h-6 text-center text-[#2A2A40] border-typo-1"
+            className="p-0 w-10 ml-2 h-[30px] flex justify-center items-center text-[#2A2A40] border-typo-1"
           >
-            -
+            <MinusSVG />
           </Button>
           <span className="px-3">{amount}</span>
           <Button
             variant="secondary"
             fill="outline"
             onClick={() => handleChangeAmount('increase')}
-            className="p-0 w-10 h-6 text-[#2A2A40] text-center border-typo-1"
+            className="p-0 w-10 h-[30px] text-[#2A2A40] flex justify-center items-center border-typo-1"
           >
-            +
+            <PlusSVG />
           </Button>
         </div>
       </div>

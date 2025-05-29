@@ -71,7 +71,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
       }
     }
     router.push(`/products/?${params.toString()}`);
-  }, []);
+  }, [router, searchParams]);
 
   if (products.length === 0) {
     return (
