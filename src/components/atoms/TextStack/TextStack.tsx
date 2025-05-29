@@ -59,7 +59,7 @@ export const TextStack = (props: TextSTackProps) => {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <p className={`font-semibold text-base text-[#2A2A40] ${props.labelClassName || ''}`}>
         {props.label}
       </p>

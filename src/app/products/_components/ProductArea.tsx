@@ -71,12 +71,12 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
       }
     }
     router.push(`/products/?${params.toString()}`);
-  }, []);
+  }, [router, searchParams]);
 
   if (products.length === 0) {
     return (
-      <div className="flex-1 flex flex-col gap-y-7">
-        <div className="max-w-[300px] mx-auto">
+      <div className="flex-1 flex flex-col mt-7 h-[500px]">
+        <div className="max-w-[350px] mx-auto">
           <EmptyDataBlock />
         </div>
       </div>

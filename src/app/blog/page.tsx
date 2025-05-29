@@ -1,9 +1,22 @@
+import { StaticSEOContent } from '@/contents/SEO';
 import { getBlogs } from '@/services/blog.service';
 import { BlogPost } from '@/types/blog';
+import { Metadata } from 'next';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb/Breadcrumb';
 import { BlogCard } from '@/components/organisms/BlogCard/BlogCard';
 import { BlogPagination } from '@/components/organisms/BlogPagination/BlogPagination';
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.blogsPage.title,
+    description: StaticSEOContent.blogsPage.desc,
+    keywords: StaticSEOContent.blogsPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog`
+    }
+  };
+}
 
 const POSTS_PER_PAGE = 6;
 

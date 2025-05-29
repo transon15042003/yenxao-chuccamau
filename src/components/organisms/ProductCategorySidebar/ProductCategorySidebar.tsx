@@ -19,7 +19,7 @@ export const ProductCategorySidebar = ({ className, categories }: ProductCategor
   const sortOption = searchParams.get('s');
 
   return (
-    <aside className={cn('w-full space-y-4', className)}>
+    <aside className={cn('w-full space-y-7 mt-2', className)}>
       <SectionHeading className="text-xl font-bold">Danh mục sản phẩm</SectionHeading>
       <ul className="space-y-7">
         {categories.map((cat) => (
