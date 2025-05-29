@@ -51,7 +51,7 @@ export const ProductCard = ({
   return (
     <div
       className={cn(
-        'bg-white pt-4 lg:px-5 px-3 pb-5 md:pb-7 pt-[19px]',
+        'bg-white pt-4 lg:px-5 md:px-3 px-1 pb-5 md:pb-7 pt-[19px]',
         'border border-[#C2D1D9] hover:border-primary rounded-[5px]',
         'flex flex-col justify-between',
         className
