@@ -1,53 +1,110 @@
 import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
+import { CartItem as TCartItem } from '@/types/cart';
+import { Product, ProductSpecifications, ProductVariant } from '@/types/product';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { cn } from '@/lib/utils';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+
+import { cn, convertToVND } from '@/lib/utils';
+
+import { SelectInput } from '../SelectInput';
 
 export type CartItemProps = {
-  image: string;
-  name: string;
-  oldPrice: string;
-  price: string;
-  quantity: number;
+  product: Product;
+  item: TCartItem;
   onIncrease: () => void;
   onDecrease: () => void;
   onRemove: () => void;
 };
 
 export const CartItem: React.FC<CartItemProps> = ({
-  image,
-  name,
-  oldPrice,
-  price,
-  quantity,
+  item,
+  product,
   onIncrease,
   onDecrease,
   onRemove
 }) => {
+  const { updateCartItemVariant } = useCart();
+
+  const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
+
+  const selectedVariant = useMemo(() => {
+    return product.variants.find((variant: ProductVariant) => {
+      return Object.keys(selectedSpecs).every((key) => variant.specs[key] === selectedSpecs[key]);
+    });
+  }, [selectedSpecs, product.variants]);
+
+  useEffect(() => {
+    if (JSON.stringify(selectedSpecs) !== JSON.stringify(item.specs)) {
+      setSelectedSpecs(item.specs);
+    }
+  }, [item.specs, selectedSpecs]);
+
+  useEffect(() => {
+    if (selectedVariant && selectedVariant.sku !== item.sku) {
+      updateCartItemVariant(item.productId, item.sku, selectedVariant);
+    }
+  }, [selectedVariant, item.productId, item.sku, updateCartItemVariant]);
+
+  const productSpecs = product.specs;
+
+  const handleSpecChange = (key: string, value: string) => {
+    setSelectedSpecs((prevSpecs) => ({
+      ...prevSpecs,
+      [key]: value
+    }));
+  };
+
+  const displayPrice = selectedVariant?.price || item.price;
+  const displayName = selectedVariant?.name || item.name;
+  const displayThumbnail = selectedVariant?.thumbnail || item.thumbnail;
+
   return (
     <div className="flex w-full py-4 px-6 bg-white rounded-lg">
       {/* Product Image */}
       <div className="relative w-[115px] h-[99px] flex items-center justify-center ">
-        <Image className="rounded-[5px] object-cover" src={image} alt={name} fill />
+        <Image
+          className="rounded-[5px] object-cover"
+          src={displayThumbnail}
+          alt={displayName || 'product thumnail'}
+          fill
+        />
       </div>
       <div className="flex-1 flex flex-col gap-3 ml-4">
         {/* Product Info */}
         <div className="min-w-0">
-          <div className="font-semibold leading-[1.36] text-typo-1 line-clamp-1">{name}</div>
+          <div className="font-semibold leading-[1.36] text-typo-1 line-clamp-1">{displayName}</div>
           <div className="flex items-center gap-2 mt-2">
-            <span className="font-semibold text-sm text-primary-dark">{price}</span>
-            <span className="text-sm line-through text-[#C1C1C1]">{oldPrice}</span>
+            <span className="font-semibold text-sm text-primary-dark">
+              {convertToVND(displayPrice)}
+            </span>
+            <span className="text-sm line-through text-[#C1C1C1]">
+              {convertToVND(displayPrice)}
+            </span>
           </div>
         </div>
+
+        <div className="flex flex-row  gap-2 mt-2">
+          {productSpecs.map((spec: ProductSpecifications) => (
+            <SelectInput
+              key={spec.key}
+              options={spec.value.map((val) => ({ label: val, value: val }))}
+              value={selectedSpecs[spec.key] || ''}
+              onChange={(newValue) => handleSpecChange(spec.key, newValue)}
+              className="!w-[150px]"
+            />
+          ))}
+        </div>
+
         {/* Quantity Controls */}
         <div className="flex items-center gap-2">
           <button
             onClick={onDecrease}
-            disabled={quantity === 1}
+            disabled={item.quantity === 1}
             className={cn(
               'w-8 h-8 flex items-center justify-center border border-[#B2BCCA] rounded-[3px] text-typo-1',
-              quantity === 1 && 'opacity-50'
+              item.quantity === 1 && 'opacity-50'
             )}
             aria-label="Decrease quantity"
           >
@@ -56,7 +113,9 @@ export const CartItem: React.FC<CartItemProps> = ({
               <rect x="3" y="7.25" width="10" height="1.5" rx="0.75" fill="currentColor" />
             </svg>
           </button>
-          <span className="w-8 text-center font-normal text-[16px] text-typo-1">{quantity}</span>
+          <span className="w-8 text-center font-normal text-[16px] text-typo-1">
+            {item.quantity}
+          </span>
           <button
             onClick={onIncrease}
             className="w-8 h-8 flex items-center justify-center border border-[#B2BCCA] rounded-[3px] text-typo-1"

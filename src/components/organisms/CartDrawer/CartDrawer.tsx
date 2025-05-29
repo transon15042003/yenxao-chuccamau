@@ -1,4 +1,5 @@
 'use client';
+import { useCartProducts } from '@/hooks/useCartProducts';
 import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
 import { useRouter } from 'next/navigation';
 import { Fragment, RefObject, useRef } from 'react';
@@ -18,6 +19,8 @@ export const CartDrawer = () => {
 
   const router = useRouter();
   const cartContainerRef = useRef<HTMLDivElement>(null);
+
+  const { productsData, isLoadingProducts } = useCartProducts(cart);
 
   const closeCart = () => {
     setIsCartOpen(false);
@@ -60,65 +63,77 @@ export const CartDrawer = () => {
             <CloseSVG />
           </div>
         </div>
-        {cart.items.length === 0 ? (
+
+        {cart.items.length === 0 && !isLoadingProducts && (
           <div className="flex items-center justify-center h-full">
             <div className="text-2xl font-bold">Giỏ hàng trống</div>
           </div>
-        ) : (
+        )}
+
+        {isLoadingProducts && (
+          <div className="flex h-full w-full items-center justify-center">
+            <p className="text-typo-2">Đang tải sản phẩm...</p>
+          </div>
+        )}
+
+        {!isLoadingProducts && cart.items.length > 0 && (
           <>
             {/* Cart Body */}
             <div className="p-5 flex-1 overflow-y-auto customscrollbar">
               <div className="flex flex-col">
-                {cart.items.map((item) => (
-                  <Fragment key={item.sku}>
-                    <CartItem
-                      image={item.thumbnail}
-                      name={item.name || ''}
-                      oldPrice={convertToVND(item.price)}
-                      price={convertToVND(item.price)}
-                      quantity={item.quantity}
-                      onIncrease={() => increaseQuantity(item.sku, 1)}
-                      onDecrease={() => decreaseQuantity(item.sku, 1)}
-                      onRemove={() => removeFromCart(item.sku)}
-                    />
-                    <div className="my-6 border-t border-dashed border-[rgba(0,0,0,0.1)]"></div>
-                  </Fragment>
-                ))}
-              </div>
-            </div>
+                {cart.items.map((item) => {
+                  const product = productsData.get(item.productId);
 
-            {/* Cart Footer */}
-            <div className="h-[150px] w-4/5 ml-auto mr-5 mb-5 flex flex-col justify-between">
-              <div className="border border-black my-6"></div>
+                  if (!product) return null;
 
-              <div className="flex flex-col gap-4 f">
-                <div className="hidden items-center justify-between">
-                  <span>Giảm giá</span>
-                  <span>{convertToVND(discount)}</span>
-                </div>
-
-                <div className="hidden items-center justify-between">
-                  <span>Vận chuyển</span>
-                  <span>{convertToVND(shipping)}</span>
-                </div>
-
-                <div className="flex items-center justify-between">
-                  <span className="font-bold">Tổng tiền</span>
-                  <span className="font-bold">{convertToVND(total)}</span>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <Button
-                  className="w-full uppercase text-xl font-bold py-[13px]"
-                  onClick={handleCheckout}
-                >
-                  Thanh toán
-                </Button>
+                  return (
+                    <Fragment key={item.sku}>
+                      <CartItem
+                        item={item}
+                        product={product}
+                        onIncrease={() => increaseQuantity(item.sku, 1)}
+                        onDecrease={() => decreaseQuantity(item.sku, 1)}
+                        onRemove={() => removeFromCart(item.sku)}
+                      />
+                      <div className="my-6 border-t border-dashed border-[rgba(0,0,0,0.1)]"></div>
+                    </Fragment>
+                  );
+                })}
               </div>
             </div>
           </>
         )}
+
+        {/* Cart Footer */}
+        <div className="h-[150px] w-4/5 ml-auto mr-5 mb-5 flex flex-col justify-between">
+          <div className="border border-black my-6"></div>
+
+          <div className="flex flex-col gap-4 f">
+            <div className="hidden items-center justify-between">
+              <span>Giảm giá</span>
+              <span>{convertToVND(discount)}</span>
+            </div>
+
+            <div className="hidden items-center justify-between">
+              <span>Vận chuyển</span>
+              <span>{convertToVND(shipping)}</span>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span className="font-bold">Tổng tiền</span>
+              <span className="font-bold">{convertToVND(total)}</span>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <Button
+              className="w-full uppercase text-xl font-bold py-[13px]"
+              onClick={handleCheckout}
+            >
+              Thanh toán
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
