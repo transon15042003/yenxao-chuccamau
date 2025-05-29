@@ -43,7 +43,7 @@ const ProductionStep = ({ className, img, title, desc, position, display }: Step
             <span className="block bg-[#D93434] min-w-[16px] min-h-[16px] w-[16px] h-[16px] rounded-full" />
           )}
           {display === 'topdown' && (
-            <span className="block bg-[#D93434] max-w-[60px] min-w-[40px] border-dashed border-[3px]" />
+            <span className="block max-w-[60px] min-w-[40px] h-1 border-t-4 border-dashed border-primary" />
           )}
           <Image
             src={img}
@@ -56,7 +56,7 @@ const ProductionStep = ({ className, img, title, desc, position, display }: Step
       </div>
       <span
         className={cn(
-          'block bg-[#D93434] max-w-[60px] min-w-[40px] border-dashed border-[3px]',
+          'block max-w-[60px] min-w-[40px] h-1 border-t-4 border-dashed border-primary',
           display === 'topdown' && 'hidden'
         )}
       />
