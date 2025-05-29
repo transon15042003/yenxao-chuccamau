@@ -213,8 +213,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                   key={idx}
                   src={el}
                   alt="company"
-                  width={400}
-                  height={400}
+                  width={900}
+                  height={700}
                   className="w-full h-auto"
                 />
               ))}
@@ -230,11 +230,11 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
             <ContactInfoBlock
-              className="md:w-1/2 w-full"
+              className="lg:w-1/2 w-full"
               contactData={contactInfo}
               onScrollToMap={handleOpenMap}
             />
-            <ContactForm className="md:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
+            <ContactForm className="lg:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
             {isLoading && <LoadingOverlay />}
           </div>
         </div>
