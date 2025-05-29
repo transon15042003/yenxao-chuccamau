@@ -228,7 +228,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
-        className="lg:py-[70px] py-[36px] bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+        className="lg:py-[70px] py-[36px] md:bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
