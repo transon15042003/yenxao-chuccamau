@@ -126,7 +126,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Quy trình sản xuất"
         subHeading="Quy trình sản xuất chuyên nghiệp, đảm bảo chất lượng sản phẩm"
-        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+        className="lg:py-[70px] py-[36px] px-4 lg:px-0 md:bg-[url('/images/policy/bg.png')] bg-[url('/images/introduction/production-step-bg-mb.png')] bg-no-repeat bg-cover"
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
