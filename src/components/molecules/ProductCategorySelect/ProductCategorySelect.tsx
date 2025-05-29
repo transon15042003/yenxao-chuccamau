@@ -2,7 +2,7 @@
 'use client';
 import { Option } from '@/types/common';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
 
 const Select = dynamic(() => import('react-select'), { ssr: false });
@@ -21,6 +21,8 @@ export const ProductCategorySelect = ({
   className
 }: ProductCategorySelectProps) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const sortOption = searchParams.get('s');
 
   const selectedOption = useMemo(() => {
     return options.find((option) => option.value === value) || null;
@@ -85,7 +87,11 @@ export const ProductCategorySelect = ({
 
   const handleChange = (newValue: unknown) => {
     if (newValue) {
-      router.push(`/products?c=${(newValue as Option).value}`);
+      if (sortOption) {
+        router.push(`/products?c=${(newValue as Option).value}&s=${sortOption}`);
+      } else {
+        router.push(`/products?c=${(newValue as Option).value}`);
+      }
     }
   };
 
