@@ -282,7 +282,7 @@ export const dynamicProductContent = async (slug: string): Promise<SEOContentTyp
       'yến tự nhiên',
       'mua yến chất lượng'
     ],
-    canonicalUrl: `https://test.chuccamau.com/products/${slug}`
+    canonicalUrl: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${slug}`
   };
 };
 
@@ -300,6 +300,6 @@ export const dynamicBlogContent = async (slug: string): Promise<SEOContentType> 
       'bảo quản yến sào',
       'yến sào tự nhiên'
     ],
-    canonicalUrl: `https://test.chuccamau.com/blog/${slug}`
+    canonicalUrl: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
   };
 };

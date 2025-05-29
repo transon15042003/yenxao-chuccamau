@@ -15,7 +15,7 @@ export async function generateMetadata({
     description: seoContent.desc,
     keywords: seoContent.keywords,
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${slug}`
+      canonical: seoContent.canonicalUrl
     }
   };
 }
