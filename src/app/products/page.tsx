@@ -16,6 +16,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const params = await searchParams;
 
+  const defaultMeta = {
+    title: StaticSEOContent.productsPage.title,
+    description: StaticSEOContent.productsPage.desc,
+    keywords: StaticSEOContent.productsPage.keywords,
+    alternates: {
+      canonical: StaticSEOContent.productsPage.canonicalUrl
+    }
+  };
+
   let cate: string;
   if (Array.isArray(params.c)) {
     cate = params.c[0];
@@ -25,25 +34,10 @@ export async function generateMetadata({
     cate = '';
   }
 
-  if (cate) {
-    return {
-      title: dynamicProductCateContent[cate].title,
-      description: dynamicProductCateContent[cate].desc,
-      keywords: dynamicProductCateContent[cate].keywords,
-      alternates: {
-        canonical: dynamicProductCateContent[cate].canonicalUrl
-      }
-    };
-  } else {
-    return {
-      title: StaticSEOContent.productsPage.title,
-      description: StaticSEOContent.productsPage.desc,
-      keywords: StaticSEOContent.productsPage.keywords,
-      alternates: {
-        canonical: StaticSEOContent.productsPage.canonicalUrl
-      }
-    };
-  }
+  const meta =
+    cate && dynamicProductCateContent[cate] ? dynamicProductCateContent[cate] : defaultMeta;
+
+  return meta;
 }
 
 type PageNumber = number;
