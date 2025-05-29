@@ -1,6 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { HTMLAttributes } from 'react';
+import { ReCaptcha } from 'next-recaptcha-v3';
+import { HTMLAttributes, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
@@ -56,6 +57,24 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     }
   });
 
+  const [token, setToken] = useState<string | null>(null);
+
+  const validateRecaptchaAndSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    try {
+      event.preventDefault();
+
+      if (!token) {
+        toast.error('Vui lòng xác thực reCAPTCHA');
+
+        return;
+      }
+
+      await handleSubmit(onSubmit)();
+    } catch (error) {
+      console.error('Lỗi khi gửi tin nhắn:', error);
+    }
+  };
+
   const onSubmit = async (data: InboxFormValues) => {
     setIsLoading(true);
 
@@ -102,7 +121,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
   };
 
   return (
-    <form className={className} {...props} onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form className={className} {...props} onSubmit={validateRecaptchaAndSubmit} noValidate>
       <p id="inbox" className="w-full font-semibold text-3xl text-[#2A3140] mb-4">
         Gửi tin nhắn liên hệ
       </p>
@@ -207,7 +226,15 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         </div>
       </div>
 
-      <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
+      <div>
+        <ReCaptcha onValidate={setToken} action="page_view" />
+      </div>
+
+      <Button
+        className="w-full normal-case text-xl font-medium py-[13px]"
+        type="submit"
+        disabled={!token}
+      >
         Gửi tin nhắn
       </Button>
     </form>
