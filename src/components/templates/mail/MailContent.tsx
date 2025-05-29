@@ -5,7 +5,7 @@ type MailContentProps = {
   logoUrl: string;
   headerColor?: string;
   headerHeight?: number;
-  width?: number;
+  width?: string | number;
   title: string;
   messages: string[];
   infoItems: {
