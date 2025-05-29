@@ -20,9 +20,24 @@ export const descriptions = {
     }
   ],
   guidingPrinciple: [
-    '/images/introduction/guiding_1.webp',
-    '/images/introduction/guiding_2.webp',
-    '/images/introduction/guiding_3.webp'
+    {
+      icon: 'EyeSVG',
+      title: 'Sứ mệnh',
+      description:
+        'Cung cấp những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng tăng của khách hàng, đồng thời đóng góp vào sự phát triển bền vững của xã hội.'
+    },
+    {
+      icon: 'TargetSVG',
+      title: 'Phát triển (2010-2015)',
+      description:
+        'Giai đoạn phát triển mạnh mẽ với việc mở rộng thị trường, tăng cường năng lực sản xuất và đầu tư công nghệ hiện đại.'
+    },
+    {
+      icon: 'DiamondSVG',
+      title: 'Giá trị cốt lõi',
+      description:
+        'Chất lượng là ưu tiên hàng đầu <br/>Đổi mới và sáng tạo không ngừng <br/>Tôn trọng và hợp tác <br />Trách nhiệm với xã hội <br />Phát triển bền vững'
+    }
   ],
   productionProcess: [
     {

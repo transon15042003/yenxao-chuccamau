@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
+import GuidingCart from '@/components/organisms/GuidingCart/GuidingCart';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
 import ProductionStep from '@/components/organisms/ProductionStep/ProductionStep';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
@@ -70,7 +71,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           height={400}
           className="absolute left-0 top-[-200px] rotate-[65deg] opacity-20 z-[1]"
         />
-        <IntroductionSection
+        {/* <IntroductionSection
           heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
           subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
           className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-[2]"
@@ -86,6 +87,27 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                     width={1000}
                     height={1000}
                     className="lg:col-span-1 w-full h-auto"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </IntroductionSection> */}
+        <IntroductionSection
+          heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
+          subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-10"
+        >
+          <div className="lg:grid lg:grid-cols-12">
+            <div className="lg:col-span-10 lg:col-start-2">
+              <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
+                {descriptions.guidingPrinciple.map((el, idx) => (
+                  <GuidingCart
+                    key={idx}
+                    icon={el.icon}
+                    title={el.title}
+                    description={el.description}
+                    className="lg:col-span-1"
                   />
                 ))}
               </div>
