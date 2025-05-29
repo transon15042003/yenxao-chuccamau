@@ -47,10 +47,14 @@ export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
         }}
       ></div>
 
-      <div className="relative z-10 p-6 bg-white rounded-lg flex justify-center items-center h-[548px]">
+      <div
+        className={cn(
+          'relative z-10 p-6 bg-white rounded-lg flex justify-center lg:justify-start items-center h-[442px]'
+        )}
+      >
         {' '}
-        {/* When allowing to display email, working hours, remove ' items-center h-[548px]' */}
-        <div className="w-3/4">
+        {/* When allowing to display email, working hours, remove ' items-center h-[442px]' */}
+        <div className="lg:ml-12 w-[321px]">
           {props.contactData[0].data.map((item, index) => {
             if (index < 2)
               // When allowing to display email, working hours, remove this condition
@@ -65,7 +69,12 @@ export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
           })}
 
           <Button
-            className="w-full text-base font-bold py-[10px] mt-6 border-2 border-typo-1 "
+            className={cn(
+              'w-full',
+              'text-base font-bold',
+              'py-[10px] mt-6',
+              'rounded-[10px] border-2 border-typo-1'
+            )}
             variant="secondary"
             fill="outline"
             onClick={props.onScrollToMap}

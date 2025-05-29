@@ -9,6 +9,8 @@ import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
 
+import { cn } from '@/lib/utils';
+
 type ContactPage = {
   contactData: ContactType[];
 };
@@ -43,15 +45,22 @@ export const ContactPage = (props: ContactPage) => {
         >
           <SectionTitle
             classNameHeading="text-[40px]"
-            classNameSubHeading="text-typo-2"
+            classNameSubHeading="text-typo-2 sm:w-full w-5/6"
             heading="Thông tin liên hệ"
             subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
           />
 
-          <div className="flex lg:flex-row flex-col flex-wrap items-start md:w-3/4 w-96 mt-12">
-            <div className="flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
+          <div
+            className={cn(
+              'flex lg:flex-row flex-col flex-wrap',
+              'items-start',
+              'md:w-3/4 w-full px-4',
+              'mt-12'
+            )}
+          >
+            <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
               <ContactInfoBlock
-                className="lg:w-1/2 w-full"
+                className="lg:pt-0 lg:w-1/2 w-full"
                 contactData={props.contactData}
                 onScrollToMap={scrollToMapView}
               />
@@ -62,10 +71,13 @@ export const ContactPage = (props: ContactPage) => {
               className="w-full h-[487px] my-8"
               embedUrl={AppConfig.embedUrl}
               ref={mapViewRef}
+              style={{
+                scrollMarginTop: '105px'
+              }}
             />
           </div>
         </div>
-        <div className="lg:w-3/4 md:w-5/6 w-96 py-14">
+        {/* <div className="lg:w-3/4 md:w-5/6 w-96 py-14">
           <SectionTitle heading="Danh Sách Chi Nhánh" />
           <div className="w-full flex lg:flex-row flex-col my-7">
             <MapEmbed
@@ -73,13 +85,12 @@ export const ContactPage = (props: ContactPage) => {
               // className="lg:w-1/2 w-full h-[810px] lg:mb-0 mb-5" When allowing to display branch list, un-comment this line n remove/comment line above
               embedUrl={AppConfig.embedUrl}
             />
-            {/* When allowing to display branch list, un-comment here */}
-            {/* <BranchList
+            <BranchList
               className="lg:w-1/2 w-full lg:h-[810px] h-auto"
               contactData={props.contactData}
-            /> */}
+            />
           </div>
-        </div>
+        </div> */}
       </div>
       {isLoading && <LoadingOverlay />}
     </div>

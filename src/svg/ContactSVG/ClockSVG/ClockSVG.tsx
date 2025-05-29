@@ -1,4 +1,10 @@
-export const ClockSVG = ({ className }: { className?: string }) => (
+export const ClockSVG = ({
+  className,
+  background
+}: {
+  className?: string;
+  background?: string;
+}) => (
   <svg
     width="32"
     height="32"
@@ -7,7 +13,7 @@ export const ClockSVG = ({ className }: { className?: string }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <circle cx="16" cy="16" r="16" fill="#E6B522" fillOpacity="0.2" />
+    <circle cx="16" cy="16" r="16" fill={background || '#E6B522'} fillOpacity="0.2" />
     <path
       d="M16.5 24C20.6421 24 24 20.6421 24 16.5C24 12.3579 20.6421 9 16.5 9C12.3579 9 9 12.3579 9 16.5C9 20.6421 12.3579 24 16.5 24Z"
       stroke="#D62C35"
