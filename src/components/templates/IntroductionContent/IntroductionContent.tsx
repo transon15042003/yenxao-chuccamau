@@ -4,6 +4,7 @@ import { descriptions } from '@/contents/introduction';
 import { ContactType } from '@/types/contact';
 import Image from 'next/image';
 import { useState } from 'react';
+import { AppConfig } from 'src/AppConfig';
 
 import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
 import { ContactForm } from '@/components/organisms/ContactForm';
@@ -21,6 +22,10 @@ interface IntroductionContentProps {
 
 const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleOpenMap = () => {
+    window.open(AppConfig.addressURL, '_blank');
+  };
 
   return (
     <div className="flex justify-center flex-col">
@@ -222,7 +227,11 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
-            <ContactInfoBlock className="md:w-1/2 w-full" contactData={contactInfo} />
+            <ContactInfoBlock
+              className="md:w-1/2 w-full"
+              contactData={contactInfo}
+              onScrollToMap={handleOpenMap}
+            />
             <ContactForm className="md:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
             {isLoading && <LoadingOverlay />}
           </div>
