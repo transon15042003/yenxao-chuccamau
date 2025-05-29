@@ -1,5 +1,6 @@
 'use client';
 
+import { useCartProducts } from '@/hooks/useCartProducts';
 import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
@@ -72,6 +73,8 @@ const PaymentPage = () => {
 
   const [discountErrorMessage, setDiscountErrorMessage] = useState<string | undefined>(undefined);
   const [discountCode, setDiscountCode] = useState<string>('');
+
+  const { productsData } = useCartProducts(cart);
 
   const shipping = 0;
   const discount = 0;
@@ -244,19 +247,22 @@ const PaymentPage = () => {
           <div className="flex flex-col gap-3">
             {cart.items.length > 0 ? (
               <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
-                {cart.items?.map((item, idx) => (
-                  <CartItem
-                    key={idx}
-                    image={item.thumbnail}
-                    name={item.name || ''}
-                    oldPrice={convertToVND(item.price)}
-                    price={convertToVND(item.price)}
-                    quantity={item.quantity}
-                    onIncrease={() => increaseQuantity(item.sku, 1)}
-                    onDecrease={() => decreaseQuantity(item.sku, 1)}
-                    onRemove={() => removeFromCart(item.sku)}
-                  />
-                ))}
+                {cart.items?.map((item, idx) => {
+                  const product = productsData.get(item.productId);
+
+                  if (!product) return null;
+
+                  return (
+                    <CartItem
+                      key={idx}
+                      item={item}
+                      product={product}
+                      onIncrease={() => increaseQuantity(item.sku, 1)}
+                      onDecrease={() => decreaseQuantity(item.sku, 1)}
+                      onRemove={() => removeFromCart(item.sku)}
+                    />
+                  );
+                })}
               </div>
             ) : (
               <div className="flex flex-col gap-4 bg-white rounded-lg p-6 items-center">
