@@ -49,7 +49,7 @@ const menuItems: MenuItem[] = [
 const policyItems: MenuItem[] = [
   { href: '/privacy-policy', label: 'Chính sách bảo mật' },
   { href: '/return-policy', label: 'Chính sách đổi trả hàng' },
-  { href: '/order-policy', label: 'Chính sách đặt hàng' },
+  { href: '/payment-policy', label: 'Chính sách thanh toán' },
   { href: '/shipping-policy', label: 'Chính sách vận chuyển' }
 ];
 
