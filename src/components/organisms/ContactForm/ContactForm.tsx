@@ -1,6 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Controller, useForm } from 'react-hook-form';
 import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
@@ -57,7 +58,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     if (data.message) {
       try {
         const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
-        const emailBodyHtml = ContactNotification(data);
+        const emailBodyHtml = renderToStaticMarkup(ContactNotification(data));
 
         await sendMail({
           subject: emailSubject,
