@@ -40,7 +40,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         <IntroductionSection
           heading="Câu chuyện thương hiệu"
           subHeading="Quá trình hình thành và phát triển của chúng tôi qua các năm"
-          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-[2] bg-[#F8F5F2]"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-10"
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
