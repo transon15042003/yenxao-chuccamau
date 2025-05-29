@@ -141,7 +141,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                   position={idx % 2 === 0 ? 'left' : 'right'}
                   display="inline"
                   className={cn(
-                    'overflow-hidden max-h-0 lg:max-h-[208px]',
+                    'overflow-hidden max-h-0 lg:max-h-[300px]',
                     idx % 2 === 0
                       ? 'translate-x-[8px]'
                       : 'float-right translate-x-[-8px] translate-y-[-208px]'
