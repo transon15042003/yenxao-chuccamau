@@ -4,7 +4,7 @@ export const descriptions = {
       icon: 'LargerCalendarSVG',
       title: 'Thành lập (2005)',
       description:
-        'Công ty ABC được thành lập với tầm nhìn trở thành đơn vị hàng đầu trong lĩnh vực. Chúng tôi bắt đầu với đội ngũ 10 nhân viên và một nhà máy nhỏ.'
+        'Yến Sào Chúc Cà Mau được thành lập với tầm nhìn trở thành đơn vị hàng đầu trong lĩnh vực. Chúng tôi bắt đầu với đội ngũ 10 nhân viên và một nhà máy nhỏ.'
     },
     {
       icon: 'DevelopSVG',
@@ -14,9 +14,9 @@ export const descriptions = {
     },
     {
       icon: 'PriceSVG',
-      title: 'Tầm nhìn',
+      title: 'Hiện tại',
       description:
-        'Trở thành công ty hàng đầu trong lĩnh vực, được khách hàng tin tưởng và lựa chọn nhờ chất lượng sản phẩm và dịch vụ xuất sắc.'
+        'Ngày nay, Yến Sào Chúc Cà Mau tự hào là đối tác tin cậy của hàng nghìn khách hàng trong và ngoài nước, với hệ thống sản xuất hiện đại và đội ngũ nhân viên chuyên nghiệp.'
     }
   ],
   guidingPrinciple: [
