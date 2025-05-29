@@ -28,13 +28,7 @@ const GuidingCart = ({ icon, title, description, className, styles }: GuidingCar
         title={title}
         description={description}
         className="mt-[40px] ml-[28px] mr-[54px] mb-[106px]"
-        titleStyle={{
-          background: 'linear-gradient(to right, #E6B522, #FFF788, #FFE059)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          color: 'transparent'
-        }}
+        titleClass="gradient-text"
         descClass="text-white text-[18px]"
       />
     </div>
