@@ -24,7 +24,7 @@ const ProductionStep = ({ className, img, title, desc, position, display }: Step
     >
       <div
         className={cn(
-          'items-center',
+          'items-center w-full',
           position === 'left' ? 'flex flex-row' : 'flex flex-row-reverse',
           display === 'topdown' && 'flex flex-col-reverse gap-1 items-start text-start'
         )}
