@@ -96,7 +96,7 @@ export const DetailProductProvider = ({
         }
       }
     }
-  }, [curSize, curFlavor]);
+  }, [curSize, curFlavor, product]);
 
   useEffect(() => {
     if (product) {
