@@ -105,14 +105,17 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
-              <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
+              <div className="flex flex-wrap justify-center gap-[24px]">
                 {descriptions.guidingPrinciple.map((el, idx) => (
                   <GuidingCart
                     key={idx}
                     icon={el.icon}
                     title={el.title}
                     description={el.description}
-                    className="lg:col-span-1"
+                    styles={{
+                      minWidth: '360px',
+                      maxWidth: 'calc((100% - 48px) / 3)'
+                    }}
                   />
                 ))}
               </div>
