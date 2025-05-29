@@ -76,28 +76,6 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           height={400}
           className="absolute left-0 top-[-200px] rotate-[65deg] opacity-20 z-[1]"
         />
-        {/* <IntroductionSection
-          heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
-          subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
-          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-[2]"
-        >
-          <div className="lg:grid lg:grid-cols-12">
-            <div className="lg:col-span-10 lg:col-start-2">
-              <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
-                {descriptions.guidingPrinciple.map((el, idx) => (
-                  <Image
-                    key={idx}
-                    src={el}
-                    alt=""
-                    width={1000}
-                    height={1000}
-                    className="lg:col-span-1 w-full h-auto"
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </IntroductionSection> */}
         <IntroductionSection
           heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
           subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
@@ -114,7 +92,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                     description={el.description}
                     styles={{
                       minWidth: '360px',
-                      maxWidth: 'calc((100% - 48px) / 3)'
+                      maxWidth: 'calc((100% - 48px) / 3)',
+                      flex: 1
                     }}
                   />
                 ))}

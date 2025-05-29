@@ -15,7 +15,7 @@ const GuidingCart = ({ icon, title, description, className, styles }: GuidingCar
   return (
     <div
       className={cn(
-        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-cover border-[4px] border-[#CCB182] rounded-[10px]",
+        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-cover border-[4px] border-[#CCB182] rounded-[16px]",
         className
       )}
       style={styles}
