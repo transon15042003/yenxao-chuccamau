@@ -10,6 +10,7 @@ import type { ReactNode } from 'react'; // Cần cho kiểu của children trong
 jest.mock('next/image', () => ({
   __esModule: true,
   default: ({ src, alt }: { src: string; alt: string }) => {
+    // eslint-disable-next-line @next/next/no-img-element
     return <img src={src} alt={alt} />;
   }
 }));
@@ -41,7 +42,7 @@ describe('New', () => {
 
     const imageElement = screen.getByAltText(mockProps.title);
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute('src', '/images/backgrounds/' + mockProps.imageUrl);
+    expect(imageElement).toHaveAttribute('src', mockProps.imageUrl);
 
     expect(screen.getByText(mockProps.date)).toBeInTheDocument();
     expect(screen.getByText(mockProps.readTime)).toBeInTheDocument();

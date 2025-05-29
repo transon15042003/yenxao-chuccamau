@@ -1,7 +1,9 @@
-// import Discount from '@/components/atoms/Discount/Discount';
-import { Badge } from '@/components/atoms/Badge';
-import Img from '@/components/atoms/Image/Image';
+'use client';
+import Image from 'next/image';
+
+// import { Badge } from '@/components/atoms/Badge';
 import SliderControl from '@/components/molecules/SliderControl/SliderControl';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 import { cn } from '@/lib/utils';
 
@@ -9,13 +11,22 @@ interface ProductInfoPanelProps {
   className?: string;
 }
 
-const ProductInfoPanel = ({ className }: ProductInfoPanelProps) => (
-  <div className={cn('relative w-full h-auto', className)}>
-    <Img src="/product.png" alt="product" className="h-full object-cover" />
-    {/* <Discount discount={20} className="absolute top-[10px] left-[10px] w-[55px] text-center" /> */}
-    <Badge content="20%" className="absolute top-2 left-2" />
-    <SliderControl className="absolute bottom-[10px] right-[10px] text-[#424B5A]" />
-  </div>
-);
+const ProductInfoPanel = ({ className }: ProductInfoPanelProps) => {
+  const { curThumbnail } = useDetailProduct();
+
+  return (
+    <div className={cn('relative w-full h-[640px] lg:pr-8 lg:pl-4', className)}>
+      <Image
+        src={curThumbnail || '/images/placeholder.webp'}
+        alt="product"
+        className="h-[640px] w-full object-cover"
+        width={600}
+        height={640}
+      />
+      {/* <Badge content="20%" className="absolute top-2 left-[32px]" /> */}
+      <SliderControl className="absolute lg:bottom-[40px] lg:right-[40px] bottom-4 right-4 text-[#424B5A]" />
+    </div>
+  );
+};
 
 export default ProductInfoPanel;

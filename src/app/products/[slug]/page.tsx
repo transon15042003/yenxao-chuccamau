@@ -1,8 +1,9 @@
 import React from 'react';
-import { getProductBySlug, getProducts } from 'src/services/product.service';
+import { getCategoryBySlug, getProductBySlug, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
+import { DetailProductProvider } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 import DetailProduct from '@/components/templates/DetailProduct/DetailProduct';
 
 type ProductDetailPageProps = {
@@ -14,10 +15,11 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const product = await getProductBySlug(slug);
   const products = await getProducts({
     page: 1,
-    take: 9,
+    take: 100,
     categorySlug: '',
     ...{}
   });
+  const category = await getCategoryBySlug(product?.categories[0] ?? '');
 
   if (!product)
     return (
@@ -29,15 +31,19 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
     );
 
   return (
-    <div>
-      <Breadcrumb
-        items={[
-          { label: 'Sản phẩm', href: 'products' },
-          { label: product.name, href: product.slug }
-        ]}
-      />
-      <DetailProduct product={product} products={products.data} />
-    </div>
+    <DetailProductProvider product={product} products={products.data}>
+      <div>
+        <Breadcrumb
+          disableLastChild={true}
+          items={[
+            { label: 'Sản phẩm', href: '/products' },
+            ...(category ? [{ label: category.name, href: `/products?c=${category.slug}` }] : []),
+            { label: product.name, href: product.slug }
+          ]}
+        />
+        <DetailProduct />
+      </div>
+    </DetailProductProvider>
   );
 };
 

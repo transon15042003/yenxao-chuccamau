@@ -13,8 +13,9 @@
       "@/tests/*": ["./.jest/*"],
       "@/types/*": ["./src/types/*"],
       "@/data/*": ["./src/data/*"],
+      "@/services/*": ["./src/services/*"],
       "@/svg/*": ["./src/svg/*"],
-      "@/content/*": ["./src/content/*"],
+      "@/contents/*": ["./src/contents/*"],
       "@/markdown/*": ["./src/markdown/*"]
     },
     "target": "es5",

@@ -6,17 +6,15 @@ type ChoiceGroupProps = {
 
 export const ChoiceGroup = (props: ChoiceGroupProps) => {
   return (
-    <div
-      className="md:w-1/4 w-full bg-transparent rounded-full overflow-x-auto snap-x snap-mandatory my-2 scrollbar-thumb-primary scrollbar-track-gray-300 scrollbar-thin"
-      data-testid="choice-group-container"
-    >
+    <div className="w-full overflow-x-auto rounded-full scrollbar-thumb-primary scrollbar-track-gray-300 scrollbar-thin mb-20">
       <div
-        className={`${props.className} p-1 bg-[#FFFFFF66] flex flex-row justify-start min-w-max`}
+        data-testid="choice-group-container"
+        className={`${props.className} mx-auto rounded-full  p-1 bg-[#FFFFFF66] w-fit flex flex-row justify-start min-w-max`}
       >
-        <ChoiceButton className="snap-always snap-center" title="Bán chạy" selected={true} />
-        <ChoiceButton className="snap-always snap-center" title="Mới nhất" />
-        <ChoiceButton className="snap-always snap-center" title="Khuyến mãi" />
-        <ChoiceButton className="snap-always snap-center" title="Combo" />
+        <ChoiceButton className="" title="Bán chạy" selected={true} />
+        <ChoiceButton className="" title="Mới nhất" />
+        <ChoiceButton className="" title="Khuyến mãi" />
+        <ChoiceButton className="" title="Combo" />
       </div>
     </div>
   );

@@ -1,71 +1,126 @@
 'use client';
 
+import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { LargeChevronLeftSVG } from '@/svg/LargeChevronLeftSVG/LargeChevronLeftSVG';
 import { LargeChevronRightSVG } from '@/svg/LargeChevronRightSVG/LargeChevronRightSVG';
+import { CartItem } from '@/types/cart';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
+import { useRef } from 'react';
+import { Swiper as SwiperType } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css/pagination';
+import 'swiper/css';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
 import { ProductCard } from '@/components/molecules/ProductCard';
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 interface OthersProductProps {
   className?: string;
   heading: string;
-  products: Product[];
 }
 
-const OthersProduct = ({ className, heading, products }: OthersProductProps) => {
+const OthersProduct = ({ className, heading }: OthersProductProps) => {
+  const { products } = useDetailProduct();
+  const { addToCart } = useCart();
+  const { handleBuyNow } = useBuyNowLogic();
   const router = useRouter();
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const handleAddToCart = (product: Product) => {
-    console.warn(product);
+    const cartItem: CartItem = {
+      productId: product.id,
+      sku: product.variants[0].sku,
+      name: product.variants[0].name,
+      price: product.variants[0].price,
+      quantity: 1,
+      specs: product.variants[0].specs,
+      thumbnail: product.variants[0].thumbnail
+    };
+
+    addToCart(cartItem);
   };
 
-  const handleBuyNow = (product: Product) => {
-    console.warn(product);
-    router.push(`/payment?productId=${product.id}`);
+  const handleBuyNowClick = (product: Product) => {
+    handleBuyNow(product);
   };
 
   const gotoProductDetail = (product: Product) => {
     router.push(`/products/${product.slug}`);
   };
 
+  const handlePrev = () => {
+    if (swiperRef.current) swiperRef.current.slidePrev();
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) swiperRef.current.slideNext();
+  };
+
   return (
     <div className={className}>
       <SectionHeading className="text-[#2A2A40] mb-2">{heading}</SectionHeading>
       <div className="relative">
-        <Button
-          variant="primary"
-          fill="fill"
-          className="w-[40px] h-[40px] hidden lg:block lg:flex items-center justify-center rounded-full absolute [top:30%] left-0 -translate-x-1/2 z-10"
-        >
-          <LargeChevronLeftSVG className="text-white h-[24px] w-[24px] stroke-[5px]" />
-        </Button>
-
-        <div className="flex flex-row overflow-x-auto lg:overflow-x-hidden gap-4 lg:gap-8">
-          {products.map((product) => (
-            <ProductCard
-              className="min-w-[50%] lg:min-w-0 lg:shrink-0 lg:w-[calc((100%-3*2rem)/4)]"
-              key={product.id}
-              product={product}
-              button={{ label: 'Mua Ngay', onClick: handleBuyNow }}
-              badge={product.isNew ? 'New' : undefined}
-              progress={
-                product.total ? { total: product.total, sold: product.totalSold || 0 } : undefined
+        <div className="flex flex-row overflow-x-auto lg:overflow-x-hidden gap-4 lg:gap-8 max-h-[540px]">
+          <Button
+            variant="primary"
+            fill="fill"
+            onClick={handlePrev}
+            className="swiper-button-prev w-[40px] h-[40px] hidden lg:block lg:flex items-center justify-center rounded-full absolute [top:30%] left-0 -translate-x-1/2 z-10"
+          >
+            <LargeChevronLeftSVG className="text-white h-[24px] w-[24px] stroke-[5px]" />
+          </Button>
+          <Swiper
+            loop={true}
+            direction="horizontal"
+            breakpoints={{
+              0: {
+                slidesPerView: 2,
+                spaceBetween: 8
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 10
               }
-              onAddToCart={handleAddToCart}
-              onViewDetail={gotoProductDetail}
-            />
-          ))}
+            }}
+            pagination={{ clickable: true }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            className="h-full w-full"
+          >
+            {products.map((product) => (
+              <SwiperSlide key={product.id}>
+                <ProductCard
+                  className="max-w-[calc((100% - 8px) / 2)]"
+                  key={product.id}
+                  product={product}
+                  button={{ label: 'Mua Ngay', onClick: handleBuyNowClick }}
+                  badge={product.isNew ? 'New' : undefined}
+                  progress={
+                    product.total
+                      ? { total: product.total, sold: product.totalSold || 0 }
+                      : undefined
+                  }
+                  onAddToCart={handleAddToCart}
+                  onViewDetail={gotoProductDetail}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Button
+            variant="primary"
+            fill="fill"
+            onClick={handleNext}
+            className="swiper-button-next w-[40px] h-[40px] hidden lg:block lg:flex items-center justify-center rounded-full absolute [top:30%] right-0 translate-x-1/2 z-20"
+          >
+            <LargeChevronRightSVG className="text-white h-[24px] w-[24px] stroke-[5px]" />
+          </Button>
         </div>
-        <Button
-          variant="primary"
-          fill="fill"
-          className="w-[40px] h-[40px] hidden lg:block lg:flex items-center justify-center rounded-full absolute [top:30%] right-0 translate-x-1/2 z-20"
-        >
-          <LargeChevronRightSVG className="text-white h-[24px] w-[24px] stroke-[5px]" />
-        </Button>
       </div>
     </div>
   );

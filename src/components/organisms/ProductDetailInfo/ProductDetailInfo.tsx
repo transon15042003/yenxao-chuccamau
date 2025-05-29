@@ -1,27 +1,27 @@
 'use client';
 
 import { getProductMarkdown } from '@/markdown/products';
-import { Product } from '@/types/product';
 import { useState } from 'react';
 
 import { Button } from '@/components/atoms/Button';
 import { SectionHeading } from '@/components/atoms/Heading';
+import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
 import { cn } from '@/lib/utils';
 
 interface ProductDetailInfoProps {
   className?: string;
-  product: Product;
 }
 
-const ProductDetail = ({ className, product }: ProductDetailInfoProps) => {
+const ProductDetail = ({ className }: ProductDetailInfoProps) => {
+  const { product } = useDetailProduct();
   const [seeAll, setSeeAll] = useState<boolean>(false);
   const handleSetSeeAll = () => setSeeAll((prev) => !prev);
 
   return (
     <div
       className={cn(
-        'relative px-3 py-6 overflow-hidden my-[10px]  bg-white',
+        'relative px-3 lg:px-0 py-6 overflow-hidden my-[10px]  bg-white',
         seeAll ? 'h-auto' : 'h-[700px]',
         className
       )}
@@ -29,7 +29,7 @@ const ProductDetail = ({ className, product }: ProductDetailInfoProps) => {
       <SectionHeading className="text-[#2A2A40] text-[30px]">Chi tiết sản phẩm</SectionHeading>
       <div className="h-[4px] bg-[#2A2A40] mb-8 mt-4" />
       <div className="lg:col-span-10 lg:col-start-2 text-[18px] [&>*]:leading-[36px]">
-        {getProductMarkdown(product.slug)({})}
+        {getProductMarkdown(product.slug) ? getProductMarkdown(product.slug)({}) : null}
       </div>
       {seeAll ? (
         <Button

@@ -32,7 +32,7 @@ export type Product = {
   thumbnail: string;
   description: string;
   categories: CategoryId[];
-  ingredients: string[];
+  ingredient: string[];
   specs: ProductSpecifications[];
   variants: ProductVariant[];
   isNew: boolean;

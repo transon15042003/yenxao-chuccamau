@@ -1,15 +1,39 @@
 'use client';
+import { BlogPost } from '@/types/blog';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { getLatestBlogs } from 'src/services/blog.service';
 
-import { New } from '@/components/atoms/New';
+import { Button } from '@/components/atoms/Button';
+import { NewFeed } from '@/components/molecules/NewFeed';
 
 import SectionTitle from '../../molecules/SectionTitle/SectionTitle';
 
 export const KnowledgeSection = () => {
   const router = useRouter();
 
+  const [loading, setLoading] = useState(true);
+
+  const [latestBlogs, setLatestBlogs] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        setLoading(true);
+        const blogs = await getLatestBlogs();
+        setLatestBlogs(blogs);
+      } catch (error) {
+        console.error('Lỗi khi tải bài viết mới nhất:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
-    <div className="w-full h-auto md:h-[917px] flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
+    <div className="w-full h-auto flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
       {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
       <div
         className="absolute w-full h-full
@@ -27,39 +51,16 @@ export const KnowledgeSection = () => {
         heading="Tin Tức & Hướng Dẫn"
         subHeading="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
       />
-      <div className="w-full md:w-1/2 flex flex-col md:flex-row justify-between items-center relative z-10 my-9">
-        <New
-          imageUrl="news.png"
-          date="May 13, 2025"
-          readTime="5 min"
-          title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
-          description="Bạn đang thắc mắc tổ yến thô để được bao lâu? Cách bảo quản tổ yến sao cho đúng cách? Tổ yến thô là thực..."
-          linkUrl=""
-        />
-        <New
-          imageUrl="news.png"
-          date="May 13, 2025"
-          readTime="5 min"
-          title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
-          description="Bạn đang thắc mắc tổ yến thô để được bao lâu? Cách bảo quản tổ yến sao cho đúng cách? Tổ yến thô là thực..."
-          linkUrl=""
-        />
-        <New
-          imageUrl="news.png"
-          date="May 13, 2025"
-          readTime="5 min"
-          title="Yến thô để được bao lâu? Cách bảo quản tổ yến thô đơn giản..."
-          description="Bạn đang thắc mắc tổ yến thô để được bao lâu? Cách bảo quản tổ yến sao cho đúng cách? Tổ yến thô là thực..."
-          linkUrl=""
-        />
-      </div>
-      <button
-        type="button"
-        className="border-2 border-black px-4 py-2 rounded-lg text-[#2A2A40] font-semibold text-lg hover:bg-black hover:text-white relative z-10" // Thêm class z-index
+
+      <NewFeed initialBlogs={latestBlogs} loading={loading} />
+
+      <Button
+        className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
+        fill="outline"
         onClick={() => router.push('/products')}
       >
         Xem tất cả sản phẩm
-      </button>
+      </Button>
     </div>
   );
 };
