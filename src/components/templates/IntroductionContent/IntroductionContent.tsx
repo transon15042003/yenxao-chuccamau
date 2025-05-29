@@ -176,9 +176,11 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
-              <div className="grid grid-cols-2 p-1 mb-[36px] text-center font-bold bg-primary rounded-[5px]">
-                <div className="col-span-1 text-white bg-primary">Chứng nhận</div>
-                <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
+              <div className="grid grid-cols-2 p-1 mb-[36px] h-[45px] text-center font-bold bg-primary rounded-[5px]">
+                <div className="col-span-1 text-white leading-[37px] bg-primary">Chứng nhận</div>
+                <div className="col-span-1 text-[#2A2A40] leading-[37px] bg-white rounded-[5px]">
+                  Thành tựu
+                </div>
               </div>
 
               <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5">
