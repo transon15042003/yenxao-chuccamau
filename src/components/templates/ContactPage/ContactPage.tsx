@@ -9,6 +9,8 @@ import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
 
+import { cn } from '@/lib/utils';
+
 type ContactPage = {
   contactData: ContactType[];
 };
@@ -48,7 +50,14 @@ export const ContactPage = (props: ContactPage) => {
             subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
           />
 
-          <div className="w-flex lg:flex-row flex-col flex-wrap items-start md:w-3/4 w-96 mt-12">
+          <div
+            className={cn(
+              'flex lg:flex-row flex-col flex-wrap',
+              'items-start',
+              'md:w-3/4 w-full px-4',
+              'mt-12'
+            )}
+          >
             <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
               <ContactInfoBlock
                 className="lg:pt-0 lg:w-1/2 w-full"
