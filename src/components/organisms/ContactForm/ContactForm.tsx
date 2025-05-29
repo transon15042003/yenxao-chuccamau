@@ -22,6 +22,11 @@ const inboxFormSchema = shippingInfomationFormSchema
       .string({ required_error: 'Họ và tên không được để trống' })
       .trim()
       .nonempty({ message: 'Họ và tên không được để trống' }),
+    email: z
+      .string({ required_error: 'Email không được để trống' })
+      .trim()
+      .nonempty({ message: 'Email không được để trống' })
+      .email({ message: 'Email không hợp lệ' }),
     subject: z.string().optional(),
     message: z.string().trim().nonempty({ message: 'Vui lòng nhập nội dung tin nhắn' })
   });
