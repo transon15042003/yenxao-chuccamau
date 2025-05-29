@@ -68,7 +68,7 @@ export const ContactPage = (props: ContactPage) => {
             />
           </div>
         </div>
-        <div className="lg:w-3/4 md:w-5/6 w-96 py-14">
+        {/* <div className="lg:w-3/4 md:w-5/6 w-96 py-14">
           <SectionTitle heading="Danh Sách Chi Nhánh" />
           <div className="w-full flex lg:flex-row flex-col my-7">
             <MapEmbed
@@ -76,13 +76,12 @@ export const ContactPage = (props: ContactPage) => {
               // className="lg:w-1/2 w-full h-[810px] lg:mb-0 mb-5" When allowing to display branch list, un-comment this line n remove/comment line above
               embedUrl={AppConfig.embedUrl}
             />
-            {/* When allowing to display branch list, un-comment here */}
-            {/* <BranchList
+            <BranchList
               className="lg:w-1/2 w-full lg:h-[810px] h-auto"
               contactData={props.contactData}
-            /> */}
+            />
           </div>
-        </div>
+        </div> */}
       </div>
       {isLoading && <LoadingOverlay />}
     </div>
