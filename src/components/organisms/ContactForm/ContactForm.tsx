@@ -1,7 +1,7 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ReCaptcha } from 'next-recaptcha-v3';
-import { HTMLAttributes, useState } from 'react';
+import { HTMLAttributes, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
@@ -57,13 +57,16 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     }
   });
 
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [token, setToken] = useState<string | null>(null);
 
   const validateRecaptchaAndSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
 
-      if (!token) {
+      const recaptchaValue = recaptchaRef.current?.getValue();
+
+      if (!recaptchaValue) {
         toast.error('Vui lòng xác thực reCAPTCHA');
 
         return;
@@ -114,10 +117,16 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         );
       } finally {
         setIsLoading(false);
+        recaptchaRef.current?.reset();
       }
     } else {
       setIsLoading(false);
     }
+  };
+
+  const handleRecaptchaChange = (token: string | null) => {
+    console.warn('token change', token);
+    setToken(token);
   };
 
   return (
@@ -226,8 +235,14 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         </div>
       </div>
 
-      <div>
-        <ReCaptcha onValidate={setToken} action="page_view" />
+      <div className="mb-4">
+        <ReCAPTCHA
+          theme="light"
+          hl="vi"
+          ref={recaptchaRef}
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+          onChange={handleRecaptchaChange}
+        />
       </div>
 
       <Button
