@@ -22,10 +22,10 @@ const IntroductionPage = async () => {
   return (
     <div>
       <Image
-        src="/images/backgrounds/img_panel.svg"
+        src="/images/introduction/bg.png"
         alt="panel"
-        width={100}
-        height={100}
+        width={1500}
+        height={600}
         className="w-full h-auto"
       />
       <IntroductionContent contactInfo={contactData} />

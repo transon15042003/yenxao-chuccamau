@@ -4,7 +4,7 @@ export const descriptions = {
       icon: 'LargerCalendarSVG',
       title: 'Thành lập (2005)',
       description:
-        'Công ty ABC được thành lập với tầm nhìn trở thành đơn vị hàng đầu trong lĩnh vực. Chúng tôi bắt đầu với đội ngũ 10 nhân viên và một nhà máy nhỏ.'
+        'Yến Sào Chúc Cà Mau được thành lập với tầm nhìn trở thành đơn vị hàng đầu trong lĩnh vực. Chúng tôi bắt đầu với đội ngũ 10 nhân viên và một nhà máy nhỏ.'
     },
     {
       icon: 'DevelopSVG',
@@ -14,15 +14,30 @@ export const descriptions = {
     },
     {
       icon: 'PriceSVG',
-      title: 'Tầm nhìn',
+      title: 'Hiện tại',
       description:
-        'Trở thành công ty hàng đầu trong lĩnh vực, được khách hàng tin tưởng và lựa chọn nhờ chất lượng sản phẩm và dịch vụ xuất sắc.'
+        'Ngày nay, Yến Sào Chúc Cà Mau tự hào là đối tác tin cậy của hàng nghìn khách hàng trong và ngoài nước, với hệ thống sản xuất hiện đại và đội ngũ nhân viên chuyên nghiệp.'
     }
   ],
   guidingPrinciple: [
-    '/images/introduction/guiding_1.webp',
-    '/images/introduction/guiding_2.webp',
-    '/images/introduction/guiding_3.webp'
+    {
+      icon: 'EyeSVG',
+      title: 'Sứ mệnh',
+      description:
+        'Cung cấp những sản phẩm và dịch vụ chất lượng cao, đáp ứng nhu cầu ngày càng tăng của khách hàng, đồng thời đóng góp vào sự phát triển bền vững của xã hội.'
+    },
+    {
+      icon: 'TargetSVG',
+      title: 'Phát triển (2010-2015)',
+      description:
+        'Giai đoạn phát triển mạnh mẽ với việc mở rộng thị trường, tăng cường năng lực sản xuất và đầu tư công nghệ hiện đại.'
+    },
+    {
+      icon: 'DiamondSVG',
+      title: 'Giá trị cốt lõi',
+      description:
+        'Chất lượng là ưu tiên hàng đầu <br/>Đổi mới và sáng tạo không ngừng <br/>Tôn trọng và hợp tác <br />Trách nhiệm với xã hội <br />Phát triển bền vững'
+    }
   ],
   productionProcess: [
     {
