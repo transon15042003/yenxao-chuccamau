@@ -1,32 +1,44 @@
-import { useRef, useState } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { useReCaptcha } from 'next-recaptcha-v3';
+
+type VerifyHumanResult = {
+  success: boolean;
+  score: number;
+  action: string;
+  challenge_ts: string;
+  hostname: string;
+};
 
 const useRecaptchaLogic = () => {
-  const [token, setToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const { executeRecaptcha } = useReCaptcha();
 
-  const onRecaptchaChange = (token: string | null) => {
-    setToken(token);
+  const getToken = async (action: string) => {
+    const recaptcha = await executeRecaptcha(action);
+
+    return recaptcha;
   };
 
-  const resetRecaptcha = () => {
-    setToken(null);
-    recaptchaRef.current?.reset();
-  };
+  const verifyHuman = async (action: string): Promise<VerifyHumanResult | null> => {
+    try {
+      const recaptcha = await executeRecaptcha(action);
 
-  const getValue = () => {
-    // eslint-disable-next-line no-console
-    console.log('Get value recaptcha', token, recaptchaRef.current?.getValue());
+      const verifyCaptchaResponse = await fetch('/api/verify-recaptcha', {
+        method: 'POST',
+        body: JSON.stringify({ token: recaptcha })
+      });
 
-    return recaptchaRef.current?.getValue();
+      const verifyCaptchaData = await verifyCaptchaResponse.json();
+
+      return verifyCaptchaData;
+    } catch (error) {
+      console.error(error);
+
+      return null;
+    }
   };
 
   return {
-    getValue,
-    token,
-    recaptchaRef,
-    onRecaptchaChange,
-    resetRecaptcha
+    getToken,
+    verifyHuman
   };
 };
 
