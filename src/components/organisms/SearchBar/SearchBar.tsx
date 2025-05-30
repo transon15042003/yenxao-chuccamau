@@ -34,12 +34,12 @@ const SearchBar = () => {
     <form
       onSubmit={handleSearch}
       method="get"
-      className="relative flex items-center w-full md:w-2/3 max-w-[200px] md:max-w-xs"
+      className="relative flex items-center w-full md:w-2/3 max-w-[200px] md:max-w-xs rounded-none appearance-none"
     >
       <input
         type="text"
         placeholder="Tìm kiếm"
-        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base"
+        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base rounded-none appearance-none"
         onChange={(e) => setSearchTerm(e.target.value)}
         value={searchTerm}
       />

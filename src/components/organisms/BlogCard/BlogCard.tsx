@@ -1,3 +1,4 @@
+import { formatDate } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -26,7 +27,7 @@ export const BlogCard = ({
       </Link>
       <div className="p-4 flex flex-col flex-1">
         <div className="text-xs text-gray-500 mb-1">
-          {new Date(postedDate).toLocaleDateString('vi-VN')} &nbsp;•&nbsp; {minRead} min read
+          {formatDate(new Date(postedDate), 'dd-MM-yyyy')} &nbsp;•&nbsp; {minRead} min read
         </div>
         <Link href={href} className="hover:underline">
           <h2 className="font-semibold text-base mb-2 line-clamp-2">{title}</h2>
