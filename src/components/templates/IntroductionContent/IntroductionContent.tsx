@@ -207,18 +207,26 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
-        className="lg:py-[70px] py-[36px] md:bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+        className="lg:py-[70px] py-[36px]"
       >
-        <div className="lg:grid lg:grid-cols-12">
+        <div className="lg:grid lg:grid-cols-12 relative">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
             <ContactInfoBlock
               className="lg:w-1/2 w-full"
+              contentClass="!bg-[#F4F1ED]"
               contactData={contactInfo}
               onScrollToMap={handleOpenMap}
             />
             <ContactForm className="lg:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
             {isLoading && <LoadingOverlay />}
           </div>
+          <Image
+            src={'/images/policy/decorate.png'}
+            alt=""
+            width={600}
+            height={600}
+            className="lg:block hidden absolute bottom-0 right-[20px] opacity-10"
+          />
         </div>
       </IntroductionSection>
     </div>
