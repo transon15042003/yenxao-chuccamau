@@ -5,7 +5,6 @@ interface SEOContentType {
   title: string;
   desc: string;
   keywords: string[];
-  canonicalUrl: string;
 }
 
 export const StaticSEOContent: Record<string, SEOContentType> = {
@@ -24,8 +23,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'yến an toàn',
       'yến sạch',
       'yến sào khuyến mãi'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/'
+    ]
   },
   introductionPage: {
     title: 'Chúc Cà Mau – Hành Trình Xây Dựng Thương Hiệu Yến Sào Uy Tín & Bền Vững',
@@ -42,8 +40,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'phát triển bền vững',
       'kiểm định chất lượng yến',
       'chứng nhận sản phẩm yến'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/about'
+    ]
   },
   productsPage: {
     title: 'Sản Phẩm Yến Sào Chúc Cà Mau – Đa Dạng, Chất Lượng, Dinh Dưỡng',
@@ -61,8 +58,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'mua yến chưng',
       'quà tặng yến sào',
       'yến cho sức khỏe'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products'
+    ]
   },
   blogsPage: {
     title: 'Blog Chúc Cà Mau – Kiến Thức & Bí Quyết Sử Dụng Yến Sào Hiệu Quả',
@@ -75,8 +71,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'yến sào Chúc Cà Mau',
       'hướng dẫn sử dụng yến',
       'mẹo chọn yến thật'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/blog'
+    ]
   },
   contactPage: {
     title: 'Liên Hệ Chúc Cà Mau – Hỗ Trợ Khách Hàng & Tư Vấn Sản Phẩm Yến Sào',
@@ -90,8 +85,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'địa chỉ cửa hàng yến sào',
       'đặt hàng yến sào',
       'chăm sóc khách hàng yến sào'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/contact'
+    ]
   },
   orderPage: {
     title: 'Đặt Hàng Yến Sào Chúc Cà Mau – Nhanh Chóng, An Toàn, Tiện Lợi',
@@ -105,8 +99,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'mua yến sào',
       'đặt hàng yến sào an toàn',
       'đặt hàng yến'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/order'
+    ]
   },
   deliveryPolicyPage: {
     title: 'Chính Sách Vận Chuyển Chúc Cà Mau – Nhanh Chóng & An Toàn',
@@ -119,8 +112,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'thời gian giao hàng',
       'giao hàng nhanh',
       'giao hàng an toàn'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/shipping-policy'
+    ]
   },
   paymentPolicyPage: {
     title: 'Chính Sách Thanh Toán Chúc Cà Mau – An Toàn & Tiện Lợi',
@@ -133,8 +125,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'thanh toán online',
       'phương thức thanh toán',
       'bảo mật thanh toán'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/payment-policy'
+    ]
   },
   privacyPolicyPage: {
     title: 'Chính Sách Bảo Mật Thông Tin Khách Hàng – Chúc Cà Mau',
@@ -146,8 +137,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'bảo mật yến sào',
       'bảo mật thông tin cá nhân',
       'quyền riêng tư khách hàng'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/privacy-policy'
+    ]
   },
   returnPolicyPage: {
     title: 'Chính Sách Kiểm Tra & Đổi Trả Hàng Chúc Cà Mau – Minh Bạch & Nhanh Chóng',
@@ -160,8 +150,7 @@ export const StaticSEOContent: Record<string, SEOContentType> = {
       'quy trình đổi trả',
       'đổi hàng lỗi',
       'hoàn tiền yến sào'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/return-policy'
+    ]
   }
 };
 
@@ -180,8 +169,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'yến tươi bổ dưỡng',
       'quà tặng yến chưng',
       'yến chưng tốt cho sức khỏe'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=yen-chung-tuoi'
+    ]
   },
   'set-qua-yen-chung-tuoi': {
     title: 'Set Quà Yến Chưng Tươi Chúc Cà Mau – Quà Tặng Sức Khỏe Sang Trọng & Ý Nghĩa',
@@ -197,8 +185,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'yến chưng Chúc Cà Mau',
       'quà yến lễ tết',
       'quà biếu yến cho người thân'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=set-qua-yen-chung-tuoi'
+    ]
   },
   'chao-sup-yen': {
     title: 'Cháo Yến & Soup Yến Chúc Cà Mau – Dinh Dưỡng Tiện Lợi Cho Mọi Nhà',
@@ -214,8 +201,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'cháo yến hải sản',
       'cháo yến tiện lợi',
       'cháo yến phục hồi sức khỏe'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=chao-sup-yen'
+    ]
   },
   'yen-sao-tinh-che': {
     title: 'Yến Sào Tinh Chế Chúc Cà Mau – Sạch Lông, Dễ Chế Biến, Dinh Dưỡng Nguyên Vẹn',
@@ -229,8 +215,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'tổ yến nguyên chất',
       'yến sào tiện lợi',
       'mua yến tinh chế'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=yen-sao-tinh-che'
+    ]
   },
   'yen-sao-tho': {
     title: 'Tổ Yến Sào Thô Chúc Cà Mau – Nguyên Bản, Tinh Khiết, Dinh Dưỡng Cao Nhất',
@@ -246,8 +231,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'tổ yến tự nhiên',
       'tổ yến nhà',
       'mua yến sào thô'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=yen-sao-tho'
+    ]
   },
   topping: {
     title: 'Topping Chúc Cà Mau – Bổ Sung Hương Vị & Dinh Dưỡng ',
@@ -263,8 +247,7 @@ export const dynamicProductCateContent: Record<string, SEOContentType> = {
       'gia vị chưng yến',
       'mua topping chưng yến',
       'topping yến Chúc Cà Mau'
-    ],
-    canonicalUrl: 'https://test.chuccamau.com/products?c=topping'
+    ]
   }
 };
 
@@ -281,8 +264,7 @@ export const dynamicProductContent = async (slug: string): Promise<SEOContentTyp
       'yến bổ dưỡng',
       'yến tự nhiên',
       'mua yến chất lượng'
-    ],
-    canonicalUrl: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${slug}`
+    ]
   };
 };
 
@@ -299,7 +281,6 @@ export const dynamicBlogContent = async (slug: string): Promise<SEOContentType> 
       'cách sử dụng yến',
       'bảo quản yến sào',
       'yến sào tự nhiên'
-    ],
-    canonicalUrl: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
+    ]
   };
 };
