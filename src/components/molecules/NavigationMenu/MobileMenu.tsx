@@ -35,17 +35,17 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         <div className="relative">
           <button
             type="button"
-            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold 
+            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold  
               ${
-                isProductOpen
+                pathname.startsWith('/products')
                   ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
-                  : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
+                  : 'text-white'
               } group`}
             onClick={() => setIsProductOpen(!isProductOpen)}
           >
             SẢN PHẨM
             <ChevronRightIcon
-              className={`w-6 h-6 ml-auto transition-transform duration-200 ${isProductOpen ? 'rotate-90 stroke-secondary' : 'stroke-white group-hover:stroke-secondary'}`}
+              className={`w-6 h-6 ml-auto transition-transform duration-20 ${isProductOpen && 'rotate-90'} ${pathname.startsWith('/products') ? 'stroke-secondary' : ' stroke-white'}`}
               strokeWidth={2}
             />
           </button>
