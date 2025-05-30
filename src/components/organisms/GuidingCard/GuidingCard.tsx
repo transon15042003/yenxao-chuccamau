@@ -15,7 +15,7 @@ const GuidingCard = ({ icon, title, description, className, styles }: GuidingCar
   return (
     <div
       className={cn(
-        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-cover border-[4px] border-[#CCB182] rounded-[16px]",
+        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-contain w-full rounded-[10px]",
         className
       )}
       style={styles}
@@ -27,7 +27,7 @@ const GuidingCard = ({ icon, title, description, className, styles }: GuidingCar
       <InfoBox
         title={title}
         description={description}
-        className="mt-[40px] ml-[28px] mr-[54px] mb-[106px]"
+        className="mt-[40px] ml-[28px] mr-[54px] mb-[106px] w-[75%]"
         titleClass="gradient-text"
         descClass="text-white text-[18px]"
       />

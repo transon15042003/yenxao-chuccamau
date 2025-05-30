@@ -59,7 +59,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                       title={el.title}
                       description={el.description}
                       icon={el.icon}
-                      className="mt-[50px]"
+                      className={cn(idx !== 0 && 'mt-[50px]')}
                     />
                   ))}
                 </div>
@@ -83,7 +83,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
-              <div className="flex flex-wrap justify-center gap-[24px]">
+              <div className="flex flex-wrap justify-center gap-[24px] mt-[36px]">
                 {descriptions.guidingPrinciple.map((el, idx) => (
                   <GuidingCard
                     key={idx}
