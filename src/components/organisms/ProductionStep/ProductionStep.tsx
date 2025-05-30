@@ -17,14 +17,14 @@ const ProductionStep = ({ className, img, title, desc, position, display }: Step
   return (
     <div
       className={cn(
-        'items-center lg:max-w-[50%] h-auto',
+        'items-center lg:max-w-[50%] lg:w-[50%] h-auto',
         position === 'left' ? 'flex flex-row' : 'flex flex-row-reverse',
         className
       )}
     >
       <div
         className={cn(
-          'items-center w-full h-auto',
+          'items-center w-full h-auto flex-1',
           position === 'left' ? 'flex flex-row' : 'flex flex-row-reverse',
           display === 'topdown' && 'flex flex-col-reverse gap-1 items-start text-start'
         )}
@@ -34,7 +34,7 @@ const ProductionStep = ({ className, img, title, desc, position, display }: Step
           description={desc}
           descClass="text-[18px]"
           className={cn(
-            'h-auto',
+            'h-auto lg:flex-1',
             position === 'left' ? 'mr-[30px] text-right' : 'lg:ml-[30px]',
             display === 'topdown' && 'mb-6 ml-[56px]'
           )}

@@ -34,6 +34,7 @@ type ContactInfoBlockProps = {
   className?: string;
   contactData: ContactType[];
   onScrollToMap?: () => void;
+  contentClass?: string;
 };
 
 export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
@@ -49,7 +50,8 @@ export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
 
       <div
         className={cn(
-          'relative z-10 p-6 bg-white rounded-lg flex justify-center lg:justify-start items-center h-[442px]'
+          'relative z-10 p-6 bg-white rounded-lg flex justify-center lg:justify-start items-center h-[442px]',
+          props.contentClass
         )}
       >
         {' '}

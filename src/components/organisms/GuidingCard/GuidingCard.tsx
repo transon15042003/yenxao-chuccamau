@@ -15,7 +15,7 @@ const GuidingCard = ({ icon, title, description, className, styles }: GuidingCar
   return (
     <div
       className={cn(
-        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-contain w-full rounded-[10px]",
+        "bg-[url('/images/introduction/guiding_principle_bg.png')] bg-no-repeat bg-cover w-full rounded-[10px] border-r-4 border-[#CCB182]",
         className
       )}
       style={styles}
