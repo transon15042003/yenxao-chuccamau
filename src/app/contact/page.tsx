@@ -1,5 +1,6 @@
 import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import { ContactPage as Page } from 'src/components/templates/ContactPage';
 import { getContactInfo } from 'src/services/contact.service';
 
@@ -17,7 +18,11 @@ export async function generateMetadata(): Promise<Metadata> {
 const ContactPage = async () => {
   const contactData = await getContactInfo();
 
-  return <Page contactData={contactData} />;
+  return (
+    <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}>
+      <Page contactData={contactData} />
+    </ReCaptchaProvider>
+  );
 };
 
 export default ContactPage;
