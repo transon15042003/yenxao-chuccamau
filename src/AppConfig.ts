@@ -8,7 +8,7 @@ export const AppConfig = {
   shippingEmail: 'shipping@company.com',
   returnEmail: 'returns@company.com',
   privacyEmail: 'privacy@company.com',
-  phone: '0948 802 2499',
+  phone: '0948 022 499 ',
   address: '1095 Lê Văn Lương, Phước Kiển, Nhà Bè, Thành phố Hồ Chí Minh',
   addressURL: 'https://maps.app.goo.gl/sDUyNeb4u12ArZcM9 '
 };

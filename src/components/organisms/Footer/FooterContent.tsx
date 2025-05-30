@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { AppConfig } from 'src/AppConfig';
 // import { AppConfig } from 'src/AppConfig';
 
 interface MenuItem {
@@ -79,8 +80,8 @@ const FooterContent = () => {
           </div>
           <div className="flex items-start gap-2 text-sm text-left w-full">
             <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-            <a href="tel:02838221234" className="hover:underline">
-              (028) 3822 1234
+            <a href={`tel:${AppConfig.phone}`} className="hover:underline">
+              {AppConfig.phone}
             </a>
           </div>
         </div>
