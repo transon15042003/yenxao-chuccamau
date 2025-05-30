@@ -70,12 +70,12 @@ const FooterContent = () => {
           <div className="flex items-start gap-2 text-sm">
             <MapPinIcon className="w-5 h-5 flex-shrink-0" />
             <a
-              href="https://maps.app.goo.gl/sDUyNeb4u12ArZcM9"
+              href={AppConfig.addressURL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+              {AppConfig.address}
             </a>
           </div>
           <div className="flex items-start gap-2 text-sm text-left w-full">
