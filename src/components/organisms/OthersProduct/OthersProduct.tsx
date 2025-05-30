@@ -3,7 +3,6 @@
 import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { LargeChevronLeftSVG } from '@/svg/LargeChevronLeftSVG/LargeChevronLeftSVG';
 import { LargeChevronRightSVG } from '@/svg/LargeChevronRightSVG/LargeChevronRightSVG';
-import { CartItem } from '@/types/cart';
 import { Product } from '@/types/product';
 import { useRouter } from 'next/navigation';
 import { useRef } from 'react';
@@ -19,6 +18,8 @@ import { ProductCard } from '@/components/molecules/ProductCard';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 
+import { convertProductToCartItem } from '@/lib/utils/product';
+
 interface OthersProductProps {
   className?: string;
   heading: string;
@@ -32,17 +33,7 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const handleAddToCart = (product: Product) => {
-    const cartItem: CartItem = {
-      productId: product.id,
-      sku: product.variants[0].sku,
-      name: product.variants[0].name,
-      price: product.variants[0].price,
-      quantity: 1,
-      specs: product.variants[0].specs,
-      thumbnail: product.variants[0].thumbnail
-    };
-
-    addToCart(cartItem);
+    addToCart(convertProductToCartItem(product));
   };
 
   const handleBuyNowClick = (product: Product) => {
@@ -70,7 +61,7 @@ const OthersProduct = ({ className, heading }: OthersProductProps) => {
             variant="primary"
             fill="fill"
             onClick={handlePrev}
-            className="swiper-button-prev w-[40px] h-[40px] hidden lg:block lg:flex items-center justify-center rounded-full absolute [top:30%] left-0 -translate-x-1/2 z-10"
+            className="swiper-button-prev w-[40px] h-[40px] hidden lg:flex items-center justify-center rounded-full absolute [top:30%] left-0 -translate-x-1/2 z-10"
           >
             <LargeChevronLeftSVG className="text-white h-[24px] w-[24px] stroke-[5px]" />
           </Button>

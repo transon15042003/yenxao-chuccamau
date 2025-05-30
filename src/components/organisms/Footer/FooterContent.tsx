@@ -1,9 +1,9 @@
+import { AppConfig } from '@/AppConfig';
 import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
-// import { AppConfig } from 'src/AppConfig';
 
 interface MenuItem {
   href: string;
@@ -69,18 +69,18 @@ const FooterContent = () => {
           <div className="flex items-start gap-2 text-sm">
             <MapPinIcon className="w-5 h-5 flex-shrink-0" />
             <a
-              href="https://maps.app.goo.gl/sDUyNeb4u12ArZcM9"
+              href={AppConfig.addressURL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              123 Đường Lê Lợi, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+              {AppConfig.address}
             </a>
           </div>
           <div className="flex items-start gap-2 text-sm text-left w-full">
             <PhoneIcon className="w-5 h-5 flex-shrink-0" />
-            <a href="tel:02838221234" className="hover:underline">
-              (028) 3822 1234
+            <a href={`tel:${AppConfig.phone}`} className="hover:underline">
+              {AppConfig.phone}
             </a>
           </div>
         </div>

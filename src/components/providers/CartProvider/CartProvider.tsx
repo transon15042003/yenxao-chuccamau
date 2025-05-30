@@ -14,7 +14,7 @@ import { useLocalStorage } from 'usehooks-ts';
 
 type CartContextType = {
   cart: Cart;
-  addToCart: (item: CartItem) => void;
+  addToCart: (item: CartItem, autoOpenCart?: boolean) => void;
   increaseQuantity: (sku: string, quantity: number) => void;
   decreaseQuantity: (sku: string, quantity: number) => void;
   removeFromCart: (sku: string) => void;
@@ -52,9 +52,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   );
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const addToCart = (item: CartItem) => {
-    // const isItemInCart = cart.items.some((cartItem) => cartItem.sku === item.sku);
-
+  const addToCart = (item: CartItem, autoOpenCart: boolean = true) => {
     const existingItemIndex = cart.items.findIndex(
       (cartItem) => cartItem.productId === item.productId && cartItem.sku === item.sku
     );
@@ -73,7 +71,9 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     }
 
     // note: open the cart after adding to cart
-    setIsCartOpen(true);
+    if (autoOpenCart) {
+      setIsCartOpen(true);
+    }
   };
 
   const increaseQuantity = (sku: string, quantity: number) => {
