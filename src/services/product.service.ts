@@ -7,6 +7,7 @@ import productData5 from '@/data/products/yen-sao-tho-products.json';
 import productData6 from '@/data/products/yen-tinh-che-products.json';
 import type { QueryResource, QueryResourceResponse } from '@/types/common';
 import type { Product, Category, ProductVariant } from '@/types/product';
+import Fuse from 'fuse.js';
 
 import { isValidDateString, isValidNumberString } from '@/lib/utils';
 import { sortByDateField, sortByStringField } from '@/lib/utils/collection';
@@ -40,7 +41,7 @@ export const getProducts = async (
     }
   };
 
-  const productList = [...products];
+  let productList = [...products];
 
   if (sortField) {
     const field = productList[0][sortField];
@@ -57,6 +58,16 @@ export const getProducts = async (
     }
   }
 
+  if (search) {
+    const fuse = new Fuse(productList, {
+      keys: ['name', 'description', 'categories', 'variants.specs.savour', 'variants.specs.size'],
+      includeScore: true,
+      threshold: 0.3
+    });
+    const results = fuse.search(search);
+    productList = results.map((result) => result.item as Product);
+  }
+
   const filteredProducts = productList.filter((product) => {
     const matchConditions = [];
     if (categorySlug) {
@@ -68,10 +79,6 @@ export const getProducts = async (
           product.categories.some((c) => c === matchCategory.slug || c === matchCategory.id)
         );
       }
-    }
-
-    if (search) {
-      matchConditions.push(product.name.toLowerCase().includes(search.toLowerCase()));
     }
 
     return matchConditions.every((condition) => condition);
