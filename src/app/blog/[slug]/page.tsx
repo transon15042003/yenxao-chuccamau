@@ -28,7 +28,7 @@ export async function generateMetadata({
     description: blogContent.desc,
     keywords: blogContent.keywords,
     alternates: {
-      canonical: blogContent.canonicalUrl
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
     }
   };
 }
