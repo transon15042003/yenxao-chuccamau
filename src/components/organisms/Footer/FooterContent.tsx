@@ -1,10 +1,9 @@
+import { AppConfig } from '@/AppConfig';
 import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
-import { AppConfig } from 'src/AppConfig';
-// import { AppConfig } from 'src/AppConfig';
 
 interface MenuItem {
   href: string;
