@@ -28,7 +28,7 @@ const useBuyNowLogic = (): UseBuyNowLogic => {
       cartItem = convertProductToCartItem(product, lowestPriceSku);
       cartItem.quantity = quantity;
     }
-    addToCart(cartItem);
+    addToCart(cartItem, false);
     router.push('/order');
   };
 
