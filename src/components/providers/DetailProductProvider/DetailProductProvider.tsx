@@ -3,6 +3,7 @@
 import { Product } from '@/types/product';
 import { ProductVariant } from '@/types/product';
 import { useContext, createContext, useState, useEffect } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 
 interface DetailProductType {
   product: Product;
@@ -58,6 +59,7 @@ export const DetailProductProvider = ({
   product: Product;
   products: Product[];
 }) => {
+  const [, setViewedProducts] = useLocalStorage<Product['id'][]>('viewedProducts', []);
   const [curThumbnail, setCurThumbnail] = useState<string>('');
   const [curSize, setCurSize] = useState<string>('');
   const [curFlavor, setCurFlavor] = useState<string>('');
@@ -100,6 +102,9 @@ export const DetailProductProvider = ({
 
   useEffect(() => {
     if (product) {
+      // note: save recent viewed products
+      setViewedProducts((prev) => Array.from(new Set([product.id, ...prev])).slice(0, 12));
+
       const size: string = product.specs.find((el) => el?.key === 'size')?.value[0] || '';
       const flavor: string = product.specs.find((el) => el?.key === 'savour')?.value[0] || '';
 
@@ -120,6 +125,7 @@ export const DetailProductProvider = ({
         }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product]);
 
   return (
