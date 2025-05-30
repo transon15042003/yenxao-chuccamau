@@ -1,3 +1,4 @@
+import productMenuList from '@/data/product-categories.json';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 
@@ -9,43 +10,6 @@ interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
-
-const productMenuList = [
-  // {
-  //   title: 'Bánh Tổ Yến',
-  //   link: '/products?c=banh-to-yen',
-  //   isComing: true
-  // },
-  {
-    title: 'Yến Sào Tinh Chế',
-    link: '/products?c=yen-sao-tinh-che'
-  },
-  {
-    title: 'Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tuoi'
-  },
-  {
-    title: 'Tổ Yến Sào Thô',
-    link: '/products?c=to-yen-sao-tho'
-  },
-  {
-    title: 'Set Quà Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tao-do',
-    isComing: true
-  },
-  {
-    title: 'Topping',
-    link: '/products?c=topping'
-  },
-  // {
-  //   title: 'Yến Chưng Sấn Tiết Trùng',
-  //   link: '/products?c=yen-chung-san-tiet-trung'
-  // },
-  {
-    title: 'Món nên thử',
-    link: '/products?c=mon-nen-thu'
-  }
-];
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   const [isProductOpen, setIsProductOpen] = useState(false);
