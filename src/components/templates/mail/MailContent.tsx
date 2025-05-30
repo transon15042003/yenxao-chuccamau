@@ -1,33 +1,138 @@
-import { Box, Image, Item } from 'react-html-email';
+import { rootStyle, LOGO_IMAGE_URL } from './InitSetup';
 
-import { primaryColor } from './InitSetup';
-import { backgroundStyle, EMAIL_DIVIDER, LOGO_IMAGE_URL } from './InitSetup';
+type MailContentProps = {
+  children: React.ReactNode;
+  headerColor?: string;
+  headerHeight?: number;
+  width?: string | number;
+  title: string;
+  messages: string[];
+  infoItems: {
+    labels: string[];
+    values: React.ReactNode[];
+  };
+  highlightText: string;
+};
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const MailContent = ({ children }: any) => {
+export const MailContent = ({
+  children,
+  headerColor = '#B4071A',
+  headerHeight = 150,
+  width = '90%',
+  title,
+  messages,
+  infoItems,
+  highlightText
+}: MailContentProps) => {
   return (
-    <Box style={backgroundStyle}>
-      <Item style={{ padding: '20px 30px' }}>
-        <Box style={{ width: '100%' }}>
-          {/* image */}
-          <Item align="center" style={{ background: '#000000' }}>
-            <Image alt="email-image" src={LOGO_IMAGE_URL} width={193} height={84.68} />
-          </Item>
-          {/* divider */}
-          <Item align="center" style={{ padding: '20px 0px' }}>
-            <Image
-              alt="email-divider"
-              height={10}
-              src={EMAIL_DIVIDER}
-              width={600}
-              style={{ width: '100%' }}
+    <table
+      width={width}
+      cellPadding={0}
+      cellSpacing={0}
+      style={{
+        background: rootStyle.background,
+        borderRadius: 10,
+        margin: '0 auto',
+        borderCollapse: 'separate',
+        borderSpacing: 0,
+        overflow: 'hidden'
+      }}
+    >
+      <tbody>
+        <tr>
+          <td
+            style={{
+              background: headerColor,
+              height: headerHeight
+            }}
+          >
+            <img
+              src={LOGO_IMAGE_URL}
+              alt="logo"
+              width={150}
+              height={125}
+              style={{
+                display: 'block',
+                margin: '0 auto'
+              }}
             />
-          </Item>
-          {/* form content */}
-          {children}
-        </Box>
-      </Item>
-      <Item style={{ padding: '3px 0px', background: primaryColor }} />
-    </Box>
+          </td>
+        </tr>
+        <tr>
+          <td style={{ background: '#fff', color: '#212121', padding: '20px 32px' }}>
+            <span style={{ fontWeight: 600, fontSize: 20, display: 'block', marginBottom: 8 }}>
+              {title}
+            </span>
+            {messages.map((message, index) => (
+              <span
+                key={index}
+                style={{
+                  fontSize: 16,
+                  fontWeight: 600,
+                  display: 'block',
+                  marginBottom: 12
+                }}
+              >
+                {message}
+              </span>
+            ))}
+            <table
+              width="100%"
+              cellPadding={0}
+              cellSpacing={0}
+              style={{ fontSize: 16, color: '#000000', marginTop: 18 }}
+            >
+              <tbody>
+                <tr>
+                  {/* Cột trái: ul label */}
+                  <td width="50%" style={{ verticalAlign: 'top', padding: 0 }}>
+                    <ul style={{ listStyle: 'disc inside', margin: 0, padding: 0 }}>
+                      {infoItems.labels.map((label, index) => (
+                        <li
+                          key={index}
+                          style={{
+                            marginBottom: index === infoItems.labels.length - 1 ? 0 : 12
+                          }}
+                        >
+                          {label}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                  {/* Cột phải: value */}
+                  <td width="50%" style={{ fontWeight: 600, verticalAlign: 'top', padding: 0 }}>
+                    {infoItems.values.map((value, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          marginBottom: index === infoItems.values.length - 1 ? 0 : 12
+                        }}
+                      >
+                        {value}
+                      </div>
+                    ))}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <span
+              style={{
+                display: 'block',
+                background: '#F5F5F5',
+                color: '#920202CC',
+                borderRadius: 10,
+                padding: '10px 20px',
+                marginTop: 24,
+                fontSize: 16,
+                fontWeight: 600
+              }}
+            >
+              {highlightText}
+            </span>
+          </td>
+        </tr>
+        {children}
+      </tbody>
+    </table>
   );
 };

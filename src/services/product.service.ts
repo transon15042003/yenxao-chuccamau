@@ -6,7 +6,8 @@ import productData4 from '@/data/products/yen-chung-tuoi-products.json';
 import productData5 from '@/data/products/yen-sao-tho-products.json';
 import productData6 from '@/data/products/yen-tinh-che-products.json';
 import type { QueryResource, QueryResourceResponse } from '@/types/common';
-import type { Product, Category } from '@/types/product';
+import type { Product, Category, ProductVariant } from '@/types/product';
+import Fuse from 'fuse.js';
 
 import { isValidDateString, isValidNumberString } from '@/lib/utils';
 import { sortByDateField, sortByStringField } from '@/lib/utils/collection';
@@ -29,7 +30,7 @@ type QueryProduct = QueryResource<Product> & {
 export const getProducts = async (
   query?: QueryProduct
 ): Promise<QueryResourceResponse<Product>> => {
-  const { page = 1, take = 10, sortField, sortOrder, search, categorySlug } = query || {};
+  const { page = 1, take = 10, sortField, sortOrder, search, categorySlug, isAll } = query || {};
   const result = {
     data: [],
     metadata: {
@@ -40,7 +41,34 @@ export const getProducts = async (
     }
   };
 
-  const filteredProducts = products.filter((product) => {
+  let productList = [...products];
+
+  if (sortField) {
+    const field = productList[0][sortField];
+    if (field) {
+      if (typeof field === 'string' && isValidDateString(field)) {
+        sortByDateField(productList, sortField as keyof Product, sortOrder);
+      }
+      if (typeof field === 'number' || isValidNumberString(field.toString())) {
+        sortByNumberField(productList, sortField as keyof Product, sortOrder);
+      }
+      if (typeof field === 'string') {
+        sortByStringField(productList, sortField as keyof Product, sortOrder);
+      }
+    }
+  }
+
+  if (search) {
+    const fuse = new Fuse(productList, {
+      keys: ['name', 'description', 'categories', 'variants.specs.savour', 'variants.specs.size'],
+      includeScore: true,
+      threshold: 0.3
+    });
+    const results = fuse.search(search);
+    productList = results.map((result) => result.item as Product);
+  }
+
+  const filteredProducts = productList.filter((product) => {
     const matchConditions = [];
     if (categorySlug) {
       const matchCategory = categories.find((c) => c.slug === categorySlug);
@@ -53,10 +81,6 @@ export const getProducts = async (
       }
     }
 
-    if (search) {
-      matchConditions.push(product.name.toLowerCase().includes(search.toLowerCase()));
-    }
-
     return matchConditions.every((condition) => condition);
   });
 
@@ -64,19 +88,16 @@ export const getProducts = async (
     return result;
   }
 
-  if (sortField) {
-    const field = filteredProducts[0][sortField];
-    if (field) {
-      if (typeof field === 'string' && isValidDateString(field)) {
-        sortByDateField(filteredProducts, sortField as keyof Product, sortOrder);
+  if (isAll) {
+    return {
+      data: filteredProducts,
+      metadata: {
+        page,
+        take,
+        total: filteredProducts.length,
+        totalPages: 1
       }
-      if (typeof field === 'number' || isValidNumberString(field.toString())) {
-        sortByNumberField(filteredProducts, sortField as keyof Product, sortOrder);
-      }
-      if (typeof field === 'string') {
-        sortByStringField(filteredProducts, sortField as keyof Product, sortOrder);
-      }
-    }
+    };
   }
 
   const total = filteredProducts.length;
@@ -122,4 +143,24 @@ export const getCategories = async (): Promise<Category[]> => {
 
 export const getCategoryById = async (id: string): Promise<Category | null> => {
   return categories.find((category: Category) => category.id === id) as Category | null;
+};
+
+export const getCategoryBySlug = async (slug: string): Promise<Category | null> => {
+  return categories.find((category: Category) => category.slug === slug) as Category | null;
+};
+
+export const getProductSku = async (
+  productId: string,
+  size: string,
+  savour: string
+): Promise<string | null> => {
+  const product = products.find((p) => p.id === productId);
+
+  if (!product) return null;
+
+  const foundVariant = product.variants.find((variant: ProductVariant) => {
+    return variant.specs.size === size && variant.specs.savour === savour;
+  });
+
+  return foundVariant ? foundVariant.sku : null;
 };

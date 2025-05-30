@@ -1,13 +1,17 @@
 'use client';
+import useRecaptchaLogic from '@/hooks/useRecaptchaLogic';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Controller, useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
 import { z } from 'zod';
 
 import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
 import { InputGroup } from '@/components/molecules/InputGroup';
+import { ContactNotification } from '@/components/templates/mail/ContactNotification';
 
 import { shippingInfomationFormSchema } from '../ShippingInformationForm';
 
@@ -22,6 +26,11 @@ const inboxFormSchema = shippingInfomationFormSchema
       .string({ required_error: 'Họ và tên không được để trống' })
       .trim()
       .nonempty({ message: 'Họ và tên không được để trống' }),
+    email: z
+      .string({ required_error: 'Email không được để trống' })
+      .trim()
+      .nonempty({ message: 'Email không được để trống' })
+      .email({ message: 'Email không hợp lệ' }),
     subject: z.string().optional(),
     message: z.string().trim().nonempty({ message: 'Vui lòng nhập nội dung tin nhắn' })
   });
@@ -50,19 +59,33 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     }
   });
 
+  const { verifyHuman } = useRecaptchaLogic();
+
+  const validateRecaptchaAndSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    try {
+      event.preventDefault();
+
+      const verifyHumanResult = await verifyHuman('contact_form');
+
+      if (!verifyHumanResult || !verifyHumanResult.success) {
+        toast.error('Vui lòng xác thực reCAPTCHA');
+
+        return;
+      }
+
+      await handleSubmit(onSubmit)();
+    } catch (error) {
+      console.error('Lỗi khi gửi tin nhắn:', error);
+    }
+  };
+
   const onSubmit = async (data: InboxFormValues) => {
     setIsLoading(true);
 
     if (data.message) {
       try {
         const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
-        const emailBodyHtml = `
-            <p><strong>Họ và tên:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Số điện thoại:</strong> ${data.phone}</p>
-            ${data.subject ? `<p><strong>Tiêu đề:</strong> ${data.subject}</p>` : ''}
-            <p><strong>Nội dung:</strong><br/>${data.message ? data.message.replace(/\n/g, '<br/>') : 'Không có nội dung'}</p>
-          `;
+        const emailBodyHtml = renderToStaticMarkup(ContactNotification(data));
 
         await sendMail({
           subject: emailSubject,
@@ -70,11 +93,23 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
           fromName: data.name || 'Khách liên hệ'
         });
 
-        alert('Tin nhắn của bạn đã được gửi thành công!');
+        toast.success(
+          <div className="px-4 py-2">
+            <h4 className="font-bold ">Yêu cầu đã được gửi!</h4>
+            <p>
+              Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi sẽ phản hồi trong thời gian sớm nhất.
+            </p>
+          </div>
+        );
         reset();
       } catch (error) {
         console.error('Lỗi khi gửi tin nhắn:', error);
-        alert('Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.');
+        toast.error(
+          <div className="px-4 py-2">
+            <h4 className="font-bold">Lỗi khi gửi email!</h4>
+            <p>Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.</p>
+          </div>
+        );
       } finally {
         setIsLoading(false);
       }
@@ -84,9 +119,9 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
   };
 
   return (
-    <form className={className} {...props} onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form className={className} {...props} onSubmit={validateRecaptchaAndSubmit} noValidate>
       <p id="inbox" className="w-full font-semibold text-3xl text-[#2A3140] mb-4">
-        Gửi tin nhắn cho tôi
+        Gửi tin nhắn liên hệ
       </p>
 
       <div className="flex flex-wrap -mx-2 mb-8">
@@ -179,7 +214,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
                 placeholder="Nhập nội dung tin nhắn chi tiết..."
                 required
                 {...field}
-                line={10}
+                line={2}
                 errorMessage={errors.message?.message}
                 textareaClassName="bg-transparent"
                 labelClassName="font-medium text-sm text-[#344054]"
@@ -189,7 +224,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         </div>
       </div>
 
-      <Button className="w-full uppercase text-xl font-medium py-[13px]" type="submit">
+      <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
     </form>

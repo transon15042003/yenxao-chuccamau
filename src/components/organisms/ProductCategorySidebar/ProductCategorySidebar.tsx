@@ -16,15 +16,18 @@ type ProductCategorySidebarProps = {
 export const ProductCategorySidebar = ({ className, categories }: ProductCategorySidebarProps) => {
   const searchParams = useSearchParams();
   const categorySlug = searchParams.get('c');
+  const sortOption = searchParams.get('s');
 
   return (
-    <aside className={cn('w-full space-y-4', className)}>
+    <aside className={cn('w-full space-y-7 mt-2', className)}>
       <SectionHeading className="text-xl font-bold">Danh mục sản phẩm</SectionHeading>
       <ul className="space-y-7">
         {categories.map((cat) => (
           <li key={cat.id}>
             <Link
-              href={`/products?c=${cat.slug}`}
+              href={
+                sortOption ? `/products?c=${cat.slug}&s=${sortOption}` : `/products?c=${cat.slug}`
+              }
               className={cn(
                 'w-full text-left text-lg transition-colors hover:text-primary-light',
                 categorySlug === cat.slug ? 'text-primary' : 'text-typo-2'

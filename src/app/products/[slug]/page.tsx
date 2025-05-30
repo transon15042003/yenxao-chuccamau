@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProductBySlug, getProducts } from 'src/services/product.service';
+import { getCategoryBySlug, getProductBySlug, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
@@ -10,15 +10,25 @@ type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export async function generateStaticParams() {
+  const products = await getProducts({
+    page: 1,
+    isAll: true
+  });
+
+  return products.data.map((product) => ({
+    slug: product.slug
+  }));
+}
+
 const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   const products = await getProducts({
     page: 1,
-    take: 100,
-    categorySlug: '',
-    ...{}
+    isAll: true
   });
+  const category = await getCategoryBySlug(product?.categories[0] ?? '');
 
   if (!product)
     return (
@@ -33,8 +43,10 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
     <DetailProductProvider product={product} products={products.data}>
       <div>
         <Breadcrumb
+          disableLastChild={true}
           items={[
             { label: 'Sản phẩm', href: '/products' },
+            ...(category ? [{ label: category.name, href: `/products?c=${category.slug}` }] : []),
             { label: product.name, href: product.slug }
           ]}
         />

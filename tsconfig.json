@@ -13,9 +13,11 @@
       "@/tests/*": ["./.jest/*"],
       "@/types/*": ["./src/types/*"],
       "@/data/*": ["./src/data/*"],
+      "@/services/*": ["./src/services/*"],
       "@/svg/*": ["./src/svg/*"],
       "@/contents/*": ["./src/contents/*"],
-      "@/markdown/*": ["./src/markdown/*"]
+      "@/markdown/*": ["./src/markdown/*"],
+      "@/AppConfig": ["./src/AppConfig"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
