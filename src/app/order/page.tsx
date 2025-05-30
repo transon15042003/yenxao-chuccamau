@@ -1,6 +1,7 @@
 'use client';
 
 import { useCartProducts } from '@/hooks/useCartProducts';
+import useRecaptchaLogic from '@/hooks/useRecaptchaLogic';
 import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
@@ -8,6 +9,8 @@ import { PaymentGateway } from '@/types/payment';
 import { addDays, format } from 'date-fns';
 import Link from 'next/link';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { toast } from 'react-toastify';
 
 import { Button } from '@/components/atoms/Button';
 import { Stepper } from '@/components/atoms/Step';
@@ -73,6 +76,7 @@ const PaymentPage = () => {
 
   const [discountErrorMessage, setDiscountErrorMessage] = useState<string | undefined>(undefined);
   const [discountCode, setDiscountCode] = useState<string>('');
+  const { recaptchaRef, token, onRecaptchaChange, resetRecaptcha, getValue } = useRecaptchaLogic();
 
   const { productsData } = useCartProducts(cart);
 
@@ -85,7 +89,7 @@ const PaymentPage = () => {
       return false;
     }
 
-    if (!shippingInfoForm.formState.isValid) {
+    if (shippingInfoForm.formState.submitCount > 0 && !shippingInfoForm.formState.isValid) {
       return false;
     }
 
@@ -94,6 +98,18 @@ const PaymentPage = () => {
     }
 
     return true;
+  };
+
+  const handlePlaceOrder = () => {
+    const recaptchaValue = getValue();
+    if (!recaptchaValue) {
+      toast.error('Vui lòng xác thực reCAPTCHA');
+
+      return;
+    }
+
+    resetRecaptcha();
+    placeOrder(cart.items);
   };
 
   useEffect(() => {
@@ -320,10 +336,19 @@ const PaymentPage = () => {
                 </div>
 
                 <div className="mt-6">
+                  <div className="mb-4">
+                    <ReCAPTCHA
+                      theme="light"
+                      hl="vi"
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                      onChange={onRecaptchaChange}
+                    />
+                  </div>
                   <Button
                     className="w-full uppercase text-xl font-bold py-[13px]"
-                    disabled={!getTakeOrderStatus()}
-                    onClick={() => placeOrder(cart.items)}
+                    disabled={!getTakeOrderStatus() || !token}
+                    onClick={handlePlaceOrder}
                   >
                     Đặt hàng
                   </Button>

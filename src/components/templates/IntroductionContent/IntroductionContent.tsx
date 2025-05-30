@@ -4,10 +4,12 @@ import { descriptions } from '@/contents/introduction';
 import { ContactType } from '@/types/contact';
 import Image from 'next/image';
 import { useState } from 'react';
+import { AppConfig } from 'src/AppConfig';
 
 import { LoadingOverlay } from '@/components/atoms/LoadingOverlay';
 import { ContactForm } from '@/components/organisms/ContactForm';
 import { ContactInfoBlock } from '@/components/organisms/ContactInfoBlock';
+import GuidingCard from '@/components/organisms/GuidingCard/GuidingCard';
 import IntroductionSection from '@/components/organisms/IntroductionSection';
 import ProductionStep from '@/components/organisms/ProductionStep/ProductionStep';
 import SectionContentItem from '@/components/organisms/SectionContentItem/SectionContentItem';
@@ -20,6 +22,10 @@ interface IntroductionContentProps {
 
 const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleOpenMap = () => {
+    window.open(AppConfig.addressURL, '_blank');
+  };
 
   return (
     <div className="flex justify-center flex-col">
@@ -34,7 +40,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         <IntroductionSection
           heading="Câu chuyện thương hiệu"
           subHeading="Quá trình hình thành và phát triển của chúng tôi qua các năm"
-          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-[2] bg-[#F8F5F2]"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-10"
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
@@ -53,7 +59,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                       title={el.title}
                       description={el.description}
                       icon={el.icon}
-                      className="mt-[50px]"
+                      className={cn(idx !== 0 && 'mt-[50px]')}
                     />
                   ))}
                 </div>
@@ -73,19 +79,22 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         <IntroductionSection
           heading="Tầm nhìn - Sứ mệnh - Giá trị cốt lõi"
           subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
-          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-[2]"
+          className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-10"
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
-              <div className="lg:grid lg:grid-cols-3 lg:gap-[10px] mt-[42px] flex flex-col gap-[24px]">
+              <div className="flex flex-wrap justify-center gap-[24px] mt-[36px]">
                 {descriptions.guidingPrinciple.map((el, idx) => (
-                  <Image
+                  <GuidingCard
                     key={idx}
-                    src={el}
-                    alt=""
-                    width={1000}
-                    height={1000}
-                    className="lg:col-span-1 w-full h-auto"
+                    icon={el.icon}
+                    title={el.title}
+                    description={el.description}
+                    styles={{
+                      minWidth: '360px',
+                      maxWidth: 'calc((100% - 48px) / 3)',
+                      flex: 1
+                    }}
                   />
                 ))}
               </div>
@@ -96,7 +105,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Quy trình sản xuất"
         subHeading="Quy trình sản xuất chuyên nghiệp, đảm bảo chất lượng sản phẩm"
-        className="lg:py-[70px] py-[36px] px-4 lg:px-0 bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+        className="lg:py-[70px] py-[36px] px-4 lg:px-0 md:bg-[url('/images/policy/bg.png')] bg-[url('/images/introduction/production-step-bg-mb.png')] bg-no-repeat bg-cover"
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
@@ -111,7 +120,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                   position={idx % 2 === 0 ? 'left' : 'right'}
                   display="inline"
                   className={cn(
-                    'overflow-hidden max-h-0 lg:max-h-[208px]',
+                    'overflow-hidden max-h-0 lg:max-h-[300px]',
                     idx % 2 === 0
                       ? 'translate-x-[8px]'
                       : 'float-right translate-x-[-8px] translate-y-[-208px]'
@@ -149,9 +158,11 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2 mt-[42px] relative">
-              <div className="grid grid-cols-2 p-1 mb-[36px] text-center font-bold bg-primary rounded-[5px]">
-                <div className="col-span-1 text-white bg-primary">Chứng nhận</div>
-                <div className="col-span-1 text-[#2A2A40] bg-white rounded-[5px]">Thành tựu</div>
+              <div className="grid grid-cols-2 p-1 mb-[36px] h-[45px] text-center font-bold bg-primary rounded-[5px]">
+                <div className="col-span-1 text-white leading-[37px] bg-primary">Chứng nhận</div>
+                <div className="col-span-1 text-[#2A2A40] leading-[37px] bg-white rounded-[5px]">
+                  Thành tựu
+                </div>
               </div>
 
               <div className="lg:grid lg:grid-cols-2 grid grid-cols-1 gap-5">
@@ -184,8 +195,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                   key={idx}
                   src={el}
                   alt="company"
-                  width={400}
-                  height={400}
+                  width={900}
+                  height={700}
                   className="w-full h-auto"
                 />
               ))}
@@ -196,12 +207,16 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
-        className="lg:py-[70px] py-[36px] bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
+        className="lg:py-[70px] py-[36px] md:bg-[url('/images/policy/bg.png')] bg-no-repeat bg-cover"
       >
         <div className="lg:grid lg:grid-cols-12">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
-            <ContactInfoBlock className="md:w-1/2 w-full" contactData={contactInfo} />
-            <ContactForm className="md:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
+            <ContactInfoBlock
+              className="lg:w-1/2 w-full"
+              contactData={contactInfo}
+              onScrollToMap={handleOpenMap}
+            />
+            <ContactForm className="lg:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
             {isLoading && <LoadingOverlay />}
           </div>
         </div>
