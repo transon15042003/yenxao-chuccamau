@@ -268,14 +268,14 @@ const PaymentPage = () => {
             <div className="flex flex-col gap-3">
               {cart.items.length > 0 ? (
                 <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
-                  {cart.items?.map((item, idx) => {
+                  {cart.items?.map((item) => {
                     const product = productsData.get(item.productId);
 
                     if (!product) return null;
 
                     return (
                       <CartItem
-                        key={idx}
+                        key={item.sku}
                         item={item}
                         product={product}
                         onIncrease={() => increaseQuantity(item.sku, 1)}
