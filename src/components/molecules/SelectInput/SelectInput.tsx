@@ -60,7 +60,8 @@ export const SelectInput = ({
     }),
     input: (provided: any) => ({
       ...provided,
-      color: '#2A2A40'
+      color: '#2A2A40',
+      caretColor: 'transparent'
     }),
     option: (provided: any, state: any) => ({
       ...provided,
