@@ -21,7 +21,7 @@ export async function generateMetadata({
     description: StaticSEOContent.productsPage.desc,
     keywords: StaticSEOContent.productsPage.keywords,
     alternates: {
-      canonical: StaticSEOContent.productsPage.canonicalUrl
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
     }
   };
 
