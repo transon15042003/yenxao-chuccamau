@@ -9,6 +9,10 @@ export const MyHeader = ({ children }: { children: React.ReactNode }) => {
   return <h1 className="text-[30px] font-bold text-[#2A2A40]">{children}</h1>;
 };
 
+export const EmptyLine = ({ count = 1 }: { count?: number }) => {
+  return <div style={{ height: `${count * 10}px` }} />;
+};
+
 export function useMDXComponents(): MDXComponents {
   return {
     ul: (props) => <ul className="list-disc ml-6" {...props} />,
@@ -18,7 +22,11 @@ export function useMDXComponents(): MDXComponents {
     BlogHeading1,
     BlogHeading2,
     BlogParagraph,
-    BlogImage
+    BlogImage,
+    table: (props) => <table className="w-full border-collapse" {...props} />,
+    th: (props) => <th className="px-4 py-2 text-left border border-gray-200" {...props} />,
+    td: (props) => <td className="px-4 py-2 text-left border border-gray-200" {...props} />,
+    EmptyLine
   };
 }
 
