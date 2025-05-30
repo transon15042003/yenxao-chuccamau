@@ -11,20 +11,9 @@ interface DescriptionProps {
   titleStyle?: Record<string, string>;
 }
 
-const InfoBox = ({
-  title,
-  description,
-  className,
-  titleClass,
-  descClass,
-  titleStyle
-}: DescriptionProps) => (
+const InfoBox = ({ title, description, className, titleClass, descClass }: DescriptionProps) => (
   <div className={cn('text-left', className)}>
-    <Paragraph
-      style={titleStyle}
-      content={title}
-      className={cn('font-bold text-[25px] leading-full', titleClass)}
-    />
+    <Paragraph content={title} className={cn('font-bold text-[25px] leading-full', titleClass)} />
     <Paragraph content={description} className={cn('text-[20px] leading-full', descClass)} />
   </div>
 );

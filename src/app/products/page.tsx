@@ -1,4 +1,6 @@
+import { dynamicProductCateContent, StaticSEOContent } from '@/contents/SEO';
 import type { CategorySlug, Product, ProductSort } from '@/types/product';
+import { Metadata } from 'next';
 import { getCategories, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
@@ -7,12 +9,52 @@ import { ProductCategorySidebar } from '@/components/organisms/ProductCategorySi
 
 import ProductArea from './_components/ProductArea';
 
+export async function generateMetadata({
+  searchParams
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+
+  const defaultMeta = {
+    title: StaticSEOContent.productsPage.title,
+    description: StaticSEOContent.productsPage.desc,
+    keywords: StaticSEOContent.productsPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
+    }
+  };
+
+  let cate: string;
+  if (Array.isArray(params.c)) {
+    cate = params.c[0];
+  } else if (typeof params.c === 'string') {
+    cate = params.c;
+  } else {
+    cate = '';
+  }
+
+  if (cate && dynamicProductCateContent[cate]) {
+    return {
+      title: dynamicProductCateContent[cate].title,
+      description: dynamicProductCateContent[cate].desc,
+      keywords: dynamicProductCateContent[cate].keywords,
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${cate}`
+      }
+    };
+  }
+
+  return defaultMeta;
+}
+
 type PageNumber = number;
 
 export type ProductPageParams = {
   p: PageNumber;
   c: CategorySlug;
   s: ProductSort;
+  search: string;
 };
 
 const getSortByOptionValue = (
@@ -33,13 +75,14 @@ export default async function ProductsPage({
 }: {
   searchParams: Promise<ProductPageParams>;
 }) {
-  const { c, s, p } = await searchParams;
+  const { c, s, p, search } = await searchParams;
 
   const categories = await getCategories();
   const products = await getProducts({
     page: p || 1,
     take: 9,
     categorySlug: c,
+    search: search,
     ...(s ? getSortByOptionValue(s) : {})
   });
 

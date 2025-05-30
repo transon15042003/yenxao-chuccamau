@@ -1,4 +1,6 @@
+import productMenuList from '@/data/product-categories.json';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
@@ -10,44 +12,8 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-const productMenuList = [
-  // {
-  //   title: 'Bánh Tổ Yến',
-  //   link: '/products?c=banh-to-yen',
-  //   isComing: true
-  // },
-  {
-    title: 'Yến Sào Tinh Chế',
-    link: '/products?c=yen-sao-tinh-che'
-  },
-  {
-    title: 'Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tuoi'
-  },
-  {
-    title: 'Tổ Yến Sào Thô',
-    link: '/products?c=to-yen-sao-tho'
-  },
-  {
-    title: 'Set Quà Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tao-do',
-    isComing: true
-  },
-  {
-    title: 'Topping',
-    link: '/products?c=topping'
-  },
-  // {
-  //   title: 'Yến Chưng Sấn Tiết Trùng',
-  //   link: '/products?c=yen-chung-san-tiet-trung'
-  // },
-  {
-    title: 'Món nên thử',
-    link: '/products?c=mon-nen-thu'
-  }
-];
-
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+  const pathname = usePathname();
   const [isProductOpen, setIsProductOpen] = useState(false);
 
   if (!isOpen) return null;
@@ -55,25 +21,31 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   return (
     <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
       <div className="flex flex-col p-4 pt-6 gap-6">
-        <NavItem href="/" className="text-2xl" onClick={onClose}>
+        <NavItem href="/" className="text-2xl" onClick={onClose} active={pathname === '/'}>
           TRANG CHỦ
         </NavItem>
-        <NavItem href="/about" className="text-2xl" onClick={onClose}>
+        <NavItem
+          href="/about"
+          className="text-2xl"
+          onClick={onClose}
+          active={pathname === '/about'}
+        >
           GIỚI THIỆU
         </NavItem>
         <div className="relative">
           <button
             type="button"
-            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold ${
-              isProductOpen
-                ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
-                : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
-            } group`}
+            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold  
+              ${
+                pathname.startsWith('/products')
+                  ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
+                  : 'text-white'
+              } group`}
             onClick={() => setIsProductOpen(!isProductOpen)}
           >
             SẢN PHẨM
             <ChevronRightIcon
-              className={`w-6 h-6 ml-auto transition-transform duration-200 ${isProductOpen ? 'rotate-90 stroke-secondary' : 'stroke-white group-hover:stroke-secondary'}`}
+              className={`w-6 h-6 ml-auto transition-transform duration-20 ${isProductOpen && 'rotate-90'} ${pathname.startsWith('/products') ? 'stroke-secondary' : ' stroke-white'}`}
               strokeWidth={2}
             />
           </button>
@@ -84,10 +56,15 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             onItemClick={onClose}
           />
         </div>
-        <NavItem href="/blog" className="text-2xl" onClick={onClose}>
+        <NavItem href="/blog" className="text-2xl" onClick={onClose} active={pathname === '/blog'}>
           BLOG
         </NavItem>
-        <NavItem href="/contact" className="text-2xl" onClick={onClose}>
+        <NavItem
+          href="/contact"
+          className="text-2xl"
+          onClick={onClose}
+          active={pathname === '/contact'}
+        >
           LIÊN HỆ
         </NavItem>
       </div>

@@ -4,7 +4,7 @@
   "description": "Chuc Ca Mau Yen sao",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "prettier:format": "prettier --write .",
@@ -18,6 +18,7 @@
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "postinstall": "husky",
+    "postbuild": "next-sitemap",
     "generate": "pnpm plop --plopfile ./.plop/plopfile.js"
   },
   "engines": {
@@ -36,6 +37,8 @@
     "clsx": "2.1.1",
     "date-fns": "^4.1.0",
     "next": "15.3.2",
+    "next-recaptcha-v3": "^1.5.2",
+    "next-sitemap": "^4.2.3",
     "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
     "react-hook-form": "^7.56.3",
@@ -43,6 +46,8 @@
     "react-icons": "^5.5.0",
     "react-paginate": "^8.3.0",
     "react-select": "^5.10.1",
+    "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
     "swiper": "^11.2.7",
     "tailwind-merge": "3.0.1",
     "usehooks-ts": "^3.1.1",
