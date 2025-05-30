@@ -6,7 +6,6 @@ import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
 import { PaymentGateway } from '@/types/payment';
-import { addDays, format } from 'date-fns';
 import Link from 'next/link';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -120,8 +119,6 @@ const PaymentPage = () => {
     }
   }, [discountCode]);
 
-  const today = new Date();
-
   return (
     <>
       {/* <ReCaptcha onValidate={onRecaptchaChange} action="page_view" /> */}
@@ -165,11 +162,7 @@ const PaymentPage = () => {
                           Giao hàng tiêu chuẩn <span className="text-primary ml-2">Miễn phí</span>
                         </p>
                         <p className="text-typo-1">
-                          Thời gian dự kiến:{' '}
-                          <span className="text-typo-1 font-bold">
-                            {format(addDays(today, 1), 'dd/MM')} -{' '}
-                            {format(addDays(today, 3), 'dd/MM')}
-                          </span>
+                          <span className="text-typo-1 font-bold">2h (nội thành HCM)</span>
                         </p>
                       </div>
                     </label>
@@ -268,14 +261,14 @@ const PaymentPage = () => {
             <div className="flex flex-col gap-3">
               {cart.items.length > 0 ? (
                 <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
-                  {cart.items?.map((item, idx) => {
+                  {cart.items?.map((item) => {
                     const product = productsData.get(item.productId);
 
                     if (!product) return null;
 
                     return (
                       <CartItem
-                        key={idx}
+                        key={item.sku}
                         item={item}
                         product={product}
                         onIncrease={() => increaseQuantity(item.sku, 1)}
