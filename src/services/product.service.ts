@@ -6,7 +6,7 @@ import productData4 from '@/data/products/yen-chung-tuoi-products.json';
 import productData5 from '@/data/products/yen-sao-tho-products.json';
 import productData6 from '@/data/products/yen-tinh-che-products.json';
 import type { QueryResource, QueryResourceResponse } from '@/types/common';
-import type { Product, Category } from '@/types/product';
+import type { Product, Category, ProductVariant } from '@/types/product';
 
 import { isValidDateString, isValidNumberString } from '@/lib/utils';
 import { sortByDateField, sortByStringField } from '@/lib/utils/collection';
@@ -128,4 +128,20 @@ export const getCategoryById = async (id: string): Promise<Category | null> => {
 
 export const getCategoryBySlug = async (slug: string): Promise<Category | null> => {
   return categories.find((category: Category) => category.slug === slug) as Category | null;
+};
+
+export const getProductSku = async (
+  productId: string,
+  size: string,
+  savour: string
+): Promise<string | null> => {
+  const product = products.find((p) => p.id === productId);
+
+  if (!product) return null;
+
+  const foundVariant = product.variants.find((variant: ProductVariant) => {
+    return variant.specs.size === size && variant.specs.savour === savour;
+  });
+
+  return foundVariant ? foundVariant.sku : null;
 };
