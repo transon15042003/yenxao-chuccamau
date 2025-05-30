@@ -4,7 +4,7 @@
   "description": "Chuc Ca Mau Yen sao",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "prettier:format": "prettier --write .",
@@ -45,6 +45,7 @@
     "react-paginate": "^8.3.0",
     "react-select": "^5.10.1",
     "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
     "swiper": "^11.2.7",
     "tailwind-merge": "3.0.1",
     "usehooks-ts": "^3.1.1",
