@@ -21,6 +21,7 @@ const MenuDropdown = ({ open, items, onItemClick, isMobile = false }: MenuDropdo
             <DropdownItem
               key={item.id}
               title={item.name}
+              slug={item.slug}
               link={`/products?c=${item.slug}`}
               // isComing={item.isComing}
               onClick={onItemClick}
@@ -40,6 +41,7 @@ const MenuDropdown = ({ open, items, onItemClick, isMobile = false }: MenuDropdo
             <DropdownItem
               title={item.name}
               link={`/products?c=${item.slug}`}
+              slug={item.slug}
               // isComing={item.isComing}
               onClick={onItemClick}
             />

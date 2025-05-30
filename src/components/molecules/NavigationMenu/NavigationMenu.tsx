@@ -1,5 +1,6 @@
 'use client';
 
+import productMenuList from '@/data/product-categories.json';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
@@ -7,49 +8,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
 
 import NavItem from './NavItem';
-
-interface ProductMenuItem {
-  title: string;
-  link: string;
-  isComing?: boolean;
-}
-
-const productMenuList: ProductMenuItem[] = [
-  // {
-  //   title: 'Bánh Tổ Yến',
-  //   link: '/products?c=banh-to-yen',
-  //   isComing: true
-  // },
-  {
-    title: 'Yến Chưng Tươi',
-    link: '/products?c=yen-chung-tuoi'
-  },
-  {
-    title: 'Set Quà Yến Chưng Tươi',
-    link: '/products?c=set-qua-yen-chung-tuoi',
-    isComing: true
-  },
-  {
-    title: 'Cháo & Súp (Yến)',
-    link: '/products?c=chao-sup-yen'
-  },
-  {
-    title: 'Yến Sào Tinh Chế',
-    link: '/products?c=yen-sao-tinh-che'
-  },
-  {
-    title: 'Tổ Yến Sào Thô',
-    link: '/products?c=yen-sao-tho'
-  },
-  {
-    title: 'Topping',
-    link: '/products?c=topping'
-  }
-  // {
-  //   title: 'Yến Chưng Sấn Tiết Trùng',
-  //   link: '/products?c=yen-chung-san-tiet-trung'
-  // },
-];
 
 const NavigationMenu = () => {
   const [open, setOpen] = useState(false);
