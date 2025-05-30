@@ -1,10 +1,9 @@
 // import { Box, Email, Item, Span } from 'react-html-email'; */
 
-// import { emailHeadCSS, labelStyle, contentStyle, rootStyle, LOGO_IMAGE_URL } from './InitSetup';
+// import { emailHeadCSS, labelStyle, contentStyle, rootStyle } from './InitSetup';
 import { MailContent } from './MailContent';
 import { MailFooter } from './MailFooter';
 
-const LOGO_URL = '/logo-light.webp';
 const HEADER_COLOR = '#B4071A';
 
 type ContactFormData = {
@@ -17,7 +16,6 @@ type ContactFormData = {
 
 export const ContactNotification = (data: ContactFormData) => (
   <MailContent
-    logoUrl={LOGO_URL}
     headerColor={HEADER_COLOR}
     title="Tin nhắn liên hệ mới,"
     messages={['Một tin nhắn mới vừa được gửi từ form liên hệ. Thông tin chi tiết như sau:']}

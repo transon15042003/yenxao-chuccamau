@@ -1,12 +1,18 @@
-// import { Box, Item, Span } from 'react-html-email';
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-html-link-for-pages */
 
-import Facebook from '@/svg/EmailTemplateSVG/Facebook';
-import Instagram from '@/svg/EmailTemplateSVG/Instagram';
-import LinkedIn from '@/svg/EmailTemplateSVG/Linkedin';
-import Phone from '@/svg/EmailTemplateSVG/Phone';
-import Tiktok from '@/svg/EmailTemplateSVG/Tiktok';
+// import { Box, Item, Span } from 'react-html-email';
+import { AppConfig } from 'src/AppConfig';
 
 import { footerContentStyle } from './InitSetup';
+import {
+  FACEBOOK_IMAGE_URL,
+  INSTAGRAM_IMAGE_URL,
+  LINKEDIN_IMAGE_URL,
+  TIKTOK_IMAGE_URL,
+  PHONE_IMAGE_URL
+} from './InitSetup';
+
 export const MailFooter = () => {
   return (
     <table
@@ -25,11 +31,7 @@ export const MailFooter = () => {
             colSpan={2}
             style={{ color: '#707070', fontSize: 13, textAlign: 'center', padding: '8px 0 0 0' }}
           >
-            Pasteur Tower, 139 Pasteur, Q.3, TP.HCM, Việt Nam.
-            <br />
-            VIT Tower, tầng 17, 519 Kim Mã, Ba Đình, Hà Nội, Việt Nam.
-            <br />
-            CareerViet.vn - Mang việc làm quốc tế chuyên biệt cho người Việt tìm việc.
+            {AppConfig.address}
           </td>
         </tr>
         {/* Line chia đôi */}
@@ -42,33 +44,63 @@ export const MailFooter = () => {
         <tr>
           <td style={{ textAlign: 'left', padding: '8px 0 20px 24px' }}>
             <a
-              href="tel:02838221234"
+              href={`tel:${AppConfig.phone}`}
               style={{
                 color: '#3A3A3A',
                 textDecoration: 'none'
               }}
             >
               <span style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: 4 }}>
-                <Phone />
+                <img
+                  src={PHONE_IMAGE_URL}
+                  alt="Phone"
+                  width={20}
+                  height={20}
+                  style={{ verticalAlign: 'middle' }}
+                />
               </span>
               <span style={{ display: 'inline-block', verticalAlign: 'middle', marginLeft: 4 }}>
-                (028) 3822 1234
+                {AppConfig.phone}
               </span>
             </a>
           </td>
           <td style={{ textAlign: 'right', padding: '8px 24px 20px 0' }}>
             <div style={{ display: 'inline-block' }}>
-              <a href="https://facebook.com" style={{ margin: '0 6px', display: 'inline-block' }}>
-                <Facebook />
+              <a href="/" style={{ margin: '0 6px', display: 'inline-block' }}>
+                <img
+                  src={FACEBOOK_IMAGE_URL}
+                  alt="Facebook"
+                  width={25}
+                  height={25}
+                  style={{ verticalAlign: 'middle' }}
+                />
               </a>
-              <a href="https://instagram.com" style={{ margin: '0 6px', display: 'inline-block' }}>
-                <Instagram />
+              <a href="/" style={{ margin: '0 6px', display: 'inline-block' }}>
+                <img
+                  src={INSTAGRAM_IMAGE_URL}
+                  alt="Instagram"
+                  width={25}
+                  height={25}
+                  style={{ verticalAlign: 'middle' }}
+                />
               </a>
-              <a href="https://linkedin.com" style={{ margin: '0 6px', display: 'inline-block' }}>
-                <LinkedIn />
+              <a href="/" style={{ margin: '0 6px', display: 'inline-block' }}>
+                <img
+                  src={LINKEDIN_IMAGE_URL}
+                  alt="LinkedIn"
+                  width={25}
+                  height={25}
+                  style={{ verticalAlign: 'middle' }}
+                />
               </a>
-              <a href="https://tiktok.com" style={{ margin: '0 6px', display: 'inline-block' }}>
-                <Tiktok />
+              <a href="/" style={{ margin: '0 6px', display: 'inline-block' }}>
+                <img
+                  src={TIKTOK_IMAGE_URL}
+                  alt="Tiktok"
+                  width={25}
+                  height={25}
+                  style={{ verticalAlign: 'middle' }}
+                />
               </a>
             </div>
           </td>

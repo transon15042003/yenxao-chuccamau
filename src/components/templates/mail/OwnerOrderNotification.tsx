@@ -1,16 +1,14 @@
 import { Order } from '@/types/order';
 // import { Box, Email, Item, Span } from 'react-html-email';
 
-// import { emailHeadCSS, labelStyle, contentStyle, rootStyle, LOGO_IMAGE_URL } from './InitSetup';
+// import { emailHeadCSS, labelStyle, contentStyle, rootStyle } from './InitSetup';
 import { MailContent } from './MailContent';
 import { MailFooter } from './MailFooter';
 
-const LOGO_URL = '/logo-light.webp';
 const HEADER_COLOR = '#B4071A';
 
 export const OwnerOrderNotification = (order: Order) => (
   <MailContent
-    logoUrl={LOGO_URL}
     headerColor={HEADER_COLOR}
     title="Thông báo đơn hàng mới,"
     messages={[

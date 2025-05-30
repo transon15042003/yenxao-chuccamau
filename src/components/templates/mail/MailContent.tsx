@@ -1,8 +1,7 @@
-import { rootStyle, containerStyle } from './InitSetup';
+import { rootStyle, containerStyle, LOGO_IMAGE_URL } from './InitSetup';
 
 type MailContentProps = {
   children: React.ReactNode;
-  logoUrl: string;
   headerColor?: string;
   headerHeight?: number;
   width?: string | number;
@@ -17,7 +16,6 @@ type MailContentProps = {
 
 export const MailContent = ({
   children,
-  logoUrl,
   headerColor = containerStyle.backgroundColor || '#B4071A',
   headerHeight = 150,
   width = '90%',
@@ -49,7 +47,7 @@ export const MailContent = ({
             }}
           >
             <img
-              src={logoUrl}
+              src={LOGO_IMAGE_URL}
               alt="logo"
               width={150}
               height={125}
