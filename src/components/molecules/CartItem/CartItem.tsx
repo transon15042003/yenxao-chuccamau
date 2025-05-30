@@ -74,7 +74,9 @@ export const CartItem: React.FC<CartItemProps> = ({
       <div className="flex-auto flex flex-col gap-3 mx-4 min-w-0">
         {/* Product Info */}
         <div className="min-w-0">
-          <div className="font-semibold leading-[1.36] text-typo-1 line-clamp-1">{displayName}</div>
+          <div className="w-full md:w-[250px] font-semibold leading-[1.36] text-typo-1 line-clamp-1">
+            {displayName}
+          </div>
           <div className="flex items-center gap-2 mt-2">
             <span className="font-semibold text-sm text-primary-dark">
               {convertToVND(displayPrice)}
