@@ -48,12 +48,12 @@ export const CartDrawer = () => {
         ref={cartContainerRef}
         className={cn(
           'flex flex-col gap-4 h-full bg-white fixed top-0 right-0 ',
-          'transition-[right] duration-500 ease-in-out w-[95%] md:w-[450px]',
+          'transition-[right] duration-500 ease-in-out w-[95%] md:w-[457px]',
           isCartOpen ? 'right-0' : '-right-full'
         )}
       >
         {/* Cart Header */}
-        <div className="bg-[#ECECEC] px-7 py-8 flex items-center justify-between">
+        <div className="h-[75px] bg-[#ECECEC] pl-7 pr-6 flex items-center justify-between">
           <SectionHeading className="uppercase">Giỏ hàng của bạn</SectionHeading>
           <div
             role="button"
@@ -79,7 +79,7 @@ export const CartDrawer = () => {
         {!isLoadingProducts && cart.items.length > 0 && (
           <>
             {/* Cart Body */}
-            <div className="p-5 flex-1 overflow-y-auto customscrollbar">
+            <div className="py-5 px-7 flex-1 overflow-y-auto customscrollbar">
               <div className="flex flex-col">
                 {cart.items.map((item) => {
                   const product = productsData.get(item.productId);
@@ -105,33 +105,35 @@ export const CartDrawer = () => {
         )}
 
         {/* Cart Footer */}
-        <div className="h-[150px] w-4/5 ml-auto mr-5 mb-5 flex flex-col justify-between">
-          <div className="border border-black my-6"></div>
+        <div className="mx-7 mb-6">
+          <div className="h-[150px] w-full flex flex-col justify-between">
+            <div className="border border-black my-6"></div>
 
-          <div className="flex flex-col gap-4 f">
-            <div className="hidden items-center justify-between">
-              <span>Giảm giá</span>
-              <span>{convertToVND(discount)}</span>
+            <div className="flex flex-col gap-4 f">
+              <div className="hidden items-center justify-between">
+                <span>Giảm giá</span>
+                <span>{convertToVND(discount)}</span>
+              </div>
+
+              <div className="hidden items-center justify-between">
+                <span>Vận chuyển</span>
+                <span>{convertToVND(shipping)}</span>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <span className="font-bold">Tổng tiền</span>
+                <span className="font-bold">{convertToVND(total)}</span>
+              </div>
             </div>
 
-            <div className="hidden items-center justify-between">
-              <span>Vận chuyển</span>
-              <span>{convertToVND(shipping)}</span>
+            <div className="mt-6">
+              <Button
+                className="w-full uppercase text-xl font-bold py-[13px]"
+                onClick={handleCheckout}
+              >
+                Thanh toán
+              </Button>
             </div>
-
-            <div className="flex items-center justify-between">
-              <span className="font-bold">Tổng tiền</span>
-              <span className="font-bold">{convertToVND(total)}</span>
-            </div>
-          </div>
-
-          <div className="mt-6">
-            <Button
-              className="w-full uppercase text-xl font-bold py-[13px]"
-              onClick={handleCheckout}
-            >
-              Thanh toán
-            </Button>
           </div>
         </div>
       </div>

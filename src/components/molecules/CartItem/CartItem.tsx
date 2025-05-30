@@ -61,9 +61,9 @@ export const CartItem: React.FC<CartItemProps> = ({
   const displayThumbnail = selectedVariant?.thumbnail || item.thumbnail;
 
   return (
-    <div className="flex w-full py-4 px-6 bg-white rounded-lg">
+    <div className="flex w-full items-stretch py-4 bg-white rounded-lg">
       {/* Product Image */}
-      <div className="relative w-[115px] h-[99px] flex items-center justify-center ">
+      <div className="relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center ">
         <Image
           className="rounded-[5px] object-cover"
           src={displayThumbnail}
@@ -71,7 +71,7 @@ export const CartItem: React.FC<CartItemProps> = ({
           fill
         />
       </div>
-      <div className="flex-1 flex flex-col gap-3 ml-4">
+      <div className="flex-auto flex flex-col gap-3 mx-4 min-w-0">
         {/* Product Info */}
         <div className="min-w-0">
           <div className="font-semibold leading-[1.36] text-typo-1 line-clamp-1">{displayName}</div>
@@ -79,21 +79,24 @@ export const CartItem: React.FC<CartItemProps> = ({
             <span className="font-semibold text-sm text-primary-dark">
               {convertToVND(displayPrice)}
             </span>
-            <span className="text-sm line-through text-[#C1C1C1]">
+            {/* <span className="text-sm line-through text-[#C1C1C1]">
               {convertToVND(displayPrice)}
-            </span>
+            </span> */}
           </div>
         </div>
 
-        <div className="flex flex-row  gap-2 mt-2">
+        <div className="flex flex-col md:flex-row gap-2">
           {productSpecs.map((spec: ProductSpecifications) => (
-            <SelectInput
-              key={spec.key}
-              options={spec.value.map((val) => ({ label: val, value: val }))}
-              value={selectedSpecs[spec.key] || ''}
-              onChange={(newValue) => handleSpecChange(spec.key, newValue)}
-              className="!w-[150px]"
-            />
+            <div className="w-fit md:w-1/2" key={spec.key}>
+              <SelectInput
+                key={spec.key}
+                options={spec.value.map((val) => ({ label: val, value: val }))}
+                value={selectedSpecs[spec.key] || ''}
+                onChange={(newValue) => handleSpecChange(spec.key, newValue)}
+                className="w-full md:flex-1 min-w-0 text-sm"
+                menuWidth={120}
+              />
+            </div>
           ))}
         </div>
 
@@ -129,13 +132,14 @@ export const CartItem: React.FC<CartItemProps> = ({
           </button>
         </div>
       </div>
+
       {/* Remove Button */}
       <div
-        className="w-6 flex items-center justify-center bg-[#F3F3F3] md:bg-inherit cursor-pointer"
+        className="w-fi self-stretch flex-shrink-0 flex items-center justify-center bg-[#F3F3F3] md:bg-inherit cursor-pointer"
         role="button"
         onClick={onRemove}
       >
-        <button className=" text-typo-1 hover:text-red-500" aria-label="Remove item">
+        <button className="text-typo-1 hover:text-red-500" aria-label="Remove item">
           {/* Trash Icon */}
           <CloseSVG className="w-4 h-4" />
         </button>

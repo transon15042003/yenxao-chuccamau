@@ -19,6 +19,7 @@ type SelectInputProps = {
   required?: boolean;
   disabled?: boolean;
   errorMessage?: string;
+  menuWidth?: number;
 };
 
 export const SelectInput = ({
@@ -30,7 +31,8 @@ export const SelectInput = ({
   onChange,
   required,
   disabled,
-  errorMessage
+  errorMessage,
+  menuWidth
 }: SelectInputProps) => {
   const selectedOption = useMemo(() => {
     return options.find((option) => option.value === value) || null;
@@ -76,7 +78,8 @@ export const SelectInput = ({
     menu: (provided: any) => ({
       ...provided,
       borderRadius: '8px',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      width: menuWidth || '110%'
     }),
     indicatorSeparator: (provided: any) => ({
       ...provided,
