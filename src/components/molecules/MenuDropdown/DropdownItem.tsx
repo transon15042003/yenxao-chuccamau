@@ -1,5 +1,8 @@
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import React from 'react';
+
+import { cn } from '@/lib/utils';
 
 interface DropdownItemProps {
   title: string;
@@ -7,15 +10,21 @@ interface DropdownItemProps {
   // isComing?: boolean;
   onClick?: () => void;
   isMobile?: boolean;
+  slug: string;
 }
 
-const DropdownItem = ({ title, link, onClick, isMobile }: DropdownItemProps) => {
+const DropdownItem = ({ title, link, onClick, isMobile, slug }: DropdownItemProps) => {
+  const c = useSearchParams().get('c');
+
   return (
     <div className={`relative flex flex-col items-start ${isMobile ? 'text-lg' : 'text-base'}`}>
       <div className="relative will-change-contents">
         <Link
           href={link}
-          className="hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90 transition-all duration-300"
+          className={cn(
+            'hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90 transition-all duration-300',
+            slug === c && 'text-transparent bg-clip-text bg-secondary-gradient-90'
+          )}
           onClick={onClick}
         >
           {title}
