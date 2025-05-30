@@ -12,13 +12,8 @@ import NavItem from './NavItem';
 const NavigationMenu = () => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
   const isProductsPage = pathname.includes('/products');
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -53,7 +48,7 @@ const NavigationMenu = () => {
         <button
           type="button"
           className={`flex items-center gap-1 h-full text-base lg:text-lg font-bold focus:outline-none group ${
-            isMounted && (open || isProductsPage)
+            isProductsPage
               ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
               : 'text-white hover:text-transparent hover:bg-clip-text hover:bg-secondary-gradient-90'
           }`}
@@ -62,9 +57,7 @@ const NavigationMenu = () => {
           SẢN PHẨM
           <ChevronDownIcon
             className={`w-4 h-4 ml-1 ${
-              isMounted && (open || isProductsPage)
-                ? 'stroke-secondary'
-                : 'stroke-white group-hover:stroke-secondary'
+              isProductsPage ? 'stroke-secondary' : 'stroke-white group-hover:stroke-secondary'
             }`}
             strokeWidth={2}
           />
