@@ -29,7 +29,7 @@ type QueryProduct = QueryResource<Product> & {
 export const getProducts = async (
   query?: QueryProduct
 ): Promise<QueryResourceResponse<Product>> => {
-  const { page = 1, take = 10, sortField, sortOrder, search, categorySlug } = query || {};
+  const { page = 1, take = 10, sortField, sortOrder, search, categorySlug, isAll } = query || {};
   const result = {
     data: [],
     metadata: {
@@ -79,6 +79,18 @@ export const getProducts = async (
 
   if (!filteredProducts.length) {
     return result;
+  }
+
+  if (isAll) {
+    return {
+      data: filteredProducts,
+      metadata: {
+        page,
+        take,
+        total: filteredProducts.length,
+        totalPages: 1
+      }
+    };
   }
 
   const total = filteredProducts.length;

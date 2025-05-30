@@ -5,13 +5,14 @@ export type Option = {
 
 export type QueryPage = {
   page: number;
-  take: number;
+  take?: number;
 };
 
 export type QueryResource<T> = QueryPage & {
   sortField?: keyof T;
   sortOrder?: 'asc' | 'desc';
   search?: string;
+  isAll?: boolean;
 };
 
 export type PaginationMetadata = {
