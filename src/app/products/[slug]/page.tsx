@@ -15,9 +15,7 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const product = await getProductBySlug(slug);
   const products = await getProducts({
     page: 1,
-    take: 100,
-    categorySlug: '',
-    ...{}
+    isAll: true
   });
   const category = await getCategoryBySlug(product?.categories[0] ?? '');
 
