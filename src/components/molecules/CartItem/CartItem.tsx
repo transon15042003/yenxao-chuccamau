@@ -1,3 +1,4 @@
+import useProductNavigation from '@/hooks/useProductNavigation';
 import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
 import { CartItem as TCartItem } from '@/types/cart';
 import { Product, ProductSpecifications, ProductVariant } from '@/types/product';
@@ -26,6 +27,7 @@ export const CartItem: React.FC<CartItemProps> = ({
   onRemove
 }) => {
   const { updateCartItemVariant } = useCart();
+  const { navigateToProductDetail, isNavigating } = useProductNavigation();
 
   const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
 
@@ -56,6 +58,12 @@ export const CartItem: React.FC<CartItemProps> = ({
     }));
   };
 
+  const handleProductClick = () => {
+    if (!isNavigating) navigateToProductDetail(product.slug);
+  };
+
+  const cursorClass = isNavigating ? 'cursor-wait' : 'cursor-pointer';
+
   const displayPrice = selectedVariant?.price || item.price;
   const displayName = selectedVariant?.name || item.name;
   const displayThumbnail = selectedVariant?.thumbnail || item.thumbnail;
@@ -63,7 +71,13 @@ export const CartItem: React.FC<CartItemProps> = ({
   return (
     <div className="flex w-full items-stretch py-4 bg-white rounded-lg">
       {/* Product Image */}
-      <div className="relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center ">
+      <div
+        className={cn(
+          'relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center ',
+          cursorClass
+        )}
+        onClick={handleProductClick}
+      >
         <Image
           className="rounded-[5px] object-cover"
           src={displayThumbnail}
@@ -74,7 +88,12 @@ export const CartItem: React.FC<CartItemProps> = ({
       <div className="flex-auto flex flex-col gap-3 mx-4 min-w-0">
         {/* Product Info */}
         <div className="min-w-0">
-          <div className="font-semibold leading-[1.36] text-typo-1 line-clamp-1">{displayName}</div>
+          <div
+            className={cn('font-semibold leading-[1.36] text-typo-1 line-clamp-1', cursorClass)}
+            onClick={handleProductClick}
+          >
+            {displayName}
+          </div>
           <div className="flex items-center gap-2 mt-2">
             <span className="font-semibold text-sm text-primary-dark">
               {convertToVND(displayPrice)}
