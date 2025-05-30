@@ -152,7 +152,7 @@ const PaymentPage = () => {
                       type="radio"
                       name="shipping"
                       className="w-4 h-4 accent-primary"
-                      defaultChecked
+                      // defaultChecked
                       checked={shippingMethod === 'STANDARD'}
                       onChange={() => setShippingMethod('STANDARD')}
                     />
