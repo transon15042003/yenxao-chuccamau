@@ -97,5 +97,10 @@ export const numberStyle = {
 
 export const HOST = process.env.NEXT_PUBLIC_APP_DOMAIN || 'http://localhost:3000';
 export const imageUrl = `${HOST}/images`;
-export const LOGO_IMAGE_URL = `${imageUrl}/logo-light.webp`;
+export const LOGO_IMAGE_URL = `${HOST}/logo-light.webp`;
 export const EMAIL_DIVIDER = `${imageUrl}/mail/ic_email_line.png`;
+export const FACEBOOK_IMAGE_URL = `${imageUrl}/mail/facebook.png`;
+export const INSTAGRAM_IMAGE_URL = `${imageUrl}/mail/instagram.png`;
+export const LINKEDIN_IMAGE_URL = `${imageUrl}/mail/linkedin.png`;
+export const TIKTOK_IMAGE_URL = `${imageUrl}/mail/tiktok.png`;
+export const PHONE_IMAGE_URL = `${imageUrl}/mail/phone.png`;
