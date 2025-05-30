@@ -31,7 +31,13 @@ export const CartDrawer = () => {
     router.push('/order');
   };
 
-  useOnClickOutside(cartContainerRef as RefObject<HTMLElement>, closeCart);
+  const handleClickOutside = () => {
+    if (isCartOpen) {
+      closeCart();
+    }
+  };
+
+  useOnClickOutside(cartContainerRef as RefObject<HTMLElement>, handleClickOutside);
 
   const discount = 0;
   const shipping = 0;
