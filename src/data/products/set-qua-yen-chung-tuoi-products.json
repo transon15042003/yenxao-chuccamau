@@ -32,7 +32,7 @@
         "name": "Set 6 hủ - 75 ml - 6 đường phèn",
         "specs": {
           "size": "75ml",
-          "savour": "6 đường phèn"
+          "savour": "4 đường phèn"
         },
         "price": 350000,
         "stock": 112,
@@ -55,7 +55,7 @@
   },
   {
     "id": "set-qua-10-hu",
-    "name": "Set quà 10 hu",
+    "name": "Set quà 10 hủ",
     "slug": "set-qua-10-hu",
     "price": 580000,
     "thumbnail": "/images/products/set-qua-yen-chung-tuoi/set10.jpg",

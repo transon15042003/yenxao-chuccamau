@@ -10,6 +10,17 @@ type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export async function generateStaticParams() {
+  const products = await getProducts({
+    page: 1,
+    isAll: true
+  });
+
+  return products.data.map((product) => ({
+    slug: product.slug
+  }));
+}
+
 const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);

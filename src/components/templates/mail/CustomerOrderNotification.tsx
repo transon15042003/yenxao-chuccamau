@@ -1,41 +1,42 @@
-/* eslint-disable @next/next/no-page-custom-font */
-import { Order } from '@/types/order';
-import { Box, Email, Item } from 'react-html-email';
+import { OrderCustomer } from '@/types/order';
+// import { Box, Email, Item, Span } from 'react-html-email';
 
-import { emailHeadCSS, containerStyle } from './InitSetup';
-import { rootStyle } from './InitSetup';
+// import { emailHeadCSS, labelStyle, contentStyle, rootStyle } from './InitSetup';
+
 import { MailContent } from './MailContent';
 import { MailFooter } from './MailFooter';
 
-export const CustomerOrderNotification = (orderCustomer: Order['customer']) => {
-  return (
-    <Box align="center" style={rootStyle}>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-        rel="stylesheet"
-      />
+const HEADER_COLOR = '#B4071A';
 
-      <Item style={{ paddingTop: '10px' }}>
-        <Box align="center" style={containerStyle}>
-          <Item>
-            <Email align="center" headCSS={emailHeadCSS} title="Thông báo đơn hàng">
-              <MailContent>
-                <Item align="center">
-                  Đặt hàng thành công, chúng tôi sẽ liên hệ lại bạn trong thời gian sớm nhất.
-                  <br />
-                  Cảm ơn bạn đã đặt hàng.
-                  <br />
-                  {JSON.stringify(orderCustomer)}
-                </Item>
-              </MailContent>
-              {/* footer */}
-              <MailFooter />
-            </Email>
-          </Item>
-        </Box>
-      </Item>
-    </Box>
-  );
-};
+export const CustomerOrderNotification = (customer: OrderCustomer) => (
+  <MailContent
+    headerColor={HEADER_COLOR}
+    title={`Kính chào ${customer.name},`}
+    messages={[
+      'Cảm ơn Anh/Chị đã đặt hàng tại Chúc Cà Mau.',
+      'Chúng tôi đã nhận được đơn hàng của Anh/Chị và sẽ xử lý trong thời gian sớm nhất.'
+    ]}
+    infoItems={{
+      labels: ['Khách hàng:', 'Email:', 'Số điện thoại:', 'Địa chỉ:'],
+      values: [
+        customer.name,
+        customer.email ? (
+          <a href={`mailto:${customer.email}`} style={{ color: '#0085E2', textDecoration: 'none' }}>
+            {customer.email}
+          </a>
+        ) : null,
+        customer.phone,
+        `${customer.address}${customer.district ? `, ${customer.district}` : ''}${
+          customer.province ? `, ${customer.province}` : ''
+        }`
+      ].filter(Boolean)
+    }}
+    highlightText="Chúng tôi sẽ liên hệ với Anh/Chị để xác nhận đơn hàng và thông báo thời gian giao hàng."
+  >
+    <tr>
+      <td style={{ padding: 0 }}>
+        <MailFooter />
+      </td>
+    </tr>
+  </MailContent>
+);

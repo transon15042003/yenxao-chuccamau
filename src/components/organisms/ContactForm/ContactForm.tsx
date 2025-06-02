@@ -2,7 +2,7 @@
 import useRecaptchaLogic from '@/hooks/useRecaptchaLogic';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HTMLAttributes } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { Controller, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { sendMail } from 'src/services/mail.service';
@@ -11,6 +11,7 @@ import { z } from 'zod';
 import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
 import { InputGroup } from '@/components/molecules/InputGroup';
+import { ContactNotification } from '@/components/templates/mail/ContactNotification';
 
 import { shippingInfomationFormSchema } from '../ShippingInformationForm';
 
@@ -58,15 +59,15 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     }
   });
 
-  const { recaptchaRef, token, onRecaptchaChange, resetRecaptcha, getValue } = useRecaptchaLogic();
+  const { verifyHuman } = useRecaptchaLogic();
 
   const validateRecaptchaAndSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
 
-      const recaptchaValue = getValue();
+      const verifyHumanResult = await verifyHuman('contact_form');
 
-      if (!recaptchaValue) {
+      if (!verifyHumanResult || !verifyHumanResult.success) {
         toast.error('Vui lòng xác thực reCAPTCHA');
 
         return;
@@ -84,13 +85,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
     if (data.message) {
       try {
         const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
-        const emailBodyHtml = `
-            <p><strong>Họ và tên:</strong> ${data.name}</p>
-            <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Số điện thoại:</strong> ${data.phone}</p>
-            ${data.subject ? `<p><strong>Tiêu đề:</strong> ${data.subject}</p>` : ''}
-            <p><strong>Nội dung:</strong><br/>${data.message ? data.message.replace(/\n/g, '<br/>') : 'Không có nội dung'}</p>
-          `;
+        const emailBodyHtml = renderToStaticMarkup(ContactNotification(data));
 
         await sendMail({
           subject: emailSubject,
@@ -117,7 +112,6 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         );
       } finally {
         setIsLoading(false);
-        resetRecaptcha();
       }
     } else {
       setIsLoading(false);
@@ -230,21 +224,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
         </div>
       </div>
 
-      <div className="mb-4">
-        <ReCAPTCHA
-          theme="light"
-          hl="vi"
-          ref={recaptchaRef}
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-          onChange={onRecaptchaChange}
-        />
-      </div>
-
-      <Button
-        className="w-full normal-case text-xl font-medium py-[13px]"
-        type="submit"
-        disabled={!token}
-      >
+      <Button className="w-full normal-case text-xl font-medium py-[13px]" type="submit">
         Gửi tin nhắn
       </Button>
     </form>
