@@ -137,13 +137,19 @@ export const CartItem: React.FC<CartItemProps> = ({
 
       {/* Remove Button */}
       <div
-        className="w-fi self-stretch flex-shrink-0 flex items-center justify-center bg-[#F3F3F3] md:bg-inherit cursor-pointer"
+        className={cn(
+          'w-fi',
+          'self-stretch flex-shrink-0 flex items-center justify-center',
+          'px-1 md:px-0',
+          'bg-[#F3F3F3] md:bg-inherit',
+          'cursor-pointer'
+        )}
         role="button"
         onClick={onRemove}
       >
         <button className="text-typo-1 hover:text-red-500" aria-label="Remove item">
           {/* Trash Icon */}
-          <CloseSVG className="w-4 h-4" />
+          <CloseSVG className="md:size-4 size-6" />
         </button>
       </div>
     </div>
