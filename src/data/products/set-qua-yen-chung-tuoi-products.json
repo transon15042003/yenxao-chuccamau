@@ -19,7 +19,7 @@
       },
       {
         "key": "savour",
-        "value": ["4 đường phèn", "mix đủ vị"]
+        "value": ["6 đường phèn", "mix đủ vị"]
       }
     ],
     "isNew": false,
@@ -32,7 +32,7 @@
         "name": "Set 6 hũ - 75 ml - 6 đường phèn",
         "specs": {
           "size": "75ml",
-          "savour": "4 đường phèn"
+          "savour": "6 đường phèn"
         },
         "price": 350000,
         "stock": 112,
