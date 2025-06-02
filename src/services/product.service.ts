@@ -43,6 +43,16 @@ export const getProducts = async (
 
   let productList = [...products];
 
+  if (search) {
+    const fuse = new Fuse(productList, {
+      keys: ['name', 'description', 'categories', 'variants.specs.savour', 'variants.specs.size'],
+      includeScore: true,
+      threshold: 0.3
+    });
+    const results = fuse.search(search);
+    productList = results.map((result) => result.item as Product);
+  }
+
   if (sortField) {
     const field = productList[0][sortField];
     if (field) {
@@ -56,16 +66,6 @@ export const getProducts = async (
         sortByStringField(productList, sortField as keyof Product, sortOrder);
       }
     }
-  }
-
-  if (search) {
-    const fuse = new Fuse(productList, {
-      keys: ['name', 'description', 'categories', 'variants.specs.savour', 'variants.specs.size'],
-      includeScore: true,
-      threshold: 0.3
-    });
-    const results = fuse.search(search);
-    productList = results.map((result) => result.item as Product);
   }
 
   const filteredProducts = productList.filter((product) => {

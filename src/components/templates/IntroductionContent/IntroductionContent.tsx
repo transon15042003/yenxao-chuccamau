@@ -90,7 +90,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                     icon={el.icon}
                     title={el.title}
                     description={el.description}
-                    className="w-[360px] max-w-[360px]"
+                    className="w-[382px] max-w-[382px] h-[438px] max-h-[438px]"
                   />
                 ))}
               </div>
@@ -203,17 +203,18 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
       <IntroductionSection
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
-        className="lg:py-[70px] py-[36px]"
       >
-        <div className="lg:grid lg:grid-cols-12 relative">
-          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
-            <ContactInfoBlock
-              className="lg:w-1/2 w-full"
-              contentClass="!bg-[#F4F1ED]"
-              contactData={contactInfo}
-              onScrollToMap={handleOpenMap}
-            />
-            <ContactForm className="lg:w-1/2 w-full px-4 lg:px-0" setIsLoading={setIsLoading} />
+        <div className="flex justify-center relative mb-8">
+          <div className="mt-[42px] md:w-3/4 w-full">
+            <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
+              <ContactInfoBlock
+                className="pt-0 lg:w-1/2 w-full lg:mt-0 mt-[42px]"
+                contentClass="bg-[#F4F1ED]"
+                contactData={contactInfo}
+                onScrollToMap={handleOpenMap}
+              />
+              <ContactForm className="lg:w-1/2 w-full px-4" setIsLoading={setIsLoading} />
+            </div>
             {isLoading && <LoadingOverlay />}
           </div>
           <Image
