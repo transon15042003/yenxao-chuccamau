@@ -53,13 +53,14 @@ export const MailContent = ({
               height={125}
               style={{
                 display: 'block',
-                margin: '0 auto'
+                margin: '0 auto',
+                background: 'transparent'
               }}
             />
           </td>
         </tr>
         <tr>
-          <td style={{ background: '#fff', color: '#212121', padding: '20px 32px' }}>
+          <td style={{ background: '#fff', color: '#212121', padding: '10px 12px' }}>
             <span style={{ fontWeight: 600, fontSize: 20, display: 'block', marginBottom: 8 }}>
               {title}
             </span>
@@ -80,18 +81,38 @@ export const MailContent = ({
               width="100%"
               cellPadding={0}
               cellSpacing={0}
-              style={{ fontSize: 16, color: '#000000', marginTop: 18 }}
+              style={{
+                fontSize: 16,
+                color: '#000000',
+                marginTop: 18,
+                tableLayout: 'fixed'
+              }}
             >
               <tbody>
                 <tr>
                   {/* Cột trái: ul label */}
-                  <td width="50%" style={{ verticalAlign: 'top', padding: 0 }}>
-                    <ul style={{ listStyle: 'disc inside', margin: 0, padding: 0 }}>
+                  <td
+                    width="50%"
+                    style={{
+                      verticalAlign: 'top',
+                      padding: '0 8px 0 0',
+                      minWidth: '120px'
+                    }}
+                  >
+                    <ul
+                      style={{
+                        listStyle: 'disc inside',
+                        margin: 0,
+                        padding: 0,
+                        wordBreak: 'break-word'
+                      }}
+                    >
                       {infoItems.labels.map((label, index) => (
                         <li
                           key={index}
                           style={{
-                            marginBottom: index === infoItems.labels.length - 1 ? 0 : 12
+                            marginBottom: index === infoItems.labels.length - 1 ? 0 : 12,
+                            paddingRight: 8
                           }}
                         >
                           {label}
@@ -100,7 +121,15 @@ export const MailContent = ({
                     </ul>
                   </td>
                   {/* Cột phải: value */}
-                  <td width="50%" style={{ fontWeight: 600, verticalAlign: 'top', padding: 0 }}>
+                  <td
+                    width="50%"
+                    style={{
+                      fontWeight: 600,
+                      verticalAlign: 'top',
+                      padding: '0 0 0 8px',
+                      wordBreak: 'break-word'
+                    }}
+                  >
                     {infoItems.values.map((value, index) => (
                       <div
                         key={index}
