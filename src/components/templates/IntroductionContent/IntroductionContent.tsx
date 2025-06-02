@@ -208,6 +208,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           <div className="mt-[42px] md:w-3/4 w-full">
             <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5 mt-[42px]">
               <ContactInfoBlock
+                className="pt-0 lg:w-1/2 w-full"
                 contentClass="bg-[#F4F1ED]"
                 contactData={contactInfo}
                 onScrollToMap={handleOpenMap}
