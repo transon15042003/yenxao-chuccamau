@@ -90,7 +90,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
                     icon={el.icon}
                     title={el.title}
                     description={el.description}
-                    className="w-[360px] max-w-[360px]"
+                    className="w-[382px] max-w-[382px] h-[438px] max-h-[438px]"
                   />
                 ))}
               </div>
@@ -208,7 +208,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         <div className="lg:grid lg:grid-cols-12 relative">
           <div className="lg:col-span-10 lg:col-start-2 mt-[42px] lg:flex lg:flex-row flex flex-col-reverse">
             <ContactInfoBlock
-              className="lg:w-1/2 w-full"
+              className="lg:w-1/2 w-full py-0"
               contentClass="!bg-[#F4F1ED]"
               contactData={contactInfo}
               onScrollToMap={handleOpenMap}
