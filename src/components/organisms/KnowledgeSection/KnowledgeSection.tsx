@@ -33,7 +33,7 @@ export const KnowledgeSection = () => {
   }, []);
 
   return (
-    <div className="w-full h-auto flex flex-col items-center justify-between py-[70px] relative overflow-hidden">
+    <div className="w-full h-auto py-[70px] relative overflow-hidden">
       {/* Phần tử div riêng cho ảnh nền, xoay và làm mờ */}
       <div
         className="absolute w-full h-full
@@ -47,20 +47,22 @@ export const KnowledgeSection = () => {
         {/* Div này chỉ dùng cho hiệu ứng nền */}
       </div>
 
-      <SectionTitle
-        heading="Tin Tức & Hướng Dẫn"
-        subHeading="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
-      />
+      <div className="relative w-full z-10 flex flex-col items-center justify-between">
+        <SectionTitle
+          heading="Tin Tức & Hướng Dẫn"
+          subHeading="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
+        />
 
-      <NewFeed initialBlogs={latestBlogs} loading={loading} />
+        <NewFeed initialBlogs={latestBlogs} loading={loading} />
 
-      <Button
-        className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
-        fill="outline"
-        onClick={() => router.push('/blogs')}
-      >
-        Xem tất cả bài viết
-      </Button>
+        <Button
+          className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
+          fill="outline"
+          onClick={() => router.push('/blog')}
+        >
+          Xem tất cả bài viết
+        </Button>
+      </div>
     </div>
   );
 };

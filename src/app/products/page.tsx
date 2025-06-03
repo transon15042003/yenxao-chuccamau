@@ -21,7 +21,7 @@ export async function generateMetadata({
     description: StaticSEOContent.productsPage.desc,
     keywords: StaticSEOContent.productsPage.keywords,
     alternates: {
-      canonical: StaticSEOContent.productsPage.canonicalUrl
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
     }
   };
 
@@ -34,10 +34,18 @@ export async function generateMetadata({
     cate = '';
   }
 
-  const meta =
-    cate && dynamicProductCateContent[cate] ? dynamicProductCateContent[cate] : defaultMeta;
+  if (cate && dynamicProductCateContent[cate]) {
+    return {
+      title: dynamicProductCateContent[cate].title,
+      description: dynamicProductCateContent[cate].desc,
+      keywords: dynamicProductCateContent[cate].keywords,
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${cate}`
+      }
+    };
+  }
 
-  return meta;
+  return defaultMeta;
 }
 
 type PageNumber = number;

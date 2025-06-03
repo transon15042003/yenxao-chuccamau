@@ -1,12 +1,14 @@
 'use client';
 
+import { useCartProducts } from '@/hooks/useCartProducts';
+import useRecaptchaLogic from '@/hooks/useRecaptchaLogic';
 import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
 import { PaymentGateway } from '@/types/payment';
-import { addDays, format } from 'date-fns';
 import Link from 'next/link';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 import { Button } from '@/components/atoms/Button';
 import { Stepper } from '@/components/atoms/Step';
@@ -72,6 +74,9 @@ const PaymentPage = () => {
 
   const [discountErrorMessage, setDiscountErrorMessage] = useState<string | undefined>(undefined);
   const [discountCode, setDiscountCode] = useState<string>('');
+  const { verifyHuman } = useRecaptchaLogic();
+
+  const { productsData } = useCartProducts(cart);
 
   const shipping = 0;
   const discount = 0;
@@ -82,7 +87,7 @@ const PaymentPage = () => {
       return false;
     }
 
-    if (!shippingInfoForm.formState.isValid) {
+    if (shippingInfoForm.formState.submitCount > 0 && !shippingInfoForm.formState.isValid) {
       return false;
     }
 
@@ -93,241 +98,257 @@ const PaymentPage = () => {
     return true;
   };
 
+  const handlePlaceOrder = async () => {
+    try {
+      const verifyHumanResult = await verifyHuman('place_order');
+
+      if (!verifyHumanResult || !verifyHumanResult.success) {
+        throw new Error('Xác thực reCAPTCHA lỗi, vui lòng thử lại');
+      }
+
+      placeOrder(cart.items);
+    } catch (error) {
+      toast.error('Xác thực reCAPTCHA lỗi, vui lòng thử lại');
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     if (!discountCode) {
       setDiscountErrorMessage('');
     }
   }, [discountCode]);
 
-  const today = new Date();
-
   return (
-    <div className="bg-[#F7F7F7] pt-10 pb-20">
-      <div className="w-[95%] lg:w-[85%] mx-auto 2xl:max-w-[1200px] ">
-        <div className="bg-white px-5 py-6 flex flex-col md:flex-row justify-between md:items-center gap-6 rounded-[5px]">
-          <CheckoutBoxHeading>Thanh toán</CheckoutBoxHeading>
-          <div className="w-full md:w-fit">
-            {/* Steps */}
-            <Stepper steps={steps} currentStep={2} className="" />
-          </div>
-        </div>
-
-        <div className="mt-3 flex flex-col md:flex-row gap-3">
-          {/* Left: Form & Info */}
-          <div className="flex flex-col gap-3 w-full md:w-2/3">
-            {/* Shipping Info */}
-            <div className={cn(boxBaseClassName)}>
-              <CheckoutBoxHeading>Thông tin giao hàng</CheckoutBoxHeading>
-              <div className="mt-1.5">
-                <ShippingInfomationForm formObject={shippingInfoForm} />
-              </div>
+    <>
+      {/* <ReCaptcha onValidate={onRecaptchaChange} action="page_view" /> */}
+      <div className="bg-[#F7F7F7] pt-10 pb-20">
+        <div className="w-[95%] lg:w-[85%] mx-auto 2xl:max-w-[1200px] ">
+          <div className="bg-white px-5 py-6 flex flex-col md:flex-row justify-between md:items-center gap-6 rounded-[5px]">
+            <CheckoutBoxHeading>Thanh toán</CheckoutBoxHeading>
+            <div className="w-full md:w-fit">
+              {/* Steps */}
+              <Stepper steps={steps} currentStep={2} className="" />
             </div>
+          </div>
 
-            {/* Shipping Method */}
-            <div className={cn(boxBaseClassName)}>
-              <CheckoutBoxHeading>Chọn hình thức giao hàng</CheckoutBoxHeading>
-              <div className="mt-1.5">
-                <div className="flex flex-col md:flex-row gap-3">
-                  <label className="flex gap-3 p-4 border rounded-lg cursor-pointer text-typo-1 w-full md:w-1/2">
-                    <input
-                      type="radio"
-                      name="shipping"
-                      className="w-4 h-4 accent-primary"
-                      defaultChecked
-                      checked={shippingMethod === 'STANDARD'}
-                      onChange={() => setShippingMethod('STANDARD')}
-                    />
-                    <div>
-                      <p className="text-typo-1">
-                        Giao hàng tiêu chuẩn <span className="text-primary ml-2">Miễn phí</span>
-                      </p>
-                      <p className="text-typo-1">
-                        Thời gian dự kiến:{' '}
-                        <span className="text-typo-1 font-bold">
-                          {format(addDays(today, 1), 'dd/MM')} -{' '}
-                          {format(addDays(today, 3), 'dd/MM')}
-                        </span>
-                      </p>
-                    </div>
-                  </label>
-
-                  <label className="flex gap-3 p-4 border rounded-lg cursor-pointer w-full md:w-1/2">
-                    <input
-                      type="radio"
-                      name="shipping"
-                      className="w-4 h-4 accent-primary"
-                      checked={shippingMethod === 'WORKING_HOURS'}
-                      onChange={() => setShippingMethod('WORKING_HOURS')}
-                    />
-                    <div>
-                      <p className="text-typo-1">Giao hàng giờ hành chính từ </p>
-                      <p className="text-typo-1 font-bold">Thứ 2 đến Thứ 7</p>
-                    </div>
-                  </label>
+          <div className="mt-3 flex flex-col md:flex-row gap-3">
+            {/* Left: Form & Info */}
+            <div className="flex flex-col gap-3 w-full md:w-2/3">
+              {/* Shipping Info */}
+              <div className={cn(boxBaseClassName)}>
+                <CheckoutBoxHeading>Thông tin giao hàng</CheckoutBoxHeading>
+                <div className="mt-1.5">
+                  <ShippingInfomationForm formObject={shippingInfoForm} />
                 </div>
               </div>
-            </div>
 
-            {/*  Payment Method */}
-            <div className={cn(boxBaseClassName)}>
-              <CheckoutBoxHeading>Phương thức thanh toán</CheckoutBoxHeading>
-              <div className="mt-1.5">
-                <div className="flex flex-col gap-y-4">
-                  {paymentMethods.map((method) => (
-                    <div
-                      key={method.id}
-                      className="flex items-center gap-x-4 font-medium text-typo-1"
-                    >
+              {/* Shipping Method */}
+              <div className={cn(boxBaseClassName)}>
+                <CheckoutBoxHeading>Chọn hình thức giao hàng</CheckoutBoxHeading>
+                <div className="mt-1.5">
+                  <div className="flex flex-col md:flex-row gap-3">
+                    <label className="flex gap-3 p-4 border rounded-lg cursor-pointer text-typo-1 w-full md:w-1/2">
                       <input
                         type="radio"
-                        name="payment_method"
-                        id={method.id}
-                        className="h-4 w-4 border-[#CCCCCC] accent-primary"
-                        checked={paymentMethod === method.id}
-                        onChange={() => setPaymentMethod(method.id)}
+                        name="shipping"
+                        className="w-4 h-4 accent-primary"
+                        defaultChecked
+                        checked={shippingMethod === 'STANDARD'}
+                        onChange={() => setShippingMethod('STANDARD')}
                       />
-                      <label
-                        htmlFor={method.id}
-                        className="flex items-center gap-x-2 hover:cursor-pointer"
+                      <div>
+                        <p className="text-typo-1">
+                          Giao hàng tiêu chuẩn <span className="text-primary ml-2">Miễn phí</span>
+                        </p>
+                        <p className="text-typo-1">
+                          <span className="text-typo-1 font-bold">2h (nội thành HCM)</span>
+                        </p>
+                      </div>
+                    </label>
+
+                    <label className="flex gap-3 p-4 border rounded-lg cursor-pointer w-full md:w-1/2">
+                      <input
+                        type="radio"
+                        name="shipping"
+                        className="w-4 h-4 accent-primary"
+                        checked={shippingMethod === 'WORKING_HOURS'}
+                        value="WORKING_HOURS"
+                        onChange={() => setShippingMethod('WORKING_HOURS')}
+                      />
+                      <div>
+                        <p className="text-typo-1">Giao hàng giờ hành chính từ </p>
+                        <p className="text-typo-1 font-bold">Thứ 2 đến Thứ 7</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              {/*  Payment Method */}
+              <div className={cn(boxBaseClassName)}>
+                <CheckoutBoxHeading>Phương thức thanh toán</CheckoutBoxHeading>
+                <div className="mt-1.5">
+                  <div className="flex flex-col gap-y-4">
+                    {paymentMethods.map((method) => (
+                      <div
+                        key={method.id}
+                        className="flex items-center gap-x-4 font-medium text-typo-1"
                       >
-                        <span className="font-medium text-[#212121]">{method.name}</span>
-                      </label>
-                    </div>
-                  ))}
+                        <input
+                          type="radio"
+                          name="payment_method"
+                          id={method.id}
+                          className="h-4 w-4 border-[#CCCCCC] accent-primary"
+                          checked={paymentMethod === method.id}
+                          onChange={() => setPaymentMethod(method.id)}
+                        />
+                        <label
+                          htmlFor={method.id}
+                          className="flex items-center gap-x-2 hover:cursor-pointer"
+                        >
+                          <span className="font-medium text-[#212121]">{method.name}</span>
+                        </label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Invoice Info */}
-            <div className={cn(boxBaseClassName)}>
-              <label htmlFor="invoice_info" className="flex items-center gap-x-4">
-                <input
-                  type="checkbox"
-                  id="invoice_info"
-                  checked={isUseInvoiceForm}
-                  onChange={(e) => setIsUseInvoiceForm(e.target.checked)}
-                  className="h-6 w-6 rounded border-[#BDBDBD] accent-primary"
-                />
-                <span className="text-xl font-bold">Thông tin xuất hóa đơn</span>
-              </label>
-              <div className="mt-1.5">
-                <InvoiceForm formObject={invoiceForm} readonly={!isUseInvoiceForm} />
-              </div>
-            </div>
-
-            {/* Order Note */}
-            <div className={cn(boxBaseClassName)}>
-              <label htmlFor="order_note" className="flex items-center gap-x-4">
-                <input
-                  type="checkbox"
-                  id="order_note"
-                  checked={isUseNoteForm}
-                  onChange={(e) => setIsUseNoteForm(e.target.checked)}
-                  className="h-6 w-6 rounded border-[#BDBDBD] accent-primary"
-                />
-                <span className="text-xl font-bold">Ghi chú đơn hàng</span>
-              </label>
-              <div className="mt-1.5">
-                <InputGroup
-                  disabled={!isUseNoteForm}
-                  maxLength={75}
-                  placeholder="Lời nhắn viết lên thiệp, tối đa 75 từ..."
-                  className="resize-none"
-                  value={orderNote}
-                  onChange={(e) => setOrderNote(e.target.value)}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Cart Summary & Place Order */}
-          <div className="flex flex-col gap-3">
-            {cart.items.length > 0 ? (
-              <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
-                {cart.items?.map((item, idx) => (
-                  <CartItem
-                    key={idx}
-                    image={item.thumbnail}
-                    name={item.name || ''}
-                    oldPrice={convertToVND(item.price)}
-                    price={convertToVND(item.price)}
-                    quantity={item.quantity}
-                    onIncrease={() => increaseQuantity(item.sku, 1)}
-                    onDecrease={() => decreaseQuantity(item.sku, 1)}
-                    onRemove={() => removeFromCart(item.sku)}
+              {/* Invoice Info */}
+              <div className={cn(boxBaseClassName)}>
+                <label htmlFor="invoice_info" className="flex items-center gap-x-4">
+                  <input
+                    type="checkbox"
+                    id="invoice_info"
+                    checked={isUseInvoiceForm}
+                    onChange={(e) => setIsUseInvoiceForm(e.target.checked)}
+                    className="h-6 w-6 rounded border-[#BDBDBD] accent-primary"
                   />
-                ))}
-              </div>
-            ) : (
-              <div className="flex flex-col gap-4 bg-white rounded-lg p-6 items-center">
-                <div className="flex flex-col gap-4">
-                  <span className="text-typo-1 font-bold text-xl">Giỏ hàng trống</span>
+                  <span className="text-xl font-bold">Thông tin xuất hóa đơn</span>
+                </label>
+                <div className="mt-1.5">
+                  <InvoiceForm formObject={invoiceForm} readonly={!isUseInvoiceForm} />
                 </div>
-                <Link href="/products" className="text-smfont-bold text-primary">
-                  Tiếp tục mua hàng
-                </Link>
               </div>
-            )}
 
-            {/* Discount Code */}
-            <div className={cn(boxBaseClassName)}>
-              <CheckoutBoxHeading>
-                Bạn có mã giảm giá? <span className="text-primary">Áp ngay!</span>
-              </CheckoutBoxHeading>
-              <div className="mt-1.5 flex gap-2 items-start">
-                <InputGroup
-                  className="flex-1"
-                  placeholder="Nhập mã phiếu giảm giá"
-                  errorMessage={discountErrorMessage}
-                  value={discountCode}
-                  onChange={(e) => setDiscountCode(e.target.value)}
-                />
-                <button
-                  onClick={() => setDiscountErrorMessage('Mã giảm giá không hợp lệ')}
-                  className="bg-[#424B5A] text-white text-sm font-bold rounded-[5px] px-6 py-3 hover:opacity-80 transition-all duration-75"
-                >
-                  Áp dụng
-                </button>
+              {/* Order Note */}
+              <div className={cn(boxBaseClassName)}>
+                <label htmlFor="order_note" className="flex items-center gap-x-4">
+                  <input
+                    type="checkbox"
+                    id="order_note"
+                    checked={isUseNoteForm}
+                    onChange={(e) => setIsUseNoteForm(e.target.checked)}
+                    className="h-6 w-6 rounded border-[#BDBDBD] accent-primary"
+                  />
+                  <span className="text-xl font-bold">Ghi chú đơn hàng</span>
+                </label>
+                <div className="mt-1.5">
+                  <InputGroup
+                    disabled={!isUseNoteForm}
+                    maxLength={75}
+                    placeholder="Lời nhắn viết lên thiệp, tối đa 75 từ..."
+                    className="resize-none"
+                    value={orderNote}
+                    onChange={(e) => setOrderNote(e.target.value)}
+                  />
+                </div>
               </div>
             </div>
 
-            {/* Summary */}
-            <div className={cn(boxBaseClassName)}>
-              <div className="mt-1.5">
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center justify-between">
-                    <span>Tạm tính</span>
-                    <span>{convertToVND(total)}</span>
-                  </div>
+            {/* Right: Cart Summary & Place Order */}
+            <div className="flex flex-col gap-3">
+              {cart.items.length > 0 ? (
+                <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
+                  {cart.items?.map((item) => {
+                    const product = productsData.get(item.productId);
 
-                  <div className="hidden items-center justify-between">
-                    <span>Phí vận chuyển</span>
-                    <span>{convertToVND(shipping)}</span>
-                  </div>
+                    if (!product) return null;
 
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold ">Tổng cộng</span>
-                    <span className="font-bold text-primary">
-                      {convertToVND(total - discount + shipping)}
-                    </span>
-                  </div>
+                    return (
+                      <CartItem
+                        key={item.sku}
+                        item={item}
+                        product={product}
+                        onIncrease={() => increaseQuantity(item.sku, 1)}
+                        onDecrease={() => decreaseQuantity(item.sku, 1)}
+                        onRemove={() => removeFromCart(item.sku)}
+                      />
+                    );
+                  })}
                 </div>
+              ) : (
+                <div className="flex flex-col gap-4 bg-white rounded-lg p-6 items-center">
+                  <div className="flex flex-col gap-4">
+                    <span className="text-typo-1 font-bold text-xl">Giỏ hàng trống</span>
+                  </div>
+                  <Link href="/products" className="text-smfont-bold text-primary">
+                    Tiếp tục mua hàng
+                  </Link>
+                </div>
+              )}
 
-                <div className="mt-6">
-                  <Button
-                    className="w-full uppercase text-xl font-bold py-[13px]"
-                    disabled={!getTakeOrderStatus()}
-                    onClick={() => placeOrder(cart.items)}
+              {/* Discount Code */}
+              <div className={cn(boxBaseClassName)}>
+                <CheckoutBoxHeading>
+                  Bạn có mã giảm giá? <span className="text-primary">Áp ngay!</span>
+                </CheckoutBoxHeading>
+                <div className="mt-1.5 flex gap-2 items-start">
+                  <InputGroup
+                    className="flex-1"
+                    placeholder="Nhập mã phiếu giảm giá"
+                    errorMessage={discountErrorMessage}
+                    value={discountCode}
+                    onChange={(e) => setDiscountCode(e.target.value)}
+                  />
+                  <button
+                    onClick={() => setDiscountErrorMessage('Mã giảm giá không hợp lệ')}
+                    className="bg-[#424B5A] text-white text-sm font-bold rounded-[5px] px-6 py-3 hover:opacity-80 transition-all duration-75"
                   >
-                    Đặt hàng
-                  </Button>
+                    Áp dụng
+                  </button>
+                </div>
+              </div>
+
+              {/* Summary */}
+              <div className={cn(boxBaseClassName)}>
+                <div className="mt-1.5">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-center justify-between">
+                      <span>Tạm tính</span>
+                      <span>{convertToVND(total)}</span>
+                    </div>
+
+                    <div className="hidden items-center justify-between">
+                      <span>Phí vận chuyển</span>
+                      <span>{convertToVND(shipping)}</span>
+                    </div>
+
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold ">Tổng cộng</span>
+                      <span className="font-bold text-primary">
+                        {convertToVND(total - discount + shipping)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <Button
+                      className="w-full uppercase text-xl font-bold py-[13px]"
+                      disabled={!getTakeOrderStatus()}
+                      onClick={handlePlaceOrder}
+                    >
+                      Đặt hàng
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

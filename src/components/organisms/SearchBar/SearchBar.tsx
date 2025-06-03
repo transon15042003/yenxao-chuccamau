@@ -1,12 +1,13 @@
 'use client';
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const SearchBar = () => {
   const param = 'search';
 
   const router = useRouter();
   const searchParams = useSearchParams();
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const initialSearchTerm = searchParams.get(param) || '';
   const [searchTerm, setSearchTerm] = useState<string>(initialSearchTerm);
@@ -28,11 +29,16 @@ const SearchBar = () => {
     currentParams.delete('p');
 
     router.push(`/products?${currentParams.toString()}`);
+
+    if (inputRef.current) {
+      inputRef.current.blur(); // Ẩn bàn phím ảo
+    }
   };
 
   return (
     <form onSubmit={handleSearch} method="get" className="relative flex items-center w-full">
       <input
+        ref={inputRef}
         type="text"
         placeholder="Tìm kiếm"
         className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-[14px] md:text-base [-webkit-appearance:none] rounded-none"

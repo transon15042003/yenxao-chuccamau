@@ -1,6 +1,7 @@
 'use client';
 
 import useBuyNowLogic from '@/hooks/useBuyNowLogic';
+import { getProductSku } from '@/services/product.service';
 import { BoxSVG } from '@/svg/BoxSVG/BoxSVG';
 // import { NoticeSVG } from '@/svg/NoticeSVG/NoticeSVG';
 import { MinusSVG } from '@/svg/MinusSVG/MinusSVG';
@@ -52,10 +53,14 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         console.warn(`Do not have ${type}`);
     }
   };
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
+    const sku = await getProductSku(product.id, curSize, curFlavor);
+
+    if (!sku) return;
+
     const cartItem: CartItem = {
       productId: product.id,
-      sku: '',
+      sku: sku,
       name: name,
       price: price || 0,
       quantity: amount,

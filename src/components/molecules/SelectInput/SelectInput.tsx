@@ -19,6 +19,9 @@ type SelectInputProps = {
   required?: boolean;
   disabled?: boolean;
   errorMessage?: string;
+  menuWidth?: number;
+  controlHeight?: string;
+  paddingX?: string;
 };
 
 export const SelectInput = ({
@@ -30,7 +33,10 @@ export const SelectInput = ({
   onChange,
   required,
   disabled,
-  errorMessage
+  errorMessage,
+  menuWidth,
+  controlHeight = '42px',
+  paddingX = '4px'
 }: SelectInputProps) => {
   const selectedOption = useMemo(() => {
     return options.find((option) => option.value === value) || null;
@@ -44,7 +50,9 @@ export const SelectInput = ({
       borderColor: '#424B5A',
       borderRadius: '8px',
       boxShadow: 'none',
-      minHeight: '42px',
+      minHeight: controlHeight,
+      paddingLeft: typeof paddingX === 'number' ? `${paddingX}px` : paddingX,
+      paddingRight: typeof paddingX === 'number' ? `${paddingX}px` : paddingX,
       cursor: 'pointer',
       '&:hover': {
         borderColor: '#424B5A'
@@ -60,7 +68,8 @@ export const SelectInput = ({
     }),
     input: (provided: any) => ({
       ...provided,
-      color: '#2A2A40'
+      color: '#2A2A40',
+      caretColor: 'transparent'
     }),
     option: (provided: any, state: any) => ({
       ...provided,
@@ -75,7 +84,8 @@ export const SelectInput = ({
     menu: (provided: any) => ({
       ...provided,
       borderRadius: '8px',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      width: menuWidth || '110%'
     }),
     indicatorSeparator: (provided: any) => ({
       ...provided,

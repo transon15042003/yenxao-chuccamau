@@ -1,5 +1,6 @@
 import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import React, { PropsWithChildren } from 'react';
 
 import PaymentPageProvider from './_context/PaymentPageContext';
@@ -16,7 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const PaymentLayout = ({ children }: PropsWithChildren) => {
-  return <PaymentPageProvider>{children}</PaymentPageProvider>;
+  return (
+    <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+      <PaymentPageProvider>{children}</PaymentPageProvider>
+    </ReCaptchaProvider>
+  );
 };
 
 export default PaymentLayout;

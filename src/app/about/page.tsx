@@ -1,5 +1,6 @@
 import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import Image from 'next/image';
 import { getContactInfo } from 'src/services/contact.service';
 
@@ -22,13 +23,15 @@ const IntroductionPage = async () => {
   return (
     <div>
       <Image
-        src="/images/backgrounds/img_panel.svg"
+        src="/images/introduction/bg.png"
         alt="panel"
-        width={100}
-        height={100}
+        width={1500}
+        height={600}
         className="w-full h-auto"
       />
-      <IntroductionContent contactInfo={contactData} />
+      <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}>
+        <IntroductionContent contactInfo={contactData} />
+      </ReCaptchaProvider>
     </div>
   );
 };

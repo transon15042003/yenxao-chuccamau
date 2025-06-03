@@ -10,14 +10,23 @@ type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export async function generateStaticParams() {
+  const products = await getProducts({
+    page: 1,
+    isAll: true
+  });
+
+  return products.data.map((product) => ({
+    slug: product.slug
+  }));
+}
+
 const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   const products = await getProducts({
     page: 1,
-    take: 100,
-    categorySlug: '',
-    ...{}
+    isAll: true
   });
   const category = await getCategoryBySlug(product?.categories[0] ?? '');
 
@@ -41,7 +50,9 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
             { label: product.name, href: product.slug }
           ]}
         />
-        <DetailProduct />
+        <div className="flex justify-center">
+          <DetailProduct />
+        </div>
       </div>
     </DetailProductProvider>
   );

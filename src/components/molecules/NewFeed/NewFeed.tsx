@@ -2,7 +2,7 @@
 import { BlogPost } from '@/types/blog';
 import { useEffect, useState } from 'react';
 
-import { New } from '@/components/atoms/New';
+import { BlogCard } from '@/components/organisms/BlogCard/BlogCard';
 
 type NewFeedProps = {
   initialBlogs?: BlogPost[];
@@ -21,7 +21,7 @@ export const NewFeed = ({ initialBlogs, loading, className }: NewFeedProps) => {
 
   return (
     <div
-      className={`w-full lg:w-5/6 flex flex-wrap flex-col md:flex-row justify-between items-center relative z-10 my-9 ${className}`}
+      className={`w-full lg:w-full lg:px-[64px] flex flex-wrap flex-col md:flex-row justify-between items-center relative z-10 my-9 ${className}`}
     >
       {loading ? (
         <div className="w-full flex items-center justify-center">
@@ -46,17 +46,24 @@ export const NewFeed = ({ initialBlogs, loading, className }: NewFeedProps) => {
           </div>
         </div>
       ) : blogsToDisplay.length > 0 ? (
-        blogsToDisplay.map((blog) => (
-          <New
-            key={blog.id}
-            imageUrl={blog.thumbnailUrl ? blog.thumbnailUrl : '/images/background/news.png'}
-            date={blog.postedDate}
-            readTime={`${blog.minRead} min`}
-            title={blog.title}
-            description={blog.description ? blog.description.substring(0, 100) + '...' : ''}
-            linkUrl={`/blog/${blog.slug}`}
-          />
-        ))
+        <div className="w-full flex flex-wrap gap-8 justify-center">
+          {blogsToDisplay.map((blog) => (
+            <div
+              key={blog.id}
+              className="border border-gray-200 rounded-lg overflow-hidden shadow-md my-1
+                 w-4/5 md:w-[380px]"
+            >
+              <BlogCard
+                thumbnailUrl={blog.thumbnailUrl || ''}
+                title={blog.title || ''}
+                description={blog.description || ''}
+                postedDate={blog.postedDate || ''}
+                minRead={blog.minRead || 0}
+                href={`/blog/${blog.slug}`}
+              />
+            </div>
+          ))}
+        </div>
       ) : (
         <p>Không tìm thấy bài viết mới nào.</p>
       )}
