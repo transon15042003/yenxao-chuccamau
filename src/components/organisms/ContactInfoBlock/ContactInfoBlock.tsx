@@ -35,13 +35,17 @@ type ContactInfoBlockProps = {
   contactData: ContactType[];
   onScrollToMap?: () => void;
   contentClass?: string;
+  bgClass?: string;
 };
 
 export const ContactInfoBlock = (props: ContactInfoBlockProps) => {
   return (
     <div className={cn(`p-10 relative overflow-hidden`, props.className)}>
       <div
-        className="absolute bottom-0 right-40 w-full h-full bg-repeat bg-contain origin-bottom-left"
+        className={cn(
+          'absolute bottom-0 right-40 w-full h-full bg-repeat bg-contain origin-bottom-left',
+          props.bgClass
+        )}
         style={{
           backgroundImage: `url('/images/backgrounds/img_multi_line.svg')`,
           top: '20%'
