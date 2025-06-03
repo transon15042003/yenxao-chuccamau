@@ -20,6 +20,7 @@ type SelectInputProps = {
   disabled?: boolean;
   errorMessage?: string;
   menuWidth?: number;
+  controlHeight?: string;
 };
 
 export const SelectInput = ({
@@ -32,7 +33,8 @@ export const SelectInput = ({
   required,
   disabled,
   errorMessage,
-  menuWidth
+  menuWidth,
+  controlHeight = '42px'
 }: SelectInputProps) => {
   const selectedOption = useMemo(() => {
     return options.find((option) => option.value === value) || null;
@@ -46,7 +48,7 @@ export const SelectInput = ({
       borderColor: '#424B5A',
       borderRadius: '8px',
       boxShadow: 'none',
-      minHeight: '42px',
+      minHeight: controlHeight,
       cursor: 'pointer',
       '&:hover': {
         borderColor: '#424B5A'

@@ -155,6 +155,7 @@ export const ShippingInfomationForm = ({ formObject }: ShippingInfomationFormPro
               {...field}
               errorMessage={errors.district?.message}
               options={provinceOptions}
+              controlHeight="48px"
             />
           )}
         />
@@ -170,6 +171,7 @@ export const ShippingInfomationForm = ({ formObject }: ShippingInfomationFormPro
               {...field}
               errorMessage={errors.district?.message}
               options={districtOptions}
+              controlHeight="48px"
             />
           )}
         />
