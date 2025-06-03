@@ -18,7 +18,7 @@ export const emailHeadCSS = `
 
 export const rootStyle = {
   width: '100%',
-  backgroundColor: '#DEDEDE'
+  backgroundColor: '#FFF'
 };
 
 export const backgroundStyle = {

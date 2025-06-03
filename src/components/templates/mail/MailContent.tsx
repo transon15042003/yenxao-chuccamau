@@ -18,7 +18,7 @@ export const MailContent = ({
   children,
   headerColor = '#B4071A',
   headerHeight = 150,
-  width = '90%',
+  width = '100%',
   title,
   messages,
   infoItems,
@@ -35,7 +35,8 @@ export const MailContent = ({
         margin: '0 auto',
         borderCollapse: 'separate',
         borderSpacing: 0,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        border: '1px solid #e0e0e0'
       }}
     >
       <tbody>
