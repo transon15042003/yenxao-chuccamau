@@ -21,6 +21,7 @@ type SelectInputProps = {
   errorMessage?: string;
   menuWidth?: number;
   controlHeight?: string;
+  paddingX?: string;
 };
 
 export const SelectInput = ({
@@ -34,7 +35,8 @@ export const SelectInput = ({
   disabled,
   errorMessage,
   menuWidth,
-  controlHeight = '42px'
+  controlHeight = '42px',
+  paddingX = '4px'
 }: SelectInputProps) => {
   const selectedOption = useMemo(() => {
     return options.find((option) => option.value === value) || null;
@@ -49,6 +51,8 @@ export const SelectInput = ({
       borderRadius: '8px',
       boxShadow: 'none',
       minHeight: controlHeight,
+      paddingLeft: typeof paddingX === 'number' ? `${paddingX}px` : paddingX,
+      paddingRight: typeof paddingX === 'number' ? `${paddingX}px` : paddingX,
       cursor: 'pointer',
       '&:hover': {
         borderColor: '#424B5A'
