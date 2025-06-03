@@ -60,6 +60,7 @@ export default async function BlogDetailPage({ params }: Props) {
     <div className="w-full flex flex-col items-center">
       <div className="w-full mb-9">
         <Breadcrumb
+          disableLastChild={true}
           items={[
             {
               label: 'Blog',
