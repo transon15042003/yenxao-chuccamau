@@ -4,42 +4,42 @@
 import { AppConfig } from 'src/AppConfig';
 
 import { footerContentStyle } from './InitSetup';
-import {
-  FACEBOOK_IMAGE_URL,
-  INSTAGRAM_IMAGE_URL,
-  LINKEDIN_IMAGE_URL,
-  TIKTOK_IMAGE_URL,
-  PHONE_IMAGE_URL
-} from './InitSetup';
+//import {
+//  FACEBOOK_IMAGE_URL,
+//  INSTAGRAM_IMAGE_URL,
+//  LINKEDIN_IMAGE_URL,
+//  TIKTOK_IMAGE_URL,
+//  PHONE_IMAGE_URL
+//} from './InitSetup';
 
-interface SocialMedia {
-  name: string;
-  url: string;
-  imageUrl: string;
-}
+// interface SocialMedia {
+//   name: string;
+//   url: string;
+//   imageUrl: string;
+// }
 
-const socialMedias: SocialMedia[] = [
-  {
-    name: 'Facebook',
-    url: '/',
-    imageUrl: FACEBOOK_IMAGE_URL
-  },
-  {
-    name: 'Instagram',
-    url: '/',
-    imageUrl: INSTAGRAM_IMAGE_URL
-  },
-  {
-    name: 'LinkedIn',
-    url: '/',
-    imageUrl: LINKEDIN_IMAGE_URL
-  },
-  {
-    name: 'Tiktok',
-    url: '/',
-    imageUrl: TIKTOK_IMAGE_URL
-  }
-];
+// const socialMedias: SocialMedia[] = [
+//   {
+//     name: 'Facebook',
+//     url: '/',
+//     imageUrl: FACEBOOK_IMAGE_URL
+//   },
+//   {
+//     name: 'Instagram',
+//     url: '/',
+//     imageUrl: INSTAGRAM_IMAGE_URL
+//   },
+//   {
+//     name: 'LinkedIn',
+//     url: '/',
+//     imageUrl: LINKEDIN_IMAGE_URL
+//   },
+//   {
+//     name: 'Tiktok',
+//     url: '/',
+//     imageUrl: TIKTOK_IMAGE_URL
+//   }
+// ];
 
 export const MailFooter = () => {
   return (
@@ -59,7 +59,14 @@ export const MailFooter = () => {
             colSpan={2}
             style={{ color: '#707070', fontSize: 13, textAlign: 'center', padding: '8px 0 0 0' }}
           >
-            {AppConfig.address}
+            <a
+              href={AppConfig.addressURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#707070', textDecoration: 'none' }}
+            >
+              {AppConfig.address}
+            </a>
           </td>
         </tr>
         {/* Line chia đôi */}
@@ -99,32 +106,6 @@ export const MailFooter = () => {
                 {AppConfig.phone}
               </span>
             </a>
-          </td>
-          <td style={{ textAlign: 'center', padding: '8px 12px 20px 0' }}>
-            <div
-              style={{
-                display: 'inline-block',
-                whiteSpace: 'nowrap',
-                overflowX: 'auto',
-                maxWidth: '100%'
-              }}
-            >
-              {socialMedias.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  style={{ margin: '0 6px', display: 'inline-block' }}
-                >
-                  <img
-                    src={social.imageUrl}
-                    alt={social.name}
-                    width={25}
-                    height={25}
-                    style={{ verticalAlign: 'middle' }}
-                  />
-                </a>
-              ))}
-            </div>
           </td>
         </tr>
       </tbody>

@@ -1,4 +1,4 @@
-import { OrderCustomer } from '@/types/order';
+import { Order } from '@/types/order';
 // import { Box, Email, Item, Span } from 'react-html-email';
 
 // import { emailHeadCSS, labelStyle, contentStyle, rootStyle } from './InitSetup';
@@ -8,30 +8,51 @@ import { MailFooter } from './MailFooter';
 
 const HEADER_COLOR = '#B4071A';
 
-export const CustomerOrderNotification = (customer: OrderCustomer) => (
+export const CustomerOrderNotification = (order: Order) => (
   <MailContent
     headerColor={HEADER_COLOR}
-    title={`Kính chào ${customer.name},`}
+    title={`Kính chào ${order.customer.name},`}
     messages={[
-      'Cảm ơn Anh/Chị đã đặt hàng tại Chúc Cà Mau.',
-      'Chúng tôi đã nhận được đơn hàng của Anh/Chị và sẽ xử lý trong thời gian sớm nhất.'
+      'Một đơn hàng mới vừa được tạo và đã hoàn tất thanh toán. Thông tin chi tiết như sau:'
     ]}
     infoItems={{
-      labels: ['Khách hàng:', 'Email:', 'Số điện thoại:', 'Địa chỉ:'],
+      labels: [
+        'Khách hàng:',
+        'Email:',
+        'Số điện thoại:',
+        'Địa chỉ:',
+        'Thời gian đặt hàng:',
+        'Ghi chú đơn hàng:',
+        'Thông tin xuất hóa đơn:'
+      ],
       values: [
-        customer.name,
-        customer.email ? (
-          <a href={`mailto:${customer.email}`} style={{ color: '#0085E2', textDecoration: 'none' }}>
-            {customer.email}
+        order.customer.name,
+        order.customer.email ? (
+          <a
+            href={`mailto:${order.customer.email}`}
+            style={{ color: '#0085E2', textDecoration: 'none' }}
+          >
+            {order.customer.email}
           </a>
         ) : null,
-        customer.phone,
-        `${customer.address}${customer.district ? `, ${customer.district}` : ''}${
-          customer.province ? `, ${customer.province}` : ''
-        }`
+        order.customer.phone,
+        `${order.customer.address}${order.customer.district ? `, ${order.customer.district}` : ''}${
+          order.customer.province ? `, ${order.customer.province}` : ''
+        }`,
+        order.paidAt ? new Date(order.paidAt).toLocaleString('vi-VN') : '',
+        order.note || 'Không có',
+        order.invoiceInfo ? (
+          <div>
+            <div>Tên công ty: {order.invoiceInfo.companyName}</div>
+            <div>Mã số thuế: {order.invoiceInfo.taxCode}</div>
+            <div>Địa chỉ: {order.invoiceInfo.address}</div>
+          </div>
+        ) : (
+          'Không có'
+        )
       ].filter(Boolean)
     }}
-    highlightText="Chúng tôi sẽ liên hệ với Anh/Chị để xác nhận đơn hàng và thông báo thời gian giao hàng."
+    highlightText="Chúng tôi đang tiến hành xử lý đơn hàng của bạn và sẽ sớm liên hệ nếu có bất kỳ thông tin bổ sung cần xác nhận."
   >
     <tr>
       <td style={{ padding: 0 }}>
