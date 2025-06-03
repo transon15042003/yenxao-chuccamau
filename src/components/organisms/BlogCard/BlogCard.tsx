@@ -23,7 +23,13 @@ export const BlogCard = ({
   href
 }: BlogCardProps) => {
   return (
-    <div className={cn('w-[379.8px] h-[492px]', 'bg-white rounded-[10px] shadow-sm flex flex-col')}>
+    <div
+      className={cn(
+        'max-w-[379.8px] w-full h-[492px]',
+        'px-1 sm:px-0',
+        'bg-white rounded-[10px] shadow-sm flex flex-col'
+      )}
+    >
       <Link
         href={href}
         className="relative w-full h-[262px] rounded-t-[10px] overflow-hidden block mb-4"
