@@ -205,7 +205,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
       >
         <div className="flex justify-center relative mb-8">
-          <div className="mt-[42px] md:w-3/4 w-full">
+          <div className="mt-[42px] md:w-3/4 w-full z-10">
             <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
               <ContactInfoBlock
                 className="pt-0 lg:w-1/2 w-full lg:mt-0 mt-[42px]"
@@ -222,7 +222,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             alt=""
             width={600}
             height={600}
-            className="lg:block hidden absolute bottom-0 right-[20px] opacity-10"
+            className="lg:block hidden absolute bottom-0 right-[20px] opacity-10 z-0"
           />
         </div>
       </IntroductionSection>
