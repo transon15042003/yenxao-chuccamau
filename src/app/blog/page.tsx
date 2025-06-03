@@ -43,7 +43,7 @@ export default async function BlogPage(props: { searchParams: SearchParams }) {
       <Breadcrumb items={[{ label: 'Blog', href: '/blog' }]} />
 
       {/* Danh sách bài viết */}
-      <div className="max-w-7xl mx-auto px-8 sm:px-16 lg:px-24 py-8">
+      <div className="flex flex-col justify-center items-center my-9">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentPosts.map((post: BlogPost) => (
             <BlogCard
