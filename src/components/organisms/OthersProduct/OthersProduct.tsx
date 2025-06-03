@@ -60,6 +60,9 @@ const OthersProduct = ({ className, heading, products }: OthersProductProps) => 
     if (width && width > 1024) {
       return products.length > 4;
     }
+    if (width && width > 1536) {
+      return products.length > 5;
+    }
 
     return products.length > 2;
   }, [width, products]);
@@ -99,6 +102,10 @@ const OthersProduct = ({ className, heading, products }: OthersProductProps) => 
               1024: {
                 slidesPerView: 4,
                 spaceBetween: 10
+              },
+              1536: {
+                slidesPerView: 5,
+                spaceBetween: 12
               }
             }}
             pagination={{ clickable: true }}
