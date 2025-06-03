@@ -31,15 +31,11 @@ const SearchBar = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSearch}
-      method="get"
-      className="relative flex items-center w-full md:w-2/3 max-w-[200px] md:max-w-xs"
-    >
+    <form onSubmit={handleSearch} method="get" className="relative flex items-center w-full">
       <input
         type="text"
         placeholder="Tìm kiếm"
-        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base [-webkit-appearance:none] rounded-none"
+        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-[14px] md:text-base [-webkit-appearance:none] rounded-none"
         onChange={(e) => setSearchTerm(e.target.value)}
         value={searchTerm}
       />
