@@ -64,7 +64,8 @@ const initOrder: Order = {
     address: ''
   },
   paymentStatus: 'pending',
-  shippingMethod: 'STANDARD'
+  shippingMethod: 'STANDARD',
+  orderAt: new Date()
 };
 
 const PaymentPageProvider = ({ children }: PropsWithChildren) => {

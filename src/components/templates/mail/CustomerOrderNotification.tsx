@@ -22,8 +22,8 @@ export const CustomerOrderNotification = (order: Order) => (
         'Số điện thoại:',
         'Địa chỉ:',
         'Thời gian đặt hàng:',
-        'Ghi chú đơn hàng:',
-        'Thông tin xuất hóa đơn:'
+        'Thông tin xuất hóa đơn:',
+        'Ghi chú đơn hàng:'
       ],
       values: [
         order.customer.name,
@@ -39,17 +39,17 @@ export const CustomerOrderNotification = (order: Order) => (
         `${order.customer.address}${order.customer.district ? `, ${order.customer.district}` : ''}${
           order.customer.province ? `, ${order.customer.province}` : ''
         }`,
-        order.paidAt ? new Date(order.paidAt).toLocaleString('vi-VN') : '',
-        order.note || 'Không có',
-        order.invoiceInfo ? (
+        order.orderAt ? new Date(order.orderAt).toLocaleString('vi-VN') : 'No information',
+        order.invoice ? (
           <div>
-            <div>Tên công ty: {order.invoiceInfo.companyName}</div>
-            <div>Mã số thuế: {order.invoiceInfo.taxCode}</div>
-            <div>Địa chỉ: {order.invoiceInfo.address}</div>
+            <div>Tên công ty: {order.invoice.name}</div>
+            <div>Mã số thuế: {order.invoice.taxCode}</div>
+            <div>Địa chỉ: {order.invoice.address}</div>
           </div>
         ) : (
           'Không có'
-        )
+        ),
+        order.note.trim() !== '' ? order.note : 'Không có'
       ].filter(Boolean)
     }}
     highlightText="Chúng tôi đang tiến hành xử lý đơn hàng của bạn và sẽ sớm liên hệ nếu có bất kỳ thông tin bổ sung cần xác nhận."

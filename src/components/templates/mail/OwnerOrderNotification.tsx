@@ -23,8 +23,8 @@ export const OwnerOrderNotification = (order: Order) => (
         'Số điện thoại:',
         'Địa chỉ:',
         'Thời gian đặt hàng:',
-        'Ghi chú đơn hàng:',
-        'Thông tin xuất hóa đơn:'
+        'Thông tin xuất hóa đơn:',
+        'Ghi chú đơn hàng:'
       ],
       values: [
         order.code,
@@ -44,17 +44,17 @@ export const OwnerOrderNotification = (order: Order) => (
         `${order.customer.address}${
           order.customer.district ? `, ${order.customer.district}` : ''
         }${order.customer.province ? `, ${order.customer.province}` : ''}`,
-        order.paidAt ? new Date(order.paidAt).toLocaleString('vi-VN') : '',
-        order.note || 'Không có',
-        order.invoiceInfo ? (
+        order.orderAt ? new Date(order.orderAt).toLocaleString('vi-VN') : 'No information',
+        order.invoice ? (
           <div>
-            <div>Tên công ty: {order.invoiceInfo.companyName}</div>
-            <div>Mã số thuế: {order.invoiceInfo.taxCode}</div>
-            <div>Địa chỉ: {order.invoiceInfo.address}</div>
+            <div>Tên công ty: {order.invoice.name}</div>
+            <div>Mã số thuế: {order.invoice.taxCode}</div>
+            <div>Địa chỉ: {order.invoice.address}</div>
           </div>
         ) : (
           'Không có'
-        )
+        ),
+        order.note.trim() !== '' ? order.note : 'Không có'
       ].filter(Boolean)
     }}
     highlightText="Vui lòng kiểm tra và xử lý đơn hàng trong thời gian sớm nhất."

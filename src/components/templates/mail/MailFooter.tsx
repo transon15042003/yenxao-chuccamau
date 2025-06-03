@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
-// import { Box, Item, Span } from 'react-html-email';
 import { AppConfig } from 'src/AppConfig';
 
 import { footerContentStyle } from './InitSetup';
-//import {
+import { PHONE_IMAGE_URL } from './InitSetup';
+
+// import {
 //  FACEBOOK_IMAGE_URL,
 //  INSTAGRAM_IMAGE_URL,
 //  LINKEDIN_IMAGE_URL,
