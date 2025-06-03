@@ -10,6 +10,7 @@ import Link from 'next/link';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
+import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
 import { Stepper } from '@/components/atoms/Step';
 import { CartItem } from '@/components/molecules/CartItem/CartItem';
@@ -245,13 +246,14 @@ const PaymentPage = () => {
                   <span className="text-xl font-bold">Ghi chú đơn hàng</span>
                 </label>
                 <div className="mt-1.5">
-                  <InputGroup
+                  <AreaInputGroup
                     disabled={!isUseNoteForm}
                     maxLength={75}
                     placeholder="Lời nhắn viết lên thiệp, tối đa 75 từ..."
                     className="resize-none"
                     value={orderNote}
                     onChange={(e) => setOrderNote(e.target.value)}
+                    line={3}
                   />
                 </div>
               </div>
