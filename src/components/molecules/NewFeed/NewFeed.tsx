@@ -48,20 +48,15 @@ export const NewFeed = ({ initialBlogs, loading, className }: NewFeedProps) => {
       ) : blogsToDisplay.length > 0 ? (
         <div className="w-full flex flex-wrap gap-8 justify-center">
           {blogsToDisplay.map((blog) => (
-            <div
+            <BlogCard
               key={blog.id}
-              className="border border-gray-200 rounded-lg overflow-hidden shadow-md my-1
-                 w-4/5 md:w-[380px]"
-            >
-              <BlogCard
-                thumbnailUrl={blog.thumbnailUrl || ''}
-                title={blog.title || ''}
-                description={blog.description || ''}
-                postedDate={blog.postedDate || ''}
-                minRead={blog.minRead || 0}
-                href={`/blog/${blog.slug}`}
-              />
-            </div>
+              thumbnailUrl={blog.thumbnailUrl || ''}
+              title={blog.title || ''}
+              description={blog.description || ''}
+              postedDate={blog.postedDate || ''}
+              minRead={blog.minRead || 0}
+              href={`/blog/${blog.slug}`}
+            />
           ))}
         </div>
       ) : (
