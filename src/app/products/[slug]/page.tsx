@@ -50,7 +50,9 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
             { label: product.name, href: product.slug }
           ]}
         />
-        <DetailProduct />
+        <div className="flex justify-center">
+          <DetailProduct />
+        </div>
       </div>
     </DetailProductProvider>
   );
