@@ -83,7 +83,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         >
           <div className="lg:grid lg:grid-cols-12">
             <div className="lg:col-span-10 lg:col-start-2">
-              <div className="flex flex-row flex-wrap justify-center gap-[24px] mt-[36px] xl:gap-[42px] 2xl:gap-[56px]">
+              <div className="flex flex-row flex-wrap justify-center gap-[16px] mt-[36px] 2xl:gap-[28px]">
                 {descriptions.guidingPrinciple.map((el, idx) => (
                   <GuidingCard
                     key={idx}
