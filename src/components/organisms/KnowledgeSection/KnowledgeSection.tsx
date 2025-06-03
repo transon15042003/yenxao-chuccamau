@@ -57,9 +57,9 @@ export const KnowledgeSection = () => {
       <Button
         className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
         fill="outline"
-        onClick={() => router.push('/products')}
+        onClick={() => router.push('/blogs')}
       >
-        Xem tất cả sản phẩm
+        Xem tất cả bài viết
       </Button>
     </div>
   );
