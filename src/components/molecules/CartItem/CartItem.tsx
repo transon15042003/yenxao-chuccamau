@@ -2,6 +2,7 @@ import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
 import { CartItem as TCartItem } from '@/types/cart';
 import { Product, ProductSpecifications, ProductVariant } from '@/types/product';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
 
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
@@ -60,23 +61,33 @@ export const CartItem: React.FC<CartItemProps> = ({
   const displayName = selectedVariant?.name || item.name;
   const displayThumbnail = selectedVariant?.thumbnail || item.thumbnail;
 
+  const productDetailPath = `/products/${product.slug}`;
+
   return (
     <div className="flex w-full items-stretch py-4 bg-white rounded-lg">
       {/* Product Image */}
-      <div className="relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center ">
+      <Link
+        href={productDetailPath}
+        className={cn(
+          'relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center '
+        )}
+      >
         <Image
           className="rounded-[5px] object-cover"
           src={displayThumbnail}
           alt={displayName || 'product thumnail'}
           fill
         />
-      </div>
+      </Link>
       <div className="flex-auto flex flex-col gap-3 mx-4 min-w-0">
         {/* Product Info */}
         <div className="min-w-0">
-          <div className="w-full md:w-[250px] font-semibold leading-[1.36] text-typo-1 line-clamp-1">
+          <Link
+            href={productDetailPath}
+            className={cn('font-semibold leading-[1.36] text-typo-1 line-clamp-1')}
+          >
             {displayName}
-          </div>
+          </Link>
           <div className="flex items-center gap-2 mt-2">
             <span className="font-semibold text-sm text-primary-dark">
               {convertToVND(displayPrice)}

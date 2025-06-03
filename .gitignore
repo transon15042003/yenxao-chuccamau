@@ -41,3 +41,7 @@ yarn-error.log*
 
 # storybook
 storybook-static
+
+# sitemap & robots files
+/public/robots.txt
+/public/sitemap.xml

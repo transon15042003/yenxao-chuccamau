@@ -8,6 +8,7 @@ import {
 } from 'src/services/location.service';
 import { z } from 'zod';
 
+import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { InputGroup } from '@/components/molecules/InputGroup/InputGroup';
 import { SelectInput } from '@/components/molecules/SelectInput/SelectInput';
 
@@ -155,6 +156,8 @@ export const ShippingInfomationForm = ({ formObject }: ShippingInfomationFormPro
               {...field}
               errorMessage={errors.district?.message}
               options={provinceOptions}
+              controlHeight="48px"
+              paddingX="6px"
             />
           )}
         />
@@ -170,6 +173,8 @@ export const ShippingInfomationForm = ({ formObject }: ShippingInfomationFormPro
               {...field}
               errorMessage={errors.district?.message}
               options={districtOptions}
+              controlHeight="48px"
+              paddingX="6px"
             />
           )}
         />
@@ -178,13 +183,14 @@ export const ShippingInfomationForm = ({ formObject }: ShippingInfomationFormPro
         control={control}
         name="address"
         render={({ field }) => (
-          <InputGroup
+          <AreaInputGroup
             id="address"
             label="Địa chỉ"
             required
             placeholder="123 Đường ABC, Quận XYZ, Tỉnh ABC"
             {...field}
             errorMessage={errors.address?.message}
+            line={3}
           />
         )}
       />

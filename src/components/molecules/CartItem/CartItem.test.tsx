@@ -4,6 +4,20 @@ import { CartItem as TCartItem } from '@/types/cart';
 import { Product } from '../../../types/product';
 import { CartItem } from './CartItem';
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(() => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    refresh: jest.fn(),
+    prefetch: jest.fn(),
+    back: jest.fn(),
+    forward: jest.fn(),
+    pathname: '/',
+    query: {},
+    asPath: '/'
+  }))
+}));
+
 const mockProduct: Product = {
   id: 'yen-chung-duong-phen',
   name: 'Yến chưng đường phèn',

@@ -81,19 +81,17 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           subHeading="Những giá trị định hướng mọi hoạt động của chúng tôi"
           className="lg:py-[70px] py-[36px] px-4 lg:px-0 z-10"
         >
-          <div className="lg:grid lg:grid-cols-12">
-            <div className="lg:col-span-10 lg:col-start-2">
-              <div className="flex flex-row flex-wrap justify-center gap-[24px] mt-[36px] xl:gap-[42px] 2xl:gap-[56px]">
-                {descriptions.guidingPrinciple.map((el, idx) => (
-                  <GuidingCard
-                    key={idx}
-                    icon={el.icon}
-                    title={el.title}
-                    description={el.description}
-                    className="w-[382px] max-w-[382px] h-[438px] max-h-[438px]"
-                  />
-                ))}
-              </div>
+          <div className="md:grid md:grid-cols-12">
+            <div className="md:col-span-12 flex flex-row flex-wrap justify-center gap-[16px] mt-[36px] 2xl:gap-[28px] md:mx-[64px]">
+              {descriptions.guidingPrinciple.map((el, idx) => (
+                <GuidingCard
+                  key={idx}
+                  icon={el.icon}
+                  title={el.title}
+                  description={el.description}
+                  className="w-[382px] max-w-[382px] h-[438px] max-h-[438px]"
+                />
+              ))}
             </div>
           </div>
         </IntroductionSection>
@@ -204,11 +202,12 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
       >
-        <div className="flex justify-center relative mb-8">
-          <div className="mt-[42px] md:w-3/4 w-full">
+        <div className="lg:grid lg:grid-cols-12 flex justify-center relative mb-8">
+          <div className="lg:col-span-10 lg:col-start-2 mt-[42px] w-full z-10">
             <div className="w-full flex lg:flex-row flex-col-reverse flex-wrap items-start md:mb-5">
               <ContactInfoBlock
                 className="pt-0 lg:w-1/2 w-full lg:mt-0 mt-[42px]"
+                bgClass="w-[200%]"
                 contentClass="bg-[#F4F1ED]"
                 contactData={contactInfo}
                 onScrollToMap={handleOpenMap}
@@ -222,7 +221,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             alt=""
             width={600}
             height={600}
-            className="lg:block hidden absolute bottom-0 right-[20px] opacity-10"
+            className="lg:block hidden absolute bottom-0 right-[20px] opacity-10 z-0"
           />
         </div>
       </IntroductionSection>

@@ -21,7 +21,7 @@ export const NewFeed = ({ initialBlogs, loading, className }: NewFeedProps) => {
 
   return (
     <div
-      className={`w-full lg:w-5/6 flex flex-wrap flex-col md:flex-row justify-between items-center relative z-10 my-9 ${className}`}
+      className={`w-full lg:w-full lg:px-[64px] flex flex-wrap flex-col md:flex-row justify-between items-center relative z-10 my-9 ${className}`}
     >
       {loading ? (
         <div className="w-full flex items-center justify-center">
