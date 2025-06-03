@@ -43,13 +43,7 @@ export const Stepper: React.FC<StepperProps> = ({
               <span className="mt-1 hidden sm:block">{step.label}</span>
             </div>
 
-            {idx < steps.length - 1 && (
-              <div
-                className={` transition-colors bg-typo-2 ${
-                  direction === 'horizontal' ? 'md:ml-8 h-0.5 w-12' : 'mt-8 w-0.5 h-12'
-                }`}
-              />
-            )}
+            {idx < steps.length - 1 && <hr className="h-0.5 w-12 bg-typo-2 border-0 rounded-sm" />}
           </React.Fragment>
         ))}
       </div>
