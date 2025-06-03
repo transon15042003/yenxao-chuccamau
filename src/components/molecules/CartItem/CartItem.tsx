@@ -26,7 +26,7 @@ export const CartItem: React.FC<CartItemProps> = ({
   onDecrease,
   onRemove
 }) => {
-  const { updateCartItemVariant } = useCart();
+  const { updateCartItemVariant, setIsCartOpen } = useCart();
 
   const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
 
@@ -87,6 +87,7 @@ export const CartItem: React.FC<CartItemProps> = ({
             className={cn(
               'font-semibold leading-[1.36] text-typo-1 line-clamp-1 hover:text-primary'
             )}
+            onClick={() => setIsCartOpen(false)}
           >
             {displayName}
           </Link>
