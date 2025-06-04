@@ -30,7 +30,7 @@ export const MailContent = ({
       cellPadding={0}
       cellSpacing={0}
       style={{
-        background: rootStyle.background,
+        background: rootStyle.backgroundColor,
         borderRadius: 10,
         margin: '0 auto',
         borderCollapse: 'separate',
