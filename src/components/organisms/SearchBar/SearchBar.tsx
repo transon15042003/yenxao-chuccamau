@@ -36,20 +36,16 @@ const SearchBar = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSearch}
-      method="get"
-      className="relative flex items-center w-full md:w-2/3 max-w-[200px] md:max-w-xs rounded-none appearance-none"
-    >
+    <form onSubmit={handleSearch} method="get" className="relative flex items-center w-full">
       <input
         ref={inputRef}
         type="text"
         placeholder="Tìm kiếm"
-        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-sm md:text-base rounded-none appearance-none"
+        className="w-full bg-transparent border-b-2 border-white placeholder:text-white/70 pr-8 pl-2 py-1 focus:outline-none text-[14px] md:text-base [-webkit-appearance:none] rounded-none"
         onChange={(e) => setSearchTerm(e.target.value)}
         value={searchTerm}
       />
-      <button type="submit">
+      <button type="submit" title="Tìm kiếm">
         <svg
           className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 md:w-5 md:h-5 text-white"
           fill="none"

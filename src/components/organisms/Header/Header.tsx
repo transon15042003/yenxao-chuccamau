@@ -31,26 +31,27 @@ const Header = () => {
 
   return (
     <header className="w-full h-[100px] bg-primary-gradient-90 text-white fixed top-0 z-[1000] border-b-[3px] border-secondary">
-      <div className="flex h-full items-center justify-between w-full px-3.5 lg:px-[50px] xl:mx-auto xl:w-[93%]">
+      <div className="flex h-full items-center justify-between gap-6 w-full px-2 lg:px-10 xl:mx-auto xl:w-[93%]">
         <Logo />
         <div className="hidden lg:flex flex-1 justify-center items-center h-full">
           <NavigationMenu />
         </div>
-        {/* <div className="flex items-center gap-2 lg:gap-4"> */}
-        <div className="flex flex-1 lg:flex-none justify-end items-center gap-0.5 sm:gap-2 lg:gap-4 mr-2 sm:mr-3.5 lg:mr-0">
+        <div className="flex items-center w-[70%] lg:max-w-[225px]">
           <Suspense>
             <SearchBar />
           </Suspense>
-          <CartButton itemCount={cart.items.length} onClick={handleCartClick} />
         </div>
-        <button
-          ref={buttonRef}
-          type="button"
-          className="lg:hidden text-white focus:outline-none transition-transform duration-300 group"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <CloseMenuIcon /> : <MenuIcon />}
-        </button>
+        <div className="flex items-center gap-6">
+          <CartButton itemCount={cart.items.length} onClick={handleCartClick} />
+          <button
+            ref={buttonRef}
+            type="button"
+            className="lg:hidden text-white focus:outline-none transition-transform duration-300 group"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <CloseMenuIcon /> : <MenuIcon />}
+          </button>
+        </div>
       </div>
       <div ref={menuRef}>
         <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
