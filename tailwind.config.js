@@ -2,7 +2,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
-  content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}', './src/mdx-components.tsx'],
   theme: {
     extend: {
       height: {
@@ -35,6 +35,10 @@ module.exports = {
         },
         ground: {
           1: '#F5F5F5'
+        },
+        blog: {
+          1: '#202020',
+          2: '#132238'
         }
       },
       backgroundImage: {
