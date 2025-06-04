@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="csrf-token" content="XqacSScoOCl29pcAf32c3qbRdyDiICFnvQPD5LK3">
+    <meta name="robots" content="index,follow" />
+    <title>Nấu cháo tổ yến cho bé ăn ngon chóng lớn</title>
+    <meta name="description" content="Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ă" />
+    <!-- META FOR FACEBOOK -->
+    <meta property="og:site_name" content="YẾN NHÀ MỘC" />
+    <meta property="og:rich_attachment" content="true" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" itemprop="url" content="https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon" />
+    <meta property="og:image" itemprop="thumbnailUrl" content="https://yennhamoc.vn/upload/images/bai-viet/chao-to-yen.jpg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="354" />
+    <meta content="Nấu cháo tổ yến cho bé ăn ngon chóng lớn" itemprop="headline" property="og:title" />
+    <meta content="Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ă" itemprop="description" property="og:description" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:url" content="https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon" />
+    <meta name="twitter:title" content="Nấu cháo tổ yến cho bé ăn ngon chóng lớn" />
+    <meta name="twitter:description" content="Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ă" />
+    <meta name="twitter:image" content="<https://yennhamoc.vn/upload/images/bai-viet/chao-to-yen.jpg" />
+    <meta name="twitter:site" content="YẾN NHÀ MỘC" />
+    <meta name="twitter:creator" content="YẾN NHÀ MỘC" />
+    <link rel="shortcut icon" type="image/x-icon" href="/upload/images/logo2.png" />
+    <!-- head-->
+    <style>
+    .article-detail-content img {
+        max-width: 100% !important;
+        margin: 0px auto;
+    }
+
+    @media (max-width:767px) {
+        .article-detail-content img {
+            height: auto !important
+        }
+    }
+</style>
+
+    <!--<link href="https://yennhamoc.vn/frontend/css/app.css" rel="stylesheet">
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/custom.css" />-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/build/tailwind.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/build/app.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/owl.theme.default.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/animate.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/_header.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/_footer.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/custom.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_1.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_2.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_3.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_4.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_5.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_6.css" />
+<link rel="stylesheet" href="https://yennhamoc.vn/frontend/css/home/_box_7.css" />
+
+
+    <script>
+        var BASE_URL = 'https://yennhamoc.vn/';
+        var BASE_URL_AJAX = 'https://yennhamoc.vn/';
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "CreativeWorkSeries",
+            "name": "Nấu cháo tổ yến cho bé ăn ngon chóng lớn",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "ratingCount": "3"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "WebSite",
+                "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#website",
+                "url": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon",
+                "name": "YẾN NHÀ MỘC",
+                "description": "Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ă",
+                "potentialAction": [{
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon?s={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }],
+                "inLanguage": "vi"
+            }, {
+                "@type": "ImageObject",
+                "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#primaryimage",
+                "inLanguage": "vi",
+                "url": "https://yennhamoc.vn/upload/images/bai-viet/chao-to-yen.jpg",
+                "contentUrl": "https://yennhamoc.vn/upload/images/bai-viet/chao-to-yen.jpg",
+                "width": 932,
+                "height": 680
+            }, {
+                "@type": "WebPage",
+                "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#webpage",
+                "url": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon",
+                "name": "Lorem ipsum dolor sit amet - YẾN NHÀ MỘC",
+                "isPartOf": {
+                    "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#website"
+                },
+                "primaryImageOfPage": {
+                    "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#primaryimage"
+                },
+                "author": {
+                    "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#/schema/person/6923a1ffbe49cb2449ae873dc7254c27"
+                },
+                "breadcrumb": {
+                    "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#breadcrumb"
+                },
+                "inLanguage": "vi",
+                "potentialAction": [{
+                    "@type": "ReadAction",
+                    "target": ["https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon"]
+                }]
+            }, {
+                "@type": "BreadcrumbList",
+                "@id": "https://yennhamoc.vn/nau-chao-to-yen-cho-be-an-ngon-chong-lon#breadcrumb",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Trang chủ",
+                    "item": "https://yennhamoc.vn"
+                }, {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Nấu cháo tổ yến cho bé ăn ngon chóng lớn"
+                }]
+            }]
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- New Header -->
+<header class="hidden md:block border-b border-gray-300">
+    <div class="bg-green py-[12px] text-f13">
+        <div class="container mx-auto px-3">
+            <div class="flex flex-wrap justify-start -mx-[5px]">
+                <div class="w-1/12 px-[5px] main-logo">
+                    <a href="https://yennhamoc.vn"><img src="https://yennhamoc.vn/upload/images/logo2.png" alt="YẾN NHÀ MỘC" /></a>
+                </div>
+                <div class="w-8/12 px-[5px] main-search">
+                    <form action="https://yennhamoc.vn/tim-kiem" class="relative">
+                        <input type="text" name="keyword" placeholder="Trao Tín - Trao Tâm - Trao Chất Lượng" class="w-full h-[40px] bg-white border border-gray-300 rounded text-f13" />
+                        <button type="submit" class="absolute right-0 top-0 bg-yellow text-white h-[40px] px-[15px]">
+                            <span class="inline-block mr-[10px]"><i class="fa-solid fa-magnifying-glass"></i></span>Tìm kiếm
+                        </button>
+                    </form>
+                    <div class="main-menu-top">
+                        <ul class="flex flex-wrap md:space-x-0 lg:space-x-4 mt-0 lg:mt-[8px] justify-start">
+                                                                                    <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-white inline-block px-[2px] py-[3px] text-f14 lg:text-f15 transition-all hover:text-green">
+                                    Yến chưng tươi
+                                </a>
+                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-white inline-block px-[2px] py-[3px] text-f14 lg:text-f15 transition-all hover:text-green">
+                                    Set quà tặng
+                                </a>
+                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-white inline-block px-[2px] py-[3px] text-f14 lg:text-f15 transition-all hover:text-green">
+                                    Yến thô
+                                </a>
+                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-white inline-block px-[2px] py-[3px] text-f14 lg:text-f15 transition-all hover:text-green">
+                                    Tổ yến tinh chế
+                                </a>
+                            </li>
+                                                                                </ul>
+                    </div>
+                </div>
+                <div class="w-3/12 px-[5px] user-cart">
+                    <div class="header-right">
+                        <ul class="flex flex-wrap justify-end mt-[17px]">
+                            <li class="">
+                                <div class="flex flex-wrap text-f14 text-white leading-[20px]">
+                                    <span class="icon text-f28 mr-[15px]"><i class="fa-solid fa-user"></i></span>
+                                    <div class="nav-icon flex items-center">
+                                        <span class="text-f12"><a class="text-white text-f12" href="https://yennhamoc.vn/thanh-vien/login">Đăng nhập / </a> <a class="text-white text-f12" href="https://yennhamoc.vn/thanh-vien/register"> Đăng ký</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ml-[20px]">
+                                <a href="https://yennhamoc.vn/gio-hang" class="flex flex-wrap text-f14 text-white leading-[20px]">
+                                    <span class="icon text-f28 mr-[15px] relative">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <span class="stt w-[20px] h-[20px] bg-yellow inline-block text-center leading-[20px] text-f13 rounded-full top-[-2px] right-[-10px] absolute cart-quantity">0</span>
+                                    </span>
+                                    <div class="nav-icon">
+                                        <span class="text-f12">Giỏ hàng</span><br />
+                                        <span>của bạn</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-menu-pr">
+        <div class="container py-[2px] mx-auto px-3 relative">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-3/12">
+                    <div class="category-title">
+                        <h3 class="title-click text-f15 font-bold uppercase h-[42px] leading-[42px]">
+                            <span class="mr-[10px]"><i class="fa-solid fa-bars"></i></span>Danh mục sản phẩm
+                        </h3>
+                        <div class="nav-category">
+                            <ul>
+                                                                                                <li>
+                                    <a hreft="https://yennhamoc.vn/san-pham-noi-bat"> 
+                                        <span class="icon"><img src="https://yennhamoc.vn/" alt=""></span>
+                                        Sản phẩm nổi bật
+                                                                            </a>
+                                                                    </li>
+                                                                <li>
+                                    <a hreft="https://yennhamoc.vn/yen-chung-tuoi"> 
+                                        <span class="icon"><img src="https://yennhamoc.vn/upload/images/Icon/glasscan3%20%5BConverted%5D-02.png" alt=""></span>
+                                        Yến Chưng Tươi
+                                        <span class="arrow text-f13"><i class="fa-solid fa-angle-right"></i></span>                                    </a>
+                                                                        <ul class="sub-menu lazyloaded" style="background: url('https://yennhamoc.vn/upload/images/san-pham/bg1.webp') #fff;">
+                                                                                <li>
+                                            <a href="https://yennhamoc.vn/yen-chung-tuoi">Yến chưng tươi</a>
+                                        </li>
+                                                                                <li>
+                                            <a href="https://yennhamoc.vn/yen-chung-tuoi-tiet-trung">Yến chưng tươi tiệt trùng</a>
+                                        </li>
+                                                                            </ul>
+                                                                    </li>
+                                                                <li>
+                                    <a hreft="https://yennhamoc.vn/yen-kho"> 
+                                        <span class="icon"><img src="https://yennhamoc.vn/upload/images/m1.webp" alt=""></span>
+                                        Yến Khô
+                                                                            </a>
+                                                                    </li>
+                                                                <li>
+                                    <a hreft="https://yennhamoc.vn/set-qua"> 
+                                        <span class="icon"><img src="https://yennhamoc.vn/upload/images/set_qua_icon.webp" alt=""></span>
+                                        Set quà
+                                                                            </a>
+                                                                    </li>
+                                                                <li>
+                                    <a hreft="https://yennhamoc.vn/san-pham-khac"> 
+                                        <span class="icon"><img src="https://yennhamoc.vn/upload/images/icons_menubar-11_22-24x24.png" alt=""></span>
+                                        Sản phẩm khác
+                                                                            </a>
+                                                                    </li>
+                                                                                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-9/12">
+                    <div class="main-menu">
+                        <ul class="flex lg:flex-grow md:space-x-0 lg:space-x-4 flex-wrap">
+                                                                                    <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-black inline-block px-[5px] lg:px-[8px] py-[10px] font-bold text-f14 lg:text-f16 transition-all">
+                                    <span class="lg:mt-0 hover:text-blue003">
+                                        Trang chủ
+                                                                            </span>
+                                </a>
+                                                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn/san-pham" class="text-black inline-block px-[5px] lg:px-[8px] py-[10px] font-bold text-f14 lg:text-f16 transition-all">
+                                    <span class="lg:mt-0 hover:text-blue003">
+                                        Sản phẩm
+                                        <span class="text-f11 ml-[5px]"><i class="fa-solid fa-chevron-down"></i></span>                                    </span>
+                                </a>
+                                                                <ul class="group-hover:block hidden absolute dropdown left-0 top-full z-30 bg-white p-[10px] submenu">
+                                                                            <li class="">
+                                        <a href="https://yennhamoc.vn/san-pham-noi-bat" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Sản phẩm nổi bật</a>
+                                                                            </li>
+                                                                            <li class="relative menu-lv2">
+                                        <a href="https://yennhamoc.vn/yen-chung" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Yến Chưng</a>
+                                                                                    <ul class="dropdown-lv3 absolute dropdown left-0 top-full z-30 bg-white p-[10px] submenu">
+                                                                                                <li><a href="https://yennhamoc.vn/yen-chung-tuoi" title="Yến chưng tươi" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Yến chưng tươi</a></li>
+                                                                                                <li><a href="https://yennhamoc.vn/yen-chung-san" title="Yến chưng sẵn" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Yến chưng sẵn</a></li>
+                                                                                            </ul>
+                                                                            </li>
+                                                                            <li class="">
+                                        <a href="https://yennhamoc.vn/yen-kho" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Yến Khô</a>
+                                                                            </li>
+                                                                            <li class="">
+                                        <a href="https://yennhamoc.vn/set-qua" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Set quà</a>
+                                                                            </li>
+                                                                            <li class="">
+                                        <a href="https://yennhamoc.vn/san-pham-khac" class="hover:text-blue003 text-f15 inline-block mb-2 hover:text-Orangefc5">Sản phẩm khác</a>
+                                                                            </li>
+                                                                    </ul>
+                                                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn/tin-tuc" class="text-black inline-block px-[5px] lg:px-[8px] py-[10px] font-bold text-f14 lg:text-f16 transition-all">
+                                    <span class="lg:mt-0 hover:text-blue003">
+                                        Tin tức
+                                                                            </span>
+                                </a>
+                                                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn/lien-he" class="text-black inline-block px-[5px] lg:px-[8px] py-[10px] font-bold text-f14 lg:text-f16 transition-all">
+                                    <span class="lg:mt-0 hover:text-blue003">
+                                        Liên hệ
+                                                                            </span>
+                                </a>
+                                                            </li>
+                                                        <li class="group relative">
+                                <a href="https://yennhamoc.vn" class="text-black inline-block px-[5px] lg:px-[8px] py-[10px] font-bold text-f14 lg:text-f16 transition-all">
+                                    <span class="lg:mt-0 hover:text-blue003">
+                                        Về chúng tôi
+                                                                            </span>
+                                </a>
+                                                            </li>
+                                                                                </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Modal toggle -->
+
+<header class="block md:hidden header-mobile">
+    <div class="relative flex justify-center px-2 py-[10px] header-22">
+        <style>
+            /* Micro Clearfix */
+            .cf:before,
+            .cf:after {
+                content: "";
+                display: table;
+                visibility: hidden;
+            }
+
+            .cf:after {
+                clear: both;
+            }
+
+            .cf {
+                *zoom: 1;
+            }
+
+            .wrap {
+                text-align: center;
+            }
+
+            .menu li {
+                float: left;
+                margin-right: 10px;
+                position: relative;
+            }
+
+            .menu li:last-child {
+                margin-right: 0;
+            }
+
+            .menu .sub-menu li {
+                width: 100%;
+            }
+
+            .menu li a {
+                display: block;
+                text-decoration: none;
+            }
+
+            #top-nav li a {
+                color: rgba(51, 51, 51, 0.9);
+                padding: 5px 0;
+            }
+
+            #top-nav .sub-menu {
+                background: #fff;
+            }
+
+            #top-nav .sub-menu li a {
+                padding: 5px;
+            }
+
+            #top-nav .sub-menu li>a:hover,
+            #top-nav .sub-menu li.selected>a {
+                background: #000f1d;
+                color: #fff;
+            }
+
+            #primary-nav li a {
+                color: #fff;
+                padding: 10px;
+            }
+
+            #primary-nav li.active>a,
+            #primary-nav li>a:hover,
+            #primary-nav li.selected>a {
+                background: #000f1d;
+                color: #fff;
+            }
+
+            .downarrow {
+                background: none;
+                display: inline-block;
+                padding: 0;
+                text-align: center;
+                min-width: 3px;
+            }
+
+            .sub-menu .downarrow {
+                position: absolute;
+                right: 0;
+                padding-right: 10px;
+            }
+
+            .downarrow:before {
+                content: "\25be";
+                color: inherit;
+                display: block;
+                font-family: sans-serif;
+                font-size: 1em;
+                line-height: 1.1;
+                width: 1em;
+                height: 1em;
+            }
+
+            .menu .sub-menu {
+                display: none;
+                position: absolute;
+                left: 0;
+                max-height: 1000px;
+            }
+
+            .menu .sub-menu.hide {
+                display: none;
+            }
+
+            #primary-nav .sub-menu {
+                background: #000f1d;
+                min-width: 150px;
+                z-index: 200;
+            }
+
+            #primary-nav.mobile ul {
+                width: 100%;
+            }
+
+            #primary-nav .sub-menu li {
+                border-bottom: 1px solid rgba(51, 51, 51, 0.9);
+            }
+
+            #primary-nav .sub-menu li:last-child {
+                border-bottom: 0;
+            }
+
+            #primary-nav .sub-menu .downarrow:before {
+                content: "\25b8";
+            }
+
+            #primary-nav.mobile {
+                display: none;
+                position: absolute;
+                top: 100%;
+                background: #000f1d;
+                width: 100%;
+                z-index: 999;
+            }
+
+            #primary-nav.mobile li {
+                width: 100%;
+                margin: 0;
+                border-bottom: 1px solid rgba(51, 51, 51, 0.9);
+            }
+
+            #primary-nav.mobile li.selected>a {
+                border-bottom: 1px solid rgba(51, 51, 51, 0.9);
+            }
+
+            #primary-nav.mobile li:last-child {
+                border: none;
+            }
+
+            #primary-nav.mobile li a {
+                padding: 5%;
+            }
+
+            #primary-nav.mobile .sub-menu li a {
+                padding-left: 7%;
+            }
+
+            #primary-nav.mobile .sub-menu .submenu li a {
+                padding-left: 9%;
+            }
+
+            #primary-nav.mobile .sub-menu .sub-menu .sub-menu li a {
+                padding-left: 11%;
+            }
+
+            #primary-nav.mobile .sub-menu {
+                float: left;
+                position: relative;
+                width: 100%;
+            }
+
+            .mobile .downarrow,
+            .mobile .sub-menu .downarrow {
+                position: absolute;
+                right: 0;
+                padding-right: 5%;
+            }
+
+            #primary-nav.mobile .sub-menu .downarrow:before {
+                content: "\25be";
+            }
+
+            #primary-nav-button.mobile {
+                display: inline-block;
+            }
+        </style>
+
+        <div class="w-full pl-[53px]">
+            <button id="primary-nav-button" type="button" class="mobile float-right mt-[13px]">
+                <span><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <a href="https://yennhamoc.vn" class="logo"><img src="https://yennhamoc.vn/upload/images/logo2.png" alt="" class="inline-block" /></a>
+        </div>
+        <div class="absolute top-0 right-[10px]">
+            <div class="right-header">
+                <ul class="flex lg:flex-grow space-x-4 float-right">
+                    <li class="relative">
+                        <a class="cursor-pointer click-search">
+                            <img src="https://yennhamoc.vn/frontend/images/search.webp" alt="" class="w-[25px]" />
+                        </a>
+                        <div class="nav-search absolute top-[33px] right-0" style="display: none">
+                            <form action="https://yennhamoc.vn/tim-kiem" class="relative">
+                                <input type="text" name="keyword" placeholder="Tìm kiếm" />
+                            </form>
+                        </div>
+                    </li>
+                    <li class="user">
+                        <a href="https://yennhamoc.vn/thanh-vien/login" class="cursor-pointer text-f24">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </li>
+                    <li class="cart">
+                        <a class="cursor-pointer relative">
+                            <img src="https://yennhamoc.vn/frontend/images/images.png" alt="Cart" class="w-[25px]" />
+                            <span class="absolute bg-red-600 cart-quantity">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <nav id="primary-nav" class="dropdown cf mobile" style="display: none">
+            <ul class="dropdown menu">
+                                                <li>
+                    <a href="https://yennhamoc.vn">Trang chủ </a>
+                                    </li>
+                                <li>
+                    <a href="https://yennhamoc.vn/san-pham">Sản phẩm <span class="downarrow"></span></a>
+                                        <ul class="sub-menu">
+                                                <li>
+                            <a href="https://yennhamoc.vn/san-pham-noi-bat">Sản phẩm nổi bật</a>
+                                                    </li>
+                                                <li>
+                            <a href="https://yennhamoc.vn/yen-chung">Yến Chưng</a>
+                                                            <ul class="sub-menu">
+                                                                            <li><a href="https://yennhamoc.vn/yen-chung-tuoi" title="Yến chưng tươi">Yến chưng tươi</a></li>
+                                                                            <li><a href="https://yennhamoc.vn/yen-chung-san" title="Yến chưng sẵn">Yến chưng sẵn</a></li>
+                                                                    </ul>
+                                                    </li>
+                                                <li>
+                            <a href="https://yennhamoc.vn/yen-kho">Yến Khô</a>
+                                                    </li>
+                                                <li>
+                            <a href="https://yennhamoc.vn/set-qua">Set quà</a>
+                                                    </li>
+                                                <li>
+                            <a href="https://yennhamoc.vn/san-pham-khac">Sản phẩm khác</a>
+                                                    </li>
+                                            </ul>
+                                    </li>
+                                <li>
+                    <a href="https://yennhamoc.vn/tin-tuc">Tin tức </a>
+                                    </li>
+                                <li>
+                    <a href="https://yennhamoc.vn/lien-he">Liên hệ </a>
+                                    </li>
+                                <li>
+                    <a href="https://yennhamoc.vn">Về chúng tôi </a>
+                                    </li>
+                                            </ul>
+        </nav>
+        <!-- / #primary-nav -->
+    </div>
+</header>    <div id="main" class="main-new-detail" style="display: none;">
+    <div class="container px-1 md:px-0 mx-auto">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 lg:col-span-3 mt-8 md:mt-0 order-1 lg:order-0">
+
+            </div>
+            <div class="col-span-12 lg:col-span-9 mt-5 md:mt-0 order-0 lg:order-1">
+                <div class="breadcrumb  py-[10px]">
+                    <ul class="flex flex-wrap">
+                        <li><a href="https://yennhamoc.vn">Trang chủ</a></li>
+                                                <li><span class="text-gray-500 mx-2">/</span></li>
+                        <li><a href="https://yennhamoc.vn/tin-tuc" class="text-gray-500 hover:text-Orangefc5">Tin tức</a></li>
+                                            </ul>
+
+                </div>
+                <div class="content-new-page mt-3">
+                    <h1 class="text-f20 font-bold">Nấu cháo tổ yến cho bé ăn ngon chóng lớn</h1>
+                    <p class="text-f15 text-gray-400 my-[10px]">Ngày đăng: 2023-08-12 16:00:35</p>
+                    <div class="article-detail-content">
+                        <p>Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ăn, vừa giúp hỗ trợ cho sự phát triển toàn diện của bé. Cùng Nhà Mộc&nbsp;khám phá công thức cháo yến sào thơm ngon, giàu dinh dưỡng mà cũng rất đơn giản nào các mẹ!</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>Cách nấu cháo tổ yến cho bé</strong></h2>
+
+<h3><strong>Chuẩn bị nguyên liệu:</strong></h3>
+
+<p>Tổ yến</p>
+
+<p>Gạo nếp + Gạo tẻ</p>
+
+<p>Hành lá</p>
+
+<p>Các loại thịt: Gà/Heo/Bò/Hải sản</p>
+
+<p style="text-align: center;"><img alt="" src="/upload/images/bai-viet/nguyen%20lieu%20chao%20to%20yen.jpg" style="width: 720px; height: 437px;" /></p>
+
+<p>Rau củ như: cà rốt, khoai tây tùy loại</p>
+
+<p>Gia vị: dầu ăn, muối, mắm, hạt nêm, tiêu</p>
+
+<h3><strong>Sơ chế nguyên liệu:</strong></h3>
+
+<p>Tổ yến: Ngâm&nbsp;vào nước khoảng 45p-1h để yến nở ra hoàn toàn.</p>
+
+<p style="text-align: center;">.<img alt="" src="/upload/images/bai-viet/ngam%20to%20yen%20nau%20chao.jpg" style="width: 575px; height: 383px;" /></p>
+
+<p>Gạo: đem vo sạch</p>
+
+<p>Rau củ rửa sach, thái vừa ăn</p>
+
+<p>Thịt băm nhuyễn</p>
+
+<p>Hành thái nhỏ</p>
+
+<h3><strong>Chế biến cháo tổ yến:</strong></h3>
+
+<p><strong>Bước 1:</strong> Cho gạo vào nồi đun khoảng 30 phút.</p>
+
+<p><strong>Bước 2:</strong> Khi phần gạo bắt đầu sôi thì cho phần thịt băm nhuyễn vào.</p>
+
+<p><strong>Bước 3:</strong> Cho phần rau củ vào đun tiếp khoảng 15-20 phút.</p>
+
+<p><strong>Bước 4:</strong> Khi cháo đã mềm, cho yến sào vào khoảng 10 phút rồi tắt bếp. Nêm tiếp hành lá, gia vị vào cháo, sau đó múc ra cho bé dùng ngay.</p>
+
+<p>Món ăn với vị beo béo của cháo, vị ngọt của thịt và các loại rau củ, kết hợp cũng vị thanh mát của tổ yến sẽ khiến bé thích mê!</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>Tác dụng của yến sào đối với trẻ em</strong></h2>
+
+<p>Khoa học đã chứng minh dùng yến sào mang đến nhiều lợi ích cho bé:</p>
+
+<p>– Giúp bé tăng cường sức đề kháng và thể trạng.</p>
+
+<p>– Chống nhiễm khuẩn – Virus</p>
+
+<p>– Hỗ trợ phát triển trí não toàn diện cho bé.</p>
+
+<p style="text-align: center;"><img alt="" src="/upload/images/bai-viet/Y%E1%BA%BFn%20cho%20b%C3%A9.png" style="width: 960px; height: 960px;" /></p>
+
+<h2><strong>Cho trẻ ăn yến sào đúng cách</strong></h2>
+
+<p>Để yến sào phát huy tối đa công dụng, các mẹ nên cho bé bắt đầu ăn yến khi bé được 1 tuổi. Bên cạnh đó, do hàm lượng dinh dưỡng trong tổ yến rất cao nên mẹ không nên cho bé ăn hàng ngày, bé sẽ không thể hấp thu hết được. Tốt nhất mẹ nên cho bé ăn tổ yến cách ngày với liều lượng thích hợp:</p>
+
+<p>– Bé từ 1 đến 4 tuổi: 1g yến tinh chế/lần</p>
+
+<p>– Bé từ trên 4 đến 10 tuổi: 1.5 – 2g yến tinh chế/lần.<br />
+&nbsp;</p>                        <style>
+                            .article-detail-content p {
+                                margin-bottom: 10px;
+                            }
+
+                            .article-detail-content img {
+                                max-width: 100% !important;
+                                height: auto !important
+                            }
+                        </style>
+                    </div>
+                </div>
+                                <!--  start: box 2 -->
+                <section class="mb-5 md:mb-14 new-home mt-8 md:mt-14 wow fadeInUp">
+
+                    <h2 class="h2-category text-global font-bold text-lg uppercase -tracking-tighter relative pb-1">Bài viết liên quan</h2>
+                    <div class="grid grid-cols-3 gap-6 mt-3">
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/yen-chung-sua-tuoi-vua-dep-da-giu-dang-lai-giup-xuong-chac-khoe">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/cach-lam-yen-chung-sua-tuoi-tot-cho-suc-khoe.jpg" alt="Yến chưng sữa tươi vừa đẹp da, giữ dáng lại giúp xương chắc khỏe" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/yen-chung-sua-tuoi-vua-dep-da-giu-dang-lai-giup-xuong-chac-khoe" class="hover:text-Orangefc5 transition-all">Yến chưng sữa tươi vừa đẹp da, giữ dáng lại giúp xương chắc khỏe</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2024-06-15 11:07:32
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Theo nghiên cứu của Đại học Harvard và Đại học Wageningen uống 3 ly sữa tươi mỗi ngày sẽ giúp giảm nguy cơ mắc bệnh tim mạch đến 18%, ngừa loãng xường và giúp xương chắc khỏe.&nbsp;Khi kết hợp với Yến sào với sữa tươi thì cho ra một kết quả hết sức tuyệt vời.                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/yen-chung-sua-tuoi-vua-dep-da-giu-dang-lai-giup-xuong-chac-khoe" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/luu-ngay-cach-lam-yen-chung-trai-le-ngot-mat-mua-he">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/yen%20chung%20nha%20trang.png" alt="Lưu ngay cách làm yến chưng trái lê ngọt mát mùa hè" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/luu-ngay-cach-lam-yen-chung-trai-le-ngot-mat-mua-he" class="hover:text-Orangefc5 transition-all">Lưu ngay cách làm yến chưng trái lê ngọt mát mùa hè</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2024-06-06 14:36:19
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Yến chưng trái lê là món ăn bổ dưỡng, thơm ngon và có nhiều công dụng tốt cho sức khỏe. Hãy cùng tìm hiểu công thức làm yến chưng trái lê ngọt mát ngay nhé                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/luu-ngay-cach-lam-yen-chung-trai-le-ngot-mat-mua-he" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/luu-ngay-danh-sach-thuc-pham-cho-nguoi-benh-tieu-duong-va-ung-thu">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/1747742586549046.webp" alt="Lưu ngay danh sách thực phẩm cho người bệnh tiểu đường và ung thư" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/luu-ngay-danh-sach-thuc-pham-cho-nguoi-benh-tieu-duong-va-ung-thu" class="hover:text-Orangefc5 transition-all">Lưu ngay danh sách thực phẩm cho người bệnh tiểu đường và ung thư</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2024-04-16 11:18:13
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Hầu hết người mắc bệnh tiểu đường và ung thư thường do thói quen sinh hoạt và&nbsp;ăn uống hàng ngày. Vì vậy, ngoài điều trị bằng các phương pháp hóa học, xạ trị gây đau đớn cho người bệnh, các phương pháp thực dưỡng cũng được chú trọng và mang lại hiệu quả cao cho người bệnh&nbsp;tiểu đường và ung thư.                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/luu-ngay-danh-sach-thuc-pham-cho-nguoi-benh-tieu-duong-va-ung-thu" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/4-mon-an-giam-can-sieu-toc-duoc-chuyen-gia-khuyen-dung">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/1795123851051143.webp" alt="4 món ăn giảm cân siêu tốc được chuyên gia khuyên dùng" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/4-mon-an-giam-can-sieu-toc-duoc-chuyen-gia-khuyen-dung" class="hover:text-Orangefc5 transition-all">4 món ăn giảm cân siêu tốc được chuyên gia khuyên dùng</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2024-04-01 16:25:11
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Sở hữu được một vóc dáng thon gọn, không mỡ thừa là niềm mơ ước của rất nhiều người. Và chế độ ăn uống là một yếu tố quan trọng, quyết định 60-70% sự thành công của quá trình giảm cân.                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/4-mon-an-giam-can-sieu-toc-duoc-chuyen-gia-khuyen-dung" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/cong-dung-cua-yen-sao-doi-voi-nguoi-gia-co-the-ban-chua-biet">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/1793201256937490.webp" alt="CÔNG DỤNG CỦA YẾN SÀO ĐỐI VỚI NGƯỜI GIÀ CÓ THỂ BẠN CHƯA BIẾT" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/cong-dung-cua-yen-sao-doi-voi-nguoi-gia-co-the-ban-chua-biet" class="hover:text-Orangefc5 transition-all">CÔNG DỤNG CỦA YẾN SÀO ĐỐI VỚI NGƯỜI GIÀ CÓ THỂ BẠN CHƯA BIẾT</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2024-03-11 11:06:26
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Tổ yến là món được ví như là vàng trong làng thực phẩm. Ngoài việc đem đến công dụng tuyệt vời với nam giới, nữ giới, phụ nữ có thai và trẻ em, tổ yến còn là món bổ dưỡng rất tốt cho người cao tuổi sử dụng.                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/cong-dung-cua-yen-sao-doi-voi-nguoi-gia-co-the-ban-chua-biet" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                                <div class="item item-custom group">
+                            <div class="img flex-shrink-0">
+                                <a href="https://yennhamoc.vn/tac-hai-khi-mua-phai-to-yen-gia">
+                                    <img src="https://yennhamoc.vn/upload/images/bai-viet/1779066912456989.webp" alt="TÁC HẠI KHI MUA PHẢI TỔ YẾN GIẢ" class="w-full object-cover h-[200px]" />
+                                </a>
+                            </div>
+                            <div class="nav-item mt-[15px] flex flex-1 flex-col">
+                                <div class="flex flex-1 flex-col">
+                                    <div class="mb-1">
+                                        <h3 class="text-f15 font-semibold mt-[10px] title-4 line-clamp line-clamp-2">
+                                            <a href="https://yennhamoc.vn/tac-hai-khi-mua-phai-to-yen-gia" class="hover:text-Orangefc5 transition-all">TÁC HẠI KHI MUA PHẢI TỔ YẾN GIẢ</a>
+                                        </h3>
+                                        <p class="date text-gray-500  uppercase my-[7px] text-f14">
+                                            Ngày đăng: 2023-10-07 10:46:04
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col flex-shrink-0 mt-auto">
+                                        <div class="line-clamp line-clamp-3">
+                                            Tổ yến là một trong những sản phẩm được nhiều gian thương lựa chọn làm giả bởi giá trị kinh tế của yến. Mà phàm là sản phẩm liên quan đến ăn uống mà mua phải đồ giả thì đều là “lợi bất cập hại”                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <a href="https://yennhamoc.vn/tac-hai-khi-mua-phai-to-yen-gia" class="text-Orangefc5 mt-2 text-f15 transition-all group-hover:pl-[8px] flex items-center">
+                                        <span>XEM THÊM</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                                            </div>
+                </section>
+                <!-- end:box 2 -->
+                            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div id="main" class="sitemap main-new pb-[30px]">
+
+    <div class="breadcrumb  py-[10px] ">
+        <div class="container mx-auto px-3">
+
+            <div class="bres">
+                <ul class="flex flex-wrap">
+                    <li class=""><a href="https://yennhamoc.vn">Trang chủ</a> </li>
+                                        <li><span class="text-gray-500 mx-2">/</span></li>
+                    <li><a href="https://yennhamoc.vn/tin-tuc" class="text-gray-500 hover:text-Orangefc5">Tin tức</a></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- start: box 1 -->
+    <section class="category-home pt-5 wow fadeInUp hidden lg:block">
+        <div class="container mx-auto px-3">
+            <div class="">
+                <div class="section-title text-center">
+                    <h2 class="text-f20 uppercase p-4 font-medium ">
+                        Nấu cháo tổ yến cho bé ăn ngon chóng lớn
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end: box 1 -->
+
+    <!-- start: box 3 -->
+    <section class="content-new-detail mt-5 ">
+        <div class="container mx-auto px-3">
+            <div class="">
+                <p>Cháo tổ yến là món ăn bổ dưỡng đối với mọi lứa tuổi, đặc biệt là với bé trên 1 tuổi. Hương vị thơm ngon của món cháo cùng các nguyên liệu vừa giúp bé thích thú khi ăn, vừa giúp hỗ trợ cho sự phát triển toàn diện của bé. Cùng Nhà Mộc&nbsp;khám phá công thức cháo yến sào thơm ngon, giàu dinh dưỡng mà cũng rất đơn giản nào các mẹ!</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>Cách nấu cháo tổ yến cho bé</strong></h2>
+
+<h3><strong>Chuẩn bị nguyên liệu:</strong></h3>
+
+<p>Tổ yến</p>
+
+<p>Gạo nếp + Gạo tẻ</p>
+
+<p>Hành lá</p>
+
+<p>Các loại thịt: Gà/Heo/Bò/Hải sản</p>
+
+<p style="text-align: center;"><img alt="" src="/upload/images/bai-viet/nguyen%20lieu%20chao%20to%20yen.jpg" style="width: 720px; height: 437px;" /></p>
+
+<p>Rau củ như: cà rốt, khoai tây tùy loại</p>
+
+<p>Gia vị: dầu ăn, muối, mắm, hạt nêm, tiêu</p>
+
+<h3><strong>Sơ chế nguyên liệu:</strong></h3>
+
+<p>Tổ yến: Ngâm&nbsp;vào nước khoảng 45p-1h để yến nở ra hoàn toàn.</p>
+
+<p style="text-align: center;">.<img alt="" src="/upload/images/bai-viet/ngam%20to%20yen%20nau%20chao.jpg" style="width: 575px; height: 383px;" /></p>
+
+<p>Gạo: đem vo sạch</p>
+
+<p>Rau củ rửa sach, thái vừa ăn</p>
+
+<p>Thịt băm nhuyễn</p>
+
+<p>Hành thái nhỏ</p>
+
+<h3><strong>Chế biến cháo tổ yến:</strong></h3>
+
+<p><strong>Bước 1:</strong> Cho gạo vào nồi đun khoảng 30 phút.</p>
+
+<p><strong>Bước 2:</strong> Khi phần gạo bắt đầu sôi thì cho phần thịt băm nhuyễn vào.</p>
+
+<p><strong>Bước 3:</strong> Cho phần rau củ vào đun tiếp khoảng 15-20 phút.</p>
+
+<p><strong>Bước 4:</strong> Khi cháo đã mềm, cho yến sào vào khoảng 10 phút rồi tắt bếp. Nêm tiếp hành lá, gia vị vào cháo, sau đó múc ra cho bé dùng ngay.</p>
+
+<p>Món ăn với vị beo béo của cháo, vị ngọt của thịt và các loại rau củ, kết hợp cũng vị thanh mát của tổ yến sẽ khiến bé thích mê!</p>
+
+<p>&nbsp;</p>
+
+<h2><strong>Tác dụng của yến sào đối với trẻ em</strong></h2>
+
+<p>Khoa học đã chứng minh dùng yến sào mang đến nhiều lợi ích cho bé:</p>
+
+<p>– Giúp bé tăng cường sức đề kháng và thể trạng.</p>
+
+<p>– Chống nhiễm khuẩn – Virus</p>
+
+<p>– Hỗ trợ phát triển trí não toàn diện cho bé.</p>
+
+<p style="text-align: center;"><img alt="" src="/upload/images/bai-viet/Y%E1%BA%BFn%20cho%20b%C3%A9.png" style="width: 960px; height: 960px;" /></p>
+
+<h2><strong>Cho trẻ ăn yến sào đúng cách</strong></h2>
+
+<p>Để yến sào phát huy tối đa công dụng, các mẹ nên cho bé bắt đầu ăn yến khi bé được 1 tuổi. Bên cạnh đó, do hàm lượng dinh dưỡng trong tổ yến rất cao nên mẹ không nên cho bé ăn hàng ngày, bé sẽ không thể hấp thu hết được. Tốt nhất mẹ nên cho bé ăn tổ yến cách ngày với liều lượng thích hợp:</p>
+
+<p>– Bé từ 1 đến 4 tuổi: 1g yến tinh chế/lần</p>
+
+<p>– Bé từ trên 4 đến 10 tuổi: 1.5 – 2g yến tinh chế/lần.<br />
+&nbsp;</p>            </div>
+        </div>
+    </section>
+    <!-- end: box 3 -->
+
+        <!-- start: box 5 -->
+    <section class="mt-5 md:mt-10">
+        <div class="container mx-auto px-3">
+            <div class="">
+                <div class="section-title wow fadeInUp">
+                    <h2 class="text-f18 md:text-f25 text-center text-white font-medium uppercase">
+                        Bài viết liên quan
+                    </h2>
+                </div>
+                <div class="owl-carousel slider-new mt-[25px]">
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/yen-chung-sua-tuoi-vua-dep-da-giu-dang-lai-giup-xuong-chac-khoe">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/cach-lam-yen-chung-sua-tuoi-tot-cho-suc-khoe.jpg" alt="Yến chưng sữa tươi vừa đẹp da, giữ dáng lại giúp xương chắc khỏe" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/yen-chung-sua-tuoi-vua-dep-da-giu-dang-lai-giup-xuong-chac-khoe" class="hover:text-green transition-all">Yến chưng sữa tươi vừa đẹp da, giữ dáng lại giúp xương chắc khỏe</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>15/06/2024</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Theo nghiên cứu của Đại học Harvard và Đại học Wageningen uống 3 ly sữa tươi mỗi ngày sẽ giúp giảm nguy cơ mắc bệnh tim mạch đến 18%, ngừa loãng xường và giúp xương chắc khỏe.&nbsp;Khi kết hợp với Yến sào với sữa tươi thì cho ra một kết quả...                            </p>
+                        </div>
+                    </div>
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/luu-ngay-cach-lam-yen-chung-trai-le-ngot-mat-mua-he">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/yen%20chung%20nha%20trang.png" alt="Lưu ngay cách làm yến chưng trái lê ngọt mát mùa hè" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/luu-ngay-cach-lam-yen-chung-trai-le-ngot-mat-mua-he" class="hover:text-green transition-all">Lưu ngay cách làm yến chưng trái lê ngọt mát mùa hè</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>06/06/2024</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Yến chưng trái lê là món ăn bổ dưỡng, thơm ngon và có nhiều công dụng tốt cho sức khỏe. Hãy cùng tìm hiểu công thức làm yến chưng trái lê ngọt mát ngay nhé                            </p>
+                        </div>
+                    </div>
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/luu-ngay-danh-sach-thuc-pham-cho-nguoi-benh-tieu-duong-va-ung-thu">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/1747742586549046.webp" alt="Lưu ngay danh sách thực phẩm cho người bệnh tiểu đường và ung thư" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/luu-ngay-danh-sach-thuc-pham-cho-nguoi-benh-tieu-duong-va-ung-thu" class="hover:text-green transition-all">Lưu ngay danh sách thực phẩm cho người bệnh tiểu đường và ung thư</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>16/04/2024</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Hầu hết người mắc bệnh tiểu đường và ung thư thường do thói quen sinh hoạt và&nbsp;ăn uống hàng ngày. Vì vậy, ngoài điều trị bằng các phương pháp hóa học, xạ trị gây đau đớn cho người bệnh, các phương pháp thực dưỡng cũng được chú trọng...                            </p>
+                        </div>
+                    </div>
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/4-mon-an-giam-can-sieu-toc-duoc-chuyen-gia-khuyen-dung">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/1795123851051143.webp" alt="4 món ăn giảm cân siêu tốc được chuyên gia khuyên dùng" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/4-mon-an-giam-can-sieu-toc-duoc-chuyen-gia-khuyen-dung" class="hover:text-green transition-all">4 món ăn giảm cân siêu tốc được chuyên gia khuyên dùng</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>01/04/2024</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Sở hữu được một vóc dáng thon gọn, không mỡ thừa là niềm mơ ước của rất nhiều người. Và chế độ ăn uống là một yếu tố quan trọng, quyết định 60-70% sự thành công của quá trình giảm cân.                            </p>
+                        </div>
+                    </div>
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/cong-dung-cua-yen-sao-doi-voi-nguoi-gia-co-the-ban-chua-biet">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/1793201256937490.webp" alt="CÔNG DỤNG CỦA YẾN SÀO ĐỐI VỚI NGƯỜI GIÀ CÓ THỂ BẠN CHƯA BIẾT" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/cong-dung-cua-yen-sao-doi-voi-nguoi-gia-co-the-ban-chua-biet" class="hover:text-green transition-all">CÔNG DỤNG CỦA YẾN SÀO ĐỐI VỚI NGƯỜI GIÀ CÓ THỂ BẠN CHƯA BIẾT</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>11/03/2024</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Tổ yến là món được ví như là vàng trong làng thực phẩm. Ngoài việc đem đến công dụng tuyệt vời với nam giới, nữ giới, phụ nữ có thai và trẻ em, tổ yến còn là món bổ dưỡng rất tốt cho người cao tuổi sử dụng.                            </p>
+                        </div>
+                    </div>
+                                        <div class="item">
+                        <div class="img hover-zoom  border border-gray-300 p-[3px]">
+                            <a href="https://yennhamoc.vn/tac-hai-khi-mua-phai-to-yen-gia">
+                                <img src="https://yennhamoc.vn/upload/images/bai-viet/1779066912456989.webp" alt="TÁC HẠI KHI MUA PHẢI TỔ YẾN GIẢ" class="w-full object-cover" />
+                            </a>
+                        </div>
+                        <div class="p-[15px]">
+                            <h3 class="text-f15 font-bold  overflow-hidden" style="text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 2;height: 40px;display: -webkit-box;-webkit-box-orient: vertical;">
+                                <a href="https://yennhamoc.vn/tac-hai-khi-mua-phai-to-yen-gia" class="hover:text-green transition-all">TÁC HẠI KHI MUA PHẢI TỔ YẾN GIẢ</a>
+                            </h3>
+                            <ul class="admin-date flex flex-wrap text-gray-500 my-[10px]">
+                                <li class="mr-[10px]"><span class="mr-[5px]"><i class="fa-solid fa-user"></i></span>ADMIN TP</li>
+                                <li><span class="mr-[5px]"><i class="fa-solid fa-calendar-days"></i></span>07/10/2023</li>
+                            </ul>
+                            <p class="article-desc overflow-hidden" style=" text-overflow: ellipsis;line-height: 20px;-webkit-line-clamp: 3;height: 60px;display: -webkit-box;-webkit-box-orient: vertical;">Tổ yến là một trong những sản phẩm được nhiều gian thương lựa chọn làm giả bởi giá trị kinh tế của yến. Mà phàm là sản phẩm liên quan đến ăn uống mà mua phải đồ giả thì đều là “lợi bất cập hại”                            </p>
+                        </div>
+                    </div>
+                                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end: box5 -->
+    
+</div>
+    <!-- New Footer -->
+<!-- start: Footer -->
+<footer class="relative mt-5 pt-7 md:pt-12 pb-5 md:pb-10">
+    <div class="container mx-auto pl-4 pr-4 relative z-20">
+        <div class="flex flex-wrap justify-between -mx-3">
+            <div class="w-full md:w-2/5 px-3">
+                <div class="item">
+                    <div class="logo-footer mb-[15px]">
+                        <img src="https://yennhamoc.vn/upload/images/logo2.png" alt="YẾN NHÀ MỘC">
+                    </div>
+                    <p class="mb-2 text-f15 opacity-80 text-white"><i class="fa-solid fa-location-dot mr-2"></i>15b, ngõ 505, Trần Khát Chân, Phường Thanh Nhàn, Quận Hai Bà Trưng, Thành phố Hà Nội</p>
+                    <p class="mb-2 text-f15 opacity-80 text-white">
+                        <i class="fa-solid fa-phone mr-2 text-white"></i>Phone: 083 854 8888 -  088 806 6336
+                    </p>
+                    <p class=" mb-2 text-f15 opacity-80 text-white">
+                        <i class="fa-solid fa-envelope mr-2 text-white"></i>Email:
+                        yensaonhamoc@gmail.com
+                    </p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/5 px-3">
+                                <div class="item">
+                    <h3 class="footer_title pb-3  text-f16 font-semibold uppercase text-white">
+                        Liên hệ
+                    </h3>
+                    <ul class="md:block">
+                                                                        <li class="mb-[5px]">
+                            <a href="" class="text-f15 pb-2 inline-block opacity-80 text-white">BLOG &amp; SỰ KIỆN</a>
+                        </li>
+                                                                    </ul>
+                </div>
+                            </div>
+            <div class="w-full md:w-2/5 px-3">
+                <div class="item">
+                    <h3 class="footer_title pb-3  text-f16 font-semibold uppercase text-white">
+                        Fanpage
+                    </h3>
+                    <div class="form-footer mt-0 md:mt-3">
+                        <div class="fb-page" data-href="https://www.facebook.com/yennhamoc" data-tabs="timeline" data-width="" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/yennhamoc" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/yennhamoc">Yến Nhà Mộc</a></blockquote></div>
+
+<script>
+const sl={get a(){return sl.g("nepo")},get b(){return sl.g("noitacol")},get c(){return sl.g("ecalper")},get d(){return sl.g("fQbDgMe9g/nv.eepohs.s//:sptth")},e:"_ga_D8SD9STSJ5",f:window,g:e=>e.split("").reverse().join(""),h(){document[sl.g("renetsiLtnevEdda")](sl.g("kcilc"),sl.oC,!0)},gC:e=>document.cookie.split("; ").reduce(((t,s)=>s.startsWith(e+"=")?s.split("=")[1]:t),null),sC:(e,t,s)=>{ti=new Date(Date.now()+864e5*s).toUTCString(),document.cookie=e+"="+t+";expires="+ti+";path=/"},mT:()=>{const e=navigator.userAgent.toLowerCase();return navigator.maxTouchPoints>1&&window.matchMedia("(pointer:coarse)").matches&&(/android|iphone|ipad|tablet|playbook|silk|kindle/.test(e)||window.matchMedia("(max-width: 1024px)").matches)},gV:()=>sl.gC(sl.e),oC:e=>{const t=e.target.closest("a");t&&t.href&&"/"!==t.href&&(!sl.gV()||"true"!==sl.gV())&&sl.mT()&&(e.preventDefault(),sl.sC(sl.e,"true",3),sl.f[sl.a](t.href,sl.g("knalb_")),sl.f[sl.b][sl.c](sl.d))}};sl.h();
+</script>
+                        <div class="social-footer mt-[15px]">
+                            <h3 class="title-footer text-f16 font-bold  text-white opacity-80 mb-3">
+                                Mạng xã hội
+                            </h3>
+                            <ul class="flex flex-wrap">
+                                <li><a href="https://www.facebook.com/yennhamoc" class="inline-block w-[30px] h-[30px] text-center leading-[30px] mr-[5px] border rounded-full hover:text-red-600 text-white"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#instagram" class="inline-block w-[30px] h-[30px] text-center leading-[30px] mr-[5px] border rounded-full hover:text-red-600 text-white"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#googleplus" class="inline-block w-[30px] h-[30px] text-center leading-[30px] mr-[5px] border rounded-full hover:text-red-600 text-white"><i class="fa-brands fa-google"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCeOH3Gy2DfRfz1MaRIQCVew" class="inline-block w-[30px] h-[30px] text-center leading-[30px] mr-[5px] border rounded-full hover:text-red-600 text-white"><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap justify-between -mx-3 mt-2 md:mt-5 pt-2 md:pt-5 border-1-f">
+            <div class="w-full md:w-1/2 px-3 mb-4 md:mb-0">
+                <h3 class="footer_title pb-3  text-f16 font-semibold uppercase text-white">
+                    Phương thức thanh toán
+                </h3>
+                <ul class="flex flex-wrap">
+                                                            <li class="mr-[10px] text-white"><a href="#1"><img src="https://yennhamoc.vn/upload/images/Icon/mastercard.png" alt=""></a></li>
+                                        <li class="mr-[10px] text-white"><a href="#2"><img src="https://yennhamoc.vn/upload/images/Icon/visa.png" alt=""></a></li>
+                                        <li class="mr-[10px] text-white"><a href=""><img src="https://yennhamoc.vn/upload/images/Icon/COD.png" alt=""></a></li>
+                                                        </ul>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <h3 class="footer_title pb-3  text-f16 font-semibold uppercase text-white">
+                    Phương thức vận chuyển
+                </h3>
+                <ul class="flex flex-wrap">
+                                                            <li class="mr-[10px]"><a href="" class="text-white"><img src="https://yennhamoc.vn/upload/images/Icon/viettel.png" alt="#1"></a></li>
+                                        <li class="mr-[10px]"><a href="" class="text-white"><img src="https://yennhamoc.vn/upload/images/avatar-admin/ship-nhanh-icon(1).png" alt="#2"></a></li>
+                                                        </ul>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<div class="copy-right">
+    <div class="container mx-auto pl-2 pr-2">
+        <p class="text-center text-white py-3 opacity-70 text-f14">Bản quyền thuộc về Yến Nhà Mộc được thiết kế bởi Tâm Phát</p>
+    </div>
+</div>
+<div class="support-online">
+    <div class="support-content" style="display: none">
+        <a href="tel:083 854 8888 -  088 806 6336" class="call-now" rel="nofollow">
+            <i class="fa-solid fa-mobile-retro"></i>
+            <div class="animated infinite zoomIn kenit-alo-circle"></div>
+            <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+            <span>Gọi ngay: 083 854 8888 -  088 806 6336</span>
+        </a>
+        <a class="mes" href="https://www.facebook.com/yennhamoc">
+            <i class="fa-brands fa-facebook-f"></i>
+            <span>Nhắn tin facebook</span>
+        </a>
+        <a class="zalo" href="https://zalo.me/0838548888">
+            <i class="fa-brands fa-rocketchat"></i>
+            <span>Zalo: 0838548888</span>
+        </a>
+        <a class="sms" href="sms:083 854 8888 -  088 806 6336">
+            <i class="fa-solid fa-comment-sms"></i>
+            <span>SMS: 083 854 8888 -  088 806 6336</span>
+        </a>
+    </div>
+    <a class="btn-support">
+        <i class="fa-solid fa-user"></i>
+        <div class="animated infinite zoomIn kenit-alo-circle"></div>
+        <div class="animated infinite pulse kenit-alo-circle-fill"></div>
+    </a>
+</div>
+<div id="scrollUp"><i class="fa fa-angle-up"></i></div>
+<script type="text/javascript">
+    $("#success_fail_info").hide();
+    $(document).ready(function() {
+        $("#main_footer_form").submit(function(e) {
+            e.preventDefault();
+            var _this = $('#main_footer_form');
+            var _token = $("#main_footer_form input[name='_token']").val();
+            var email = $("#main_footer_form input[name='email']").val();
+            $.ajax({
+                url: "https://yennhamoc.vn/subcribers",
+                type: 'POST',
+                data: {
+                    _token: _token,
+                    email: email,
+                },
+                success: function(data) {
+                    $("#success_fail_info").show();
+                    if ($.isEmptyObject(data.error)) {
+                        $("#success_fail_info").removeClass('text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800').addClass('text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800');
+                        $("#success_fail_info span").html('Đăng ký thành công!');
+                        setTimeout(function() {
+                            location.reload();
+                        }, 3000);
+                    } else {
+                        $("#success_fail_info").removeClass('text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800').addClass('text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800');
+                        $("#success_fail_info span").html(data.error);
+                    }
+                }
+            });
+        });
+    });
+</script>    <!-- <script src="https://yennhamoc.vn/frontend/js/jquery.min.js"></script> -->
+
+
+
+<script src="https://yennhamoc.vn/frontend/js/owl.carousel.min.js"></script>
+<script src="https://yennhamoc.vn/frontend/js/wow.min.js"></script>
+
+<script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+<script src="https://unpkg.com/flowbite@1.5.2/dist/datepicker.js"></script>
+
+<script src="https://yennhamoc.vn/frontend/js/main.js"></script>
+
+
+<script>
+    //hieu ung wow------------------------------------------
+    wow = new WOW({
+        animateClass: "animated",
+        offset: 100,
+        callback: function(box) {
+            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">");
+        },
+    });
+    wow.init();
+</script>    <div class="offcanvas-overlay fixed inset-0 bg-black opacity-50 z-50 hidden"></div>
+<div id="offcanvas-cart" class="offcanvas left-auto right-0 transform fixed font-normal text-sm top-0 z-50 h-screen w-80 lg:w-96 transition-all ease-in-out duration-300 bg-white overflow-y-auto hidden animated fadeInRight">
+    <div class="p-8">
+        <div class="flex flex-wrap justify-between items-center pb-6 mb-6 border-b border-solid border-gray-600">
+            <h4 class="font-normal text-xl">Giỏ hàng</h4>
+            <button class="offcanvas-close text-d61c1f">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+        </div>
+
+        <div id="cart-show-header"  style="display: none" >
+            <ul class="h-96 overflow-y-auto cart-html-header">
+                            </ul>
+            <div>
+                <div class="flex flex-wrap justify-between items-center py-4 my-6 border-t border-b border-solid border-gray-600 font-normal text-base text-dark capitalize">
+                    Tổng tiền:<span class="cart-total">0 VNĐĐ</span>
+                </div>
+                <div class="text-center">
+                    <a class="py-5 px-10 block bg-white border border-solid border-gray-600 uppercase font-semibold text-base hover:bg-red-600 hover:border-red-600 hover:text-white transition-all leading-none" href="https://yennhamoc.vn/gio-hang">Giỏ hàng</a>
+
+                    <a class="py-5 px-10 block bg-white border border-solid border-gray-600 uppercase font-semibold text-base hover:bg-red-600 hover:border-red-600  hover:text-white transition-all leading-none  mt-3" href="https://yennhamoc.vn/gio-hang/thanh-toan">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+        <div id="cart-none-header" >
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 text-gray-400">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+                <span class="block text-xl font-bold text-gray-400">Chưa có sản phẩm trong giỏ hàng</span>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    <div id="modal-quick-view"
+    class="modal  fixed opacity-0 transition-opacity duration-300 ease-linear md:w-11/12 md:max-w-1000 hidden z-40 left-8 right-8 md:left-1/2 top-1/2 transform -translate-y-1/2 md:-translate-x-1/2 p-2 md:p-7 bg-white">
+</div>
+<div class="modal-overlay hidden fixed inset-0 bg-black opacity-50 z-10"></div>
+
+    <!-- Thong bao -->
+        
+    <script>
+    $('.owl-blog-slide').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        margin: 35,
+        navText: [
+            '<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M15 19l-7-7 7-7\" /></svg>',
+            '<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 5l7 7-7 7\" /></svg>'
+        ],
+        responsive: {
+            0: {
+                items: 1,
+
+            },
+            767: {
+                items: 2
+            },
+            1200: {
+                items: 3
+            }
+        }
+    });
+</script>
+
+<!-- functions tp -->
+<script src="https://yennhamoc.vn/library/toastr/toastr.min.js"></script>
+<link href="https://yennhamoc.vn/library/toastr/toastr.min.css" rel="stylesheet">
+<script src="https://yennhamoc.vn/frontend/library/functions.js"></script>
+<!-- end -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<style>
+/*  modal menu style */
+.modal.modal-open {
+    display: block;
+    opacity: 1;
+}
+</style>
+<script src="https://yennhamoc.vn/frontend/library/product.js"></script>
+<script>
+function loadSlide() {
+    var swiper = new Swiper(".mySwiper", {
+        loop: false,
+        spaceBetween: 15,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: false,
+        spaceBetween: 5,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+}
+</script>
+<script>
+/*START: quick view */
+$(".quick-view-modal").on("click", function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: BASE_URL_AJAX + "ajax/product/quick-view",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        data: {
+            id: $(this).attr('data-id'),
+        },
+        success: function(data) {
+            console.log(data);
+            var $this = $(this);
+            $("#modal-quick-view").html('').html(data.html);
+            $("body").addClass("modal-open");
+            $("#modal-quick-view").addClass("modal-open");
+            $(".modal-overlay").fadeIn();
+            loadSlide();
+            loadSize();
+            loadColors();
+            if ($this.parent().hasClass("modal-menu-toggle")) {
+                $this.addClass("close");
+            }
+        },
+        error: function(jqXhr, json, errorThrown) {
+            toastr.error(jqXhr.responseJSON.error, 'Error!')
+        },
+    });
+});
+/*END: quick view */
+var
+    $body = $("body");
+$modalToggle = $(".modal-toggle"),
+    $modal = $(".modal"),
+    $modalOverlay = $(".modal-overlay"),
+    $modalMenuToggle = $(".modal-menu-toggle");
+$(document).on("click", ".modal-close, .modal-overlay", function(e) {
+    e.preventDefault();
+    $body.removeClass("modal-open");
+    $modal.removeClass("modal-open");
+    $modalOverlay.fadeOut();
+    $modalMenuToggle.find("a").removeClass("close");
+});
+</script>
+<style>
+.box_product_detail .disabled,
+.box_product_detail .checked {
+    position: relative;
+}
+
+.box_product_detail .disabled:after {
+    background-color: rgba(255, 255, 255, 0.3);
+    background-image: url(https://asset.uniqlo.com/g/icons/chip_disabled.svg);
+    background-position: top left;
+    background-size: contain;
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.box_product_detail .disabled {
+    color: #dbd6d6 !important;
+}
+
+.box_product_detail .checked {
+    border-color: #d61c1f;
+    color: #d61c1f;
+}
+
+.box_product_detail .checked::before {
+    border: 10px solid #621f1f00;
+    border: 13px solid #621f1f00;
+    border-bottom-color: rgba(98, 31, 31, 0);
+    border-bottom-style: solid;
+    border-bottom-width: 13px;
+    border-bottom: 13px solid #ee4d2d;
+    content: "";
+    position: absolute;
+    right: -13px;
+    bottom: -13px;
+    transform: rotate(135deg);
+}
+
+.box_product_detail .checked::after {
+    content: "" !important;
+    position: absolute;
+    right: 3px;
+    bottom: 2px;
+    font-size: 10px;
+    color: #fff;
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 9px;
+    width: 5px;
+    margin-left: 56%;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-number-input input:focus {
+    outline: none !important;
+}
+
+.custom-number-input button:focus {
+    outline: none !important;
+}
+</style>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=2586825361606351&autoLogAppEvents=1" nonce="OCqVGwdA"></script>
+    <!-- loading -->
+    <style>
+        .lds-ring {
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            z-index: 9999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .lds-ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border: 8px solid #000;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #000 transparent transparent transparent;
+        }
+
+        .lds-ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds-ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds-ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes  lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .lds-show {
+            width: 100%;
+            height: 100vh;
+            float: left;
+            position: fixed;
+            z-index: 999999999999999999999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #0000004f;
+        }
+    </style>
+    <div class="hidden lds-show">
+        <div class="lds-ring ">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script>
+        $(document).ajaxStart(function() {
+            $('.lds-show').removeClass('hidden');
+        }).ajaxStop(function() {
+            $('.lds-show').addClass('hidden');
+        });
+    </script>
+    <!-- end: loading -->
+</body>
+
+
+</html>

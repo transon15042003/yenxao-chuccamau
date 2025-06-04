@@ -1,0 +1,66 @@
+## **Cách Nấu Chè Yến Nha Đam Đường Phèn – Món Giải Nhiệt Bổ Dưỡng, Đẹp Da**
+
+Trong những ngày nắng nóng, không gì tuyệt vời hơn một chén chè mát lạnh, thanh ngọt mà vẫn tốt cho sức khỏe. Chè yến nha đam đường phèn là món ăn đáp ứng cả ba tiêu chí: giải nhiệt, dưỡng nhan, bổ dưỡng, phù hợp cho mọi lứa tuổi, đặc biệt là phụ nữ.
+
+### **Nguyên liệu chuẩn bị (cho 2 phần ăn)**
+
+- **Tổ yến tinh chế**: 5–7g
+
+- **Nha đam (lô hội tươi)**: 1 nhánh (\~250g)
+
+- **Đường phèn**: 20g (có thể tăng/giảm theo khẩu vị)
+
+- **Lá dứa**: 1–2 lá (tùy chọn, giúp tăng hương thơm)
+
+- **Nước lọc**: 500ml
+
+_Mẹo_: Chọn nha đam bẹ to, màu xanh nhạt để ít đắng và nhiều gel.
+
+### **Sơ chế nguyên liệu**
+
+1. **Ngâm tổ yến**  
+   Ngâm yến tinh chế trong nước sạch khoảng 30 phút, đến khi nở mềm. Rửa lại nhẹ nhàng và để ráo nước.
+
+2. **Sơ chế nha đam**
+
+   - Gọt bỏ vỏ xanh, lấy phần thịt trắng bên trong.
+
+   - Cắt nha đam thành hạt lựu nhỏ. Ngâm vào nước muối loãng 5 phút, sau đó xả lại nhiều lần với nước lạnh để nha đam không đắng và không nhớt.
+
+   - Chần sơ nha đam trong nước sôi 30 giây, rồi vớt ra ngâm đá để giữ độ giòn.
+
+**Hình minh họa 1**
+
+### **Cách nấu chè yến nha đam đường phèn**
+
+1. **Nấu nước đường**
+
+   - Đun sôi 500ml nước với lá dứa và đường phèn. Khi đường tan hết, vớt lá dứa ra.
+
+   - Cho phần nha đam đã sơ chế vào, nấu thêm 5 phút rồi tắt bếp để nguội bớt.
+
+2. **Chưng tổ yến riêng**
+
+   - Cho yến vào thố sứ, chưng cách thủy khoảng 25 phút.
+
+   - Khi yến chín mềm, đổ phần nước chè nha đam vào thố yến, chưng thêm 5 phút nữa cho hòa vị.
+
+**Hình minh họa 2**
+
+### **Thưởng thức chè yến nha đam**
+
+- Múc ra chén, để nguội hoặc để lạnh trong tủ mát khoảng 1 giờ trước khi dùng sẽ ngon hơn.
+
+- Có thể thêm vài lát trái cây tươi (như thanh long, kiwi) hoặc vài hạt chia để tăng thêm màu sắc và giá trị dinh dưỡng.
+
+**Hình minh họa 3**
+
+### **Mẹo & lưu ý**
+
+- Nha đam phải sơ chế kỹ để tránh đắng và nhớt.
+
+- Không đun yến trực tiếp với nước đường quá nóng, dễ làm sợi yến bị nhão hoặc mất dinh dưỡng.
+
+- Có thể bảo quản chè yến trong ngăn mát tủ lạnh 1–2 ngày, nhưng không nên để lâu hơn.
+
+**Chè yến nha đam đường phèn** không chỉ là món tráng miệng lý tưởng trong mùa nóng mà còn giúp làm đẹp da, giải độc cơ thể và hỗ trợ tiêu hóa. Cách làm đơn giản, nguyên liệu dễ kiếm – hãy thử vào cuối tuần này để chiêu đãi cả nhà nhé\!
