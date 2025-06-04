@@ -30,7 +30,8 @@ module.exports = {
         },
         typo: {
           1: '#424B5A',
-          2: '#2A2A40'
+          2: '#2A2A40',
+          3: '#5E6971'
         },
         ground: {
           1: '#F5F5F5'
