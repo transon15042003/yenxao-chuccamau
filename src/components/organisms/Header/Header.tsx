@@ -31,12 +31,12 @@ const Header = () => {
 
   return (
     <header className="w-full h-[100px] bg-primary-gradient-90 text-white fixed top-0 z-[1000] border-b-[3px] border-secondary">
-      <div className="flex h-full items-center justify-between gap-6 w-full px-2 lg:px-10 xl:mx-auto xl:w-[93%]">
+      <div className="flex h-full items-center justify-between gap-4 w-full px-2 lg:px-10 xl:mx-auto xl:w-[93%]">
         <Logo />
         <div className="hidden lg:flex flex-1 justify-center items-center h-full">
           <NavigationMenu />
         </div>
-        <div className="flex items-center w-[70%] lg:max-w-[225px]">
+        <div className="flex items-center max-w-[170px] md:max-w-[220px] ml-auto">
           <Suspense>
             <SearchBar />
           </Suspense>
