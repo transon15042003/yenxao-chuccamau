@@ -54,7 +54,7 @@ export const OwnerOrderNotification = (order: Order) => (
         ) : (
           'Không có'
         ),
-        order.note.trim() !== '' ? order.note : 'Không có'
+        order.note && order.note.trim() !== '' ? order.note : 'Không có'
       ].filter(Boolean)
     }}
     highlightText="Vui lòng kiểm tra và xử lý đơn hàng trong thời gian sớm nhất."
