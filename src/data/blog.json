@@ -172,5 +172,95 @@
       "công dụng yến sào đông y"
     ],
     "thumbnailUrl": "/images/blog/blog_10_1.png"
+  },
+  {
+    "id": "blog-11",
+    "slug": "chao-to-yen-thit-bam-mon-an-bo-duong-cho-ca-nha",
+    "title": "Cách Nấu Cháo Tổ Yến Thịt Bằm – Món Ăn Bổ Dưỡng Cho Cả Nhà",
+    "postedDate": "2024-04-20T08:30:00",
+    "minRead": 7,
+    "viewer": 50123,
+    "relation": ["blog-12", "blog-15", "blog-5"],
+    "description": "Hướng dẫn chi tiết cách nấu cháo tổ yến kết hợp thịt bằm giúp bồi bổ cơ thể, phù hợp cho người già, trẻ nhỏ và người mới ốm dậy.",
+    "keywords": [
+      "cháo tổ yến",
+      "cháo yến thịt bằm",
+      "món ăn bổ dưỡng",
+      "tổ yến nấu cháo",
+      "cháo cho người bệnh"
+    ],
+    "thumbnailUrl": "/images/blog/blog_11_1.png"
+  },
+  {
+    "id": "blog-12",
+    "slug": "yen-chung-sua-tuoi-mon-trang-mieng-de-lam-va-bo-duong",
+    "title": "Cách Làm Yến Chưng Sữa Tươi – Món Tráng Miệng Bổ Dưỡng, Dễ Làm Tại Nhà",
+    "postedDate": "2024-04-25T09:00:00",
+    "minRead": 6,
+    "viewer": 47896,
+    "relation": ["blog-11", "blog-14", "blog-15"],
+    "description": "Yến chưng sữa tươi là món ăn nhẹ nhàng, thơm ngon, bổ dưỡng – đặc biệt tốt cho phụ nữ và người cần tăng cường đề kháng.",
+    "keywords": [
+      "yến chưng sữa tươi",
+      "cách chưng yến",
+      "món tráng miệng bổ dưỡng",
+      "tổ yến nấu ngọt",
+      "sữa tươi yến sào"
+    ],
+    "thumbnailUrl": "/images/blog/blog_12_1.png"
+  },
+  {
+    "id": "blog-13",
+    "slug": "to-yen-ham-hat-sen-tao-do-mon-tam-bo-truyen-thong",
+    "title": "Cách Làm Tổ Yến Hầm Hạt Sen Táo Đỏ – Món Tẩm Bổ Được Ưa Chuộng Nhất",
+    "postedDate": "2024-05-01T14:00:00",
+    "minRead": 8,
+    "viewer": 52220,
+    "relation": ["blog-12", "blog-14", "blog-4"],
+    "description": "Hướng dẫn cách làm tổ yến hầm hạt sen và táo đỏ giúp an thần, dưỡng tâm, rất phù hợp cho người cao tuổi hoặc phụ nữ sau sinh.",
+    "keywords": [
+      "tổ yến hầm",
+      "tổ yến hạt sen",
+      "tổ yến táo đỏ",
+      "món ăn tẩm bổ",
+      "chưng yến truyền thống"
+    ],
+    "thumbnailUrl": "/images/blog/blog_13_1.png"
+  },
+  {
+    "id": "blog-14",
+    "slug": "che-yen-nha-dam-duong-phen-giai-nhiet-dep-da",
+    "title": "Cách Nấu Chè Yến Nha Đam Đường Phèn – Món Giải Nhiệt Bổ Dưỡng, Đẹp Da",
+    "postedDate": "2024-05-10T10:30:00",
+    "minRead": 7,
+    "viewer": 49010,
+    "relation": ["blog-12", "blog-13", "blog-15"],
+    "description": "Món chè yến nha đam thanh mát, thơm nhẹ, có tác dụng giải nhiệt, làm đẹp da và tốt cho tiêu hóa – lý tưởng trong ngày hè.",
+    "keywords": [
+      "chè yến nha đam",
+      "món ngọt yến sào",
+      "nha đam đường phèn",
+      "món giải nhiệt",
+      "chè yến đẹp da"
+    ],
+    "thumbnailUrl": "/images/blog/blog_14_1.png"
+  },
+  {
+    "id": "blog-15",
+    "slug": "to-yen-chung-hat-chia-mat-ong-bua-sang-lanh-manh",
+    "title": "Tổ Yến Chưng Hạt Chia Mật Ong – Món Ăn Sáng Lành Mạnh, Tốt Cho Tiêu Hóa",
+    "postedDate": "2024-05-15T08:00:00",
+    "minRead": 6,
+    "viewer": 47770,
+    "relation": ["blog-14", "blog-11", "blog-6"],
+    "description": "Công thức làm tổ yến chưng hạt chia mật ong – món ăn sáng nhanh gọn, hỗ trợ tiêu hóa, làm đẹp da và tăng cường đề kháng.",
+    "keywords": [
+      "yến chưng mật ong",
+      "tổ yến buổi sáng",
+      "hạt chia tổ yến",
+      "ăn sáng lành mạnh",
+      "món ăn tốt cho tiêu hóa"
+    ],
+    "thumbnailUrl": "/images/blog/blog_15_1.png"
   }
 ]
