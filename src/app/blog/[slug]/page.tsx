@@ -2,7 +2,6 @@ import { dynamicBlogContent } from '@/contents/SEO';
 import { getBlogMarkDown } from '@/markdown/blogs';
 import { CalendarSVG } from '@/svg/CalendarSVG/CalendarSVG';
 import { StackSVG } from '@/svg/StackSVG/StackSVG';
-import { UserSVG } from '@/svg/UserSVG/UserSVG';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
@@ -83,10 +82,10 @@ export default async function BlogDetailPage({ params }: Props) {
             <StackSVG className="mr-1.5" />
             <p>{blog.minRead} phút</p>
           </div>
-          <div className="flex flex-row items-center">
+          {/* <div className="flex flex-row items-center">
             <UserSVG className="mr-1.5" />
             <p>{blog.viewer}</p>
-          </div>
+          </div> */}
         </div>
 
         {<BlogContentComponent />}
