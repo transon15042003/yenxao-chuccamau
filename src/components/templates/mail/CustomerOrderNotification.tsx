@@ -49,7 +49,7 @@ export const CustomerOrderNotification = (order: Order) => (
         ) : (
           'Không có'
         ),
-        order.note.trim() !== '' ? order.note : 'Không có'
+        order.note && order.note.trim() !== '' ? order.note : 'Không có'
       ].filter(Boolean)
     }}
     highlightText="Chúng tôi đang tiến hành xử lý đơn hàng của bạn và sẽ sớm liên hệ nếu có bất kỳ thông tin bổ sung cần xác nhận."
