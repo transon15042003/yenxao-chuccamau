@@ -29,15 +29,15 @@ const OrderResultPage = () => {
     try {
       // send mail to owner
       await sendMail({
-        subject: `Đơn hàng mới - ${order.code}`,
+        subject: `[Chúc Cà Mau] Đơn hàng mới từ ${order.customer.name} – Mã đơn: ${order.code}`,
         html: renderEmail(OwnerOrderNotification(order)),
         fromName: 'Chuc Ca Mau - Yen Sao'
       });
 
       if (order.customer.email) {
         await sendMail({
-          subject: `Đặt hàng thành công - ${order.code}`,
-          html: renderEmail(CustomerOrderNotification(order.customer)),
+          subject: `[Chúc Cà Mau] Đơn hàng #${order.code} đã được ghi nhận`,
+          html: renderEmail(CustomerOrderNotification(order)),
           fromName: 'Chuc Ca Mau - Yen Sao',
           emailTo: order.customer.email
         });
