@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { cn } from '@/lib/utils';
 
-import RegisterSW from './RegisterSW';
+// import RegisterSW from './RegisterSW';
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-primary' });
 
@@ -45,7 +45,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       >
         <MainProvider>
           <CartProvider>
-            <RegisterSW />
+            {/* <RegisterSW /> */}
             <MainLayout>
               <main>{children}</main>
             </MainLayout>
