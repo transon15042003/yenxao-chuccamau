@@ -34,6 +34,9 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         className={cn(nunitoSans.variable, 'font-primary customscrollbar')}
         suppressHydrationWarning
