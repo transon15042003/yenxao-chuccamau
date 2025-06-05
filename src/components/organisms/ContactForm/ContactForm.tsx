@@ -84,7 +84,7 @@ export const ContactForm = ({ className, setIsLoading, ...props }: InboxProps) =
 
     if (data.message) {
       try {
-        const emailSubject = data.subject || 'Tin nhắn liên hệ mới từ website';
+        const emailSubject = `[Chúc Cà Mau] Khách hàng ${data.name} đã gửi liên hệ qua website`;
         const emailBodyHtml = renderToStaticMarkup(ContactNotification(data));
 
         await sendMail({
