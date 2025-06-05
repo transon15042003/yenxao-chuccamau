@@ -38,7 +38,8 @@ module.exports = {
         },
         blog: {
           1: '#202020',
-          2: '#132238'
+          2: '#132238',
+          3: '#353A3E'
         }
       },
       backgroundImage: {
