@@ -14,6 +14,8 @@ import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { NewFeed } from '@/components/molecules/NewFeed';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
 
+import { cn } from '@/lib/utils';
+
 export async function generateMetadata({
   params
 }: {
@@ -90,7 +92,9 @@ export default async function BlogDetailPage({ params }: Props) {
 
         {<BlogContentComponent />}
 
-        <hr className="mb-14 mt-[90px] border-2 border-black" />
+        <hr
+          className={cn('h-[2px]', 'md:my-[60px] my-[36px]', 'bg-black border-0 dark:bg-gray-700')}
+        ></hr>
       </div>
       <div className="w-full flex flex-col items-center mb-28">
         <SectionTitle heading="Bài viết liên quan" />
