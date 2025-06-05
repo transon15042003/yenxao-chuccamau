@@ -24,7 +24,8 @@ export default [
       '**/out/*',
       '**/.next/*',
       '**/coverage',
-      'src/styles/globals.css'
+      'src/styles/globals.css',
+      'src/markdown/blogs/**.mdx'
     ]
   },
   ...compat.extends(
