@@ -27,7 +27,7 @@ export const BlogCard = ({
       className={cn(
         'max-w-[379.8px] w-full h-[492px]',
         'px-1 sm:px-0',
-        'bg-white rounded-[10px] shadow-sm flex flex-col'
+        'bg-white rounded-[10px] flex flex-col'
       )}
     >
       <Link
