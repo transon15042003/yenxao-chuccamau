@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HttpTypes } from '@medusajs/types';
-import { SortOptions } from '@modules/store/components/refinement-list/sort-products';
+
+type SortOptions = any;
 
 interface MinPricedProduct extends HttpTypes.StoreProduct {
   _minPrice?: number;
