@@ -14,7 +14,8 @@ export const listCategories = async (query?: Record<string, unknown>) => {
   return sdk.client
     .fetch<{ product_categories: HttpTypes.StoreProductCategory[] }>('/store/product-categories', {
       query: {
-        fields: '*category_children, *products, *parent_category, *parent_category.parent_category',
+        fields:
+          '*category_children, *products, *parent_category, *parent_category.parent_category, metadata',
         limit,
         ...query
       },

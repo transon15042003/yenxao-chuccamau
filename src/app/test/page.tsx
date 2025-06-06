@@ -10,17 +10,18 @@ const TestDataPage = async () => {
   const categories = await listCategories();
   const transformedCategories = categories.map(transformCategory);
   console.log('========== transformedCategories ==========');
-  console.log(transformedCategories);
+  console.log(categories);
+  console.log('transformed', transformedCategories);
   console.log('========== transformedCategories ==========');
 
   // products with pagination, sort and search
   const getProductsResponse = await listProducts({
     pageParam: 1,
-    countryCode: process.env.NEXT_PUBLIC_DEFAULT_REGION,
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
     queryParams: {
       limit: 10, // page size
-      order: '-created_at',
       offset: 0,
+      order: '-created_at',
       q: 'Chưng'
       // fields: 'id,title,handle,price,thumbnail,description,categories,ingredient'
     }
