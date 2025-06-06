@@ -1,6 +1,8 @@
 import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 
+import { cn } from './lib/utils';
+
 export const MyImage = ({ src, alt }: { src: string; alt: string }) => {
   return <Image src={src} alt={alt} width={500} height={500} />;
 };
@@ -32,45 +34,107 @@ export function useMDXComponents(): MDXComponents {
 
 export const BlogHeading1 = ({ children, ...props }: React.ComponentPropsWithoutRef<'h1'>) => {
   return (
-    <h1 className="font-semibold text-[40px] text-[#202020] mb-8" {...props}>
+    <p
+      className={cn(
+        'text-left',
+        'font-semibold text-[40px]',
+        'leading-[48px]',
+        'text-blog-1',
+        'mb-1 md:mb-8'
+      )}
+      {...props}
+    >
       {children}
-    </h1>
+    </p>
   );
 };
 
 // Component cho H2
 export const BlogHeading2 = ({ children, ...props }: React.ComponentPropsWithoutRef<'h2'>) => {
   return (
-    <h2 className="font-semibold text-[24px] text-gray-900 mb-5" {...props}>
+    <h2
+      className={cn('text-left', 'font-semibold text-2xl', 'leading-[32px]', 'text-blog-2', 'mb-5')}
+      {...props}
+    >
       {children}
     </h2>
+  );
+};
+
+export const BlogHeading3 = ({ children, ...props }: React.ComponentPropsWithoutRef<'h3'>) => {
+  return (
+    <h3 className="text-left font-medium text-xl leading-[32px] text-blog-3" {...props}>
+      {children}
+    </h3>
   );
 };
 
 // Component cho Paragraph (P)
 export const BlogParagraph = ({ children, ...props }: React.ComponentPropsWithoutRef<'p'>) => {
   return (
-    <p className="font-normal text-lg text-[#202020] mb-4" {...props}>
+    <p className="text-left font-normal text-lg leading-[30px] text-blog-1 mb-5 md:mb-7" {...props}>
       {children}
     </p>
   );
 };
 
-export const BlogImage = (props: React.ComponentProps<typeof Image>) => {
-  const { src, alt, width, height, ...rest } = props;
+interface BlogImageProps extends React.ComponentProps<typeof Image> {
+  caption?: string;
+  captionDirection?: 'flex-col' | 'flex-row' | 'flex-col-reverse' | 'flex-row-reverse';
+  captionClass?: string;
+  containerClass?: string;
+  imageClass?: string;
+}
+
+export const BlogImage = (props: BlogImageProps) => {
+  const {
+    src,
+    alt,
+    width,
+    height,
+    caption,
+    captionDirection = 'flex-col',
+    captionClass,
+    containerClass,
+    imageClass,
+    ...rest
+  } = props;
 
   if (!src) return null;
 
   return (
-    <Image
-      src={src}
-      alt={alt || 'image'}
-      width={width || 1400}
-      height={height || 600}
-      layout="responsive"
-      objectFit="contain"
-      className="rounded-lg shadow-md"
-      {...rest}
-    />
+    <div
+      className={cn(
+        'flex',
+        'items-center justify-start',
+        captionDirection,
+        'mb-[46px] md:mb-[42px]',
+        containerClass
+      )}
+    >
+      <div className={cn('w-full rounded-lg shadow overflow-hidden', imageClass)}>
+        <Image
+          src={src}
+          alt={alt || 'image'}
+          width={width || 1400}
+          height={height || 600}
+          layout="responsive"
+          objectFit="contain"
+          {...rest}
+        />
+      </div>
+
+      {caption && (
+        <p
+          className={cn(
+            'text-left text-lg text-blog-3',
+            captionDirection.includes('col') ? 'mx-2 mt-1' : 'my-2 mx-1',
+            captionClass
+          )}
+        >
+          {caption}
+        </p>
+      )}
+    </div>
   );
 };
