@@ -1,6 +1,6 @@
 'use client';
 
-import productMenuList from '@/data/product-categories.json';
+import { Category } from '@/types/product';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import React, { useState, useRef, useEffect } from 'react';
@@ -9,7 +9,7 @@ import MenuDropdown from '@/components/molecules/MenuDropdown/MenuDropdown';
 
 import NavItem from './NavItem';
 
-const NavigationMenu = () => {
+const NavigationMenu = ({ categories }: { categories: Category[] }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -62,7 +62,7 @@ const NavigationMenu = () => {
             strokeWidth={2}
           />
         </button>
-        <MenuDropdown open={open} items={productMenuList} onItemClick={handleItemClick} />
+        <MenuDropdown open={open} items={categories} onItemClick={handleItemClick} />
       </div>
       <NavItem className="text-base lg:text-lg" href="/blog" active={pathname === '/blog'}>
         BLOG
