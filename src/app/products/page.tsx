@@ -1,11 +1,14 @@
 import { dynamicProductCateContent, StaticSEOContent } from '@/contents/SEO';
-import type { CategorySlug, Product, ProductSort } from '@/types/product';
+import type { Category, CategorySlug, Product, ProductSort } from '@/types/product';
 import { Metadata } from 'next';
-import { getCategories, getProducts } from 'src/services/product.service';
+import { getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { ProductCategorySelect } from '@/components/molecules/ProductCategorySelect';
 import { ProductCategorySidebar } from '@/components/organisms/ProductCategorySidebar';
+
+import { listCategories } from '@/lib/data/categories';
+import { transformCategory } from '@/lib/medusa-adapter/category';
 
 import ProductArea from './_components/ProductArea';
 
@@ -77,7 +80,8 @@ export default async function ProductsPage({
 }) {
   const { c, s, p, search } = await searchParams;
 
-  const categories = await getCategories();
+  const categories = await listCategories();
+  const transformedCategories: Category[] = categories.map(transformCategory);
   const products = await getProducts({
     page: p || 1,
     take: 9,
@@ -88,7 +92,7 @@ export default async function ProductsPage({
 
   const metadata = products.metadata;
 
-  const categoryOptions = categories.map((cat) => ({
+  const categoryOptions = transformedCategories.map((cat) => ({
     value: cat.slug,
     label: cat.name
   }));
@@ -100,7 +104,7 @@ export default async function ProductsPage({
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="xl:w-[20%]">
             <div className="hidden lg:block">
-              <ProductCategorySidebar categories={categories} />
+              <ProductCategorySidebar categories={transformedCategories} />
             </div>
             <div className="block lg:hidden">
               <ProductCategorySelect options={categoryOptions} value={c} />
