@@ -30,8 +30,17 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
   ];
 
   const variants: ProductVariant[] =
-    product.variants?.map((el: HttpTypes.StoreProductVariant): ProductVariant => {
-      const rank = product.metadata?.[el.sku];
+    product.variants?.map((el: HttpTypes.StoreProductVariant, idx: number): ProductVariant => {
+      let rank: number;
+      if (el.variant_rank) {
+        rank = el.variant_rank;
+      } else if (el.sku) {
+        if (el.sku) {
+          rank = Number(product.metadata?.[el.sku]);
+        } else {
+          rank = idx;
+        }
+      }
       const specsVar: Record<string, string> = {
         size: String(el.options?.[0]?.value ?? ''),
         savour: String(el.options?.[1]?.value ?? '')
