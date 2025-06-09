@@ -1,4 +1,4 @@
-import productMenuList from '@/data/product-categories.json';
+import { Category } from '@/types/product';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
@@ -10,9 +10,10 @@ import NavItem from './NavItem';
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  categories: Category[];
 }
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose, categories }: MobileMenuProps) => {
   const pathname = usePathname();
   const [isProductOpen, setIsProductOpen] = useState(false);
 
@@ -51,7 +52,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </button>
           <MenuDropdown
             open={isProductOpen}
-            items={productMenuList}
+            items={categories}
             isMobile={true}
             onItemClick={onClose}
           />
