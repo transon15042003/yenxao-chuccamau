@@ -15,8 +15,9 @@ type ProductAreaProps = {
 };
 
 const sortOptions: { label: string; value: ProductSort }[] = [
-  { label: 'Giá tăng dần', value: 'price-asc' },
-  { label: 'Giá giảm dần', value: 'price-desc' },
+  // { label: 'Giá tăng dần', value: 'price-asc' },
+  // { label: 'Giá giảm dần', value: 'price-desc' },
+  { label: 'Tên sản phẩm', value: 'title' },
   { label: 'Mới nhất', value: 'new' }
 ];
 
@@ -39,6 +40,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         break;
       case 'new':
         params.set('s', 'createAt');
+        break;
+      case 'title':
+        params.set('s', 'title');
         break;
       default:
         params.delete('s');
@@ -67,6 +71,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
           break;
         case 'createAt':
           setSortOption('new');
+          break;
+        case 'title':
+          setSortOption('title');
           break;
       }
     }

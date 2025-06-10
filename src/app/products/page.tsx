@@ -82,8 +82,10 @@ export default async function ProductsPage({
   searchParams: Promise<ProductPageParams>;
 }) {
   const {
-    c
-    //  s, p, search
+    c,
+    search,
+    s
+    //  p
   } = await searchParams;
 
   const categories = await listCategories();
@@ -96,15 +98,30 @@ export default async function ProductsPage({
   //   ...(s ? getSortByOptionValue(s) : {})
   // });
   const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
+  let order = '-created_at';
+  if (s && s.toString() !== 'createAt') {
+    order = 'title';
+  }
+  // if (s) {
+  //   switch (s) {
+  //     case 'price-asc':
+  //       order = '-variants.calculated_price.calculated_amount';
+  //       break;
+  //     case 'price-desc':
+  //       order = 'variants.calculated_price.calculated_amount';
+  //       break;
+  //   }
+  // }
 
   const res = await listProducts({
     pageParam: 1,
     countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
     queryParams: {
       limit: 10,
-      order: '-created_at',
+      order: order.toString(),
       offset: 0,
-      category_id: cateId
+      category_id: cateId,
+      q: search
     }
   });
 
