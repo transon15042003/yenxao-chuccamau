@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://test.chuccamau.com
-
-# Sitemaps
-Sitemap: https://test.chuccamau.com/sitemap.xml
