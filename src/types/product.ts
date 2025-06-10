@@ -14,7 +14,7 @@ export type ProductVariant = {
   thumbnail: string;
   specs: Record<string, string>;
   price: number;
-  stock: number;
+  stock?: number;
   isActive: boolean;
 };
 
