@@ -16,18 +16,48 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
     ingredients = [];
   }
 
+  interface specsType {
+    size: string[];
+    savour: string[];
+  }
+
+  const value: specsType | undefined = product.options?.reduce(
+    (result: specsType, el: HttpTypes.StoreProductOption) => {
+      switch (el?.title.trim()) {
+        case 'Trọng lượng':
+          result.size = el?.values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? [];
+          break;
+        case 'Phân loại':
+          result.savour =
+            el?.values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? [];
+          break;
+        default:
+          console.error('Options not valid');
+      }
+
+      return result;
+    },
+    {
+      size: [],
+      savour: []
+    }
+  );
+
   const specs: ProductSpecifications[] = [
     {
       key: 'size',
-      value:
-        product.options?.[1].values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? []
+      value: value?.size ?? []
     },
     {
       key: 'savour',
-      value:
-        product.options?.[0].values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? []
+      value: value?.savour ?? []
     }
   ];
+
+  interface specsVarType {
+    size: string;
+    savour: string;
+  }
 
   const variants: ProductVariant[] =
     product.variants?.map((el: HttpTypes.StoreProductVariant, idx: number): ProductVariant => {
@@ -41,10 +71,31 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
           rank = idx;
         }
       }
-      const specsVar: Record<string, string> = {
-        size: String(el.options?.[0]?.value ?? ''),
-        savour: String(el.options?.[1]?.value ?? '')
-      };
+      // const specsVar: Record<string, string> = {
+      //   size: String(el.options?.[0]?.value ?? ''),
+      //   savour: String(el.options?.[1]?.value ?? '')
+      // };
+
+      const specsVar: specsVarType | undefined = el.options?.reduce(
+        (result: specsVarType, outEl: HttpTypes.StoreProductOptionValue) => {
+          switch (outEl?.option?.title.trim()) {
+            case 'Trọng lượng':
+              result.size = outEl?.value ?? '';
+              break;
+            case 'Phân loại':
+              result.savour = outEl?.value ?? '';
+              break;
+            default:
+              console.error('Options not valid');
+          }
+
+          return result;
+        },
+        {
+          size: '',
+          savour: ''
+        } as specsVarType
+      );
 
       return {
         sku: el.sku,
@@ -52,7 +103,7 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
         thumbnail:
           product.images?.find((el: HttpTypes.StoreProductImage) => el.rank + 1 === rank)?.url ??
           '',
-        specs: specsVar,
+        specs: specsVar ?? {},
         price: el.calculated_price?.calculated_amount,
         isActive: !el.deleted_at
       } as ProductVariant;
