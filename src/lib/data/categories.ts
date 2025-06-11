@@ -6,8 +6,7 @@ import { getCacheOptions } from './cookies';
 
 export const listCategories = async (query?: Record<string, unknown>) => {
   const next = {
-    ...(await getCacheOptions('categories')),
-    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
+    ...(await getCacheOptions('categories'))
   };
 
   const limit = query?.limit || 100;
@@ -21,7 +20,7 @@ export const listCategories = async (query?: Record<string, unknown>) => {
         ...query
       },
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ product_categories }) => product_categories);
 };
@@ -40,7 +39,7 @@ export const getCategoryByHandle = async (categoryHandle: string[]) => {
         handle
       },
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ product_categories }) => product_categories[0]);
 };

@@ -8,14 +8,13 @@ import { getCacheOptions } from './cookies';
 
 export const retrieveCollection = async (id: string) => {
   const next = {
-    ...(await getCacheOptions('collections')),
-    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
+    ...(await getCacheOptions('collections'))
   };
 
   return sdk.client
     .fetch<{ collection: HttpTypes.StoreCollection }>(`/store/collections/${id}`, {
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ collection }) => collection);
 };
@@ -24,8 +23,7 @@ export const listCollections = async (
   queryParams: Record<string, string> = {}
 ): Promise<{ collections: HttpTypes.StoreCollection[]; count: number }> => {
   const next = {
-    ...(await getCacheOptions('collections')),
-    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
+    ...(await getCacheOptions('collections'))
   };
 
   queryParams.limit = queryParams.limit || '100';
@@ -35,7 +33,7 @@ export const listCollections = async (
     .fetch<{ collections: HttpTypes.StoreCollection[]; count: number }>('/store/collections', {
       query: queryParams,
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ collections }) => ({ collections, count: collections.length }));
 };
@@ -49,7 +47,7 @@ export const getCollectionByHandle = async (handle: string): Promise<HttpTypes.S
     .fetch<HttpTypes.StoreCollectionListResponse>(`/store/collections`, {
       query: { handle, fields: '*products' },
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ collections }) => collections[0]);
 };
