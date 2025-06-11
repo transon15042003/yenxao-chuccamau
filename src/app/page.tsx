@@ -29,7 +29,7 @@ const HomePage = async () => {
       pageParam: 1,
       countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
       queryParams: {
-        limit: 12,
+        limit: 8,
         offset: 0,
         $or: [
           { collection_id: collectionIdOfHighlightProd?.id },
