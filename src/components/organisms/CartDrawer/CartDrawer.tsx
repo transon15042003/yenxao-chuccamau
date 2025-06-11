@@ -1,5 +1,4 @@
 'use client';
-import { useCartProducts } from '@/hooks/useCartProducts';
 import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
 import { useRouter } from 'next/navigation';
 import { Fragment, RefObject, useRef } from 'react';
@@ -20,8 +19,6 @@ export const CartDrawer = () => {
   const router = useRouter();
   const cartContainerRef = useRef<HTMLDivElement>(null);
 
-  const { productsData, isLoadingProducts } = useCartProducts(cart);
-
   const closeCart = () => {
     setIsCartOpen(false);
   };
@@ -41,7 +38,7 @@ export const CartDrawer = () => {
 
   const discount = 0;
   const shipping = 0;
-  const total = cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cart.total;
 
   return (
     <div
@@ -70,36 +67,25 @@ export const CartDrawer = () => {
           </div>
         </div>
 
-        {cart.items.length === 0 && !isLoadingProducts && (
+        {cart.items.length === 0 && (
           <div className="flex items-center justify-center h-full">
             <div className="text-2xl font-bold">Giỏ hàng trống</div>
           </div>
         )}
 
-        {isLoadingProducts && (
-          <div className="flex h-full w-full items-center justify-center">
-            <p className="text-typo-2">Đang tải sản phẩm...</p>
-          </div>
-        )}
-
-        {!isLoadingProducts && cart.items.length > 0 && (
+        {cart.items.length > 0 && (
           <>
             {/* Cart Body */}
             <div className="py-5 px-7 flex-1 overflow-y-auto customscrollbar">
               <div className="flex flex-col">
                 {cart.items.map((item) => {
-                  const product = productsData.get(item.productId);
-
-                  if (!product) return null;
-
                   return (
-                    <Fragment key={item.sku}>
+                    <Fragment key={item.variantId}>
                       <CartItem
                         item={item}
-                        product={product}
-                        onIncrease={() => increaseQuantity(item.sku, 1)}
-                        onDecrease={() => decreaseQuantity(item.sku, 1)}
-                        onRemove={() => removeFromCart(item.sku)}
+                        onIncrease={() => increaseQuantity(item.variantId, 1)}
+                        onDecrease={() => decreaseQuantity(item.variantId, 1)}
+                        onRemove={() => removeFromCart(item.variantId)}
                       />
                       <div className="my-6 border-t border-dashed border-[rgba(0,0,0,0.1)]"></div>
                     </Fragment>
