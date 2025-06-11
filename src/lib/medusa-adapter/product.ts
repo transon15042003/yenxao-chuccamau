@@ -94,7 +94,7 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
     id: product.id,
     name: product.title,
     slug: product.handle,
-    price: variants?.[0].price || 0,
+    price: variants && variants[0] ? variants[0].price : 0,
     categories: product.categories?.map((c) => c.id) || [],
     thumbnail: product.thumbnail ?? '',
     description: product.description ?? '',

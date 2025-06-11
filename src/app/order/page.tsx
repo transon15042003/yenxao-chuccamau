@@ -153,7 +153,6 @@ const PaymentPage = () => {
                         type="radio"
                         name="shipping"
                         className="w-4 h-4 accent-primary"
-                        defaultChecked
                         checked={shippingMethod === 'STANDARD'}
                         onChange={() => setShippingMethod('STANDARD')}
                       />
@@ -173,7 +172,6 @@ const PaymentPage = () => {
                         name="shipping"
                         className="w-4 h-4 accent-primary"
                         checked={shippingMethod === 'WORKING_HOURS'}
-                        value="WORKING_HOURS"
                         onChange={() => setShippingMethod('WORKING_HOURS')}
                       />
                       <div>

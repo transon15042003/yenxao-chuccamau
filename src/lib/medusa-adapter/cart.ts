@@ -30,7 +30,18 @@ const generateCartItemOptionsFromProductOptions = (
 export const transformCartItem = (
   item: HttpTypes.StoreCartLineItem | HttpTypes.StoreOrderLineItem
 ): CartItem => {
-  const transformedProduct = transformProduct(item.product as HttpTypes.StoreProduct);
+  // If product data is missing, create a minimal product object with required fields
+  const product = item.product || {
+    id: item.product_id || '',
+    title: item.title || '',
+    handle: item.product_handle || '',
+    thumbnail: '',
+    options: [],
+    variants: [],
+    metadata: {}
+  };
+
+  const transformedProduct = transformProduct(product as HttpTypes.StoreProduct);
 
   return {
     productId: item.product_id || '',
@@ -43,10 +54,10 @@ export const transformCartItem = (
     price: item.unit_price,
     specs: transformedProduct.variants.find((v) => v.sku === item.variant_sku)?.specs || {},
     thumbnail: getProductVariantThumbnail(
-      item.product as HttpTypes.StoreProduct,
+      product as HttpTypes.StoreProduct,
       item.variant_id as string
     ),
-    options: generateCartItemOptionsFromProductOptions(item.product as HttpTypes.StoreProduct),
+    options: generateCartItemOptionsFromProductOptions(product as HttpTypes.StoreProduct),
     variants: transformedProduct.variants
   };
 };
