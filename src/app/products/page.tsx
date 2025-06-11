@@ -106,7 +106,6 @@ export default async function ProductsPage({
     queryParams: {
       limit: 10,
       order: order.toString(),
-      offset: p ? (p - 1) * 10 : 0,
       category_id: cateId,
       q: search
     }
