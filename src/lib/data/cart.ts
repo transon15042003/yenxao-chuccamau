@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 
+import { sendOrderNotification } from '@/services/notification.service';
 import { HttpTypes } from '@medusajs/types';
 import { revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
@@ -9,6 +10,7 @@ import { redirect } from 'next/navigation';
 import { sdk } from '@/lib/medusa/medusa-config';
 import medusaError from '@/lib/medusa/util/medusa-error';
 
+import { transformOrder } from '../medusa-adapter/order';
 import {
   getAuthHeaders,
   getCacheOptions,
@@ -17,6 +19,7 @@ import {
   removeCartId,
   setCartId
 } from './cookies';
+import { listProducts } from './products';
 import { getRegion } from './regions';
 
 /**
@@ -39,19 +42,58 @@ export async function retrieveCart(cartId?: string) {
     ...(await getCacheOptions('carts'))
   };
 
-  return await sdk.client
+  const cart = await sdk.client
     .fetch<HttpTypes.StoreCartResponse>(`/store/carts/${id}`, {
       method: 'GET',
       query: {
         fields:
-          '*items, *region, *items.product, *items.variant, *items.thumbnail, *items.metadata, +items.total, *promotions, +shipping_methods.name'
+          '*items,' +
+          '*region,' +
+          '*items.product,' +
+          '*items.thumbnail,' +
+          '*items.metadata,' +
+          '+items.total,' +
+          '*promotions,' +
+          '+shipping_methods.name'
       },
       headers,
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ cart }) => cart)
     .catch(() => null);
+
+  const productIds = new Set([...Array.from(cart?.items?.map((item) => item.product_id!) || [])]);
+
+  const getProducts = await listProducts({
+    queryParams: {
+      limit: productIds.size,
+      id: Array.from(productIds),
+      fields:
+        '*metadata,' +
+        '*tags,' +
+        '*images,' +
+        '*options,' +
+        '*variants.calculated_price,' +
+        '*variants.inventory_quantity,' +
+        '*options.values,' +
+        '*variants,' +
+        '*variants.options'
+    },
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE
+  });
+
+  // mapping product to cart.product
+  const products = getProducts.response.products;
+
+  if (cart && products) {
+    cart.items = cart?.items?.map((item) => ({
+      ...item,
+      product: products.find((product) => product.id === item.product_id)
+    }));
+  }
+
+  return cart;
 }
 
 export async function getOrSetCart(countryCode: string) {
@@ -369,8 +411,6 @@ export async function setAddresses(currentState: unknown, formData: FormData) {
   } catch (e: any) {
     return e.message;
   }
-
-  redirect(`/${formData.get('shipping_address.country_code')}/checkout?step=delivery`);
 }
 
 /**
@@ -400,13 +440,12 @@ export async function placeOrder(cartId?: string) {
     .catch(medusaError);
 
   if (cartRes?.type === 'order') {
-    const countryCode = cartRes.order.shipping_address?.country_code?.toLowerCase();
-
     const orderCacheTag = await getCacheTag('orders');
     revalidateTag(orderCacheTag);
 
     removeCartId();
-    redirect(`/${countryCode}/order/${cartRes?.order.id}/confirmed`);
+    await sendOrderNotification(transformOrder(cartRes?.order));
+    redirect(`/order/${cartRes?.order.id}/result`);
   }
 
   return cartRes.cart;
