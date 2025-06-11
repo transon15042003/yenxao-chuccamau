@@ -39,7 +39,7 @@ export const retrieveCustomer = async (): Promise<HttpTypes.StoreCustomer | null
       },
       headers,
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ customer }) => customer)
     .catch(() => null);

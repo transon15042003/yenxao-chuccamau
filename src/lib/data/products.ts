@@ -65,8 +65,7 @@ export const listProducts = async ({
   };
 
   const next = {
-    ...(await getCacheOptions('products')),
-    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
+    ...(await getCacheOptions('products'))
   };
 
   return sdk.client
@@ -82,7 +81,7 @@ export const listProducts = async ({
       headers,
       next,
 
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ products, count }) => {
       const nextPage = count > offset + limit ? pageParam + 1 : null;

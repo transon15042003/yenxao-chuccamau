@@ -14,17 +14,18 @@ type ProductDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-export async function generateStaticParams() {
-  const listProductsResponse = await listProducts({
-    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
-    queryParams: { handle: 'ky-tu' }
-  });
-  const products = listProductsResponse.response.products.map(transformProduct);
+// export async function generateStaticParams() {
+//   const listProductsResponse = await listProducts({
+//     pageParam: 1,
+//     queryParams: { limit: 9999 },
+//     countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE
+//   });
+//   const products = listProductsResponse.response.products.map(transformProduct);
 
-  return products.map((product) => ({
-    slug: product.slug
-  }));
-}
+//   return products.map((product) => ({
+//     slug: product.slug
+//   }));
+// }
 
 const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
   const { slug } = await params;

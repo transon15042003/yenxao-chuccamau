@@ -14,8 +14,7 @@ export const retrieveOrder = async (id: string) => {
   };
 
   const next = {
-    ...(await getCacheOptions('orders')),
-    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
+    ...(await getCacheOptions('orders'))
   };
 
   const order = await sdk.client
@@ -27,7 +26,7 @@ export const retrieveOrder = async (id: string) => {
       },
       headers,
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ order }) => order)
     .catch((err) => medusaError(err));
@@ -91,7 +90,7 @@ export const listOrders = async (
       },
       headers,
       next,
-      cache: 'force-cache'
+      cache: 'no-store'
     })
     .then(({ orders }) => orders)
     .catch((err) => medusaError(err));
