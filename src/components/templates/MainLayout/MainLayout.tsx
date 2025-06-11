@@ -1,4 +1,5 @@
 import { Category } from '@/types/product';
+import { HttpTypes } from '@medusajs/types';
 import { ReactNode } from 'react';
 
 import { CartDrawer } from '@/components/organisms/CartDrawer/CartDrawer';
@@ -18,7 +19,16 @@ interface MainLayoutProps {
 // Add here components like Footer, Nav etc.
 export const MainLayout = async ({ children, className }: MainLayoutProps) => {
   const categories = await listCategories();
-  const transformedCategories: Category[] = categories.map(transformCategory);
+  const sortedCategories = categories.sort(
+    (a: HttpTypes.StoreProductCategory, b: HttpTypes.StoreProductCategory) => {
+      if (a.rank && b.rank) {
+        return a.rank - b.rank;
+      } else {
+        return 0;
+      }
+    }
+  );
+  const transformedCategories: Category[] = sortedCategories.map(transformCategory);
 
   const wrapperStyles = cn('flex flex-col min-h-screen', className);
 
