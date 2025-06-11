@@ -14,7 +14,7 @@ import {
 import { useLocalStorage } from 'usehooks-ts';
 
 import { retrieveCart } from '@/lib/data/cart';
-import { createCartClient } from '@/lib/data/cart-client';
+import { createCartHybrid } from '@/lib/data/cart-hybrid';
 import { transformCart } from '@/lib/medusa-adapter/cart';
 
 type CartContextType = {
@@ -72,7 +72,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
 
   const addToCart = async (item: CartItem, autoOpenCart: boolean = true) => {
     if (!cart.id) {
-      const cartData = await createCartClient(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || '');
+      const cartData = await createCartHybrid(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || '');
       setCart((prev) => ({
         ...prev,
         id: cartData.id
