@@ -96,8 +96,18 @@ export default async function ProductsPage({
   const transformedCategories: Category[] = sortedCategories.map(transformCategory);
   const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
   let order = '-created_at';
-  if (s && s.toString() !== 'createAt') {
-    order = 'title';
+  if (s) {
+    switch (s) {
+      case 'newest':
+        order = '-created_at';
+        break;
+      case 'oldest':
+        order = 'created_at';
+        break;
+      case 'title':
+        order = 'title';
+        break;
+    }
   }
 
   const res = await listProducts({

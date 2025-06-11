@@ -6,7 +6,7 @@ export type Category = {
   slug: CategorySlug;
 };
 
-export type ProductSort = 'price-asc' | 'price-desc' | 'new' | 'title';
+export type ProductSort = 'price-asc' | 'price-desc' | 'newest' | 'title' | 'oldest';
 
 export type ProductVariant = {
   id: string;
