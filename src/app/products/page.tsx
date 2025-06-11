@@ -81,12 +81,7 @@ export default async function ProductsPage({
 }: {
   searchParams: Promise<ProductPageParams>;
 }) {
-  const {
-    c,
-    search,
-    s
-    //  p
-  } = await searchParams;
+  const { c, search, s, p } = await searchParams;
 
   const categories = await listCategories();
   const transformedCategories: Category[] = categories.map(transformCategory);
@@ -114,12 +109,12 @@ export default async function ProductsPage({
   // }
 
   const res = await listProducts({
-    pageParam: 1,
+    pageParam: p ?? 1,
     countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
     queryParams: {
       limit: 10,
       order: order.toString(),
-      offset: 0,
+      offset: p ? (p - 1) * 10 : 0,
       category_id: cateId,
       q: search
     }
