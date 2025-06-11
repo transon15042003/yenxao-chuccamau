@@ -84,29 +84,21 @@ export default async function ProductsPage({
   const { c, search, s, p } = await searchParams;
 
   const categories = await listCategories();
-  const transformedCategories: Category[] = categories.map(transformCategory);
-  // const products = await getProducts({
-  //   page: p || 1,
-  //   take: 9,
-  //   categorySlug: c,
-  //   search: search,
-  //   ...(s ? getSortByOptionValue(s) : {})
-  // });
+  const sortedCategories = categories.sort(
+    (a: HttpTypes.StoreProductCategory, b: HttpTypes.StoreProductCategory) => {
+      if (a.rank && b.rank) {
+        return a.rank - b.rank;
+      } else {
+        return 0;
+      }
+    }
+  );
+  const transformedCategories: Category[] = sortedCategories.map(transformCategory);
   const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
   let order = '-created_at';
   if (s && s.toString() !== 'createAt') {
     order = 'title';
   }
-  // if (s) {
-  //   switch (s) {
-  //     case 'price-asc':
-  //       order = '-variants.calculated_price.calculated_amount';
-  //       break;
-  //     case 'price-desc':
-  //       order = 'variants.calculated_price.calculated_amount';
-  //       break;
-  //   }
-  // }
 
   const res = await listProducts({
     pageParam: p ?? 1,
