@@ -1,5 +1,45 @@
-import { Product, ProductSpecifications, ProductVariant } from '@/types/product';
+import { Product, ProductOption, ProductSpecifications, ProductVariant } from '@/types/product';
 import { HttpTypes } from '@medusajs/types';
+
+export const getProductVariantThumbnail = (
+  product: HttpTypes.StoreProduct,
+  sku: string
+): string => {
+  const productThumbnailMetadataValue = product.metadata?.[sku];
+  if (!productThumbnailMetadataValue) {
+    const productThumbnail = product.thumbnail;
+    if (productThumbnail) {
+      return productThumbnail;
+    }
+
+    return '/images/placeholder.webp';
+  }
+
+  const matchThumbnail = (product.images || [])?.find(
+    (el: HttpTypes.StoreProductImage) => el.rank + 1 === Number(productThumbnailMetadataValue)
+  );
+
+  return matchThumbnail?.url || product.thumbnail || '/images/placeholder.webp';
+};
+
+export const generateProductOptions = (product: HttpTypes.StoreProduct): ProductOption[] => {
+  return (
+    product.options?.map((option) => {
+      return {
+        key: option.id,
+        label: option.title,
+        options:
+          option.values?.map((value) => {
+            return {
+              key: value.id,
+              label: value.value,
+              value: value.id
+            };
+          }) || []
+      };
+    }) || []
+  );
+};
 
 // TODO: Implement data transformation for products
 export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
@@ -7,6 +47,7 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
   let ingredients;
 
   if (typeof ingredientRaw === 'string') {
+    // TODO: implement parse json array from string
     try {
       ingredients = JSON.parse(ingredientRaw);
     } catch {
@@ -16,113 +57,52 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
     ingredients = [];
   }
 
-  interface specsType {
-    size: string[];
-    savour: string[];
-  }
-
-  const value: specsType | undefined = product.options?.reduce(
-    (result: specsType, el: HttpTypes.StoreProductOption) => {
-      switch (el?.title.trim()) {
-        case 'Trọng lượng':
-          result.size = el?.values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? [];
-          break;
-        case 'Phân loại':
-          result.savour =
-            el?.values?.map((el: HttpTypes.StoreProductOptionValue) => el.value) ?? [];
-          break;
-        default:
-          console.error('Options not valid');
-      }
-
-      return result;
-    },
-    {
-      size: [],
-      savour: []
-    }
-  );
-
-  const specs: ProductSpecifications[] = [
-    {
-      key: 'size',
-      value: value?.size ?? []
-    },
-    {
-      key: 'savour',
-      value: value?.savour ?? []
-    }
-  ];
-
-  interface specsVarType {
-    size: string;
-    savour: string;
-  }
+  const specs: ProductSpecifications[] =
+    product.options?.map((o) => {
+      return {
+        key: o.id,
+        value: o.values?.map((v) => v.id) || []
+      };
+    }) || [];
 
   const variants: ProductVariant[] =
-    product.variants?.map((el: HttpTypes.StoreProductVariant, idx: number): ProductVariant => {
-      let rank: number;
-      if (el.variant_rank) {
-        rank = el.variant_rank;
-      } else if (el.sku) {
-        if (el.sku) {
-          rank = Number(product.metadata?.[el.sku]);
-        } else {
-          rank = idx;
-        }
-      }
-      // const specsVar: Record<string, string> = {
-      //   size: String(el.options?.[0]?.value ?? ''),
-      //   savour: String(el.options?.[1]?.value ?? '')
-      // };
-
-      const specsVar: specsVarType | undefined = el.options?.reduce(
-        (result: specsVarType, outEl: HttpTypes.StoreProductOptionValue) => {
-          switch (outEl?.option?.title.trim()) {
-            case 'Trọng lượng':
-              result.size = outEl?.value ?? '';
-              break;
-            case 'Phân loại':
-              result.savour = outEl?.value ?? '';
-              break;
-            default:
-              console.error('Options not valid');
+    product.variants?.map((variant: HttpTypes.StoreProductVariant): ProductVariant => {
+      const varSpecs = specs.reduce(
+        (acc, spec) => {
+          const option = variant.options?.find((o) => o.option_id === spec.key);
+          if (option) {
+            acc[spec.key] = option.id;
           }
 
-          return result;
+          return acc;
         },
-        {
-          size: '',
-          savour: ''
-        } as specsVarType
+        {} as Record<string, string>
       );
 
       return {
-        sku: el.sku,
-        name: el.title,
-        thumbnail:
-          product.images?.find((el: HttpTypes.StoreProductImage) => el.rank + 1 === rank)?.url ??
-          '',
-        specs: specsVar ?? {},
-        price: el.calculated_price?.calculated_amount,
-        isActive: !el.deleted_at
-      } as ProductVariant;
+        id: variant.id,
+        sku: variant.sku || '',
+        name: variant.title || '',
+        thumbnail: getProductVariantThumbnail(product, variant.sku || ''),
+        specs: varSpecs,
+        price: variant.calculated_price?.calculated_amount || 0,
+        isActive: !variant.deleted_at
+      };
     }) ?? [];
 
-  const result = {
+  return {
     id: product.id,
     name: product.title,
     slug: product.handle,
-    price: variants?.[0].price,
-    categories: [product.collection_id],
-    thumbnail: product.thumbnail,
-    description: product.description,
+    price: variants?.[0].price || 0,
+    categories: product.categories?.map((c) => c.id) || [],
+    thumbnail: product.thumbnail ?? '',
+    description: product.description ?? '',
     ingredient: ingredients,
     specs: specs,
+    options: generateProductOptions(product),
     variants: variants,
     isNew: false,
-    createdAt: product.created_at
+    createdAt: product.created_at!
   };
-
-  return result as Product;
 };

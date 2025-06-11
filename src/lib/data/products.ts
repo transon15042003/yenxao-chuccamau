@@ -17,6 +17,7 @@ type ProductQueryParams = HttpTypes.FindParams &
     q?: string;
     $or?: Record<string, unknown>[];
     $and?: Record<string, unknown>[];
+    id?: string | string[];
   };
 
 type ProductQuery = {
@@ -64,7 +65,8 @@ export const listProducts = async ({
   };
 
   const next = {
-    ...(await getCacheOptions('products'))
+    ...(await getCacheOptions('products')),
+    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
   };
 
   return sdk.client
@@ -79,7 +81,8 @@ export const listProducts = async ({
       },
       headers,
       next,
-      cache: 'no-store'
+
+      cache: 'force-cache'
     })
     .then(({ products, count }) => {
       const nextPage = count > offset + limit ? pageParam + 1 : null;

@@ -6,6 +6,7 @@ import { CartItem } from './CartItem';
 
 const mockProduct: Product = {
   id: 'yen-chung-duong-phen',
+  options: [],
   name: 'Yến chưng đường phèn',
   slug: 'yen-chung-duong-phen',
   price: 90000,
@@ -19,6 +20,7 @@ const mockProduct: Product = {
   ],
   variants: [
     {
+      id: 'yc-dp-70-nb',
       sku: 'yc-dp-70-nb',
       name: 'Yến chưng đường phèn 70ml - nguyên bản',
       thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png',
@@ -28,6 +30,7 @@ const mockProduct: Product = {
       isActive: true
     },
     {
+      id: 'yc-dp-100-nb',
       sku: 'yc-dp-100-nb',
       name: 'Yến chưng đường phèn 100ml - nguyên bản',
       thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png',
@@ -37,6 +40,7 @@ const mockProduct: Product = {
       isActive: true
     },
     {
+      id: 'yc-dp-70-ld',
       sku: 'yc-dp-70-ld',
       name: 'Yến chưng đường phèn 70ml - lá dứa',
       thumbnail: '/images/products/yen-chung-tuoi/yen-chung-la-dua.png',
@@ -51,7 +55,11 @@ const mockProduct: Product = {
 };
 
 const mockCartItem: TCartItem = {
+  variantId: 'yc-dp-70-nb',
   productId: 'yen-chung-duong-phen',
+  productSlug: 'yen-chung-duong-phen',
+  options: [],
+  variants: mockProduct.variants,
   sku: 'yc-dp-70-nb',
   name: 'Yến chưng đường phèn 70ml - nguyên bản',
   price: 90000,
@@ -66,7 +74,6 @@ const meta: Meta<typeof CartItem> = {
   tags: ['autodocs'],
   args: {
     item: mockCartItem,
-    product: mockProduct,
     onIncrease: () => {},
     onDecrease: () => {},
     onRemove: () => {}

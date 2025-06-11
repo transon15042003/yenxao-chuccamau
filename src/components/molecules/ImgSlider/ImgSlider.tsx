@@ -19,7 +19,7 @@ interface ImgSliderProps {
 }
 
 const ImgSlider = ({ className }: ImgSliderProps) => {
-  const { variants, handleSetThumbnail, handleSetSize, handleSetFlavor } = useDetailProduct();
+  const { variants, setSelectedVariant } = useDetailProduct();
 
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -32,15 +32,13 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
   };
 
   const handleClick = (variant: ProductVariant): void => {
-    handleSetSize(variant.specs.size);
-    handleSetFlavor(variant.specs.savour);
-    handleSetThumbnail(variant.thumbnail);
+    setSelectedVariant(variant);
   };
 
   return (
     <div
       className={cn(
-        'relative max-h-[132px] max-w-[100%] lg:min-w-[100px] lg:max-h-[640px] pt-4 lg:pt-0 px-3 lg:px-0 lg:pt-0 bg-white',
+        'relative max-h-[132px] max-w-[100%] lg:min-w-[100px] lg:max-h-[640px] pt-4 px-3 lg:px-0 lg:pt-0 bg-white',
         variants.length === 1 && 'lg:h-[120px]',
         variants.length === 2 && 'lg:h-[250px]',
         variants.length === 3 && 'lg:h-[380px]',
