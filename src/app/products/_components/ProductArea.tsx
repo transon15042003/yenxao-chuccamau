@@ -18,13 +18,14 @@ const sortOptions: { label: string; value: ProductSort }[] = [
   // { label: 'Giá tăng dần', value: 'price-asc' },
   // { label: 'Giá giảm dần', value: 'price-desc' },
   { label: 'Tên sản phẩm', value: 'title' },
-  { label: 'Mới nhất', value: 'new' }
+  { label: 'Mới nhất', value: 'newest' },
+  { label: 'Cũ nhất', value: 'oldest' }
 ];
 
 const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [sortOption, setSortOption] = useState<string>('new');
+  const [sortOption, setSortOption] = useState<string>('newest');
 
   const handleChangeSortOption = (newVal: unknown) => {
     const newSortOpt = (newVal as Option).value;
@@ -38,8 +39,11 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
       case 'price-desc':
         params.set('s', 'price-desc');
         break;
-      case 'new':
-        params.set('s', 'createAt');
+      case 'newest':
+        params.set('s', 'newest');
+        break;
+      case 'oldest':
+        params.set('s', 'oldest');
         break;
       case 'title':
         params.set('s', 'title');
@@ -60,7 +64,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     if (!params.get('s')) {
-      params.set('s', 'createAt');
+      params.set('s', 'newest');
     } else {
       switch (params.get('s')) {
         case 'price-asc':
@@ -69,8 +73,11 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         case 'price-desc':
           setSortOption('price-desc');
           break;
-        case 'createAt':
-          setSortOption('new');
+        case 'newest':
+          setSortOption('newest');
+          break;
+        case 'oldest':
+          params.set('s', 'oldest');
           break;
         case 'title':
           setSortOption('title');
