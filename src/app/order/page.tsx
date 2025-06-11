@@ -1,6 +1,5 @@
 'use client';
 
-import { useCartProducts } from '@/hooks/useCartProducts';
 import useRecaptchaLogic from '@/hooks/useRecaptchaLogic';
 import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
@@ -12,6 +11,7 @@ import { toast } from 'react-toastify';
 
 import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
+import Spinning from '@/components/atoms/Spinning/Spinning';
 import { Stepper } from '@/components/atoms/Step';
 import { CartItem } from '@/components/molecules/CartItem/CartItem';
 import { InputGroup } from '@/components/molecules/InputGroup/InputGroup';
@@ -70,14 +70,13 @@ const PaymentPage = () => {
     shippingInfoForm,
     invoiceForm,
     shippingMethod,
-    setShippingMethod
+    setShippingMethod,
+    isSubmitting
   } = usePaymentPageProvider();
 
   const [discountErrorMessage, setDiscountErrorMessage] = useState<string | undefined>(undefined);
   const [discountCode, setDiscountCode] = useState<string>('');
   const { verifyHuman } = useRecaptchaLogic();
-
-  const { productsData } = useCartProducts(cart);
 
   const shipping = 0;
   const discount = 0;
@@ -264,18 +263,13 @@ const PaymentPage = () => {
               {cart.items.length > 0 ? (
                 <div className="flex flex-col gap-4 bg-white rounded-lg px-2 py-6 md:px-5 max-h-[300px] md:max-h-[450px] overflow-y-auto customscrollbar">
                   {cart.items?.map((item) => {
-                    const product = productsData.get(item.productId);
-
-                    if (!product) return null;
-
                     return (
                       <CartItem
                         key={item.sku}
                         item={item}
-                        product={product}
-                        onIncrease={() => increaseQuantity(item.sku, 1)}
-                        onDecrease={() => decreaseQuantity(item.sku, 1)}
-                        onRemove={() => removeFromCart(item.sku)}
+                        onIncrease={() => increaseQuantity(item.variantId, 1)}
+                        onDecrease={() => decreaseQuantity(item.variantId, 1)}
+                        onRemove={() => removeFromCart(item.variantId)}
                       />
                     );
                   })}
@@ -337,11 +331,11 @@ const PaymentPage = () => {
 
                   <div className="mt-6">
                     <Button
-                      className="w-full uppercase text-xl font-bold py-[13px]"
-                      disabled={!getTakeOrderStatus()}
+                      className="w-full uppercase text-xl font-bold py-[13px] flex items-center justify-center gap-x-2"
+                      disabled={!getTakeOrderStatus() || isSubmitting}
                       onClick={handlePlaceOrder}
                     >
-                      Đặt hàng
+                      {isSubmitting ? <Spinning className="w-5 h-5" /> : 'Đặt hàng'}
                     </Button>
                   </div>
                 </div>

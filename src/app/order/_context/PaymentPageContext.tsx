@@ -4,7 +4,6 @@ import { CartItem } from '@/types/cart';
 import { Order, ShippingMethod } from '@/types/order';
 import { PaymentGateway } from '@/types/payment';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
 import React, {
   createContext,
   Dispatch,
@@ -15,6 +14,7 @@ import React, {
   useState
 } from 'react';
 import { FieldValues, useForm, UseFormReturn } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import { InvoiceForm, invoiceFormSchema } from '@/components/organisms/InvoiceForm';
 import {
@@ -23,7 +23,14 @@ import {
 } from '@/components/organisms/ShippingInformationForm';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
+import { initiatePaymentSession, listCartOptions, setAddresses, updateCart } from '@/lib/data/cart';
+import { setShippingMethod as setCartShippingMethod } from '@/lib/data/cart';
+import { placeOrder as placeOrderFromCart } from '@/lib/data/cart';
+// import { listCartPaymentMethods } from '@/lib/data/payment';
+import { transfromCartShippingInfo } from '@/lib/medusa-adapter/cart';
+
 type ContextType = {
+  isSubmitting: boolean;
   paymentMethod: PaymentGateway | 'COD';
   setPaymentMethod: Dispatch<SetStateAction<PaymentGateway | 'COD'>>;
   shippingInfoForm: UseFormReturn<ShippingInfomationForm>;
@@ -39,6 +46,7 @@ type ContextType = {
   setShippingMethod: Dispatch<SetStateAction<ShippingMethod>>;
 };
 const Context = createContext<ContextType>({
+  isSubmitting: false,
   paymentMethod: 'COD',
   setPaymentMethod: () => {},
   shippingInfoForm: {} as UseFormReturn<ShippingInfomationForm>,
@@ -69,8 +77,8 @@ const initOrder: Order = {
 };
 
 const PaymentPageProvider = ({ children }: PropsWithChildren) => {
-  const router = useRouter();
-  const { clearCart } = useCart();
+  const { cart, originalCart } = useCart();
+  const [submitting, setSubmitting] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentGateway | 'COD'>('COD');
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('STANDARD');
@@ -100,6 +108,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
   };
 
   const placeOrder = async (items: CartItem[]) => {
+    setSubmitting(true);
     try {
       const order: Order = {
         ...initOrder,
@@ -139,11 +148,62 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
         order.note = orderNote;
       }
 
+      // 1. update cart customer
+      const shippingAddressFormData = transfromCartShippingInfo(order.customer);
+      await setAddresses({}, shippingAddressFormData);
+
+      // 2. save cart metadata
+      let cartMetadata: Record<string, string | undefined> = {
+        payment_method: paymentMethod,
+        shipping_method: shippingMethod
+      };
+      if (isUseInvoiceForm) {
+        cartMetadata = {
+          ...cartMetadata,
+          invoice_name: order.invoice?.name,
+          invoice_email: order.invoice?.email,
+          invoice_tax_code: order.invoice?.taxCode,
+          invoice_address: order.invoice?.address
+        };
+      }
+      if (isUseNoteForm) {
+        cartMetadata = {
+          ...cartMetadata,
+          note: order.note
+        };
+      }
+      await updateCart({
+        metadata: cartMetadata
+      });
+
+      // 3. update cart shipping
+      const shippingOptionsResult = await listCartOptions();
+      if (!shippingOptionsResult || shippingOptionsResult.shipping_options.length === 0) {
+        toast.error('Vui lòng chọn phương thức vận chuyển');
+      }
+
+      const cartShippingMethod = shippingOptionsResult.shipping_options[0];
+      await setCartShippingMethod({
+        cartId: cart.id!,
+        shippingMethodId: cartShippingMethod.id
+      });
+
+      // 4.update cart payment method
+      if (originalCart) {
+        // const paymentMethods = await listCartPaymentMethods(originalCart?.region?.id ?? '');
+        await initiatePaymentSession(originalCart, {
+          provider_id: 'pp_system_default'
+        });
+      }
+
+      // 5. create order
+      await placeOrderFromCart(cart.id!);
+
       localStorage.setItem('order', JSON.stringify(order));
-      clearCart();
-      router.push('/order/result');
     } catch (error) {
       console.error(error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -157,6 +217,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
   return (
     <Context.Provider
       value={{
+        isSubmitting: submitting,
         paymentMethod,
         setPaymentMethod,
         shippingInfoForm,
