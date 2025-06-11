@@ -6,6 +6,7 @@ import { sdk } from '@/lib/medusa/medusa-config';
 import medusaError from '@/lib/medusa/util/medusa-error';
 
 import { getAuthHeaders, getCacheOptions } from './cookies';
+import { listProducts } from './products';
 
 export const retrieveOrder = async (id: string) => {
   const headers = {
@@ -13,14 +14,16 @@ export const retrieveOrder = async (id: string) => {
   };
 
   const next = {
-    ...(await getCacheOptions('orders'))
+    ...(await getCacheOptions('orders')),
+    revalidate: Number(process.env.NEXT_PUBLIC_REVALIDATE_TIME_IN_SECONDS) || 60
   };
 
-  return sdk.client
+  const order = await sdk.client
     .fetch<HttpTypes.StoreOrderResponse>(`/store/orders/${id}`, {
       method: 'GET',
       query: {
-        fields: '*payment_collections.payments,*items,*items.metadata,*items.variant,*items.product'
+        fields:
+          '*payment_collections.payments,*items,*items.metadata,*items.variant,*items.product,*items.product,*metadata'
       },
       headers,
       next,
@@ -28,6 +31,39 @@ export const retrieveOrder = async (id: string) => {
     })
     .then(({ order }) => order)
     .catch((err) => medusaError(err));
+
+  const productIds = new Set([...Array.from(order?.items?.map((item) => item.product_id!) || [])]);
+
+  const getProducts = await listProducts({
+    queryParams: {
+      limit: productIds.size,
+      id: Array.from(productIds),
+      fields:
+        '*metadata,' +
+        '*tags,' +
+        '*images,' +
+        '*options,' +
+        '*variants.calculated_price,' +
+        '*variants.inventory_quantity,' +
+        '*options.values,' +
+        '*variants,' +
+        '*variants.options'
+    },
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE
+  });
+
+  // mapping product to cart.product
+  const products = getProducts.response.products;
+
+  if (order && products) {
+    order.items =
+      order?.items?.map((item) => ({
+        ...item,
+        product: products.find((product) => product.id === item.product_id)
+      })) || [];
+  }
+
+  return order;
 };
 
 export const listOrders = async (
