@@ -16,12 +16,14 @@ const meta: Meta<typeof ProductCard> = {
       price: 10000000,
       description: 'Bánh tổ yến',
       categories: [],
+      options: [],
       isNew: true,
       createdAt: '2021-01-01',
       ingredient: ['Yến mạch', 'Bột mì', 'Trứng', 'Sữa tươi', 'Đường', 'Bơ', 'Bột nở'],
       specs: [{ key: 'size', value: ['100g', '200g', '300g'] }],
       variants: [
         {
+          id: 'v1',
           sku: 'v1',
           name: 'Bánh tổ yến',
           price: 10000000,
@@ -31,6 +33,7 @@ const meta: Meta<typeof ProductCard> = {
           isActive: true
         },
         {
+          id: 'v2',
           sku: 'v2',
           name: 'Bánh tổ yến',
           price: 10000000,

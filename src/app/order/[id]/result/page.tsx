@@ -15,8 +15,9 @@ const steps = [
   { label: '3. Hoàn tất', icon: <CheckSVG className="w-6 h-6" /> }
 ];
 
-const OrderResultPage = async ({ params }: { params: { id: string } }) => {
-  const originOrder = await retrieveOrder(params.id);
+const OrderResultPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const originOrder = await retrieveOrder(id);
 
   const order = transformOrder(originOrder);
   if (!order) {
