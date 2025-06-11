@@ -83,16 +83,7 @@ export default async function ProductsPage({
 }) {
   const { c, search, s, p } = await searchParams;
 
-  const categories = await listCategories();
-  const sortedCategories = categories.sort(
-    (a: HttpTypes.StoreProductCategory, b: HttpTypes.StoreProductCategory) => {
-      if (a.rank && b.rank) {
-        return a.rank - b.rank;
-      } else {
-        return 0;
-      }
-    }
-  );
+  const sortedCategories = await listCategories();
   const transformedCategories: Category[] = sortedCategories.map(transformCategory);
   const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
   let order = '-created_at';

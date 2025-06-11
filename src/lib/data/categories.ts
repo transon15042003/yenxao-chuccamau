@@ -22,7 +22,15 @@ export const listCategories = async (query?: Record<string, unknown>) => {
       next,
       cache: 'no-store'
     })
-    .then(({ product_categories }) => product_categories);
+    .then(({ product_categories }) => {
+      const sortedCategories = product_categories.sort(
+        (a: HttpTypes.StoreProductCategory, b: HttpTypes.StoreProductCategory) => {
+          return Number(a.rank) - Number(b.rank);
+        }
+      );
+
+      return sortedCategories;
+    });
 };
 
 export const getCategoryByHandle = async (categoryHandle: string[]) => {
