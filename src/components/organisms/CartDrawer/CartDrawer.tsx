@@ -38,7 +38,10 @@ export const CartDrawer = () => {
 
   const discount = 0;
   const shipping = 0;
-  const total = cart.total;
+  const total = cart.items.reduce(
+    (acc, item) => acc + (item?.price || 0) * (item?.quantity || 0),
+    0
+  );
 
   return (
     <div

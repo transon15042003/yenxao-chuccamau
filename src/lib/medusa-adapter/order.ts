@@ -27,7 +27,16 @@ export const transformOrder = (order: HttpTypes.StoreOrder): Order => {
       province: shipping_address?.province || '',
       email: order.email || ''
     },
+    invoice: {
+      name: metadata?.invoice_name as string,
+      email: metadata?.invoice_email as string,
+      taxCode: metadata?.invoice_tax_code as string,
+      address: metadata?.invoice_address as string
+    },
     shippingMethod:
-      (metadata?.shipping_method as ShippingMethod) === 'STANDARD' ? 'STANDARD' : 'WORKING_HOURS'
+      (metadata?.shipping_method as ShippingMethod) === 'STANDARD' ? 'STANDARD' : 'WORKING_HOURS',
+    paymentMethod: metadata?.payment_method as string,
+    orderAt: new Date(order.updated_at),
+    note: metadata?.note as string
   };
 };

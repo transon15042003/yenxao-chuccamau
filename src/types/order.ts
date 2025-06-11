@@ -12,6 +12,7 @@ export type Order = {
   paymentStatus: OrderPaymentStatus;
   orderAt?: Date;
   shippingMethod: ShippingMethod;
+  paymentMethod: string;
 };
 
 export type OrderCustomer = {

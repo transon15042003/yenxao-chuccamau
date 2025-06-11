@@ -1,9 +1,11 @@
 'use client';
 
+import { sendOrderNotification } from '@/services/notification.service';
 import { CartItem } from '@/types/cart';
 import { Order, ShippingMethod } from '@/types/order';
 import { PaymentGateway } from '@/types/payment';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
 import React, {
   createContext,
   Dispatch,
@@ -23,11 +25,8 @@ import {
 } from '@/components/organisms/ShippingInformationForm';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
-import { initiatePaymentSession, listCartOptions, setAddresses, updateCart } from '@/lib/data/cart';
-import { setShippingMethod as setCartShippingMethod } from '@/lib/data/cart';
-import { placeOrder as placeOrderFromCart } from '@/lib/data/cart';
-// import { listCartPaymentMethods } from '@/lib/data/payment';
-import { transfromCartShippingInfo } from '@/lib/medusa-adapter/cart';
+import { updateCartAndTakeOrderFlow } from '@/lib/data/cart';
+import { transformOrder } from '@/lib/medusa-adapter/order';
 
 type ContextType = {
   isSubmitting: boolean;
@@ -73,11 +72,13 @@ const initOrder: Order = {
   },
   paymentStatus: 'pending',
   shippingMethod: 'STANDARD',
+  paymentMethod: 'COD',
   orderAt: new Date()
 };
 
 const PaymentPageProvider = ({ children }: PropsWithChildren) => {
-  const { cart, originalCart } = useCart();
+  const { clearCart } = useCart();
+  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentGateway | 'COD'>('COD');
@@ -113,7 +114,8 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       const order: Order = {
         ...initOrder,
         items,
-        shippingMethod
+        shippingMethod,
+        paymentMethod
       };
 
       const shippingInfo = await getFormDataBySubmit(shippingInfoForm);
@@ -148,60 +150,19 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
         order.note = orderNote;
       }
 
-      // 1. update cart customer
-      const shippingAddressFormData = transfromCartShippingInfo(order.customer);
-      await setAddresses({}, shippingAddressFormData);
+      const cartRes = await updateCartAndTakeOrderFlow(order);
 
-      // 2. save cart metadata
-      let cartMetadata: Record<string, string | undefined> = {
-        payment_method: paymentMethod,
-        shipping_method: shippingMethod
-      };
-      if (isUseInvoiceForm) {
-        cartMetadata = {
-          ...cartMetadata,
-          invoice_name: order.invoice?.name,
-          invoice_email: order.invoice?.email,
-          invoice_tax_code: order.invoice?.taxCode,
-          invoice_address: order.invoice?.address
-        };
+      clearCart();
+
+      if (cartRes?.type === 'order') {
+        sendOrderNotification(transformOrder(cartRes?.order)).catch(console.error);
+
+        localStorage.setItem('order', JSON.stringify(cartRes?.order));
+        router.push(`/order/${cartRes?.order.id}/result`);
       }
-      if (isUseNoteForm) {
-        cartMetadata = {
-          ...cartMetadata,
-          note: order.note
-        };
-      }
-      await updateCart({
-        metadata: cartMetadata
-      });
-
-      // 3. update cart shipping
-      const shippingOptionsResult = await listCartOptions();
-      if (!shippingOptionsResult || shippingOptionsResult.shipping_options.length === 0) {
-        toast.error('Vui lòng chọn phương thức vận chuyển');
-      }
-
-      const cartShippingMethod = shippingOptionsResult.shipping_options[0];
-      await setCartShippingMethod({
-        cartId: cart.id!,
-        shippingMethodId: cartShippingMethod.id
-      });
-
-      // 4.update cart payment method
-      if (originalCart) {
-        // const paymentMethods = await listCartPaymentMethods(originalCart?.region?.id ?? '');
-        await initiatePaymentSession(originalCart, {
-          provider_id: 'pp_system_default'
-        });
-      }
-
-      // 5. create order
-      await placeOrderFromCart(cart.id!);
-
-      localStorage.setItem('order', JSON.stringify(order));
     } catch (error) {
-      console.error(error);
+      console.error('error', error);
+      toast.error('Đặt hàng không thành công, vui lòng thử lại');
     } finally {
       setSubmitting(false);
     }
