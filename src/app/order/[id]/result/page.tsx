@@ -1,17 +1,13 @@
-'use client';
 import { CartSVG } from '@/svg/CartSVG/CartSVG';
 import { CheckSVG } from '@/svg/CheckSVG/CheckSVG';
 import { WebPageSVG } from '@/svg/WebPageSVG.tsx/WebPageSVG';
-import { Order } from '@/types/order';
-import React, { useEffect, useState } from 'react';
-import { renderEmail } from 'react-html-email';
-import { sendMail } from 'src/services/mail.service';
-import { useLocalStorage } from 'usehooks-ts';
+import React from 'react';
 
 import { Stepper } from '@/components/atoms/Step';
 import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
-import { CustomerOrderNotification } from '@/components/templates/mail/CustomerOrderNotification';
-import { OwnerOrderNotification } from '@/components/templates/mail/OwnerOrderNotification';
+
+import { retrieveOrder } from '@/lib/data/orders';
+import { transformOrder } from '@/lib/medusa-adapter/order';
 
 const steps = [
   { label: '1. Giỏ hàng', icon: <CartSVG className="w-6 h-6" /> },
@@ -19,44 +15,10 @@ const steps = [
   { label: '3. Hoàn tất', icon: <CheckSVG className="w-6 h-6" /> }
 ];
 
-const OrderResultPage = () => {
-  const [rendered, setRendered] = useState(false);
-  const [order] = useLocalStorage<Order | null>('order', null, {
-    initializeWithValue: false
-  });
+const OrderResultPage = async ({ params }: { params: { id: string } }) => {
+  const originOrder = await retrieveOrder(params.id);
 
-  const sendNotificationEmails = async (order: Order) => {
-    try {
-      // send mail to owner
-      await sendMail({
-        subject: `[Chúc Cà Mau] Đơn hàng mới từ ${order.customer.name} – Mã đơn: ${order.code}`,
-        html: renderEmail(OwnerOrderNotification(order)),
-        fromName: 'Chuc Ca Mau - Yen Sao'
-      });
-
-      if (order.customer.email) {
-        await sendMail({
-          subject: `[Chúc Cà Mau] Đơn hàng #${order.code} đã được ghi nhận`,
-          html: renderEmail(CustomerOrderNotification(order)),
-          fromName: 'Chuc Ca Mau - Yen Sao',
-          emailTo: order.customer.email
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  useEffect(() => {
-    if (rendered && order) {
-      sendNotificationEmails(order);
-    }
-  }, [rendered, order]);
-
+  const order = transformOrder(originOrder);
   if (!order) {
     return (
       <div>
@@ -87,7 +49,7 @@ const OrderResultPage = () => {
                 gian sớm nhất.
               </h4>
               <p className="">
-                Mã đơn hàng: <span className="text-primary font-bold">{order?.code}</span>
+                Mã đơn hàng: <span className="text-primary font-bold">{order.code}</span>
               </p>
             </div>
           </div>
