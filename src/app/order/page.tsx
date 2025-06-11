@@ -80,7 +80,7 @@ const PaymentPage = () => {
 
   const shipping = 0;
   const discount = 0;
-  const total = cart.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cart.items.reduce((acc, item) => acc + item?.price * item?.quantity, 0);
 
   const getTakeOrderStatus = () => {
     if (cart.items.length === 0) {
@@ -153,7 +153,6 @@ const PaymentPage = () => {
                         type="radio"
                         name="shipping"
                         className="w-4 h-4 accent-primary"
-                        defaultChecked
                         checked={shippingMethod === 'STANDARD'}
                         onChange={() => setShippingMethod('STANDARD')}
                       />

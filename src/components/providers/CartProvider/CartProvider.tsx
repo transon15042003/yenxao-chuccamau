@@ -11,10 +11,11 @@ import {
   useEffect,
   useState
 } from 'react';
-import { toast } from 'react-toastify';
+import { useLocalStorage } from 'usehooks-ts';
 
-import { getOrSetCart, retrieveCart } from '@/lib/data/cart';
-import { isChangedCartItem, transformCart, updateCartItems } from '@/lib/medusa-adapter/cart';
+import { retrieveCart } from '@/lib/data/cart';
+import { createCartClient } from '@/lib/data/cart-client';
+import { transformCart } from '@/lib/medusa-adapter/cart';
 
 type CartContextType = {
   cart: Cart;
@@ -31,6 +32,7 @@ type CartContextType = {
   clearCart: () => void;
   isCartOpen: boolean;
   setIsCartOpen: Dispatch<SetStateAction<boolean>>;
+  fetchCartData: () => void;
 };
 
 const defaultCart = {
@@ -48,19 +50,33 @@ const CartContext = createContext<CartContextType>({
   updateCartItemVariant: () => {},
   clearCart: () => {},
   isCartOpen: false,
-  setIsCartOpen: () => {}
+  setIsCartOpen: () => {},
+  fetchCartData: () => {}
 });
 
 export const CartProvider = ({ children }: PropsWithChildren) => {
   const [originalCart, setOriginalCart] = useState<HttpTypes.StoreCart | null>(null);
-  const [cart, setCart] = useState<Cart>(defaultCart);
+  const [cart, setCart] = useLocalStorage<Cart>('cart', defaultCart, {
+    initializeWithValue: false,
+    deserializer: (value) => {
+      const parsed = JSON.parse(value);
+
+      return {
+        ...parsed,
+        items: parsed.items.filter((i: CartItem) => !!i)
+      };
+    }
+  });
 
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = async (item: CartItem, autoOpenCart: boolean = true) => {
     if (!cart.id) {
-      const cartData = await getOrSetCart(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || '');
-      setCart(transformCart(cartData));
+      const cartData = await createCartClient(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || '');
+      setCart((prev) => ({
+        ...prev,
+        id: cartData.id
+      }));
       setOriginalCart(cartData);
     }
 
@@ -208,21 +224,21 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
-  useEffect(() => {
-    fetchCartData();
-  }, []);
+  // useEffect(() => {
+  //   fetchCartData();
+  // }, []);
 
-  useEffect(() => {
-    if (originalCart && isChangedCartItem(cart, originalCart)) {
-      updateCartItems(cart, originalCart)
-        .catch(() => {
-          toast.error('Xảy ra lỗi khi cập nhật giỏ hàng, vui lòng thử lại');
-        })
-        .finally(() => {
-          fetchCartData();
-        });
-    }
-  }, [cart, originalCart]);
+  // useEffect(() => {
+  //   if (originalCart && isChangedCartItem(cart, originalCart)) {
+  //     updateCartItems(cart, originalCart)
+  //       .catch(() => {
+  //         toast.error('Xảy ra lỗi khi cập nhật giỏ hàng, vui lòng thử lại');
+  //       })
+  //       .finally(() => {
+  //         fetchCartData();
+  //       });
+  //   }
+  // }, [cart, originalCart]);
 
   useEffect(() => {
     if (isCartOpen) {
@@ -244,7 +260,8 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
         updateCartItemVariant,
         clearCart,
         isCartOpen,
-        setIsCartOpen
+        setIsCartOpen,
+        fetchCartData
       }}
     >
       {children}

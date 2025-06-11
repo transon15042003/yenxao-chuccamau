@@ -3,13 +3,16 @@
 'use server';
 
 import { sendOrderNotification } from '@/services/notification.service';
+import { Order } from '@/types/order';
 import { HttpTypes } from '@medusajs/types';
 import { revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 import { sdk } from '@/lib/medusa/medusa-config';
 import medusaError from '@/lib/medusa/util/medusa-error';
 
+import { transfromCartShippingInfo } from '../medusa-adapter/cart';
 import { transformOrder } from '../medusa-adapter/order';
 import {
   getAuthHeaders,
@@ -19,6 +22,7 @@ import {
   removeCartId,
   setCartId
 } from './cookies';
+import { retrieveOrder } from './orders';
 import { listProducts } from './products';
 import { getRegion } from './regions';
 
@@ -444,11 +448,12 @@ export async function placeOrder(cartId?: string) {
     revalidateTag(orderCacheTag);
 
     removeCartId();
-    await sendOrderNotification(transformOrder(cartRes?.order));
-    redirect(`/order/${cartRes?.order.id}/result`);
+
+    const order = await retrieveOrder(cartRes?.order.id);
+    cartRes.order = order;
   }
 
-  return cartRes.cart;
+  return cartRes;
 }
 
 /**
@@ -496,4 +501,70 @@ export async function listCartOptions() {
     headers,
     cache: 'force-cache'
   });
+}
+
+export async function updateCartAndTakeOrderFlow(order: Order) {
+  const addToCartRequest = order.items.map((i) => {
+    return addToCart({
+      variantId: i.variantId,
+      quantity: i.quantity,
+      countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || 'vn'
+    });
+  });
+
+  const addToCartResponse = await Promise.allSettled(addToCartRequest);
+  if (addToCartResponse.some((r) => r.status === 'rejected')) {
+    throw new Error('Error adding items to cart');
+  }
+
+  const cart = await getOrSetCart(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || 'vn');
+
+  // 1. update cart customer
+  const shippingAddressFormData = transfromCartShippingInfo(order.customer);
+  await setAddresses({}, shippingAddressFormData);
+
+  // 2. save cart metadata
+  const cartMetadata: Record<string, string | undefined> = {
+    payment_method: order.paymentMethod,
+    shipping_method: order.shippingMethod,
+    ...(order.invoice
+      ? {
+          invoice_name: order.invoice?.name,
+          invoice_email: order.invoice?.email,
+          invoice_tax_code: order.invoice?.taxCode,
+          invoice_address: order.invoice?.address
+        }
+      : {}),
+    ...(order.note ? { note: order.note } : {})
+  };
+
+  await updateCart({
+    metadata: cartMetadata
+  });
+
+  // 3. update cart shipping
+  const shippingOptionsResult = await listCartOptions();
+  if (!shippingOptionsResult || shippingOptionsResult.shipping_options.length === 0) {
+    toast.error('Vui lòng chọn phương thức vận chuyển');
+  }
+
+  const cartShippingMethod = shippingOptionsResult.shipping_options[0];
+  await setShippingMethod({
+    cartId: cart.id!,
+    shippingMethodId: cartShippingMethod.id
+  });
+
+  // 4.update cart payment method
+  const currentCart = await retrieveCart();
+  if (currentCart) {
+    // const paymentMethods = await listCartPaymentMethods(originalCart?.region?.id ?? '');
+    await initiatePaymentSession(currentCart, {
+      provider_id: 'pp_system_default'
+    });
+  }
+
+  // 5. create order
+  const placeOrderResponse = await placeOrder(cart.id!);
+
+  return placeOrderResponse;
 }
