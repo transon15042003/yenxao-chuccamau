@@ -5,7 +5,6 @@ import { EmptyDataBlock } from '@/components/molecules/EmptyDataBlock';
 import { DetailProductProvider } from '@/components/providers/DetailProductProvider/DetailProductProvider';
 import DetailProduct from '@/components/templates/DetailProduct/DetailProduct';
 
-import { listCategories } from '@/lib/data/categories';
 import { listProducts } from '@/lib/data/products';
 import { transformCategory } from '@/lib/medusa-adapter/category';
 import { transformProduct } from '@/lib/medusa-adapter/product';
@@ -33,24 +32,8 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
     countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
     queryParams: { handle: slug }
   }).then(({ response }) => response.products[0]);
-  const product = transformProduct(originProduct);
 
-  const originCategories = await listCategories();
-  const categories = originCategories.map(transformCategory);
-  const category = categories.find((category) => category.slug === slug);
-
-  const listProductsByCategory = await listProducts({
-    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
-    queryParams: {
-      limit: 9999,
-      offset: 0,
-      order: '-created_at',
-      category_id: category?.id
-    }
-  });
-  const relatedProducts = listProductsByCategory.response.products.map(transformProduct);
-
-  if (!product)
+  if (!originProduct)
     return (
       <div className="flex-1 flex flex-col gap-y-7">
         <div className="max-w-[300px] mx-auto">
@@ -58,6 +41,27 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
         </div>
       </div>
     );
+
+  const product = transformProduct(originProduct);
+  const category =
+    originProduct.categories && originProduct.categories.length > 0
+      ? transformCategory(originProduct.categories[0])
+      : null;
+
+  const listProductsByCategory = category
+    ? await listProducts({
+        countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
+        queryParams: {
+          limit: 9999,
+          offset: 0,
+          order: '-created_at',
+          category_id: category.id
+        }
+      })
+    : { response: { products: [] } };
+  const relatedProducts = listProductsByCategory.response.products
+    .map(transformProduct)
+    .filter((p) => p.id !== product.id);
 
   return (
     <DetailProductProvider product={product}>
