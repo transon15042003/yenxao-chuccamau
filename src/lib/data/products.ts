@@ -18,6 +18,7 @@ type ProductQueryParams = HttpTypes.FindParams &
     $or?: Record<string, unknown>[];
     $and?: Record<string, unknown>[];
     id?: string | string[];
+    collection_id?: string | string[];
   };
 
 type ProductQuery = {
