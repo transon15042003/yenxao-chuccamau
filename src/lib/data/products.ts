@@ -13,7 +13,7 @@ import { getRegion, retrieveRegion } from './regions';
 type ProductQueryParams = HttpTypes.FindParams &
   HttpTypes.StoreProductParams & {
     handle?: string;
-    category_id?: string;
+    category_id?: string | string[];
     q?: string;
     $or?: Record<string, unknown>[];
     $and?: Record<string, unknown>[];
@@ -76,7 +76,8 @@ export const listProducts = async ({
         limit,
         offset,
         region_id: region?.id,
-        fields: '*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags',
+        fields:
+          '*variants.calculated_price,+variants.inventory_quantity,+metadata,+tags,*categories',
         ...queryParams
       },
       headers,
