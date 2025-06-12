@@ -103,6 +103,7 @@ export const transformProduct = (product: HttpTypes.StoreProduct): Product => {
     options: generateProductOptions(product),
     variants: variants,
     isNew: false,
-    createdAt: product.created_at!
+    createdAt: product.created_at!,
+    isOutOfStock: product.metadata?.outStock === true
   };
 };
