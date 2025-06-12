@@ -504,17 +504,13 @@ export async function listCartOptions() {
 }
 
 export async function updateCartAndTakeOrderFlow(order: Order) {
-  const addToCartRequest = order.items.map((i) => {
-    return addToCart({
-      variantId: i.variantId,
-      quantity: i.quantity,
+  // 1. add items to cart
+  for (const item of order.items) {
+    await addToCart({
+      variantId: item.variantId,
+      quantity: item.quantity,
       countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || 'vn'
     });
-  });
-
-  const addToCartResponse = await Promise.allSettled(addToCartRequest);
-  if (addToCartResponse.some((r) => r.status === 'rejected')) {
-    throw new Error('Error adding items to cart');
   }
 
   const cart = await getOrSetCart(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || 'vn');

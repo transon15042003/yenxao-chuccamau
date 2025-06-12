@@ -26,10 +26,10 @@ import {
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
 import { updateCartAndTakeOrderFlow } from '@/lib/data/cart';
-import { transformOrder } from '@/lib/medusa-adapter/order';
 
 type ContextType = {
   isSubmitting: boolean;
+  setSubmitting: Dispatch<SetStateAction<boolean>>;
   paymentMethod: PaymentGateway | 'COD';
   setPaymentMethod: Dispatch<SetStateAction<PaymentGateway | 'COD'>>;
   shippingInfoForm: UseFormReturn<ShippingInfomationForm>;
@@ -46,6 +46,7 @@ type ContextType = {
 };
 const Context = createContext<ContextType>({
   isSubmitting: false,
+  setSubmitting: () => {},
   paymentMethod: 'COD',
   setPaymentMethod: () => {},
   shippingInfoForm: {} as UseFormReturn<ShippingInfomationForm>,
@@ -155,7 +156,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       clearCart();
 
       if (cartRes?.type === 'order') {
-        sendOrderNotification(transformOrder(cartRes?.order)).catch(console.error);
+        sendOrderNotification(order).catch(console.error);
 
         localStorage.setItem('order', JSON.stringify(cartRes?.order));
         router.push(`/order/${cartRes?.order.id}/result`);
@@ -179,6 +180,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
     <Context.Provider
       value={{
         isSubmitting: submitting,
+        setSubmitting,
         paymentMethod,
         setPaymentMethod,
         shippingInfoForm,
