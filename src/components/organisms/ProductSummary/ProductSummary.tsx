@@ -72,6 +72,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
   };
 
   const { name, price } = selectedVariant || {};
+  const isOutOfStock = product.isOutOfStock;
 
   return (
     <div className={cn('px-3 pb-5 pt-4 lg:pt-0 text-[#2A2A40] bg-white', className)}>
@@ -85,7 +86,9 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
         {/* <p className="pl-4">(124 reviews) | Đã bán {product.totalSold}</p> */}
       </div>
       <div className="flex items-center border-b border-dashed border-[#DADADA] py-2 text-[25px]">
-        <SectionHeading className="text-[25px]">{convertToVND(price!)}</SectionHeading>
+        <div className={cn(isOutOfStock && 'line-through')}>
+          <SectionHeading className="text-[25px]">{convertToVND(price!)}</SectionHeading>
+        </div>
         {/* <SectionHeading className="pl-4 font-light text-[20px] leading-[32px] line-through text-[#2A2A40]">
           12.000.000đ
         </SectionHeading> */}
@@ -136,6 +139,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             fill="outline"
             onClick={() => handleChangeAmount('decrease')}
             className="p-0 w-10 ml-2 h-[30px] flex justify-center items-center text-[#2A2A40] border-typo-1"
+            disabled={isOutOfStock}
           >
             <MinusSVG />
           </Button>
@@ -145,6 +149,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
             fill="outline"
             onClick={() => handleChangeAmount('increase')}
             className="p-0 w-10 h-[30px] text-[#2A2A40] flex justify-center items-center border-typo-1"
+            disabled={isOutOfStock}
           >
             <PlusSVG />
           </Button>
@@ -156,6 +161,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           variant="secondary"
           className="w-full h-[46px] font-bold bg-primary text-white lg:col-span-6"
           onClick={handleBuyNowClick}
+          disabled={isOutOfStock}
         >
           Mua ngay
         </Button>
@@ -164,6 +170,7 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           fill="outline"
           onClick={handleAddToCart}
           className="w-full h-[46px] font-bold border-[#2A2A40] text-[#2A2A40] mt-3 lg:col-span-6 lg:mt-0"
+          disabled={isOutOfStock}
         >
           Thêm giỏ hàng
         </Button>
