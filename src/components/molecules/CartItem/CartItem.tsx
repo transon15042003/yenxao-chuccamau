@@ -1,6 +1,6 @@
 import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
 import { CartItem as TCartItem } from '@/types/cart';
-import { Product, ProductSpecifications, ProductVariant } from '@/types/product';
+import { ProductVariant } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
@@ -12,43 +12,23 @@ import { cn, convertToVND } from '@/lib/utils';
 import { SelectInput } from '../SelectInput';
 
 export type CartItemProps = {
-  product: Product;
   item: TCartItem;
   onIncrease: () => void;
   onDecrease: () => void;
   onRemove: () => void;
 };
 
-export const CartItem: React.FC<CartItemProps> = ({
-  item,
-  product,
-  onIncrease,
-  onDecrease,
-  onRemove
-}) => {
-  const { updateCartItemVariant } = useCart();
+export const CartItem: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease, onRemove }) => {
+  const { updateCartItemVariant, setIsCartOpen } = useCart();
+  const productSpecs = item.options;
 
   const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
 
-  const selectedVariant = useMemo(() => {
-    return product.variants.find((variant: ProductVariant) => {
+  const currentVariant = useMemo(() => {
+    return item.variants.find((variant: ProductVariant) => {
       return Object.keys(selectedSpecs).every((key) => variant.specs[key] === selectedSpecs[key]);
     });
-  }, [selectedSpecs, product.variants]);
-
-  useEffect(() => {
-    if (JSON.stringify(selectedSpecs) !== JSON.stringify(item.specs)) {
-      setSelectedSpecs(item.specs);
-    }
-  }, [item.specs, selectedSpecs]);
-
-  useEffect(() => {
-    if (selectedVariant && selectedVariant.sku !== item.sku) {
-      updateCartItemVariant(item.productId, item.sku, selectedVariant);
-    }
-  }, [selectedVariant, item.productId, item.sku, updateCartItemVariant]);
-
-  const productSpecs = product.specs;
+  }, [selectedSpecs, item.variants]);
 
   const handleSpecChange = (key: string, value: string) => {
     setSelectedSpecs((prevSpecs) => ({
@@ -57,11 +37,18 @@ export const CartItem: React.FC<CartItemProps> = ({
     }));
   };
 
-  const displayPrice = selectedVariant?.price || item.price;
-  const displayName = selectedVariant?.name || item.name;
-  const displayThumbnail = selectedVariant?.thumbnail || item.thumbnail;
+  useEffect(() => {
+    if (currentVariant && currentVariant.id !== item.variantId) {
+      updateCartItemVariant(item.productId, item.variantId, currentVariant);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentVariant, item.productId, item.variantId]);
 
-  const productDetailPath = `/products/${product.slug}`;
+  const displayPrice = currentVariant?.price || item.price;
+  const displayName = currentVariant?.name || item.name;
+  const displayThumbnail = currentVariant?.thumbnail || item.thumbnail;
+
+  const productDetailPath = `/products/${item.productSlug}`;
 
   return (
     <div className="flex w-full items-stretch py-4 bg-white rounded-lg">
@@ -69,7 +56,7 @@ export const CartItem: React.FC<CartItemProps> = ({
       <Link
         href={productDetailPath}
         className={cn(
-          'relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center '
+          'relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center'
         )}
       >
         <Image
@@ -84,7 +71,10 @@ export const CartItem: React.FC<CartItemProps> = ({
         <div className="min-w-0">
           <Link
             href={productDetailPath}
-            className={cn('font-semibold leading-[1.36] text-typo-1 line-clamp-1')}
+            className={cn(
+              'font-semibold leading-[1.36] text-typo-1 line-clamp-1 hover:text-primary'
+            )}
+            onClick={() => setIsCartOpen(false)}
           >
             {displayName}
           </Link>
@@ -99,11 +89,10 @@ export const CartItem: React.FC<CartItemProps> = ({
         </div>
 
         <div className="flex flex-col md:flex-row gap-2">
-          {productSpecs.map((spec: ProductSpecifications) => (
+          {productSpecs.map((spec) => (
             <div className="w-fit md:w-1/2" key={spec.key}>
               <SelectInput
-                key={spec.key}
-                options={spec.value.map((val) => ({ label: val, value: val }))}
+                options={spec.options?.map((i) => ({ label: i.label, value: i.value || '' })) || []}
                 value={selectedSpecs[spec.key] || ''}
                 onChange={(newValue) => handleSpecChange(spec.key, newValue)}
                 className="w-full md:flex-1 min-w-0 text-sm"

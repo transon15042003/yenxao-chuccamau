@@ -34,7 +34,7 @@ export const ProductCard = ({
   onAddToCart,
   onViewDetail
 }: ProductCardProps) => {
-  const { thumbnail, name, price, variants } = product;
+  const { thumbnail, name, price, variants, isOutOfStock } = product;
   const handleButtonClick = () => {
     button.onClick?.(product);
   };
@@ -69,7 +69,7 @@ export const ProductCard = ({
   return (
     <div
       className={cn(
-        'bg-white pt-4 lg:px-5 md:px-3 px-1 pb-5 md:pb-7 pt-[19px]',
+        'bg-white lg:px-5 md:px-3 px-1 pb-5 md:pb-7 pt-[19px]',
         'border border-[#C2D1D9] hover:border-primary rounded-[5px]',
         'flex flex-col justify-between',
         className
@@ -80,11 +80,16 @@ export const ProductCard = ({
         onClick={handleViewDetail}
       >
         {/* Badge */}
-        {badge ? (
-          <Badge className="absolute top-0 left-0 z-50 shadow" content={badge} />
-        ) : (
-          <div className="absolute top-0 left-0" />
-        )}
+        {badge ? <Badge className="absolute top-0 left-0 z-50 shadow" content={badge} /> : null}
+
+        {isOutOfStock ? (
+          <Badge
+            type="warning"
+            className="absolute top-0 left-0 z-50 shadow text-white"
+            content="Hết hàng"
+          />
+        ) : null}
+
         <Image
           className={cn('max-h-full object-cover border border-slate-300', className)}
           src={thumbnail}
@@ -102,7 +107,12 @@ export const ProductCard = ({
       </div>
 
       {/* Product Price */}
-      <div className="flex flex-wrap items-center justify-between md:justify-start md:gap-2 text-sm lg:text-base font-bold">
+      <div
+        className={cn(
+          'flex flex-wrap items-center justify-between md:justify-start md:gap-2 text-sm lg:text-base font-bold',
+          isOutOfStock && 'line-through'
+        )}
+      >
         <span className="text-primary-light">{priceRange}</span>
       </div>
 
@@ -123,13 +133,19 @@ export const ProductCard = ({
           className="hover:bg-primary-light flex-1 mr-2 md:mr-5 lg:mr-8 px-1 lg:px-4"
           variant="primary"
           onClick={handleButtonClick}
+          disabled={isOutOfStock}
         >
           {button.label}
         </Button>
         <div
           role="button"
-          className="p-2 border border-[#3E4249] text-[#3E4249] hover:cursor-pointer rounded-[5px] hover:border-primary hover:text-primary"
-          onClick={handleAddToCart}
+          className={cn(
+            'p-2 border border-[#3E4249] text-[#3E4249] rounded-[5px]',
+            isOutOfStock
+              ? 'opacity-50 cursor-not-allowed'
+              : 'hover:border-primary hover:text-primary hover:cursor-pointer '
+          )}
+          onClick={isOutOfStock ? undefined : handleAddToCart}
         >
           <ProductCartSVG />
         </div>

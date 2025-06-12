@@ -18,7 +18,7 @@ export const emailHeadCSS = `
 
 export const rootStyle = {
   width: '100%',
-  background: '#F3F3F3'
+  backgroundColor: '#FFF'
 };
 
 export const backgroundStyle = {
@@ -97,7 +97,7 @@ export const numberStyle = {
 
 export const HOST = process.env.NEXT_PUBLIC_APP_DOMAIN || 'http://localhost:3000';
 export const imageUrl = `${HOST}/images`;
-export const LOGO_IMAGE_URL = `${HOST}/logo-light.webp`;
+export const LOGO_IMAGE_URL = `${HOST}/logo-light.png`;
 export const EMAIL_DIVIDER = `${imageUrl}/mail/ic_email_line.png`;
 export const FACEBOOK_IMAGE_URL = `${imageUrl}/mail/facebook.png`;
 export const INSTAGRAM_IMAGE_URL = `${imageUrl}/mail/instagram.png`;

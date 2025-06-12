@@ -1,0 +1,53 @@
+import { HttpTypes } from '@medusajs/types';
+
+import { sdk } from '@/lib/medusa/medusa-config';
+
+import { getCacheOptions } from './cookies';
+
+export const listCategories = async (query?: Record<string, unknown>) => {
+  const next = {
+    ...(await getCacheOptions('categories'))
+  };
+
+  const limit = query?.limit || 100;
+
+  return sdk.client
+    .fetch<{ product_categories: HttpTypes.StoreProductCategory[] }>('/store/product-categories', {
+      query: {
+        fields:
+          '*category_children, *products, *parent_category, *parent_category.parent_category, metadata',
+        limit,
+        ...query
+      },
+      next,
+      cache: 'no-store'
+    })
+    .then(({ product_categories }) => {
+      const sortedCategories = product_categories.sort(
+        (a: HttpTypes.StoreProductCategory, b: HttpTypes.StoreProductCategory) => {
+          return Number(a.rank) - Number(b.rank);
+        }
+      );
+
+      return sortedCategories;
+    });
+};
+
+export const getCategoryByHandle = async (categoryHandle: string[]) => {
+  const handle = `${categoryHandle.join('/')}`;
+
+  const next = {
+    ...(await getCacheOptions('categories'))
+  };
+
+  return sdk.client
+    .fetch<HttpTypes.StoreProductCategoryListResponse>(`/store/product-categories`, {
+      query: {
+        fields: '*category_children, *products',
+        handle
+      },
+      next,
+      cache: 'no-store'
+    })
+    .then(({ product_categories }) => product_categories[0]);
+};

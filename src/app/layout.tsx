@@ -14,6 +14,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { cn } from '@/lib/utils';
 
+// import RegisterSW from './RegisterSW';
+
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-primary' });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -34,12 +36,17 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body
         className={cn(nunitoSans.variable, 'font-primary customscrollbar')}
         suppressHydrationWarning
       >
         <MainProvider>
           <CartProvider>
+            {/* <RegisterSW /> */}
             <MainLayout>
               <main>{children}</main>
             </MainLayout>

@@ -1,6 +1,7 @@
 'use client';
 import type { Cart, CartItem } from '@/types/cart';
 import { ProductVariant } from '@/types/product';
+import { HttpTypes } from '@medusajs/types';
 import {
   createContext,
   Dispatch,
@@ -12,12 +13,17 @@ import {
 } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
+import { retrieveCart } from '@/lib/data/cart';
+import { createCartHybrid } from '@/lib/data/cart-hybrid';
+import { transformCart } from '@/lib/medusa-adapter/cart';
+
 type CartContextType = {
   cart: Cart;
+  originalCart: HttpTypes.StoreCart | null;
   addToCart: (item: CartItem, autoOpenCart?: boolean) => void;
-  increaseQuantity: (sku: string, quantity: number) => void;
-  decreaseQuantity: (sku: string, quantity: number) => void;
-  removeFromCart: (sku: string) => void;
+  increaseQuantity: (variantId: string, quantity: number) => void;
+  decreaseQuantity: (variantId: string, quantity: number) => void;
+  removeFromCart: (variantId: string) => void;
   updateCartItemVariant: (
     productId: string,
     currentSku: string,
@@ -26,10 +32,17 @@ type CartContextType = {
   clearCart: () => void;
   isCartOpen: boolean;
   setIsCartOpen: Dispatch<SetStateAction<boolean>>;
+  fetchCartData: () => void;
+};
+
+const defaultCart = {
+  total: 0,
+  items: []
 };
 
 const CartContext = createContext<CartContextType>({
-  cart: { items: [] },
+  cart: defaultCart,
+  originalCart: null,
   addToCart: () => {},
   increaseQuantity: () => {},
   decreaseQuantity: () => {},
@@ -37,22 +50,36 @@ const CartContext = createContext<CartContextType>({
   updateCartItemVariant: () => {},
   clearCart: () => {},
   isCartOpen: false,
-  setIsCartOpen: () => {}
+  setIsCartOpen: () => {},
+  fetchCartData: () => {}
 });
 
-const INITIAL_CART_ITEMS: CartItem[] = [];
-
 export const CartProvider = ({ children }: PropsWithChildren) => {
-  const [cart, setCart] = useLocalStorage<Cart>(
-    'cart',
-    {
-      items: INITIAL_CART_ITEMS
-    },
-    { initializeWithValue: false }
-  );
+  const [originalCart, setOriginalCart] = useState<HttpTypes.StoreCart | null>(null);
+  const [cart, setCart] = useLocalStorage<Cart>('cart', defaultCart, {
+    initializeWithValue: false,
+    deserializer: (value) => {
+      const parsed = JSON.parse(value);
+
+      return {
+        ...parsed,
+        items: parsed.items.filter((i: CartItem) => !!i)
+      };
+    }
+  });
+
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const addToCart = (item: CartItem, autoOpenCart: boolean = true) => {
+  const addToCart = async (item: CartItem, autoOpenCart: boolean = true) => {
+    if (!cart.id) {
+      const cartData = await createCartHybrid(process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE || '');
+      setCart((prev) => ({
+        ...prev,
+        id: cartData.id
+      }));
+      setOriginalCart(cartData);
+    }
+
     const existingItemIndex = cart.items.findIndex(
       (cartItem) => cartItem.productId === item.productId && cartItem.sku === item.sku
     );
@@ -76,112 +103,87 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     }
   };
 
-  const increaseQuantity = (sku: string, quantity: number) => {
+  const increaseQuantity = (variantId: string, quantity: number) => {
     setCart((prev) => ({
       ...prev,
       items: prev.items.map((item) =>
-        item.sku === sku ? { ...item, quantity: item.quantity + quantity } : item
+        item.variantId === variantId ? { ...item, quantity: item.quantity + quantity } : item
       )
     }));
   };
 
-  const decreaseQuantity = (sku: string, quantity: number) => {
+  const decreaseQuantity = (variantId: string, quantity: number) => {
     setCart((prev) => ({
       ...prev,
       items: prev.items.map((item) =>
-        item.sku === sku ? { ...item, quantity: item.quantity - quantity } : item
+        item.variantId === variantId ? { ...item, quantity: item.quantity - quantity } : item
       )
     }));
   };
 
-  const removeFromCart = (sku: string) => {
+  const removeFromCart = (variantId: string) => {
     setCart((prev) => ({
       ...prev,
-      items: prev.items.filter((item) => item.sku !== sku)
+      items: prev.items.filter((item) => item.variantId !== variantId)
     }));
   };
 
   const updateCartItemVariant = (
     productId: string,
-    currentSku: string,
+    currentVariantId: string,
     newVariant: ProductVariant
   ) => {
-    // setCart((prev) => ({
-    //   ...prev,
-    //   items: prev.items.map((item) => {
-    //     if (item.productId === productId && item.sku === currentSku) {
-    //       // Found the item, update its variant details
-    //       return {
-    //         ...item,
-    //         sku: newVariant.sku,
-    //         name: newVariant.name || item.name, // Use variant name if available, otherwise keep original
-    //         price: newVariant.price,
-    //         specs: newVariant.specs,
-    //         thumbnail: newVariant.thumbnail // Update thumbnail as well if variant has one
-    //       };
-    //     }
+    const currentItem = cart.items.find((i) => i.variantId === currentVariantId);
+    const existItem = cart.items.find((i) => i.variantId === newVariant.id);
 
-    //     return item;
-    //   })
-    // }));
+    if (!currentItem) {
+      return;
+    }
 
-    setCart((prev) => {
-      // Tìm item gốc đang được cập nhật
-      const originalItemIndex = prev.items.findIndex(
-        (item) => item.productId === productId && item.sku === currentSku
-      );
-
-      if (originalItemIndex === -1) {
-        return prev; // Không tìm thấy item gốc, không làm gì cả
-      }
-
-      const originalItem = prev.items[originalItemIndex];
-
-      // Kiểm tra xem biến thể mới có trùng với một item khác đã có trong giỏ không
-      const existingMergedItemIndex = prev.items.findIndex(
-        (item, index) =>
-          index !== originalItemIndex && // Đảm bảo không so sánh với chính nó
-          item.productId === productId && // Cùng productId
-          item.sku === newVariant.sku // Cùng SKU mới
-      );
-
-      let updatedItems: CartItem[];
-
-      if (existingMergedItemIndex > -1) {
-        // Nếu biến thể mới trùng với một item khác, gộp chúng lại
-        updatedItems = prev.items
-          .map((item, index) => {
-            if (index === existingMergedItemIndex) {
-              // Tăng số lượng của item đã tồn tại
-              return { ...item, quantity: item.quantity + originalItem.quantity };
-            }
-
-            return item;
-          })
-          .filter((_, index) => index !== originalItemIndex); // Xóa item gốc
-      } else {
-        // Nếu biến thể mới không trùng với item nào khác, chỉ cập nhật item gốc
-        updatedItems = prev.items.map((item, index) => {
-          if (index === originalItemIndex) {
-            return {
-              ...item,
-              sku: newVariant.sku,
-              name: newVariant.name || item.name,
-              price: newVariant.price,
-              specs: newVariant.specs,
-              thumbnail: newVariant.thumbnail
-            };
-          }
-
-          return item;
-        });
-      }
-
-      return {
+    if (existItem) {
+      // merged new variant to exist item
+      setCart((prev) => ({
         ...prev,
-        items: updatedItems
-      };
-    });
+        items: prev.items
+          .map((item) =>
+            item.variantId === existItem.variantId
+              ? { ...item, quantity: item.quantity + currentItem.quantity }
+              : item
+          )
+          .filter((i) => i.variantId !== currentItem.variantId)
+      }));
+    } else {
+      // add new variant to cart
+      const clonedItem = currentItem;
+
+      if (!clonedItem) {
+        return;
+      }
+
+      // remove lineId to avoid update cart item (see @/lib/medusa-adapter/cart.ts )
+      delete clonedItem.lineId;
+
+      // replace item with new variant
+      setCart((prev) => ({
+        ...prev,
+        items: prev.items
+          .map((item) =>
+            item.productId === productId && item.variantId === currentItem?.variantId
+              ? {
+                  ...clonedItem,
+                  variantId: newVariant.id,
+                  name: newVariant.name,
+                  price: newVariant.price,
+                  thumbnail: newVariant.thumbnail,
+                  quantity: currentItem.quantity,
+                  sku: newVariant.sku,
+                  specs: newVariant.specs
+                }
+              : item
+          )
+          .filter((i) => i.variantId !== currentItem.variantId)
+      }));
+    }
   };
 
   const clearCart = () => {
@@ -190,6 +192,53 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
       items: []
     }));
   };
+
+  const fetchCartData = async () => {
+    const cartData = await retrieveCart();
+    if (!cartData) {
+      return;
+    }
+
+    setOriginalCart(cartData);
+
+    const transformedCart = transformCart(cartData);
+    // setCart(transformedCart);
+    setCart((prev) => {
+      if (!prev.id) {
+        return transformedCart;
+      }
+
+      return {
+        ...prev,
+        items: prev.items.map((pItem) => {
+          const itemWithUpdatedInfo = transformedCart.items?.find(
+            (cItem) => cItem.variantId === pItem.variantId
+          );
+          if (!pItem.lineId) {
+            return itemWithUpdatedInfo!;
+          }
+
+          return itemWithUpdatedInfo || pItem;
+        })
+      };
+    });
+  };
+
+  // useEffect(() => {
+  //   fetchCartData();
+  // }, []);
+
+  // useEffect(() => {
+  //   if (originalCart && isChangedCartItem(cart, originalCart)) {
+  //     updateCartItems(cart, originalCart)
+  //       .catch(() => {
+  //         toast.error('Xảy ra lỗi khi cập nhật giỏ hàng, vui lòng thử lại');
+  //       })
+  //       .finally(() => {
+  //         fetchCartData();
+  //       });
+  //   }
+  // }, [cart, originalCart]);
 
   useEffect(() => {
     if (isCartOpen) {
@@ -203,6 +252,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     <CartContext.Provider
       value={{
         cart,
+        originalCart,
         addToCart,
         increaseQuantity,
         decreaseQuantity,
@@ -210,7 +260,8 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
         updateCartItemVariant,
         clearCart,
         isCartOpen,
-        setIsCartOpen
+        setIsCartOpen,
+        fetchCartData
       }}
     >
       {children}

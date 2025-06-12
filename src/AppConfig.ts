@@ -8,5 +8,5 @@ export const AppConfig = {
   privacyEmail: 'privacy@company.com',
   phone: '0948 022 499 ',
   address: '1095 Lê Văn Lương, Phước Kiển, Nhà Bè, Thành phố Hồ Chí Minh',
-  addressURL: 'https://maps.app.goo.gl/sDUyNeb4u12ArZcM9 '
+  addressURL: 'https://maps.app.goo.gl/sDUyNeb4u12ArZcM9'
 };

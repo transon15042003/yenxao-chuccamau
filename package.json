@@ -30,6 +30,8 @@
     "@hookform/resolvers": "^5.0.1",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
+    "@medusajs/js-sdk": "^2.8.4",
+    "@medusajs/types": "^2.8.4",
     "@next/mdx": "^15.3.2",
     "@sendgrid/mail": "^8.1.5",
     "@t3-oss/env-nextjs": "0.12.0",

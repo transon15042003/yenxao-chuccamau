@@ -7,18 +7,26 @@ import { Product, ProductVariant } from '@/types/product';
  * @param sku - The SKU of the product variant to convert
  * @returns The cart item
  */
-export const convertProductToCartItem = (product: Product, sku?: string): CartItem => {
+export const convertProductToCartItem = (
+  product: Product,
+  sku?: string,
+  quantity = 1
+): CartItem => {
   const productVariant = sku
     ? (product.variants.find((variant) => variant.sku === sku) as ProductVariant)
     : product.variants[0];
 
   return {
     productId: product.id,
+    variantId: productVariant.id,
+    productSlug: product.slug,
     name: productVariant.name || product.name,
     price: productVariant.price,
     thumbnail: productVariant.thumbnail || product.thumbnail,
-    quantity: 1,
+    quantity,
     sku: productVariant.sku,
-    specs: productVariant.specs
+    specs: productVariant.specs,
+    options: product.options,
+    variants: product.variants
   };
 };

@@ -1,31 +1,34 @@
-'use client';
-import useBuyNowLogic from '@/hooks/useBuyNowLogic';
 import { Product } from '@/types/product';
-import { useRouter } from 'next/navigation';
 
-import { Button } from '@/components/atoms/Button';
-import { ProductCard } from '@/components/molecules/ProductCard';
 import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
-import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
-import { convertProductToCartItem } from '@/lib/utils/product';
+import { listCollections } from '@/lib/data/collections';
+import { listProducts } from '@/lib/data/products';
+import { transformProduct } from '@/lib/medusa-adapter/product';
 
-export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Product[] }) => {
-  const router = useRouter();
-  const { addToCart } = useCart();
-  const { handleBuyNow } = useBuyNowLogic();
+import LinkButton from './LinkButton';
+import ProductList from './ProductList';
 
-  const handleAddToCart = (product: Product) => {
-    addToCart(convertProductToCartItem(product));
-  };
+const HIGHLIGHT_PRODUCT_HANDLE = 'san-pham-noi-bat';
 
-  const handleViewDetail = (product: Product) => {
-    router.push(`/products/${product.slug}`);
-  };
+export const ProductSection = async () => {
+  const listCollectionResponse = await listCollections();
+  const highlightCollection = listCollectionResponse.collections?.find(
+    (el) => el.handle === HIGHLIGHT_PRODUCT_HANDLE
+  );
 
-  const handleButtonClick = (product: Product) => {
-    handleBuyNow(product);
-  };
+  const hightlightProductsResponse = await listProducts({
+    pageParam: 1,
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
+    queryParams: {
+      limit: 999,
+      offset: 0,
+      collection_id: highlightCollection?.id
+    }
+  });
+
+  const bestSellingProducts: Product[] =
+    hightlightProductsResponse.response.products.map(transformProduct);
 
   return (
     <div
@@ -36,42 +39,8 @@ export const ProductSection = ({ initialBestSelling }: { initialBestSelling: Pro
     >
       <SectionTitle className="mb-2" heading="Sản phẩm nổi bật" />
       {/* <ChoiceGroup /> */} {/* please un-comment this line in release version */}
-      {/* This div creates a responsive grid layout for products. Using Tailwind columns (1 col on small, 2 on medium, 4 on large). Loop and map data from initialBestSelling - forwarded by props */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-3 lg:gap-6 my-8 px-4 w-full max-w-screen-xl mx-auto">
-        {initialBestSelling && initialBestSelling.length > 0 ? (
-          initialBestSelling.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              badge={product.discountPercent ? `-${product.discountPercent}%` : undefined}
-              progress={
-                product.totalSold !== undefined && product.total !== undefined
-                  ? {
-                      total: product.total,
-                      sold: product.totalSold,
-                      label: `Đã bán ${product.totalSold}`
-                    }
-                  : undefined
-              }
-              button={{
-                label: 'Mua ngay',
-                onClick: handleButtonClick
-              }}
-              onAddToCart={handleAddToCart}
-              onViewDetail={handleViewDetail}
-            />
-          ))
-        ) : (
-          <p>Không có sản phẩm nổi bật nào.</p>
-        )}
-      </div>
-      <Button
-        className="border-2 border-black text-[#2A2A40] font-semibold py-2 hover:bg-black hover:text-white"
-        fill="outline"
-        onClick={() => router.push('/products')}
-      >
-        Xem tất cả sản phẩm
-      </Button>
+      <ProductList products={bestSellingProducts} />
+      <LinkButton href="/products">Xem tất cả sản phẩm</LinkButton>
     </div>
   );
 };

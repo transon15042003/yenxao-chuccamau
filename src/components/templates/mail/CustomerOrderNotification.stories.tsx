@@ -14,11 +14,13 @@ type Story = StoryObj<typeof CustomerOrderNotification>;
 
 export const Default: Story = {
   args: {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    phone: '1234567890',
-    address: '123 Main St, Anytown, USA',
-    province: 'California',
-    district: 'Los Angeles'
+    customer: {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '1234567890',
+      address: '123 Main St, Anytown, USA',
+      province: 'California',
+      district: 'Los Angeles'
+    }
   }
 };

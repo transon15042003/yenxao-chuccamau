@@ -6,21 +6,29 @@ export type Category = {
   slug: CategorySlug;
 };
 
-export type ProductSort = 'price-asc' | 'price-desc' | 'new';
+export type ProductSort = 'price-asc' | 'price-desc' | 'newest' | 'title' | 'oldest';
 
 export type ProductVariant = {
+  id: string;
   sku: string;
   name?: string;
   thumbnail: string;
   specs: Record<string, string>;
   price: number;
-  stock: number;
+  stock?: number;
   isActive: boolean;
 };
 
 export type ProductSpecifications = {
   key: string;
   value: string[];
+};
+
+export type ProductOption = {
+  key: string;
+  value?: string;
+  label: string;
+  options?: ProductOption[];
 };
 
 type ProductId = string;
@@ -34,6 +42,7 @@ export type Product = {
   categories: CategoryId[];
   ingredient: string[];
   specs: ProductSpecifications[];
+  options: ProductOption[];
   variants: ProductVariant[];
   isNew: boolean;
   discountPercent?: number;
@@ -41,4 +50,5 @@ export type Product = {
   total?: number;
   totalSold?: number;
   createdAt: string;
+  isOutOfStock?: boolean;
 };

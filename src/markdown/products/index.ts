@@ -6,7 +6,7 @@ import ChaoHaiSanYenTuoi from './chao-hai-san-yen-tuoi.mdx';
 import HatChia from './hat-chia.mdx';
 import HatSen from './hat-sen.mdx';
 import HongDangSamMat from './hong-dang-sam-mat_delete.mdx';
-import KiTu from './ki-tu.mdx';
+import KyTu from './ky-tu.mdx';
 import NhanNhuc from './nhan-nhuc.mdx';
 import Saffron from './saffron.mdx';
 import SetQua10Hu from './set-qua-10-hu.mdx';
@@ -44,7 +44,7 @@ const productMarkdown = {
   'set-qua-6-hu': SetQua6Hu,
   saffron: Saffron,
   'nhan-nhuc': NhanNhuc,
-  'ki-tu': KiTu,
+  'ky-tu': KyTu,
   'hong-dang-sam-mat': HongDangSamMat,
   'hat-sen': HatSen,
   'hat-chia': HatChia,

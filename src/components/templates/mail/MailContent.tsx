@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { rootStyle, LOGO_IMAGE_URL } from './InitSetup';
 
 type MailContentProps = {
@@ -18,7 +19,7 @@ export const MailContent = ({
   children,
   headerColor = '#B4071A',
   headerHeight = 150,
-  width = '90%',
+  width = '100%',
   title,
   messages,
   infoItems,
@@ -30,12 +31,13 @@ export const MailContent = ({
       cellPadding={0}
       cellSpacing={0}
       style={{
-        background: rootStyle.background,
+        background: rootStyle.backgroundColor,
         borderRadius: 10,
         margin: '0 auto',
         borderCollapse: 'separate',
         borderSpacing: 0,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        border: '1px solid #e0e0e0'
       }}
     >
       <tbody>
@@ -53,13 +55,14 @@ export const MailContent = ({
               height={125}
               style={{
                 display: 'block',
-                margin: '0 auto'
+                margin: '0 auto',
+                background: 'transparent'
               }}
             />
           </td>
         </tr>
         <tr>
-          <td style={{ background: '#fff', color: '#212121', padding: '20px 32px' }}>
+          <td style={{ background: '#fff', color: '#212121', padding: '10px 12px' }}>
             <span style={{ fontWeight: 600, fontSize: 20, display: 'block', marginBottom: 8 }}>
               {title}
             </span>
@@ -80,39 +83,57 @@ export const MailContent = ({
               width="100%"
               cellPadding={0}
               cellSpacing={0}
-              style={{ fontSize: 16, color: '#000000', marginTop: 18 }}
+              style={{
+                fontSize: 16,
+                color: '#000000',
+                marginTop: 18,
+                tableLayout: 'fixed'
+              }}
             >
               <tbody>
-                <tr>
-                  {/* Cột trái: ul label */}
-                  <td width="50%" style={{ verticalAlign: 'top', padding: 0 }}>
-                    <ul style={{ listStyle: 'disc inside', margin: 0, padding: 0 }}>
-                      {infoItems.labels.map((label, index) => (
-                        <li
-                          key={index}
-                          style={{
-                            marginBottom: index === infoItems.labels.length - 1 ? 0 : 12
-                          }}
-                        >
-                          {label}
-                        </li>
-                      ))}
-                    </ul>
-                  </td>
-                  {/* Cột phải: value */}
-                  <td width="50%" style={{ fontWeight: 600, verticalAlign: 'top', padding: 0 }}>
-                    {infoItems.values.map((value, index) => (
+                {infoItems.labels.map((label, index) => (
+                  <tr key={index}>
+                    {/* Cột trái: label */}
+                    <td
+                      width="50%"
+                      style={{
+                        verticalAlign: 'top',
+                        padding: '0 8px 0 0',
+                        minWidth: '120px'
+                      }}
+                    >
                       <div
-                        key={index}
+                        style={{
+                          listStyle: 'disc inside',
+                          margin: 0,
+                          padding: 0,
+                          wordBreak: 'break-word',
+                          marginBottom: index === infoItems.labels.length - 1 ? 0 : 12
+                        }}
+                      >
+                        {label}
+                      </div>
+                    </td>
+                    {/* Cột phải: value */}
+                    <td
+                      width="50%"
+                      style={{
+                        fontWeight: 600,
+                        verticalAlign: 'top',
+                        padding: '0 0 0 8px',
+                        wordBreak: 'break-word'
+                      }}
+                    >
+                      <div
                         style={{
                           marginBottom: index === infoItems.values.length - 1 ? 0 : 12
                         }}
                       >
-                        {value}
+                        {infoItems.values[index]}
                       </div>
-                    ))}
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <span

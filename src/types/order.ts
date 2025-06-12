@@ -10,8 +10,9 @@ export type Order = {
   invoice?: OrderInvoice;
   note?: string;
   paymentStatus: OrderPaymentStatus;
-  paidAt?: Date;
+  orderAt?: Date;
   shippingMethod: ShippingMethod;
+  paymentMethod: string;
 };
 
 export type OrderCustomer = {

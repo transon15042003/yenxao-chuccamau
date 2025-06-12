@@ -12,12 +12,12 @@ interface ProductInfoPanelProps {
 }
 
 const ProductInfoPanel = ({ className }: ProductInfoPanelProps) => {
-  const { curThumbnail } = useDetailProduct();
+  const { selectedVariant } = useDetailProduct();
 
   return (
     <div className={cn('relative w-full h-[640px] lg:pr-8 lg:pl-4', className)}>
       <Image
-        src={curThumbnail || '/images/placeholder.webp'}
+        src={selectedVariant?.thumbnail || '/images/placeholder.webp'}
         alt="product"
         className="h-[640px] w-full object-cover"
         width={600}

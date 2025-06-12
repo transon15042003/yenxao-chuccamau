@@ -1,6 +1,5 @@
 import { QueryResourceResponse } from '@/types/common';
 import { Quote as QuoteType } from '@/types/quote';
-import { getBestSellingProduct } from 'src/services/product.service';
 import { getQuotes } from 'src/services/quote.service';
 
 import { Panel } from '@/components/atoms/Panel';
@@ -10,32 +9,17 @@ import { ProductSection } from '@/components/organisms/ProductSection';
 import { QuoteSection } from '@/components/organisms/QuoteSection';
 
 const HomePage = async () => {
-  try {
-    const quotesResponse: QueryResourceResponse<QuoteType> = await getQuotes({ limit: 5 });
-    const bestSellingProducts = await getBestSellingProduct();
+  const quotesResponse: QueryResourceResponse<QuoteType> = await getQuotes({ limit: 5 });
 
-    return (
-      <div className="min-h-[1000px]">
-        <Panel />
-        <AboutSection />
-        <ProductSection initialBestSelling={bestSellingProducts.data} />
-        <QuoteSection initialQuotes={quotesResponse.data} />
-        <KnowledgeSection />
-      </div>
-    );
-  } catch (error) {
-    console.error('Failed to fetch quotes on server:', error);
-
-    return (
-      <div className="min-h-[1000px]">
-        <Panel />
-        <AboutSection />
-        <ProductSection initialBestSelling={[]} />
-        <QuoteSection initialQuotes={[]} errorMessage="Lỗi tải dữ liệu trích dẫn." />
-        <KnowledgeSection />
-      </div>
-    );
-  }
+  return (
+    <div className="min-h-[1000px]">
+      <Panel />
+      <AboutSection />
+      <ProductSection />
+      <QuoteSection initialQuotes={quotesResponse.data} />
+      <KnowledgeSection />
+    </div>
+  );
 };
 
 export default HomePage;

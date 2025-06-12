@@ -13,7 +13,7 @@ interface MainLayoutProps {
 
 // This is the place responsible for wrapping your app.
 // Add here components like Footer, Nav etc.
-export const MainLayout = ({ children, className }: MainLayoutProps) => {
+export const MainLayout = async ({ children, className }: MainLayoutProps) => {
   const wrapperStyles = cn('flex flex-col min-h-screen', className);
 
   return (

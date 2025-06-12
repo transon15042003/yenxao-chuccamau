@@ -1,5 +1,6 @@
 'use client';
 
+import { sendOrderNotification } from '@/services/notification.service';
 import { CartItem } from '@/types/cart';
 import { Order, ShippingMethod } from '@/types/order';
 import { PaymentGateway } from '@/types/payment';
@@ -15,6 +16,7 @@ import React, {
   useState
 } from 'react';
 import { FieldValues, useForm, UseFormReturn } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import { InvoiceForm, invoiceFormSchema } from '@/components/organisms/InvoiceForm';
 import {
@@ -23,7 +25,11 @@ import {
 } from '@/components/organisms/ShippingInformationForm';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
+import { updateCartAndTakeOrderFlow } from '@/lib/data/cart';
+
 type ContextType = {
+  isSubmitting: boolean;
+  setSubmitting: Dispatch<SetStateAction<boolean>>;
   paymentMethod: PaymentGateway | 'COD';
   setPaymentMethod: Dispatch<SetStateAction<PaymentGateway | 'COD'>>;
   shippingInfoForm: UseFormReturn<ShippingInfomationForm>;
@@ -39,6 +45,8 @@ type ContextType = {
   setShippingMethod: Dispatch<SetStateAction<ShippingMethod>>;
 };
 const Context = createContext<ContextType>({
+  isSubmitting: false,
+  setSubmitting: () => {},
   paymentMethod: 'COD',
   setPaymentMethod: () => {},
   shippingInfoForm: {} as UseFormReturn<ShippingInfomationForm>,
@@ -64,12 +72,15 @@ const initOrder: Order = {
     address: ''
   },
   paymentStatus: 'pending',
-  shippingMethod: 'STANDARD'
+  shippingMethod: 'STANDARD',
+  paymentMethod: 'COD',
+  orderAt: new Date()
 };
 
 const PaymentPageProvider = ({ children }: PropsWithChildren) => {
-  const router = useRouter();
   const { clearCart } = useCart();
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentGateway | 'COD'>('COD');
   const [shippingMethod, setShippingMethod] = useState<ShippingMethod>('STANDARD');
@@ -99,11 +110,13 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
   };
 
   const placeOrder = async (items: CartItem[]) => {
+    setSubmitting(true);
     try {
       const order: Order = {
         ...initOrder,
         items,
-        shippingMethod
+        shippingMethod,
+        paymentMethod
       };
 
       const shippingInfo = await getFormDataBySubmit(shippingInfoForm);
@@ -138,11 +151,21 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
         order.note = orderNote;
       }
 
-      localStorage.setItem('order', JSON.stringify(order));
+      const cartRes = await updateCartAndTakeOrderFlow(order);
+
       clearCart();
-      router.push('/order/result');
+
+      if (cartRes?.type === 'order') {
+        sendOrderNotification(order).catch(console.error);
+
+        localStorage.setItem('order', JSON.stringify(cartRes?.order));
+        router.push(`/order/${cartRes?.order.id}/result`);
+      }
     } catch (error) {
-      console.error(error);
+      console.error('error', error);
+      toast.error('Đặt hàng không thành công, vui lòng thử lại');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -156,6 +179,8 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
   return (
     <Context.Provider
       value={{
+        isSubmitting: submitting,
+        setSubmitting,
         paymentMethod,
         setPaymentMethod,
         shippingInfoForm,

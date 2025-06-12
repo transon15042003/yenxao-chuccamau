@@ -1,11 +1,17 @@
 import { dynamicProductCateContent, StaticSEOContent } from '@/contents/SEO';
-import type { CategorySlug, Product, ProductSort } from '@/types/product';
+import { PaginationMetadata } from '@/types/common';
+import type { Category, CategorySlug, Product, ProductSort } from '@/types/product';
+import { HttpTypes } from '@medusajs/types';
 import { Metadata } from 'next';
-import { getCategories, getProducts } from 'src/services/product.service';
 
 import { Breadcrumb } from '@/components/molecules/Breadcrumb';
 import { ProductCategorySelect } from '@/components/molecules/ProductCategorySelect';
 import { ProductCategorySidebar } from '@/components/organisms/ProductCategorySidebar';
+
+import { listCategories } from '@/lib/data/categories';
+import { listProducts } from '@/lib/data/products';
+import { transformCategory } from '@/lib/medusa-adapter/category';
+import { transformProduct } from '@/lib/medusa-adapter/product';
 
 import ProductArea from './_components/ProductArea';
 
@@ -57,38 +63,69 @@ export type ProductPageParams = {
   search: string;
 };
 
-const getSortByOptionValue = (
-  value: string
-): { sortField?: keyof Product; sortOrder?: 'asc' | 'desc' } => {
-  if (value === 'price-asc') {
-    return { sortField: 'price', sortOrder: 'asc' };
-  }
-  if (value === 'price-desc') {
-    return { sortField: 'price', sortOrder: 'desc' };
-  }
+// const getSortByOptionValue = (
+//   value: string
+// ): { sortField?: keyof Product; sortOrder?: 'asc' | 'desc' } => {
+//   if (value === 'price-asc') {
+//     return { sortField: 'price', sortOrder: 'asc' };
+//   }
+//   if (value === 'price-desc') {
+//     return { sortField: 'price', sortOrder: 'desc' };
+//   }
 
-  return { sortField: 'createdAt', sortOrder: 'desc' };
-};
+//   return { sortField: 'createdAt', sortOrder: 'desc' };
+// };
 
 export default async function ProductsPage({
   searchParams
 }: {
   searchParams: Promise<ProductPageParams>;
 }) {
-  const { c, s, p, search } = await searchParams;
+  const { c, search, s, p } = await searchParams;
 
-  const categories = await getCategories();
-  const products = await getProducts({
-    page: p || 1,
-    take: 9,
-    categorySlug: c,
-    search: search,
-    ...(s ? getSortByOptionValue(s) : {})
+  const sortedCategories = await listCategories();
+  const transformedCategories: Category[] = sortedCategories.map(transformCategory);
+  const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
+  let order = '-created_at';
+  if (s) {
+    switch (s) {
+      case 'newest':
+        order = '-created_at';
+        break;
+      case 'oldest':
+        order = 'created_at';
+        break;
+      case 'title':
+        order = 'title';
+        break;
+    }
+  }
+
+  const res = await listProducts({
+    pageParam: p ?? 1,
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
+    queryParams: {
+      limit: 10,
+      order: order.toString(),
+      category_id: cateId,
+      q: search
+    }
   });
 
-  const metadata = products.metadata;
+  const products: Product[] = res.response.products.map((el: HttpTypes.StoreProduct) => {
+    return transformProduct(el);
+  });
 
-  const categoryOptions = categories.map((cat) => ({
+  const metadata: PaginationMetadata = {
+    total: res.response.count,
+    page: 1,
+    take: 10,
+    totalPages: Math.ceil(res.response.count / 10)
+  };
+
+  // const metadata = products.metadata;
+
+  const categoryOptions = transformedCategories.map((cat) => ({
     value: cat.slug,
     label: cat.name
   }));
@@ -100,13 +137,13 @@ export default async function ProductsPage({
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="xl:w-[20%]">
             <div className="hidden lg:block">
-              <ProductCategorySidebar categories={categories} />
+              <ProductCategorySidebar categories={transformedCategories} />
             </div>
             <div className="block lg:hidden">
               <ProductCategorySelect options={categoryOptions} value={c} />
             </div>
           </div>
-          <ProductArea products={products.data} metadata={metadata} />
+          <ProductArea products={products} metadata={metadata} />
         </div>
       </div>
     </div>
