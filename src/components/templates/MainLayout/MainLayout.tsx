@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { CartDrawer } from '@/components/organisms/CartDrawer/CartDrawer';
 import Footer from '@/components/organisms/Footer/Footer';
-import HeaderWithCategories from '@/components/organisms/Header/HeaderWithCategories';
+import Header from '@/components/organisms/Header/Header';
 
 import { cn } from '@/lib/utils';
 
@@ -18,7 +18,7 @@ export const MainLayout = async ({ children, className }: MainLayoutProps) => {
 
   return (
     <div className={wrapperStyles}>
-      <HeaderWithCategories />
+      <Header />
       <main className="flex-1 mt-header-height">{children}</main>
       <Footer />
 

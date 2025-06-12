@@ -1,9 +1,9 @@
 'use client';
 
+import useCategories from '@/hooks/useCategories';
 import useClickOutside from '@/hooks/useClickOutside';
 import CloseMenuIcon from '@/svg/MenuHeaderSVG/CloseMenuIcon';
 import MenuIcon from '@/svg/MenuHeaderSVG/MenuIcon';
-import { Category } from '@/types/product';
 import React, { useState, useRef, RefObject, Suspense } from 'react';
 
 import Logo from '@/components/atoms/Logo/Logo';
@@ -13,11 +13,12 @@ import CartButton from '@/components/organisms/CartButton/CartButton';
 import SearchBar from '@/components/organisms/SearchBar/SearchBar';
 import { useCart } from '@/components/providers/CartProvider/CartProvider';
 
-const Header = ({ categories }: { categories: Category[] }) => {
+const Header = () => {
   const { setIsCartOpen, cart } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const categories = useCategories();
 
   const handleCartClick = () => {
     setIsCartOpen((prev) => !prev);
