@@ -135,7 +135,15 @@ const FooterContent = () => {
       </div>
       <hr className="w-full border-secondary/30 my-4 hidden md:block" />
       <div className="text-center pb-6 pt-2 text-sm font-[400] relative z-10">
-        © Copyright 2025, All Rights Reserved by Techbee
+        Develop & Design by{' '}
+        <a
+          className="font-bold"
+          href="https://techbeesolution.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Techbee
+        </a>
       </div>
     </>
   );
