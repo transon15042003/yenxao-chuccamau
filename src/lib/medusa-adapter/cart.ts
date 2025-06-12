@@ -152,7 +152,7 @@ export const updateCartItems = async (cart: Cart, originalCart: HttpTypes.StoreC
 export const transfromCartShippingInfo = (orderCustomer: OrderCustomer): FormData => {
   const formData = new FormData();
   formData.append('shipping_address.first_name', orderCustomer.name);
-  formData.append('shipping_address.last_name', orderCustomer.name);
+  formData.append('shipping_address.last_name', '');
   const combinedAddress = `${orderCustomer.address}, ${orderCustomer.district}`;
   formData.append('shipping_address.address_1', combinedAddress);
   formData.append('shipping_address.postal_code', '');
@@ -165,7 +165,7 @@ export const transfromCartShippingInfo = (orderCustomer: OrderCustomer): FormDat
   formData.append('shipping_address.phone', orderCustomer.phone);
   formData.append('email', orderCustomer.email || fakeMailAddress);
 
-  formData.append('shipping_address.company', orderCustomer.name);
+  formData.append('shipping_address.company', '');
   formData.append('same_as_billing', 'on');
 
   return formData;
