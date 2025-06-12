@@ -82,7 +82,7 @@ export default async function BlogDetailPage({ params }: Props) {
           </div>
           <div className="flex flex-row items-center mr-6">
             <StackSVG className="mr-1.5" />
-            <p>{blog.minRead} phút</p>
+            <p>{blog.minRead} phút đọc</p>
           </div>
           {/* <div className="flex flex-row items-center">
             <UserSVG className="mr-1.5" />

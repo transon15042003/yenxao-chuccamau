@@ -50,4 +50,5 @@ export type Product = {
   total?: number;
   totalSold?: number;
   createdAt: string;
+  isOutOfStock?: boolean;
 };

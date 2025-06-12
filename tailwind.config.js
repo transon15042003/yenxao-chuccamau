@@ -50,7 +50,8 @@ module.exports = {
         'primary-gradient-90': 'linear-gradient(90deg, #920202 0%, #B4071A 100%)',
         'primary-dark-gradient-360': 'linear-gradient(360deg, #670000 0%, #920202 100%)',
         'secondary-gradient-180': 'linear-gradient(180deg, #E6B522 0%, #FFF788 47% ,#FFE059 100%)',
-        'secondary-gradient-90': 'linear-gradient(90deg, #E6B522 0%, #FFF788 47% ,#FFE059 100%)'
+        'secondary-gradient-90': 'linear-gradient(90deg, #E6B522 0%, #FFF788 47% ,#FFE059 100%)',
+        'warning-gradient-90': 'linear-gradient(90deg, #D62C35 0%, #FF4148 47%, #B4071A 100%)'
       }
     }
   },
