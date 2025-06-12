@@ -38,7 +38,7 @@ export const BlogCard = ({
       </Link>
       <div className="flex flex-col flex-1">
         <div className="text-base text-typo-3 mb-1.5">
-          {formatDate(new Date(postedDate), 'dd-MM-yyyy')} &nbsp;•&nbsp; {minRead} min read
+          {formatDate(new Date(postedDate), 'dd-MM-yyyy')} &nbsp;•&nbsp; {minRead} phút đọc
         </div>
         <Link href={href} className="hover:underline mb-1.5">
           <h2 className="font-semibold text-[22px] line-clamp-2">{title}</h2>
