@@ -156,7 +156,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       clearCart();
 
       if (cartRes?.type === 'order') {
-        sendOrderNotification(transformOrder(cartRes?.order)).catch(console.error);
+        sendOrderNotification(order).catch(console.error);
 
         localStorage.setItem('order', JSON.stringify(cartRes?.order));
         router.push(`/order/${cartRes?.order.id}/result`);
