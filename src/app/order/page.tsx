@@ -71,7 +71,8 @@ const PaymentPage = () => {
     invoiceForm,
     shippingMethod,
     setShippingMethod,
-    isSubmitting
+    isSubmitting,
+    setSubmitting
   } = usePaymentPageProvider();
 
   const [discountErrorMessage, setDiscountErrorMessage] = useState<string | undefined>(undefined);
@@ -99,6 +100,7 @@ const PaymentPage = () => {
   };
 
   const handlePlaceOrder = async () => {
+    setSubmitting(true);
     try {
       const verifyHumanResult = await verifyHuman('place_order');
 
@@ -108,6 +110,7 @@ const PaymentPage = () => {
 
       placeOrder(cart.items);
     } catch (error) {
+      setSubmitting(false);
       toast.error('Xác thực reCAPTCHA lỗi, vui lòng thử lại');
       console.error(error);
     }
