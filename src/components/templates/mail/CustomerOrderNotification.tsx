@@ -46,6 +46,7 @@ export const CustomerOrderNotification = (order: Order) => (
           <div>
             <div>Tên công ty: {order.invoice.name}</div>
             <div>Mã số thuế: {order.invoice.taxCode}</div>
+            <div>Email: {order.invoice.email}</div>
             <div>Địa chỉ: {order.invoice.address}</div>
           </div>
         ) : (
