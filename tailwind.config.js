@@ -18,7 +18,8 @@ module.exports = {
       },
       zIndex: {
         top: 'var(--top-layer-z-index)',
-        cart: 'var(--cart-layer-z-index)'
+        cart: 'var(--cart-layer-z-index)',
+        backdrop: 'var(--backdrop-layer-z-index)'
       },
       fontFamily: {
         primary: ['var(--font-primary)']
