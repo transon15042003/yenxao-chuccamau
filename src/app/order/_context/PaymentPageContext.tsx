@@ -63,7 +63,7 @@ const Context = createContext<ContextType>({
 });
 
 const initOrder: Order = {
-  code: crypto.randomUUID(),
+  code: '',
   status: 'pending',
   items: [],
   customer: {
@@ -156,7 +156,10 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       clearCart();
 
       if (cartRes?.type === 'order') {
-        sendOrderNotification(order).catch(console.error);
+        sendOrderNotification({
+          ...order,
+          code: cartRes?.order.id || ''
+        }).catch(console.error);
 
         localStorage.setItem('order', JSON.stringify(cartRes?.order));
         router.push(`/order/${cartRes?.order.id}/result`);
