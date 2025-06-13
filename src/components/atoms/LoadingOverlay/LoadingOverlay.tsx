@@ -1,6 +1,6 @@
 export const LoadingOverlay = () => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75">
+    <div className="fixed inset-0 z-backdrop flex items-center justify-center bg-white bg-opacity-75">
       <div role="status">
         <svg
           aria-hidden="true"
