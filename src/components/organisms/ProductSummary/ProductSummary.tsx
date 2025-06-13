@@ -177,19 +177,23 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
       </div>
       <div className="border rounded-[5px] border-dashed border-primary p-4 mt-3">
         <div className="flex flex-row content-start items-start ">
-          <BoxSVG className="mt-1" />
+          <div className="w-6 h-6">
+            <BoxSVG />
+          </div>
           <div className="ml-4">
             <b className="leading-[16px]">Giao hàng</b>
             <p className="leading-[16px]">Miễn phí giao hàng cho đơn từ 100.000đ</p>
           </div>
         </div>
         <div className="flex flex-row content-start items-start mt-2">
-          <ReloadSVG className="mt-1" />
+          <div className="w-6 h-6">
+            <ReloadSVG />
+          </div>
           <div className="ml-4">
             <b className="leading-[16px]">Đổi trả</b>
             <p className="">
-              Sản phẩm chưng thì không đổi trả. Sản phẩm thô và tinh chế đổi trả trong vòng 3 ngày
-              điều kiện trả hàng không bể vở và còn seal.
+              Sản phẩm yến chưng không áp dụng đổi trả. Yến thô và tinh chế hỗ trợ đổi trả hàng
+              trong 3 ngày nếu còn seal và không bể vỡ.
             </p>
           </div>
         </div>

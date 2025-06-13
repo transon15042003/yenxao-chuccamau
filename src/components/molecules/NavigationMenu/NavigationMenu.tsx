@@ -65,7 +65,7 @@ const NavigationMenu = ({ categories }: { categories: Category[] }) => {
         <MenuDropdown open={open} items={categories} onItemClick={handleItemClick} />
       </div>
       <NavItem className="text-base lg:text-lg" href="/blog" active={pathname === '/blog'}>
-        BLOG
+        HƯỚNG DẪN
       </NavItem>
       <NavItem className="text-base lg:text-lg" href="/contact" active={pathname === '/contact'}>
         LIÊN HỆ
