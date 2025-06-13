@@ -94,7 +94,7 @@ const FooterContent = () => {
         </div>
 
         {/* Chứng nhận + Mạng xã hội */}
-        <div className="flex-1 min-w-[180px] flex flex-col items-start pt-8 md:py-0 md:px-6 gap-4">
+        {/* <div className="flex-1 min-w-[180px] flex flex-col items-start pt-8 md:py-0 md:px-6 gap-4">
           <div className="font-[900] text-[16px] bg-secondary-gradient-90 bg-clip-text text-transparent">
             CHỨNG NHẬN
           </div>
@@ -112,7 +112,7 @@ const FooterContent = () => {
               alt="Các loại giấy chứng nhận"
             />
           </div>
-          {/* <hr className="w-full border-secondary/30" />
+          <hr className="w-full border-secondary/30" />
           <div className="w-full flex flex-col gap-2 items-center md:items-start">
             <p className="text-lg font-bold">Theo dõi chúng tôi</p>
             <div className="flex flex-row flex-wrap gap-[30px] items-center">
@@ -129,9 +129,9 @@ const FooterContent = () => {
                 <FaTiktok className="w-[27px] h-[27px]" />
               </Link>
             </div>
-          </div> */}
+          </div>
           <hr className="w-full border-secondary/30 my-4 md:hidden" />
-        </div>
+        </div> */}
       </div>
       <hr className="w-full border-secondary/30 my-4 hidden md:block" />
       <div className="text-center pb-6 pt-2 text-sm font-[400] relative z-10">

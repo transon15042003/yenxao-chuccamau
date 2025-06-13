@@ -137,7 +137,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           </div>
         </div>
       </IntroductionSection>
-      <div className="relative bg-white overflow-hidden">
+
+      {/* <div className="relative bg-white overflow-hidden">
         <Image
           src="/images/backgrounds/scrath.png"
           alt=""
@@ -175,7 +176,8 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             </div>
           </div>
         </IntroductionSection>
-      </div>
+      </div> */}
+
       {/* <IntroductionSection
         heading="Hình ảnh của công ty"
         subHeading="Khám phá không gian làm việc và cơ sở vật chất của chúng tôi"
@@ -199,6 +201,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
         </div>
       </IntroductionSection> */}
       <IntroductionSection
+        className="lg:pt-[70px] pt-[36px]"
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"
       >
