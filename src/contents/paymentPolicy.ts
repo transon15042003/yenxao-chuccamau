@@ -49,31 +49,31 @@ export const paymentPolicyContent: PolicyContent[] = [
       }
     ]
   },
+  // {
+  //   heading: '3. Thanh Toán Trực Tuyến Qua Cổng Thanh Toán Điện Tử',
+  //   contents: [
+  //     {
+  //       type: 'paragraph',
+  //       value:
+  //         'Website của Yến Sào Chúc Cà Mau hiện hỗ trợ thanh toán trực tuyến thông qua các đối tác cung cấp dịch vụ thanh toán uy tín, bao gồm:'
+  //     },
+  //     {
+  //       type: 'ul',
+  //       values: [
+  //         'VNPay: Hỗ trợ thanh toán qua mã QR, thẻ ATM nội địa và thẻ tín dụng quốc tế.',
+  //         'Momo: Ví điện tử phổ biến, thao tác nhanh chóng, an toàn.',
+  //         'Internet Banking: Thanh toán trực tiếp từ tài khoản ngân hàng thông qua kết nối bảo mật với hệ thống ngân hàng.'
+  //       ]
+  //     },
+  //     {
+  //       type: 'paragraph',
+  //       value:
+  //         'Hình thức này giúp Quý Khách hoàn tất đơn hàng nhanh chóng, tiện lợi và tiết kiệm thời gian.'
+  //     }
+  //   ]
+  // },
   {
-    heading: '3. Thanh Toán Trực Tuyến Qua Cổng Thanh Toán Điện Tử',
-    contents: [
-      {
-        type: 'paragraph',
-        value:
-          'Website của Yến Sào Chúc Cà Mau hiện hỗ trợ thanh toán trực tuyến thông qua các đối tác cung cấp dịch vụ thanh toán uy tín, bao gồm:'
-      },
-      {
-        type: 'ul',
-        values: [
-          'VNPay: Hỗ trợ thanh toán qua mã QR, thẻ ATM nội địa và thẻ tín dụng quốc tế.',
-          'Momo: Ví điện tử phổ biến, thao tác nhanh chóng, an toàn.',
-          'Internet Banking: Thanh toán trực tiếp từ tài khoản ngân hàng thông qua kết nối bảo mật với hệ thống ngân hàng.'
-        ]
-      },
-      {
-        type: 'paragraph',
-        value:
-          'Hình thức này giúp Quý Khách hoàn tất đơn hàng nhanh chóng, tiện lợi và tiết kiệm thời gian.'
-      }
-    ]
-  },
-  {
-    heading: '4. Liên Hệ',
+    heading: '3. Liên Hệ',
     contents: [
       {
         type: 'paragraph',
