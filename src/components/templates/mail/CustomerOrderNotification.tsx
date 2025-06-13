@@ -12,9 +12,7 @@ export const CustomerOrderNotification = (order: Order) => (
   <MailContent
     headerColor={HEADER_COLOR}
     title={`Kính chào ${order.customer.name},`}
-    messages={[
-      'Một đơn hàng mới vừa được tạo và đã hoàn tất thanh toán. Thông tin chi tiết như sau:'
-    ]}
+    messages={['Một đơn hàng mới vừa được tạo. Thông tin chi tiết như sau:']}
     infoItems={{
       labels: [
         'Khách hàng:',
@@ -22,6 +20,7 @@ export const CustomerOrderNotification = (order: Order) => (
         'Số điện thoại:',
         'Địa chỉ:',
         'Thời gian đặt hàng:',
+        'Tổng giá tiền:',
         'Thông tin xuất hóa đơn:',
         'Ghi chú đơn hàng:'
       ],
@@ -40,6 +39,9 @@ export const CustomerOrderNotification = (order: Order) => (
           order.customer.province ? `, ${order.customer.province}` : ''
         }`,
         order.orderAt ? new Date(order.orderAt).toLocaleString('vi-VN') : 'No information',
+        `${order.items
+          .reduce((sum, i) => sum + i.price * i.quantity, 0)
+          .toLocaleString('vi-VN')} VND`,
         order.invoice ? (
           <div>
             <div>Tên công ty: {order.invoice.name}</div>

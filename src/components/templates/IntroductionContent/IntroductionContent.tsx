@@ -176,7 +176,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
           </div>
         </IntroductionSection>
       </div>
-      <IntroductionSection
+      {/* <IntroductionSection
         heading="Hình ảnh của công ty"
         subHeading="Khám phá không gian làm việc và cơ sở vật chất của chúng tôi"
         className="lg:py-[70px] py-[36px] px-4 lg:px-0"
@@ -197,7 +197,7 @@ const IntroductionContent = ({ contactInfo }: IntroductionContentProps) => {
             </div>
           </div>
         </div>
-      </IntroductionSection>
+      </IntroductionSection> */}
       <IntroductionSection
         heading="Thông tin liên hệ"
         subHeading="Liên hệ với chúng tôi để được tư vấn và hỗ trợ"

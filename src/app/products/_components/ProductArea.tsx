@@ -99,7 +99,7 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
 
   return (
     <div className="flex-1 flex flex-col gap-y-7">
-      <div className="w-full flex justify-between lg:items-center lg:flex-row flex-col gap-y-4">
+      <div className="w-full flex justify-between lg:items-center lg:flex-row flex-col gap-y-4 relative z-[2]">
         <div className="order-2 lg:order-1">
           Hiển thị{' '}
           <span className="font-bold">
@@ -117,7 +117,9 @@ const ProductArea = ({ products, metadata }: ProductAreaProps) => {
         </div>
       </div>
 
-      <ProductGrid products={products} />
+      <div className="z-[1]">
+        <ProductGrid products={products} />
+      </div>
 
       {products.length ? (
         <div className="flex self-center">

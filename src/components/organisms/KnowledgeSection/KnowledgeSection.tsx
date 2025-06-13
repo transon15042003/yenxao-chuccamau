@@ -49,7 +49,7 @@ export const KnowledgeSection = () => {
 
       <div className="relative w-full z-10 flex flex-col items-center justify-between">
         <SectionTitle
-          heading="Tin Tức & Hướng Dẫn"
+          heading="Hướng Dẫn"
           subHeading="Chia sẻ kiến thức và bí quyết sử dụng Yến hiệu quả mỗi ngày."
         />
 

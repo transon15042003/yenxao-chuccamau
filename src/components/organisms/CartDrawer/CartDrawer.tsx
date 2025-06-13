@@ -43,6 +43,8 @@ export const CartDrawer = () => {
     0
   );
 
+  const isEmptyCart = cart.items.length === 0;
+
   return (
     <div
       className={cn(
@@ -70,7 +72,7 @@ export const CartDrawer = () => {
           </div>
         </div>
 
-        {cart.items.length === 0 && (
+        {isEmptyCart && (
           <div className="flex items-center justify-center h-full">
             <div className="text-2xl font-bold">Giỏ hàng trống</div>
           </div>
@@ -123,8 +125,12 @@ export const CartDrawer = () => {
 
             <div className="mt-6">
               <Button
-                className="w-full uppercase text-xl font-bold py-[13px]"
+                className={cn(
+                  'w-full uppercase text-xl font-bold py-[13px]',
+                  isEmptyCart && 'opacity-50 cursor-not-allowed'
+                )}
                 onClick={handleCheckout}
+                disabled={isEmptyCart}
               >
                 Thanh toán
               </Button>
