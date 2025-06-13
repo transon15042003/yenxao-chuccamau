@@ -10,6 +10,10 @@ module.exports = {
   additionalPaths: async (config) => {
     return [
       {
+        loc: `${config.siteUrl}/`,
+        lastmod: new Date().toISOString()
+      },
+      {
         loc: `${config.siteUrl}/products`,
         lastmod: new Date().toISOString()
       }
