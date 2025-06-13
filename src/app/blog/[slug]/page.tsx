@@ -2,6 +2,7 @@ import { dynamicBlogContent } from '@/contents/SEO';
 import { getBlogMarkDown } from '@/markdown/blogs';
 import { CalendarSVG } from '@/svg/CalendarSVG/CalendarSVG';
 import { StackSVG } from '@/svg/StackSVG/StackSVG';
+import { formatDate } from 'date-fns';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import {
@@ -78,7 +79,7 @@ export default async function BlogDetailPage({ params }: Props) {
         <div className="flex flex-row flex-wrap items-center mb-3">
           <div className="flex flex-row items-center mr-6">
             <CalendarSVG className="mr-1.5" />
-            <p>{blog.postedDate}</p>
+            <p>{formatDate(new Date(blog.postedDate), 'dd-MM-yyyy')}</p>
           </div>
           <div className="flex flex-row items-center mr-6">
             <StackSVG className="mr-1.5" />
