@@ -187,7 +187,10 @@ const ProductSummary = ({ className }: ProductSummaryProps) => {
           <ReloadSVG className="mt-1" />
           <div className="ml-4">
             <b className="leading-[16px]">Đổi trả</b>
-            <p className="leading-[16px]">Đổi trả miễn phí trong vòng 7 ngày</p>
+            <p className="">
+              Sản phẩm chưng thì không đổi trả. Sản phẩm thô và tinh chế đổi trả trong vòng 3 ngày
+              điều kiện trả hàng không bể vở và còn seal.
+            </p>
           </div>
         </div>
         {/* <div className="flex flex-row content-start items-start mt-2">
