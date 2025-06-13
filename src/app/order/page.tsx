@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 import { AreaInputGroup } from '@/components/atoms/AreaInputGroup';
 import { Button } from '@/components/atoms/Button';
-import Spinning from '@/components/atoms/Spinning/Spinning';
+import { LoadingOverlay } from '@/components/atoms/LoadingOverlay/LoadingOverlay';
 import { Stepper } from '@/components/atoms/Step';
 import { CartItem } from '@/components/molecules/CartItem/CartItem';
 import { InputGroup } from '@/components/molecules/InputGroup/InputGroup';
@@ -124,7 +124,7 @@ const PaymentPage = () => {
 
   return (
     <>
-      {/* <ReCaptcha onValidate={onRecaptchaChange} action="page_view" /> */}
+      {isSubmitting && <LoadingOverlay />}
       <div className="bg-[#F7F7F7] pt-10 pb-20">
         <div className="w-[95%] lg:w-[85%] mx-auto 2xl:max-w-[1200px] ">
           <div className="bg-white px-5 py-6 flex flex-col md:flex-row justify-between md:items-center gap-6 rounded-[5px]">
@@ -337,7 +337,7 @@ const PaymentPage = () => {
                       disabled={!getTakeOrderStatus() || isSubmitting}
                       onClick={handlePlaceOrder}
                     >
-                      {isSubmitting ? <Spinning className="w-5 h-5" /> : 'Đặt hàng'}
+                      Đặt hàng
                     </Button>
                   </div>
                 </div>

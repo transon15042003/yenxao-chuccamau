@@ -40,8 +40,8 @@ const CustomSelect = ({ className, options, placeholder, value, onChange }: Cust
       color: '#252C32'
     }),
     input: (provided) => ({
-      ...provided,
-      color: '#FFF'
+      ...provided
+      // color: '#FFF'
     }),
     option: (provided, state) => ({
       ...provided,

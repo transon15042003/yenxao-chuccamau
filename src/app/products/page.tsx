@@ -135,7 +135,7 @@ export default async function ProductsPage({
       <Breadcrumb items={[{ label: 'Sản phẩm', href: '/products' }]} />
       <div className="mt-8 mx-4 lg:max-w-[83%] lg:mx-auto 2xl:max-w-[1440px]">
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="xl:w-[20%]">
+          <div className="xl:w-[20%] relative z-[2]">
             <div className="hidden lg:block">
               <ProductCategorySidebar categories={transformedCategories} />
             </div>
@@ -143,7 +143,9 @@ export default async function ProductsPage({
               <ProductCategorySelect options={categoryOptions} value={c} />
             </div>
           </div>
-          <ProductArea products={products} metadata={metadata} />
+          <div className="z-[1]">
+            <ProductArea products={products} metadata={metadata} />
+          </div>
         </div>
       </div>
     </div>

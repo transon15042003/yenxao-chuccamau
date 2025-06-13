@@ -95,7 +95,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease
                 options={spec.options?.map((i) => ({ label: i.label, value: i.value || '' })) || []}
                 value={selectedSpecs[spec.key] || ''}
                 onChange={(newValue) => handleSpecChange(spec.key, newValue)}
-                className="w-full md:flex-1 min-w-0 text-sm"
+                className="w-full md:flex-1 min-w-0"
                 menuWidth={120}
               />
             </div>

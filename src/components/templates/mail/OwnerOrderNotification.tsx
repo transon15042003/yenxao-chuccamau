@@ -11,9 +11,7 @@ export const OwnerOrderNotification = (order: Order) => (
   <MailContent
     headerColor={HEADER_COLOR}
     title="Thông báo đơn hàng mới,"
-    messages={[
-      'Một đơn hàng mới vừa được tạo và đã hoàn tất thanh toán. Thông tin chi tiết như sau:'
-    ]}
+    messages={['Một đơn hàng mới vừa được tạo. Thông tin chi tiết như sau:']}
     infoItems={{
       labels: [
         'Mã đơn hàng:',
@@ -49,6 +47,7 @@ export const OwnerOrderNotification = (order: Order) => (
           <div>
             <div>Tên công ty: {order.invoice.name}</div>
             <div>Mã số thuế: {order.invoice.taxCode}</div>
+            <div>Email: {order.invoice.email}</div>
             <div>Địa chỉ: {order.invoice.address}</div>
           </div>
         ) : (
