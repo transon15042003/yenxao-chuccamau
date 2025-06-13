@@ -22,21 +22,16 @@ const MobileMenu = ({ isOpen, onClose, categories }: MobileMenuProps) => {
   return (
     <div className="absolute top-[calc(100%+2px)] left-0 w-full h-screen bg-primary-gradient-90 text-white z-50">
       <div className="flex flex-col p-4 pt-6 gap-6">
-        <NavItem href="/" className="text-2xl" onClick={onClose} active={pathname === '/'}>
+        <NavItem href="/" className="text-xl" onClick={onClose} active={pathname === '/'}>
           TRANG CHỦ
         </NavItem>
-        <NavItem
-          href="/about"
-          className="text-2xl"
-          onClick={onClose}
-          active={pathname === '/about'}
-        >
+        <NavItem href="/about" className="text-xl" onClick={onClose} active={pathname === '/about'}>
           GIỚI THIỆU
         </NavItem>
         <div className="relative">
           <button
             type="button"
-            className={`flex items-center justify-between w-full focus:outline-none text-2xl font-bold  
+            className={`flex items-center justify-between w-full focus:outline-none text-xl font-bold  
               ${
                 pathname.startsWith('/products')
                   ? 'text-transparent bg-clip-text bg-secondary-gradient-90'
@@ -57,12 +52,12 @@ const MobileMenu = ({ isOpen, onClose, categories }: MobileMenuProps) => {
             onItemClick={onClose}
           />
         </div>
-        <NavItem href="/blog" className="text-2xl" onClick={onClose} active={pathname === '/blog'}>
-          BLOG
+        <NavItem href="/blog" className="text-xl" onClick={onClose} active={pathname === '/blog'}>
+          HƯỚNG DẪN
         </NavItem>
         <NavItem
           href="/contact"
-          className="text-2xl"
+          className="text-xl"
           onClick={onClose}
           active={pathname === '/contact'}
         >
