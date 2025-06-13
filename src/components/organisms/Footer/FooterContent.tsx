@@ -3,7 +3,7 @@ import { MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+// import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
 
 interface MenuItem {
   href: string;
@@ -112,8 +112,8 @@ const FooterContent = () => {
               alt="Các loại giấy chứng nhận"
             />
           </div>
-          <hr className="w-full border-secondary/30" />
-          <div className="w-full flex flex-col items-start gap-2 items-center md:items-start">
+          {/* <hr className="w-full border-secondary/30" />
+          <div className="w-full flex flex-col gap-2 items-center md:items-start">
             <p className="text-lg font-bold">Theo dõi chúng tôi</p>
             <div className="flex flex-row flex-wrap gap-[30px] items-center">
               <Link href="#" aria-label="Facebook" className="hover:opacity-80">
@@ -129,7 +129,7 @@ const FooterContent = () => {
                 <FaTiktok className="w-[27px] h-[27px]" />
               </Link>
             </div>
-          </div>
+          </div> */}
           <hr className="w-full border-secondary/30 my-4 md:hidden" />
         </div>
       </div>
