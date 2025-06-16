@@ -90,14 +90,12 @@ export default async function BlogDetailPage({ params }: Props) {
             <p>{blog.viewer}</p>
           </div> */}
         </div>
-
         {<BlogContentComponent />}
-
         <hr
           className={cn('h-[2px]', 'md:my-[60px] my-[36px]', 'bg-black border-0 dark:bg-gray-700')}
         ></hr>
       </div>
-      <div className="w-full flex flex-col items-center mb-28">
+      <div className="w-full flex flex-col items-center mb-16">
         <SectionTitle heading="Bài viết liên quan" />
 
         <NewFeed initialBlogs={relatedBlogs} />
