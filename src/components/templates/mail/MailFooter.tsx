@@ -3,44 +3,42 @@
 import { AppConfig } from 'src/AppConfig';
 
 import { footerContentStyle } from './InitSetup';
-import { PHONE_IMAGE_URL } from './InitSetup';
+import {
+  FACEBOOK_IMAGE_URL,
+  INSTAGRAM_IMAGE_URL,
+  LINKEDIN_IMAGE_URL,
+  TIKTOK_IMAGE_URL,
+  PHONE_IMAGE_URL
+} from './InitSetup';
 
-// import {
-//  FACEBOOK_IMAGE_URL,
-//  INSTAGRAM_IMAGE_URL,
-//  LINKEDIN_IMAGE_URL,
-//  TIKTOK_IMAGE_URL,
-//  PHONE_IMAGE_URL
-//} from './InitSetup';
+interface SocialMedia {
+  name: string;
+  url: string;
+  imageUrl: string;
+}
 
-// interface SocialMedia {
-//   name: string;
-//   url: string;
-//   imageUrl: string;
-// }
-
-// const socialMedias: SocialMedia[] = [
-//   {
-//     name: 'Facebook',
-//     url: '/',
-//     imageUrl: FACEBOOK_IMAGE_URL
-//   },
-//   {
-//     name: 'Instagram',
-//     url: '/',
-//     imageUrl: INSTAGRAM_IMAGE_URL
-//   },
-//   {
-//     name: 'LinkedIn',
-//     url: '/',
-//     imageUrl: LINKEDIN_IMAGE_URL
-//   },
-//   {
-//     name: 'Tiktok',
-//     url: '/',
-//     imageUrl: TIKTOK_IMAGE_URL
-//   }
-// ];
+const socialMedias: SocialMedia[] = [
+  {
+    name: 'Facebook',
+    url: '/',
+    imageUrl: FACEBOOK_IMAGE_URL
+  },
+  {
+    name: 'Instagram',
+    url: '/',
+    imageUrl: INSTAGRAM_IMAGE_URL
+  },
+  {
+    name: 'LinkedIn',
+    url: '/',
+    imageUrl: LINKEDIN_IMAGE_URL
+  },
+  {
+    name: 'Tiktok',
+    url: '/',
+    imageUrl: TIKTOK_IMAGE_URL
+  }
+];
 
 export const MailFooter = () => {
   return (
@@ -78,7 +76,7 @@ export const MailFooter = () => {
         </tr>
         {/* Dòng cuối: phone + social */}
         <tr>
-          <td style={{ textAlign: 'center', padding: '8px 0 20px 12px' }}>
+          <td style={{ textAlign: 'left', padding: '8px 0 20px 12px' }}>
             <a
               href={`tel:${AppConfig.phone}`}
               style={{
@@ -107,6 +105,24 @@ export const MailFooter = () => {
                 {AppConfig.phone}
               </span>
             </a>
+          </td>
+          <td style={{ textAlign: 'right', padding: '8px 0px 20px 0' }}>
+            <div style={{ display: 'inline-block' }}>
+              {socialMedias.map((item) => (
+                <span
+                  key={item.name}
+                  style={{ margin: '0 6px', display: 'inline-block', cursor: 'default' }}
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={25}
+                    height={25}
+                    style={{ verticalAlign: 'middle' }}
+                  />
+                </span>
+              ))}
+            </div>
           </td>
         </tr>
       </tbody>
