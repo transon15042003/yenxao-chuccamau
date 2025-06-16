@@ -17,8 +17,8 @@ type ContactFormData = {
 export const ContactNotification = (data: ContactFormData) => (
   <MailContent
     headerColor={HEADER_COLOR}
-    title={`Kính chào ${data.name},`}
-    messages={['Cảm ơn Anh/Chị đã quan tâm và liên hệ với Chúc Cà Mau.']}
+    title={`Thông báo liên hệ mới`}
+    messages={['Liên hệ mới vừa được gửi đến. Thông tin chi tiết: ']}
     infoItems={{
       labels: [
         'Họ và tên:',
