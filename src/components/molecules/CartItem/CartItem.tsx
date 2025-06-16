@@ -25,7 +25,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease
   const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
 
   const currentVariant = useMemo(() => {
-    return item.variants.find((variant: ProductVariant) => {
+    return item.variants?.find((variant: ProductVariant) => {
       return Object.keys(selectedSpecs).every((key) => variant.specs[key] === selectedSpecs[key]);
     });
   }, [selectedSpecs, item.variants]);
@@ -89,7 +89,7 @@ export const CartItem: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease
         </div>
 
         <div className="flex flex-col md:flex-row gap-2">
-          {productSpecs.map((spec) => (
+          {productSpecs?.map((spec) => (
             <div className="w-fit md:w-1/2" key={spec.key}>
               <SelectInput
                 options={spec.options?.map((i) => ({ label: i.label, value: i.value || '' })) || []}
