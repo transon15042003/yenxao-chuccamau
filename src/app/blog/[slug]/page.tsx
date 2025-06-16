@@ -75,7 +75,7 @@ export default async function BlogDetailPage({ params }: Props) {
           ]}
         />
       </div>
-      <div className="w-96 md:w-3/4 lg:w-1/2 text-justify">
+      <div className="md:w-3/4 px-2 md:px-4 sm:px-2 lg:px-0 lg:w-1/2 text-justify">
         <div className="flex flex-row flex-wrap items-center mb-3">
           <div className="flex flex-row items-center mr-6">
             <CalendarSVG className="mr-1.5" />
