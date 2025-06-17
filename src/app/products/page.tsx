@@ -85,7 +85,7 @@ export default async function ProductsPage({
 
   const sortedCategories = await listCategories();
   const transformedCategories: Category[] = sortedCategories.map(transformCategory);
-  const cateId = transformedCategories.find((el: Category) => el.slug === c)?.id;
+  const cate = transformedCategories.find((el: Category) => el.slug === c);
   let order = '-created_at';
   if (s) {
     switch (s) {
@@ -107,7 +107,7 @@ export default async function ProductsPage({
     queryParams: {
       limit: 10,
       order: order.toString(),
-      category_id: cateId,
+      category_id: cate?.id,
       q: search
     }
   });
@@ -132,7 +132,19 @@ export default async function ProductsPage({
 
   return (
     <div className="pb-16">
-      <Breadcrumb items={[{ label: 'Sản phẩm', href: '/products' }]} />
+      <Breadcrumb
+        items={[
+          { label: 'Sản phẩm', href: '/products' },
+          ...(c
+            ? [
+                {
+                  label: cate?.name ?? '',
+                  href: `/${cate?.slug}`
+                }
+              ]
+            : [])
+        ]}
+      />
       <div className="mt-8 mx-4 lg:max-w-[83%] lg:mx-auto 2xl:max-w-[1440px]">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="xl:w-[20%] relative z-[2]">
