@@ -40,7 +40,7 @@ export default async function BlogPage(props: { searchParams: SearchParams }) {
   return (
     <div className="bg-white">
       {/* Breadcrumb */}
-      <Breadcrumb disableLastChild={true} items={[{ label: 'Blog', href: '/blog' }]} />
+      <Breadcrumb items={[{ label: 'Blog', href: '/blog' }]} />
 
       {/* Danh sách bài viết */}
       <div className="flex flex-col justify-center items-center my-9">
