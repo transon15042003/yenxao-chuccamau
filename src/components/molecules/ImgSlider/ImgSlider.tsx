@@ -104,25 +104,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
         className="lg:h-full lg:w-full"
       >
         {variants.map((el, idx) => (
-          <SwiperSlide
-            key={idx}
-            className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full')}
-            style={
-              variants.length === 1
-                ? {
-                    width: 'calc((100% - 24px) / 4)'
-                  }
-                : variants.length === 2
-                  ? {
-                      width: 'calc((100% - 24px) / 2)'
-                    }
-                  : variants.length === 3
-                    ? {
-                        width: 'calc(((100% - 24px) *3) / 4)'
-                      }
-                    : undefined
-            }
-          >
+          <SwiperSlide key={idx} className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full')}>
             <Image
               src={el.thumbnail}
               alt="product"
