@@ -7,10 +7,9 @@ type BreadcrumbProps = {
     label: string;
     href: string;
   }[];
-  disableLastChild?: boolean;
 };
 
-export const Breadcrumb = ({ items, disableLastChild }: BreadcrumbProps) => (
+export const Breadcrumb = ({ items }: BreadcrumbProps) => (
   <nav className=" bg-ground-1 py-3">
     <ul className="flex items-center gap-1 max-w-[83%] mx-auto text-sm text-[#3E4B5E]">
       <li>
@@ -22,7 +21,7 @@ export const Breadcrumb = ({ items, disableLastChild }: BreadcrumbProps) => (
         items.map((item, idx) => (
           <React.Fragment key={item.href}>
             <ChevronRightSVG />
-            {idx === items.length - 1 && disableLastChild ? (
+            {idx === items.length - 1 ? (
               <span className="text-gray-500">{item.label}</span>
             ) : (
               <Link href={item.href} className="text-gray-500 hover:text-red-700">
