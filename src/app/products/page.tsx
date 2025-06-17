@@ -155,7 +155,7 @@ export default async function ProductsPage({
               <ProductCategorySelect options={categoryOptions} value={c} />
             </div>
           </div>
-          <div className="z-[1]">
+          <div className="z-[1] flex-1 m-auto">
             <ProductArea products={products} metadata={metadata} />
           </div>
         </div>
