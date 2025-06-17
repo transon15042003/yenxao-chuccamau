@@ -2,7 +2,7 @@
 
 import { AppConfig } from 'src/AppConfig';
 
-import { footerContentStyle } from './InitSetup';
+import { footerContentStyle, HOST } from './InitSetup';
 import {
   FACEBOOK_IMAGE_URL,
   INSTAGRAM_IMAGE_URL,
@@ -20,22 +20,22 @@ interface SocialMedia {
 const socialMedias: SocialMedia[] = [
   {
     name: 'Facebook',
-    url: '/',
+    url: HOST,
     imageUrl: FACEBOOK_IMAGE_URL
   },
   {
     name: 'Instagram',
-    url: '/',
+    url: HOST,
     imageUrl: INSTAGRAM_IMAGE_URL
   },
   {
     name: 'LinkedIn',
-    url: '/',
+    url: HOST,
     imageUrl: LINKEDIN_IMAGE_URL
   },
   {
     name: 'Tiktok',
-    url: '/',
+    url: HOST,
     imageUrl: TIKTOK_IMAGE_URL
   }
 ];
@@ -105,6 +105,30 @@ export const MailFooter = () => {
                 {AppConfig.phone}
               </span>
             </a>
+          </td>
+          <td style={{ textAlign: 'right', padding: '8px 0px 20px 0' }}>
+            <div style={{ display: 'inline-block' }}>
+              {socialMedias.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  style={{
+                    margin: '0 6px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={25}
+                    height={25}
+                    style={{ verticalAlign: 'middle' }}
+                  />
+                </a>
+              ))}
+            </div>
           </td>
           <td style={{ textAlign: 'right', padding: '8px 0px 20px 0' }}>
             <div style={{ display: 'inline-block' }}>
