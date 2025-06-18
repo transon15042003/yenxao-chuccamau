@@ -31,6 +31,20 @@ export async function generateMetadata({
     keywords: blogContent.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
+    },
+    openGraph: {
+      title: blogContent.title,
+      description: blogContent.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }

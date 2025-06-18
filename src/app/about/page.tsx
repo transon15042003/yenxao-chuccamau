@@ -1,4 +1,4 @@
-import { StaticSEOContent } from '@/contents/SEO';
+﻿import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
 import { ReCaptchaProvider } from 'next-recaptcha-v3';
 import Image from 'next/image';
@@ -13,6 +13,20 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: StaticSEOContent.introductionPage.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/about`
+    },
+    openGraph: {
+      title: StaticSEOContent.introductionPage.title,
+      description: StaticSEOContent.introductionPage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/about`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }

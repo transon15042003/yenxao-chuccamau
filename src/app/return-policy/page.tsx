@@ -11,6 +11,20 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: StaticSEOContent.returnPolicyPage.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/return-policy`
+    },
+    openGraph: {
+      title: StaticSEOContent.returnPolicyPage.title,
+      description: StaticSEOContent.returnPolicyPage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/return-policy`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }
