@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+﻿import '@/styles/globals.css';
 
 import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
@@ -25,6 +25,20 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: StaticSEOContent.homePage.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}`
+    },
+    openGraph: {
+      title: StaticSEOContent.homePage.title,
+      description: StaticSEOContent.homePage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }
