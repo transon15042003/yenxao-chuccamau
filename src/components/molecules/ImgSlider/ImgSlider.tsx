@@ -104,12 +104,15 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
         className="lg:h-full lg:w-full"
       >
         {variants.map((el, idx) => (
-          <SwiperSlide key={idx} className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full')}>
+          <SwiperSlide
+            key={idx}
+            className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full cursor-pointer')}
+          >
             <Image
               src={el.thumbnail}
               alt="product"
               onClick={() => handleClick(el)}
-              className="h-[100px] lg:h-[120px] lg:w-[100px] object-cover"
+              className="h-[100px] lg:h-[120px] lg:w-[100px] object-cover hover:border-2 hover:border-primary"
               width={120}
               height={120}
             />
