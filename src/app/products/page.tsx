@@ -15,45 +15,6 @@ import { transformProduct } from '@/lib/medusa-adapter/product';
 
 import ProductArea from './_components/ProductArea';
 
-export async function generateMetadata({
-  searchParams
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}): Promise<Metadata> {
-  const params = await searchParams;
-
-  const defaultMeta = {
-    title: StaticSEOContent.productsPage.title,
-    description: StaticSEOContent.productsPage.desc,
-    keywords: StaticSEOContent.productsPage.keywords,
-    alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
-    }
-  };
-
-  let cate: string;
-  if (Array.isArray(params.c)) {
-    cate = params.c[0];
-  } else if (typeof params.c === 'string') {
-    cate = params.c;
-  } else {
-    cate = '';
-  }
-
-  if (cate && dynamicProductCateContent[cate]) {
-    return {
-      title: dynamicProductCateContent[cate].title,
-      description: dynamicProductCateContent[cate].desc,
-      keywords: dynamicProductCateContent[cate].keywords,
-      alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${cate}`
-      }
-    };
-  }
-
-  return defaultMeta;
-}
-
 type PageNumber = number;
 
 export type ProductPageParams = {
@@ -62,6 +23,72 @@ export type ProductPageParams = {
   s: ProductSort;
   search: string;
 };
+
+export async function generateMetadata({
+  searchParams
+}: {
+  searchParams: Promise<ProductPageParams>;
+}): Promise<Metadata> {
+  const { c, search, s, p } = await searchParams;
+
+  const defaultMeta = {
+    title: StaticSEOContent.productsPage.title,
+    description: StaticSEOContent.productsPage.desc,
+    keywords: StaticSEOContent.productsPage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`
+    },
+    openGraph: {
+      title: StaticSEOContent.productsPage.title,
+      description: StaticSEOContent.productsPage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
+    }
+  };
+
+  let cate;
+  if (c && Array.isArray(c)) {
+    cate = c?.[0] ?? '';
+  } else {
+    cate = c ?? '';
+  }
+  const url = `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products?c=${cate}&s=${s}&search=${search}&p=${p}`;
+
+  if (dynamicProductCateContent[cate]) {
+    return {
+      title: dynamicProductCateContent[cate].title,
+      description: dynamicProductCateContent[cate].desc,
+      keywords: dynamicProductCateContent[cate].keywords,
+      alternates: {
+        canonical: url
+      },
+      openGraph: {
+        title: StaticSEOContent.productsPage.title,
+        description: StaticSEOContent.productsPage.desc,
+        url: url,
+        images: [
+          {
+            url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+            width: 1200,
+            height: 630
+          }
+        ],
+        type: 'website',
+        siteName: 'Yến sào Chúc Cà Mau'
+      }
+    };
+  }
+
+  return defaultMeta;
+}
 
 // const getSortByOptionValue = (
 //   value: string

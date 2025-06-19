@@ -1,6 +1,8 @@
-﻿import { dynamicProductContent } from '@/contents/SEO';
+﻿import { HttpTypes } from '@medusajs/types';
 import { Metadata } from 'next';
 import React from 'react';
+
+import { listProducts } from '../../../lib/data/products';
 
 export async function generateMetadata({
   params
@@ -8,26 +10,43 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const slug = (await params).slug;
-  const seoContent = await dynamicProductContent(slug);
+  const originProduct: HttpTypes.StoreProduct = await listProducts({
+    countryCode: process.env.NEXT_PUBLIC_DEFAULT_COUNTRY_CODE,
+    queryParams: { handle: slug }
+  }).then(({ response }) => response.products[0]);
 
   return {
-    title: seoContent.title,
-    description: seoContent.desc,
-    keywords: seoContent.keywords,
+    title: originProduct.metadata?.title ?? '',
+    keywords: originProduct.metadata?.keywords ?? '',
+    description: originProduct.metadata?.description ?? '',
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${slug}`
+      canonical: originProduct.metadata?.['canonical URL'] ?? ''
     },
     openGraph: {
-      title: seoContent.title,
-      description: seoContent.desc,
-      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${slug}`,
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
-          width: 1200,
-          height: 630
-        }
-      ],
+      title: originProduct.metadata?.title ?? '',
+      description: originProduct.metadata?.description ?? '',
+      url: originProduct.metadata?.['canonical URL'] ?? '',
+      images:
+        originProduct.images && originProduct.images?.length > 0
+          ? [
+              {
+                url: originProduct.thumbnail,
+                width: 1200,
+                height: 630
+              },
+              ...originProduct.images.map((el) => ({
+                url: el.url,
+                width: 1200,
+                height: 630
+              }))
+            ]
+          : [
+              {
+                url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+                width: 1200,
+                height: 630
+              }
+            ],
       type: 'website',
       siteName: 'Yến sào Chúc Cà Mau'
     }
