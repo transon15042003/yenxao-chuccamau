@@ -20,7 +20,7 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }): Promise<Metadata> {
-  const params = await searchParams;
+  const { c, search, s, p } = await searchParams;
 
   const defaultMeta = {
     title: StaticSEOContent.productsPage.title,
@@ -45,27 +45,26 @@ export async function generateMetadata({
     }
   };
 
-  let cate: string;
-  if (Array.isArray(params.c)) {
-    cate = params.c[0];
-  } else if (typeof params.c === 'string') {
-    cate = params.c;
+  let cate;
+  if (c && Array.isArray(c)) {
+    cate = c?.[0] ?? '';
   } else {
-    cate = '';
+    cate = c ?? '';
   }
+  const url = `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products?c=${cate}&s=${s}&search=${search}&p=${p}`;
 
-  if (cate && dynamicProductCateContent[cate]) {
+  if (dynamicProductCateContent[cate]) {
     return {
       title: dynamicProductCateContent[cate].title,
       description: dynamicProductCateContent[cate].desc,
       keywords: dynamicProductCateContent[cate].keywords,
       alternates: {
-        canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${cate}`
+        canonical: url
       },
       openGraph: {
         title: StaticSEOContent.productsPage.title,
         description: StaticSEOContent.productsPage.desc,
-        url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/products/${cate}`,
+        url: url,
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
