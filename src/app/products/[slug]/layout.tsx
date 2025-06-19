@@ -15,17 +15,24 @@ export async function generateMetadata({
     queryParams: { handle: slug }
   }).then(({ response }) => response.products[0]);
 
+  const {
+    title = '',
+    keywords = '',
+    description = '',
+    ['canonical URL']: canonicalUrl = ''
+  } = originProduct.metadata;
+
   return {
-    title: originProduct.metadata?.title ?? '',
-    keywords: originProduct.metadata?.keywords ?? '',
-    description: originProduct.metadata?.description ?? '',
+    title: title,
+    keywords: keywords,
+    description: description,
     alternates: {
-      canonical: originProduct.metadata?.['canonical URL'] ?? ''
+      canonical: canonicalUrl
     },
     openGraph: {
-      title: originProduct.metadata?.title ?? '',
-      description: originProduct.metadata?.description ?? '',
-      url: originProduct.metadata?.['canonical URL'] ?? '',
+      title: title,
+      description: description,
+      url: canonicalUrl,
       images:
         originProduct.images && originProduct.images?.length > 0
           ? [
