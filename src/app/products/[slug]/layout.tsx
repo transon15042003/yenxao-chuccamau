@@ -16,23 +16,37 @@ export async function generateMetadata({
   }).then(({ response }) => response.products[0]);
 
   return {
-    title: originProduct.metadata.title,
-    keywords: originProduct.metadata.keywords,
-    description: originProduct.metadata.description,
+    title: originProduct.metadata?.title ?? '',
+    keywords: originProduct.metadata?.keywords ?? '',
+    description: originProduct.metadata?.description ?? '',
     alternates: {
-      canonical: originProduct.metadata?.['canonical URL']
+      canonical: originProduct.metadata?.['canonical URL'] ?? ''
     },
     openGraph: {
-      title: originProduct.metadata.title,
-      description: originProduct.metadata.description,
-      url: originProduct.metadata?.['canonical URL'],
-      images: [
-        {
-          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
-          width: 1200,
-          height: 630
-        }
-      ],
+      title: originProduct.metadata?.title ?? '',
+      description: originProduct.metadata?.description ?? '',
+      url: originProduct.metadata?.['canonical URL'] ?? '',
+      images:
+        originProduct.images && originProduct.images?.length > 0
+          ? [
+              {
+                url: originProduct.thumbnail,
+                width: 1200,
+                height: 630
+              },
+              ...originProduct.images.map((el) => ({
+                url: el.url,
+                width: 1200,
+                height: 630
+              }))
+            ]
+          : [
+              {
+                url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+                width: 1200,
+                height: 630
+              }
+            ],
       type: 'website',
       siteName: 'Yến sào Chúc Cà Mau'
     }

@@ -15,10 +15,19 @@ import { transformProduct } from '@/lib/medusa-adapter/product';
 
 import ProductArea from './_components/ProductArea';
 
+type PageNumber = number;
+
+export type ProductPageParams = {
+  p: PageNumber;
+  c: CategorySlug;
+  s: ProductSort;
+  search: string;
+};
+
 export async function generateMetadata({
   searchParams
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  searchParams: Promise<ProductPageParams>;
 }): Promise<Metadata> {
   const { c, search, s, p } = await searchParams;
 
@@ -80,15 +89,6 @@ export async function generateMetadata({
 
   return defaultMeta;
 }
-
-type PageNumber = number;
-
-export type ProductPageParams = {
-  p: PageNumber;
-  c: CategorySlug;
-  s: ProductSort;
-  search: string;
-};
 
 // const getSortByOptionValue = (
 //   value: string
