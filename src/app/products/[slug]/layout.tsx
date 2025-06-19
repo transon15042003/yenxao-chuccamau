@@ -16,33 +16,33 @@ export async function generateMetadata({
   }).then(({ response }) => response.products[0]);
 
   const {
-    title = '',
-    keywords = '',
-    description = '',
-    ['canonical URL']: canonicalUrl = ''
-  } = originProduct.metadata;
+    title,
+    keywords,
+    description,
+    'canonical URL': canonicalUrl
+  } = originProduct.metadata || {};
 
   return {
-    title: title,
-    keywords: keywords,
-    description: description,
+    title: title as string,
+    keywords: keywords as string[],
+    description: description as string,
     alternates: {
-      canonical: canonicalUrl
+      canonical: canonicalUrl as string
     },
     openGraph: {
-      title: title,
-      description: description,
-      url: canonicalUrl,
+      title: title as string,
+      description: description as string,
+      url: canonicalUrl as string,
       images:
         originProduct.images && originProduct.images?.length > 0
           ? [
               {
-                url: originProduct.thumbnail,
+                url: originProduct.thumbnail as string,
                 width: 1200,
                 height: 630
               },
               ...originProduct.images.map((el) => ({
-                url: el.url,
+                url: el.url as string,
                 width: 1200,
                 height: 630
               }))
