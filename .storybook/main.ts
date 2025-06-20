@@ -13,6 +13,15 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag'
-  }
+  },
+  webpackFinal: async (config) => {
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'server-only': require.resolve('./empty-module.js'),
+      };
+    }
+    return config;
+  },
 };
 export default config;
