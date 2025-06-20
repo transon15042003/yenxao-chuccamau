@@ -2,7 +2,16 @@
 
 import { Product } from '@/types/product';
 import { ProductVariant } from '@/types/product';
-import { useContext, createContext, useState, useEffect, Dispatch, SetStateAction } from 'react';
+import {
+  useContext,
+  createContext,
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useRef
+} from 'react';
+import { Swiper as SwiperType } from 'swiper';
 import { useLocalStorage } from 'usehooks-ts';
 
 interface DetailProductType {
@@ -10,6 +19,9 @@ interface DetailProductType {
   variants: ProductVariant[];
   selectedVariant: ProductVariant | null;
   setSelectedVariant: Dispatch<SetStateAction<ProductVariant>>;
+  sliderRef: React.RefObject<SwiperType | null>;
+  handleNext: () => void;
+  handlePrevious: () => void;
 }
 
 const defaultProduct: Product = {
@@ -34,7 +46,10 @@ const DetailProductContext = createContext<DetailProductType>({
   product: defaultProduct,
   variants: [],
   selectedVariant: null,
-  setSelectedVariant: () => {}
+  setSelectedVariant: () => {},
+  sliderRef: { current: null },
+  handleNext: () => {},
+  handlePrevious: () => {}
 });
 
 export const DetailProductProvider = ({
@@ -46,6 +61,19 @@ export const DetailProductProvider = ({
 }) => {
   const [, setViewedProducts] = useLocalStorage<Product['id'][]>('viewedProducts', []);
   const [selectedVariant, setSelectedVariant] = useState<ProductVariant>(product.variants[0]);
+  const sliderRef = useRef<SwiperType | null>(null);
+
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slideNext();
+    }
+  };
+
+  const handlePrevious = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slidePrev();
+    }
+  };
 
   useEffect(() => {
     if (product) {
@@ -61,7 +89,10 @@ export const DetailProductProvider = ({
         product,
         variants: product.variants,
         selectedVariant,
-        setSelectedVariant
+        setSelectedVariant,
+        sliderRef,
+        handleNext,
+        handlePrevious
       }}
     >
       {children}
