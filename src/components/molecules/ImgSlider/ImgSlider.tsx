@@ -2,6 +2,7 @@
 
 import { ProductVariant } from '@/types/product';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -20,10 +21,20 @@ interface ImgSliderProps {
 const ImgSlider = ({ className }: ImgSliderProps) => {
   const { variants, selectedVariant, setSelectedVariant, sliderRef, handleNext, handlePrevious } =
     useDetailProduct();
-
+  const [curIdx, setCurIdx] = useState<number>(
+    variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0
+  );
   const handleClick = (variant: ProductVariant): void => {
     setSelectedVariant(variant);
   };
+
+  useEffect(() => {
+    const idx = variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0;
+    setCurIdx(idx);
+    if (sliderRef.current) {
+      sliderRef.current.slideToLoop(idx);
+    }
+  }, [selectedVariant, sliderRef, variants]);
 
   return (
     <div
@@ -50,6 +61,11 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
                 }
               : undefined
       }
+      onMouseLeave={() => {
+        if (sliderRef.current) {
+          sliderRef.current.slideToLoop(curIdx);
+        }
+      }}
     >
       <Button
         variant="primary"
