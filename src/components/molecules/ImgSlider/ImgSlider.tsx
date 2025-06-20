@@ -2,8 +2,8 @@
 
 import { ProductVariant } from '@/types/product';
 import Image from 'next/image';
-import { useRef } from 'react';
-import { Swiper as SwiperType } from 'swiper';
+import { useEffect, useState } from 'react';
+import { Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css/pagination';
@@ -19,21 +19,22 @@ interface ImgSliderProps {
 }
 
 const ImgSlider = ({ className }: ImgSliderProps) => {
-  const { variants, setSelectedVariant } = useDetailProduct();
-
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  const handlePrev = () => {
-    if (swiperRef.current) swiperRef.current.slidePrev();
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) swiperRef.current.slideNext();
-  };
-
+  const { variants, selectedVariant, setSelectedVariant, sliderRef, handleNext, handlePrevious } =
+    useDetailProduct();
+  const [curIdx, setCurIdx] = useState<number>(
+    variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0
+  );
   const handleClick = (variant: ProductVariant): void => {
     setSelectedVariant(variant);
   };
+
+  useEffect(() => {
+    const idx = variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0;
+    setCurIdx(idx);
+    if (sliderRef.current) {
+      sliderRef.current.slideToLoop(idx);
+    }
+  }, [selectedVariant, sliderRef, variants]);
 
   return (
     <div
@@ -60,11 +61,16 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
                 }
               : undefined
       }
+      onMouseLeave={() => {
+        if (sliderRef.current) {
+          sliderRef.current.slideToLoop(curIdx);
+        }
+      }}
     >
       <Button
         variant="primary"
         fill="fill"
-        onClick={handlePrev}
+        onClick={handlePrevious}
         className={cn(
           'swiper-button-prev absolute top-1/2 -translate-y-1/2 left-4 rounded-full p-0 w-[24px] h-[24px] opacity-80 lg:hidden cursor-pointer z-10',
           { '!hidden': variants.length < 5 }
@@ -75,7 +81,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       <Button
         variant="primary"
         fill="fill"
-        onClick={handlePrev}
+        onClick={handlePrevious}
         className={cn(
           'swiper-button-prev absolute hidden rounded-full w-[24px] h-[24px] p-0 opacity-80 lg:top-2 lg:left-1/2 lg:-translate-x-1/2 lg:block cursor-pointer z-10',
           { '!hidden': variants.length < 6 }
@@ -85,6 +91,8 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       </Button>
       <Swiper
         loop={true}
+        mousewheel={true}
+        modules={[Mousewheel]}
         breakpoints={{
           0: {
             direction: 'horizontal',
@@ -99,17 +107,23 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
         }}
         pagination={{ clickable: true }}
         onSwiper={(swiper) => {
-          swiperRef.current = swiper;
+          sliderRef.current = swiper;
         }}
         className="lg:h-full lg:w-full"
       >
         {variants.map((el, idx) => (
-          <SwiperSlide key={idx} className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full')}>
+          <SwiperSlide
+            key={idx}
+            className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full cursor-pointer')}
+          >
             <Image
               src={el.thumbnail}
               alt="product"
               onClick={() => handleClick(el)}
-              className="h-[100px] lg:h-[120px] lg:w-[100px] object-cover"
+              className={cn(
+                'h-[100px] lg:h-[120px] lg:w-[100px] object-cover hover:border-2 hover:border-primary',
+                el.id === selectedVariant?.id && 'border-2 border-primary'
+              )}
               width={120}
               height={120}
             />
