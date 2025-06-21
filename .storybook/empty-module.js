@@ -1,1 +1,1 @@
-// This is an empty module to resolve 'server-only' for Storybook
+export default {};

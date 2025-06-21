@@ -1,4 +1,9 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -18,7 +23,7 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'server-only': require.resolve('./empty-module.js'),
+        'server-only': resolve(__dirname, './empty-module.js'),
       };
     }
     return config;
