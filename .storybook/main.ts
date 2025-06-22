@@ -23,10 +23,10 @@ const config: StorybookConfig = {
     if (config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'server-only': resolve(__dirname, './empty-module.js'),
+        'server-only': resolve(__dirname, './empty-module.js')
       };
     }
     return config;
-  },
+  }
 };
 export default config;
