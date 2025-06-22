@@ -14,6 +14,9 @@ type Story = StoryObj<typeof ContactNotification>;
 
 export const Default: Story = {
   args: {
-    name: 'Vo Nguyen Nhat Khuong'
+    name: 'Nguyen Van A',
+    email: 'abc@gmail.com',
+    phone: '09xxxxxxxx',
+    message: 'Hint: this is an example message'
   }
 };
