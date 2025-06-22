@@ -50,17 +50,22 @@ export const MailContent = ({
               height: headerHeight
             }}
           >
-            <img
-              src={LOGO_IMAGE_URL}
-              alt="logo"
-              width={150}
-              height={125}
-              style={{
-                display: 'block',
-                margin: '0 auto'
-                // background: 'transparent'
-              }}
-            />
+            <a href="#" style={{ display: 'block', margin: '0 auto' }}>
+              <img
+                src={LOGO_IMAGE_URL}
+                alt="logo"
+                width={150}
+                height={125}
+                style={{
+                  display: 'block',
+                  margin: '0 auto',
+                  cursor: 'default',
+                  outline: 'none',
+                  border: 'none'
+                  // background: 'transparent'
+                }}
+              />
+            </a>
           </td>
         </tr>
         <tr>
