@@ -48,7 +48,7 @@ export const ContactNotification = (data: ContactFormData) => (
     highlightText="Vui lòng phản hồi tin nhắn này trong thời gian sớm nhất."
   >
     <tr>
-      <td style={{ padding: 0 }}>
+      <td>
         <MailFooter />
       </td>
     </tr>

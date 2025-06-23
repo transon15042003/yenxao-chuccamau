@@ -31,13 +31,15 @@ export const MailContent = ({
       cellPadding={0}
       cellSpacing={0}
       style={{
+        width: '100%',
         background: rootStyle.backgroundColor,
         borderRadius: 10,
         margin: '0 auto',
         borderCollapse: 'separate',
         borderSpacing: 0,
         overflow: 'hidden',
-        border: '1px solid #e0e0e0'
+        border: '1px solid #e0e0e0',
+        maxWidth: '600px'
       }}
     >
       <tbody>
@@ -48,17 +50,22 @@ export const MailContent = ({
               height: headerHeight
             }}
           >
-            <img
-              src={LOGO_IMAGE_URL}
-              alt="logo"
-              width={150}
-              height={125}
-              style={{
-                display: 'block',
-                margin: '0 auto',
-                background: 'transparent'
-              }}
-            />
+            <a href="#" style={{ display: 'block', margin: '0 auto' }}>
+              <img
+                src={LOGO_IMAGE_URL}
+                alt="logo"
+                width={150}
+                height={125}
+                style={{
+                  display: 'block',
+                  margin: '0 auto',
+                  cursor: 'default',
+                  outline: 'none',
+                  border: 'none'
+                  // background: 'transparent'
+                }}
+              />
+            </a>
           </td>
         </tr>
         <tr>

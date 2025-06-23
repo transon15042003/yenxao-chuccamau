@@ -88,8 +88,8 @@ export const MailFooter = () => {
                 <img
                   src={PHONE_IMAGE_URL}
                   alt="Phone"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                   style={{ verticalAlign: 'middle' }}
                 />
               </span>
@@ -111,7 +111,7 @@ export const MailFooter = () => {
               {socialMedias.map((item) => (
                 <a
                   key={item.name}
-                  href={item.url}
+                  // href={item.url}
                   style={{
                     margin: '0 6px',
                     display: 'inline-block',
@@ -127,24 +127,6 @@ export const MailFooter = () => {
                     style={{ verticalAlign: 'middle' }}
                   />
                 </a>
-              ))}
-            </div>
-          </td>
-          <td style={{ textAlign: 'right', padding: '8px 0px 20px 0' }}>
-            <div style={{ display: 'inline-block' }}>
-              {socialMedias.map((item) => (
-                <span
-                  key={item.name}
-                  style={{ margin: '0 6px', display: 'inline-block', cursor: 'default' }}
-                >
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name}
-                    width={25}
-                    height={25}
-                    style={{ verticalAlign: 'middle' }}
-                  />
-                </span>
               ))}
             </div>
           </td>
