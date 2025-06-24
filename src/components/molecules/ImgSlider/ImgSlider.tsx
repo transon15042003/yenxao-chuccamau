@@ -126,6 +126,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
               )}
               width={120}
               height={120}
+              unoptimized
             />
           </SwiperSlide>
         ))}
