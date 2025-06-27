@@ -1,11 +1,10 @@
 /* eslint-disable import-helpers/order-imports */
 'use client';
 
-import { ProductVariant } from '@/types/product';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Mousewheel } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css/pagination';
 import 'swiper/css';
@@ -24,13 +23,6 @@ interface ImgSliderProps {
 const ImgSlider = ({ className }: ImgSliderProps) => {
   const { variants, selectedVariant, setSelectedVariant, sliderRef, handleNext, handlePrevious } =
     useDetailProduct();
-  const [curIdx, setCurIdx] = useState<number>(
-    variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0
-  );
-  const handleClick = (variant: ProductVariant): void => {
-    setSelectedVariant(variant);
-  };
-
   const breakpointsConfig: {
     [width: number]: SwiperOptions;
   } = useMemo(
@@ -49,9 +41,16 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
     [variants]
   );
 
+  const handleInitSwiper = (swiper: SwiperClass) => {
+    sliderRef.current = swiper;
+  };
+
+  const handleSlideChange = (swiper: SwiperClass) => {
+    setSelectedVariant(variants[swiper.realIndex]);
+  };
+
   useEffect(() => {
     const idx = variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0;
-    setCurIdx(idx);
     if (sliderRef.current) {
       sliderRef.current.slideToLoop(idx);
     }
@@ -82,11 +81,6 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
                 }
               : undefined
       }
-      onMouseLeave={() => {
-        if (sliderRef.current) {
-          sliderRef.current.slideToLoop(curIdx);
-        }
-      }}
     >
       <Button
         variant="primary"
@@ -113,29 +107,28 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       </Button>
 
       <Swiper
+        className="lg:h-full lg:w-full"
         loop
+        centeredSlides
+        breakpoints={breakpointsConfig}
+        onSwiper={handleInitSwiper}
+        onSlideChange={handleSlideChange}
         mousewheel
         modules={[Mousewheel]}
-        breakpoints={breakpointsConfig}
-        pagination={{ clickable: true }}
-        onSwiper={(swiper) => {
-          sliderRef.current = swiper;
-        }}
-        className="lg:h-full lg:w-full"
       >
-        {variants.map((el, idx) => (
+        {variants.map((el) => (
           <SwiperSlide
-            key={idx}
+            key={`product-variant-thumbnail-${el.id}`}
             className={cn('lg:!min-h-[120px] lg:!w-full h-full w-full cursor-pointer')}
           >
             <Image
               src={el.thumbnail}
               alt="product"
-              onClick={() => handleClick(el)}
               className={cn(
                 'h-[100px] lg:h-[120px] lg:w-[100px] object-cover hover:border-2 hover:border-primary',
                 el.id === selectedVariant?.id && 'border-2 border-primary'
               )}
+              onClick={() => setSelectedVariant(el)}
               width={120}
               height={120}
             />
