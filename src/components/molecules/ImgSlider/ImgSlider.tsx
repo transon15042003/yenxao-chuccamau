@@ -1,13 +1,16 @@
+/* eslint-disable import-helpers/order-imports */
 'use client';
 
 import { ProductVariant } from '@/types/product';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Mousewheel } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css/pagination';
 import 'swiper/css';
+
+import type { SwiperOptions } from 'swiper/types';
 
 import { Button } from '@/components/atoms/Button';
 import { useDetailProduct } from '@/components/providers/DetailProductProvider/DetailProductProvider';
@@ -27,6 +30,24 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
   const handleClick = (variant: ProductVariant): void => {
     setSelectedVariant(variant);
   };
+
+  const breakpointsConfig: {
+    [width: number]: SwiperOptions;
+  } = useMemo(
+    () => ({
+      0: {
+        direction: 'horizontal',
+        slidesPerView: variants.length < 4 ? variants.length : 4,
+        spaceBetween: 8
+      },
+      1024: {
+        direction: 'vertical',
+        slidesPerView: variants.length < 5 ? variants.length : 5,
+        spaceBetween: 10
+      }
+    }),
+    [variants]
+  );
 
   useEffect(() => {
     const idx = variants.findIndex((el) => el.sku === selectedVariant?.sku) ?? 0;
@@ -78,6 +99,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       >
         &lt;
       </Button>
+
       <Button
         variant="primary"
         fill="fill"
@@ -89,22 +111,12 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       >
         ^
       </Button>
+
       <Swiper
-        loop={true}
-        mousewheel={true}
+        loop
+        mousewheel
         modules={[Mousewheel]}
-        breakpoints={{
-          0: {
-            direction: 'horizontal',
-            slidesPerView: variants.length < 4 ? variants.length : 4,
-            spaceBetween: 8
-          },
-          1024: {
-            direction: 'vertical',
-            slidesPerView: variants.length < 5 ? variants.length : 5,
-            spaceBetween: 10
-          }
-        }}
+        breakpoints={breakpointsConfig}
         pagination={{ clickable: true }}
         onSwiper={(swiper) => {
           sliderRef.current = swiper;
@@ -130,6 +142,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Button
         variant="primary"
         fill="fill"
@@ -141,6 +154,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
       >
         &gt;
       </Button>
+
       <Button
         variant="primary"
         fill="fill"
