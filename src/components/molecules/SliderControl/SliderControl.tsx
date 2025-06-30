@@ -12,8 +12,7 @@ interface SliderControlProps {
 }
 
 const SliderControl = ({ className }: SliderControlProps) => {
-  const { selectedVariant, variants, setSelectedVariant, handleNext, handlePrevious } =
-    useDetailProduct();
+  const { selectedVariant, variants, setSelectedVariant } = useDetailProduct();
   const curIdx = variants.findIndex((el) => el.sku === selectedVariant?.sku);
 
   const goBackVariant = () => {
@@ -22,7 +21,7 @@ const SliderControl = ({ className }: SliderControlProps) => {
     } else {
       setSelectedVariant(variants[variants.length - 1]);
     }
-    handlePrevious();
+    // handlePrevious();
   };
 
   const goNextVariant = () => {
@@ -31,7 +30,7 @@ const SliderControl = ({ className }: SliderControlProps) => {
     } else {
       setSelectedVariant(variants[0]);
     }
-    handleNext();
+    // handleNext();
   };
 
   return (
