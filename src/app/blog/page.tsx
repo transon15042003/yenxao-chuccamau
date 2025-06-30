@@ -14,6 +14,20 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: StaticSEOContent.blogsPage.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog`
+    },
+    openGraph: {
+      title: StaticSEOContent.blogsPage.title,
+      description: StaticSEOContent.blogsPage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }
@@ -40,7 +54,7 @@ export default async function BlogPage(props: { searchParams: SearchParams }) {
   return (
     <div className="bg-white">
       {/* Breadcrumb */}
-      <Breadcrumb disableLastChild={true} items={[{ label: 'Blog', href: '/blog' }]} />
+      <Breadcrumb items={[{ label: 'Blog', href: '/blog' }]} />
 
       {/* Danh sách bài viết */}
       <div className="flex flex-col justify-center items-center my-9">

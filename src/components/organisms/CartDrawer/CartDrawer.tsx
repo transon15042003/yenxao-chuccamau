@@ -83,9 +83,9 @@ export const CartDrawer = () => {
             {/* Cart Body */}
             <div className="py-5 px-7 flex-1 overflow-y-auto customscrollbar">
               <div className="flex flex-col">
-                {cart.items.map((item) => {
+                {cart.items.map((item, idx) => {
                   return (
-                    <Fragment key={item.variantId}>
+                    <Fragment key={idx}>
                       <CartItem
                         item={item}
                         onIncrease={() => increaseQuantity(item.variantId, 1)}

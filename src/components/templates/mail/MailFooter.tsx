@@ -2,45 +2,43 @@
 
 import { AppConfig } from 'src/AppConfig';
 
-import { footerContentStyle } from './InitSetup';
-import { PHONE_IMAGE_URL } from './InitSetup';
+import { footerContentStyle, HOST } from './InitSetup';
+import {
+  FACEBOOK_IMAGE_URL,
+  INSTAGRAM_IMAGE_URL,
+  LINKEDIN_IMAGE_URL,
+  TIKTOK_IMAGE_URL,
+  PHONE_IMAGE_URL
+} from './InitSetup';
 
-// import {
-//  FACEBOOK_IMAGE_URL,
-//  INSTAGRAM_IMAGE_URL,
-//  LINKEDIN_IMAGE_URL,
-//  TIKTOK_IMAGE_URL,
-//  PHONE_IMAGE_URL
-//} from './InitSetup';
+interface SocialMedia {
+  name: string;
+  url: string;
+  imageUrl: string;
+}
 
-// interface SocialMedia {
-//   name: string;
-//   url: string;
-//   imageUrl: string;
-// }
-
-// const socialMedias: SocialMedia[] = [
-//   {
-//     name: 'Facebook',
-//     url: '/',
-//     imageUrl: FACEBOOK_IMAGE_URL
-//   },
-//   {
-//     name: 'Instagram',
-//     url: '/',
-//     imageUrl: INSTAGRAM_IMAGE_URL
-//   },
-//   {
-//     name: 'LinkedIn',
-//     url: '/',
-//     imageUrl: LINKEDIN_IMAGE_URL
-//   },
-//   {
-//     name: 'Tiktok',
-//     url: '/',
-//     imageUrl: TIKTOK_IMAGE_URL
-//   }
-// ];
+const socialMedias: SocialMedia[] = [
+  {
+    name: 'Facebook',
+    url: HOST,
+    imageUrl: FACEBOOK_IMAGE_URL
+  },
+  {
+    name: 'Instagram',
+    url: HOST,
+    imageUrl: INSTAGRAM_IMAGE_URL
+  },
+  {
+    name: 'LinkedIn',
+    url: HOST,
+    imageUrl: LINKEDIN_IMAGE_URL
+  },
+  {
+    name: 'Tiktok',
+    url: HOST,
+    imageUrl: TIKTOK_IMAGE_URL
+  }
+];
 
 export const MailFooter = () => {
   return (
@@ -78,7 +76,7 @@ export const MailFooter = () => {
         </tr>
         {/* Dòng cuối: phone + social */}
         <tr>
-          <td style={{ textAlign: 'center', padding: '8px 0 20px 12px' }}>
+          <td style={{ textAlign: 'left', padding: '8px 0 20px 12px' }}>
             <a
               href={`tel:${AppConfig.phone}`}
               style={{
@@ -90,8 +88,8 @@ export const MailFooter = () => {
                 <img
                   src={PHONE_IMAGE_URL}
                   alt="Phone"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                   style={{ verticalAlign: 'middle' }}
                 />
               </span>
@@ -107,6 +105,30 @@ export const MailFooter = () => {
                 {AppConfig.phone}
               </span>
             </a>
+          </td>
+          <td style={{ textAlign: 'right', padding: '8px 0px 20px 0' }}>
+            <div style={{ display: 'inline-block' }}>
+              {socialMedias.map((item) => (
+                <a
+                  key={item.name}
+                  // href={item.url}
+                  style={{
+                    margin: '0 6px',
+                    display: 'inline-block',
+                    cursor: 'pointer',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    width={25}
+                    height={25}
+                    style={{ verticalAlign: 'middle' }}
+                  />
+                </a>
+              ))}
+            </div>
           </td>
         </tr>
       </tbody>

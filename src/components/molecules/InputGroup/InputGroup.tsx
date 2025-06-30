@@ -8,10 +8,21 @@ type InputGroupProps = React.InputHTMLAttributes<HTMLInputElement> & {
   labelClassName?: string;
   inputClassName?: string;
   errorMessage?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function InputGroup(
-  { label, labelClassName, inputClassName, errorMessage, className, ...restInputProps },
+  {
+    label,
+    labelClassName,
+    inputClassName,
+    errorMessage,
+    className,
+    value = '',
+    onChange,
+    ...restInputProps
+  },
   ref
 ) {
   return (
@@ -32,6 +43,8 @@ export const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(function
       <input
         ref={ref}
         type="text"
+        value={value}
+        onChange={onChange}
         {...restInputProps}
         className={cn(
           'border-[2px] border-typo-1 rounded-[8px] px-4 py-2.5 text-typo-1',

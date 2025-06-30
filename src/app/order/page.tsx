@@ -175,7 +175,6 @@ const PaymentPage = () => {
                         name="shipping"
                         className="w-4 h-4 accent-primary"
                         checked={shippingMethod === 'WORKING_HOURS'}
-                        value="WORKING_HOURS"
                         onChange={() => setShippingMethod('WORKING_HOURS')}
                       />
                       <div>
@@ -295,6 +294,7 @@ const PaymentPage = () => {
                 <div className="mt-1.5 flex gap-2 items-start">
                   <InputGroup
                     className="flex-1"
+                    inputClassName="max-h-[46px]"
                     placeholder="Nhập mã phiếu giảm giá"
                     errorMessage={discountErrorMessage}
                     value={discountCode}
@@ -302,7 +302,7 @@ const PaymentPage = () => {
                   />
                   <button
                     onClick={() => setDiscountErrorMessage('Mã giảm giá không hợp lệ')}
-                    className="bg-[#424B5A] text-white text-sm font-bold rounded-[5px] px-6 py-3 hover:opacity-80 transition-all duration-75"
+                    className="bg-[#424B5A] text-white text-sm font-bold rounded-[5px] px-2 py-3 h-[46px] min-w-[60px] text-center hover:opacity-80 transition-all duration-75"
                   >
                     Áp dụng
                   </button>

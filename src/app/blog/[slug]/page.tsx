@@ -31,6 +31,20 @@ export async function generateMetadata({
     keywords: blogContent.keywords,
     alternates: {
       canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
+    },
+    openGraph: {
+      title: blogContent.title,
+      description: blogContent.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
     }
   };
 }
@@ -62,20 +76,19 @@ export default async function BlogDetailPage({ params }: Props) {
     <div className="w-full flex flex-col items-center">
       <div className="w-full mb-9">
         <Breadcrumb
-          disableLastChild={true}
           items={[
             {
               label: 'Blog',
               href: '/blog'
             },
             {
-              label: slug,
-              href: slug
+              label: blog?.title ?? '',
+              href: `/${slug}`
             }
           ]}
         />
       </div>
-      <div className="w-96 md:w-3/4 lg:w-1/2 text-justify">
+      <div className="md:w-3/4 px-2 md:px-4 sm:px-2 lg:px-0 lg:w-1/2 text-justify">
         <div className="flex flex-row flex-wrap items-center mb-3">
           <div className="flex flex-row items-center mr-6">
             <CalendarSVG className="mr-1.5" />
@@ -90,14 +103,12 @@ export default async function BlogDetailPage({ params }: Props) {
             <p>{blog.viewer}</p>
           </div> */}
         </div>
-
         {<BlogContentComponent />}
-
         <hr
           className={cn('h-[2px]', 'md:my-[60px] my-[36px]', 'bg-black border-0 dark:bg-gray-700')}
         ></hr>
       </div>
-      <div className="w-full flex flex-col items-center mb-28">
+      <div className="w-full flex flex-col items-center mb-16">
         <SectionTitle heading="Bài viết liên quan" />
 
         <NewFeed initialBlogs={relatedBlogs} />

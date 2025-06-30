@@ -67,7 +67,6 @@ const ProductDetailPage = async ({ params }: ProductDetailPageProps) => {
     <DetailProductProvider product={product}>
       <div>
         <Breadcrumb
-          disableLastChild={true}
           items={[
             { label: 'Sản phẩm', href: '/products' },
             ...(category ? [{ label: category.name, href: `/products?c=${category.slug}` }] : []),

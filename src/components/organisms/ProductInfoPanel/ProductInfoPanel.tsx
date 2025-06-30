@@ -22,6 +22,7 @@ const ProductInfoPanel = ({ className }: ProductInfoPanelProps) => {
         className="h-[640px] w-full object-cover"
         width={600}
         height={640}
+        unoptimized
       />
       {/* <Badge content="20%" className="absolute top-2 left-[32px]" /> */}
       <SliderControl className="absolute lg:bottom-[40px] lg:right-[40px] bottom-4 right-4 text-[#424B5A]" />

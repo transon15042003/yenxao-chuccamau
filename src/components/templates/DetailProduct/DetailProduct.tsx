@@ -12,7 +12,7 @@ const DetailProduct = ({ relatedProducts }: { relatedProducts: Product[] }) => {
     <div className="lg:grid lg:grid-cols-12 lg:max-w-[75%] max-w-full pb-4 lg:mt-2 bg-[#F2F2F2] lg:bg-white">
       <div className="lg:flex lg:flex-row-reverse lg:col-span-7">
         <ProductInfoPanel className="lg:flex-1" />
-        <div className="flex flex-row lg:flex-col lg:justify-start justify-center items-center lg:max-h-[640px] lg:max-w-[100px] bg-white">
+        <div className="flex flex-row lg:flex-col lg:justify-start justify-start items-center lg:max-h-[640px] lg:max-w-[100px] bg-white">
           <ImgSlider />
         </div>
       </div>

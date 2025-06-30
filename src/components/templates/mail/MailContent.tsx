@@ -19,7 +19,7 @@ export const MailContent = ({
   children,
   headerColor = '#B4071A',
   headerHeight = 150,
-  width = '100%',
+  width = '600px',
   title,
   messages,
   infoItems,
@@ -31,13 +31,15 @@ export const MailContent = ({
       cellPadding={0}
       cellSpacing={0}
       style={{
+        width: '100%',
         background: rootStyle.backgroundColor,
         borderRadius: 10,
         margin: '0 auto',
         borderCollapse: 'separate',
         borderSpacing: 0,
         overflow: 'hidden',
-        border: '1px solid #e0e0e0'
+        border: '1px solid #e0e0e0',
+        maxWidth: '600px'
       }}
     >
       <tbody>
@@ -48,17 +50,22 @@ export const MailContent = ({
               height: headerHeight
             }}
           >
-            <img
-              src={LOGO_IMAGE_URL}
-              alt="logo"
-              width={150}
-              height={125}
-              style={{
-                display: 'block',
-                margin: '0 auto',
-                background: 'transparent'
-              }}
-            />
+            <a href="#" style={{ display: 'block', margin: '0 auto' }}>
+              <img
+                src={LOGO_IMAGE_URL}
+                alt="logo"
+                width={150}
+                height={125}
+                style={{
+                  display: 'block',
+                  margin: '0 auto',
+                  cursor: 'default',
+                  outline: 'none',
+                  border: 'none'
+                  // background: 'transparent'
+                }}
+              />
+            </a>
           </td>
         </tr>
         <tr>
@@ -95,7 +102,7 @@ export const MailContent = ({
                   <tr key={index}>
                     {/* Cột trái: label */}
                     <td
-                      width="50%"
+                      width="35%"
                       style={{
                         verticalAlign: 'top',
                         padding: '0 8px 0 0',
@@ -116,7 +123,7 @@ export const MailContent = ({
                     </td>
                     {/* Cột phải: value */}
                     <td
-                      width="50%"
+                      width="65%"
                       style={{
                         fontWeight: 600,
                         verticalAlign: 'top',
@@ -141,6 +148,7 @@ export const MailContent = ({
                 display: 'block',
                 background: '#F5F5F5',
                 color: '#920202CC',
+                textAlign: 'center',
                 borderRadius: 10,
                 padding: '10px 20px',
                 marginTop: 24,
