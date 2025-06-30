@@ -147,6 +147,7 @@ const ImgSlider = ({ className }: ImgSliderProps) => {
               onClick={() => setSelectedVariant(el)}
               width={120}
               height={120}
+              unoptimized
             />
           </SwiperSlide>
         ))}

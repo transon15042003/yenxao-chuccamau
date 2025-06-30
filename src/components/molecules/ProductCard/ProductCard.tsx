@@ -95,6 +95,7 @@ export const ProductCard = ({
           src={thumbnail}
           alt={name}
           fill
+          unoptimized
         />
       </div>
 
