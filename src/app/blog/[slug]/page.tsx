@@ -1,0 +1,118 @@
+import { dynamicBlogContent } from '@/contents/SEO';
+import { getBlogMarkDown } from '@/markdown/blogs';
+import { CalendarSVG } from '@/svg/CalendarSVG/CalendarSVG';
+import { StackSVG } from '@/svg/StackSVG/StackSVG';
+import { formatDate } from 'date-fns';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import {
+  generateStaticParams as getStaticParamsFromService,
+  getBlogs,
+  getBlogBySlug
+} from 'src/services/blog.service';
+
+import { Breadcrumb } from '@/components/molecules/Breadcrumb';
+import { NewFeed } from '@/components/molecules/NewFeed';
+import SectionTitle from '@/components/molecules/SectionTitle/SectionTitle';
+
+import { cn } from '@/lib/utils';
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const slug = (await params).slug;
+  const blogContent = await dynamicBlogContent(slug);
+
+  return {
+    title: blogContent.title,
+    description: blogContent.desc,
+    keywords: blogContent.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`
+    },
+    openGraph: {
+      title: blogContent.title,
+      description: blogContent.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/blog/${slug}`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
+    }
+  };
+}
+
+export async function generateStaticParams() {
+  return await getStaticParamsFromService();
+}
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params;
+
+  const blog = await getBlogBySlug(slug);
+  if (!blog) notFound();
+
+  const BlogContentComponent = getBlogMarkDown(blog.id);
+
+  if (!BlogContentComponent) notFound();
+
+  const relatedBlogs = await getBlogs({
+    filterByIds: blog.relation,
+    limit: 3
+  });
+
+  return (
+    <div className="w-full flex flex-col items-center">
+      <div className="w-full mb-9">
+        <Breadcrumb
+          items={[
+            {
+              label: 'Blog',
+              href: '/blog'
+            },
+            {
+              label: blog?.title ?? '',
+              href: `/${slug}`
+            }
+          ]}
+        />
+      </div>
+      <div className="md:w-3/4 px-2 md:px-4 sm:px-2 lg:px-0 lg:w-1/2 text-justify">
+        <div className="flex flex-row flex-wrap items-center mb-3">
+          <div className="flex flex-row items-center mr-6">
+            <CalendarSVG className="mr-1.5" />
+            <p>{formatDate(new Date(blog.postedDate), 'dd-MM-yyyy')}</p>
+          </div>
+          <div className="flex flex-row items-center mr-6">
+            <StackSVG className="mr-1.5" />
+            <p>{blog.minRead} phút đọc</p>
+          </div>
+          {/* <div className="flex flex-row items-center">
+            <UserSVG className="mr-1.5" />
+            <p>{blog.viewer}</p>
+          </div> */}
+        </div>
+        {<BlogContentComponent />}
+        <hr
+          className={cn('h-[2px]', 'md:my-[60px] my-[36px]', 'bg-black border-0 dark:bg-gray-700')}
+        ></hr>
+      </div>
+      <div className="w-full flex flex-col items-center mb-16">
+        <SectionTitle heading="Bài viết liên quan" />
+
+        <NewFeed initialBlogs={relatedBlogs} />
+      </div>
+    </div>
+  );
+}

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { CartDrawer } from '@/components/organisms/CartDrawer/CartDrawer';
 import Footer from '@/components/organisms/Footer/Footer';
 import Header from '@/components/organisms/Header/Header';
 
@@ -12,7 +13,7 @@ interface MainLayoutProps {
 
 // This is the place responsible for wrapping your app.
 // Add here components like Footer, Nav etc.
-export const MainLayout = ({ children, className }: MainLayoutProps) => {
+export const MainLayout = async ({ children, className }: MainLayoutProps) => {
   const wrapperStyles = cn('flex flex-col min-h-screen', className);
 
   return (
@@ -20,6 +21,9 @@ export const MainLayout = ({ children, className }: MainLayoutProps) => {
       <Header />
       <main className="flex-1 mt-header-height">{children}</main>
       <Footer />
+
+      {/* CartDrawer */}
+      <CartDrawer />
     </div>
   );
 };

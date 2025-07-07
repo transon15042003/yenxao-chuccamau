@@ -1,20 +1,47 @@
-import '@/styles/globals.css';
+﻿import '@/styles/globals.css';
 
+import { StaticSEOContent } from '@/contents/SEO';
 import { Metadata } from 'next';
 import { Nunito_Sans } from 'next/font/google';
 import { ReactNode } from 'react';
+import { ToastContainer } from 'react-toastify';
 
+import { CartProvider } from '@/components/providers/CartProvider/CartProvider';
 import { MainProvider } from '@/components/providers/MainProvider';
 import { MainLayout } from '@/components/templates/MainLayout';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 import { cn } from '@/lib/utils';
+
+// import RegisterSW from './RegisterSW';
 
 const nunitoSans = Nunito_Sans({ subsets: ['latin'], variable: '--font-primary' });
 
-export const metadata: Metadata = {
-  title: 'Trang chủ | Chuc Ca Mau',
-  description: 'seo description'
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: StaticSEOContent.homePage.title,
+    description: StaticSEOContent.homePage.desc,
+    keywords: StaticSEOContent.homePage.keywords,
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_APP_DOMAIN}`
+    },
+    openGraph: {
+      title: StaticSEOContent.homePage.title,
+      description: StaticSEOContent.homePage.desc,
+      url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}`,
+      images: [
+        {
+          url: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/open_graph_img.png`,
+          width: 1200,
+          height: 630
+        }
+      ],
+      type: 'website',
+      siteName: 'Yến sào Chúc Cà Mau'
+    }
+  };
+}
 
 interface RootLayoutProps {
   children: ReactNode;
@@ -23,11 +50,33 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
-      <body className={cn(nunitoSans.variable, 'font-primary')} suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body
+        className={cn(nunitoSans.variable, 'font-primary customscrollbar')}
+        suppressHydrationWarning
+      >
         <MainProvider>
-          <MainLayout>
-            <main>{children}</main>
-          </MainLayout>
+          <CartProvider>
+            {/* <RegisterSW /> */}
+            <MainLayout>
+              <main>{children}</main>
+            </MainLayout>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
+          </CartProvider>
         </MainProvider>
       </body>
     </html>

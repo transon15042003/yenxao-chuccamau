@@ -1,0 +1,157 @@
+import { CloseSVG } from '@/svg/CloseSVG/CloseSVG';
+import { CartItem as TCartItem } from '@/types/cart';
+import { ProductVariant } from '@/types/product';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useMemo, useState } from 'react';
+
+import { useCart } from '@/components/providers/CartProvider/CartProvider';
+
+import { cn, convertToVND } from '@/lib/utils';
+
+import { SelectInput } from '../SelectInput';
+
+export type CartItemProps = {
+  item: TCartItem;
+  onIncrease: () => void;
+  onDecrease: () => void;
+  onRemove: () => void;
+};
+
+export const CartItem: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease, onRemove }) => {
+  const { updateCartItemVariant, setIsCartOpen } = useCart();
+  const productSpecs = item.options;
+
+  const [selectedSpecs, setSelectedSpecs] = useState<Record<string, string>>(item.specs);
+
+  const currentVariant = useMemo(() => {
+    return item.variants?.find((variant: ProductVariant) => {
+      return Object.keys(selectedSpecs).every((key) => variant.specs[key] === selectedSpecs[key]);
+    });
+  }, [selectedSpecs, item.variants]);
+
+  const handleSpecChange = (key: string, value: string) => {
+    setSelectedSpecs((prevSpecs) => ({
+      ...prevSpecs,
+      [key]: value
+    }));
+  };
+
+  useEffect(() => {
+    if (currentVariant && currentVariant.id !== item.variantId) {
+      updateCartItemVariant(item.productId, item.variantId, currentVariant);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentVariant, item.productId, item.variantId]);
+
+  const displayPrice = currentVariant?.price || item.price;
+  const displayName = currentVariant?.name || item.name;
+  const displayThumbnail = currentVariant?.thumbnail || item.thumbnail;
+
+  const productDetailPath = `/products/${item.productSlug}`;
+
+  return (
+    <div className="flex w-full items-stretch py-4 bg-white rounded-lg">
+      {/* Product Image */}
+      <Link
+        href={productDetailPath}
+        className={cn(
+          'relative w-[115px] md:w-[130px] h-[99px] flex-shrink-0 flex items-center justify-center'
+        )}
+      >
+        <Image
+          className="rounded-[5px] object-cover"
+          src={displayThumbnail}
+          alt={displayName || 'product thumnail'}
+          fill
+        />
+      </Link>
+      <div className="flex-auto flex flex-col gap-3 mx-4 min-w-0">
+        {/* Product Info */}
+        <div className="min-w-0">
+          <Link
+            href={productDetailPath}
+            className={cn(
+              'font-semibold leading-[1.36] text-typo-1 line-clamp-1 hover:text-primary'
+            )}
+            onClick={() => setIsCartOpen(false)}
+          >
+            {displayName}
+          </Link>
+          <div className="flex items-center gap-2 mt-2">
+            <span className="font-semibold text-sm text-primary-dark">
+              {convertToVND(displayPrice)}
+            </span>
+            {/* <span className="text-sm line-through text-[#C1C1C1]">
+              {convertToVND(displayPrice)}
+            </span> */}
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-2">
+          {productSpecs?.map((spec) => (
+            <div className="w-fit md:w-1/2" key={spec.key}>
+              <SelectInput
+                options={spec.options?.map((i) => ({ label: i.label, value: i.value || '' })) || []}
+                value={selectedSpecs[spec.key] || ''}
+                onChange={(newValue) => handleSpecChange(spec.key, newValue)}
+                className="w-full md:flex-1 min-w-0"
+                menuWidth={120}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Quantity Controls */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onDecrease}
+            disabled={item.quantity === 1}
+            className={cn(
+              'w-8 h-8 flex items-center justify-center border border-[#B2BCCA] rounded-[3px] text-typo-1',
+              item.quantity === 1 && 'opacity-50'
+            )}
+            aria-label="Decrease quantity"
+          >
+            {/* Minus Icon */}
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <rect x="3" y="7.25" width="10" height="1.5" rx="0.75" fill="currentColor" />
+            </svg>
+          </button>
+          <span className="w-8 text-center font-normal text-[16px] text-typo-1">
+            {item.quantity}
+          </span>
+          <button
+            onClick={onIncrease}
+            className="w-8 h-8 flex items-center justify-center border border-[#B2BCCA] rounded-[3px] text-typo-1"
+            aria-label="Increase quantity"
+          >
+            {/* Plus Icon */}
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <rect x="7.25" y="3" width="1.5" height="10" rx="0.75" fill="currentColor" />
+              <rect x="3" y="7.25" width="10" height="1.5" rx="0.75" fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Remove Button */}
+      <div
+        className={cn(
+          'w-fi',
+          'self-stretch flex-shrink-0 flex items-center justify-center',
+          'px-1 md:px-0',
+          'bg-[#F3F3F3] md:bg-inherit',
+          'cursor-pointer'
+        )}
+        role="button"
+        onClick={onRemove}
+      >
+        <button className="text-typo-1 hover:text-red-500" aria-label="Remove item">
+          {/* Trash Icon */}
+          <CloseSVG className="md:size-4 size-6" />
+        </button>
+      </div>
+    </div>
+  );
+};

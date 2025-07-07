@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.vs
 
 # testing
 /coverage
@@ -41,3 +42,7 @@ yarn-error.log*
 
 # storybook
 storybook-static
+
+# sitemap & robots files
+/public/robots.txt
+/public/sitemap.xml
