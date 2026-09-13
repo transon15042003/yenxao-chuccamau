@@ -153,6 +153,11 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
 
       const cartRes = await updateCartAndTakeOrderFlow(order);
 
+      if (cartRes && 'type' in cartRes && cartRes.type === 'payment_redirect') {
+        window.location.href = cartRes.payUrl;
+        return;
+      }
+
       clearCart();
 
       if (cartRes?.type === 'order') {

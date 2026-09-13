@@ -44,15 +44,15 @@ const paymentMethods: PaymentMethod[] = [
   {
     id: 'COD',
     name: 'Thanh toán khi nhận hàng (COD)'
+  },
+  {
+    id: 'VNPAY',
+    name: 'VNPay'
+  },
+  {
+    id: 'MOMO',
+    name: 'MoMo'
   }
-  // {
-  //   id: 'VNPAY',
-  //   name: 'VNPay'
-  // },
-  // {
-  //   id: 'MOMO',
-  //   name: 'Momo'
-  // }
 ];
 
 const PaymentPage = () => {

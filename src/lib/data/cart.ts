@@ -555,14 +555,44 @@ export async function updateCartAndTakeOrderFlow(order: Order) {
 
   // 4.update cart payment method
   const currentCart = await retrieveCart();
-  if (currentCart) {
-    // const paymentMethods = await listCartPaymentMethods(originalCart?.region?.id ?? '');
-    await initiatePaymentSession(currentCart, {
-      provider_id: 'pp_system_default'
-    });
+  if (!currentCart) {
+    throw new Error('Cart missing after address/shipping update');
   }
 
-  // 5. create order
+  const providerId =
+    order.paymentMethod === 'VNPAY'
+      ? 'pp_vnpay_vnpay'
+      : order.paymentMethod === 'MOMO'
+        ? 'pp_momo_momo'
+        : 'pp_system_default';
+
+  const paymentCollection = await initiatePaymentSession(currentCart, {
+    provider_id: providerId,
+    data: { cart_id: currentCart.id }
+  });
+
+  const sessions =
+    paymentCollection?.payment_collection?.payment_sessions ||
+    (paymentCollection as { payment_sessions?: { data?: Record<string, unknown> }[] })
+      ?.payment_sessions ||
+    [];
+  const session = sessions[0] as
+    | { id?: string; data?: { payUrl?: string } }
+    | undefined;
+  const payUrl = session?.data?.payUrl;
+
+  if (payUrl) {
+    // Online redirect — do not complete cart yet (authorize via confirm/IPN)
+    return {
+      type: 'payment_redirect' as const,
+      payUrl,
+      cart_id: cart.id!,
+      session_id: session?.id,
+      provider_id: providerId
+    };
+  }
+
+  // 5. COD: create order
   const placeOrderResponse = await placeOrder(cart.id!);
 
   return placeOrderResponse;
