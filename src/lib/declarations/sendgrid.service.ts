@@ -9,6 +9,7 @@ type EmailInputs = {
   fromName?: string;
   subject: string;
   html: string;
+  text?: string;
   attachments?: MailDataRequired['attachments'];
   personalizations?: MailDataRequired['personalizations'];
   replyTo?: MailDataRequired['replyTo'];
@@ -20,6 +21,7 @@ export const sendSendridEmail = async ({
   fromName,
   subject,
   html,
+  text,
   attachments,
   personalizations,
   replyTo
@@ -30,6 +32,7 @@ export const sendSendridEmail = async ({
       from: { email: from, name: fromName },
       subject,
       html,
+      ...(text ? { text } : {}),
       attachments,
       ...(personalizations ? { personalizations } : {}),
       replyTo

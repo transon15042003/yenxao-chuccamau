@@ -1,6 +1,7 @@
 type SendMailBody = {
   subject: string;
   html: string;
+  text?: string;
   fromName?: string;
   emailTo?: string; // default is process.env.OWNER_EMAIL
 };

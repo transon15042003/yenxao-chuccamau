@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use server';
 
-import { sendOrderNotification } from '@/services/notification.service';
 import { Order } from '@/types/order';
 import { HttpTypes } from '@medusajs/types';
 import { revalidateTag } from 'next/cache';

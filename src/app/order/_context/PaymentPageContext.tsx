@@ -1,6 +1,5 @@
 'use client';
 
-import { sendOrderNotification } from '@/services/notification.service';
 import { CartItem } from '@/types/cart';
 import { Order, ShippingMethod } from '@/types/order';
 import { PaymentGateway } from '@/types/payment';
@@ -161,11 +160,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
       clearCart();
 
       if (cartRes?.type === 'order') {
-        sendOrderNotification({
-          ...order,
-          code: cartRes?.order.id || ''
-        }).catch(console.error);
-
+        // Order emails: Medusa subscriber order.placed (backend SendGrid)
         localStorage.setItem('order', JSON.stringify(cartRes?.order));
         router.push(`/order/${cartRes?.order.id}/result`);
       }
