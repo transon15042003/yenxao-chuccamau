@@ -544,7 +544,10 @@ export async function updateCartAndTakeOrderFlow(order: Order) {
     toast.error('Vui lòng chọn phương thức vận chuyển');
   }
 
-  const cartShippingMethod = shippingOptionsResult.shipping_options[0];
+  const cartShippingMethod =
+    shippingOptionsResult.shipping_options.find(
+      (o) => o.type?.code === order.shippingMethod
+    ) || shippingOptionsResult.shipping_options[0];
   await setShippingMethod({
     cartId: cart.id!,
     shippingMethodId: cartShippingMethod.id
