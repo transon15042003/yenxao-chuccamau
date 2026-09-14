@@ -70,6 +70,13 @@ const NavigationMenu = ({ categories }: { categories: Category[] }) => {
       <NavItem className="text-base lg:text-lg" href="/contact" active={pathname === '/contact'}>
         LIÊN HỆ
       </NavItem>
+      <NavItem
+        className="text-base lg:text-lg"
+        href="/account"
+        active={pathname.startsWith('/account')}
+      >
+        TÀI KHOẢN
+      </NavItem>
     </div>
   );
 };

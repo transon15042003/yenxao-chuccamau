@@ -63,6 +63,14 @@ const MobileMenu = ({ isOpen, onClose, categories }: MobileMenuProps) => {
         >
           LIÊN HỆ
         </NavItem>
+        <NavItem
+          href="/account"
+          className="text-xl"
+          onClick={onClose}
+          active={pathname.startsWith('/account')}
+        >
+          TÀI KHOẢN
+        </NavItem>
       </div>
     </div>
   );

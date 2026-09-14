@@ -35,7 +35,7 @@ export const retrieveCustomer = async (): Promise<HttpTypes.StoreCustomer | null
     .fetch<{ customer: HttpTypes.StoreCustomer }>(`/store/customers/me`, {
       method: 'GET',
       query: {
-        fields: '*orders'
+        fields: '*orders,*addresses'
       },
       headers,
       next,
@@ -100,8 +100,11 @@ export async function signup(_currentState: unknown, formData: FormData) {
 
     await transferCart();
 
-    return createdCustomer;
+    redirect('/account');
   } catch (error: any) {
+    if (error?.digest?.startsWith?.('NEXT_REDIRECT') || error?.message === 'NEXT_REDIRECT') {
+      throw error;
+    }
     return error.toString();
   }
 }
@@ -125,9 +128,11 @@ export async function login(_currentState: unknown, formData: FormData) {
   } catch (error: any) {
     return error.toString();
   }
+
+  redirect('/account');
 }
 
-export async function signout(countryCode: string) {
+export async function signout() {
   await sdk.auth.logout();
 
   await removeAuthToken();
@@ -140,7 +145,7 @@ export async function signout(countryCode: string) {
   const cartCacheTag = await getCacheTag('carts');
   revalidateTag(cartCacheTag);
 
-  redirect(`/${countryCode}/account`);
+  redirect('/account/login');
 }
 
 export async function transferCart() {
