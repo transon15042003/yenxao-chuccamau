@@ -1,14 +1,11 @@
 'use client';
 
+import { getVietnamProvinces, VietnamProvince } from '@/services/location.service';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useActionState, useEffect, useState, useTransition } from 'react';
 
 import { addCustomerAddress, deleteCustomerAddress } from '@/lib/data/customer';
-import {
-  getVietnamProvinces,
-  VietnamProvince
-} from '@/services/location.service';
 
 type Address = {
   id: string;
@@ -21,11 +18,7 @@ type Address = {
   country_code?: string | null;
 };
 
-export default function AccountAddressesClient({
-  addresses
-}: {
-  addresses: Address[];
-}) {
+export default function AccountAddressesClient({ addresses }: { addresses: Address[] }) {
   const router = useRouter();
   const [provinces, setProvinces] = useState<VietnamProvince[]>([]);
   const [pendingDelete, startDelete] = useTransition();
@@ -123,9 +116,7 @@ export default function AccountAddressesClient({
               ))}
             </select>
           </label>
-          {state?.error && (
-            <p className="text-sm text-red-600 md:col-span-2">{state.error}</p>
-          )}
+          {state?.error && <p className="text-sm text-red-600 md:col-span-2">{state.error}</p>}
           <button
             type="submit"
             disabled={pending}

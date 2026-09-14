@@ -544,9 +544,8 @@ export async function updateCartAndTakeOrderFlow(order: Order) {
   }
 
   const cartShippingMethod =
-    shippingOptionsResult.shipping_options.find(
-      (o) => o.type?.code === order.shippingMethod
-    ) || shippingOptionsResult.shipping_options[0];
+    shippingOptionsResult.shipping_options.find((o) => o.type?.code === order.shippingMethod) ||
+    shippingOptionsResult.shipping_options[0];
   await setShippingMethod({
     cartId: cart.id!,
     shippingMethodId: cartShippingMethod.id
@@ -575,9 +574,7 @@ export async function updateCartAndTakeOrderFlow(order: Order) {
     (paymentCollection as { payment_sessions?: { data?: Record<string, unknown> }[] })
       ?.payment_sessions ||
     [];
-  const session = sessions[0] as
-    | { id?: string; data?: { payUrl?: string } }
-    | undefined;
+  const session = sessions[0] as { id?: string; data?: { payUrl?: string } } | undefined;
   const payUrl = session?.data?.payUrl;
 
   if (payUrl) {

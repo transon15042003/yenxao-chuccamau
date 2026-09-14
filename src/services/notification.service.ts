@@ -9,9 +9,7 @@ export const fakeMailAddress = 'no-input@chuccamau.com';
 const mailApi = process.env.NEXT_PUBLIC_APP_DOMAIN + '/api/send-mail';
 
 function orderTextSummary(order: Order, forCustomer: boolean): string {
-  const lines = order.items
-    .map((i) => `- ${i.name || i.sku || 'SP'} x${i.quantity}`)
-    .join('\n');
+  const lines = order.items.map((i) => `- ${i.name || i.sku || 'SP'} x${i.quantity}`).join('\n');
   const total = order.items
     .reduce((sum, i) => sum + i.price * i.quantity, 0)
     .toLocaleString('vi-VN');
@@ -22,6 +20,7 @@ function orderTextSummary(order: Order, forCustomer: boolean): string {
       `${lines}\n\nTổng: ${total} VND\n`
     );
   }
+
   return (
     `Đơn mới #${order.code}\n` +
     `Khách: ${order.customer.name}\nSĐT: ${order.customer.phone}\n` +

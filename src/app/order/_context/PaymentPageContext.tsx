@@ -154,6 +154,7 @@ const PaymentPageProvider = ({ children }: PropsWithChildren) => {
 
       if (cartRes && 'type' in cartRes && cartRes.type === 'payment_redirect') {
         window.location.href = cartRes.payUrl;
+
         return;
       }
 

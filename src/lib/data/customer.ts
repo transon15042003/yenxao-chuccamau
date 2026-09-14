@@ -82,11 +82,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
       ...(await getAuthHeaders())
     };
 
-    const { customer: createdCustomer } = await sdk.store.customer.create(
-      customerForm,
-      {},
-      headers
-    );
+    await sdk.store.customer.create(customerForm, {}, headers);
 
     const loginToken = await sdk.auth.login('customer', 'emailpass', {
       email: customerForm.email,
@@ -105,6 +101,7 @@ export async function signup(_currentState: unknown, formData: FormData) {
     if (error?.digest?.startsWith?.('NEXT_REDIRECT') || error?.message === 'NEXT_REDIRECT') {
       throw error;
     }
+
     return error.toString();
   }
 }

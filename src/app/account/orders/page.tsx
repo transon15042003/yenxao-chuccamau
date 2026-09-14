@@ -29,6 +29,7 @@ export default async function AccountOrdersPage() {
           <ul className="flex flex-col gap-4">
             {orders.map((raw) => {
               const order = transformOrder(raw);
+
               return (
                 <li
                   key={raw.id}
@@ -42,10 +43,8 @@ export default async function AccountOrdersPage() {
                       </Link>
                     </p>
                     <p className="text-sm text-gray-600">
-                      {order.orderAt
-                        ? new Date(order.orderAt).toLocaleString('vi-VN')
-                        : '—'}{' '}
-                      · {order.status} · {order.paymentStatus}
+                      {order.orderAt ? new Date(order.orderAt).toLocaleString('vi-VN') : '—'} ·{' '}
+                      {order.status} · {order.paymentStatus}
                     </p>
                     <p className="text-sm">
                       {order.items.length} sản phẩm ·{' '}
