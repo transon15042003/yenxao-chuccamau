@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function MomoReturnPage() {
+function MomoReturnInner() {
   const params = useSearchParams();
   const code = params.get('resultCode');
   const ok = code === '0';
@@ -18,5 +19,19 @@ export default function MomoReturnPage() {
         Về trang chủ
       </Link>
     </div>
+  );
+}
+
+export default function MomoReturnPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-[40vh] flex items-center justify-center p-8">
+          <p>Đang tải...</p>
+        </div>
+      }
+    >
+      <MomoReturnInner />
+    </Suspense>
   );
 }

@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function VnpayReturnPage() {
+function VnpayReturnInner() {
   const params = useSearchParams();
   const code = params.get('vnp_ResponseCode');
   const ok = code === '00';
@@ -18,5 +19,19 @@ export default function VnpayReturnPage() {
         Về trang chủ
       </Link>
     </div>
+  );
+}
+
+export default function VnpayReturnPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-[40vh] flex items-center justify-center p-8">
+          <p>Đang tải...</p>
+        </div>
+      }
+    >
+      <VnpayReturnInner />
+    </Suspense>
   );
 }

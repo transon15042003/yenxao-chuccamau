@@ -1,13 +1,13 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 /**
  * Local mock gateway page (PAYMENT_MOCK=1).
  * Confirms payment on Medusa then redirects to order result.
  */
-export default function PaymentMockPage() {
+function PaymentMockInner() {
   const params = useSearchParams();
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
@@ -54,5 +54,19 @@ export default function PaymentMockPage() {
     <div className="min-h-[40vh] flex items-center justify-center p-8">
       <p className="text-lg">{error ? `Lỗi: ${error}` : 'Đang xác nhận thanh toán (mock)...'}</p>
     </div>
+  );
+}
+
+export default function PaymentMockPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-[40vh] flex items-center justify-center p-8">
+          <p className="text-lg">Đang tải...</p>
+        </div>
+      }
+    >
+      <PaymentMockInner />
+    </Suspense>
   );
 }
