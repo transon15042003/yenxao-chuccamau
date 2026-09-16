@@ -10,7 +10,7 @@ const mockProduct: Product = {
   name: 'Yến chưng đường phèn',
   slug: 'yen-chung-duong-phen',
   price: 90000,
-  thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png',
+  thumbnail: '/images/products/yen-chung-tuoi/YSCT-75-DP.jpg',
   description: 'Mô tả yến chưng đường phèn',
   categories: ['yen-chung-tuoi'],
   ingredient: ['Yến tươi', 'Đường phèn'],
@@ -23,7 +23,7 @@ const mockProduct: Product = {
       id: 'yc-dp-70-nb',
       sku: 'yc-dp-70-nb',
       name: 'Yến chưng đường phèn 70ml - nguyên bản',
-      thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png',
+      thumbnail: '/images/products/yen-chung-tuoi/YSCT-75-DP.jpg',
       specs: { size: '70ml', savour: 'nguyên bản' },
       price: 90000,
       stock: 100,
@@ -33,7 +33,7 @@ const mockProduct: Product = {
       id: 'yc-dp-100-nb',
       sku: 'yc-dp-100-nb',
       name: 'Yến chưng đường phèn 100ml - nguyên bản',
-      thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png',
+      thumbnail: '/images/products/yen-chung-tuoi/YSCT-75-DP.jpg',
       specs: { size: '100ml', savour: 'nguyên bản' },
       price: 120000,
       stock: 80,
@@ -43,7 +43,7 @@ const mockProduct: Product = {
       id: 'yc-dp-70-ld',
       sku: 'yc-dp-70-ld',
       name: 'Yến chưng đường phèn 70ml - lá dứa',
-      thumbnail: '/images/products/yen-chung-tuoi/yen-chung-la-dua.png',
+      thumbnail: '/images/products/yen-chung-tuoi/YSCT-75-LD.jpg',
       specs: { size: '70ml', savour: 'lá dứa' },
       price: 95000,
       stock: 50,
@@ -65,7 +65,7 @@ const mockCartItem: TCartItem = {
   price: 90000,
   quantity: 2,
   specs: { size: '70ml', savour: 'nguyên bản' },
-  thumbnail: '/images/products/yen-chung-tuoi/yen-chung-duong-phen.png'
+  thumbnail: '/images/products/yen-chung-tuoi/YSCT-75-DP.jpg'
 };
 
 const meta: Meta<typeof CartItem> = {

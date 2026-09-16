@@ -56,6 +56,15 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '**.chuccamau.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'tpzkqxwytqlubdvdszlz.supabase.co',
+        pathname: '/storage/v1/object/public/**'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.onrender.com'
       }
     ]
   }

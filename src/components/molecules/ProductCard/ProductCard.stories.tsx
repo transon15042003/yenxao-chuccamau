@@ -11,7 +11,7 @@ const meta: Meta<typeof ProductCard> = {
     product: {
       id: 'p1',
       slug: 'banh-to-yen',
-      thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
+      thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.webp`,
       name: 'Bánh tổ yến',
       price: 10000000,
       description: 'Bánh tổ yến',
@@ -27,7 +27,7 @@ const meta: Meta<typeof ProductCard> = {
           sku: 'v1',
           name: 'Bánh tổ yến',
           price: 10000000,
-          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
+          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.webp`,
           specs: { size: '100g' },
           stock: 100,
           isActive: true
@@ -38,7 +38,7 @@ const meta: Meta<typeof ProductCard> = {
           name: 'Bánh tổ yến',
           price: 10000000,
           specs: { size: '200g' },
-          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.png`,
+          thumbnail: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/images/placeholder.webp`,
           stock: 100,
           isActive: true
         }
