@@ -26,8 +26,8 @@ export const BlogCard = ({
     <div
       className={cn(
         'max-w-[379.8px] w-full h-[492px]',
-        'px-1 sm:px-0',
-        'bg-white rounded-[10px] flex flex-col'
+        'bg-white rounded-[10px] flex flex-col overflow-hidden',
+        'border border-[#C2D1D9]'
       )}
     >
       <Link
@@ -36,7 +36,7 @@ export const BlogCard = ({
       >
         <Image src={thumbnailUrl} alt={title} fill className="object-cover" />
       </Link>
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 px-3 pb-3">
         <div className="text-base text-typo-3 mb-1.5">
           {formatDate(new Date(postedDate), 'dd-MM-yyyy')} &nbsp;•&nbsp; {minRead} phút đọc
         </div>
